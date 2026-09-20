@@ -1,0 +1,15 @@
+############################################################################
+# vendor/allwinnertech/chips/a733/Make.defs
+#
+# SPDX-License-Identifier: Apache-2.0
+############################################################################
+
+include common/Make.defs
+
+CHIP_CSRCS = a733_boot.c a733_serial.c
+CHIP_ASRCS = a733_image_header.S
+
+ifeq ($(CONFIG_ARCH_EARLY_PRINT),y)
+CHIP_ASRCS += a733_lowputc.S
+endif
+

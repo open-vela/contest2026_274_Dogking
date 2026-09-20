@@ -1,0 +1,36 @@
+config SYSTEM_AIPETLLM
+	tristate "AI Pet local GGUF LLM runtime"
+	default n
+	depends on ARCH_ARM64
+	---help---
+		Build the custom Qwen2 GGUF CPU/NEON runtime and diagnostics.
+		Supports bounded ChatML generation, RAM-resident models and SMP.
+		This is not a complete llama.cpp port or a generic GGUF runtime.
+
+if SYSTEM_AIPETLLM
+
+config AIPETLLM_LLM_FRONTEND
+	bool "Build the llm user command"
+	default y
+	depends on SYSTEM_AIPETLLM=y && !BUILD_KERNEL
+	---help---
+		Register a built-in llm command sharing the aipetllm runtime.
+		Not supported as a separately loaded ELF application.
+
+config AIPETLLM_PROGNAME
+	string "Program name"
+	default "aipetllm"
+
+config AIPETLLM_PRIORITY
+	int "Task priority"
+	default 100
+
+config AIPETLLM_STACKSIZE
+	int "Task stack size"
+	default 65536
+
+config AIPETLLM_DEFAULT_MODEL
+	string "Default GGUF model path"
+	default "/data/models/qwen2.5-1.5b-instruct-q4_k_m.gguf"
+
+endif

@@ -1,0 +1,46 @@
+# Build products
+build/
+out/
+cmake_out/
+archives/
+build-temp-backups/
+*.o
+*.a
+*.elf
+*.hex
+*.map
+
+# Large local deployment artifacts
+*.img
+*.img.xz
+*.img.gz
+*.nb
+*.a7pm
+*.bin
+*.tar
+*.tar.gz
+*.zip
+*.bundle
+
+# Secrets and local service state
+*.key
+*.pem
+*.p12
+*.crt
+*.password
+*.credentials
+.env
+
+# Editor/OS state
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Python bytecode from the build/image helper scripts
+__pycache__/
+*.pyc
+
+# AI logs are contest deliverables and must not be ignored.
+!logs/**/*.jsonl
+!logs/**/manifest.json

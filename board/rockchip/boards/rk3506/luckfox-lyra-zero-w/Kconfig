@@ -1,0 +1,14 @@
+#
+# Luckfox Lyra Zero W board configuration
+#
+
+if ARCH_BOARD_CUSTOM
+
+config BOARD_RK3506_UBOOT_HANDOFF
+	bool
+	default y
+	---help---
+		The board is entered through the Rockchip U-Boot AMP/FIT loader.
+		U-Boot initializes DDR, clocks, pin multiplexing and UART0.
+
+endif

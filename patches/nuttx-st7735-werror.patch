@@ -1,0 +1,313 @@
+--- a/nuttx/drivers/lcd/st7735.c
++++ b/nuttx/drivers/lcd/st7735.c
+@@ -36,6 +36,7 @@
+ #include <debug.h>
+ 
+ #include <nuttx/arch.h>
++#include <nuttx/kmalloc.h>
+ #include <nuttx/spi/spi.h>
+ #include <nuttx/lcd/lcd.h>
+ #include <nuttx/lcd/st7735.h>
+@@ -194,6 +195,27 @@
+ static void st7735_deselect(FAR struct spi_dev_s *spi);
+ 
+ static inline void st7735_sendcmd(FAR struct st7735_dev_s *dev, uint8_t cmd);
++
++/* Panel setup commands that the private drivers/lcd/st7735.h does not
++ * declare.  Values are the standard ST7735 command set.
++ */
++
++#define ST7735_CMD_FRMCTR1  0xb1
++#define ST7735_CMD_FRMCTR2  0xb2
++#define ST7735_CMD_FRMCTR3  0xb3
++#define ST7735_CMD_INVCTR   0xb4
++#define ST7735_CMD_PWCTR1   0xc0
++#define ST7735_CMD_PWCTR2   0xc1
++#define ST7735_CMD_PWCTR3   0xc2
++#define ST7735_CMD_PWCTR4   0xc3
++#define ST7735_CMD_PWCTR5   0xc4
++#define ST7735_CMD_VMCTR1   0xc5
++#define ST7735_CMD_GMCTRP1  0xe0
++#define ST7735_CMD_GMCTRN1  0xe1
++
++static void st7735_cmd1(FAR struct st7735_dev_s *dev, uint8_t cmd,
++                        uint8_t value);
++static void st7735_initseq(FAR struct st7735_dev_s *dev);
+ static void st7735_sleep(FAR struct st7735_dev_s *dev, bool sleep);
+ static void st7735_display(FAR struct st7735_dev_s *dev, bool on);
+ static void st7735_setorientation(FAR struct st7735_dev_s *dev);
+@@ -203,8 +225,10 @@
+ static void st7735_bpp(FAR struct st7735_dev_s *dev, int bpp);
+ static void st7735_wrram(FAR struct st7735_dev_s *dev,
+                          FAR const uint16_t *buff, size_t size);
++#ifndef CONFIG_LCD_NOGETRUN
+ static void st7735_rdram(FAR struct st7735_dev_s *dev,
+                          FAR uint16_t *buff, size_t size);
++#endif
+ static void st7735_fill(FAR struct st7735_dev_s *dev, uint16_t color);
+ 
+ /* LCD Data Transfer Methods */
+@@ -334,6 +358,160 @@
+   up_mdelay(120);
+ }
+ 
++
++/****************************************************************************
++ * Name: st7735_cmd1
++ *
++ * Description:
++ *   Send a command followed by one parameter byte.
++ *
++ ****************************************************************************/
++
++static void st7735_cmd1(FAR struct st7735_dev_s *dev, uint8_t cmd,
++                        uint8_t value)
++{
++  st7735_sendcmd(dev, cmd);
++  st7735_select(dev->spi, 8);
++  SPI_SEND(dev->spi, value);
++  st7735_deselect(dev->spi);
++}
++
++/****************************************************************************
++ * Name: st7735_initseq
++ *
++ * Description:
++ *   Program the panel's frame rate, power, VCOM and gamma blocks.
++ *
++ *   The reference driver that was validated on this exact panel over this
++ *   exact wiring sends this block after SLPOUT; without it the internal
++ *   booster and VCOM are never set up and the panel stays blank even though
++ *   it accepts commands and the backlight is on.
++ *
++ *   The interface pixel format is also forced here.  st7735_bpp() only sends
++ *   COLMOD when dev->bpp changes, so otherwise the colour depth is inherited
++ *   from whatever the controller powered up in.  The ST7735 powers up in
++ *   18-bit mode, and feeding it 16-bit RGB565 while it expects 18 bpp
++ *   interleaves the bytes: the picture is correct in shape but every row
++ *   breaks into fine vertical colour stripes.
++ *
++ ****************************************************************************/
++
++static void st7735_initseq(FAR struct st7735_dev_s *dev)
++{
++  /* Frame rate control: normal / idle / partial mode */
++
++  st7735_sendcmd(dev, ST7735_CMD_FRMCTR1);
++  st7735_select(dev->spi, 8);
++  SPI_SEND(dev->spi, 0x01);
++  SPI_SEND(dev->spi, 0x2c);
++  SPI_SEND(dev->spi, 0x2d);
++  st7735_deselect(dev->spi);
++
++  st7735_sendcmd(dev, ST7735_CMD_FRMCTR2);
++  st7735_select(dev->spi, 8);
++  SPI_SEND(dev->spi, 0x01);
++  SPI_SEND(dev->spi, 0x2c);
++  SPI_SEND(dev->spi, 0x2d);
++  st7735_deselect(dev->spi);
++
++  st7735_sendcmd(dev, ST7735_CMD_FRMCTR3);
++  st7735_select(dev->spi, 8);
++  SPI_SEND(dev->spi, 0x01);
++  SPI_SEND(dev->spi, 0x2c);
++  SPI_SEND(dev->spi, 0x2d);
++  SPI_SEND(dev->spi, 0x01);
++  SPI_SEND(dev->spi, 0x2c);
++  SPI_SEND(dev->spi, 0x2d);
++  st7735_deselect(dev->spi);
++
++  /* Display inversion control: 3-dot inversion */
++
++  st7735_cmd1(dev, ST7735_CMD_INVCTR, 0x07);
++
++  /* Power control */
++
++  st7735_sendcmd(dev, ST7735_CMD_PWCTR1);
++  st7735_select(dev->spi, 8);
++  SPI_SEND(dev->spi, 0xa2);
++  SPI_SEND(dev->spi, 0x02);
++  SPI_SEND(dev->spi, 0x84);
++  st7735_deselect(dev->spi);
++
++  st7735_cmd1(dev, ST7735_CMD_PWCTR2, 0xc5);
++
++  st7735_sendcmd(dev, ST7735_CMD_PWCTR3);
++  st7735_select(dev->spi, 8);
++  SPI_SEND(dev->spi, 0x0a);
++  SPI_SEND(dev->spi, 0x00);
++  st7735_deselect(dev->spi);
++
++  st7735_sendcmd(dev, ST7735_CMD_PWCTR4);
++  st7735_select(dev->spi, 8);
++  SPI_SEND(dev->spi, 0x8a);
++  SPI_SEND(dev->spi, 0x2a);
++  st7735_deselect(dev->spi);
++
++  st7735_sendcmd(dev, ST7735_CMD_PWCTR5);
++  st7735_select(dev->spi, 8);
++  SPI_SEND(dev->spi, 0x8a);
++  SPI_SEND(dev->spi, 0xee);
++  st7735_deselect(dev->spi);
++
++  /* VCOM */
++
++  st7735_cmd1(dev, ST7735_CMD_VMCTR1, 0x0e);
++
++  /* Interface pixel format: (bpp >> 2) | 1  =>  0x05 for 16 bpp.
++   * Never inherit it from a previous run.
++   */
++
++  st7735_cmd1(dev, ST7735_COLMOD, (ST7735_BPP >> 2) | 1);
++
++  /* Gamma */
++
++  st7735_sendcmd(dev, ST7735_CMD_GMCTRP1);
++  st7735_select(dev->spi, 8);
++  SPI_SEND(dev->spi, 0x02);
++  SPI_SEND(dev->spi, 0x1c);
++  SPI_SEND(dev->spi, 0x07);
++  SPI_SEND(dev->spi, 0x12);
++  SPI_SEND(dev->spi, 0x37);
++  SPI_SEND(dev->spi, 0x32);
++  SPI_SEND(dev->spi, 0x29);
++  SPI_SEND(dev->spi, 0x2d);
++  SPI_SEND(dev->spi, 0x29);
++  SPI_SEND(dev->spi, 0x25);
++  SPI_SEND(dev->spi, 0x2b);
++  SPI_SEND(dev->spi, 0x39);
++  SPI_SEND(dev->spi, 0x00);
++  SPI_SEND(dev->spi, 0x01);
++  SPI_SEND(dev->spi, 0x03);
++  SPI_SEND(dev->spi, 0x10);
++  st7735_deselect(dev->spi);
++
++  st7735_sendcmd(dev, ST7735_CMD_GMCTRN1);
++  st7735_select(dev->spi, 8);
++  SPI_SEND(dev->spi, 0x03);
++  SPI_SEND(dev->spi, 0x1d);
++  SPI_SEND(dev->spi, 0x07);
++  SPI_SEND(dev->spi, 0x06);
++  SPI_SEND(dev->spi, 0x2e);
++  SPI_SEND(dev->spi, 0x2c);
++  SPI_SEND(dev->spi, 0x29);
++  SPI_SEND(dev->spi, 0x2d);
++  SPI_SEND(dev->spi, 0x2e);
++  SPI_SEND(dev->spi, 0x2e);
++  SPI_SEND(dev->spi, 0x37);
++  SPI_SEND(dev->spi, 0x3f);
++  SPI_SEND(dev->spi, 0x00);
++  SPI_SEND(dev->spi, 0x00);
++  SPI_SEND(dev->spi, 0x02);
++  SPI_SEND(dev->spi, 0x10);
++  st7735_deselect(dev->spi);
++
++  ginfo("st7735: panel setup (frmctr/pwctr/vmctr/gamma/colmod) sent\n");
++}
++
+ /****************************************************************************
+  * Name: st7735_invon
+  *
+@@ -497,6 +675,7 @@
+  *
+  ****************************************************************************/
+ 
++#ifndef CONFIG_LCD_NOGETRUN
+ static void st7735_rdram(FAR struct st7735_dev_s *dev,
+                          FAR uint16_t *buff, size_t size)
+ {
+@@ -506,6 +685,7 @@
+   SPI_RECVBLOCK(dev->spi, buff, size);
+   st7735_deselect(dev->spi);
+ }
++#endif
+ 
+ /****************************************************************************
+  * Name: st7735_fill
+@@ -517,18 +697,47 @@
+ 
+ static void st7735_fill(FAR struct st7735_dev_s *dev, uint16_t color)
+ {
+-  int i;
++  FAR uint16_t *row;
++  int remaining;
+ 
+   st7735_setarea(dev, 0, 0, ST7735_XRES - 1, ST7735_YRES - 1);
+ 
+   st7735_sendcmd(dev, ST7735_RAMWR);
+   st7735_select(dev->spi, ST7735_BYTESPP * 8);
+ 
+-  for (i = 0; i < ST7735_XRES * ST7735_YRES; i++)
++  /* Fill one raster line at a time.  Sending one pixel per SPI_SEND() costs a
++   * complete FIFO reset plus register programming in the lower-half for every
++   * pixel, which is thousands of times slower than a block transfer and was
++   * observed to stall the boot while the panel was cleared.
++   */
++
++  row = kmm_malloc(ST7735_XRES * sizeof(uint16_t));
++  if (row == NULL)
+     {
+-      SPI_SEND(dev->spi, color);
++      /* Fall back to the per-pixel path rather than leaving the panel blank. */
++
++      int i;
++
++      for (i = 0; i < ST7735_XRES * ST7735_YRES; i++)
++        {
++          SPI_SEND(dev->spi, color);
++        }
++
++      st7735_deselect(dev->spi);
++      return;
+     }
+ 
++  for (remaining = 0; remaining < ST7735_XRES; remaining++)
++    {
++      row[remaining] = color;
++    }
++
++  for (remaining = ST7735_YRES; remaining > 0; remaining--)
++    {
++      SPI_SNDBLOCK(dev->spi, row, ST7735_XRES);
++    }
++
++  kmm_free(row);
+   st7735_deselect(dev->spi);
+ }
+ 
+@@ -554,7 +763,7 @@
+   FAR struct st7735_dev_s *priv = (FAR struct st7735_dev_s *)dev;
+   FAR const uint16_t *src = (FAR const uint16_t *)buffer;
+ 
+-  ginfo("row: %d col: %d npixels: %d\n", row, col, npixels);
++  ginfo("row: %d col: %d npixels: %zu\n", row, col, npixels);
+   DEBUGASSERT(buffer && ((uintptr_t)buffer & 1) == 0);
+ 
+   st7735_setarea(priv, col, row, col + npixels - 1, row);
+@@ -585,7 +794,7 @@
+   FAR struct st7735_dev_s *priv = (FAR struct st7735_dev_s *)dev;
+   FAR uint16_t *dest = (FAR uint16_t *)buffer;
+ 
+-  ginfo("row: %d col: %d npixels: %d\n", row, col, npixels);
++  ginfo("row: %d col: %d npixels: %zu\n", row, col, npixels);
+   DEBUGASSERT(buffer && ((uintptr_t)buffer & 1) == 0);
+ 
+   st7735_setarea(priv, col, row, col + npixels - 1, row);
+@@ -758,8 +967,17 @@
+   /* Init the hardware and clear the display */
+ 
+   st7735_sleep(priv, false);
++
++  /* The controller needs a settling delay after Sleep Out before the power /
++   * VCOM / gamma blocks are programmed.  The validated reference driver waits
++   * 500 ms here; increase NuttX's 120 ms to match it.
++   */
++
++  up_mdelay(380);
++
+   st7735_bpp(priv, ST7735_BPP);
+   st7735_setorientation(priv);
++  st7735_initseq(priv);
+ #ifdef CONFIG_LCD_ST7735_INVCOLOR
+   st7735_invon(priv, true);
+ #endif

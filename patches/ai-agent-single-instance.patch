@@ -1,0 +1,24 @@
+--- a/packages/ai_agent/src/agent_main.c
++++ b/packages/ai_agent/src/agent_main.c
+@@ -343,4 +343,4 @@
+-int ai_agent_main(int argc, char* argv[])
++static int pet_official_agent_main(int argc, char* argv[])
+ {
+     (void)argc;
+     (void)argv;
+@@ -580,4 +580,15 @@
+     syslog(LOG_INFO, "[%s] Shutdown complete.\n", TAG);
+ 
+     return 0;
+ }
++
++int ai_agent_main(int argc, char* argv[])
++{
++    if (aipet_agent_claim() != 0) {
++        syslog(LOG_WARNING, "[%s] Agent already owned; use aipet status (reboot after failed teardown)\n", TAG);
++        return 1;
++    }
++    int status = pet_official_agent_main(argc, argv);
++    aipet_agent_finish(status);
++    return status;
++}
