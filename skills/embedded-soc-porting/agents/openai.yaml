@@ -1,0 +1,7 @@
+interface:
+  display_name: "Embedded SoC Porting"
+  short_description: "Bring up new chips and boards by architecture"
+  default_prompt: "Use $embedded-soc-porting to plan and execute a staged, recoverable port for this chip or board."
+
+policy:
+  allow_implicit_invocation: true

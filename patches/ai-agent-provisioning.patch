@@ -1,0 +1,36 @@
+--- a/packages/ai_agent/CMakeLists.txt
++++ b/packages/ai_agent/CMakeLists.txt
+@@ -18,1 +18,2 @@
+     ${NUTTX_APPS_DIR}/system/aipet/agent_bridge.c
++    ${NUTTX_APPS_DIR}/system/aipet/agent_secret.c
+--- a/packages/ai_agent/src/infra/config_store.c
++++ b/packages/ai_agent/src/infra/config_store.c
+@@ -24,1 +24,2 @@
+ #include "config_store.h"
++#include "agent_secret.h"
+@@ -114,1 +115,5 @@
+-        strncpy(buf, item->valuestring, buf_size - 1);
++        if (!strcmp(key, "api_key")) {
++            ret = aipet_secret_open(item->valuestring, buf, buf_size) ? ERROR : OK;
++            goto read_done;
++        }
++        strncpy(buf, item->valuestring, buf_size - 1);
+@@ -118,1 +123,2 @@
++read_done:
+     cJSON_Delete(root);
+@@ -125,3 +131,8 @@
+ int claw_config_set(const char *key, const char *value)
+ {
++    char sealed[316];
++    if (!strcmp(key, "api_key") && value[0]) {
++        if (aipet_secret_seal(value, sealed, sizeof(sealed))) return ERROR;
++        value = sealed;
++    }
+     pthread_mutex_lock(&s_lock);
+@@ -133,5 +144,6 @@
+     int ret = save_json(root);
+     cJSON_Delete(root);
+     pthread_mutex_unlock(&s_lock);
++    aipet_wipe(sealed, sizeof(sealed));
+     return ret;
+ }

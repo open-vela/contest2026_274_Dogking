@@ -1,0 +1,63 @@
+#
+# Radxa Cubie A7Z board configuration
+#
+
+if ARCH_BOARD_CUSTOM
+
+config BOARD_A7Z_SD_UBOOT_HANDOFF
+	bool
+	default y
+	---help---
+		Boot through the official SD-card Boot0, SCP, BL31 and U-Boot chain.
+		The firmware owns DDR/PMIC/clock initialization and transfers control
+		to the ARM64 Image at 0x40200000.
+
+config BOARD_A7Z_USER_LED
+	bool "Cubie A7Z blue user LED"
+	default y
+	select DEV_GPIO
+	depends on ARCH_BOARD_CUSTOM
+	---help---
+		Register the active-high PM2 blue user LED as /dev/userled.
+
+config BOARD_A7Z_STORAGE
+	bool "Cubie A7Z GPT and FAT data volume"
+	default y
+	depends on A733_SDMMC0
+	select GPT_PARTITION
+	select FS_FAT
+	---help---
+		Parse the SD-card GPT into stable A7Z partition nodes and mount only
+		the dedicated FAT data partition at /data.  Firmware and boot
+		partitions are never mounted automatically.
+
+config BOARD_A7Z_ST7735
+	bool "Cubie A7Z header ST7735 128x160 LCD"
+	default n
+	depends on ARCH_BOARD_CUSTOM
+	select A733_HEADER_SPI
+	select SPI_CMDDATA
+	select LCD
+	select LCD_DEV
+	select LCD_ST7735
+	---help---
+		Enable the reusable board glue for a four-wire 1.8-inch ST7735
+		display on SPI1.  D/C is PL5 (pin 22), reset is PB0 (pin 7),
+		and the backlight is connected directly to 3.3 V.
+
+config BOARD_A7Z_EARLY_ST7735
+	bool "Bring the ST7735 panel up during board bring-up"
+	default n
+	depends on BOARD_A7Z_ST7735
+	---help---
+		Initialize and register /dev/lcd0 from board_lcd_initialize() during
+		early boot.  This runs the full panel init plus a 128x160 clear before
+		the C runtime finishes and before NSH starts, so any SPI or panel
+		anomaly stalls the boot with no console.
+
+		Leave this disabled (default).  /dev/lcd0 is then registered on first
+		use via a7z_lcd_ensure_registered(), which the display app calls, so
+		the board still reaches NSH with no panel attached.  Enable only for
+		board bring-up debugging of the panel itself.
+
+endif

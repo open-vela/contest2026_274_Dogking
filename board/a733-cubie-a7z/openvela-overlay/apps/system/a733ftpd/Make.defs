@@ -1,0 +1,3 @@
+ifneq ($(CONFIG_SYSTEM_A733FTPD),)
+CONFIGURED_APPS += $(APPDIR)/system/a733ftpd
+endif

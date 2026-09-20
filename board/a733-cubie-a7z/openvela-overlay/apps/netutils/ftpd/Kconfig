@@ -1,0 +1,56 @@
+#
+# For a description of the syntax of this configuration file,
+# see the file kconfig-language.txt in the NuttX tools repository.
+#
+
+config NETUTILS_FTPD
+	bool "FTP server"
+	default n
+	depends on NET_TCP
+	---help---
+		Enable support for the FTP server.
+
+if NETUTILS_FTPD
+
+config FTPD_DATABUFFERSIZE
+	int "Transfer buffer bytes per client"
+	default 4096
+	range 512 65536
+
+config FTPD_CMDBUFFERSIZE
+	int "Command buffer bytes"
+	default 512
+
+config FTPD_MAX_SESSIONS
+	int "Maximum concurrent clients"
+	default 4
+	range 1 16
+
+config FTPD_IDLE_TIMEOUT
+	int "Socket inactivity timeout (milliseconds)"
+	default 60000
+	range 1000 600000
+
+config FTPD_PASSIVE_ONLY
+	bool "Require passive data connections (prevent FTP bounce)"
+	default y
+
+config FTPD_KEEP_PARTIAL
+	bool "Keep interrupted uploads for REST resume"
+	default y
+
+config FTPD_WORKERSTACKSIZE
+	int "FTPD server thread stack size"
+	default DEFAULT_TASK_STACKSIZE
+
+config FTPD_LOGIN_PASSWD
+	bool "Verify FTPD server login with encrypted password file"
+	default n
+	depends on FSUTILS_PASSWD
+	---help---
+		Use the content of an encrypted password file to verify user
+		credentials.  This option requires that you have selected
+		CONFIG_FSUTILS_PASSWD to enable the access methods of
+		apps/fsutils/passwd.
+
+endif

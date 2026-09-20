@@ -1,0 +1,5 @@
+config SYSTEM_A733FTPD
+	tristate "A733 local file transfer service"
+	depends on NET_IPv4 && !DISABLE_PTHREAD && !EXAMPLES_FTPD
+	select NETUTILS_FTPD
+	default n

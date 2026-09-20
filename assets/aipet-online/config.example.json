@@ -1,0 +1,7 @@
+{
+  "llm_host": "api.deepseek.com",
+  "llm_path": "/chat/completions",
+  "llm_port": "443",
+  "model": "deepseek-chat",
+  "api_key": "REPLACE_ON_BOARD_ONLY"
+}

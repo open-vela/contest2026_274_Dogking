@@ -1,0 +1,189 @@
+#
+# Rockchip RV1103 chip configuration
+#
+
+if ARCH_CHIP_CUSTOM
+
+config ARCH_CHIP_RV1103
+	bool "Rockchip RV1103"
+	select LIBC_ATOMIC_IRQ if !SMP
+	default y
+	select ARCH_CORTEXA7
+	select ARCH_HAVE_LOWVECTORS
+	select ARM_HAVE_NEON
+	select ARMV7A_HAVE_GICv2
+	select ARMV7A_HAVE_PTM
+	---help---
+		Support the single Cortex-A7 application core in Rockchip RV1103.
+		The initial port is entered from Rockchip U-Boot after DDR and the
+		console clocks have been initialized.
+
+endif
+
+if ARCH_CHIP_RV1103
+
+config RV1103_WATCHDOG
+	bool "RV1103 DesignWare watchdog"
+	default n
+	select WATCHDOG
+	---help---
+		Enable the reset-mode DesignWare watchdog at 0xff5a0000.
+
+config RV1103_TSADC
+	bool "RV1103 on-chip temperature sensor"
+	default n
+	select SENSORS
+	---help---
+		Enable channel 0 of the RV1103/RV1106 TSADC and expose it through
+		the NuttX sensor framework as /dev/uorb/sensor_temp0.  This first
+		stage is read-only and deliberately leaves thermal alarms and the
+		hardware shutdown output disabled.
+
+config RV1103_TRNG
+	bool "RV1103 hardware true random-number generator"
+	default n
+	select ARCH_HAVE_RNG
+	---help---
+		Enable the non-secure standalone TRNG v1 block at 0xff448000.
+		It supplies the architecture-backed /dev/random and /dev/urandom
+		devices when their corresponding NuttX options are enabled.
+
+config RV1103_PL330_DMA
+	bool "RV1103 PL330 DMA controller"
+	default n
+	---help---
+		Enable the ARM PL330 DMA controller at 0xff420000.  The first
+		stage provides a cache-safe synchronous memory-copy API and a
+		guarded startup self-test.  Peripheral requests and asynchronous
+		interrupt completion are added only after this baseline passes on
+		hardware.
+
+config RV1103_SFC_NAND
+	bool "RV1103 SFC SPI-NAND controller"
+	default n
+	select MTD
+	select MTD_PARTITION
+	---help---
+		Enable the SFC v4+ controller at 0xffac0000 and the board's
+		Winbond-compatible EF AE 21 SPI-NAND.  The initial validation slice
+		is deliberately read-only: erase and program operations return
+		-EROFS while raw MTD partitions and on-die ECC reads are verified.
+
+config RV1103_SDMMC
+	bool "RV1103 DW-MSHC SD/MMC controller"
+	depends on MMCSD
+	select MMCSD_SDIO
+	select SDIO_BLOCKSETUP
+	select MMCSD_HAVE_CARDDETECT
+	default n
+	---help---
+		Enable the removable four-bit SD slot at 0xffaa0000 using the
+		official GPIO3_A1..A7 route.  Identification runs at 400 kHz and
+		default-speed transfers at a conservative 12 MHz.
+
+config RV1103_SDMMC_DMA
+	bool "RV1103 SDMMC internal DMA (IDMAC)"
+	depends on RV1103_SDMMC
+	select SDIO_DMA
+	default y
+
+config RV1103_USB_DWC3_CHECKPOINT
+	bool "RV1103 USB2 PHY and DWC3 peripheral checkpoint"
+	default n
+	---help---
+		Enable the USB2 PHY clocks/resets and validate the Synopsys DWC3
+		core at 0xffb00000 in the Pico Mini's official peripheral role.
+		This safe checkpoint does not yet start a gadget or source host VBUS.
+
+config RV1103_USB_CDCACM
+	bool "RV1103 DWC3 USB CDC ACM device"
+	depends on RV1103_USB_DWC3_CHECKPOINT
+	default n
+	---help---
+		Run the Pico Mini USB2 DWC3 in peripheral mode as a high-speed CDC
+		ACM serial device.  The target-side data node is /dev/ttyACM0.
+
+config RV1103_I2C
+	bool "RV1103 I2C3/I2C4 masters"
+	depends on I2C
+	default n
+	---help---
+		Enable bounded-polling Rockchip I2C masters.  Pico Mini uses I2C3_M1
+		on GPIO1_D2/D3 and the camera-compatible I2C4_M2 route on
+		GPIO3_C7/D0.  Both 100 kHz and 400 kHz transfers are supported.
+
+config RV1103_SC3336_CHECKPOINT
+	bool "Luckfox Pico Mini SC3336 sensor checkpoint"
+	depends on RV1103_I2C
+	default n
+	---help---
+		Enable the board camera clock and PWDN sequence, then identify the
+		SC3336-3MP-Camera(B) on I2C4 address 0x30.  A successful probe
+		registers the read-only diagnostic node /dev/sc3336.  Probe failure
+		is non-fatal so a missing camera cannot prevent NSH from starting.
+
+config RV1103_SPI
+	bool "RV1103 external SPI masters"
+	depends on SPI
+	default n
+	---help---
+		Enable the external SPI0/SPI1 polling master implementation.
+
+config RV1103_SPI0
+	bool "Register SPI0_M0"
+	depends on RV1103_SPI
+	default y
+
+config RV1103_SPI1
+	bool "Register SPI1_M0 (reserved alternative)"
+	depends on RV1103_SPI
+	default n
+	---help---
+		SPI1 uses GPIO4_A0/A1/A5/A7.  It is kept off in the standard Pico
+		Mini image because these pads may be committed by a board variant.
+
+config RV1103_PWM
+	bool "RV1103 PWM output"
+	depends on PWM
+	default n
+	---help---
+		Enable all three RV1103 PWM controller blocks.  One channel/route is
+		registered per board image so mutually exclusive pin routes cannot
+		steal each other at runtime.
+
+config RV1103_PWM_CHANNEL
+	int "PWM hardware channel (0-11)"
+	depends on RV1103_PWM
+	range 0 11
+	default 1
+
+config RV1103_PWM_ROUTE
+	int "PWM pin route (0=M0, 1=M1, 2=M2)"
+	depends on RV1103_PWM
+	range 0 2
+	default 0
+
+config RV1103_SARADC
+	bool "RV1103 SARADC channels 0/1"
+	depends on ADC
+	default n
+
+config RV1103_ADC_KEYS
+	bool "RV1103 SARADC0 volume keys"
+	depends on RV1103_SARADC && INPUT_BUTTONS
+	default n
+	---help---
+		Expose the official two-key ADC ladder through /dev/buttons.  The
+		button state is polled, matching Linux's 100 ms adc-keys policy.
+
+config RV1103_UART3_M1
+	bool "UART3_M1 on GPIO1_D0/D1"
+	depends on 16550_UART1
+	default n
+
+config RV1103_UART4_M1
+	bool "UART4_M1 on GPIO1_C4/C5"
+	depends on 16550_UART2
+	default n
+
+endif

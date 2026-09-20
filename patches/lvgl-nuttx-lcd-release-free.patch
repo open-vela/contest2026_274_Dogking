@@ -1,0 +1,45 @@
+diff --git a/apps/graphics/lvgl/lvgl/src/drivers/nuttx/lv_nuttx_lcd.c b/apps/graphics/lvgl/lvgl/src/drivers/nuttx/lv_nuttx_lcd.c
+--- a/apps/graphics/lvgl/lvgl/src/drivers/nuttx/lv_nuttx_lcd.c
++++ b/apps/graphics/lvgl/lvgl/src/drivers/nuttx/lv_nuttx_lcd.c
+@@ -214,15 +214,19 @@
+         lv_display_set_driver_data(disp, NULL);
+         lv_display_set_flush_cb(disp, NULL);
+ 
+-        /* clear display buffer */
+-        if(disp->buf_1) {
+-            lv_free(disp->buf_1);
+-            disp->buf_1 = NULL;
+-        }
+-        if(disp->buf_2) {
+-            lv_free(disp->buf_2);
+-            disp->buf_2 = NULL;
+-        }
++        /* Detach the draw buffers.  Do NOT free them.
++         *
++         * lv_display_set_buffers() points disp->buf_1/buf_2 at the display's own
++         * embedded _static_buf1/_static_buf2 (lv_display.c:448-450,
++         * lv_display_private.h:104).  They are members of the lv_display_t
++         * allocation, so they are released when the display is deleted and must
++         * never be passed to free(): doing so frees an interior pointer and
++         * corrupts the heap (observed as a data abort in mm_forcefree).  The
++         * pixel memory these descriptors wrap is owned by the caller.
++         */
++
++        disp->buf_1 = NULL;
++        disp->buf_2 = NULL;
+ 
+         /* close device fb */
+         if(dsc->fd >= 0) {
+@@ -230,6 +234,12 @@
+             dsc->fd = -1;
+         }
+         lv_free(dsc);
++
++        /* LV_LOG_USER() is compiled out when LV_USE_LOG is off, which made the
++         * previous board logs impossible to time.  Use puts() instead.
++         */
++
++        puts("display: released (lv_nuttx_deinit done)");
+         LV_LOG_USER("Done");
+     }
+ }
