@@ -1,0 +1,17 @@
+diff --git a/nuttx/arch/arm64/include/arch.h b/nuttx/arch/arm64/include/arch.h
+--- a/nuttx/arch/arm64/include/arch.h
++++ b/nuttx/arch/arm64/include/arch.h
+@@ -218,8 +218,13 @@ typedef struct arch_addrenv_s arch_addrenv_t;
+ 
+ #ifdef CONFIG_ARCH_HAVE_MULTICPU
+ #  ifndef MPID_TO_CORE
++#    ifdef CONFIG_ARCH_CHIP_A733
++#      define MPID_TO_CORE(mpid) \
++              (((mpid) >> MPIDR_AFF1_SHIFT) & MPIDR_AFFLVL_MASK)
++#    else
+ #    define MPID_TO_CORE(mpid) \
+             (((mpid) >> MPIDR_AFF0_SHIFT) & MPIDR_AFFLVL_MASK)
++#    endif
+ #  endif
+ #  define up_cpu_index() ((int)MPID_TO_CORE(GET_MPIDR()))
+ #endif /* CONFIG_ARCH_HAVE_MULTICPU */

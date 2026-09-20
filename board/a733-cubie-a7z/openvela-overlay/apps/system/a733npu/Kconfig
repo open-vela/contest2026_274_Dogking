@@ -1,0 +1,23 @@
+config SYSTEM_A733NPU
+	tristate "A733 VIP2 NPU inference command"
+	default n
+	depends on A733_NPU_CHECKPOINT
+	---help---
+		Build the 'npu' command.  It exposes the checked A7PM inference ABI,
+		including atomic dynamic-input execution and YOLO detection results.
+
+if SYSTEM_A733NPU
+
+config A733NPU_PROGNAME
+	string "Program name"
+	default "npu"
+
+config A733NPU_PRIORITY
+	int "Task priority"
+	default 100
+
+config A733NPU_STACKSIZE
+	int "Task stack size"
+	default 8192
+
+endif

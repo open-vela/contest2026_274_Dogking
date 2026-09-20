@@ -1,0 +1,475 @@
+diff --git a/packages/ai_agent/CMakeLists.txt b/packages/ai_agent/CMakeLists.txt
+index f1b6b4a..0602a5d 100644
+--- a/packages/ai_agent/CMakeLists.txt
++++ b/packages/ai_agent/CMakeLists.txt
+@@ -15,6 +15,7 @@
+ if(CONFIG_EXAMPLES_AI_AGENT_VELA)
+ 
+   set(AGENT_SRCS
++    ${NUTTX_APPS_DIR}/system/aipet/agent_bridge.c
+     src/agent_main.c
+     src/core/message_bus.c
+     src/core/message_bus_tap.c
+@@ -179,6 +180,7 @@ if(CONFIG_EXAMPLES_AI_AGENT_VELA)
+ 
+   # Include directories
+   set(AGENT_INCDIRS
++    ${NUTTX_APPS_DIR}/system/aipet
+     include
+     src
+     tests
+diff --git a/packages/ai_agent/src/agent_main.c b/packages/ai_agent/src/agent_main.c
+index 9d676c2..fd7dd1b 100644
+--- a/packages/ai_agent/src/agent_main.c
++++ b/packages/ai_agent/src/agent_main.c
+@@ -36,6 +36,7 @@
+ 
+ #include "core/agent_loop.h"
+ #include "core/message_bus.h"
++#include "agent_bridge.h"
+ #include "core/message_bus_tap.h"
+ #include "channels/nsh_commands.h"
+ #include "infra/config_store.h"
+@@ -150,9 +151,13 @@ static void* network_watch_task(void* arg)
+     (void)arg;
+     syslog(LOG_INFO, "[%s] Network watcher started\n", TAG);
+ 
+-    network_wifi_reconnect();
++    /* Existing board Wi-Fi service owns association; never reset a live link. */
++    while (!agent_shutdown_requested() && !network_is_connected())
++        usleep(500000);
++    if (agent_shutdown_requested())
++        return NULL;
+ 
+-    if (network_wait_connected(30000) == OK) {
++    if (network_is_connected()) {
+         syslog(LOG_INFO, "[%s] Network connected: %s\n", TAG, network_get_ip());
+ 
+ #if AGENT_SKILL_SYNC_ENABLED
+@@ -168,8 +173,9 @@ static void* network_watch_task(void* arg)
+ #endif
+         if (agent_loop_start() != OK)
+             syslog(LOG_WARNING, "[%s] agent_loop_start failed\n", TAG);
+-        if (ws_server_start() != OK)
+-            syslog(LOG_WARNING, "[%s] ws_server_start failed\n", TAG);
++        else if (aipet_agent_attach() != 0)
++            syslog(LOG_ERR, "[%s] pet channel attach failed\n", TAG);
++        /* No unauthenticated WebSocket listener in the pet image. */
+ #ifdef CONFIG_AI_AGENT_NODE
+         if (node_client_start() != OK)
+             syslog(LOG_WARNING, "[%s] node_client_start failed\n", TAG);
+@@ -496,18 +502,19 @@ int ai_agent_main(int argc, char* argv[])
+     }
+ 
+     /* Ensure directory structure exists (No more manual mkdir needed!) */
+-    mkdir("/data/agent", 0755);
+-    mkdir("/data/agent/config", 0755);
+-    mkdir("/data/agent/memory", 0755);
+-    mkdir("/data/agent/sessions", 0755);
+-    mkdir("/data/agent/skills", 0755);
++    mkdir(AGENT_DATA_DIR, 0755);
++    mkdir(AGENT_DATA_DIR "/config", 0755);
++    mkdir(AGENT_DATA_DIR "/memory", 0755);
++    mkdir(AGENT_DATA_DIR "/sessions", 0755);
++    mkdir(AGENT_DATA_DIR "/skills", 0755);
+     BOOT_LOG(&t0, "P0", "storage ready");
+ 
+     /* Memory info */
+     {
+         struct mallinfo mi = mallinfo();
+-        syslog(LOG_INFO, "[%s] [boot +%ldms] heap: arena=%d free=%d used=%d\n",
+-            TAG, boot_ms(&t0), mi.arena, mi.fordblks, mi.uordblks);
++        syslog(LOG_INFO, "[%s] [boot +%ldms] heap: arena=%zu free=%zu used=%zu\n",
++            TAG, boot_ms(&t0), (size_t)mi.arena,
++            (size_t)mi.fordblks, (size_t)mi.uordblks);
+     }
+ 
+     /* ── Phase 1: Core infrastructure ──────────────────────── */
+@@ -693,7 +700,7 @@ int ai_agent_main(int argc, char* argv[])
+ 
+     /* ── Phase 6: CLI thread — all services now in known state ── */
+     {
+-        int rc = nsh_commands_start();
++        int rc = OK; /* pet channel attaches after agent_loop starts */
+         BOOT_LOG_RC(&t0, "P6", "nsh_commands_start", rc);
+     }
+ 
+@@ -748,6 +755,7 @@ int ai_agent_main(int argc, char* argv[])
+     tool_registry_cleanup();
+     llm_cache_cleanup();
+     vela_tls_pool_cleanup();
++    aipet_agent_detach();
+     message_bus_destroy();
+ 
+     syslog(LOG_INFO, "[%s] Shutdown complete.\n", TAG);
+diff --git a/packages/ai_agent/src/core/agent_loop.c b/packages/ai_agent/src/core/agent_loop.c
+index 3d9dec3..697b267 100644
+--- a/packages/ai_agent/src/core/agent_loop.c
++++ b/packages/ai_agent/src/core/agent_loop.c
+@@ -636,6 +636,8 @@ static char* handle_slash_note(const agent_msg_t* msg)
+ }
+ 
+ /* /remind sub-handler */
++#define REMIND_REPLY_SIZE 1024
++
+ static char* handle_slash_remind(const agent_msg_t* msg)
+ {
+     int secs = 0;
+@@ -659,10 +661,11 @@ static char* handle_slash_remind(const agent_msg_t* msg)
+         (long long)(time(NULL) + secs), remind_msg,
+         msg->channel, msg->chat_id);
+ 
+-    char* reply = calloc(1, 512);
++    char* reply = calloc(1, REMIND_REPLY_SIZE);
+     if (reply) {
+-        tool_registry_execute("cron_add", input, reply, 512);
+-        snprintf(reply, 512, "好的，%d 秒后提醒你：%s",
++        tool_registry_execute("cron_add", input, reply,
++            REMIND_REPLY_SIZE);
++        snprintf(reply, REMIND_REPLY_SIZE, "好的，%d 秒后提醒你：%s",
+             secs, remind_msg);
+     }
+     return reply;
+@@ -863,7 +866,9 @@ static void dispatch_response(const agent_msg_t* msg,
+             sizeof(out.channel) - 1);
+         strncpy(out.chat_id, msg->chat_id,
+             sizeof(out.chat_id) - 1);
+-        out.content = strdup("Sorry, I encountered an error.");
++        out.content = strdup(strcmp(msg->channel, "pet") == 0
++            ? "[AIPET_ERROR]backend"
++            : "Sorry, I encountered an error.");
+         if (out.content) {
+             if (message_bus_push_outbound(&out) != OK) {
+                 free(out.content);
+@@ -889,7 +894,7 @@ static const char* s_working_phrases[] = {
+  * (TTS synthesis of a status phrase wastes time and memory). */
+ static void send_working_status(const agent_msg_t* msg, int iteration)
+ {
+-    if (iteration != 0) {
++    if (iteration != 0 || strcmp(msg->channel, "pet") == 0) {
+         return;
+     }
+     if (strcmp(msg->channel, AGENT_CHAN_FEISHU) == 0
+@@ -1492,7 +1497,8 @@ static void* agent_loop_task(void* arg)
+         }
+ 
+         /* Slash commands — fast path, bypass LLM */
+-        char* reply = handle_slash_command(&msg);
++        char* reply = strcmp(msg.channel, "pet") == 0
++            ? NULL : handle_slash_command(&msg);
+ 
+         /* Prompt injection check — before LLM */
+         if (!reply && tool_guard_check_injection(msg.content)) {
+@@ -1508,7 +1514,7 @@ static void* agent_loop_task(void* arg)
+         }
+ 
+         /* NL fast path — after injection check, before LLM */
+-        if (!reply) {
++        if (!reply && strcmp(msg.channel, "pet") != 0) {
+             reply = handle_nl_fast_path(msg.content);
+         }
+ 
+diff --git a/packages/ai_agent/src/core/session_mgr.c b/packages/ai_agent/src/core/session_mgr.c
+index 64d11f1..9b0cad4 100644
+--- a/packages/ai_agent/src/core/session_mgr.c
++++ b/packages/ai_agent/src/core/session_mgr.c
+@@ -264,7 +264,7 @@ int session_clear_all(void)
+     int count = 0;
+     while ((entry = readdir(dir)) != NULL) {
+         if (strstr(entry->d_name, "tg_") && strstr(entry->d_name, ".jsonl")) {
+-            char path[256];
++            char path[512];
+             snprintf(path, sizeof(path), "%s/%s", AGENT_SESSION_DIR, entry->d_name);
+             if (remove(path) == 0) {
+                 count++;
+diff --git a/packages/ai_agent/src/infra/vela_tls.c b/packages/ai_agent/src/infra/vela_tls.c
+index 0d0ca62..f750a10 100644
+--- a/packages/ai_agent/src/infra/vela_tls.c
++++ b/packages/ai_agent/src/infra/vela_tls.c
+@@ -41,6 +41,8 @@
+ #include "mbedtls/error.h"
+ #include "mbedtls/net_sockets.h"
+ #include "mbedtls/ssl.h"
++#include "mbedtls/x509_crt.h"
++#include "pet_http_framing.h"
+ 
+ #include <fcntl.h>
+ #include <pthread.h>
+@@ -112,29 +114,12 @@ static size_t decode_chunked(char* buf, size_t len)
+     return (size_t)(dst - buf);
+ }
+ 
+-/* Check whether the raw accumulated body ends with the chunked
+- * terminator ("...\r\n0\r\n\r\n", or "0\r\n\r\n" for an empty body).
+- * Without this check the read loop below blocks on keep-alive
+- * connections until the server closes them (~60s idle timeout),
+- * tripping the agent's 60s LLM watchdog. */
+-static int chunked_end_seen(const char* buf, size_t len)
+-{
+-    static const char term_empty[] = "0\r\n\r\n";
+-    static const char term_last[] = "\r\n0\r\n\r\n";
+-    size_t n1 = sizeof(term_empty) - 1; /* 5 */
+-    size_t n2 = sizeof(term_last) - 1;  /* 7 */
+-
+-    if (len >= n2 && memcmp(buf + len - n2, term_last, n2) == 0)
+-        return 1;
+-    if (len >= n1 && memcmp(buf + len - n1, term_empty, n1) == 0)
+-        return 1;
+-    return 0;
+-}
+ 
+ /* ── TLS context ─────────────────────────────────────────────── */
+ 
+ typedef struct {
+     mbedtls_ssl_context ssl;
++    mbedtls_x509_crt ca;
+     mbedtls_ssl_config cfg;
+     mbedtls_net_context net;
+     mbedtls_ctr_drbg_context ctr_drbg;
+@@ -146,6 +131,7 @@ static void tls_ctx_free(tls_ctx_t* ctx)
+     mbedtls_net_free(&ctx->net);
+     mbedtls_ssl_free(&ctx->ssl);
+     mbedtls_ssl_config_free(&ctx->cfg);
++    mbedtls_x509_crt_free(&ctx->ca);
+     mbedtls_ctr_drbg_free(&ctx->ctr_drbg);
+ 
+ #ifdef CONFIG_AI_AGENT_NET_RPMSG
+@@ -253,6 +239,7 @@ static int tls_ctx_connect(tls_ctx_t* ctx, const char* host, const char* port)
+     int ret;
+ 
+     mbedtls_ssl_init(&ctx->ssl);
++    mbedtls_x509_crt_init(&ctx->ca);
+     mbedtls_ssl_config_init(&ctx->cfg);
+     mbedtls_net_init(&ctx->net);
+     mbedtls_ctr_drbg_init(&ctx->ctr_drbg);
+@@ -367,8 +354,13 @@ static int tls_ctx_connect(tls_ctx_t* ctx, const char* host, const char* port)
+     }
+ #endif
+ 
+-    /* Skip full chain verification — keeps portability without CA bundle */
+-    mbedtls_ssl_conf_authmode(&ctx->cfg, MBEDTLS_SSL_VERIFY_OPTIONAL);
++    /* Board-local trust bundle; fail closed if absent/invalid. */
++    if (mbedtls_x509_crt_parse_file(&ctx->ca, "/data/ai_agent/ca.pem") != 0) {
++        syslog(LOG_ERR, "[%s] Missing/invalid trusted CA bundle\n", TAG);
++        return VELA_TLS_ERR_HANDSHAKE;
++    }
++    mbedtls_ssl_conf_ca_chain(&ctx->cfg, &ctx->ca, NULL);
++    mbedtls_ssl_conf_authmode(&ctx->cfg, MBEDTLS_SSL_VERIFY_REQUIRED);
+     mbedtls_ssl_conf_rng(&ctx->cfg, mbedtls_ctr_drbg_random, &ctx->ctr_drbg);
+ 
+     /* Read timeout is handled at the socket level via SO_RCVTIMEO,
+@@ -543,9 +535,35 @@ static void tls_raw_release(char* buf)
+     }
+ }
+ 
++static uint64_t pet_http_ms(void)
++{
++    struct timespec now;
++    clock_gettime(CLOCK_MONOTONIC, &now);
++    return (uint64_t)now.tv_sec * 1000 + now.tv_nsec / 1000000;
++}
++
++/* Absolute response budget, not a fresh timeout per fragment. */
++static int pet_tls_read(tls_ctx_t* ctx, unsigned char* buf, size_t cap,
++    uint64_t deadline)
++{
++    uint64_t now = pet_http_ms();
++    if (now >= deadline) return MBEDTLS_ERR_SSL_TIMEOUT;
++    uint64_t left = deadline - now;
++    struct timeval tv = { .tv_sec = (time_t)(left / 1000),
++        .tv_usec = (suseconds_t)((left % 1000) * 1000) };
++    if (setsockopt(ctx->net.fd, SOL_SOCKET, SO_RCVTIMEO, &tv, sizeof(tv)) < 0)
++        return MBEDTLS_ERR_SSL_TIMEOUT;
++    int r = mbedtls_ssl_read(&ctx->ssl, buf, cap);
++    if (pet_http_ms() >= deadline) return MBEDTLS_ERR_SSL_TIMEOUT;
++    return r;
++}
++
+ static int tls_read_response(tls_ctx_t* ctx, char* resp_buf, size_t resp_cap,
+     size_t* out_body_len, bool* out_keep_alive)
+ {
++    if (resp_cap < 2) return VELA_TLS_ERR_READ;
++    uint64_t started = pet_http_ms(), deadline = started + 45000;
++    if (out_keep_alive) *out_keep_alive = false;
+     /* Use static buffers to avoid heap fragmentation */
+     char* raw = tls_raw_acquire();
+     size_t raw_len = 0;
+@@ -554,9 +572,12 @@ static int tls_read_response(tls_ctx_t* ctx, char* resp_buf, size_t resp_cap,
+ 
+     /* Read until we have the full header (double CRLF) or buffer full */
+     while (!eof && raw_len < TLS_RAW_BUF_SIZE - 1) {
+-        ret = mbedtls_ssl_read(&ctx->ssl,
++        ret = pet_tls_read(ctx,
+             (unsigned char*)(raw + raw_len),
+-            TLS_RAW_BUF_SIZE - 1 - raw_len);
++            TLS_RAW_BUF_SIZE - 1 - raw_len, deadline);
++        if (ret > 0 && raw_len == 0)
++            syslog(LOG_INFO, "[%s] HTTP first-byte=%llu ms\n", TAG,
++                (unsigned long long)(pet_http_ms() - started));
+         if (ret > 0) {
+             raw_len += (size_t)ret;
+             if (memmem(raw, raw_len, "\r\n\r\n", 4))
+@@ -585,7 +606,7 @@ static int tls_read_response(tls_ctx_t* ctx, char* resp_buf, size_t resp_cap,
+     if (!body_start) {
+         resp_buf[0] = '\0';
+         tls_raw_release(raw);
+-        return http_status;
++        return VELA_TLS_ERR_READ;
+     }
+ 
+     /* Determine keep-alive from Connection header (default true for HTTP/1.1) */
+@@ -618,6 +639,15 @@ static int tls_read_response(tls_ctx_t* ctx, char* resp_buf, size_t resp_cap,
+         }
+     }
+ 
++    if (chunked) content_length = -1; /* Transfer-Encoding takes precedence. */
++    if (http_status == 204 || http_status == 304) content_length = 0;
++    if (content_length >= (long)resp_cap) {
++        tls_raw_release(raw);
++        return VELA_TLS_ERR_READ;
++    }
++    syslog(LOG_INFO, "[%s] HTTP status=%d framing=%s\n", TAG, http_status,
++        chunked ? "chunked" : content_length >= 0 ? "length" : "close");
++
+     /* Initial fragment already in raw buffer */
+     size_t initial = (size_t)(raw + raw_len - body_start);
+     size_t resp_pos = 0;
+@@ -629,26 +659,39 @@ static int tls_read_response(tls_ctx_t* ctx, char* resp_buf, size_t resp_cap,
+ 
+     /* Keep reading body */
+     if (!eof) {
+-        while (resp_pos < resp_cap - 1) {
+-            if (content_length >= 0 && (long)resp_pos >= content_length)
++        for (;;) {
++            size_t end = 0;
++            int complete = chunked ? pet_chunked_complete(resp_buf, resp_pos, &end) : 0;
++            if (complete < 0) goto pet_read_failed;
++            if (complete == 1) {
++                if (end != resp_pos && out_keep_alive) *out_keep_alive = false;
++                resp_pos = end;
+                 break;
+-            if (chunked && chunked_end_seen(resp_buf, resp_pos))
++            }
++            if (content_length >= 0 && resp_pos >= (size_t)content_length) {
++                if (resp_pos != (size_t)content_length && out_keep_alive)
++                    *out_keep_alive = false;
++                resp_pos = (size_t)content_length;
+                 break;
+-            ret = mbedtls_ssl_read(&ctx->ssl,
++            }
++            if (resp_pos >= resp_cap - 1) goto pet_read_failed;
++            ret = pet_tls_read(ctx,
+                 (unsigned char*)(resp_buf + resp_pos),
+-                resp_cap - 1 - resp_pos);
++                resp_cap - 1 - resp_pos, deadline);
+             if (ret > 0) {
+                 resp_pos += (size_t)ret;
+-                if (chunked && chunked_end_seen(resp_buf, resp_pos))
+-                    break;
+             } else if (ret == 0 || ret == MBEDTLS_ERR_SSL_PEER_CLOSE_NOTIFY) {
++                if (chunked || content_length >= 0) goto pet_read_failed;
++                if (out_keep_alive) *out_keep_alive = false;
+                 break;
+             } else if (ret != MBEDTLS_ERR_SSL_WANT_READ) {
+-                break;
++                goto pet_read_failed;
+             }
+         }
+     }
+ 
++    syslog(LOG_INFO, "[%s] HTTP complete=%llu ms encoded-bytes=%zu\n", TAG,
++        (unsigned long long)(pet_http_ms() - started), resp_pos);
+     resp_buf[resp_pos] = '\0';
+     tls_raw_release(raw);
+ 
+@@ -662,6 +705,15 @@ static int tls_read_response(tls_ctx_t* ctx, char* resp_buf, size_t resp_cap,
+         *out_body_len = resp_pos;
+ 
+     return http_status;
++pet_read_failed:
++    ;
++    syslog(LOG_ERR, "[%s] HTTP incomplete/malformed/timeout after %llu ms\n",
++        TAG, (unsigned long long)(pet_http_ms() - started));
++    resp_buf[0] = '\0';
++    if (out_body_len) *out_body_len = 0;
++    if (out_keep_alive) *out_keep_alive = false;
++    tls_raw_release(raw);
++    return VELA_TLS_ERR_READ;
+ }
+ 
+ /* ── Public API ──────────────────────────────────────────────── */
+@@ -712,13 +764,19 @@ int vela_https_request(
+         /* Reuse existing connection — skip TLS handshake */
+         syslog(LOG_DEBUG, "[%s] Reusing pooled connection to %s:%s\n", TAG, host, port);
+         ret = tls_write_request(&slot->ctx, method, host, path, headers, body, body_len);
+-        if (ret == 0) {
++        if (ret <= 0) {
++            pool_release(slot, host, port, false);
++            return ret; /* Partial POST writes must not be replayed. */
++        }
++        if (ret > 0) {
+             bool keep = false;
+             ret = tls_read_response(&slot->ctx, resp_buf, resp_cap, out_body_len, &keep);
+             if (ret > 0) {
+                 pool_release(slot, host, port, keep);
+                 return ret;
+             }
++            pool_release(slot, host, port, false);
++            return ret; /* No silent paid-request retry after receiving failed. */
+         }
+         /* Connection went stale — fall through to reconnect */
+     pool_reconnect:
+diff --git a/packages/ai_agent/src/tools/skill_loader.c b/packages/ai_agent/src/tools/skill_loader.c
+index ea21931..09c474c 100644
+--- a/packages/ai_agent/src/tools/skill_loader.c
++++ b/packages/ai_agent/src/tools/skill_loader.c
+@@ -347,7 +347,7 @@ size_t skill_loader_build_summary(char *buf, size_t size)
+         if (name[0] == '.') continue;
+ 
+         /* Build full path */
+-        char full_path[256];
++        char full_path[512];
+         snprintf(full_path, sizeof(full_path), "%s%s", AGENT_SKILLS_DIR, name);
+ 
+         FILE *f = fopen(full_path, "r");
+@@ -369,9 +369,15 @@ size_t skill_loader_build_summary(char *buf, size_t size)
+         fclose(f);
+ 
+         /* Append to summary */
+-        off += snprintf(buf + off, size - off,
++        int written = snprintf(buf + off, size - off,
+             "- **%s**: %s (read with: read_file %s)\n",
+             title, desc, full_path);
++        if (written < 0) break;
++        if ((size_t)written >= size - off) {
++            off = size - 1;
++            break;
++        }
++        off += (size_t)written;
+     }
+ 
+     closedir(dir);
+@@ -413,7 +419,7 @@ static uint32_t compute_skills_hash(void)
+         }
+ 
+         /* Hash file size + mtime (detects content changes) */
+-        char path[256];
++        char path[512];
+         snprintf(path, sizeof(path), "%s%s", AGENT_SKILLS_DIR, name);
+         struct stat st;
+         if (stat(path, &st) == 0) {
+diff --git a/packages/ai_agent/src/tools/tool_registry.c b/packages/ai_agent/src/tools/tool_registry.c
+index 33583e7..05a9b65 100644
+--- a/packages/ai_agent/src/tools/tool_registry.c
++++ b/packages/ai_agent/src/tools/tool_registry.c
+@@ -88,6 +88,10 @@ void tool_registry_register_provider(const char* name,
+ 
+ static void register_tool(const agent_tool_t* tool)
+ {
++    /* Pet integration initially exposes only read-only time/weather tools. */
++    if (strcmp(tool->name, "get_current_time") &&
++        strcmp(tool->name, "get_weather"))
++        return;
+     if (s_tool_count >= MAX_TOOLS) {
+         syslog(LOG_ERR, "[%s] Tool registry full\n", TAG);
+         return;

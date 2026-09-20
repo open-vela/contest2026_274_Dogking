@@ -1,0 +1,4 @@
+config SYSTEM_A733SERVICES
+	bool "A733 persistent service startup management"
+	depends on SYSTEM_A733WIFI && SYSTEM_A733FTPD && UTILS_SSH && CRYPTO_MBEDTLS
+	default n

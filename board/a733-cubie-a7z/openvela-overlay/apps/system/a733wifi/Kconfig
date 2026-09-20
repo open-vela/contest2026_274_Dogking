@@ -1,0 +1,26 @@
+config SYSTEM_A733WIFI
+	tristate "A733 dual-band Wi-Fi manager"
+	default n
+	depends on A733_WIFI_USB_CHECKPOINT
+	depends on WIRELESS_WAPI
+	---help---
+		Build the 'wifi' command for scanning and connecting the Cubie A7Z
+		FCU760K module through openvela WAPI/WEXT.  The command keeps
+			interactive secret input and board-local autoconnect policy while
+			using the public wireless control API.
+
+if SYSTEM_A733WIFI
+
+config A733WIFI_PROGNAME
+	string "Program name"
+	default "wifi"
+
+config A733WIFI_PRIORITY
+	int "Task priority"
+	default 100
+
+config A733WIFI_STACKSIZE
+	int "Task stack size"
+	default 8192
+
+endif

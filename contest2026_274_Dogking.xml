@@ -8,9 +8,98 @@
   -->
   <include name="openvela.xml"/>
 
-  <project path="contest2026_274_Dogking" name="contest2026_274_Dogking">
-    <linkfile src="app/hello_app" dest="packages/demos/contest2026_274_hello_app"/>
-    <linkfile src="quickapp/hello_quickapp" dest="packages/apps/contest2026_274_hello_quickapp"/>
-    <linkfile src="board/contest_board" dest="vendor/openvela/boards/contest2026_274_board"/>
+  <!-- Official competition repository.
+       Reviewers clone this manifest, so it must point at the organiser repo on
+       the contest branch.  During joint development this pointed at the
+       personal collaboration repo (hxy299/hxy299-a733-share-hub, branch
+       a733-cubie-a7z-share); switch it back to that pair only for local
+       collaboration, never for a submission. -->
+  <remote name="dogking" fetch="https://github.com/"/>
+
+  <project path="contest2026_274_Dogking"
+           name="open-vela/contest2026_274_Dogking"
+           remote="dogking"
+           revision="dev-ai-contest-2026">
+    <!-- A733/Cubie A7Z board and chip implementation. -->
+    <linkfile src="board/a733-cubie-a7z/openvela-overlay/vendor/allwinnertech/chips/a733"
+              dest="vendor/allwinnertech/chips/a733"/>
+    <linkfile src="board/a733-cubie-a7z/openvela-overlay/vendor/allwinnertech/boards/a733/cubie-a7z"
+              dest="vendor/allwinnertech/boards/a733/cubie-a7z"/>
+
+    <!-- Rockchip ports maintained in this same team repo.  Same layout rule as
+         A733: the chip lower-half lives under vendor/rockchip/chips and each
+         board directory under vendor/rockchip/boards.  These are genuinely
+         new SoC ports (RK3506 and RV1103), not configuration presets. -->
+    <linkfile src="board/rockchip/chips/rk3506"
+              dest="vendor/rockchip/chips/rk3506"/>
+    <linkfile src="board/rockchip/chips/rv1103"
+              dest="vendor/rockchip/chips/rv1103"/>
+    <linkfile src="board/rockchip/boards/rk3506/luckfox-lyra-zero-w"
+              dest="vendor/rockchip/boards/rk3506/luckfox-lyra-zero-w"/>
+    <linkfile src="board/rockchip/boards/rv1103/luckfox-pico-mini"
+              dest="vendor/rockchip/boards/rv1103/luckfox-pico-mini"/>
+
+    <!-- Board-specific user-facing tools. -->
+    <linkfile src="board/a733-cubie-a7z/openvela-overlay/apps/system/a733wifi"
+              dest="apps/system/a733wifi"/>
+    <linkfile src="board/a733-cubie-a7z/openvela-overlay/apps/system/a733services"
+              dest="apps/system/a733services"/>
+    <linkfile src="board/a733-cubie-a7z/openvela-overlay/apps/system/a733ftpd"
+              dest="apps/system/a733ftpd"/>
+    <linkfile src="board/a733-cubie-a7z/openvela-overlay/apps/system/a733npu"
+              dest="apps/system/a733npu"/>
+    <linkfile src="board/a733-cubie-a7z/openvela-overlay/apps/system/aipet"
+              dest="apps/system/aipet"/>
+    <linkfile src="board/a733-cubie-a7z/openvela-overlay/apps/system/aipetasr"
+              dest="apps/system/aipetasr"/>
+    <linkfile src="board/a733-cubie-a7z/openvela-overlay/apps/system/aipetllm"
+              dest="apps/system/aipetllm"/>
+    <linkfile src="board/a733-cubie-a7z/openvela-overlay/apps/include/system/a733_services.h"
+              dest="apps/include/system/a733_services.h"/>
+
+    <!-- Compatibility changes against dev-ai-contest-2026.  These are kept
+         as individual links so they can be reviewed and split into upstream
+         apps/nuttx pull requests without hiding their scope. -->
+    <linkfile src="board/a733-cubie-a7z/openvela-overlay/apps/external/curl/curl_config.h"
+              dest="apps/external/curl/curl_config.h"/>
+    <linkfile src="board/a733-cubie-a7z/openvela-overlay/apps/external/libssh/libssh/src/init.c"
+              dest="apps/external/libssh/libssh/src/init.c"/>
+    <linkfile src="board/a733-cubie-a7z/openvela-overlay/apps/external/libssh/libssh/examples/ssh_server.c"
+              dest="apps/external/libssh/libssh/examples/ssh_server.c"/>
+    <linkfile src="board/a733-cubie-a7z/openvela-overlay/apps/external/libssh/libssh/examples/ssh_client.c"
+              dest="apps/external/libssh/libssh/examples/ssh_client.c"/>
+    <linkfile src="board/a733-cubie-a7z/openvela-overlay/apps/external/libssh/libssh/examples/libssh_scp.c"
+              dest="apps/external/libssh/libssh/examples/libssh_scp.c"/>
+    <linkfile src="board/a733-cubie-a7z/openvela-overlay/apps/include/netutils/ftpd.h"
+              dest="apps/include/netutils/ftpd.h"/>
+    <linkfile src="board/a733-cubie-a7z/openvela-overlay/apps/netutils/ftpd"
+              dest="apps/netutils/ftpd"/>
+    <linkfile src="board/a733-cubie-a7z/openvela-overlay/apps/netutils/iperf/iperf.c"
+              dest="apps/netutils/iperf/iperf.c"/>
+    <linkfile src="board/a733-cubie-a7z/openvela-overlay/apps/netutils/ntpclient"
+              dest="apps/netutils/ntpclient"/>
+    <linkfile src="board/a733-cubie-a7z/openvela-overlay/apps/nshlib/nsh_netcmds.c"
+              dest="apps/nshlib/nsh_netcmds.c"/>
+    <linkfile src="board/a733-cubie-a7z/openvela-overlay/apps/system/nsh/nsh_main.c"
+              dest="apps/system/nsh/nsh_main.c"/>
+
+    <linkfile src="board/a733-cubie-a7z/openvela-overlay/nuttx/CMakeLists.txt"
+              dest="nuttx/CMakeLists.txt"/>
+    <linkfile src="board/a733-cubie-a7z/openvela-overlay/nuttx/arch/arm64/src/common/arm64_fatal.c"
+              dest="nuttx/arch/arm64/src/common/arm64_fatal.c"/>
+    <linkfile src="board/a733-cubie-a7z/openvela-overlay/nuttx/arch/arm64/src/common/arm64_syscall.c"
+              dest="nuttx/arch/arm64/src/common/arm64_syscall.c"/>
+    <linkfile src="board/a733-cubie-a7z/openvela-overlay/nuttx/fs/fat/fs_fat32dirent.c"
+              dest="nuttx/fs/fat/fs_fat32dirent.c"/>
+    <linkfile src="board/a733-cubie-a7z/openvela-overlay/nuttx/include/nuttx/npu/a733_vip2.h"
+              dest="nuttx/include/nuttx/npu/a733_vip2.h"/>
+    <linkfile src="board/a733-cubie-a7z/openvela-overlay/nuttx/libs/libc/misc/lib_utsname.c"
+              dest="nuttx/libs/libc/misc/lib_utsname.c"/>
+    <linkfile src="board/a733-cubie-a7z/openvela-overlay/nuttx/sched/init/nx_bringup.c"
+              dest="nuttx/sched/init/nx_bringup.c"/>
+    <linkfile src="board/a733-cubie-a7z/openvela-overlay/nuttx/sched/init/nx_start.c"
+              dest="nuttx/sched/init/nx_start.c"/>
+    <linkfile src="board/a733-cubie-a7z/openvela-overlay/nuttx/sched/task/task_start.c"
+              dest="nuttx/sched/task/task_start.c"/>
   </project>
 </manifest>
