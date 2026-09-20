@@ -1,0 +1,1174 @@
+......
+
+
+[245]HELLO! BOOT0 is starting!
+[248]BOOT0 commit : {4721ad08}
+[251]board gpio withstand voltage auto mode
+[265]dram_para_total:0xf
+[268]vaild para:6  select dram para10
+[mmc]: mmc driver ver 2025-10-16 17:10
+[mmc]: Wrong media type 0x0
+[mmc]: ***Try SD card 0***
+[mmc]: HSSDR52/SDR25 4 bit
+[mmc]: 50000000 Hz
+[mmc]: 30436 MB
+[mmc]: ***SD/MMC 0 init OK!!!***
+[316]boot param - magic error
+[319]DRAM BOOT DRIVE INFO: V0.601
+[323]DRAM_VCC set to 1100 mv
+[3589]Training result is = 7
+[3591]DRAM Pstate 0 training, frequency is 1800 Mhz
+[3599][AUTO DEBUG]16 bit,2 ranks training success!
+[6867]Training result is = 7
+[6870]DRAM Pstate 0 training, frequency is 1800 Mhz
+[10143]Training result is = 7
+[10146]DRAM Pstate 0 training, frequency is 1800 Mhz
+[10154]DRAM CLK =1800 MHZ
+[10156]DRAM Type =8 (8:LPDDR4,9:LPDDR5)
+[10262]Training result is = 7
+[10265]DRAM Pstate 1 training, frequency is 1200 Mhz
+[10378]Training result is = 7
+[10381]DRAM Pstate 2 training, frequency is 800 Mhz
+[10591]Training result is = 7
+[10594]DRAM Pstate 3 training, frequency is 400 Mhz
+[13837]Training result is = 7
+[13840]DRAM Pstate 0 training, frequency is 1800 Mhz
+[13848]Actual DRAM SIZE =4096 M
+[13851]DRAM SIZE =4096 MBytes, para1 = 310a, para2 = 10001001, dram_tpr13 = 6067
+[13865]DRAM simple test OK.
+[13871]error:bad magic.
+[13935]error: dtb not found for scp
+[13939]mmc not para
+[13941]Jump to ATF: monitor_base = 0x48000000, uboot_base = 0x4a000000, optee_base = 0x0
+NOTICE:  BL31: OP-TEE 32bit detected
+NOTICE:  BL31: U-BOOT 32bit detected
+NOTICE:  BL31: dram size is 4294967296 bytes
+NOTICE:  BL31: v2.5(debug):48e54578a
+NOTICE:  BL31: Built : 14:13:06, Jul  2 2025
+NOTICE:  BL31: No DTB found.
+ERROR:   Error initializing runtime service opteed_fast
+
+
+U-Boot 2018.07-17-boot-aw2501-g4c7078cfdf7-dirty (Apr 29 2026 - 10:03:59 +0000) Allwinner Technology
+
+[13.997]CPU:   Allwinner Family
+[14.000]Model: Radxa Cubie A7A
+I2C:   ready
+[14.063]DRAM:  4 GiB
+[14.072]Relocation Offset is: 75d89000
+[14.126]secure enable bit: 0
+[14.129]PMU: AXP8191
+[14.131]PMU: AXP8191 VER_A
+FDT ERROR:fdt_get_regulator_name:get property handle twi-supply error:FDT_ERR_INTERNAL
+[14.143]bmu_axp515_probe pmic_bus_read fail
+[14.147][AXP8191] onoff status: 0x50 = 0x1, 0x51 = 0x0
+[14.152][AXP8191] charge status: 0x4 = 0x0
+[14.156]CPU=1014 MHz,PLL6=1200 Mhz,AHB=200 Mhz, APB1=24Mhz  MBus=600Mhz
+[14.162]gic: sec monitor mode
+SPI ALL:   ready
+[14.206]flash init start
+[14.208]workmode = 0,storage type = 1
+[14.212][mmc]: mmc driver ver uboot2018:2024-10-18 9:01:00 -- uboot2018:2025-03-28 10:03:00
+[14.220][mmc]: get sdc_type fail and use default host:tm1.
+[14.228][mmc]: can't find node "mmc0",will add new node
+[14.233][mmc]: fdt err returned <no error>
+[14.237][mmc]: Using default timing para
+[14.240][mmc]: SUNXI SDMMC Controller Version:0x50530
+[14.268][mmc]: card_caps:0x3000000a
+[14.272][mmc]: host_caps:0x3000003f
+[14.277]sunxi flash init ok
+get value error
+[14.289]Loading Environment from SUNXI_FLASH... OK
+No ethernet found.
+[14.326]NOT support bridge yet
+[14.329]Warn: no find panel or bridge
+[14.333]hdmi0@5520000 disconnected
+[14.336]drm hdmi get mode: 1920x1080@60Hz
+hdmi0@5520000: use force output detailed mode clock 148500 kHz, flags[5]
+    H: 1920 2008 2052 2200
+    V: 1080 1084 1089 1125
+bus_format: 0
+partno erro : can't find partition bootloader
+[14.365]bootloader is not found!
+partno erro : can't find partition boot-resource
+[14.374]boot-resource is not found!
+[14.377]Can not load logo.bmp file!
+[14.380]load logo fail
+[14.390]the secure storage item0 copy0 magic is bad
+[14.401]the secure storage item0 copy1 magic is bad
+[14.406]usb burn from boot
+delay time 0
+[14.412]usb prepare ok
+[14.715]overtime
+[14.719]do_burn_from_boot usb : no usb exist
+cann't get the boot_base from the env
+[14.738]update part info
+[14.743]battery temp is -1
+[14.748]update bootcmd
+[14.756](not enough data: expected >= 8 cells, got 4 cells)
+Link up timeout
+Speed change timeout
+PCIe speed of Gen1
+Override default fdtfile to allwinner/sun60i-a733-cubie-a7z.dtb
+[17.198]libfdt fdt_check_header(): FDT_ERR_BADMAGIC
+[17.204]libfdt fdt_path_offset() returned FDT_ERR_BADMAGIC
+[17.210][mmc]: get sunxi-mmc0 string failed
+[17.214]The storage not support sample function
+[17.220]## error: update_fdt_dram_para_from_bootpara : FDT_ERR_NOTFOUND
+[17.227]chip id : 0x00005100 0x00004900 0x0000c418 0x00002154
+[17.232]mac addr => 08:51:49:dc:75:eb
+[17.236]chip id : 0x00005100 0x00004900 0x0000c418 0x00002154
+[17.241]mac addr => 08:51:49:dc:75:ea
+[17.245]/chosen/rng-seed node not exit
+[17.249]no battery, disabled battery functons
+[17.253]Could not find nodeoffset for bat_supply
+[17.257]update dts
+curr_device:0
+Device: SUNXI SD/MMC
+Manufacturer ID: 3
+OEM: 5344
+Name: SD32G
+Bus Speed: 50000000
+Mode : SD High Speed (50MHz)
+Rd Block Len: 512
+SD version 3.0
+High Capacity: Yes
+Capacity: 29.7 GiB
+Bus Width: 4-bit
+Erase Group Size: 512 Bytes
+[ufs]info:Driver version 0.0.24 2024.12.30 16:00
+[ufs]info:Cal words 0x60:val 0x8e910000, 0x64:val 0x4d1f7d4c
+[ufs]err:uic c 16,uic a 0,1,0
+[ufs]err:e 80000010,0,0,0,0
+[ufs]err:int s 0,400
+[ufs]err:Device not present
+[ufs]err:wait device link startup failed
+[ufs]info:peer link startup timeout
+[ufs]info:Cal words 0x60:val 0x8e910000, 0x64:val 0x4d1f7d4c
+[ufs]err:uic c 16,uic a 0,1,0
+[ufs]err:e 80000010,0,0,0,0
+[ufs]err:int s 0,400
+[ufs]err:Device not present
+[ufs]err:wait device link startup failed
+[ufs]info:peer link startup timeout
+[ufs]info:Cal words 0x60:val 0x8e910000, 0x64:val 0x4d1f7d4c
+[ufs]err:uic c 16,uic a 0,1,0
+[ufs]err:e 80000010,0,0,0,0
+[ufs]err:int s 0,400
+[ufs]err:Device not present
+[ufs]err:wait device link startup failed
+[ufs]info:peer link startup timeout
+[ufs]info:Cal words 0x60:val 0x8e910000, 0x64:val 0x4d1f7d4c
+[ufs]err:uic c 16,uic a 0,1,0
+[ufs]err:e 80000010,0,0,0,0
+[ufs]err:int s 0,400
+[ufs]err:Device not present
+[ufs]err:wait device link startup failed
+[ufs]info:peer link startup timeout
+[ufs]err:link startup failed -6
+[ufs]err:ufshcd_probe() failed -6
+fail to init ufs
+sunxi_flash - sunxi_flash sub-system
+
+Usage:
+sunxi_flash sunxi_flash init storage_type
+sunxi_flash read mem_addr part_name [size]
+sunxi_flash read_mtd mem_addr part_name [size]
+sunxi_flash write <mem_addr> <part_name> [size]
+sunxi_flash write <mem_addr> <part_name> [offset] [size]
+sunxi_flash write_mtd <mem_addr> <part_name>
+sunxi_flash boot0 force_dram_update_size <new_val>
+sunxi_flash boot0 force_dram_update_flag <new_val>
+
+Hit any key to stop autoboot:  0
+starting USB...
+USB0:   start sunxi  USB-DRD...
+config usb clk ok
+sunxi USB-DRD init ok...
+USB EHCI 1.00
+scanning bus 0 for devices... 1 USB Device(s) found
+USB1:   start sunxi  USB1-Host...
+config usb clk ok
+sunxi USB1-Host init ok...
+USB EHCI 1.00
+scanning bus 1 for devices... 1 USB Device(s) found
+       scanning usb for storage devices... 0 Storage Device(s) found
+
+Device 0: device type unknown
+... is now current device
+** Bad device usb 0 **
+** Bad device usb 0 **
+mmc0 is current device
+Scanning mmc 0:2...
+Scanning mmc 0:3...
+Found /boot/extlinux/extlinux.conf
+Retrieving file: /boot/extlinux/extlinux.conf
+196 bytes read in 15 ms (12.7 KiB/s)
+1:      openvela A733 (minimal SD image)
+Retrieving file: /boot/openvela/a733/Image
+1928832 bytes read in 100 ms (18.4 MiB/s)
+Retrieving file: /boot/dtb/sun60i-a733-cubie-a7z.dtb
+193692 bytes read in 25 ms (7.4 MiB/s)
+[22.590]libfdt fdt_path_offset() returned FDT_ERR_BADMAGIC
+[22.599]The storage not support sample function
+[22.686]mac addr => 08:51:49:dc:75:eb
+[22.689]mac addr => 08:51:49:dc:75:ea
+[22.694]no battery, disabled battery functons
+[22.701]update dts
+stop sunxi USB-DRD ok...
+stop sunxi USB1-Host ok...
+[22.726]Starting kernel ...
+
+[22.729]total: 22729 ms
+
+[22.731][mmc]: MMC Device 2 not found
+[22.735][mmc]: mmc 2 not find, so not exit
+NOTICE:  [SCP] :wait arisc ready....
+NOTICE:  [SCP] :arisc version: [d463b9da43dc50320f21ba51c6c51afe2db20d83]
+NOTICE:  [SCP] :arisc startup ready
+NOTICE:  [SCP] :arisc startup notify message feedback
+NOTICE:  [SCP] :sunxi-arisc driver is starting
+NOTICE:  BL3-1: Next image address = 0x40200000
+NOTICE:  BL3-1: Next image spsr = 0x3c5
+- Ready to Boot Primary CPU
+- Boot from EL1
+- Boot to C runtime for OS Initialize
+A7Z0
+A7Z1
+N0
+N1
+H0
+H1
+H2
+H3
+H4
+S0
+S1
+P1
+H5
+N2
+N3
+N4
+ RRedReeRe  - 5-RR a
+yy yo   yeeaaeaayBaddad0 dddyty
+  BB oBB tBt tt ooootB1oo
+t St  eB BootooBto ooooo2ott
+tnceccc  t cSSoSB Se3eoSoee
+oCC     cooodonnon AnSddeCdd0ncP   d
+ACPUUUCPPPn
+ U   PUUd1
+
+C
+
+
+ A
+B oB---B2 U  o -
+  toooB
+B fof of-oo ooBotfto4t t   tr
+mmofL   frfNrorrmorto6o omm E
+LLL11    mrNEEE 1EEL7L
+ 1m1
+1-X
+E
+
+
+ -L--
+oBBB 0B-   1
+ Bootoo
+       ooo ottttto    tttt Coooo     CCCCr u   rrrrntuuuunnnnimtttteiiiimmmm efeee o   frfffoo oorrOrr   S OOO OSSSIS   n IiIIInntnniiiiitttatiiiliiaaaallzllizeeezzz
+    e
+
+
+
+- Boot to C runtime for- O BSo oItni ttioa Cl izruen
+time for OS Initialize
+N8
+X1
+PR
+PR
+PR
+
+NuttShell (NSH)
+nsh> RI
+RX
+
+nsh> poweroff
+......
+
+
+[249]HELLO! BOOT0 is starting!
+[252]BOOT0 commit : {4721ad08}
+[255]board gpio withstand voltage auto mode
+[270]dram_para_total:0xf
+[272]vaild para:6  select dram para10
+[mmc]: mmc driver ver 2025-10-16 17:10
+[mmc]: Wrong media type 0x0
+[mmc]: ***Try SD card 0***
+[mmc]: HSSDR52/SDR25 4 bit
+[mmc]: 50000000 Hz
+[mmc]: 30436 MB
+[mmc]: ***SD/MMC 0 init OK!!!***
+[320]DRAM BOOT DRIVE INFO: V0.601
+[325]DRAM_VCC set to 1100 mv
+[327]DRAM CLK =1800 MHZ
+[330]DRAM Type =8 (8:LPDDR4,9:LPDDR5)
+[435]Training result is = 7
+[437]DRAM Pstate 1 training, frequency is 1200 Mhz
+[550]Training result is = 7
+[553]DRAM Pstate 2 training, frequency is 800 Mhz
+[763]Training result is = 7
+[766]DRAM Pstate 3 training, frequency is 400 Mhz
+[4009]Training result is = 7
+[4012]DRAM Pstate 0 training, frequency is 1800 Mhz
+[4020]Actual DRAM SIZE =4096 M
+[4023]DRAM SIZE =4096 MBytes, para1 = 310a, para2 = 10001001, dram_tpr13 = 6067
+[4038]DRAM simple test OK.
+[4043]error:bad magic.
+[4107]error: dtb not found for scp
+[4111]mmc not para
+[4113]Jump to ATF: monitor_base = 0x48000000, uboot_base = 0x4a000000, optee_base = 0x0
+NOTICE:  BL31: OP-TEE 32bit detected
+NOTICE:  BL31: U-BOOT 32bit detected
+NOTICE:  BL31: dram size is 4294967296 bytes
+NOTICE:  BL31: v2.5(debug):48e54578a
+NOTICE:  BL31: Built : 14:13:06, Jul  2 2025
+NOTICE:  BL31: No DTB found.
+ERROR:   Error initializing runtime service opteed_fast
+
+
+U-Boot 2018.07-17-boot-aw2501-g4c7078cfdf7-dirty (Apr 29 2026 - 10:03:59 +0000) Allwinner Technology
+
+[04.169]CPU:   Allwinner Family
+[04.172]Model: Radxa Cubie A7A
+I2C:   ready
+[04.235]DRAM:  4 GiB
+[04.244]Relocation Offset is: 75d89000
+[04.298]secure enable bit: 0
+[04.301]PMU: AXP8191
+[04.303]PMU: AXP8191 VER_A
+FDT ERROR:fdt_get_regulator_name:get property handle twi-supply error:FDT_ERR_INTERNAL
+[04.315]bmu_axp515_probe pmic_bus_read fail
+[04.319][AXP8191] onoff status: 0x50 = 0x1, 0x51 = 0x0
+[04.324][AXP8191] charge status: 0x4 = 0x0
+[04.328]CPU=1014 MHz,PLL6=1200 Mhz,AHB=200 Mhz, APB1=24Mhz  MBus=600Mhz
+[04.334]gic: sec monitor mode
+SPI ALL:   ready
+[04.378]flash init start
+[04.380]workmode = 0,storage type = 1
+[04.384][mmc]: mmc driver ver uboot2018:2024-10-18 9:01:00 -- uboot2018:2025-03-28 10:03:00
+[04.392][mmc]: get sdc_type fail and use default host:tm1.
+[04.400][mmc]: can't find node "mmc0",will add new node
+[04.405][mmc]: fdt err returned <no error>
+[04.408][mmc]: Using default timing para
+[04.412][mmc]: SUNXI SDMMC Controller Version:0x50530
+[04.440][mmc]: card_caps:0x3000000a
+[04.443][mmc]: host_caps:0x3000003f
+[04.449]sunxi flash init ok
+get value error
+[04.460]Loading Environment from SUNXI_FLASH... OK
+No ethernet found.
+[04.498]NOT support bridge yet
+[04.500]Warn: no find panel or bridge
+[04.505]hdmi0@5520000 disconnected
+[04.508]drm hdmi get mode: 1920x1080@60Hz
+hdmi0@5520000: use force output detailed mode clock 148500 kHz, flags[5]
+    H: 1920 2008 2052 2200
+    V: 1080 1084 1089 1125
+bus_format: 0
+partno erro : can't find partition bootloader
+[04.537]bootloader is not found!
+partno erro : can't find partition boot-resource
+[04.546]boot-resource is not found!
+[04.549]Can not load logo.bmp file!
+[04.552]load logo fail
+[04.561]the secure storage item0 copy0 magic is bad
+[04.573]the secure storage item0 copy1 magic is bad
+[04.578]usb burn from boot
+delay time 0
+[04.584]usb prepare ok
+[04.887]overtime
+[04.891]do_burn_from_boot usb : no usb exist
+skip update boot_param
+cann't get the boot_base from the env
+[04.902]update part info
+[04.907]battery temp is -1
+[04.912]update bootcmd
+[04.920](not enough data: expected >= 8 cells, got 4 cells)
+Link up timeout
+Speed change timeout
+PCIe speed of Gen1
+Override default fdtfile to allwinner/sun60i-a733-cubie-a7z.dtb
+[07.362]libfdt fdt_check_header(): FDT_ERR_BADMAGIC
+[07.368]libfdt fdt_path_offset() returned FDT_ERR_BADMAGIC
+[07.373][mmc]: get sunxi-mmc0 string failed
+[07.378]The storage not support sample function
+[07.384]## error: update_fdt_dram_para_from_bootpara : FDT_ERR_NOTFOUND
+[07.391]chip id : 0x00005100 0x00004900 0x0000c418 0x00002154
+[07.396]mac addr => 08:51:49:dc:75:eb
+[07.399]chip id : 0x00005100 0x00004900 0x0000c418 0x00002154
+[07.405]mac addr => 08:51:49:dc:75:ea
+[07.409]/chosen/rng-seed node not exit
+[07.412]no battery, disabled battery functons
+[07.417]Could not find nodeoffset for bat_supply
+[07.421]update dts
+curr_device:0
+Device: SUNXI SD/MMC
+Manufacturer ID: 3
+OEM: 5344
+Name: SD32G
+Bus Speed: 50000000
+Mode : SD High Speed (50MHz)
+Rd Block Len: 512
+SD version 3.0
+High Capacity: Yes
+Capacity: 29.7 GiB
+Bus Width: 4-bit
+Erase Group Size: 512 Bytes
+[ufs]info:Driver version 0.0.24 2024.12.30 16:00
+[ufs]info:Cal words 0x60:val 0x8e910000, 0x64:val 0x4d1f7d4c
+[ufs]err:uic c 16,uic a 0,1,0
+[ufs]err:e 80000010,0,0,0,0
+[ufs]err:int s 0,400
+[ufs]err:Device not present
+[ufs]err:wait device link startup failed
+[ufs]info:peer link startup timeout
+[ufs]info:Cal words 0x60:val 0x8e910000, 0x64:val 0x4d1f7d4c
+[ufs]err:uic c 16,uic a 0,1,0
+[ufs]err:e 80000010,0,0,0,0
+[ufs]err:int s 0,400
+[ufs]err:Device not present
+[ufs]err:wait device link startup failed
+[ufs]info:peer link startup timeout
+[ufs]info:Cal words 0x60:val 0x8e910000, 0x64:val 0x4d1f7d4c
+[ufs]err:uic c 16,uic a 0,1,0
+[ufs]err:e 80000010,0,0,0,0
+[ufs]err:int s 0,400
+[ufs]err:Device not present
+[ufs]err:wait device link startup failed
+[ufs]info:peer link startup timeout
+[ufs]info:Cal words 0x60:val 0x8e910000, 0x64:val 0x4d1f7d4c
+[ufs]err:uic c 16,uic a 0,1,0
+[ufs]err:e 80000010,0,0,0,0
+[ufs]err:int s 0,400
+[ufs]err:Device not present
+[ufs]err:wait device link startup failed
+[ufs]info:peer link startup timeout
+[ufs]err:link startup failed -6
+[ufs]err:ufshcd_probe() failed -6
+fail to init ufs
+sunxi_flash - sunxi_flash sub-system
+
+Usage:
+sunxi_flash sunxi_flash init storage_type
+sunxi_flash read mem_addr part_name [size]
+sunxi_flash read_mtd mem_addr part_name [size]
+sunxi_flash write <mem_addr> <part_name> [size]
+sunxi_flash write <mem_addr> <part_name> [offset] [size]
+sunxi_flash write_mtd <mem_addr> <part_name>
+sunxi_flash boot0 force_dram_update_size <new_val>
+sunxi_flash boot0 force_dram_update_flag <new_val>
+
+Hit any key to stop autoboot:  0
+starting USB...
+USB0:   start sunxi  USB-DRD...
+config usb clk ok
+sunxi USB-DRD init ok...
+USB EHCI 1.00
+scanning bus 0 for devices... 1 USB Device(s) found
+USB1:   start sunxi  USB1-Host...
+config usb clk ok
+sunxi USB1-Host init ok...
+USB EHCI 1.00
+scanning bus 1 for devices... 1 USB Device(s) found
+       scanning usb for storage devices... 0 Storage Device(s) found
+
+Device 0: device type unknown
+... is now current device
+** Bad device usb 0 **
+** Bad device usb 0 **
+mmc0 is current device
+Scanning mmc 0:2...
+Scanning mmc 0:3...
+Found /boot/extlinux/extlinux.conf
+Retrieving file: /boot/extlinux/extlinux.conf
+196 bytes read in 15 ms (12.7 KiB/s)
+1:      openvela A733 (minimal SD image)
+Retrieving file: /boot/openvela/a733/Image
+1928832 bytes read in 100 ms (18.4 MiB/s)
+Retrieving file: /boot/dtb/sun60i-a733-cubie-a7z.dtb
+193692 bytes read in 25 ms (7.4 MiB/s)
+[12.753]libfdt fdt_path_offset() returned FDT_ERR_BADMAGIC
+[12.762]The storage not support sample function
+[12.849]mac addr => 08:51:49:dc:75:eb
+[12.852]mac addr => 08:51:49:dc:75:ea
+[12.857]no battery, disabled battery functons
+[12.864]update dts
+stop sunxi USB-DRD ok...
+stop sunxi USB1-Host ok...
+[12.890]Starting kernel ...
+
+[12.893]total: 12893 ms
+
+[12.895][mmc]: MMC Device 2 not found
+[12.899][mmc]: mmc 2 not find, so not exit
+NOTICE:  [SCP] :wait arisc ready....
+NOTICE:  [SCP] :arisc version: [d463b9da43dc50320f21ba51c6c51afe2db20d83]
+NOTICE:  [SCP] :arisc startup ready
+NOTICE:  [SCP] :arisc startup notify message feedback
+NOTICE:  [SCP] :sunxi-arisc driver is starting
+NOTICE:  BL3-1: Next image address = 0x40200000
+NOTICE:  BL3-1: Next image spsr = 0x3c5
+- Ready to Boot Primary CPU
+- Boot from EL1
+- Boot to C runtime for OS Initialize
+A7Z0
+A7Z1
+N0
+N1
+H0
+H1
+H2
+H3
+H4
+S0
+S1
+P1
+H5
+N2
+N3
+N4
+R e-R--N 5   e--RaRR
+y  yo  dRaaeayeBad addad0dyydyyt
+    otoBBBooB otBoo1 o
+toSto et    B oooBB otooBooo2 tto
+cScodo      cStSBSSS 3eeoeececn
+dP n  UC CCdCncn od0dCondd
+PPU          CPP AP
+   CU1UUPU
+
+
+
+U
+ A----B
+  o
+BBB- oBo
+r  tffoffot ooBoB oooof4totttoo  t
+r L  mo  N mrrrfr ooo6orfmmmEom
+LL1     EE NEmE1LLEL7
+11LE1
+1
+ X
+
+
+   0
+B  o--B--
+ BBoB
+     oootoo ooottttt  o  tt ttooCoo     CCCrC    unrrrruuuutnninnttmttiiieimmm meeefe  o  ffrffoo oorrOrr   S OOO OSSSSI n   iIIIItnnnniiiiiattttiiiilaiaaalzlzzzzeeee
+
+
+
+
+- Boot to C runtime fo- r BoOSot I tnio tCia rliunzeti
+me for OS Initialize
+N8
+X1
+PR
+PR
+PR
+
+NuttShell (NSH)
+nsh> RI
+RX
+
+nsh> ls -l /data/models
+/data/models:
+ -rw-rw-rw-          33 transfer-check.txt
+ -rw-rw-rw-  1117320736 qwen2.5-1.5b-instruct-q4_k_m.gguf
+nsh> aipet local status
+local-llm: on model='/data/models/qwen2.5-1.5b-instruct-q4_k_m.gguf' model-file=ready tokens=32 cores=fc
+llm-cache: state=empty bytes=0 path=''
+llm-pool: pid=0 mask=00 workers=0 created=0 matrices=0
+nsh> free
+      total       used       free    maxused    maxfree  nused  nfree name
+ 4240146432      52752 4240093680      55568 4143972320     93      4 Umem
+nsh> time "aipet local preload"
+local-llm: warming model; first SD load can take about three minutes
+qwen2-bpe path=/data/models/qwen2.5-1.5b-instruct-q4_k_m.gguf vocab=151936 merges=151387 prompt-bytes=226 spans=15
+tokens=55 ids=8948,198,105043,104001,18493,2508,889,64,101044,101913,15469,100299,101532,30709,99890,1773,11622,99795,5373,98237,99534,9370,104811,102104,3837,100148,30868,66078,100639,59151,3837,100148,66017,68005,24968,104964,111749,37029,46944,104405,105151,3837,77557,58,102313,60,5373,58,104107,60,57191,58,100714,60,1773
+Qwen2 pre-tokenizer and byte-level BPE checkpoint passed; full Unicode category audit pending.
+qwen2-bpe path=/data/models/qwen2.5-1.5b-instruct-q4_k_m.gguf vocab=151936 merges=151387 prompt-bytes=1 spans=1
+tokens=1 ids=198
+Qwen2 pre-tokenizer and byte-level BPE checkpoint passed; full Unicode category audit pending.
+qwen2-bpe path=/data/models/qwen2.5-1.5b-instruct-q4_k_m.gguf vocab=151936 merges=151387 prompt-bytes=5 spans=2
+tokens=2 ids=872,198
+Qwen2 pre-tokenizer and byte-level BPE checkpoint passed; full Unicode category audit pending.
+qwen2-bpe path=/data/models/qwen2.5-1.5b-instruct-q4_k_m.gguf vocab=151936 merges=151387 prompt-bytes=15 spans=2
+tokens=4 ids=91680,102104,5122,52801
+Qwen2 pre-tokenizer and byte-level BPE checkpoint passed; full Unicode category audit pending.
+qwen2-bpe path=/data/models/qwen2.5-1.5b-instruct-q4_k_m.gguf vocab=151936 merges=151387 prompt-bytes=1 spans=1
+tokens=1 ids=198
+Qwen2 pre-tokenizer and byte-level BPE checkpoint passed; full Unicode category audit pending.
+qwen2-bpe path=/data/models/qwen2.5-1.5b-instruct-q4_k_m.gguf vocab=151936 merges=151387 prompt-bytes=10 spans=2
+tokens=2 ids=77091,198
+Qwen2 pre-tokenizer and byte-level BPE checkpoint passed; full Unicode category audit pending.
+chatml tokens=70 start=151644 stop=151645 single-turn=1
+forwardfast: cores-mask=fc workers=6; A76:A55 row weight=3:1; system scheduling unchanged
+forwardfast: loading 1117320736 bytes into RAM
+forwardfast: load=175.4459 sec; model reads now RAM-only
+forward1 token=151644 layers=28 hidden=1536 heads=12/2
+forward2 position=0 token=151644
+forward2 position=1 token=8948
+forward2 position=2 token=198
+forward2 position=3 token=105043
+forward2 position=4 token=104001
+forward2 position=5 token=18493
+forward2 position=6 token=2508
+forward2 position=7 token=889
+forward2 position=8 token=64
+forward2 position=9 token=101044
+forward2 position=10 token=101913
+forward2 position=11 token=15469
+forward2 position=12 token=100299
+forward2 position=13 token=101532
+forward2 position=14 token=30709
+forward2 position=15 token=99890
+forward2 position=16 token=1773
+forward2 position=17 token=11622
+forward2 position=18 token=99795
+forward2 position=19 token=5373
+forward2 position=20 token=98237
+forward2 position=21 token=99534
+forward2 position=22 token=9370
+forward2 position=23 token=104811
+forward2 position=24 token=102104
+forward2 position=25 token=3837
+forward2 position=26 token=100148
+forward2 position=27 token=30868
+forward2 position=28 token=66078
+forward2 position=29 token=100639
+forward2 position=30 token=59151
+forward2 position=31 token=3837
+forward2 position=32 token=100148
+forward2 position=33 token=66017
+forward2 position=34 token=68005
+forward2 position=35 token=24968
+forward2 position=36 token=104964
+forward2 position=37 token=111749
+forward2 position=38 token=37029
+forward2 position=39 token=46944
+forward2 position=40 token=104405
+forward2 position=41 token=105151
+forward2 position=42 token=3837
+forward2 position=43 token=77557
+forward2 position=44 token=58
+forward2 position=45 token=102313
+forward2 position=46 token=60
+forward2 position=47 token=5373
+forward2 position=48 token=58
+forward2 position=49 token=104107
+forward2 position=50 token=60
+forward2 position=51 token=57191
+forward2 position=52 token=58
+forward2 position=53 token=100714
+forward2 position=54 token=60
+forward2 position=55 token=1773
+forward2 position=56 token=151645
+forward2 position=57 token=198
+forward2 position=58 token=151644
+forward2 position=59 token=872
+forward2 position=60 token=198
+forward2 position=61 token=91680
+forward2 position=62 token=102104
+forward2 position=63 token=5122
+forward2 position=64 token=52801
+forward2 position=65 token=151645
+forward2 position=66 token=198
+forward2 position=67 token=151644
+forward2 position=68 token=77091
+forward2 position=69 token=198
+
+assistant>
+Qwen2 causal prefill/generation passed; prompt=70 generated=2; KV session released on return
+forwardfast: compute=25.1135 sec; causal forward checkpoint; model resident; bounded generation finished
+forwardfast: cache retained; use aipetllm unload to free
+aipet-local: prompt=70 generated=2 first=23.987s rest=0.938s cores=fc
+local-llm: preload ready (0)
+
+221.4108 sec
+nsh> aipet local status
+local-llm: on model='/data/models/qwen2.5-1.5b-instruct-q4_k_m.gguf' model-file=ready tokens=32 cores=fc
+llm-cache: state=resident bytes=1117320736 path='/data/models/qwen2.5-1.5b-instruct-q4_k_m.gguf'
+llm-pool: pid=15 mask=fc workers=6 created=6 matrices=14115
+nsh> free
+      total       used       free    maxused    maxfree  nused  nfree name
+ 4240146432 1117499520 3122646912 1128146688 3026651568    109      7 Umem
+nsh> time "aipet local ask \"请只回答：本地LLM链路测试成功\""
+qwen2-bpe path=/data/models/qwen2.5-1.5b-instruct-q4_k_m.gguf vocab=151936 merges=151387 prompt-bytes=226 spans=15
+tokens=55 ids=8948,198,105043,104001,18493,2508,889,64,101044,101913,15469,100299,101532,30709,99890,1773,11622,99795,5373,98237,99534,9370,104811,102104,3837,100148,30868,66078,100639,59151,3837,100148,66017,68005,24968,104964,111749,37029,46944,104405,105151,3837,77557,58,102313,60,5373,58,104107,60,57191,58,100714,60,1773
+Qwen2 pre-tokenizer and byte-level BPE checkpoint passed; full Unicode category audit pending.
+qwen2-bpe path=/data/models/qwen2.5-1.5b-instruct-q4_k_m.gguf vocab=151936 merges=151387 prompt-bytes=1 spans=1
+tokens=1 ids=198
+Qwen2 pre-tokenizer and byte-level BPE checkpoint passed; full Unicode category audit pending.
+qwen2-bpe path=/data/models/qwen2.5-1.5b-instruct-q4_k_m.gguf vocab=151936 merges=151387 prompt-bytes=5 spans=2
+tokens=2 ids=872,198
+Qwen2 pre-tokenizer and byte-level BPE checkpoint passed; full Unicode category audit pending.
+qwen2-bpe path=/data/models/qwen2.5-1.5b-instruct-q4_k_m.gguf vocab=151936 merges=151387 prompt-bytes=42 spans=2
+tokens=11 ids=14880,91680,102104,5122,104603,4086,44,63314,45995,81705,19108
+Qwen2 pre-tokenizer and byte-level BPE checkpoint passed; full Unicode category audit pending.
+qwen2-bpe path=/data/models/qwen2.5-1.5b-instruct-q4_k_m.gguf vocab=151936 merges=151387 prompt-bytes=1 spans=1
+tokens=1 ids=198
+Qwen2 pre-tokenizer and byte-level BPE checkpoint passed; full Unicode category audit pending.
+qwen2-bpe path=/data/models/qwen2.5-1.5b-instruct-q4_k_m.gguf vocab=151936 merges=151387 prompt-bytes=10 spans=2
+tokens=2 ids=77091,198
+Qwen2 pre-tokenizer and byte-level BPE checkpoint passed; full Unicode category audit pending.
+chatml tokens=77 start=151644 stop=151645 single-turn=1
+forwardfast: cores-mask=fc workers=6; A76:A55 row weight=3:1; system scheduling unchanged
+forwardfast: cache-hit; load=0 sec; no model SD reads
+forward1 token=151644 layers=28 hidden=1536 heads=12/2
+forward2 position=0 token=151644
+forward2 position=1 token=8948
+forward2 position=2 token=198
+forward2 position=3 token=105043
+forward2 position=4 token=104001
+forward2 position=5 token=18493
+forward2 position=6 token=2508
+forward2 position=7 token=889
+forward2 position=8 token=64
+forward2 position=9 token=101044
+forward2 position=10 token=101913
+forward2 position=11 token=15469
+forward2 position=12 token=100299
+forward2 position=13 token=101532
+forward2 position=14 token=30709
+forward2 position=15 token=99890
+forward2 position=16 token=1773
+forward2 position=17 token=11622
+forward2 position=18 token=99795
+forward2 position=19 token=5373
+forward2 position=20 token=98237
+forward2 position=21 token=99534
+forward2 position=22 token=9370
+forward2 position=23 token=104811
+forward2 position=24 token=102104
+forward2 position=25 token=3837
+forward2 position=26 token=100148
+forward2 position=27 token=30868
+forward2 position=28 token=66078
+forward2 position=29 token=100639
+forward2 position=30 token=59151
+forward2 position=31 token=3837
+forward2 position=32 token=100148
+forward2 position=33 token=66017
+forward2 position=34 token=68005
+forward2 position=35 token=24968
+forward2 position=36 token=104964
+forward2 position=37 token=111749
+forward2 position=38 token=37029
+forward2 position=39 token=46944
+forward2 position=40 token=104405
+forward2 position=41 token=105151
+forward2 position=42 token=3837
+forward2 position=43 token=77557
+forward2 position=44 token=58
+forward2 position=45 token=102313
+forward2 position=46 token=60
+forward2 position=47 token=5373
+forward2 position=48 token=58
+forward2 position=49 token=104107
+forward2 position=50 token=60
+forward2 position=51 token=57191
+forward2 position=52 token=58
+forward2 position=53 token=100714
+forward2 position=54 token=60
+forward2 position=55 token=1773
+forward2 position=56 token=151645
+forward2 position=57 token=198
+forward2 position=58 token=151644
+forward2 position=59 token=872
+forward2 position=60 token=198
+forward2 position=61 token=14880
+forward2 position=62 token=91680
+forward2 position=63 token=102104
+forward2 position=64 token=5122
+forward2 position=65 token=104603
+forward2 position=66 token=4086
+forward2 position=67 token=44
+forward2 position=68 token=63314
+forward2 position=69 token=45995
+forward2 position=70 token=81705
+forward2 position=71 token=19108
+forward2 position=72 token=151645
+forward2 position=73 token=198
+forward2 position=74 token=151644
+forward2 position=75 token=77091
+forward2 position=76 token=198
+
+assistant>
+Qwen2 causal prefill/generation passed; prompt=77 generated=7; KV session released on return
+forwardfast: compute=30.4857 sec; causal forward checkpoint; model resident; bounded generation finished
+aipet-local: prompt=77 generated=7 first=26.895s rest=3.403s cores=fc
+本地LLM链路测试成功
+[emotion=普通 actions=0]
+[route=local_llm fallback=0 elapsed=58398 ms]
+
+58.4027 sec
+nsh> aipet ask "请只回答：云端链路正常"
+qwen2-bpe path=/data/models/qwen2.5-1.5b-instruct-q4_k_m.gguf vocab=151936 merges=151387 prompt-bytes=226 spans=15
+tokens=55 ids=8948,198,105043,104001,18493,2508,889,64,101044,101913,15469,100299,101532,30709,99890,1773,11622,99795,5373,98237,99534,9370,104811,102104,3837,100148,30868,66078,100639,59151,3837,100148,66017,68005,24968,104964,111749,37029,46944,104405,105151,3837,77557,58,102313,60,5373,58,104107,60,57191,58,100714,60,1773
+Qwen2 pre-tokenizer and byte-level BPE checkpoint passed; full Unicode category audit pending.
+qwen2-bpe path=/data/models/qwen2.5-1.5b-instruct-q4_k_m.gguf vocab=151936 merges=151387 prompt-bytes=1 spans=1
+tokens=1 ids=198
+Qwen2 pre-tokenizer and byte-level BPE checkpoint passed; full Unicode category audit pending.
+qwen2-bpe path=/data/models/qwen2.5-1.5b-instruct-q4_k_m.gguf vocab=151936 merges=151387 prompt-bytes=5 spans=2
+tokens=2 ids=872,198
+Qwen2 pre-tokenizer and byte-level BPE checkpoint passed; full Unicode category audit pending.
+qwen2-bpe path=/data/models/qwen2.5-1.5b-instruct-q4_k_m.gguf vocab=151936 merges=151387 prompt-bytes=33 spans=2
+tokens=8 ids=14880,91680,102104,5122,114062,63314,45995,100416
+Qwen2 pre-tokenizer and byte-level BPE checkpoint passed; full Unicode category audit pending.
+qwen2-bpe path=/data/models/qwen2.5-1.5b-instruct-q4_k_m.gguf vocab=151936 merges=151387 prompt-bytes=1 spans=1
+tokens=1 ids=198
+Qwen2 pre-tokenizer and byte-level BPE checkpoint passed; full Unicode category audit pending.
+qwen2-bpe path=/data/models/qwen2.5-1.5b-instruct-q4_k_m.gguf vocab=151936 merges=151387 prompt-bytes=10 spans=2
+tokens=2 ids=77091,198
+Qwen2 pre-tokenizer and byte-level BPE checkpoint passed; full Unicode category audit pending.
+chatml tokens=74 start=151644 stop=151645 single-turn=1
+forwardfast: cores-mask=fc workers=6; A76:A55 row weight=3:1; system scheduling unchanged
+forwardfast: cache-hit; load=0 sec; no model SD reads
+forward1 token=151644 layers=28 hidden=1536 heads=12/2
+forward2 position=0 token=151644
+forward2 position=1 token=8948
+forward2 position=2 token=198
+forward2 position=3 token=105043
+forward2 position=4 token=104001
+forward2 position=5 token=18493
+forward2 position=6 token=2508
+forward2 position=7 token=889
+forward2 position=8 token=64
+forward2 position=9 token=101044
+forward2 position=10 token=101913
+forward2 position=11 token=15469
+forward2 position=12 token=100299
+forward2 position=13 token=101532
+forward2 position=14 token=30709
+forward2 position=15 token=99890
+forward2 position=16 token=1773
+forward2 position=17 token=11622
+forward2 position=18 token=99795
+forward2 position=19 token=5373
+forward2 position=20 token=98237
+forward2 position=21 token=99534
+forward2 position=22 token=9370
+forward2 position=23 token=104811
+forward2 position=24 token=102104
+forward2 position=25 token=3837
+forward2 position=26 token=100148
+forward2 position=27 token=30868
+forward2 position=28 token=66078
+forward2 position=29 token=100639
+forward2 position=30 token=59151
+forward2 position=31 token=3837
+forward2 position=32 token=100148
+forward2 position=33 token=66017
+forward2 position=34 token=68005
+forward2 position=35 token=24968
+forward2 position=36 token=104964
+forward2 position=37 token=111749
+forward2 position=38 token=37029
+forward2 position=39 token=46944
+forward2 position=40 token=104405
+forward2 position=41 token=105151
+forward2 position=42 token=3837
+forward2 position=43 token=77557
+forward2 position=44 token=58
+forward2 position=45 token=102313
+forward2 position=46 token=60
+forward2 position=47 token=5373
+forward2 position=48 token=58
+forward2 position=49 token=104107
+forward2 position=50 token=60
+forward2 position=51 token=57191
+forward2 position=52 token=58
+forward2 position=53 token=100714
+forward2 position=54 token=60
+forward2 position=55 token=1773
+forward2 position=56 token=151645
+forward2 position=57 token=198
+forward2 position=58 token=151644
+forward2 position=59 token=872
+forward2 position=60 token=198
+forward2 position=61 token=14880
+forward2 position=62 token=91680
+forward2 position=63 token=102104
+forward2 position=64 token=5122
+forward2 position=65 token=114062
+forward2 position=66 token=63314
+forward2 position=67 token=45995
+forward2 position=68 token=100416
+forward2 position=69 token=151645
+forward2 position=70 token=198
+forward2 position=71 token=151644
+forward2 position=72 token=77091
+forward2 position=73 token=198
+
+assistant>
+Qwen2 causal prefill/generation passed; prompt=74 generated=4; KV session released on return
+forwardfast: compute=27.6672 sec; causal forward checkpoint; model resident; bounded generation finished
+aipet-local: prompt=74 generated=4 first=25.569s rest=1.909s cores=fc
+云端链路正常
+[emotion=普通 actions=0]
+[route=local_llm fallback=0 elapsed=55664 ms]
+nsh> wifi connect 706E
+Scanning 2.4/5 GHz...
+[0] 5G   5785 MHz  -61 dBm  Nuc-Student
+[1] 5G   5785 MHz  -61 dBm  Nuc-Teacher-Auto
+[2] 5G   5745 MHz  -40 dBm  706E
+[3] 5G   5180 MHz  -83 dBm  Nuc-Student
+[4] 5G   5180 MHz  -83 dBm  Nuc-Teacher-Auto
+[5] 2.4G 2432 MHz  -71 dBm  Nuc-Teacher-Auto
+[6] 2.4G 2432 MHz  -70 dBm  Nuc-Teacher
+[7] 2.4G 2432 MHz  -72 dBm  Nuc-Student
+[8] 2.4G 2412 MHz  -53 dBm  vivoX200s
+[9] 2.4G 2412 MHz  -76 dBm  lat11111111
+[10] 2.4G 2412 MHz  -78 dBm  lat11111111
+WPA2 passphrase:
+Associating, completing WPA2 and waiting for DHCP...
+Connected; WPA2 and DHCP passed.
+NTP background task pid=52; SSH can be used now.
+Use 'wifi time' / 'ntpcstatus' to check time before HTTPS.
+nsh> aipet init
+Online setup: DeepSeek or MiMo. API key is hidden and encrypted on this board.
+Provider [1=deepseek (default), 2=mimo]: 1
+Default model: deepseek-flash
+Model name [Enter=default, or custom name]:
+API key (hidden):
+agent autostart on; applies next boot (running tasks unchanged).
+Configuration saved. Waiting for network/clock/CA; future boots start automatically.
+nsh> aipet ask "请只回答：云端链路正常"
+云端链路正常
+[emotion=普通 actions=0]
+[route=cloud fallback=0 elapsed=1786 ms]
+nsh> aipet ask "请只回答：桌宠语音链路测试成功"
+桌宠语音链路测试成功
+[emotion=开心 actions=0]
+[route=cloud fallback=0 elapsed=918 ms]
+nsh> cat /dev/a744-uart4
+nsh: cat: open failed: 2
+nsh> la /dev
+nsh: la: command not found
+nsh> ls /dev
+/dev:
+ a733-audio
+ a733-hw
+ a733-npu
+ a733-uart4
+ a733-uvc
+ a733-wifi
+ a7z-data
+ a7z-efi
+ a7z-firmware
+ a7z-openvela
+ a7zconsole
+ console
+ i2c2
+ i2c7
+ kmsg
+ mmcsd0
+ npu0
+ null
+ ptmx
+ pwm0
+ random
+ sdcard
+ spi1
+ ttyS0
+ ttyS4
+ uorb/
+ urandom
+ userled
+ watchdog0
+ zero
+nsh> ls /dev/a733-uart4
+ /dev/a733-uart4
+nsh> cat /dev/a733-uart4
+A733 UART4 TW-TTS checkpoint
+node: /dev/ttyS4 baud=9600 format=8N1 polling=1
+clock: apb-uart=00000000 source=0 divider=0 bgr=00010001 gate=1 reset=1
+pins: PJ24=TX/function4 PJ25=RX/function4 cfg3=0000ff44
+regs: lcr=00000003 lsr=00000060 thre=1 usr=00000006 tfnf=1
+expected: source=0 divider=0 gate=1 reset=1 functions=4/4 and thre-or-tfnf=1
+nsh> dmesg
+0
+[   16.375321] [CPU0] [ 9] nsh_main: A733 WIFI: interface=1 alt=0 class=e0/01/01 endpoints=2
+[   16.375357] [CPU0] [ 9] nsh_main: A733 WIFI: endpoint=85 attr=01 maxpacket=0 interval=4 interface=1/0
+[   16.375398] [CPU0] [ 9] nsh_main: A733 WIFI: endpoint=05 attr=01 maxpacket=0 interval=4 interface=1/0
+[   16.375439] [CPU0] [ 9] nsh_main: A733 WIFI: interface=1 alt=1 class=e0/01/01 endpoints=2
+[   16.375476] [CPU0] [ 9] nsh_main: A733 WIFI: endpoint=85 attr=01 maxpacket=9 interval=4 interface=1/1
+[   16.375516] [CPU0] [ 9] nsh_main: A733 WIFI: endpoint=05 attr=01 maxpacket=9 interval=4 interface=1/1
+[   16.375557] [CPU0] [ 9] nsh_main: A733 WIFI: interface=1 alt=2 class=e0/01/01 endpoints=2
+[   16.375594] [CPU0] [ 9] nsh_main: A733 WIFI: endpoint=85 attr=01 maxpacket=17 interval=4 interface=1/2
+[   16.375635] [CPU0] [ 9] nsh_main: A733 WIFI: endpoint=05 attr=01 maxpacket=17 interval=4 interface=1/2
+[   16.375676] [CPU0] [ 9] nsh_main: A733 WIFI: interface=1 alt=3 class=e0/01/01 endpoints=2
+[   16.375713] [CPU0] [ 9] nsh_main: A733 WIFI: endpoint=85 attr=01 maxpacket=25 interval=4 interface=1/3
+[   16.375754] [CPU0] [ 9] nsh_main: A733 WIFI: endpoint=05 attr=01 maxpacket=25 interval=4 interface=1/3
+[   16.375795] [CPU0] [ 9] nsh_main: A733 WIFI: interface=1 alt=4 class=e0/01/01 endpoints=2
+[   16.375831] [CPU0] [ 9] nsh_main: A733 WIFI: endpoint=85 attr=01 maxpacket=33 interval=4 interface=1/4
+[   16.375873] [CPU0] [ 9] nsh_main: A733 WIFI: endpoint=05 attr=01 maxpacket=33 interval=4 interface=1/4
+[   16.375914] [CPU0] [ 9] nsh_main: A733 WIFI: interface=1 alt=5 class=e0/01/01 endpoints=2
+[   16.375950] [CPU0] [ 9] nsh_main: A733 WIFI: endpoint=85 attr=01 maxpacket=49 interval=4 interface=1/5
+[   16.375992] [CPU0] [ 9] nsh_main: A733 WIFI: endpoint=05 attr=01 maxpacket=49 interval=4 interface=1/5
+[   16.376034] [CPU0] [ 9] nsh_main: A733 WIFI: interface=2 alt=0 class=ff/ff/ff endpoints=4
+[   16.376071] [CPU0] [ 9] nsh_main: A733 WIFI: endpoint=01 attr=02 maxpacket=512 interval=0 interface=2/0
+[   16.376112] [CPU0] [ 9] nsh_main: A733 WIFI: endpoint=81 attr=02 maxpacket=512 interval=0 interface=2/0
+[   16.376154] [CPU0] [ 9] nsh_main: A733 WIFI: endpoint=02 attr=02 maxpacket=512 interval=0 interface=2/0
+[   16.376196] [CPU0] [ 9] nsh_main: A733 WIFI: endpoint=82 attr=02 maxpacket=512 interval=0 interface=2/0
+[   16.387243] [CPU0] [ 9] nsh_main: A733 WIFI: USB enumeration passed config=1 interfaces=3 descriptors=8 endpoints=19 total=222
+[   16.387294] [CPU0] [ 9] nsh_main: A733 WIFI: runtime map WLAN data=01/01 msg=02/02 BT event=03 ACL=04/04
+[   16.399004] [CPU0] [ 9] nsh_main: A733 WIFI: runtime MM_VERSION passed lmac=06090101 machw=0002fdfb/00014047 phy=5ee24111/01020000 features=01e877d7 sta=32 vif=4
+[   16.404004] [CPU0] [ 9] nsh_main: A733 WIFI: LMAC stack start passed 5g=1 vendor=00
+[   16.409003] [CPU0] [ 9] nsh_main: A733 WIFI: efuse MAC f4:ab:5c:e1:dc:5e
+[   16.409034] [CPU0] [ 9] nsh_main: A733 WIFI: LMAC stack checkpoint (0)
+[   17.806003] [CPU0] [ 9] nsh_main: A733 WIFI: RF calibration passed rx=00175a64/00175cf8 tx=0017683c/001769c4
+[   17.806047] [CPU0] [ 9] nsh_main: A733 WIFI: RF configuration checkpoint (0)
+[   17.815003] [CPU0] [ 9] nsh_main: A733 WIFI: runtime MM_VERSION passed lmac=06090101 machw=0002fdfb/00014047 phy=5ee24111/01020000 features=01e877d7 sta=32 vif=4
+[   17.820003] [CPU0] [ 9] nsh_main: A733 WIFI: ME configuration passed HT=1 VHT=0 HE=0 BW=40 PS=0 cfm=0
+[   17.820043] [CPU0] [ 9] nsh_main: A733 WIFI: ME configuration checkpoint (0)
+[   17.825003] [CPU0] [ 9] nsh_main: A733 WIFI: CN channel table passed 2g=14 5g=25 cfm=0
+[   17.825037] [CPU0] [ 9] nsh_main: A733 WIFI: regulatory channel checkpoint (0)
+[   17.830004] [CPU0] [ 9] nsh_main: A733 WIFI: station VIF passed index=0 MAC=f4:ab:5c:e1:dc:5e
+[   17.830042] [CPU0] [ 9] nsh_main: A733 WIFI: station VIF checkpoint (0)
+[   17.835003] [CPU0] [ 9] nsh_main: A733 WIFI: MAC/PHY start passed UAPSD=300 ms LPCLK=20 ppm cfm=0
+[   17.835041] [CPU0] [ 9] nsh_main: A733 WIFI: MAC/PHY start checkpoint (0)
+[   17.835070] [CPU0] [ 9] nsh_main: A733 WIFI: runtime transport checkpoint (0)
+[   17.835101] [CPU0] [ 9] nsh_main: A733 WIFI: D80 firmware bytes=408616 runtime=a69c:8d81 (0)
+[   17.835149] [CPU0] [ 9] nsh_main: A733 WIFI: wlan0 registered; serialized USB RX worker pid=10
+[   17.835189] [CPU0] [ 9] nsh_main: A733: onboard FCU760K USB/firmware checkpoint ready (0)
+[   17.836266] [CPU0] [ 9] nsh_main: A733 USB host: before reset cap=30 ver=0120 hcs=02000140 id=33313130
+[   19.300635] [CPU0] [ 9] nsh_main: A733 USB combo v114: ctrl=00000111/01100001/00000000/00000011 status=00000001 maps=00000000/00000000 ready=1
+[   19.320698] [CPU0] [ 9] nsh_main: A733 USB PHY v114: reset-free host handoff passed id=33313130 gctl=30c11404 u2=02102400 u3=01001102 iscr=0100b000 physts=00000008
+[   19.320765] [CPU0] [ 9] nsh_main: A733 USB host: CCU-reset halted handoff passed; HCRST suppressed cmd=00000000 sts=00000001 id=33313130
+[   19.320826] [CPU0] [ 9] nsh_main: A733 xHCI v114: running slots=8 scratch=2 page=00000001 rtsoff=00001000 cmd=00000001 sts=00000000
+[   20.821682] [CPU0] [ 9] nsh_main: A733 UVC: USB2/xHCI2 probe=-19 ports=000002a0/000002a0 DWC3=33313130 maxports=2
+[   20.821729] [CPU0] [ 9] nsh_main: A733 USB diagnostic node registered; host probe=-19 (not audio-ready)
+[   20.821769] [CPU0] [ 9] nsh_main: A733: external USB0 UVC checkpoint ready (0)
+[   20.821812] [CPU0] [ 9] nsh_main: A733: optional service startup dispatcher (0)
+[  445.308004] [CPU0] [50] wifi: A733 WIFI: active scan passed channels=14 indications=6 results=6 firmware=6 ack=1
+[  445.493003] [CPU0] [50] wifi: A733 WIFI: active scan passed channels=4 indications=2 results=8 firmware=2 ack=1
+[  445.732006] [CPU1] [50] wifi: A733 WIFI: active scan passed channels=5 indications=3 results=11 firmware=3 ack=1
+[  449.143005] [CPU0] [50] wifi: A733 WIFI: association control plane passed ssid='706E' vif=0 ap=0 channel=0 protected=1
+[  449.146003] [CPU0] [50] wifi: A733 WIFI: openvela WEXT WPA2 started ssid='706E'; waiting for four-way handshake
+[  449.176006] [CPU1] [10] a733-wlan-rx: A733 WIFI: WPA2 message 1/2 passed
+[  449.197006] [CPU1] [10] a733-wlan-rx: A733 WIFI: WPA2 four-way handshake passed; CCMP PTK/GTK installed and controlled port open
+[  449.197065] [CPU1] [10] a733-wlan-rx: A733 WIFI: DHCP started on wlan0 pid=51
+[  451.247006] [CPU1] [51] a733-dhcp: A733 WIFI: DHCP passed address=10.195.194.22 router=10.195.194.239 dns=10.195.194.239 lease=3599 s gratuitous-arp=3/0
+[  480.128876] [CPU0] [53] aipet: A733 service: aipet spawn=0 pid=54
+[  480.131237] [CPU1] [54] aipet: AIPET startup: waiting=starting
+[  480.131284] [CPU1] [54] aipet: A733 service: ai_agent[ sp a w4n8=00. p1i3d1=35053
+] [CPU2] [55] ai_agent: [agent] AI Agent - Vela AI Agent starting (build: Sep 20 2026 11:54:09)
+[  480.131369] [CPU2] [55] ai_agent: [agent] [boot +0ms] P0: timezone set
+[  480.204076] [CPU1] [55] ai_agent: [agent] [boot +72ms] P0: storage ready
+[  480.204115] [CPU1] [55] ai_agent: [agent] [boot +72ms] heap: arena=4240146432 free=3122628320 used=1117518112
+[  480.207400] [CPU1] [55] ai_agent: [cfgstore] Config store ready at /data/ai_agent/config/config.json
+[  480.207426] [CPU1] [55] ai_agent: [agent] [boot +76ms] P1: config_store_init (rc=0)
+[  480.207460] [CPU1] [55] ai_agent: [bus] Message bus initialized (depth 16)
+[  480.207490] [CPU1] [55] ai_agent: [agent] [boot +76ms] P1: message_bus_init (rc=0)
+[  480.207521] [CPU1] [55] ai_agent: [memory] Initializing memory store at /data/ai_agent
+[  480.221074] [CPU1] [55] ai_agent: [memory] Created file: /data/ai_agent/config/USER.md
+[  480.234079] [CPU0] [55] ai_agent: [memory] Created file: /data/ai_agent/memory/MEMORY.md
+[  480.247075] [CPU0] [55] ai_agent: [memory] Created file: /data/ai_agent/config/HEARTBEAT.md
+[  480.260078] [CPU1] [55] ai_agent: [memory] Created file: /data/ai_agent/config/cron.json
+[  480.286077] [CPU0] [55] ai_agent: [memory] Created directory: /data/ai_agent/memory/daily
+[  480.286102] [CPU0] [55] ai_agent: [memory] Memory store initialized successfully
+[  480.286132] [CPU0] [55] ai_agent: [agent] [boot +154ms] P1: memory_store_init (rc=0)
+[  480.286165] [CPU0] [55] ai_agent: [session] Session manager initialized at /data/ai_agent/sessions
+[  480.286194] [CPU0] [55] ai_agent: [agent] [boot +154ms] P1: session_mgr_init (rc=0)
+[  480.286226] [CPU0] [55] ai_agent: [proxy] Loading proxy config...
+[  480.289891] [CPU1] [55] ai_agent: [proxy] No proxy (direct connection)
+[  480.289919] [CPU1] [55] ai_agent: [agent] [boot +158ms] P2: http_proxy_init (rc=0)
+[  480.295343] [CPU1] [55] ai_agent: [llm] LLM proxy initialized (model: deepseek-flash, host: api.deepseek.com)
+[  480.295376] [CPU1] [55] ai_agent: [agent] [boot +164ms] P3: llm_proxy_init (rc=0)
+[  480.300097] [CPU1] [55] ai_agent: [llm_router] Router initialized: 0 backends, profile=0
+[  480.300131] [CPU1] [55] ai_agent: [agent] [boot +168ms] P3: llm_router_init (rc=0)
+[  480.303910] [CPU1] [55] ai_agent: [web_search] No search key. Use: set_tavily_key / set_search_key
+[  480.303948] [CPU1] [55] ai_agent: [tools] Registered tool: get_weather
+[  480.303971] [CPU1] [55] ai_agent: [tools] Registered tool: get_current_time
+[  480.304042] [CPU1] [55] ai_agent: [tools] Tools JSON built (2 builtin + 0 providers)
+[  480.304075] [CPU1] [55] ai_agent: [tools] Tool registry initialized
+[  480.304101] [CPU1] [55] ai_agent: [agent] [boot +172ms] P3: tool_registry_init (rc=0)
+[  480.304135] [CPU1] [55] ai_agent: [guard] Tool guard initialized (max_input=32768, rate_window=60s, rate_max=10)
+[  480.304179] [CPU1] [55] ai_agent: [agent] [boot +172ms] P3: tool_guard_init (rc=0)
+[  480.304211] [CPU1] [55] ai_agent: [skills] Initializing skills system
+[  480.318074] [CPU1] [55] ai_agent: [skills] Installed built-in skill: /data/ai_agent/skills/weather.md
+[  480.333074] [CPU1] [55] ai_agent: [skills] Installed built-in skill: /data/ai_agent/skills/daily-briefing.md
+[  480.348079] [CPU1] [55] ai_agent: [skills] Installed built-in skill: /data/ai_agent/skills/skill-creator.md
+[  480.361073] [CPU0] [55] ai_agent: [skills] Installed built-in skill: /data/ai_agent/skills/system-health.md
+[  480.374079] [CPU0] [55] ai_agent: [skills] Installed built-in skill: /data/ai_agent/skills/reminder.md
+[  480.387074] [CPU1] [55] ai_agent: [skills] Installed built-in skill: /data/ai_agent/skills/note-taker.md
+[  480.402078] [CPU1] [55] ai_agent: [skills] Installed built-in skill: /data/ai_agent/skills/translate.md
+[  480.416078] [CPU0] [55] ai_agent: [skills] Installed built-in skill: /data/ai_agent/skills/news-digest.md
+[  480.430077] [CPU1] [55] ai_agent: [skills] Installed built-in skill: /data/ai_agent/skills/feishu-test.md
+[  480.444074] [CPU1] [55] ai_agent: [skills] Installed built-in skill: /data/ai_agent/skills/task-manager.md
+[  480.444101] [CPU1] [55] ai_agent: [skills] Skills system ready (10 built-in)
+[  480.444130] [CPU1] [55] ai_agent: [agent] [boot +312ms] P3: skill_loader_init (rc=0)
+[  480.444163] [CPU1] [55] ai_agent: [agent] Agent loop initialized
+[  480.444188] [CPU1] [55] ai_agent: [agent] [boot +312ms] P3: agent_loop_init (rc=0)
+[  480.446467] [CPU1] [55] ai_agent: [cron] No cron file, starting fresh
+[  480.446494] [CPU1] [55] ai_agent: [agent] [boot +315ms] P3: cron_service_init (rc=0)
+[  480.446526] [CPU1] [55] ai_agent: [heartbeat] Heartbeat service initialized (file: /data/ai_agent/HEARTBEAT.md, interval: 1800s)
+[  480.446564] [CPU1] [55] ai_agent: [agent] [boot +315ms] P3: heartbeat_init (rc=0)
+[  480.446596] [CPU1] [55] ai_agent: [voice] Voice channel initializing
+[  480.446623] [CPU1] [55] ai_agent: [voice_tts] Registered backend: volcengine
+[  480.448524] [CPU1] [55] ai_agent: [voice_asr] Registered backend: volcengine
+[  480.451360] [CPU1] [55] ai_agent: [agent] [boot +320ms] P3: voice_channel_init (rc=0)
+[  480.451394] [CPU1] [55] ai_agent: NSH commands registered
+[  480.451417] [CPU1] [55] ai_agent: [agent] [boot +320ms] P4: nsh_commands_init (rc=0)
+[ [ 4 8 04.804.514455184]5 9[]C P[UC1P]U 0[]5 5[]5 6ai_agent]:  ai_agent[:agent ][ agent[]b oOoutt b+ou3n2d0 mdsi]s pPa5t:c ho usttbaorutnedd
+dispatch thread started
+[  480.451522] [CPU1] [55] ai_agent: [cron] Cron started (0 jobs, interval 10s)
+[  480.451558] [CPU1] [55] ai_agent: [heartbeat] Heartbeat started (every 30 min)
+[  480.451588] [CPU1] [55] ai_agent: [agent] [boot +320ms] P5: cron + heartbeat started
+[  48[0. 4 5418602.5]4 5[1C6P2U71]]  [[C5P5U]0 ]ai_agent :[ 6[0agent]]  ai_agent[:b o[oagentt]  +Ne3t2w0omrsk]  wPa5t:c hneert wsotrakr_tweadt
+ch thread started (async)
+[  480.451683] [CPU1] [55] ai_agent: [agent] [boot +320ms] P6:[  n s4h8_0c.om4m5a1n7d0s5_]s t[aCrPtU 0(]r c[=600)]
+ ai_agent[:   [4netmgr8]0 .Fo4u5n1d7 2i6f]a c[eC Pwlan0U 1a]d d[r5 510.195.194.22]
+ ai_agent: [agent] [boot +320ms] AI Agent ready. Type 'help' in NSH for comma[n d s4.8
+0.451774] [CPU0] [60] ai_agent: [netmgr] Found iface wlan0 addr 10.195.194.22
+[  480.451826] [CPU0] [60] ai_agent: [netmgr] Found iface wlan0 addr 10.195.194.22
+[  480.451850] [CPU0] [60] ai_agent: [agent] Network connected: 10.195.194.22
+[  480.451882][  [ C4P8U00.] 4[516808]8 ]ai_agent :[ C[PtUa1p]]  [r7e8g]i sai_agentt:e r[eagentd]  tAagpe nfto rl ocohpa nsntealr t'epetd',
+ f[r e e4 8h0e.ap4:5 1933102]2 5[6C0P2U204]
+ [60] ai_agent: [agent] All network services star[t e d4!8
+0.451962] [CPU1] [78] ai_agent: [agent] Buffers: ctx=8192 hist=8192 tool=8192
+[  480.452006] [CPU1] [78] ai_agent: [agent] Tool output pool: 2 x 16384 bytes
+[  480.452037] [CPU1] [78] ai_agent: [agent] Tools JSON loaded: 393 bytes
+[  488.954987] [CPU1] [78] ai_agent: [agent] Processing message from pet:pet-1
+[  488.979905] [CPU1] [78] ai_agent: [skills] Skills summary: 814 bytes
+[  488.979933] [CPU1] [78] ai_agent: [context] System prompt built: 2774 bytes
+[  488.980696] [CPU1] [78] ai_agent: [llm_router] No available backend
+[  488.980724] [CPU1] [78] ai_agent: [trace:6aaf9be600000000] BEGIN chat=pet-1 chan=pet
+[  488.980900] [CPU1] [78] ai_agent: [llm] OpenAI API with tools (model: deepseek-flash, 3825 bytes)
+[  488.981353] [CPU1] [78] ai_agent: [vela_tls] Handshake start: Host=api.deepseek.com, UNIX=1789893606
+[  489.558083] [CPU1] [78] ai_agent: [vela_tls] Handshake OK: TLSv1.2 / TLS-ECDHE-RSA-WITH-AES-256-GCM-SHA384
+[  489.766039] [CPU1] [78] ai_agent: [vela_tls] HTTP first-byte=187 ms
+[  489.766116] [CPU1] [78] ai_agent: [vela_tls] HTTP status=200 framing=chunked
+[  490.713021] [CPU1] [78] ai_agent: [vela_tls] HTTP complete=1134 ms encoded-bytes=646
+[  490.713129] [CPU1] [78] ai_agent: [llm] Response: 27 bytes text, 0 tool calls, finish=end_turn
+[  490.713166] [CPU1] [78] ai_agent: [agent] LLM resp: text=27, tool_use=0, calls=0
+[  490.713199] [CPU1] [78] ai_agent: [trace:6aaf9be600000000] iter=0 tool=(none) latency=1732ms llm=ok backend=-1
+[  490.713236] [CPU1] [78] ai_agent: [trace:6aaf9be600000000] END status=ok iters=1 tools=0 llm_ms=1732 elapsed=2s backend=-1
+[  490.729083] [CPU1] [56] ai_agent: [agent] Dispatching response → pet:pet-1
+[  533.654988] [CPU0] [78] ai_agent: [agent] Processing message from pet:pet-2
+[  533.680035] [CPU0] [78] ai_agent: [skills] Skills summary: 814 bytes
+[  533.680063] [CPU0] [78] ai_agent: [context] System prompt built: 2774 bytes
+[  533.680827] [CPU0] [78] ai_agent: [llm_router] No available backend
+[  533.680855] [CPU0] [78] ai_agent: [trace:6aaf9c133c2fb9d7] BEGIN chat=pet-2 chan=pet
+[  533.681030] [CPU0] [78] ai_agent: [llm] OpenAI API with tools (model: deepseek-flash, 3837 bytes)
+[  533.782007] [CPU0] [78] ai_agent: [vela_tls] Reusing pooled connection to api.deepseek.com:443
+[  533.996044] [CPU0] [78] ai_agent: [vela_tls] HTTP first-byte=198 ms
+[  533.996118] [CPU0] [78] ai_agent: [vela_tls] HTTP status=200 framing=chunked
+[  534.548027] [CPU1] [78] ai_agent: [vela_tls] HTTP complete=750 ms encoded-bytes=584
+[  534.548125] [CPU1] [78] ai_agent: [llm] Response: 39 bytes text, 0 tool calls, finish=end_turn
+[  534.548162] [CPU1] [78] ai_agent: [agent] LLM resp: text=39, tool_use=0, calls=0
+[  534.548194] [CPU1] [78] ai_agent: [trace:6aaf9c133c2fb9d7] iter=0 tool=(none) latency=867ms llm=ok backend=-1
+[  534.548230] [CPU1] [78] ai_agent: [trace:6aaf9c133c2fb9d7] END status=ok iters=1 tools=0 llm_ms=867 elapsed=0s backend=-1
+[  534.564082] [CPU0] [56] ai_agent: [agent] Dispatching response → pet:pet-2
+nsh> poweroff

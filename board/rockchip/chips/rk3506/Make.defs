@@ -1,0 +1,11 @@
+############################################################################
+# vendor/rockchip/chips/rk3506/Make.defs
+#
+# SPDX-License-Identifier: Apache-2.0
+############################################################################
+
+include armv7-a/Make.defs
+
+CHIP_CSRCS += rk3506_boot.c rk3506_memorymap.c rk3506_irq.c
+CHIP_CSRCS += rk3506_timer.c rk3506_serial.c rk3506_lowputc.c
+CHIP_CSRCS += rk3506_gpio.c rk3506_sdmmc.c

@@ -1,0 +1,42 @@
+/*
+ * Rockchip RK3506 U-Boot AMP/FIT image for single-core openvela bring-up.
+ *
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+/dts-v1/;
+
+/ {
+	description = "RK3506 openvela FIT image";
+	#address-cells = <1>;
+
+	images {
+		amp0 {
+			description = "openvela-cpu0";
+			data = /incbin/("openvela.bin");
+			type = "firmware";
+			compression = "none";
+			arch = "arm";
+			os = "rtos";
+			cpu = <0xf00>;
+			thumb = <0>;
+			hyp = <0>;
+			load = <0x00100000>;
+			entry = <0x00100000>;
+			udelay = <10000>;
+
+			hash {
+				algo = "sha256";
+			};
+		};
+	};
+
+	configurations {
+		default = "conf";
+
+		conf {
+			description = "RK3506 openvela on CPU0";
+			loadables = "amp0";
+		};
+	};
+};

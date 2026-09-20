@@ -1,0 +1,7 @@
+interface:
+  display_name: "Embedded NPU Porting"
+  short_description: "Bring up NPU runtimes and model pipelines"
+  default_prompt: "Use $embedded-npu-porting to port and validate this NPU and its model deployment pipeline."
+
+policy:
+  allow_implicit_invocation: true

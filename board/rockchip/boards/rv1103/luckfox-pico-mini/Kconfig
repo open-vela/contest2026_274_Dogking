@@ -1,0 +1,15 @@
+#
+# Luckfox Pico Mini board configuration
+#
+
+if ARCH_BOARD_CUSTOM
+
+config BOARD_RV1103_UBOOT_HANDOFF
+	bool
+	default y
+	---help---
+		The board is entered through the Rockchip SPI-NAND U-Boot FIT
+		loader.  The BootROM, idblock and U-Boot initialize DDR, clocks,
+		pin multiplexing and UART2 before openvela starts.
+
+endif

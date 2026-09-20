@@ -1,0 +1,159 @@
+#
+# Allwinner A733 chip configuration
+#
+
+if ARCH_CHIP_CUSTOM
+
+config ARCH_CHIP_A733
+	bool "Allwinner A733 (sun60iw2p1)"
+	default y
+	select ARCH_CPU_UNKNOWN
+	select ARCH_HAVE_IRQTRIGGER
+	select ARCH_HAVE_IRQPRIO
+	select ARCH_HAVE_MULTICPU
+	select ARCH_HAVE_RESET
+	select ARCH_HAVE_POWEROFF
+	select ARM64_HAVE_PSCI
+	---help---
+		Initial ARM64 application-core port for the Allwinner A733.  Boot0,
+		SCP, BL31 and U-Boot remain responsible for DDR, clock and PMIC
+		initialization.  CPU affinity is encoded in MPIDR Aff1: logical CPUs
+		0..5 are Cortex-A55 and 6..7 are Cortex-A76.  The port uses the
+		standard ARMv8 virtual timer, PSCI and GICv3 support.
+
+config A733_WATCHDOG
+	bool "A733 watchdog"
+	default y
+	select WATCHDOG
+	depends on ARCH_CHIP_A733
+	---help---
+		Expose the sun60iw2p1 watchdog-v103 as /dev/watchdog0.  Merely
+		opening the device does not start the reset timer.
+
+config A733_TSADC
+	bool "A733 thermal sensor"
+	default y
+	select SENSORS
+	depends on ARCH_CHIP_A733
+	---help---
+		Expose the A733 CPU-little thermal channel through the openvela
+		sensor framework as /dev/uorb/sensor_temp0.
+
+config A733_HARDWARE_DIAG
+	bool "A733 non-destructive hardware diagnostics"
+	default y
+	depends on ARCH_CHIP_A733
+	---help---
+		Register /dev/a733-hw.  Reading it snapshots the SDMMC, TWI, SPI,
+		PWM, onboard wireless USB and UFS controller state without resetting
+		a bus.  Cubie A7Z has no onboard Ethernet PHY or RJ45 connector.
+
+config A733_TRNG
+	bool "A733 Crypto Engine true-random generator"
+	default y
+	depends on ARCH_CHIP_A733
+	---help---
+		Enable the official sun60iw2 Crypto Engine v5 TRNG path and expose
+		/dev/random plus /dev/urandom.  Startup and continuous-output tests
+		must pass before either node is registered; TLS and SSH use this as
+		their cryptographically secure entropy source.
+
+config A733_NPU_CHECKPOINT
+	bool "A733 VIP2 NPU hardware checkpoint"
+	default y
+	depends on ARCH_CHIP_A733
+	---help---
+		Power the sun60iw2 VIP2 NPU domain, select the official safe 600 MHz
+		operating point, release its resets and expose identity/state through
+		/dev/a733-npu.  Manual bounded controls exercise direct and translated
+		VIP2 command fetches; boot never submits an NPU workload.  Register the
+		first-stage /dev/npu0 runtime with per-open contexts, driver-owned low32
+		buffers, cache control, translated submit/sync/cancel/reset and a manual
+		deterministic hardware self-test.
+
+config A733_WIFI_USB_CHECKPOINT
+	bool "Cubie A7Z onboard FCU760K USB checkpoint"
+	default y
+	depends on ARCH_CHIP_A733
+	---help---
+		Power the onboard FCU760K Wi-Fi 6 / Bluetooth 5.4 module through
+		PM0 and PM1, initialize its dedicated USB1 PHY/EHCI root port, and
+		register /dev/a733-wifi with non-destructive checkpoint details.
+		The implementation loads the official D80-U02 firmware, validates
+		the runtime composite endpoint ownership and exercises the full-MAC
+		message channel with MM_VERSION_REQ before higher network binding.
+
+config A733_USB_CAMERA
+	bool "Cubie A7Z external USB0 UVC camera checkpoint"
+	default y
+	depends on ARCH_CHIP_A733
+	---help---
+		Initialize the external USB2 OTG connector in high-speed host mode,
+		enumerate a connected USB Video Class camera and expose descriptor,
+		format, frame and streaming-endpoint diagnostics through
+		/dev/a733-uvc.  Frame streaming remains disabled until the selected
+		camera endpoint has been validated on real hardware.
+
+config A733_SDMMC0
+	bool "A733 SMHC0 SD-card controller"
+	default y
+	select ARCH_HAVE_SDIO
+	select MMCSD
+	select MMCSD_SDIO
+	select SDIO_BLOCKSETUP
+	depends on ARCH_CHIP_A733
+	---help---
+		Register the Cubie A7Z microSD slot through the standard NuttX
+		SDIO/MMCSD stack.  The first implementation is conservative 4-bit
+		PIO at 400 kHz identification and 12 MHz transfer clocks.
+
+config A733_HEADER_I2C
+	bool "Cubie A7Z expansion-header TWI2 and TWI7"
+	default y
+	select I2C
+	select I2C_DRIVER
+	depends on ARCH_CHIP_A733
+	---help---
+		Register the two non-system expansion buses as /dev/i2c2 and
+		/dev/i2c7.  PMIC and Type-C system TWI buses are not touched.
+
+config A733_HEADER_SPI
+	bool "Cubie A7Z expansion-header SPI1"
+	default y
+	select SPI
+	select SPI_DRIVER
+	select SPI_EXCHANGE
+	depends on ARCH_CHIP_A733
+	---help---
+		Register the 40-pin-header SPI1 controller as /dev/spi1 using
+		conservative polling PIO transfers.
+
+config A733_FAN_PWM
+	bool "Cubie A7Z fan PWM"
+	default y
+	select PWM
+	depends on ARCH_CHIP_A733
+	---help---
+		Register PWM1 channel 9 on PJ27 as /dev/pwm0.  Opening the node
+		does not start the fan waveform until PWMIOC_SETCHARACTERISTICS and
+		PWMIOC_START are issued.
+
+config A733_UART4
+	bool "Cubie A7Z header UART4 for TW-TTS"
+	default y
+	depends on ARCH_CHIP_A733
+	---help---
+		Expose the official A733 UART4 PJ24/PJ25 header mapping as
+		/dev/ttyS4 at 9600 8N1.  The initial driver uses bounded polling,
+		which is sufficient for the low-rate TW-TTS command protocol.
+
+config A733_I2S0_AUDIO
+	bool "Cubie A7Z I2S0 MAX98357A/INMP441 checkpoint"
+	default y
+	depends on ARCH_CHIP_A733
+	---help---
+		Register /dev/a733-audio with a non-destructive I2S0 register and
+		wiring checkpoint.  Active PCM playback/capture remains disabled
+		until the A733 audio PLL rate is validated on the board.
+
+endif

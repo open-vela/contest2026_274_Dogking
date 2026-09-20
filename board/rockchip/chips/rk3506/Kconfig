@@ -1,0 +1,90 @@
+#
+# Rockchip RK3506 chip configuration
+#
+
+if ARCH_CHIP_CUSTOM
+
+config ARCH_CHIP_RK3506
+	bool "Rockchip RK3506"
+	select LIBC_ATOMIC_IRQ if !SMP
+	default y
+	select ARCH_CORTEXA7
+	select ARCH_HAVE_LOWVECTORS
+	select ARCH_HAVE_SDIO
+	select ARM_HAVE_NEON
+	select ARMV7A_HAVE_GICv2
+	select ARMV7A_HAVE_PTM
+	---help---
+		Support the Cortex-A7 application cores in the Rockchip RK3506.
+		The initial port is uniprocessor and is entered from Rockchip
+		U-Boot after DDR and clocks have been initialized.
+
+endif
+
+if ARCH_CHIP_RK3506
+
+config RK3506_I2C2
+	bool "RK3506 I2C2 controller"
+	depends on I2C
+	default n
+	---help---
+		Enable the RK3506 I2C2 master controller.  The Luckfox Lyra Zero W
+		board routes it through RMIO to GPIO0_A0 (SDA) and GPIO0_A1 (SCL).
+		The initial implementation uses bounded polling at 100/400 kHz.
+
+config RK3506_SPI0
+	bool "RK3506 SPI0 controller"
+	depends on SPI
+	default n
+	---help---
+		Enable the RK3506 SPI0 polling master on the fixed M0 pin group:
+		GPIO0_C0 clock, C1 MOSI, C2 MISO and C3 chip-select zero.
+
+config RK3506_SPI0_LOOPBACK
+	bool "RK3506 SPI0 internal loopback test mode"
+	depends on RK3506_SPI0
+	default n
+	---help---
+		Route SPI0 transmit data back to its receiver internally.  This is a
+		bring-up diagnostic and must be disabled before attaching peripherals.
+
+config RK3506_AIC8800DC_PROBE
+	bool "Luckfox AIC8800DC USB hardware probe"
+	default n
+	---help---
+		Enable the first Wi-Fi bring-up checkpoint for the USB-connected
+		AIC8800DC on Luckfox Lyra W boards.  It powers the module from
+		GPIO1_C5, enables the RK3506 USB2 PHY and OTG1 clocks, verifies the
+		DWC2 core ID and reports the PHY line state.  This option does not
+		yet provide a network interface.
+
+config RK3506_AIC8800DC_ENUM_PROBE
+	bool "Enumerate the AIC8800DC over DWC2 control endpoint"
+	default n
+	depends on RK3506_AIC8800DC_PROBE
+	---help---
+		Initialize USB2 OTG1 as a polling DWC2 host, reset the onboard
+		port, and read the AIC8800DC USB device descriptor.  This is an
+		isolated bring-up checkpoint before the generic USB host and Wi-Fi
+		drivers are enabled.
+
+config RK3506_SDMMC
+	bool "RK3506 DesignWare SDMMC controller"
+	depends on MMCSD_SDIO
+	default n
+	---help---
+		Enable the RK3506 DesignWare mobile-storage controller lower half.
+		The controller always provides an interrupt-driven PIO path.
+
+config RK3506_SDMMC_DMA
+	bool "RK3506 SDMMC internal DMA (IDMAC)"
+	depends on RK3506_SDMMC
+	select SDIO_DMA
+	default n
+	---help---
+		Enable the DesignWare internal DMA engine for normal SD-sector
+		transfers in either 1-bit or 4-bit bus mode.  Short protocol payloads
+		and reset-failed requests automatically use the PIO path.
+		Cache-line-unaligned requests use an aligned internal bounce buffer.
+
+endif

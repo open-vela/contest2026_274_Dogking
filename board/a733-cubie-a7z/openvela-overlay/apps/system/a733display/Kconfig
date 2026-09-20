@@ -1,0 +1,25 @@
+config SYSTEM_A733DISPLAY
+	tristate "Cubie A7Z LVGL display utility"
+	default n
+	depends on GRAPHICS_LVGL
+	depends on LV_USE_NUTTX_LCD
+	---help---
+		Build the lightweight display command used to validate /dev/lcd0 and
+		the LVGL NuttX LCD backend without pulling in the complete LVGL demo
+		asset collection.  It is also the stable entry point for the AI pet UI.
+
+if SYSTEM_A733DISPLAY
+
+config A733DISPLAY_PROGNAME
+	string "Program name"
+	default "display"
+
+config A733DISPLAY_PRIORITY
+	int "Task priority"
+	default 100
+
+config A733DISPLAY_STACKSIZE
+	int "Task stack size"
+	default 32768
+
+endif

@@ -1,0 +1,124 @@
+/****************************************************************************
+ * vendor/rockchip/boards/rk3506/luckfox-lyra-zero-w/scripts/ld.script
+ *
+ * SPDX-License-Identifier: Apache-2.0
+ ****************************************************************************/
+
+#include <nuttx/config.h>
+
+OUTPUT_ARCH(arm)
+ENTRY(__start)
+
+MEMORY
+{
+  RAM (rwx) : ORIGIN = CONFIG_RAM_START, LENGTH = CONFIG_RAM_SIZE
+}
+
+SECTIONS
+{
+  .text :
+  {
+    _stext = .;
+    __text_start = .;
+    KEEP(*(.vectors))
+    *(.text*)
+    *(.fixup)
+    *(.gnu.warning)
+    *(.glue_7)
+    *(.glue_7t)
+  } > RAM
+
+  . = ALIGN(4096);
+
+  .init_section :
+  {
+    _sinit = ABSOLUTE(.);
+    KEEP(*(SORT_BY_INIT_PRIORITY(.init_array.*)
+           SORT_BY_INIT_PRIORITY(.ctors.*)))
+    KEEP(*(.init_array
+           EXCLUDE_FILE(*crtbegin.o *crtbegin?.o *crtend.o *crtend?.o)
+           .ctors))
+    _einit = ABSOLUTE(.);
+  } > RAM
+
+  .ARM.extab :
+  {
+    *(.ARM.extab*)
+  } > RAM
+
+  PROVIDE_HIDDEN(__exidx_start = .);
+  .ARM.exidx :
+  {
+    *(.ARM.exidx* .gnu.linkonce.armexidx.*)
+  } > RAM
+  PROVIDE_HIDDEN(__exidx_end = .);
+
+  .rodata :
+  {
+    _srodata = .;
+    *(.rodata*)
+    *(.data.rel.ro*)
+    KEEP(*(SORT(.scattered_array*)))
+    _erodata = .;
+  } > RAM
+
+  . = ALIGN(8);
+  _etext = .;
+  _sztext = _etext - _stext;
+  _eronly = .;
+
+  .data :
+  {
+    _sdata = .;
+    *(.data*)
+    *(.gnu.linkonce.d.*)
+    . = ALIGN(8);
+    __start_impls = .;
+    KEEP(*(.impls))
+    __stop_impls = .;
+    _edata = .;
+  } > RAM
+
+  .tdata :
+  {
+    _stdata = .;
+    *(.tdata .tdata.* .gnu.linkonce.td.*)
+    _etdata = .;
+  } > RAM
+
+  .tbss (NOLOAD) :
+  {
+    _stbss = .;
+    *(.tbss .tbss.* .gnu.linkonce.tb.* .tcommon)
+    _etbss = .;
+  } > RAM
+
+  .noinit (NOLOAD) :
+  {
+    _snoinit = ABSOLUTE(.);
+    *(.noinit*)
+    _enoinit = ABSOLUTE(.);
+  } > RAM
+
+  .bss (NOLOAD) :
+  {
+    _sbss = .;
+    *(.bss*)
+    *(.gnu.linkonce.b.*)
+    *(COMMON)
+    . = ALIGN(16);
+    _ebss = .;
+  } > RAM
+
+  /DISCARD/ :
+  {
+    *(.exit.text)
+    *(.exit.data)
+    *(.exitcall.exit)
+    *(.note*)
+  }
+
+  .stab 0 : { *(.stab) }
+  .stabstr 0 : { *(.stabstr) }
+  .comment 0 : { *(.comment) }
+}
