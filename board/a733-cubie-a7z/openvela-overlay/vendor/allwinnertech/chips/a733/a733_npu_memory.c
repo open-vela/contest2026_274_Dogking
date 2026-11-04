@@ -19,7 +19,11 @@
 
 #include "a733_npu_memory.h"
 
+#ifdef CONFIG_A733_NPU_GENERAL_ASR
+#define A733_NPU_ARENA_SIZE       (80u * 1024u * 1024u)
+#else
 #define A733_NPU_ARENA_SIZE       (32u * 1024u * 1024u)
+#endif
 #define A733_NPU_CACHE_LINE       64u
 #define A733_NPU_GUARD_SIZE       A733_NPU_CACHE_LINE
 #define A733_NPU_MAX_BUFFERS      32u

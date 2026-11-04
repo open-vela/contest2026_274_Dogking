@@ -1,0 +1,2 @@
+PASS: actual v195 control/SHA/mode/TWI/receiver packet composition, ON/OFF/readback/restore, one-shot and default deny; FAKE HARDWARE
+PASS: 2247 receiver cases, 135 prepare callbacks, 2237 callback-after-effect failures; bounded/no-data/stale/CRC/cleanup; SYNTHETIC ONLY

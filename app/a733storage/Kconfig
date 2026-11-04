@@ -1,0 +1,9 @@
+# SPDX-License-Identifier: Apache-2.0
+config SYSTEM_A733STORAGE
+	bool "A733 bulk UFS file transfer and offline progress"
+	depends on CRYPTO_MBEDTLS && FS_FAT && A733_UFS_DATA && SYSTEM_A733SERVICES
+	default n
+	help
+	  Explicit background copy/SHA256 verification, exact compare and read
+	  benchmark with 256KiB buffers. Serial status and cooperative stop work
+	  without Wi-Fi. Never formats, deletes, overwrites or resets storage.

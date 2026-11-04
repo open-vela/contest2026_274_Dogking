@@ -1,0 +1,7 @@
+llm-affinity-v210: target=7 actual=7 mask=00000080 confirmations=2 attempts=5 result=0 restore=0
+llm-affinity-v210: target=7 actual=7 mask=00000080 confirmations=2 attempts=2 result=0 restore=0
+llm-affinity-v210: target=6 actual=1 mask=00000040 confirmations=0 attempts=251 result=-110 restore=0
+llm-affinity-v210: target=6 actual=0 mask=00000000 confirmations=0 attempts=1 result=-125 restore=0
+llm-affinity-v210: target=7 actual=7 mask=00000080 confirmations=0 attempts=251 result=-110 restore=0
+llm-affinity-v210: target=5 actual=5 mask=00000020 confirmations=2 attempts=3 result=0 restore=0
+PASS: actual LLM qualifier; 10,000 warm matrices without re-pinning; delayed migration, A55/A76 identity, timeout/cancel rollback; numerical row loop byte-identical to v209. HOST MOCK, not board speed.

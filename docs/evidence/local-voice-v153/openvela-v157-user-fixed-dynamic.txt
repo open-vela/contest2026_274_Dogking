@@ -1,0 +1,247 @@
+
+e -B Boooot tt to o C C rrununtitimme e fforor  OSOS I Ininititialaliziez
+
+N8
+X1
+PR
+PR
+PR
+
+NuttShell (NSH)
+nsh> RI
+RX
+
+nsh> npu info
+A733 VIP2 ABI v4 CID=1000003b cores=1 page=4096 pool=2093056 free=1654784 buffers=16 timeout=5000 ms
+nsh> npu selftest
+selftest: passed
+nsh> aipet audio npuref joiner /data/npu/voice/joiner.a7tv /data/npu/voice/input/joiner
+npuref: model=joiner backend=VIP2 inputs=2 outputs=1 mode=captured-golden elapsed-us=35466
+npuref output[0] bytes=1052 raw-crc32=7529f5ca
+npuref: native tensors returned; not ASR/transcription or end-to-end speech acceptance
+nsh> aipet audio npuref decoder /data/npu/voice/decoder.a7tv /data/npu/voice/input/decoder
+npuref: model=decoder backend=VIP2 inputs=1 outputs=1 mode=captured-golden elapsed-us=98491
+npuref output[0] bytes=1280 raw-crc32=dd1e9df7
+npuref: native tensors returned; not ASR/transcription or end-to-end speech acceptance
+nsh> aipet audio npuref encoder /data/npu/voice/encoder.a7tv /data/npu/voice/input/encoder
+npuref: model=encoder backend=VIP2 inputs=39 outputs=39 mode=captured-golden elapsed-us=1367540
+npuref output[0] bytes=5120 raw-crc32=8262335e
+npuref output[1] bytes=32768 raw-crc32=a47f474d
+npuref output[2] bytes=24576 raw-crc32=54135a0b
+npuref output[3] bytes=12288 raw-crc32=a53812b3
+npuref output[4] bytes=12288 raw-crc32=32dad389
+npuref output[5] bytes=3584 raw-crc32=2d0e56d0
+npuref output[6] bytes=3584 raw-crc32=8a63c792
+npuref output[7] bytes=16384 raw-crc32=640763a3
+npuref output[8] bytes=12288 raw-crc32=6350c4ea
+npuref output[9] bytes=6144 raw-crc32=358a1047
+npuref output[10] bytes=6144 raw-crc32=34385027
+npuref output[11] bytes=3584 raw-crc32=28888937
+npuref output[12] bytes=3584 raw-crc32=22aa2b80
+npuref output[13] bytes=8192 raw-crc32=bda82768
+npuref output[14] bytes=6144 raw-crc32=f47367ae
+npuref output[15] bytes=3072 raw-crc32=557e01de
+npuref output[16] bytes=3072 raw-crc32=65a45078
+npuref output[17] bytes=3584 raw-crc32=0f63b107
+npuref output[18] bytes=3584 raw-crc32=4153576f
+npuref output[19] bytes=8192 raw-crc32=7d2dd423
+npuref output[20] bytes=3072 raw-crc32=5bdf3a7b
+npuref output[21] bytes=3072 raw-crc32=ada61963
+npuref output[22] bytes=3072 raw-crc32=da015f32
+npuref output[23] bytes=3584 raw-crc32=48db4af2
+npuref output[24] bytes=3584 raw-crc32=3935b7ae
+npuref output[25] bytes=8192 raw-crc32=4bfa072c
+npuref output[26] bytes=6144 raw-crc32=45294411
+npuref output[27] bytes=3072 raw-crc32=61fcfff2
+npuref output[28] bytes=3072 raw-crc32=bbe6c063
+npuref output[29] bytes=3584 raw-crc32=8574ae9a
+npuref output[30] bytes=3584 raw-crc32=dba857da
+npuref output[31] bytes=16384 raw-crc32=32912bb1
+npuref output[32] bytes=12288 raw-crc32=778f5534
+npuref output[33] bytes=6144 raw-crc32=826fa5b1
+npuref output[34] bytes=6144 raw-crc32=3fa57b1b
+npuref output[35] bytes=3584 raw-crc32=93cda67e
+npuref output[36] bytes=3584 raw-crc32=49bcf187
+npuref output[37] bytes=29184 raw-crc32=fb95b1cc
+npuref output[38] bytes=4 raw-crc32=01db7106
+npuref: native tensors returned; not ASR/transcription or end-to-end speech acceptance
+nsh> aipet audio npuref vocoder /data/npu/voice/vocoder.a7tv /data/npu/voice/input/vocoder
+npuref: model=vocoder backend=VIP2 inputs=1 outputs=1 mode=captured-golden elapsed-us=1348738
+npuref output[0] bytes=204800 raw-crc32=4883df06
+npuref: native tensors returned; not ASR/transcription or end-to-end speech acceptance
+nsh> npu info
+A733 VIP2 ABI v4 CID=1000003b cores=1 page=4096 pool=2093056 free=1654784 buffers=16 timeout=5000 ms
+nsh> free
+      total       used       free    maxused    maxfree  nused  nfree name
+ 4239151104      63456 4239087648     708976 4143972320     98      4 Umem
+nsh> aipet audio npuref encoder /data/npu/voice/encoder.a7tv /data/npu/voice/dynamic/case00 dynamic
+npuref: model=encoder backend=VIP2 inputs=39 outputs=39 mode=dynamic-byte-check elapsed-us=1365365
+npuref output[0] bytes=5120 raw-crc32=8262335e
+npuref output[1] bytes=32768 raw-crc32=a47f474d
+npuref output[2] bytes=24576 raw-crc32=54135a0b
+npuref output[3] bytes=12288 raw-crc32=a53812b3
+npuref output[4] bytes=12288 raw-crc32=32dad389
+npuref output[5] bytes=3584 raw-crc32=2d0e56d0
+npuref output[6] bytes=3584 raw-crc32=8a63c792
+npuref output[7] bytes=16384 raw-crc32=640763a3
+npuref output[8] bytes=12288 raw-crc32=6350c4ea
+npuref output[9] bytes=6144 raw-crc32=358a1047
+npuref output[10] bytes=6144 raw-crc32=34385027
+npuref output[11] bytes=3584 raw-crc32=28888937
+npuref output[12] bytes=3584 raw-crc32=22aa2b80
+npuref output[13] bytes=8192 raw-crc32=bda82768
+npuref output[14] bytes=6144 raw-crc32=f47367ae
+npuref output[15] bytes=3072 raw-crc32=557e01de
+npuref output[16] bytes=3072 raw-crc32=65a45078
+npuref output[17] bytes=3584 raw-crc32=0f63b107
+npuref output[18] bytes=3584 raw-crc32=4153576f
+npuref output[19] bytes=8192 raw-crc32=7d2dd423
+npuref output[20] bytes=3072 raw-crc32=5bdf3a7b
+npuref output[21] bytes=3072 raw-crc32=ada61963
+npuref output[22] bytes=3072 raw-crc32=da015f32
+npuref output[23] bytes=3584 raw-crc32=48db4af2
+npuref output[24] bytes=3584 raw-crc32=3935b7ae
+npuref output[25] bytes=8192 raw-crc32=4bfa072c
+npuref output[26] bytes=6144 raw-crc32=45294411
+npuref output[27] bytes=3072 raw-crc32=61fcfff2
+npuref output[28] bytes=3072 raw-crc32=bbe6c063
+npuref output[29] bytes=3584 raw-crc32=8574ae9a
+npuref output[30] bytes=3584 raw-crc32=dba857da
+npuref output[31] bytes=16384 raw-crc32=32912bb1
+npuref output[32] bytes=12288 raw-crc32=778f5534
+npuref output[33] bytes=6144 raw-crc32=826fa5b1
+npuref output[34] bytes=6144 raw-crc32=3fa57b1b
+npuref output[35] bytes=3584 raw-crc32=93cda67e
+npuref output[36] bytes=3584 raw-crc32=49bcf187
+npuref output[37] bytes=29184 raw-crc32=fb95b1cc
+npuref output[38] bytes=4 raw-crc32=01db7106
+npuref: native tensors returned; not ASR/transcription or end-to-end speech acceptance
+nsh> aipet audio npuref encoder /data/npu/voice/encoder.a7tv /data/npu/voice/dynamic/case01 dynamic
+npuref: model=encoder backend=VIP2 inputs=39 outputs=39 mode=dynamic-byte-check elapsed-us=1364895
+npuref output[0] bytes=5120 raw-crc32=6666be5a
+npuref output[1] bytes=32768 raw-crc32=8a417b19
+npuref output[2] bytes=24576 raw-crc32=33eb0401
+npuref output[3] bytes=12288 raw-crc32=4e6c668e
+npuref output[4] bytes=12288 raw-crc32=6b120d4d
+npuref output[5] bytes=3584 raw-crc32=8fd475c0
+npuref output[6] bytes=3584 raw-crc32=fc4ead13
+npuref output[7] bytes=16384 raw-crc32=53214b4b
+npuref output[8] bytes=12288 raw-crc32=dfae8b85
+npuref output[9] bytes=6144 raw-crc32=cdc7ad4b
+npuref output[10] bytes=6144 raw-crc32=9aabe18c
+npuref output[11] bytes=3584 raw-crc32=af420fa8
+npuref output[12] bytes=3584 raw-crc32=dd31fc41
+npuref output[13] bytes=8192 raw-crc32=15408684
+npuref output[14] bytes=6144 raw-crc32=ee10467d
+npuref output[15] bytes=3072 raw-crc32=ef715e8f
+npuref output[16] bytes=3072 raw-crc32=7f8e0c1d
+npuref output[17] bytes=3584 raw-crc32=649e0ec1
+npuref output[18] bytes=3584 raw-crc32=d62a9c1c
+npuref output[19] bytes=8192 raw-crc32=b40248a1
+npuref output[20] bytes=3072 raw-crc32=e05d1b0e
+npuref output[21] bytes=3072 raw-crc32=153dd220
+npuref output[22] bytes=3072 raw-crc32=5fad84b6
+npuref output[23] bytes=3584 raw-crc32=37ddad36
+npuref output[24] bytes=3584 raw-crc32=3cb71cdc
+npuref output[25] bytes=8192 raw-crc32=906d2afd
+npuref output[26] bytes=6144 raw-crc32=281cb6fe
+npuref output[27] bytes=3072 raw-crc32=f085f7e9
+npuref output[28] bytes=3072 raw-crc32=bc699ae4
+npuref output[29] bytes=3584 raw-crc32=4dd8e168
+npuref output[30] bytes=3584 raw-crc32=8fd276e7
+npuref output[31] bytes=16384 raw-crc32=0a669873
+npuref output[32] bytes=12288 raw-crc32=40d97834
+npuref output[33] bytes=6144 raw-crc32=31aad04a
+npuref output[34] bytes=6144 raw-crc32=c2d4586b
+npuref output[35] bytes=3584 raw-crc32=00c31d64
+npuref output[36] bytes=3584 raw-crc32=f1c7c2f6
+npuref output[37] bytes=29184 raw-crc32=d437d016
+npuref output[38] bytes=4 raw-crc32=ca21a648
+npuref: native tensors returned; not ASR/transcription or end-to-end speech acceptance
+nsh> aipet audio npuref encoder /data/npu/voice/encoder.a7tv /data/npu/voice/dynamic/case02 dynamic
+npuref: model=encoder backend=VIP2 inputs=39 outputs=39 mode=dynamic-byte-check elapsed-us=1365496
+npuref output[0] bytes=5120 raw-crc32=940061e2
+npuref output[1] bytes=32768 raw-crc32=38f6cf14
+npuref output[2] bytes=24576 raw-crc32=ce8c7561
+npuref output[3] bytes=12288 raw-crc32=4f4e6d8e
+npuref output[4] bytes=12288 raw-crc32=bc0f36bb
+npuref output[5] bytes=3584 raw-crc32=cdbf40df
+npuref output[6] bytes=3584 raw-crc32=f44e5e8a
+npuref output[7] bytes=16384 raw-crc32=99f4290c
+npuref output[8] bytes=12288 raw-crc32=c6820a38
+npuref output[9] bytes=6144 raw-crc32=e86bfecd
+npuref output[10] bytes=6144 raw-crc32=7fb97a7f
+npuref output[11] bytes=3584 raw-crc32=cdf88cdb
+npuref output[12] bytes=3584 raw-crc32=796a7651
+npuref output[13] bytes=8192 raw-crc32=2926f304
+npuref output[14] bytes=6144 raw-crc32=454f9f78
+npuref output[15] bytes=3072 raw-crc32=aa41d332
+npuref output[16] bytes=3072 raw-crc32=01c5ba17
+npuref output[17] bytes=3584 raw-crc32=81c91b1a
+npuref output[18] bytes=3584 raw-crc32=901fb949
+npuref output[19] bytes=8192 raw-crc32=1798df3a
+npuref output[20] bytes=3072 raw-crc32=ebbcd8c3
+npuref output[21] bytes=3072 raw-crc32=378c184c
+npuref output[22] bytes=3072 raw-crc32=20089cae
+npuref output[23] bytes=3584 raw-crc32=3c45568c
+npuref output[24] bytes=3584 raw-crc32=19b30e09
+npuref output[25] bytes=8192 raw-crc32=f4396f14
+npuref output[26] bytes=6144 raw-crc32=c49f9b8d
+npuref output[27] bytes=3072 raw-crc32=22f4d507
+npuref output[28] bytes=3072 raw-crc32=f613004d
+npuref output[29] bytes=3584 raw-crc32=428707c2
+npuref output[30] bytes=3584 raw-crc32=3db724a7
+npuref output[31] bytes=16384 raw-crc32=9471d7f3
+npuref output[32] bytes=12288 raw-crc32=c3183511
+npuref output[33] bytes=6144 raw-crc32=f3653f85
+npuref output[34] bytes=6144 raw-crc32=30b906f5
+npuref output[35] bytes=3584 raw-crc32=25b82a01
+npuref output[36] bytes=3584 raw-crc32=aab436a1
+npuref output[37] bytes=29184 raw-crc32=a3cb921c
+npuref output[38] bytes=4 raw-crc32=0d56041e
+npuref: native tensors returned; not ASR/transcription or end-to-end speech acceptance
+nsh> aipet audio npuref decoder /data/npu/voice/decoder.a7tv /data/npu/voice/dynamic/case03 dynamic
+npuref: model=decoder backend=VIP2 inputs=1 outputs=1 mode=dynamic-byte-check elapsed-us=98650
+npuref output[0] bytes=1280 raw-crc32=dd1e9df7
+npuref: native tensors returned; not ASR/transcription or end-to-end speech acceptance
+nsh> aipet audio npuref decoder /data/npu/voice/decoder.a7tv /data/npu/voice/dynamic/case04 dynamic
+npuref: model=decoder backend=VIP2 inputs=1 outputs=1 mode=dynamic-byte-check elapsed-us=98626
+npuref output[0] bytes=1280 raw-crc32=dedfb2a2
+npuref: native tensors returned; not ASR/transcription or end-to-end speech acceptance
+nsh> aipet audio npuref decoder /data/npu/voice/decoder.a7tv /data/npu/voice/dynamic/case05 dynamic
+npuref: model=decoder backend=VIP2 inputs=1 outputs=1 mode=dynamic-byte-check elapsed-us=98739
+npuref output[0] bytes=1280 raw-crc32=960a0d06
+npuref: native tensors returned; not ASR/transcription or end-to-end speech acceptance
+nsh> aipet audio npuref joiner /data/npu/voice/joiner.a7tv /data/npu/voice/dynamic/case06 dynamic
+npuref: model=joiner backend=VIP2 inputs=2 outputs=1 mode=dynamic-byte-check elapsed-us=35505
+npuref output[0] bytes=1052 raw-crc32=7529f5ca
+npuref: native tensors returned; not ASR/transcription or end-to-end speech acceptance
+nsh> aipet audio npuref joiner /data/npu/voice/joiner.a7tv /data/npu/voice/dynamic/case07 dynamic
+npuref: model=joiner backend=VIP2 inputs=2 outputs=1 mode=dynamic-byte-check elapsed-us=35514
+npuref output[0] bytes=1052 raw-crc32=d0760321
+npuref: native tensors returned; not ASR/transcription or end-to-end speech acceptance
+nsh> aipet audio npuref joiner /data/npu/voice/joiner.a7tv /data/npu/voice/dynamic/case08 dynamic
+npuref: model=joiner backend=VIP2 inputs=2 outputs=1 mode=dynamic-byte-check elapsed-us=35430
+npuref output[0] bytes=1052 raw-crc32=25b294db
+npuref: native tensors returned; not ASR/transcription or end-to-end speech acceptance
+nsh> aipet audio npuref joiner /data/npu/voice/joiner.a7tv /data/npu/voice/dynamic/case09 dynamic
+npuref: model=joiner backend=VIP2 inputs=2 outputs=1 mode=dynamic-byte-check elapsed-us=35429
+npuref output[0] bytes=1052 raw-crc32=7529f5ca
+npuref: native tensors returned; not ASR/transcription or end-to-end speech acceptance
+nsh> aipet audio npuref vocoder /data/npu/voice/vocoder.a7tv /data/npu/voice/dynamic/case10 dynamic
+npuref: model=vocoder backend=VIP2 inputs=1 outputs=1 mode=dynamic-byte-check elapsed-us=1347518
+npuref output[0] bytes=204800 raw-crc32=4883df06
+npuref: native tensors returned; not ASR/transcription or end-to-end speech acceptance
+nsh> aipet audio npuref vocoder /data/npu/voice/vocoder.a7tv /data/npu/voice/dynamic/case11 dynamic
+npuref: model=vocoder backend=VIP2 inputs=1 outputs=1 mode=dynamic-byte-check elapsed-us=1347415
+npuref output[0] bytes=204800 raw-crc32=15850995
+npuref: native tensors returned; not ASR/transcription or end-to-end speech acceptance
+nsh> aipet audio npuref vocoder /data/npu/voice/vocoder.a7tv /data/npu/voice/dynamic/case12 dynamic
+npuref: model=vocoder backend=VIP2 inputs=1 outputs=1 mode=dynamic-byte-check elapsed-us=1347623
+npuref output[0] bytes=204800 raw-crc32=c946d8f8
+npuref: native tensors returned; not ASR/transcription or end-to-end speech acceptance
+nsh> aipet audio npuref vocoder /data/npu/voice/vocoder.a7tv /data/npu/voice/dynamic/case13 dynamic
+npuref: model=vocoder backend=VIP2 inputs=1 outputs=1 mode=dynamic-byte-check elapsed-us=1347509
+npuref output[0] bytes=204800 raw-crc32=4883df06
+npuref: native tensors returned; not ASR/transcription or end-to-end speech acceptance
+nsh>

@@ -4,9 +4,10 @@ config SYSTEM_A733DISPLAY
 	depends on GRAPHICS_LVGL
 	depends on LV_USE_NUTTX_LCD
 	---help---
-		Build the lightweight display command used to validate /dev/lcd0 and
-		the LVGL NuttX LCD backend without pulling in the complete LVGL demo
-		asset collection.  It is also the stable entry point for the AI pet UI.
+		Build the lightweight display command using official LVGL with the
+		A733 direct ST7735 RGB565 flush path.  It provides hardware tests and
+		the stable display-owner entry point for the AI pet UI without pulling
+		in the complete LVGL demo asset collection.
 
 if SYSTEM_A733DISPLAY
 

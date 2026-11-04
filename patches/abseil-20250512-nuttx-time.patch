@@ -1,0 +1,11 @@
+--- a/absl/time/internal/cctz/src/time_zone_format.cc
++++ b/absl/time/internal/cctz/src/time_zone_format.cc
+@@ -14,3 +14,8 @@
+ 
++// NuttX exposes strptime only with its optional MIT libc components. Use
++// CCTZ's existing standard-library fallback with the baseline mini locale.
++#if defined(__NuttX__) && !defined(HAS_STRPTIME)
++#define HAS_STRPTIME 0
++#endif
+ #if !defined(HAS_STRPTIME)
+ #if !defined(_MSC_VER) && !defined(__MINGW32__) && !defined(__VXWORKS__)

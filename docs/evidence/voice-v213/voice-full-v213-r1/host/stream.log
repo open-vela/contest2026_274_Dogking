@@ -1,0 +1,9 @@
+PASS CSI v205: 64 pause/rearm cycles; drain, late-error and translation gates retain/quarantine safely; HOST MOCK ONLY
+camera-stream-v212: broker-mask=000000ff status=0; no-global-policy-change
+camera-stream-v212: broker-mask=000000ff status=0; no-global-policy-change
+camera-stream-v212: broker-mask=000000ff status=0; no-global-policy-change
+camera-stream-v212: broker-mask=000000ff status=0; no-global-policy-change
+camera-stream-v212: broker-mask=000000ff status=0; no-global-policy-change
+camera-stream-v212: broker-mask=000000ff status=0; no-global-policy-change
+camera-stream-v212: broker-mask=000000ff status=0; no-global-policy-change
+PASS v206 actual stream broker: 64 gated frames, restart, leases, exact 00220083 rejection, clean-error STOP vs uncertain drain retention; HOST MOCK ONLY

@@ -9,6 +9,7 @@
 
 #include <stdint.h>
 #include <nuttx/fs/ioctl.h>
+#include <nuttx/npu/a733_tensor.h>
 
 #define A733_NPU_ABI_VERSION       4u
 #define A733_NPU_BUFFER_READ       (1u << 0)
@@ -171,5 +172,37 @@ struct a733_npu_run_s
 #define A733_NPUIOC_MODEL_PROBE    _DIOC(0xea)
 #define A733_NPUIOC_STAGE_FILE     _DIOC(0xeb)
 #define A733_NPUIOC_RUN_A7PM       _DIOC(0xec)
+/* Optional A7TV multi-tensor extension, independently versioned. Old kernels
+ * return ENOTTY; applications must never silently fall back to cloud/CPU. */
+#define A733_NPUIOC_TENSOR_QUERY   _DIOC(0xed)
+#define A733_NPUIOC_TENSOR_RUN     _DIOC(0xee)
+#define A733_NPUIOC_TENSOR_PREPARE _DIOC(0xef) /* query_s; one immutable snapshot/fd */
+#define A733_NPUIOC_TENSOR_PROFILE _DIOC(0xf0) /* profile_s; last RUN on same fd */
+
+/* v205 independent experimental extension. Base v4 structs/ioctls unchanged.
+ * PREPARE imports one immutable, known YOLO package snapshot per fd. RUN only
+ * accepts that same path plus a changing input file. close/release drops it.
+ * Timing is CPU monotonic; hw_exec includes init/submit/wait, NOT MAC-only.
+ * prepare_us contains package_us/map_us/input_us/sync_us subsets. */
+#define A733_NPU_LIVE_ABI 1u
+struct a733_npu_live_prepare_s
+{
+  uint32_t version;
+  int32_t status;
+  char path[A733_NPU_MODEL_PATH_MAX];
+  uint32_t bytes,crc32;
+};
+struct a733_npu_live_profile_s
+{
+  uint32_t version;
+  int32_t status;
+  uint32_t cache_hit,retained_regions,model_bytes,model_crc32;
+  uint64_t import_us,prepare_us,package_us,map_us,input_us,sync_us;
+  uint64_t hw_exec_us,output_us,decode_us,restore_us,total_us;
+};
+#define A733_NPUIOC_LIVE_PREPARE _DIOC(0xf1)
+#define A733_NPUIOC_LIVE_RUN     _DIOC(0xf2) /* existing run_s */
+#define A733_NPUIOC_LIVE_PROFILE _DIOC(0xf3)
+#define A733_NPUIOC_LIVE_RELEASE _DIOC(0xf4)
 
 #endif

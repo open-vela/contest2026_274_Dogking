@@ -1,0 +1,150 @@
+{
+  "result": "V212_VOICE_HOST_ARM_PASSED_NOT_BOARD",
+  "tests": [
+    {
+      "name": "repair",
+      "command": [
+        "python3",
+        "tools/test-repair-v212.py"
+      ],
+      "seconds": 0.7169548740000096,
+      "sha256": "b26c8bf1c11fd4e43256db254e74e0a4cf1ec15acee84e51d5e132bc4c60a472"
+    },
+    {
+      "name": "q8-workspace",
+      "command": [
+        "python3",
+        "tools/test-q8-workspace-v211.py"
+      ],
+      "seconds": 6.630656081999973,
+      "sha256": "ca5722be6a313bc6abd328f55be7cd05345b0e36b5b48066c6c333e5e4f3e69c"
+    },
+    {
+      "name": "asr-tail",
+      "command": [
+        "python3",
+        "tools/test-asr-tail-v211.py"
+      ],
+      "seconds": 20.41403419599999,
+      "sha256": "c6d3e7e9e8a26b600285f2f7396b820464891fe617eaef699fef2ff049effaf9"
+    },
+    {
+      "name": "session",
+      "command": [
+        "bash",
+        "tools/test-voice-session-v190.sh",
+        "out/voice-regression-v212-r1/session"
+      ],
+      "seconds": 2.170368611000015,
+      "sha256": "740f9b8f8d38aada4f7f822981cbe5026de100a6934160efbb1bccf6f68e90a3"
+    },
+    {
+      "name": "asr",
+      "command": [
+        "python3",
+        "tools/npu-voice/test-general-asr-v184.py",
+        "out/voice-regression-v212-r1/asr"
+      ],
+      "seconds": 38.95342173800003,
+      "sha256": "f4d37a3676be07f705674e188ce0c9335430f4c449fa12372422868777f2c634"
+    },
+    {
+      "name": "tts",
+      "command": [
+        "python3",
+        "tools/npu-voice/test-tts-engine-v185.py",
+        "out/voice-regression-v212-r1/tts"
+      ],
+      "seconds": 11.391953290999993,
+      "sha256": "92151cbb27da1645038eae3e998a7af2c180bf617fde65fbaec362cde278acdd"
+    },
+    {
+      "name": "stream",
+      "command": [
+        "bash",
+        "tools/build-voice-stream-v181.sh",
+        "out/voice-regression-v212-r1/stream"
+      ],
+      "seconds": 64.51439588300002,
+      "sha256": "c09130145a6bc8eb107155f511c931dc5baaba1ee98c23178aa65538c25c9e4d"
+    },
+    {
+      "name": "audio",
+      "command": [
+        "bash",
+        "tools/test-aipet-audio.sh"
+      ],
+      "seconds": 42.46528628300007,
+      "sha256": "a1d9a829afdadb33519e70a277aeaacc9598b7c264fa3a213bb3433f303aed0d"
+    },
+    {
+      "name": "llm-affinity",
+      "command": [
+        "python3",
+        "tools/test-llm-affinity-v210.py"
+      ],
+      "seconds": 0.41693215200007216,
+      "sha256": "8b4906d9c5ece2b903cf6026b4c8d635dea8881275dcf48ed08b537e50d5afa1"
+    },
+    {
+      "name": "llm-contract",
+      "command": [
+        "bash",
+        "tools/test-aipet-llm-v178.sh"
+      ],
+      "seconds": 16.152130780999983,
+      "sha256": "985293666c62beb139a88bb11c43587f5744cb6e7c6fd5a98e4b3811a6c9273b"
+    },
+    {
+      "name": "frontend",
+      "command": [
+        "bash",
+        "tools/test-frontend-audit.sh",
+        "out/a733-kws-wav-v161-r2/voice/kws/wav",
+        "out/a733-openvela-kws-v158-r2/voice/kws"
+      ],
+      "seconds": 18.50898314199992,
+      "sha256": "515e25c17d13d332dae65eed60328d4b63ba381a92a4f780002e0558e6baacc4"
+    },
+    {
+      "name": "capture",
+      "command": [
+        "python3",
+        "tools/test-live-capture-v182.py"
+      ],
+      "seconds": 4.627808989000073,
+      "sha256": "1ecfffc1f333ad5d0023147bfbd3866375071e00f38bc412f0e2ef9a29451c7d"
+    },
+    {
+      "name": "tensor",
+      "command": [
+        "bash",
+        "tools/test-a733-tensor.sh"
+      ],
+      "seconds": 8.38551922900001,
+      "sha256": "1cd4e8f567ab59063f4ba5dc302f6fe1da6d6a271611f717ae85fda89899fd7f"
+    },
+    {
+      "name": "tensor-arm",
+      "command": [
+        "python3",
+        "tools/test-tensor-crc-arm-v210.py"
+      ],
+      "seconds": 1.5189097059999312,
+      "sha256": "2c5166b7689198afd3e451667b5b70b7a7bf7a46fac97d962780fcfee1afc368"
+    },
+    {
+      "name": "voice-arm",
+      "command": [
+        "python3",
+        "tools/check-a733-voice-arm-v181.py",
+        "out/voice-regression-v212-r1/voice-arm"
+      ],
+      "seconds": 136.11858789100006,
+      "sha256": "90958f7323729ba57ec30be48c861c24c910151d4a813afe131765d3a7fb2fe1"
+    }
+  ],
+  "hardware_executed": false,
+  "physical_audio_onset_measured": false,
+  "latency_3_to_5_seconds": false
+}

@@ -1,0 +1,742 @@
+{
+  "result": "V210_SEALED_VOICE_CANDIDATE_NOT_BOARD_TESTED",
+  "firmware_commit": "e400da868c59ce447b6f17e410535057b33e0f19",
+  "image_sha256": "53816b0e9f6a111c6346ef477a8eaebaa59273770360fe916fba8654bb1024e1",
+  "kernel_sha256": "677d11dcef344c171b0f6b7ff8e1aa28ea98f64a3d306772d719bf658376de95",
+  "counts": {
+    "voice_regressions": 12,
+    "camera_regressions": 22,
+    "native_voice_units": 16,
+    "constructors": 24,
+    "sdk_paths_restored": 297,
+    "private_assets_roundtripped": 49,
+    "standard_wavs": 3
+  },
+  "payloads": {
+    "windows-image-hash.json": {
+      "bytes": 299,
+      "sha256": "22585564cfc053d5981280ccdcc220df1efb917bbc1ab713b2cbda535e136a3a"
+    },
+    "build/build.log": {
+      "bytes": 203634,
+      "sha256": "d38202f2caaec22278f9d40b4f00f8a282b0f3342bcc786085ee05c3b5113861"
+    },
+    "build/sdk-restored.json": {
+      "bytes": 58,
+      "sha256": "78a742e9087fef963db46c98511ee0849f178808572a57b3020c2d32883b6bbb"
+    },
+    "build/wrapper-status.txt": {
+      "bytes": 2,
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    "full/elf-audit.json": {
+      "bytes": 5557,
+      "sha256": "4bcdc670048d76fc84137e4fa2f3611ae9b02b2e821554fbbd10d46264d44c03"
+    },
+    "full/isa-audit.json": {
+      "bytes": 20195,
+      "sha256": "e81f8c1869e1d5bfe23303968cb3f97ccc502a1ee7b321f5fa69e4b62fb11911"
+    },
+    "full/summary.json": {
+      "bytes": 53524,
+      "sha256": "1b4c704da5c6b84cbb4f219948210e1a78c803d89d94cfc284f48272f61dabae"
+    },
+    "package/package.log": {
+      "bytes": 1465,
+      "sha256": "54249693ec2f77273620dfb03972e9e481ac4de956850fdb964f8fb0eee5265b"
+    },
+    "package/summary.json": {
+      "bytes": 51849,
+      "sha256": "23735fb6acbffa820674093e21c5ab5a7e1c542c997793556dc46dcc67b9d951"
+    },
+    "package/voice-fixtures.json": {
+      "bytes": 867,
+      "sha256": "b61d2b2da4314420855c42d692b0f0d4562c40cfbf8e2cda9d8e812ecdd64adf"
+    },
+    "voice/asr.log": {
+      "bytes": 1172,
+      "sha256": "6722f22ac5c967d3474c6d8e0b1a43ad173d012f0526f5ed8833b9b58df89e84"
+    },
+    "voice/audio.log": {
+      "bytes": 12724,
+      "sha256": "049b5ca00284a7eddd8e18c62b37110f427afff80976610c115e8985bf6f487a"
+    },
+    "voice/capture.log": {
+      "bytes": 330,
+      "sha256": "1ecfffc1f333ad5d0023147bfbd3866375071e00f38bc412f0e2ef9a29451c7d"
+    },
+    "voice/frontend.log": {
+      "bytes": 23459,
+      "sha256": "515e25c17d13d332dae65eed60328d4b63ba381a92a4f780002e0558e6baacc4"
+    },
+    "voice/llm-affinity.log": {
+      "bytes": 797,
+      "sha256": "8b4906d9c5ece2b903cf6026b4c8d635dea8881275dcf48ed08b537e50d5afa1"
+    },
+    "voice/llm-contract.log": {
+      "bytes": 6220,
+      "sha256": "14983893cdd238ad3d631bcf43bcf23c07a20c7204518c7884b25c66759d5851"
+    },
+    "voice/session.log": {
+      "bytes": 4084,
+      "sha256": "82a374f65abaa905e57a094a671c90baabf89d680cb074b5e5c206114d0d42f8"
+    },
+    "voice/stream.log": {
+      "bytes": 1811,
+      "sha256": "9ce3e722fe595f8d71a6c7fbbfd67bcec34968859c6e03da917830edb51dfadb"
+    },
+    "voice/summary.json": {
+      "bytes": 3468,
+      "sha256": "5ed592472a8897e8c8399e5641eef4da4351e02cc84b346932992fde707e205b"
+    },
+    "voice/tensor-arm.log": {
+      "bytes": 446,
+      "sha256": "ca501098562bee0e0dea02b023ad0537495a7b6288f9dc919c5d906a64b05c61"
+    },
+    "voice/tensor.log": {
+      "bytes": 521,
+      "sha256": "1cd4e8f567ab59063f4ba5dc302f6fe1da6d6a271611f717ae85fda89899fd7f"
+    },
+    "voice/tts.log": {
+      "bytes": 2617,
+      "sha256": "0beb603520dc2dfb7f121c5d1d8ed232635ac5c23ba67587a08f812710cd3599"
+    },
+    "voice/voice-arm.log": {
+      "bytes": 3430,
+      "sha256": "d2a335ee733dd58e08bba00fe9b1baf0da07fbaa6ce7ff9ed7d37bf915e04010"
+    },
+    "voice/asr/compile.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "voice/asr/run.log": {
+      "bytes": 1171,
+      "sha256": "7869cc3d52b8f1b1ca25b10b497a996cf5f99f67df8e6141a6cca31a1bbfbbd3"
+    },
+    "voice/asr/summary.json": {
+      "bytes": 4450,
+      "sha256": "285f0770cbfced19b033a8675062a3d0e6afd3d8eb5e8d2c4b755832448ece9f"
+    },
+    "voice/session/compute.log": {
+      "bytes": 656,
+      "sha256": "ecd433c687a87d8340f527f63d41df90abd4638bef98eb48f8b13d3481d889a1"
+    },
+    "voice/session/session.log": {
+      "bytes": 3428,
+      "sha256": "0828a7a1c0468329100f17588f63c9d97433ad3f94cade4771f7cc50595b5234"
+    },
+    "voice/tts/compile.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "voice/tts/run.log": {
+      "bytes": 2616,
+      "sha256": "a86fe49c3d93c317a6214b3f1a1f5707ecb9ebdc6450009c05e879de45b75e50"
+    },
+    "voice/tts/summary.json": {
+      "bytes": 2648,
+      "sha256": "ca44a9253e174e553590946c48e04dc4d8fd3dd53b0289689ad42ce8dfb9971b"
+    },
+    "voice/voice-arm/a733_audio_client.c.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "voice/voice-arm/a733_audio_client.c.su": {
+      "bytes": 1697,
+      "sha256": "ff4159ef1346c1ad79f2de3ae72bde0864f1227072131cbd5e1347ee844ed4db"
+    },
+    "voice/voice-arm/a733_i2s0_audio.c.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "voice/voice-arm/a733_i2s0_audio.c.su": {
+      "bytes": 6147,
+      "sha256": "e386fa624feb534c50807f0e105ad02375d26387b1c49ded3f9cd9e86c70f876"
+    },
+    "voice/voice-arm/aipetllm_modelcheck.c.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "voice/voice-arm/aipetllm_modelcheck.c.su": {
+      "bytes": 10200,
+      "sha256": "11663cc463adb9c1d1f289afccd52a023f5fd168e5927d6dd7f4870c957b1833"
+    },
+    "voice/voice-arm/aipet_main.cxx.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "voice/voice-arm/aipet_main.cxx.su": {
+      "bytes": 234,
+      "sha256": "d70eb6367db17633118fc249f36c23c5c63f5f254b6af9b2250d6808cdf199be"
+    },
+    "voice/voice-arm/audio_app.cxx.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "voice/voice-arm/audio_app.cxx.su": {
+      "bytes": 9963,
+      "sha256": "161c35fe212b161a910d8d3b8957d313b8d676f5d967e941d9ef2bbdf6febcd6"
+    },
+    "voice/voice-arm/audio_resample_stream.cxx.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "voice/voice-arm/audio_resample_stream.cxx.su": {
+      "bytes": 1644,
+      "sha256": "22cace5112a70a205b671ac989873d74c5dc0d29b93710742c8431febe1455d0"
+    },
+    "voice/voice-arm/local_llm.cxx.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "voice/voice-arm/local_llm.cxx.su": {
+      "bytes": 3762,
+      "sha256": "86e7bcf8e4bfba089719aadd880022053c599ec16db2cda3229b02e86dd3d47d"
+    },
+    "voice/voice-arm/pet_routes.cxx.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "voice/voice-arm/pet_routes.cxx.su": {
+      "bytes": 8805,
+      "sha256": "57875c7dc07eb533f3776aeb94fa91ad2a09387e9b19395bec3a6ce95258d22d"
+    },
+    "voice/voice-arm/summary.json": {
+      "bytes": 3429,
+      "sha256": "dec063b63e059060d2f90f58bfaca9ded370269ba0091a2ac0fa232d1f7e679e"
+    },
+    "voice/voice-arm/voice_acoustic.cxx.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "voice/voice-arm/voice_acoustic.cxx.su": {
+      "bytes": 4839,
+      "sha256": "ac85f6628bb774e73be26547631be3ab396d33fff97ce1ccbc2b99070287aba4"
+    },
+    "voice/voice-arm/voice_asr_stream.cxx.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "voice/voice-arm/voice_asr_stream.cxx.su": {
+      "bytes": 1970,
+      "sha256": "9bd0c38431f0cad5ba7b3cc03cf3e377dc3afedcd9d3d0758b3e202212757120"
+    },
+    "voice/voice-arm/voice_general_asr.cxx.log": {
+      "bytes": 1249,
+      "sha256": "0e63c579c910da4e4ad3a099f088f8280fb6f63b7717fbae463a4225deb97ded"
+    },
+    "voice/voice-arm/voice_general_asr.cxx.su": {
+      "bytes": 6484,
+      "sha256": "f64fea766d62974e94d78b9fa1b3e41704cf43a9e9b38e4d92e96d6ea90084f6"
+    },
+    "voice/voice-arm/voice_general_provider.cxx.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "voice/voice-arm/voice_general_provider.cxx.su": {
+      "bytes": 4120,
+      "sha256": "1d8140988436fc6b127b024b86a6e6bb55461d7e217d32c609799a1c609349e3"
+    },
+    "voice/voice-arm/voice_phrase_pipe.cxx.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "voice/voice-arm/voice_phrase_pipe.cxx.su": {
+      "bytes": 2114,
+      "sha256": "b9449fcc567f74384f6dabfbc6c899fb3bbc8e601acf9b3f20f88e332b43f678"
+    },
+    "voice/voice-arm/voice_play_stream.cxx.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "voice/voice-arm/voice_play_stream.cxx.su": {
+      "bytes": 2424,
+      "sha256": "3817f8e8fe25d845c78260b57e216520e85a5202cebc76a870c9016357214353"
+    },
+    "voice/voice-arm/voice_tts_engine.cxx.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "voice/voice-arm/voice_tts_engine.cxx.su": {
+      "bytes": 4293,
+      "sha256": "57e61ba3bd8f238902a894b03381ad6956abc266d6ef83245e5830876c879814"
+    },
+    "voice/voice-arm/voice_tts_frontend.cxx.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "voice/voice-arm/voice_tts_frontend.cxx.su": {
+      "bytes": 5336,
+      "sha256": "86d3275baae915106f57d28a4a941ff7748caef638001f0ef9c158db1cd8611f"
+    },
+    "package/assets/manifest.json": {
+      "bytes": 2520,
+      "sha256": "64a3c225574f072321c09808a056b7eecc0d32cbea51b61514fd92faee0efbcd"
+    },
+    "full/base/summary.json": {
+      "bytes": 9599,
+      "sha256": "6b8b4334c52b0a4bb9e281564ee9b838b6c7a2cab308073ff09f6a656ce23fc4"
+    },
+    "full/base/test-a733-camera-handoff-v194.py.log": {
+      "bytes": 111,
+      "sha256": "05890b92ffcefbb2ee4cb91713df1b817af428f700ea51e9230ceda8db641ead"
+    },
+    "full/base/test-a733-csi-registers-v199.py.log": {
+      "bytes": 309,
+      "sha256": "88734c195ec19a97ddb7772a31b53a6ac94de0a1ba6e33412559c694309ac423"
+    },
+    "full/host/affinity.log": {
+      "bytes": 147,
+      "sha256": "3a283dc1bcd011fec01e237ebd770001b0890e9127c34a155606b70474328674"
+    },
+    "full/host/async.log": {
+      "bytes": 2514,
+      "sha256": "bf2a2efc1c049a3fa0ad80dbd1706eeb11d178e9484ad4b6dbf46feccd55aac0"
+    },
+    "full/host/camera-v203.log": {
+      "bytes": 328,
+      "sha256": "541fef3e465f204a1ce0ff7fea35af27556cdd62246c365754f3f30f3fd39386"
+    },
+    "full/host/crc-arm.log": {
+      "bytes": 426,
+      "sha256": "db14d50d759f5829d63f9e0fcdbf657218e084a7b800b664a8e01b41738f87e7"
+    },
+    "full/host/crc-fused.log": {
+      "bytes": 234,
+      "sha256": "bce8b413612d57769466ca24b557d8c33799f85b7d46cadda2843f715db2d7a1"
+    },
+    "full/host/csi-old.log": {
+      "bytes": 153,
+      "sha256": "d2e0d1771515dff0626819c457ea05c79f3525822ff3a5d9e0ebcdea9689ba62"
+    },
+    "full/host/decode-exact.log": {
+      "bytes": 123,
+      "sha256": "500af1a0d62ed400fbeddf00f5d3acc249f7eefe3b176e6ae5447282514edf19"
+    },
+    "full/host/display.log": {
+      "bytes": 156,
+      "sha256": "27232582e0b13cbd79b037b14480fea49ad79e3244ba9bdd413058cb21c91a22"
+    },
+    "full/host/lease.log": {
+      "bytes": 118,
+      "sha256": "dc32fc1fd2f0c75f019377a70d6e533dc70b05c947d0ed5c45029fc622f5f452"
+    },
+    "full/host/legacy-app.log": {
+      "bytes": 1661,
+      "sha256": "275fcf2a9e28a994050cf8dab666fdc4aaf80c903394ce6055ba79e2591d97aa"
+    },
+    "full/host/old-log.log": {
+      "bytes": 78,
+      "sha256": "0248a1884eb6ec9e8df2cf2e137155dc32bdbd3afc4d6a52c229dca4d864ac9b"
+    },
+    "full/host/optimized-app.log": {
+      "bytes": 1661,
+      "sha256": "275fcf2a9e28a994050cf8dab666fdc4aaf80c903394ce6055ba79e2591d97aa"
+    },
+    "full/host/perf-log.log": {
+      "bytes": 87,
+      "sha256": "dff98ca72c2b855131123190c7626e1a8d4a3f86e255143b3c5d023cd0401056"
+    },
+    "full/host/pipeline.log": {
+      "bytes": 2142,
+      "sha256": "cd000c242ef48e8e389c8afe6db610ef8b94df46ade76a70138f48f88afc68e8"
+    },
+    "full/host/pixels.log": {
+      "bytes": 188,
+      "sha256": "d94f3bd4187e96981ee355f202024294cf851cbb8b090b12bd955417cb91f08c"
+    },
+    "full/host/registers.log": {
+      "bytes": 309,
+      "sha256": "88734c195ec19a97ddb7772a31b53a6ac94de0a1ba6e33412559c694309ac423"
+    },
+    "full/host/resident.log": {
+      "bytes": 167,
+      "sha256": "df68fc2ed7b594d7470b1e14db4be633cb2e88e840acecd97d9bc5f6cd6cfdfa"
+    },
+    "full/host/stream-fix.log": {
+      "bytes": 403,
+      "sha256": "bba5e473c266d69d37dd34929c22c07eaf7e1775e83f90322bc4d4bd5baeb33a"
+    },
+    "full/host/stream.log": {
+      "bytes": 273,
+      "sha256": "5f098560864992e26178e087b3cd22f5f5df569a41a82bf2630fe99beabb23fb"
+    },
+    "full/host/summary.json": {
+      "bytes": 5203,
+      "sha256": "239c31a98902cd0c7f752888226a14c4c277b866f89f0b49a6450ead970cfe89"
+    },
+    "full/host/swout1.log": {
+      "bytes": 348,
+      "sha256": "59ececf72abcb760aeecd35500fcd72dc618942c72d7bb4132c79a32a6ea1805"
+    },
+    "full/host/tone-compat.log": {
+      "bytes": 106,
+      "sha256": "f4cb12c1b50cbf94c058a8752acf3a61e2f1adb56178f372a49024ca2d11cf3d"
+    },
+    "full/host/vfs.log": {
+      "bytes": 522,
+      "sha256": "bff348b8be8aa83849f7b0671e0115aaabcdeec42f71f16a239629c6f9279461"
+    },
+    "full/native/a733camera_main.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "full/native/a733camera_main.su": {
+      "bytes": 2725,
+      "sha256": "e455ae74e431e286f76603b9c3113793336f7c87f2818db2ad22d6601961df3a"
+    },
+    "full/native/a733display_main.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "full/native/a733display_main.su": {
+      "bytes": 6232,
+      "sha256": "3fdc0a8feb5cfda41a913765b375db66197deae4f572a01d4faebb98d74b030f"
+    },
+    "full/native/a733_camera_control.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "full/native/a733_camera_control.su": {
+      "bytes": 4583,
+      "sha256": "cd3ba412911fc55799996d22dab0918d4a0430c3f86a7286c23d38cf41192356"
+    },
+    "full/native/a733_camera_image.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "full/native/a733_camera_image.su": {
+      "bytes": 2150,
+      "sha256": "5ab1887b53c7db943ec6d8e7c98fbd5077755f081fe7b5c5bca8e30c7af3d21d"
+    },
+    "full/native/a733_camera_live.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "full/native/a733_camera_live.su": {
+      "bytes": 6877,
+      "sha256": "8aa03ed606107cd16874465516fe2ed7d549e23ec0382f061ed038ec42a31664"
+    },
+    "full/native/a733_csi_capture.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "full/native/a733_csi_capture.su": {
+      "bytes": 3135,
+      "sha256": "bdd7439e950e6c1dbf2d6092b1469ef1c81a0f296c78975319cdb5c86019d951"
+    },
+    "full/native/a733_imx214_cold.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "full/native/a733_imx214_cold.su": {
+      "bytes": 4533,
+      "sha256": "b348c1c7bd0acee34b9e0b8134bd4bc3b8adf92c5ef2ffd064889119d5d22c75"
+    },
+    "full/native/a733_npu_runtime.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "full/native/a733_npu_runtime.su": {
+      "bytes": 6834,
+      "sha256": "147396d160c2d09ec7e6ffa44bc7a83fefc0d69813772f77cac6dc8786a4e4b9"
+    },
+    "full/native/summary.json": {
+      "bytes": 40533,
+      "sha256": "312b9748fcb4b65d00cf115d9f52a0a56105abbef03d844a9071bb5c8007aa0b"
+    },
+    "full/base/base/a733npu_main.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "full/base/base/a733npu_main.su": {
+      "bytes": 1098,
+      "sha256": "69212a917ce3ac06c0d726d285e1efa19e5d1190eca3ad2b2407aeefaa235586"
+    },
+    "full/base/base/summary.json": {
+      "bytes": 9289,
+      "sha256": "8db2c7048d0c74da576b914280c045dd2eaff5f4dca697b554420f183bf17619"
+    },
+    "full/base/base/test-a733-camera-handoff-v194.py.log": {
+      "bytes": 111,
+      "sha256": "c56199b1f40444592959d4097f51b75a4c8b08b14e51657e393c1076bc31436e"
+    },
+    "full/base/base/test-a733-vision-v198.py.log": {
+      "bytes": 1079,
+      "sha256": "68165f4b1ad9c682f8be25d63372ddcc2d49f6040f468da401f7b3f9140025a5"
+    },
+    "full/base/base/base/a733display_main.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "full/base/base/base/a733display_main.su": {
+      "bytes": 6232,
+      "sha256": "2fd401a1f8778bcf917b553c2f086439b602d69d54385eb468781940c78ca221"
+    },
+    "full/base/base/base/a733_csi_capture.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "full/base/base/base/a733_csi_capture.su": {
+      "bytes": 3135,
+      "sha256": "bdd7439e950e6c1dbf2d6092b1469ef1c81a0f296c78975319cdb5c86019d951"
+    },
+    "full/base/base/base/handoff-v197.log": {
+      "bytes": 111,
+      "sha256": "e3d0deea67cf73abf3db99a4e10845f53f66e1bc8b2fbe1cd9853ce801037d0f"
+    },
+    "full/base/base/base/summary.json": {
+      "bytes": 11214,
+      "sha256": "234462e5a51da1e840e2ae6680224c8f559bd8419e579b455b33642e8487a691"
+    },
+    "full/base/base/base/test-a733-camera-export.py.log": {
+      "bytes": 150,
+      "sha256": "a80cc2f8f22859932cb88c5c2b6f35a8f970c7de2b2bd106a5716a8ed74920ec"
+    },
+    "full/base/base/base/test-a733-camera-frame.py.log": {
+      "bytes": 164,
+      "sha256": "b56d68e12b2f2c316ee9c384fdb7862185c7727446609fc5e36b16976b6e6e28"
+    },
+    "full/base/base/base/test-a733-csi-capture.py.log": {
+      "bytes": 153,
+      "sha256": "d2e0d1771515dff0626819c457ea05c79f3525822ff3a5d9e0ebcdea9689ba62"
+    },
+    "full/base/base/base/test-a733-display-image.py.log": {
+      "bytes": 211,
+      "sha256": "81594c02c760c50a124e57668b8d95d944e3e83c8aabbd26632a4a6be705880d"
+    },
+    "full/base/base/base/base/handoff-v196.log": {
+      "bytes": 111,
+      "sha256": "0d6d5a3e203e83ce980b157dd3d88a7c0398becfc33ccd852827f79ac643066b"
+    },
+    "full/base/base/base/base/register-model.log": {
+      "bytes": 309,
+      "sha256": "0364fd16d1d9d01badcc0fd95a681bb104518e6c48b83a38eea440f94a500bd5"
+    },
+    "full/base/base/base/base/summary.json": {
+      "bytes": 7262,
+      "sha256": "7d4fc9ab725af79ba1edf5e0e4c2bd33bbafa8128cce4db0a41ad367d0912a20"
+    },
+    "full/base/base/base/base/base/a733_mipi_rx.su": {
+      "bytes": 3299,
+      "sha256": "70a57bdeaceca2457834a84b1bd4c25ca6029efe38e35c8bf9d28f2cbdf2e97b"
+    },
+    "full/base/base/base/base/base/arm-object.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "full/base/base/base/base/base/handoff-tests.log": {
+      "bytes": 111,
+      "sha256": "7fd1bb12428cbbef39860dc4e835a3f9c980099b330b8e62cb623aa8a1c23009"
+    },
+    "full/base/base/base/base/base/packet-tests.log": {
+      "bytes": 305,
+      "sha256": "22e165f1d82aa81ef6c7f905f3ef5db4e8a0b69b2cab9d1e91663bcb05b738fd"
+    },
+    "full/base/base/base/base/base/staging-tests.log": {
+      "bytes": 128,
+      "sha256": "ad5baf5c634f115553166f63c91c685f01ffb28deb95dfb49953df7de00f669c"
+    },
+    "full/base/base/base/base/base/summary.json": {
+      "bytes": 6599,
+      "sha256": "62686a2485f1d25077cb76838a6f7a0d238eaa77fd1e848f6ebb7c16d9cc558b"
+    },
+    "full/base/base/base/base/base/base/summary.json": {
+      "bytes": 4833,
+      "sha256": "5cec70670d93ecfc793b7d6d770afe63b921c2f032160372dd5d4e5224177f7b"
+    },
+    "full/base/base/base/base/base/base/test-a733-camera-handoff-v194.py.log": {
+      "bytes": 111,
+      "sha256": "7d4b3836c55dc2b1820adb5b7e8d94abfce104f0861169e700492cc4059eea47"
+    },
+    "full/base/base/base/base/base/base/test-a733-camera-mode-trial.py.log": {
+      "bytes": 155,
+      "sha256": "e143f569a7bbae5a3c0406c1756ae8f5ea749bf1e2603a1a33e100d57a056fa4"
+    },
+    "full/base/base/base/base/base/base/base/id-trial.log": {
+      "bytes": 171,
+      "sha256": "1325527897ee1148ad099c07e29fa849ee2ecd35b4d92201cd28485cdb244f06"
+    },
+    "full/base/base/base/base/base/base/base/summary.json": {
+      "bytes": 3786,
+      "sha256": "fe58f6ba01ca072750fadc12cdddae8737dbcc8e0567f84df2336f647592fe15"
+    },
+    "full/base/base/base/base/base/base/base/base/a733camera_main.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "full/base/base/base/base/base/base/base/base/a733camera_main.su": {
+      "bytes": 2718,
+      "sha256": "f847fc89ce4382286f0f86f006700fab4f8ed7200d41116c9373f3fc18608787"
+    },
+    "full/base/base/base/base/base/base/base/base/a733_camera_control.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "full/base/base/base/base/base/base/base/base/a733_camera_control.su": {
+      "bytes": 4583,
+      "sha256": "cd3ba412911fc55799996d22dab0918d4a0430c3f86a7286c23d38cf41192356"
+    },
+    "full/base/base/base/base/base/base/base/base/a733_camera_diag.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "full/base/base/base/base/base/base/base/base/a733_camera_diag.su": {
+      "bytes": 1428,
+      "sha256": "2fba77edcd092ab3f3bbbfd14da9fc526394f5382c171d701edfa467fa75be8f"
+    },
+    "full/base/base/base/base/base/base/base/base/a733_imx214_cold.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "full/base/base/base/base/base/base/base/base/a733_imx214_cold.su": {
+      "bytes": 4533,
+      "sha256": "b348c1c7bd0acee34b9e0b8134bd4bc3b8adf92c5ef2ffd064889119d5d22c75"
+    },
+    "full/base/base/base/base/base/base/base/base/summary.json": {
+      "bytes": 24774,
+      "sha256": "1b3f4bfc49cdcc3ed196f65d0b2fcccf499c5ca3521eee0a992eb02eddbd3800"
+    },
+    "full/base/base/base/base/base/base/base/base/test-a733-camera-control.py.log": {
+      "bytes": 152,
+      "sha256": "f26ecc84706a474bd9ee8a4be3c43c7c30289220ab63793b7b3e63452231a33c"
+    },
+    "full/base/base/base/base/base/base/base/base/test-a733-camera-handoff-v192.py.log": {
+      "bytes": 264,
+      "sha256": "11454e3dc84ee2829a91a5641026a1fdbb1d92a7dc4847b04d2b26fa64d05cb2"
+    },
+    "full/base/base/base/base/base/base/base/base/test-a733-imx214-cold.py.log": {
+      "bytes": 154,
+      "sha256": "63f4755d7de94936ad4b3c8aec1fb7c714df025f3875e5c5c2ef0e5ee77c646a"
+    },
+    "full/base/base/base/base/base/base/base/base/base/a733_csi_frame_plan.su": {
+      "bytes": 251,
+      "sha256": "1c305041bb60d514ea3c2a85b4a2d144f1872e9c830697402bf3aeb857561548"
+    },
+    "full/base/base/base/base/base/base/base/base/base/a733_imx214_mode.su": {
+      "bytes": 2891,
+      "sha256": "005c008c67655eb7b6893378e73ee41e448d612d7726a39bc9f0532043046898"
+    },
+    "full/base/base/base/base/base/base/base/base/base/arm.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "full/base/base/base/base/base/base/base/base/base/command.json": {
+      "bytes": 4572,
+      "sha256": "7c2f25f7f8388ca2ce7d6c955efce544571bcf3fc272527e9824d31d1f0bc2d0"
+    },
+    "full/base/base/base/base/base/base/base/base/base/frame-plan-arm.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "full/base/base/base/base/base/base/base/base/base/frame-plan-host.log": {
+      "bytes": 121,
+      "sha256": "d160ce1fcdb304f550caeb83ff00b7a24344a41ec19709bc4d5e70bbbc6f3a03"
+    },
+    "full/base/base/base/base/base/base/base/base/base/mode-host.log": {
+      "bytes": 211,
+      "sha256": "cc29d46da2f1fa80e317a5be4fac89f8635de0279ffdbacbcfb139736470b2f0"
+    },
+    "full/base/base/base/base/base/base/base/base/base/summary.json": {
+      "bytes": 4682,
+      "sha256": "a290fa7e7a2de39c7bca2c9b3f5b422ef77592caa35adb5a5ea24f10c010a850"
+    },
+    "full/base/base/base/base/base/base/base/base/base/base/a733camera_main.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "full/base/base/base/base/base/base/base/base/base/base/a733camera_main.su": {
+      "bytes": 2718,
+      "sha256": "f847fc89ce4382286f0f86f006700fab4f8ed7200d41116c9373f3fc18608787"
+    },
+    "full/base/base/base/base/base/base/base/base/base/base/a733_camera_board.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "full/base/base/base/base/base/base/base/base/base/base/a733_camera_board.su": {
+      "bytes": 500,
+      "sha256": "1fad3848dc9584fa598935c6abd21edf19390630a51b84684146676932b2b35e"
+    },
+    "full/base/base/base/base/base/base/base/base/base/base/a733_camera_diag.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "full/base/base/base/base/base/base/base/base/base/base/a733_camera_diag.su": {
+      "bytes": 1428,
+      "sha256": "2fba77edcd092ab3f3bbbfd14da9fc526394f5382c171d701edfa467fa75be8f"
+    },
+    "full/base/base/base/base/base/base/base/base/base/base/a733_camera_image.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "full/base/base/base/base/base/base/base/base/base/base/a733_camera_image.su": {
+      "bytes": 2590,
+      "sha256": "0e2a14c3c0c80ff2bd070e4d6996d0f7182fbb37c04d4c87e7e485e77dba1180"
+    },
+    "full/base/base/base/base/base/base/base/base/base/base/a733_imx214_probe.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "full/base/base/base/base/base/base/base/base/base/base/a733_imx214_probe.su": {
+      "bytes": 480,
+      "sha256": "ded3bb2bea0feb9fe3eaf7ea8e2927b859c58b03d8d0d62a0583d4eea5553195"
+    },
+    "full/base/base/base/base/base/base/base/base/base/base/a733_imx214_twi3.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "full/base/base/base/base/base/base/base/base/base/base/a733_imx214_twi3.su": {
+      "bytes": 4570,
+      "sha256": "b9c01b938401ef23f3c00f155654acc970fa5be63ad15048565372bff348ddcd"
+    },
+    "full/base/base/base/base/base/base/base/base/base/base/a7z_boardinit.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "full/base/base/base/base/base/base/base/base/base/base/a7z_boardinit.su": {
+      "bytes": 769,
+      "sha256": "cac27fa090b78e4f10b26a93f1a7f790e5d2493fb0a9f539d10cdbcf3a514060"
+    },
+    "full/base/base/base/base/base/base/base/base/base/base/build-wrapper-syntax.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "full/base/base/base/base/base/base/base/base/base/base/summary.json": {
+      "bytes": 46104,
+      "sha256": "6c244e8544ac4bbe5d40c534e076e688e81d9e117b0dc37ae0c03709f3ff45aa"
+    },
+    "full/base/base/base/base/base/base/base/base/base/base/test-a733-camera-board.py.log": {
+      "bytes": 100,
+      "sha256": "5144263ed7c775e17a65eb638cfffafbbd7aeb1612407890c172d331cf479252"
+    },
+    "full/base/base/base/base/base/base/base/base/base/base/test-a733-camera-cli.py.log": {
+      "bytes": 113,
+      "sha256": "572f12a3fde75cc86a68dbdb1ff4d65b83f8ae530c3d6da924011437a0c80b3b"
+    },
+    "full/base/base/base/base/base/base/base/base/base/base/test-a733-camera-diag.py.log": {
+      "bytes": 117,
+      "sha256": "c822e6686a9cc06741f3b14ec299ac7415605a7afba88f332f14d0faec0e51c2"
+    },
+    "full/base/base/base/base/base/base/base/base/base/base/test-a733-camera-image.py.log": {
+      "bytes": 96,
+      "sha256": "17fca03587e4c01b24a23faacf15a4eda1a0d28dcf386b8015ef22ad382e34dd"
+    },
+    "full/base/base/base/base/base/base/base/base/base/base/test-a733-imx214-probe.py.log": {
+      "bytes": 165,
+      "sha256": "daee845b604f198f99e8e12319229171543b0821a576d78aca66a09efed190ff"
+    },
+    "full/base/base/base/base/base/base/base/base/base/base/test-a733-imx214-twi3.py.log": {
+      "bytes": 367,
+      "sha256": "0d42d907048adb3637f2d3a438999f8f3ef55598eac4e2fe2021d9081dff0d69"
+    },
+    "full/base/base/base/base/base/base/base/base/base/base/test-linux-imx214-script.py.log": {
+      "bytes": 127,
+      "sha256": "b34ae341fb384160b75a544cdcda35b3863b55b5083990698cecc4e4f1136c2a"
+    }
+  },
+  "full_voice_chain_accepted": false,
+  "latency_3_to_5_seconds": false,
+  "physical_disks_written": false,
+  "ufs_written": false,
+  "models_or_private_audio_committed": false
+}

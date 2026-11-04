@@ -1,0 +1,6 @@
+{
+  "sha256": "c168b667d0a22f171d2a2763158de4d05c00898d9c38f55b8fd2f04fd50b2f99",
+  "bytes": 2147483648,
+  "tool": "Windows Get-FileHash SHA256",
+  "physical_disks_written": false
+}

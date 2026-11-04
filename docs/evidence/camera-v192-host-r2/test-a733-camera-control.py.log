@@ -1,0 +1,1 @@
+PASS: actual camera-control fops; normal boot ZERO MMIO, one-shot image handoff, invalid data/commands/lock, reset-held 24M/1M/park; MOCK hardware only

@@ -1,0 +1,1 @@
+PASS: 86 v193 composed ID experiment cases; real adapter/core/TWI, fixed ID only, no strict lease, one-shot/STOP/park/quarantine and each callback failure; SYNTHETIC ONLY

@@ -1,0 +1,100 @@
+--- a/nuttx/fs/fat/fs_fat32.h
++++ b/nuttx/fs/fat/fs_fat32.h
+@@ -904,1 +904,2 @@
+-  uint8_t  ff_bflags;              /* The file buffer/mount flags */
++  FAR char *ff_relpath;            /* Open path for FIOC_FILEPATH / file locks */
++  uint8_t  ff_bflags;              /* The file buffer/mount flags */
+--- a/nuttx/fs/fat/fs_fat32.c
++++ b/nuttx/fs/fat/fs_fat32.c
+@@ -33,1 +33,3 @@
+-#include <stdlib.h>
++#include <stdlib.h>
++#include <stdio.h>
++#include <limits.h>
+@@ -336,1 +336,8 @@
+-  ff->ff_buffer = (FAR uint8_t *)fat_io_alloc(fs->fs_hwsectorsize);
++  ff->ff_relpath = fs_heap_strdup(relpath);
++  if (ff->ff_relpath == NULL)
++    {
++      ret = -ENOMEM;
++      goto errout_with_struct;
++    }
++
++  ff->ff_buffer = (FAR uint8_t *)fat_io_alloc(fs->fs_hwsectorsize);
+@@ -387,2 +387,2 @@
+-          fs_heap_free(ff);
+-          return (int)offset;
++          fat_close(filep);
++          return (int)offset;
+@@ -398,2 +398,3 @@
+-errout_with_struct:
+-  fs_heap_free(ff);
++errout_with_struct:
++  fs_heap_free(ff->ff_relpath);
++  fs_heap_free(ff);
+@@ -475,3 +475,4 @@
+-  /* Then free the file structure itself. */
+-
+-  fs_heap_free(ff);
++  /* Then free the file structure itself. */
++
++  fs_heap_free(ff->ff_relpath);
++  fs_heap_free(ff);
+@@ -1380,4 +1380,34 @@
+-  /* ioctl calls are just passed through to the contained block driver */
+-
+-  nxmutex_unlock(&fs->fs_lock);
+-  return -ENOTTY;
++  /* UnQLite and POSIX record locks need the full descriptor path.
++   * Do not forward a file-path request to the block driver. */
++
++  if (cmd == FIOC_FILEPATH)
++    {
++      FAR char *path = (FAR char *)(uintptr_t)arg;
++      size_t used;
++      int written;
++
++      if (path == NULL)
++        {
++          ret = -EINVAL;
++        }
++      else
++        {
++          ret = inode_getpath(inode, path, PATH_MAX);
++          if (ret >= 0)
++            {
++              used = strlen(path);
++              written = snprintf(path + used, PATH_MAX - used,
++                                 "%s%s", used && path[used - 1] == '/' ?
++                                 "" : "/", ff->ff_relpath);
++              ret = written < 0 || (size_t)written >= PATH_MAX - used ?
++                    -ENAMETOOLONG : OK;
++            }
++        }
++    }
++  else
++    {
++      ret = -ENOTTY;
++    }
++
++  nxmutex_unlock(&fs->fs_lock);
++  return ret;
+@@ -1555,1 +1555,1 @@
+-  newff = fs_heap_malloc(sizeof(struct fat_file_s));
++  newff = fs_heap_zalloc(sizeof(struct fat_file_s));
+@@ -1565,1 +1565,8 @@
+-  newff->ff_buffer = (FAR uint8_t *)fat_io_alloc(fs->fs_hwsectorsize);
++  newff->ff_relpath = fs_heap_strdup(oldff->ff_relpath);
++  if (newff->ff_relpath == NULL)
++    {
++      ret = -ENOMEM;
++      goto errout_with_struct;
++    }
++
++  newff->ff_buffer = (FAR uint8_t *)fat_io_alloc(fs->fs_hwsectorsize);
+@@ -1623,2 +1623,3 @@
+-errout_with_struct:
+-  fs_heap_free(newff);
++errout_with_struct:
++  fs_heap_free(newff->ff_relpath);
++  fs_heap_free(newff);

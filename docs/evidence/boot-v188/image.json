@@ -1,0 +1,45 @@
+{
+  "result": "PRIVATE_BOOT_CANDIDATE_PACKAGED_NOT_BOOTED",
+  "image": "../openvela-a733-cubie-a7z-sd-v188-boot-candidate.img",
+  "bytes": 2147483648,
+  "sha256": "a18142fda0ed79896af9a357a190034668089368809f255cac841085cc41c44b",
+  "base_sha256": "fbcd67f55429c83550edd7c983b63f5862e7eccc8840de898b60aa6c62afdfd0",
+  "kernel_sha256": "4597bf7f38a694b0a5f978485ea0a91bc230de55c86ddf95ce200f2a0ff90db4",
+  "packaging_commit": "671425f13e657b141d7f05466ea2071e31eefea0",
+  "required_config": [
+    "CONFIG_A733_BOOT_DIAGNOSTICS=y",
+    "CONFIG_SMP_NCPUS=8",
+    "CONFIG_BOARD_LATE_INITIALIZE=y",
+    "CONFIG_NSH_ARCHINIT=y",
+    "CONFIG_BOARD_INITTHREAD_STACKSIZE=262144",
+    "CONFIG_BOARD_INITTHREAD_PRIORITY=100",
+    "CONFIG_LIBC_MAX_EXITFUNS=0",
+    "CONFIG_A733_CPU_ACOUSTIC=y",
+    "CONFIG_A733_NPU_GENERAL_ASR=y"
+  ],
+  "sdk_restore": {
+    "result": "SDK_RESTORED_BYTE_EXACT",
+    "paths": 280
+  },
+  "unchanged_image_spans": [
+    {
+      "begin": 0,
+      "end": 348127232,
+      "sha256": "b71bd34787a2ed4af2ba178a15c289f2c73deeafe6b427516ae92b690fdf5ee3"
+    },
+    {
+      "begin": 469762048,
+      "end": 2147483648,
+      "sha256": "ef76c04de9a08ea640e188a432ec26ce81a418458e6a1f10cfea824a7ac36468"
+    }
+  ],
+  "model_fat_unchanged": true,
+  "compiled_boot_call_graph_checked": true,
+  "elf_sha256": "a90077a9233fd0ed4f6f58a8d97dc5d9ed807992d9a914e58530ad241526cd33",
+  "config_sha256": "3551de1e7b192dc8a1b7efada97e481d615deaafe7f47379034c390eeea7f07a",
+  "hardware_executed": false,
+  "root_cause_confirmed": false,
+  "physical_disks_written": false,
+  "old_images_modified": false,
+  "models_private": true
+}

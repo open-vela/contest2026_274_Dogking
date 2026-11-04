@@ -1,0 +1,11 @@
+cmd_open_light_16k: 帮我打开灯 chunks=2 same-three-clients
+cmd_time_16k: 现在几点了 chunks=2 same-three-clients
+neg_silence_3s_16k:  chunks=4 same-three-clients
+cmd_open_light_16k: 帮我打开灯 chunks=2 same-three-clients
+cmd_time_16k: 现在几点了 chunks=2 same-three-clients
+neg_silence_3s_16k:  chunks=4 same-three-clients
+asr-compute-v190: encoder=4/1804us decoder=1/2us joiner=96/920us; HOST; no target affinity/inference qualification
+asr-compute-v190: encoder=0/0us decoder=0/0us joiner=0/0us; HOST; no target affinity/inference qualification
+asr-compute-v190: encoder=1/479us decoder=1/4us joiner=0/0us; HOST; no target affinity/inference qualification
+PASS: native capture replay + 35-state feedback, cancellation, finite/output gates; mock calls=428, NPU=NOT_EXECUTED
+

@@ -99,7 +99,8 @@ static ssize_t a733_hwdiag_read(struct file *filep, char *buffer,
     "pwm: /dev/pwm0 cer=%08lx pcr9=%08lx ppr9=%08lx fan=PJ27\n"
     "pinmux: UART2_M0 on PJ22/23 reserved; conflicts with active TWI7\n"
     "network: no onboard Ethernet; FCU760K Wi-Fi/BT uses USB1 node=/dev/a733-wifi\n"
-    "ufs: hcs=%08lx hce=%08lx state=%s (non-blocking)\n",
+    "ufs: ccu-axi=%08lx ccu-cfg=%08lx ccu-bgr=%08lx "
+    "HCI-not-read (power/domain unqualified; see /dev/a733-ufs)\n",
     (unsigned long long)mpidr,
     (unsigned long long)midr,
     a733_cpu_name(midr),
@@ -122,10 +123,9 @@ static ssize_t a733_hwdiag_read(struct file *filep, char *buffer,
     (unsigned long)REG32(0x025280c0),
     (unsigned long)REG32(0x02528230),
     (unsigned long)REG32(0x02528238),
-    (unsigned long)REG32(0x04520030),
-    (unsigned long)REG32(0x04520034),
-    (REG32(0x04520030) & 1u) != 0 ? "present/link-capable" :
-                                    "absent/not-started");
+    (unsigned long)REG32(0x02002d80),
+    (unsigned long)REG32(0x02002d84),
+    (unsigned long)REG32(0x02002d8c));
 
   for (cpu = 0; cpu < A733_CPU_COUNT && length < sizeof(report); cpu++)
     {

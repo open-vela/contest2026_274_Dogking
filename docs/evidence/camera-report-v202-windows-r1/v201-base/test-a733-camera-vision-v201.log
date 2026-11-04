@@ -1,0 +1,19 @@
+test_actual_c_exporter_feeds_offline_validator (__main__.ProtocolTests.test_actual_c_exporter_feeds_offline_validator) ... skipped 'Actual C exporter fixture requires Linux/WSL gcc'
+test_capture_requires_cleanup_and_commit (__main__.ProtocolTests.test_capture_requires_cleanup_and_commit) ... ok
+test_consumer_mutations (__main__.ProtocolTests.test_consumer_mutations) ... ok
+test_dependency_order_success_and_every_failure (__main__.ProtocolTests.test_dependency_order_success_and_every_failure) ... ok
+test_directory_injection (__main__.ProtocolTests.test_directory_injection) ... ok
+test_metadata_mutations (__main__.ProtocolTests.test_metadata_mutations) ... ok
+test_offline_bundle_integrity (__main__.ProtocolTests.test_offline_bundle_integrity) ... ok
+test_plan_has_no_network (__main__.ProtocolTests.test_plan_has_no_network) ... ok
+test_producer_mutations (__main__.ProtocolTests.test_producer_mutations) ... ok
+test_real_pty_authentication_and_command_boundaries (__main__.ProtocolTests.test_real_pty_authentication_and_command_boundaries) ... skipped 'Real PTY test requires Linux/WSL; no network'
+test_real_source_contract (__main__.ProtocolTests.test_real_source_contract) ... ok
+test_regular_listing (__main__.ProtocolTests.test_regular_listing) ... ok
+test_split_console_markers (__main__.ProtocolTests.test_split_console_markers) ... ok
+test_zero_one_seven_truncated_thirtytwo (__main__.ProtocolTests.test_zero_one_seven_truncated_thirtytwo) ... ok
+
+----------------------------------------------------------------------
+Ran 14 tests in 0.106s
+
+OK (skipped=2)

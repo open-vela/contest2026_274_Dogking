@@ -1,0 +1,251 @@
+nsh> sleep 5
+nsh> bttool
+bttool> state
+bttool> [[Kttool] Adapter State: 6
+[bttool] cmd#40 state: rc=0 (accepted; async operation may still be pending)
+quit
+[bttool] cmd#41 quit: rc=-2 (quit)
+nsh> cat /dev/a733-bt
+A733 FCU760K USB HCI / official openvela host transport
+last=-11 stage=not-probed probes=0 events=0 hci-status=ff unsafe=0
+runtime=a69c:8d81 event=03 ACL=04/04
+firmware: mode=5 HCI-port=1 readback=1 expected-port=1(USB)
+transport: phase=idle command=-11/0 event=-110/0 polls=44748
+periodic: cmd=00080b11 sts=00004000 qtd=80408d80 frame=070f->072f
+version=00 revision=0000 manufacturer=0000
+address=00:00:00:00:00:00
+le-features=0000000000000000
+control: echo probe > /dev/a733-bt (read-only HCI queries; no reset)
+target: openvela BLE GATT central -> ESP32-S3 peripheral
+host: registered=0 open=1 worker=31 error=0 needs-reboot=0 failures=0 tx-command=68 tx-acl=0 rx-event=526 rx-acl=0
+hci-proof: tx-op=2005 rx-op=2005 status=00 failed-op=0000 failed-status=00
+host-control: bluetoothd & then bttool; no probe while host open
+nsh> dmesg
+08] [CPU1] [52] bt_client_49: AdvType:(Flags)
+[  497.833428] [CPU1] [52] bt_client_49: AdvType:(Incomplete List of 16­bit Service Class UUIDs)
+[  497.833446] [CPU1] [52] bt_client_49: AdvType:(Service Data ­ 16­bit UUID)
+[  497.844068] [CPU1] [52] bt_client_49: AdvType:(Service Data ­ 16­bit UUID)
+[  497.854727] [CPU1] [52] bt_client_49: AdvType:(Service Data ­ 16­bit UUID)
+[  497.865387] [CPU1] [52] bt_client_49: AdvType:(Flags)
+[  497.865406] [CPU1] [52] bt_client_49: AdvType:(Tx Power Level)
+[  497.865425] [CPU1] [52] bt_client_49: AdvType:(Manufacturer Specific Data)
+[  497.876048] [CPU1] [52] bt_client_49: AdvType:(Manufacturer Specific Data)
+[  497.886708] [CPU1] [52] bt_client_49: AdvType:(Manufacturer Specific Data)
+[  497.897367] [CPU1] [52] bt_client_49: AdvType:(Flags)
+[  497.897386] [CPU1] [52] bt_client_49: AdvType:(Complete List of 16­bit Service Class UUIDs)
+[  497.897404] [CPU1] [52] bt_client_49: AdvType:(Complete List of 128­bit Service Class UUIDs)
+[  498.465410] [CPU1] [52] bt_client_49: AdvType:(Manufacturer Specific Data)
+[  498.476070] [CPU1] [52] bt_client_49: AdvType:(Manufacturer Specific Data)
+[  498.486730] [CPU1] [52] bt_client_49: AdvType:(Flags)
+[  498.486749] [CPU1] [52] bt_client_49: AdvType:(Complete Local Name)
+[  498.486767] [CPU1] [52] bt_client_49: AdvType:(Complete List of 16­bit Service Class UUIDs)
+[  498.486786] [CPU1] [52] bt_client_49: AdvType:(Peripheral Connection Interval Range)
+[  498.497390] [CPU1] [52] bt_client_49: AdvType:(Flags)
+[  498.497409] [CPU1] [52] bt_client_49: AdvType:(Service Data ­ 16­bit UUID)
+[  498.508050] [CPU1] [52] bt_client_49: AdvType:(Flags)
+[  498.508069] [CPU1] [52] bt_client_49: AdvType:(Tx Power Level)
+[  498.508087] [CPU1] [52] bt_client_49: AdvType:(Manufacturer Specific Data)
+[  498.518710] [CPU1] [52] bt_client_49: AdvType:(Manufacturer Specific Data)
+[  498.529370] [CPU1] [52] bt_client_49: AdvType:(Manufacturer Specific Data)
+[  498.540030] [CPU1] [52] bt_client_49: AdvType:(Flags)
+[  498.540049] [CPU1] [52] bt_client_49: AdvType:(Tx Power Level)
+[  498.540067] [CPU1] [52] bt_client_49: AdvType:(Manufacturer Specific Data)
+[  498.550690] [CPU1] [52] bt_client_49: AdvType:(Manufacturer Specific Data)
+[  498.999406] [CPU1] [52] bt_client_49: AdvType:(Flags)
+[  498.999426] [CPU1] [52] bt_client_49: AdvType:(Complete List of 16­bit Service Class UUIDs)
+[  498.999444] [CPU1] [52] bt_client_49: AdvType:(Complete List of 128­bit Service Class UUIDs)
+[  499.010066] [CPU1] [52] bt_client_49: AdvType:(Flags)
+[  499.010085] [CPU1] [52] bt_client_49: AdvType:(Tx Power Level)
+[  499.010103] [CPU1] [52] bt_client_49: AdvType:(Manufacturer Specific Data)
+[  499.020726] [CPU1] [52] bt_client_49: AdvType:(Flags)
+[  499.020745] [CPU1] [52] bt_client_49: AdvType:(Tx Power Level)
+[  499.020763] [CPU1] [52] bt_client_49: AdvType:(Manufacturer Specific Data)
+[  499.611407] [CPU1] [52] bt_client_49: AdvType:(Flags)
+[  499.611427] [CPU1] [52] bt_client_49: AdvType:(Tx Power Level)
+[  499.611446] [CPU1] [52] bt_client_49: AdvType:(Manufacturer Specific Data)
+[  499.622067] [CPU1] [52] bt_client_49: AdvType:(Flags)
+[  499.622086] [CPU1] [52] bt_client_49: AdvType:(Service Data ­ 16­bit UUID)
+[  499.632727] [CPU1] [52] bt_client_49: AdvType:(Manufacturer Specific Data)
+[  500.202405] [CPU1] [52] bt_client_49: AdvType:(Flags)
+[  500.202425] [CPU1] [52] bt_client_49: AdvType:(Tx Power Level)
+[  500.202444] [CPU1] [52] bt_client_49: AdvType:(Manufacturer Specific Data)
+[  500.213066] [CPU1] [52] bt_client_49: AdvType:(Manufacturer Specific Data)
+[  500.844408] [CPU1] [52] bt_client_49: AdvType:(Manufacturer Specific Data)
+[  500.855067] [CPU1] [52] bt_client_49: AdvType:(Manufacturer Specific Data)
+[  500.865728] [CPU1] [52] bt_client_49: AdvType:(Manufacturer Specific Data)
+[  500.876388] [CPU1] [52] bt_client_49: AdvType:(Manufacturer Specific Data)
+[  500.887047] [CPU1] [52] bt_client_49: AdvType:(Flags)
+[  500.887066] [CPU1] [52] bt_client_49: AdvType:(Complete List of 16­bit Service Class UUIDs)
+[  500.887085] [CPU1] [52] bt_client_49: AdvType:(Manufacturer Specific Data)
+[  500.897707] [CPU1] [52] bt_client_49: AdvType:(Flags)
+[  500.897726] [CPU1] [52] bt_client_49: AdvType:(Tx Power Level)
+[  500.897744] [CPU1] [52] bt_client_49: AdvType:(Manufacturer Specific Data)
+[  500.908367] [CPU1] [52] bt_client_49: AdvType:(Flags)
+[  500.908386] [CPU1] [52] bt_client_49: AdvType:(Complete List of 16­bit Service Class UUIDs)
+[  500.908404] [CPU1] [52] bt_client_49: AdvType:(Complete List of 128­bit Service Class UUIDs)
+[  500.919027] [CPU1] [52] bt_client_49: AdvType:(Manufacturer Specific Data)
+[  500.929687] [CPU1] [52] bt_client_49: AdvType:(Flags)
+[  500.929706] [CPU1] [52] bt_client_49: AdvType:(Incomplete List of 16­bit Service Class UUIDs)
+[  500.929725] [CPU1] [52] bt_client_49: AdvType:(Service Data ­ 16­bit UUID)
+[  501.444403] [CPU2] [52] bt_client_49: AdvType:(Flags)
+[  501.444422] [CPU2] [52] bt_client_49: AdvType:(Tx Power Level)
+[  501.444441] [CPU2] [52] bt_client_49: AdvType:(Manufacturer Specific Data)
+[  501.455063] [CPU2] [52] bt_client_49: AdvType:(Flags)
+[  501.455082] [CPU2] [52] bt_client_49: AdvType:(Manufacturer Specific Data)
+[  501.455100] [CPU2] [52] bt_client_49: AdvType:(Complete List of 16­bit Service Class UUIDs)
+[  501.465723] [CPU2] [52] bt_client_49: AdvType:(Flags)
+[  501.465741] [CPU2] [52] bt_client_49: AdvType:(Tx Power Level)
+[  501.465760] [CPU2] [52] bt_client_49: AdvType:(Manufacturer Specific Data)
+[  501.476383] [CPU2] [52] bt_client_49: AdvType:(Manufacturer Specific Data)
+[  501.487043] [CPU2] [52] bt_client_49: AdvType:(Manufacturer Specific Data)
+[  501.497703] [CPU2] [52] bt_client_49: AdvType:(Manufacturer Specific Data)
+[  501.508363] [CPU2] [52] bt_client_49: AdvType:(Manufacturer Specific Data)
+[  501.519023] [CPU2] [52] bt_client_49: AdvType:(Flags)
+[  501.519041] [CPU2] [52] bt_client_49: AdvType:(Service Data ­ 16­bit UUID)
+[  502.053409] [CPU1] [52] bt_client_49: AdvType:(Manufacturer Specific Data)
+[  502.064068] [CPU1] [52] bt_client_49: AdvType:(Flags)
+[  502.064087] [CPU1] [52] bt_client_49: AdvType:(Manufacturer Specific Data)
+[  502.064106] [CPU1] [52] bt_client_49: AdvType:(Complete List of 16­bit Service Class UUIDs)
+[  502.074729] [CPU1] [52] bt_client_49: AdvType:(Manufacturer Specific Data)
+[  502.085389] [CPU1] [52] bt_client_49: AdvType:(Manufacturer Specific Data)
+[  502.096048] [CPU1] [52] bt_client_49: AdvType:(Flags)
+[  502.096067] [CPU1] [52] bt_client_49: AdvType:(Tx Power Level)
+[  502.096086] [CPU1] [52] bt_client_49: AdvType:(Manufacturer Specific Data)
+[  502.106708] [CPU1] [52] bt_client_49: AdvType:(Manufacturer Specific Data)
+[  502.117369] [CPU1] [52] bt_client_49: AdvType:(Manufacturer Specific Data)
+[  502.128028] [CPU1] [52] bt_client_49: AdvType:(Flags)
+[  502.128047] [CPU1] [52] bt_client_49: AdvType:(Manufacturer Specific Data)
+[  502.138688] [CPU1] [52] bt_client_49: AdvType:(Flags)
+[  502.138707] [CPU1] [52] bt_client_49: AdvType:(Tx Power Level)
+[  502.138725] [CPU1] [52] bt_client_49: AdvType:(Manufacturer Specific Data)
+[  502.617403] [CPU2] [52] bt_client_49: AdvType:(Manufacturer Specific Data)
+[  502.628063] [CPU2] [52] bt_client_49: AdvType:(Manufacturer Specific Data)
+[  502.638722] [CPU2] [52] bt_client_49: AdvType:(Flags)
+[  502.638741] [CPU2] [52] bt_client_49: AdvType:(Tx Power Level)
+[  502.638760] [CPU2] [52] bt_client_49: AdvType:(Manufacturer Specific Data)
+[  502.649383] [CPU2] [52] bt_client_49: AdvType:(Manufacturer Specific Data)
+[  502.660043] [CPU2] [52] bt_client_49: AdvType:(Manufacturer Specific Data)
+[  503.253406] [CPU1] [52] bt_client_49: AdvType:(Manufacturer Specific Data)
+[  503.264066] [CPU1] [52] bt_client_49: AdvType:(Manufacturer Specific Data)
+[  503.274725] [CPU1] [52] bt_client_49: AdvType:(Flags)
+[  503.274744] [CPU1] [52] bt_client_49: AdvType:(Manufacturer Specific Data)
+[  503.285385] [CPU1] [52] bt_client_49: AdvType:(Flags)
+[  503.285404] [CPU1] [52] bt_client_49: AdvType:(Tx Power Level)
+[  503.285423] [CPU1] [52] bt_client_49: AdvType:(Manufacturer Specific Data)
+[  503.296045] [CPU1] [52] bt_client_49: AdvType:(Manufacturer Specific Data)
+[  503.306705] [CPU1] [52] bt_client_49: AdvType:(Flags)
+[  503.306724] [CPU1] [52] bt_client_49: AdvType:(Service Data ­ 16­bit UUID)
+[  503.317366] [CPU1] [52] bt_client_49: AdvType:(Manufacturer Specific Data)
+[  503.328026] [CPU1] [52] bt_client_49: AdvType:(Manufacturer Specific Data)
+[  503.338685] [CPU1] [52] bt_client_49: AdvType:(Flags)
+[  503.338704] [CPU1] [52] bt_client_49: AdvType:(Complete List of 16­bit Service Class UUIDs)
+[  503.338722] [CPU1] [52] bt_client_49: AdvType:(Manufacturer Specific Data)
+[  503.844403] [CPU2] [52] bt_client_49: AdvType:(Service Data ­ 16­bit UUID)
+[  503.855063] [CPU2] [52] bt_client_49: AdvType:(Manufacturer Specific Data)
+[  503.865723] [CPU2] [52] bt_client_49: AdvType:(Flags)
+[  503.865741] [CPU2] [52] bt_client_49: AdvType:(Complete List of 16­bit Service Class UUIDs)
+[  503.865759] [CPU2] [52] bt_client_49: AdvType:(Complete List of 128­bit Service Class UUIDs)
+[  503.876383] [CPU2] [52] bt_client_49: AdvType:(Flags)
+[  503.876401] [CPU2] [52] bt_client_49: AdvType:(Tx Power Level)
+[  503.876420] [CPU2] [52] bt_client_49: AdvType:(Manufacturer Specific Data)
+[  503.887043] [CPU2] [52] bt_client_49: AdvType:(Flags)
+[  503.887062] [CPU2] [52] bt_client_49: AdvType:(Manufacturer Specific Data)
+[  503.887080] [CPU2] [52] bt_client_49: AdvType:(Tx Power Level)
+[  503.897702] [CPU2] [52] bt_client_49: AdvType:(Flags)
+[  503.897721] [CPU2] [52] bt_client_49: AdvType:(Service Data ­ 16­bit UUID)
+[  503.908363] [CPU2] [52] bt_client_49: AdvType:(Service Data ­ 16­bit UUID)
+[  503.919023] [CPU2] [52] bt_client_49: AdvType:(Flags)
+[  503.919042] [CPU2] [52] bt_client_49: AdvType:(Manufacturer Specific Data)
+[  503.919060] [CPU2] [52] bt_client_49: AdvType:(Complete List of 16­bit Service Class UUIDs)
+[  503.929683] [CPU2] [52] bt_client_49: AdvType:(Service Data ­ 16­bit UUID)
+[  515.449693] [CPU0] [14] bluetoothd: [337][adapter-stm]: Process, State=BleOn, Event=SYS_TURN_OFF_SAFE
+[  515.449727] [CPU0] [14] bluetoothd: [332][adapter-stm]: Exit, State=BleOn
+[  515.449754] [CPU0] [14] bluetoothd: [497][adapter-stm]: Enter, PrevState=BleOn ---> NewState=BleTurningOff
+[  515.449792] [CPU0] [14] bluetoothd: [109][service_manager]: service_on_shutdown {GATTC} shutdown ret:1
+[  515.449824] [CPU0] [14] bluetoothd: [119][service_manager]: service_on_shutdown all profile is shutdown
+[  515.449856] [CPU0] [14] bluetoothd: [2073][adapter-svc]: BLE transport all profiles is shutdown
+[  515.449895] [CPU0] [14] bluetoothd: [1563][adapter-svc]: adapter_on_le_disabled
+[  515.449919] [CPU0] [14] bluetoothd: [1435][adapter-svc]: adapter_notify_state_change, prev:2--->current:6
+[  515.449961] [CPU1] [14] bluetoothd: [520][adapter-stm]: Process, State=BleTurningOff, Event=BLE_PROFILE_DISABLED
+[  515.464036] [CPU1] [14] bluetoothd: [309][h4]: hci_remove_recv
+[  515.466030] [CPU1] [14] bluetoothd: [520][adapter-stm]: Process, State=BleTurningOff, Event=BLE_DISABLED
+[  515.466062] [CPU1] [14] bluetoothd: [513][adapter-stm]: Exit, State=BleTurningOff
+[  515.466089] [CPU1] [14] bluetoothd: [213][adapter-stm]: Enter, PrevState=BleTurningOff ---> NewState=Off
+[  515.466125] [CPU1] [14] bluetoothd: [1435][adapter-svc]: adapter_notify_state_change, prev:6--->current:0
+[  523.895202] [CPU1] [14] bluetoothd: [329][bt_socket_server]:[  bt_socket_server_handle_event ,5 2r3e.ve8n9t5 2=4 35]
+ [CPU2] [51] bt_client_49: set_stopped
+[  523.895322] [CPU1] [51] bt_client_49: bt_client_49 thread_schedule_loop quit
+[  523.895347] [CPU0] [50] bttool-cmd-exec: [async_queue:138]uv_async_queue_close
+[  530.382160] [CPU0] [55] bt_client_53: thread_schedule_loop:0x4255c8d0, async:0x4255cce0
+[  5[30 . 533802.20368]2 2[0C8P]U 0[]C P[U515]]  [bt_client_535:4 ]s ebttool-cmd-exect:_ rbt_client_53e aldoyo
+p running now !!!
+[  530.382305] [CPU1] [54] bttool-cmd-exec: [async_queue:91]uv_async_queue_init
+[  544.422071] [CPU1] [14] bluetoothd: [252][adapter-stm]: Process, State=Off, Event=SYS_TURN_ON
+[  544.422104] [CPU1] [14] bluetoothd: [229][adapter-stm]: Exit, State=Off
+[  544.422131] [CPU1] [14] bluetoothd: [275][adapter-stm]: Enter, PrevState=Off ---> NewState=BleTurningOn
+[  544.422173] [CPU1] [14] bluetoothd: A733 BT: official /dev/ttyHCI0 opened, worker=31
+[  544.422207] [CPU1] [14] bluetoothd: [356][h4]: H4: /dev/ttyHCI0 opened as fd:13
+[  [54 4 .54442.2244222]2 4[3C]P U[1C]P U[21]5 ][ 1sysworkq4:]  dbluetoothde:v :[01:4 3S5e]n[daidnagp tHeCrI-_sRvEcS]E:T
+adapter_notify_state_change, prev:0--->current:1
+[  544.604046] [CPU1] [14] bluetoothd: [294][adapter-stm]: Process, State=BleTurningOn, Event=BLE_ENABLED
+[  544.604082] [CPU1] [14] bluetoothd: [89][service_manager]: service_on_startup {GATTC} start ret:1
+[  544.604113] [CPU1] [14] bluetoothd: [99][service_manager]: service_on_startup all profiles is startup
+[  544.604145] [CPU1] [14] bluetoothd: [2061][adapter-svc]: BLE transport all profiles is startup
+[  544.604185] [CPU1] [14] bluetoothd: [294][adapter-stm]: Process, State=BleTurningOn, Event=BLE_PROFILE_ENABLED
+[  544.604217] [CPU1] [14] bluetoothd: [289][adapter-stm]: Exit, State=BleTurningOn
+[  544.604244] [CPU1] [14] bluetoothd: [321][adapter-stm]: Enter, PrevState=BleTurningOn ---> NewState=BleOn
+[  544.604279] [CPU1] [14] bluetoothd: [1435][adapter-svc]: adapter_notify_state_change, prev:1--->current:2
+[  544.604319] [CPU2] [14] bluetoothd: [1503][adapter-svc]: adapter_on_le_enabled, enablebt:0
+[  544.604354] [CPU2] [14] bluetoothd: [1513][adapter-svc]: adapter_on_le_enabled, le_addr:F4:AB:5C:E1:C8:62
+[  544.604403] [CPU2] [14] bluetoothd: [603][adapter-svc]: ble bonded device cnt: 0
+[  544.604435] [CPU2] [14] bluetoothd: [549][adapter-svc]: ble whitelist device cnt: 0
+[  587.018319] [CPU2] [14] bluetoothd: [329][bt_socket_server]: bt_socket_server_handle_event, revent = 5
+[  587.022524] [CPU1] [55] bt_client_53: set_stopped
+[  587.022558] [CPU1] [55] bt_client_53: bt_client_53 thread_schedule_loop quit
+[  587.022581] [CPU0] [54] bttool-cmd-exec: [async_queue:138]uv_async_queue_close
+[  744.796157] [CPU2] [60] bt_client_57: thread_schedule_loop:0x4255c4d0, async:0x4255c8e0
+[  744[.7 9 6724043.] 7[9C6P2U025]]  [[6C0P]U 0bt_client_57]:  [s5e8t]_ rebttool-cmd-execa:d y
+bt_client_57 loop running now !!!
+[  744.796305] [CPU2] [58] bttool-cmd-exec: [async_queue:91]uv_async_queue_init
+[  797.227688] [CPU1] [14] bluetoothd: [337][adapter-stm]: Process, State=BleOn, Event=SYS_TURN_OFF_SAFE
+[  797.227722] [CPU1] [14] bluetoothd: [332][adapter-stm]: Exit, State=BleOn
+[  797.227749] [CPU1] [14] bluetoothd: [497][adapter-stm]: Enter, PrevState=BleOn ---> NewState=BleTurningOff
+[  797.227786] [CPU1] [14] bluetoothd: [109][service_manager]: service_on_shutdown {GATTC} shutdown ret:1
+[  797.227818] [CPU1] [14] bluetoothd: [119][service_manager]: service_on_shutdown all profile is shutdown
+[  797.227851] [CPU1] [14] bluetoothd: [2073][adapter-svc]: BLE transport all profiles is shutdown
+[  797.227890] [CPU1] [14] bluetoothd: [1563][adapter-svc]: adapter_on_le_disabled
+[  797.227914] [CPU1] [14] bluetoothd: [1435][adapter-svc]: adapter_notify_state_change, prev:2--->current:6
+[  797.227956] [CPU0] [14] bluetoothd: [520][adapter-stm]: Process, State=BleTurningOff, Event=BLE_PROFILE_DISABLED
+[  807.847200] [CPU1] [14] bluetoothd: [329][bt_socket_serv[er ] :8 07bt_socket_server_handle_event., 8r4e7v2e4n0t]  =[ C5P
+U0] [60] bt_client_57: set_stopped
+[  807.847295] [CPU1] [60] bt_client_57: bt_client_57 thread_schedule_loop quit
+[  807.847320] [CPU0] [58] bttool-cmd-exec: [async_queue:138]uv_async_queue_close
+[  909.240158] [CPU0] [81] bt_client_62: thread_schedule_loop:0x4255b950, async:0x4255bd60
+[  9[09 . 920490.20244]0 2[0C6P]U 0[]C P[U811]]  [bt_client_627:5 ]s ebttool-cmd-exect:_ rbt_client_62e aldoyo
+p running now !!!
+[  909.240303] [CPU2] [75] bttool-cmd-exec: [async_queue:91]uv_async_queue_init
+[  928.017199] [CPU2] [14] bluetoothd: [329][bt_socket_server]: bt_socket_server_handle_event, revent = 5
+[  928.017252] [CPU3] [81] bt_client_62: set_stopped
+[  928.017288] [CPU3] [81] bt_client_62: bt_client_62 thread_schedule_loop quit
+[  928.017312] [CPU1] [75] bttool-cmd-exec: [async_queue:138]uv_async_queue_close
+nsh> ps
+  PID GROUP CPU(AFFINITY)   PRI POLICY   TYPE    NPX STATE    EVENT     SIGMASK            STACK COMMAND
+    0     0 000(0x000000ff)   0 FIFO     Kthread   - Running            0000000000000000 0008112 CPU0 IDLE
+    1     0 001(0x000000ff)   0 FIFO     Kthread   - Assigned           0000000000000000 0008112 CPU1 IDLE
+    2     0 002(0x000000ff)   0 FIFO     Kthread   - Running            0000000000000000 0008112 CPU2 IDLE
+    3     0 003(0x000000ff)   0 FIFO     Kthread   - Running            0000000000000000 0008112 CPU3 IDLE
+    4     0 004(0x000000ff)   0 FIFO     Kthread   - Running            0000000000000000 0008112 CPU4 IDLE
+    5     0 005(0x000000ff)   0 FIFO     Kthread   - Running            0000000000000000 0008112 CPU5 IDLE
+    6     0 006(0x000000ff)   0 FIFO     Kthread   - Running            0000000000000000 0008112 CPU6 IDLE
+    7     0 007(0x000000ff)   0 FIFO     Kthread   - Running            0000000000000000 0008112 CPU7 IDLE
+    8     0 ---(0x000000ff) 224 RR       Kthread   - Waiting  Semaphore 0000000000000000 0008048 hpwork 0x4046f240 0x4046f2c8
+    9     9 001(0x000000ff) 100 RR       Task      - Running            0000000000000000 0008080 nsh_main
+   10     0 ---(0x000000ff) 100 RR       Kthread   - Waiting  Signal    0000000000000000 0008080 a733-wlan-rx
+   12     0 ---(0x000000ff) 120 RR       Kthread   - Waiting  Signal    0000000000000000 0003984 a7z-uart-rx
+   13    13 ---(0x000000ff) 100 RR       Task      - Waiting  Semaphore 0000000000000000 0008080 kvdbd
+   14    14 ---(0x000000ff) 103 RR       Task      - Waiting  Semaphore 0000000000000000 0016272 bluetoothd
+   15    14 ---(0x000000ff) 110 FIFO     pthread   - Waiting  Semaphore 0000000000000000 0008112 sysworkq 0x403e8db4 0x42549530
+   27    14 ---(0x000000ff)  10 FIFO     pthread   - Waiting  Semaphore 0000000000000000 0008112 BT LW WQ 0x403e8db4 0x42549700
+   31     0 ---(0x000000ff) 100 RR       Kthread   - Waiting  Signal    0000000000000000 0008080 a733-bt-rx
+   48    14 ---(0x000000ff) 100 RR       pthread   - Waiting  Semaphore 0000000000000000 0008112 sysworkq 0x402faa00 0x4250ff40
+nsh>

@@ -1,0 +1,26 @@
+--- a/nuttx/drivers/serial/uart_bth4.c
++++ b/nuttx/drivers/serial/uart_bth4.c
+@@ -179,6 +179,7 @@
+ {
+   FAR struct inode *inode = filep->f_inode;
+   FAR struct uart_bth4_s *dev = inode->i_private;
++  irqstate_t flags;
+   int ret;
+   uint8_t tmp;
+ 
+@@ -197,6 +198,15 @@
+ 
+   if (tmp == 1)
+     {
++      /* A new host session must not consume bytes left by the previous
++       * session. Clear before the lower half starts receiving again.
++       * Additional references to an already-open session stay untouched.
++       */
++
++      flags = spin_lock_irqsave_nopreempt(&dev->lock);
++      circbuf_reset(&dev->circbuf);
++      spin_unlock_irqrestore_nopreempt(&dev->lock, flags);
++
+       ret = dev->drv->open(dev->drv);
+       if (ret < 0)
+         {

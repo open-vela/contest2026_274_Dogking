@@ -1,0 +1,141 @@
+{
+  "result": "V211_VOICE_HOST_ARM_PASSED_NOT_BOARD",
+  "tests": [
+    {
+      "name": "q8-workspace",
+      "command": [
+        "python3",
+        "tools/test-q8-workspace-v211.py"
+      ],
+      "seconds": 6.078115603000015,
+      "sha256": "ca5722be6a313bc6abd328f55be7cd05345b0e36b5b48066c6c333e5e4f3e69c"
+    },
+    {
+      "name": "asr-tail",
+      "command": [
+        "python3",
+        "tools/test-asr-tail-v211.py"
+      ],
+      "seconds": 18.005283443999986,
+      "sha256": "410b69493b42f095b5ca8e4d15a15a028e213d62c5cd3bf3f0489a3174dae9ac"
+    },
+    {
+      "name": "session",
+      "command": [
+        "bash",
+        "tools/test-voice-session-v190.sh",
+        "out/voice-regression-v211-r3/session"
+      ],
+      "seconds": 1.7689032659999953,
+      "sha256": "6239a5126331a400a78d4eaa0a4080caab173e0a83b99e37c3e573d5cf9df853"
+    },
+    {
+      "name": "asr",
+      "command": [
+        "python3",
+        "tools/npu-voice/test-general-asr-v184.py",
+        "out/voice-regression-v211-r3/asr"
+      ],
+      "seconds": 31.833583134000037,
+      "sha256": "79a468534b8c90f8f1fd352d993d1e9687e831f8ba7ff016b8bf6a75bbfceefa"
+    },
+    {
+      "name": "tts",
+      "command": [
+        "python3",
+        "tools/npu-voice/test-tts-engine-v185.py",
+        "out/voice-regression-v211-r3/tts"
+      ],
+      "seconds": 10.74169950199996,
+      "sha256": "2b2a328be08c53ddfd468ead92ec57acb97079032712c3f38744245854eacf3a"
+    },
+    {
+      "name": "stream",
+      "command": [
+        "bash",
+        "tools/build-voice-stream-v181.sh",
+        "out/voice-regression-v211-r3/stream"
+      ],
+      "seconds": 58.201198019,
+      "sha256": "c09130145a6bc8eb107155f511c931dc5baaba1ee98c23178aa65538c25c9e4d"
+    },
+    {
+      "name": "audio",
+      "command": [
+        "bash",
+        "tools/test-aipet-audio.sh"
+      ],
+      "seconds": 30.23006491000001,
+      "sha256": "69ad9592b66e3ef555a9a48a62991e8b000d98102d4d02aeba1568256292f53d"
+    },
+    {
+      "name": "llm-affinity",
+      "command": [
+        "python3",
+        "tools/test-llm-affinity-v210.py"
+      ],
+      "seconds": 0.31661253300001135,
+      "sha256": "8b4906d9c5ece2b903cf6026b4c8d635dea8881275dcf48ed08b537e50d5afa1"
+    },
+    {
+      "name": "llm-contract",
+      "command": [
+        "bash",
+        "tools/test-aipet-llm-v178.sh"
+      ],
+      "seconds": 11.643497233999938,
+      "sha256": "96e42e3b893cb216de7ac80925da86828c41f72355b087e20a9710bb3bf2fa1b"
+    },
+    {
+      "name": "frontend",
+      "command": [
+        "bash",
+        "tools/test-frontend-audit.sh",
+        "out/a733-kws-wav-v161-r2/voice/kws/wav",
+        "out/a733-openvela-kws-v158-r2/voice/kws"
+      ],
+      "seconds": 14.80318988099998,
+      "sha256": "515e25c17d13d332dae65eed60328d4b63ba381a92a4f780002e0558e6baacc4"
+    },
+    {
+      "name": "capture",
+      "command": [
+        "python3",
+        "tools/test-live-capture-v182.py"
+      ],
+      "seconds": 3.825876973999925,
+      "sha256": "1ecfffc1f333ad5d0023147bfbd3866375071e00f38bc412f0e2ef9a29451c7d"
+    },
+    {
+      "name": "tensor",
+      "command": [
+        "bash",
+        "tools/test-a733-tensor.sh"
+      ],
+      "seconds": 6.131652556000063,
+      "sha256": "1cd4e8f567ab59063f4ba5dc302f6fe1da6d6a271611f717ae85fda89899fd7f"
+    },
+    {
+      "name": "tensor-arm",
+      "command": [
+        "python3",
+        "tools/test-tensor-crc-arm-v210.py"
+      ],
+      "seconds": 1.269648615000051,
+      "sha256": "63dc91653a493c9c5d1a15fc0bdd1abe7404ccab5817440d78f79d0e5550ef42"
+    },
+    {
+      "name": "voice-arm",
+      "command": [
+        "python3",
+        "tools/check-a733-voice-arm-v181.py",
+        "out/voice-regression-v211-r3/voice-arm"
+      ],
+      "seconds": 127.35542698100005,
+      "sha256": "1df71c39bdea83e1485255186289c1ee39950cd8cd38f2648cdbc8e835217ab0"
+    }
+  ],
+  "hardware_executed": false,
+  "physical_audio_onset_measured": false,
+  "latency_3_to_5_seconds": false
+}

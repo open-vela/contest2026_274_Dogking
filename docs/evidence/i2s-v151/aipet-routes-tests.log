@@ -1,0 +1,13 @@
+你好呀！今天想聊什么？
+[emotion=普通 actions=0]
+[route=local_rule fallback=0 elapsed=0 ms]
+aipet: cloud unavailable error=-1; entering fallback
+[route=local_llm fallback=1 elapsed=0 ms]
+aipet: route failed -38
+Local LLM backend is not registered.
+aipet: cloud unavailable error=-1; entering fallback
+测试本地接口
+[emotion=开心 actions=0]
+[route=local_llm fallback=1 elapsed=0 ms]
+bounded ordered routes/config/template tests passed
+aipet parser/routing/fallback/state tests passed

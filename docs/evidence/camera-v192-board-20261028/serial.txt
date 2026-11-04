@@ -1,0 +1,224 @@
+=> ext4load mmc 0:3 0x4fc00000 /boot/openvela/a733/camera-v192.scr && source 0x4fc00000
+1129 bytes read in 22 ms (49.8 KiB/s)
+## Executing script at 4fc00000
+camera-handoff-v192: loading exact Image and reading PMIC
+7028576 bytes read in 311 ms (21.6 MiB/s)
+CRC32 for 40080000 ... 40733f5f ==> fb37cbc6
+Setting bus to 0
+193692 bytes read in 25 ms (7.4 MiB/s)
+40729c90: 03 00 ff 17 c1 0d                                  ......
+camera-handoff-v192: snapshot committed; rails retention is ASSUMED
+[306.072]libfdt fdt_path_offset() returned FDT_ERR_BADMAGIC
+[306.081]The storage not support sample function
+[306.170]no battery, disabled battery functons
+[306.177]update dts
+[306.198]Starting kernel ...
+
+[306.200]total: 306200 ms
+
+[306.203][mmc]: MMC Device 2 not found
+[306.206][mmc]: mmc 2 not find, so not exit
+NOTICE:  [SCP] :wait arisc ready....
+NOTICE:  [SCP] :arisc version: [d463b9da43dc50320f21ba51c6c51afe2db20d83]
+NOTICE:  [SCP] :arisc startup ready
+NOTICE:  [SCP] :arisc startup notify message feedback
+NOTICE:  [SCP] :sunxi-arisc driver is starting
+NOTICE:  BL3-1: Next image address = 0x40200000
+NOTICE:  BL3-1: Next image spsr = 0x3c5
+- Ready to Boot Primary CPU
+- Boot from EL1
+- Boot to C runtime for OS Initialize
+M0 v188-boot-candidate
+M1
+A7Z0
+A7Z1
+N0
+N1
+H0
+H1
+H2
+H3
+H4
+S0
+S1
+P1
+H5
+N2
+N3
+N4
+[boot188] SMP flush begin=0x0000000000000008
+[boot188] SMP flush done=0x0000000000000000
+[boot188] SMP request cpu=0x0000000000000001
+[boot188] SMP return=0x0000000000000000
+[boot188] SMP request cpu=0x0000000000000002
+[boot188] SMP return=0x0000000000000000
+[boot188] SMP request cpu=0x0000000000000003
+[boot188] SMP return=0x0000000000000000
+[boot188] SMP request cpu=0x0000000000000004
+[boot188] SMP return=0x0000000000000000
+[boot188] SMP request cpu=0x0000000000000005
+[boot188] SMP return=0x0000000000000000
+[boot188] SMP request cpu=0x0000000000000006
+[boot188] SMP return=0x0000000000000000
+[boot188] SMP request cpu=0x0000000000000007
+[boot188] SMP return=0x0000000000000000
+N5
+B0
+B1
+B2
+B3
+B4
+N6
+AN07
+
+NA81
+
+[boot188] CTOR enter=0x00000000404a33c0
+[boot188] CTOR done index=0x0000000000000000
+[boot188] CTOR enter=0x00000000404cab70
+[boot188] CTOR done index=0x0000000000000001
+[boot188] CTOR enter=0x00000000404cc570
+[boot188] CTOR done index=0x0000000000000002
+[boot188] CTOR enter=0x00000000402a4870
+[boot188] CTOR done index=0x0000000000000003
+[boot188] CTOR enter=0x00000000402a5050
+[boot188] CTOR done index=0x0000000000000004
+[boot188] CTOR enter=0x00000000402c0d44
+[boot188] CTOR done index=0x0000000000000005
+[boot188] CTOR enter=0x0000000040416f40
+[boot188] CTOR done index=0x0000000000000006
+[boot188] CTOR enter=0x0000000040419370
+[boot188] CTOR done index=0x0000000000000007
+[boot188] CTOR enter=0x0000000040432020
+[boot188] CTOR done index=0x0000000000000008
+[boot188] CTOR enter=0x00000000404324a0
+[boot188] CTOR done index=0x0000000000000009
+[boot188] CTOR enter=0x0000000040432750
+[boot188] CTOR done index=0x000000000000000a
+[boot188] CTOR enter=0x00000000404354d0
+[boot188] CTOR done index=0x000000000000000b
+[boot188] CTOR enter=0x00000000404723d0
+[boot188] CTOR done index=0x000000000000000c
+[boot188] CTOR enter=0x00000000404784d0
+[boot188] CTOR done index=0x000000000000000d
+[boot188] CTOR enter=0x00000000404ca690
+[boot188] CTOR done index=0x000000000000000e
+[boot188] CTOR enter=0x00000000404cc6d0
+[boot188] CTOR done index=0x000000000000000f
+[boot188] CTOR enter=0x00000000404d06b0
+[boot188] CTOR done index=0x0000000000000010
+[boot188] CTOR enter=0x00000000404d1ea0
+[boot188] CTOR done index=0x0000000000000011
+[boot188] CTOR enter=0x0000000040634be0
+[boot188] CTOR done index=0x0000000000000012
+[boot188] CTOR enter=0x000000004063a020
+[boot188] CTOR done index=0x0000000000000013
+[boot188] CTOR enter=0x000000004063a050
+[boot188] CTOR done index=0x0000000000000014
+[boot188] CTOR enter=0x000000004063a0e0
+[boot188] CTOR done index=0x0000000000000015
+[boot188] CTOR enter=0x000000004065dfd0
+[boot188] CTOR done index=0x0000000000000016
+[boot188] CTOR enter=0x00000000407d8a80
+[boot188] CTOR done index=0x0000000000000017
+AX20
+
+X1
+PR
+PR
+PR
+
+NuttShell (NSH)
+nsh> RI
+RX
+
+nsh> camera selftest
+camera-selftest-v191: PASS synthetic RGB letterbox/geometry, stale sequence, 4 YUV profiles, 4 Bayer orders, rejected short frame
+CPU software only; NOT camera capture, ISP, NPU or hardware acceptance.
+nsh> camera board
+A733 IMX214 v191 V1.11/J5 read-only board checkpoint (NOT video capture)
+complete=1 error=0 reads=12 elapsed-ms=0 last-address=020002b0
+route: J5 31-pin 0.3mm, MCSIB 4 lanes; J3 is PCIe, NOT camera
+control: TWI3 PE3/SCL PE4/SDA mux2; MCLK1 PE5/mux2; STBY=PE8 RESET=PE9
+ccu: apb1=00000000 twi3-bgr=00000000 csi-master1=00000000 csi=00000003 csi-bus=00000000 isp=00000003 mbus=00040307
+pe: cfg0=ffffffff cfg1=ffffffff data=00000000 drive0=11111111 pull0=00000000
+decode: scl-mux=15 sda-mux=15 mclk-mux=15 master-parent=0 master-M=1 master-N=1 gate=0 reset-pin=0 stby-pin=0
+handoff-config: matched=1/6 (TWI gate/reset, APB1 sys24M /1, SCL/SDA mux2, MCLK mux2, MCLK sys24M /1 gated, control GPIO outputs)
+gate-policy: configuration matches NEVER unlock a sensor transfer; physical provider=unbound cold-start=unimplemented capture=unimplemented
+qualification: rails=unknown measured-mclk=unknown sensor-id=not-read CSI/DPHY/DMA/ISP=not-accessed
+module: pins28/29=3V3 pins30/31=5V per Radxa brief; NOT bare IMX214 power rails
+This inventory is NOT power/clock qualification; no register writes, sensor scan, reset, capture, /dev/video0 registration or NPU call
+nsh> camera control status
+camera-control-v192: V1.11/J5 RESET-HELD CONTROL TEST, NOT capture
+state=0 stage=idle error=0 cleanup=0 command-error=0 owned=0 consumed=0
+power: source=same-boot-U-Boot-image-handoff ready=00000000 bytes=00/00/00/00/00/00
+runtime-PMIC-access=NONE rails-retained=ASSUMED physical-voltage=NOT-MEASURED
+MCLK: configured=0 Hz measured=UNKNOWN; reset/STBY kept LOW when prepared
+reads=0 writes=0 polls=0 elapsed-ms=0 last-address=00000000
+sensor-transfers=0 strict-ID=NOT-READ CSI/DPHY/ISP/DMA=NOT-ACCESSED
+control: prepare (one attempt per Image load) | calibrate | normal-clock | park
+normal boot has no handoff: prepare returns ENODATA with ZERO MMIO
+nsh> camera control prepare
+camera-control-v192: V1.11/J5 RESET-HELD CONTROL TEST, NOT capture
+state=1 stage=controls-prepared-reset-held-MCLK-NOT-measured error=0 cleanup=0 command-error=0 owned=1 consumed=1
+power: source=same-boot-U-Boot-image-handoff ready=434d5031 bytes=03/00/ff/17/c1/0d
+runtime-PMIC-access=NONE rails-retained=ASSUMED physical-voltage=NOT-MEASURED
+MCLK: configured=24000000 Hz measured=UNKNOWN; reset/STBY kept LOW when prepared
+reads=21 writes=9 polls=1 elapsed-ms=13 last-address=02003804
+sensor-transfers=0 strict-ID=NOT-READ CSI/DPHY/ISP/DMA=NOT-ACCESSED
+control: prepare (one attempt per Image load) | calibrate | normal-clock | park
+normal boot has no handoff: prepare returns ENODATA with ZERO MMIO
+nsh> camera board
+A733 IMX214 v191 V1.11/J5 read-only board checkpoint (NOT video capture)
+complete=1 error=0 reads=12 elapsed-ms=0 last-address=020002b0
+route: J5 31-pin 0.3mm, MCSIB 4 lanes; J3 is PCIe, NOT camera
+control: TWI3 PE3/SCL PE4/SDA mux2; MCLK1 PE5/mux2; STBY=PE8 RESET=PE9
+ccu: apb1=00000000 twi3-bgr=00010001 csi-master1=80000000 csi=00000003 csi-bus=00000000 isp=00000003 mbus=00040307
+pe: cfg0=ff222fff cfg1=ffffff11 data=00000000 drive0=11111111 pull0=00000000
+decode: scl-mux=2 sda-mux=2 mclk-mux=2 master-parent=0 master-M=1 master-N=1 gate=1 reset-pin=0 stby-pin=0
+handoff-config: matched=6/6 (TWI gate/reset, APB1 sys24M /1, SCL/SDA mux2, MCLK mux2, MCLK sys24M /1 gated, control GPIO outputs)
+gate-policy: configuration matches NEVER unlock a sensor transfer; physical provider=unbound cold-start=unimplemented capture=unimplemented
+qualification: rails=unknown measured-mclk=unknown sensor-id=not-read CSI/DPHY/DMA/ISP=not-accessed
+module: pins28/29=3V3 pins30/31=5V per Radxa brief; NOT bare IMX214 power rails
+This inventory is NOT power/clock qualification; no register writes, sensor scan, reset, capture, /dev/video0 registration or NPU call
+nsh> camera control calibrate
+camera-control-v192: V1.11/J5 RESET-HELD CONTROL TEST, NOT capture
+state=1 stage=1MHz-calibration-output-NOT-measured error=0 cleanup=0 command-error=0 owned=1 consumed=1
+power: source=same-boot-U-Boot-image-handoff ready=434d5031 bytes=03/00/ff/17/c1/0d
+runtime-PMIC-access=NONE rails-retained=ASSUMED physical-voltage=NOT-MEASURED
+MCLK: configured=1000000 Hz measured=UNKNOWN; reset/STBY kept LOW when prepared
+reads=29 writes=12 polls=1 elapsed-ms=11 last-address=02003804
+sensor-transfers=0 strict-ID=NOT-READ CSI/DPHY/ISP/DMA=NOT-ACCESSED
+control: prepare (one attempt per Image load) | calibrate | normal-clock | park
+normal boot has no handoff: prepare returns ENODATA with ZERO MMIO
+nsh> camera control normal-clock
+camera-control-v192: V1.11/J5 RESET-HELD CONTROL TEST, NOT capture
+state=1 stage=24MHz-nominal-output-NOT-measured error=0 cleanup=0 command-error=0 owned=1 consumed=1
+power: source=same-boot-U-Boot-image-handoff ready=434d5031 bytes=03/00/ff/17/c1/0d
+runtime-PMIC-access=NONE rails-retained=ASSUMED physical-voltage=NOT-MEASURED
+MCLK: configured=24000000 Hz measured=UNKNOWN; reset/STBY kept LOW when prepared
+reads=37 writes=15 polls=1 elapsed-ms=11 last-address=02003804
+sensor-transfers=0 strict-ID=NOT-READ CSI/DPHY/ISP/DMA=NOT-ACCESSED
+control: prepare (one attempt per Image load) | calibrate | normal-clock | park
+normal boot has no handoff: prepare returns ENODATA with ZERO MMIO
+nsh> camera control park
+camera-control-v192: V1.11/J5 RESET-HELD CONTROL TEST, NOT capture
+state=2 stage=controls-restored-no-sensor-transfer error=0 cleanup=0 command-error=0 owned=0 consumed=1
+power: source=same-boot-U-Boot-image-handoff ready=434d5031 bytes=03/00/ff/17/c1/0d
+runtime-PMIC-access=NONE rails-retained=ASSUMED physical-voltage=NOT-MEASURED
+MCLK: configured=0 Hz measured=UNKNOWN; reset/STBY kept LOW when prepared
+reads=51 writes=23 polls=1 elapsed-ms=11 last-address=02002e8c
+sensor-transfers=0 strict-ID=NOT-READ CSI/DPHY/ISP/DMA=NOT-ACCESSED
+control: prepare (one attempt per Image load) | calibrate | normal-clock | park
+normal boot has no handoff: prepare returns ENODATA with ZERO MMIO
+nsh> camera control status
+camera-control-v192: V1.11/J5 RESET-HELD CONTROL TEST, NOT capture
+state=2 stage=controls-restored-no-sensor-transfer error=0 cleanup=0 command-error=0 owned=0 consumed=1
+power: source=same-boot-U-Boot-image-handoff ready=434d5031 bytes=03/00/ff/17/c1/0d
+runtime-PMIC-access=NONE rails-retained=ASSUMED physical-voltage=NOT-MEASURED
+MCLK: configured=0 Hz measured=UNKNOWN; reset/STBY kept LOW when prepared
+reads=51 writes=23 polls=1 elapsed-ms=11 last-address=02002e8c
+sensor-transfers=0 strict-ID=NOT-READ CSI/DPHY/ISP/DMA=NOT-ACCESSED
+control: prepare (one attempt per Image load) | calibrate | normal-clock | park
+normal boot has no handoff: prepare returns ENODATA with ZERO MMIO
+nsh>

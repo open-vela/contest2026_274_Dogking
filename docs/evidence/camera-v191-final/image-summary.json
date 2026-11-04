@@ -1,0 +1,51 @@
+{
+  "result": "PRIVATE_CANDIDATE_PACKAGED_NOT_BOARD_TESTED",
+  "purpose": "camera-qualification",
+  "image": "/mnt/d/My-Program/AI-Agent-Program/GPTsprogram/Openvela/A733-A7Z-ALL-Files/openvela-a733-cubie-a7z-sd-v191-camera-qualification-candidate.img",
+  "bytes": 2147483648,
+  "sha256": "0de22bb8f79f34fc5438b2dec1830701156f855195ffca36125d63083e38b265",
+  "base_sha256": "6082caf2fd059d06d1057abad1cf2bb726dbb4ab776f85c8a4f320c0b00f1ccb",
+  "kernel_sha256": "ec6ecbafe14259159d7d74dea54c9de048f393014434faee9d6354f95a286447",
+  "packaging_commit": "00832126622f923c84760b02f7ec7829b2674efd",
+  "required_config": [
+    "CONFIG_A733_BOOT_DIAGNOSTICS=y",
+    "CONFIG_SMP_NCPUS=8",
+    "CONFIG_BOARD_LATE_INITIALIZE=y",
+    "CONFIG_NSH_ARCHINIT=y",
+    "CONFIG_BOARD_INITTHREAD_STACKSIZE=262144",
+    "CONFIG_BOARD_INITTHREAD_PRIORITY=100",
+    "CONFIG_LIBC_MAX_EXITFUNS=0",
+    "CONFIG_A733_CPU_ACOUSTIC=y",
+    "CONFIG_A733_NPU_GENERAL_ASR=y",
+    "CONFIG_A733_IMX214_CHECKPOINT=y",
+    "CONFIG_SYSTEM_A733CAMERA=y"
+  ],
+  "sdk_restore": {
+    "result": "SDK_RESTORED_BYTE_EXACT",
+    "paths": 281
+  },
+  "unchanged_image_spans": [
+    {
+      "begin": 0,
+      "end": 348127232,
+      "sha256": "b71bd34787a2ed4af2ba178a15c289f2c73deeafe6b427516ae92b690fdf5ee3"
+    },
+    {
+      "begin": 469762048,
+      "end": 2147483648,
+      "sha256": "ef76c04de9a08ea640e188a432ec26ce81a418458e6a1f10cfea824a7ac36468"
+    }
+  ],
+  "model_fat_unchanged": true,
+  "compiled_boot_call_graph_checked": true,
+  "elf_sha256": "e76555b830d47d24a97d5676b746fe88df1e65f0eb4bd6533333ccba4acfa18d",
+  "config_sha256": "7254f38b2e12db8c821fd79520586164379d94b31dc14596af9e8138866e0581",
+  "hardware_executed": false,
+  "root_cause_confirmed": false,
+  "camera_qualification_candidate": true,
+  "physical_camera_provider_bound": false,
+  "camera_capture": false,
+  "physical_disks_written": false,
+  "old_images_modified": false,
+  "models_private": true
+}

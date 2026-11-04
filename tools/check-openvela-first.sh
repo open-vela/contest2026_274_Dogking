@@ -6,6 +6,7 @@ script_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 team_dir="$(cd "$script_dir/.." && pwd)"
 overlay_apps="$team_dir/board/a733-cubie-a7z/openvela-overlay/apps"
 product_roots=(
+  "$team_dir/app/a733home"
   "$overlay_apps/system/aipetllm"
   "$overlay_apps/system/aipet"
   "$overlay_apps/system/aipetasr"

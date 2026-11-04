@@ -1,0 +1,584 @@
+{
+  "result": "V181_LATENCY_SOFTWARE_VERIFIED_NOT_FULL_TARGET_SPEECH",
+  "staged_sources": {
+    "vendor/allwinnertech/chips/a733/a733_npu_runtime.c": "24dca1f0a029412234428560e13ba45bb64ad72ddc6a2dec28fc2a067b1752ec",
+    "vendor/allwinnertech/chips/a733/a733_tensor_plan.c": "fccfe2e90f2da2ad7ef093ee56dbc5f75698c3dde639702fe02b712de062da00",
+    "vendor/allwinnertech/chips/a733/a733_tensor_runtime.inc": "7c64203284ea38456bd312b14a3feaa6e2da3634aa7820ae16d53d736e811bdd",
+    "vendor/allwinnertech/chips/a733/a733_tensor_crc.inc": "58aa4bf8ef390d90bd2585e13890a188d17a34bd069f09b1bd949a33dc58606b",
+    "vendor/allwinnertech/chips/a733/a733_tensor_client.c": "c61b370d1962a85d49156639e0acca628dbc1938befc0cdcfd75a2ef4a0f4cfd",
+    "vendor/allwinnertech/chips/a733/include/a733_tensor_plan.h": "81ade4c14d67b1d236ffed559c860aa63e0320e8e0580a56c89e8f8c4e9956a9",
+    "nuttx/include/nuttx/npu/a733_tensor.h": "cd99c7a4d30d0d099251ec2421755de0bf7b07bd640dea9dcc40fd7c7d20ea11",
+    "nuttx/include/nuttx/npu/a733_vip2.h": "ed644358311baf89a2d1468c77208cd7676d263de8a81c95ae2d5413f40c5b3f",
+    "apps/include/system/a733_tensor_client.h": "71807370f5aa0f7ea23a252ce20ae850d170b2f7e8857ff96ccd40a3cb7cb863",
+    "apps/system/aipet/CMakeLists.txt": "4cdd34758144a6b6bf865d1f40ddc02694bfdc95c9e81344478fe58ea11498a8",
+    "apps/system/aipet/audio_app.cxx": "7d53871855c7fc837b280add907259ad0af331c1323c00ab3cea4bdc95b98995",
+    "apps/system/aipet/voice_npu_check.cxx": "7516520f0bda78555a9f2c81c8acd9ff4bb2c41526cc9d514be519a9d5f55247",
+    "apps/system/aipet/voice_npu_check.hxx": "497eb3cbe8f88652407b16318b0bc0dff969bab310de4d40058ef128bbd5d49d",
+    "apps/system/aipet/voice_npu_stream.inc": "2801574b69ce4ecb9be24790859892208320b5bc5daad83c5c5c2b1a71e3c853",
+    "apps/system/aipet/voice_kws.c": "375f9ec3cdbf6cdc89634134ab7a07f20439eccaf6827e62e1235dcad692e6f8",
+    "apps/system/aipet/voice_kws.h": "dc861358b28679a181e14f009a786af79c118882fafcb7c2aa7ba980712f163f",
+    "apps/system/aipet/voice_kws_input.inc": "62d0bfc87ba374b2cce652735ba7bfdda201de9eda7eaf3682924c2166f59730",
+    "apps/system/aipet/voice_frontend_audit.inc": "4961234226d7bfb7e2b33b11ddb96d1b180e886439c9978898dfc19d2a899877",
+    "apps/system/aipet/voice_fbank.cxx": "6382d01f0612c8532d85ec384ca42b45b7a11e676f5b107968747b53a5ff3b6c",
+    "apps/system/aipet/voice_fbank.hxx": "2083f208cd4a5cafdca6912f25f0fe8389abe331ccb784b4a182296774d5219a",
+    "vendor/allwinnertech/chips/a733/a733_i2s0_audio.c": "dfac5b88122382ed821d56ed4b8e6a1daf842c7b231ed8265039bbea06a52dad",
+    "vendor/allwinnertech/chips/a733/a733_i2s0_playback.inc": "f12459e8f9a4e1511eb1f487de15333142442c127bf2f1f85b622f2b1b9f558a",
+    "vendor/allwinnertech/chips/a733/a733_audio_client.c": "a733a1bee619d6d7bdf31ce2d061e4ae5340f67401855062f70af140a8395c90",
+    "nuttx/include/sys/a733_audio.h": "c408085fd3014ea6dc7a607a5b98d9366438491c90dc26774186eeb17450ce59",
+    "apps/include/system/a733_pcm.h": "4ac975e86e4138ab4a507c52c5100c76ebbfce6b5d723f9397bfef123d86e3bc",
+    "vendor/allwinnertech/chips/a733/a733_ufs.c": "ee96a8ec5e96b1d997fb4e3c9b2babdf6972e790db2bf97acdc026917a510447",
+    "vendor/allwinnertech/chips/a733/a733_ufs_wire.h": "ab5a459514caabb47faf2b4df1de61db9abd6ca066669b036b61dfc4b4fef55f",
+    "vendor/allwinnertech/chips/a733/a733_ufs_link.c": "d50ddffb24df3d672921dfdef6b539ad5041cfb9549ad655a233a86f45f9b078",
+    "vendor/allwinnertech/chips/a733/a733_ufs_link.h": "e5721b3c0bfe883b60462913ffc028199118455089f9d87db845bc727cf126ac",
+    "vendor/allwinnertech/chips/a733/a733_ufs_board.c": "f2be249b9c9b26a3e5f87e40f82cc3aa88d4b4954777129e8f36efa2097a8015",
+    "vendor/allwinnertech/chips/a733/a733_ufs_board.h": "c8512331876802d6b5e90ee82c0989521d1f102410c900ede62317096434d9e4",
+    "vendor/allwinnertech/chips/a733/a733_ufs_handoff.c": "3d75ac20f8e87aff9c2bd0658ef8fbdf59f5beaa8e064b49a1dac6d4256a2856",
+    "vendor/allwinnertech/chips/a733/a733_ufs_handoff.h": "71fcd1229f4c32998cccffc75afe3374ec2fd69ee0554e2e333251aa669ab4ad",
+    "vendor/allwinnertech/chips/a733/a733_ufs_quiesce.c": "0ca28d820cee4c7ff1bdb6152c9f4b803769a7e5a632042b9cdfd596c01c2c60",
+    "vendor/allwinnertech/chips/a733/a733_ufs_quiesce.h": "8f0f75e993eb71c801a51d47ee37a8f1f13445ec49637fcd0d6e5868ec67ec2c",
+    "vendor/allwinnertech/chips/a733/a733_hwdiag.c": "5b8d5ee8145aec9080afa1a6f4bc902d62eead3ae2dc2b05087de8926967fdc0",
+    "vendor/allwinnertech/chips/a733/CMakeLists.txt": "7f9370b8ce7d9394fe3605bbc10aba0e665d41e3c7949f00d61c33809e56d5c8",
+    "vendor/allwinnertech/chips/a733/Kconfig": "2db5e3fb422ee5eb42c01de4d9deac4009a37c9c50d3b26b2e2518d0037dbbc8",
+    "vendor/allwinnertech/chips/a733/include/a733_peripherals.h": "be121661c1d52b539528a583a6890e6982c6fdb3ea963654c131ffb8344ff6df",
+    "vendor/allwinnertech/chips/a733/a733_ufs_nop.c": "f75b5ae00e03b79a6c8d9a28deb083861d21a36d643e56d7149f7b7d80c1c315",
+    "vendor/allwinnertech/chips/a733/a733_ufs_nop.h": "1722942feb2d83f2d4e8e07440c1ceb1f75ad461a777941da5f2c42a0bd7a32d",
+    "vendor/allwinnertech/chips/a733/a733_ufs_nop_map.c": "3d23c951f68953331cb7891d4f661d61bd1951429e5db2db5855fca2708cb7e1",
+    "vendor/allwinnertech/chips/a733/a733_ufs_readcheck.c": "3d5ec7ddc8524017a1f997ca3c0bac6d1935ba84a158b58c529eaea5883891fa",
+    "vendor/allwinnertech/chips/a733/a733_ufs_readcheck.h": "0d3a4f8029199b2ed44e69c25121fcee7f90382b2f4d9e2d91268e9e8adc76be",
+    "vendor/allwinnertech/chips/a733/a733_ufs_scratch.c": "b8fe05c515b48d4c983b4722ca3c3cf48794cb4fc4e61f1a13123f41c98ca0b3",
+    "vendor/allwinnertech/chips/a733/a733_ufs_scratch.h": "20b79b533fab95f60d4e931aa8afd60302c54206c4acad773e1ca453c81f7cfe",
+    "vendor/allwinnertech/chips/a733/a733_ufs_write_wire.h": "0f3c9f26ce09e97aa76bfe111f3f0ce44f6cfd5b7a8dd26dc833067abc62968e",
+    "vendor/allwinnertech/chips/a733/a733_ufs_data.c": "83ac914ffab741f30f5d4f2d5d807a8885f5888235f1e888ffd69aab47ff4a92",
+    "vendor/allwinnertech/chips/a733/a733_ufs_data.h": "442370273f39fff9ed714e70c71b432b4da5020cbc6a450321fe5f9350fc6ca0",
+    "vendor/allwinnertech/chips/a733/a733_boot.c": "03afe8937e735e38b57ed54e97d5813abf45f10d0b97a1f31228a3d2ac153691",
+    "vendor/allwinnertech/chips/a733/include/chip.h": "1c8b9b90a9b8ff10b227658af5d08d325ce63036feb8c91ef606ec9f82be79d1",
+    "vendor/allwinnertech/chips/a733/a733_ufs_volume.h": "aa5dff8e5018e9602187ea881a342095fab385059abec45a14271bbf149dfcd6",
+    "apps/include/system/a733_storage.h": "57ac446509575f56680bc049ce93e7d02920457ec3040bd692ddcc7c89f6c42a",
+    "apps/system/aipet/local_llm.cxx": "4a350086dcdb8f93ba2b1256cf60e11e64bc1a1a50b4c5e20fd88df5a702c204",
+    "apps/system/aipet/local_model_path.hxx": "9fd7ea75655af0baf9d1032b4c615a53cf006a64866de3edf34a81e8d11b20a7",
+    "apps/system/a733services/a733services_main.c": "d43a3ee5fb43a05ae08d58ceb3c3c906df3058d47405d7eaea730c46c8e71b45",
+    "apps/system/a733services/services_config.c": "529c4062966b07737cce5957ed53fec642833f6c6ac1c3ceae47296b0ef1737c",
+    "vendor/allwinnertech/boards/a733/cubie-a7z/scripts/dramboot.ld": "bb2244bdec6b5fe159d31e62783d6c950db8d57644d12b1e49a2b1dd559168e0",
+    "vendor/allwinnertech/boards/a733/cubie-a7z/src/a7z_boardinit.c": "3cb08414a86596b8f2d44a5448961f08294e085fa0ac8ae1625620a1a2875c5b",
+    "apps/system/aipetllm/CMakeLists.txt": "2781a9ee3dbbda6e18ca84fec2dc2358bfdd56bc40da75972608e76d5648349b",
+    "apps/system/aipetllm/Kconfig": "6fbd49ed022b57f34a63b0993cb3a29987a15c540b75a52c4af3e7850926f18f",
+    "apps/system/aipetllm/aipetllm_modelcheck.c": "de7420c54e9f2beae29476499ddafb90898a37e7cc4df57c6c57c4891ad7ca56",
+    "apps/system/aipetllm/aipetllm_bpe.cxx": "b05f7b454dbe2e0fd174e990c41d327407695bf6775ae2b924910fcd4dfb7c60",
+    "apps/system/aipetllm/aipetllm_activation.c": "e2e8a0e250f0af308c40848276e6cadb2bf492625c3922b5009f619bcbf8871a",
+    "apps/system/aipetllm/aipetllm_unicode.inc": "e7db0ff3c0093097ec151a82ae16bd676e6d8c82a45e3b98ea9a714edebef334",
+    "apps/system/aipetllm/aipetllm_api.cxx": "67fbc1ba9c0eba53805c138d1da7d22f0fd33b8c69a903eb1ce0cf2c296300fc",
+    "apps/system/aipetllm/aipetllm_api.h": "9ddfb22d798b6f8d456fd76e507f6e4811a89cee4f1146eba6bb9f43ad01f560",
+    "apps/system/aipetllm/aipetllm_sequence.h": "bc19811f093f7be73be6d519bf95aa0ba1ae13e80e43cf6b391fa1d63509432d",
+    "apps/system/aipetllm/aipetllm_prefill.inc": "4be434c6f901ce0c8720b5279a1535f97bcef0270f6414b89b8467e321c112a4",
+    "apps/system/aipet/pet_routes.cxx": "c33a0838601ef4450f4106b63e676515106093c807cf171c53abbb9228d22cb6",
+    "apps/system/aipet/pet_routes.hxx": "cdede92511f807fd911a933b228d8a8c20b6479ec09997cef16accb3d0c87324",
+    "apps/system/aipet/agent_bridge.c": "eb48fc2112e544821a18ba891f2aa64b2e11d31a1c214022c48c9558f680f21e",
+    "apps/system/aipet/agent_bridge.h": "e058ad88af79b374a4da737fc45a9c755cfa9273a8e896cbbd7058e05c02ce95",
+    "apps/system/aipet/agent_secret.c": "1546d2f17ddca8a5dc4c4dc66b4f594ca91bba048f109acbb511f6e83c87f168",
+    "apps/system/aipet/agent_secret.h": "5addccb430cf73eaf83e9774d91a6e6ce25ee66888bd9666809939ce871e982a",
+    "apps/system/aipet/agent_setup.c": "1ffbbcf455eaf25af4563b0f1cb6fc377bc947b0c203a363668de63bd279aec2",
+    "apps/system/aipet/agent_startup.c": "128fbc8596dd7aa9035d5f045eadce3da423016942dec256f9d9018ece9ebc5e",
+    "apps/system/aipet/aipet_main.cxx": "d3e9fa58df29fb74554eae8a4fb1726afd470c55b8e0fe0032b4199bd2df30c9",
+    "apps/system/aipet/audio_app.hxx": "7312aa5e7d10591602de68f81a8acf43b78f62ba0b3499871ed591a38ba046e1",
+    "apps/system/aipet/audio_resample.cxx": "b395aa70ce6008cb088800b558e7d1135067b06adb5f1e3c658e0dbf6224a03f",
+    "apps/system/aipet/audio_resample.hxx": "413415687fbfb59852c94c8cd0a0e3436dad9db7977ff17b1e2c31d6fafb7b6d",
+    "apps/system/aipet/audio_resample_stream.cxx": "62d63e3508b87208151ea376bd6218c52a57d45a570b8a87b4027a10baaf1ea1",
+    "apps/system/aipet/local_llm.hxx": "9930d7a4082fbbcfdb8bb589d4462e237f80853a411afc99b3fa19dbe1b8fed6",
+    "apps/system/aipet/local_llm_history.hxx": "3f20ee047067f657910bbd10c261e58af8abfb35a7c4b4cf409570bbf3ff6eaf",
+    "apps/system/aipet/mcu_agent_tool.cxx": "6a0eb8aa3f80ef97552943ad5e9406c46385c0664aaacddb53230d76a084b70a",
+    "apps/system/aipet/mcu_link.cxx": "77fe89e6d8ab8397bd47cf6c4c1cf3e8d3eca3b0c0e89cb0b540066091f55771",
+    "apps/system/aipet/mcu_link.hxx": "03cdedeaac32a5d9e4810fbcadb5721703bf7bc6cf7b82392f0c3895e513f2ca",
+    "apps/system/aipet/mcu_protocol.cxx": "be36e8bca17edc277b3a5a764dbb5b3d1d9d880c62be59ad8f94f9e2b0bd149f",
+    "apps/system/aipet/mcu_protocol.hxx": "8362dc4ce0e2d305e22ef07f33c7f627cbd5a93848384188c4471ba02ac29b8a",
+    "apps/system/aipet/mcu_tool_bridge.c": "731fee30d29a03e5c5d5f9eaa0e0e5abe9db14854a9de75768f6613fe1dd54ea",
+    "apps/system/aipet/mcu_tool_bridge.h": "bf654309d08be272e7898444476f89909a606c141b7bacee1728ddae5f46bcf5",
+    "apps/system/aipet/pet_core.cxx": "68d137c81abcee7d81a2f816fe18f70f0bf11655cb1f662dc869a9eb6bd97634",
+    "apps/system/aipet/pet_core.hxx": "ee0564288ff3659ff90112820abe2d447f9b68594abf9a9857ed5ab511943d38",
+    "apps/system/aipet/pet_debug.hxx": "503ab7103fffa8cb83c1ea0ab7b9a984e679031ef758d1f72c4fb821a05c875d",
+    "apps/system/aipet/pet_http_framing.h": "7ac5e548a2ae3ba39a59aa7f26069a27c6dd008097e5e8a4b3cf611d45c51256",
+    "apps/system/aipet/speech_output.cxx": "d235ea7d474bf4668d6ad8f09ac4bfae44f272f1f957ce12bb3d63dd6dc585fc",
+    "apps/system/aipet/speech_output.hxx": "2281d5e7eb9a79de1f08abdce09c537e5d076d5733024df78fff2b5ccec7d569",
+    "apps/system/aipet/third_party/kaldi-native-fbank/LICENSE": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+    "apps/system/aipet/third_party/kaldi-native-fbank/PROVENANCE.json": "5592cb297df664b8c7ed2665e5385f124fa3805652db98f1180618e692c8040e",
+    "apps/system/aipet/third_party/kaldi-native-fbank/csrc/include/feature-fbank.h": "c932bde7e446c098d846cfb28b364d84e6bd803070a7cc5aa461b57ccd69a4dc",
+    "apps/system/aipet/third_party/kaldi-native-fbank/csrc/include/feature-functions.h": "b3730eb6c4134f87a4b237773634cfd57482702114262362acd33656055f310b",
+    "apps/system/aipet/third_party/kaldi-native-fbank/csrc/include/feature-window.h": "ffc33bc1026c14766228a2f1e6c44f601b8b903d5998dc05a33fb35ce9e04c99",
+    "apps/system/aipet/third_party/kaldi-native-fbank/csrc/include/kaldi-math.h": "f4aed12e9e1932b97e47a2b8c33d75b6ab96e31c8d4687ebb61c6ab1783011a8",
+    "apps/system/aipet/third_party/kaldi-native-fbank/csrc/include/knf-port.h": "3cf4a640803d26da9a432330f7f0087233ba6c638c5d5a8bf212f1105d4f24e6",
+    "apps/system/aipet/third_party/kaldi-native-fbank/csrc/include/log.h": "98401ee625c6af5e0375b77f43da7588db7ea93c685fcd0e71aad932d97b6245",
+    "apps/system/aipet/third_party/kaldi-native-fbank/csrc/include/mel-computations.h": "f9154abf9316be8e81333300907e7d4235e19e6abf79e07ab7d6c9bcd5667a09",
+    "apps/system/aipet/third_party/kaldi-native-fbank/csrc/include/online-feature.h": "4a55ab4fb43f04286d57cef2ede53959ef07d68c054fa78c09a3c7bc54186174",
+    "apps/system/aipet/third_party/kaldi-native-fbank/csrc/include/rfft.h": "17c1c60df087deb84d65065cc0dbf6a364c0d86313b62b3af80aee0e8cc64c59",
+    "apps/system/aipet/third_party/kaldi-native-fbank/csrc/include/rtos-log.h": "89f9612de1d91e709250c4fd1956a09c8565d01db5b3d53d156b45c868df8b66",
+    "apps/system/aipet/third_party/kaldi-native-fbank/csrc/src/feature-fbank.cc": "5d0f7eb9a69445eee738fc8c68cd457eaa90e8a9a8a6db096b69e3a74705874e",
+    "apps/system/aipet/third_party/kaldi-native-fbank/csrc/src/feature-functions.cc": "6c7dcf3ba73e86df820d59a83c189e400fade231faf0cf23914b09f8120b9fc7",
+    "apps/system/aipet/third_party/kaldi-native-fbank/csrc/src/feature-window.cc": "58d64136c2f2f28befaa54c9d7aa427e713f9f0d150bc761515ef92d62884cfb",
+    "apps/system/aipet/third_party/kaldi-native-fbank/csrc/src/fftsg.cc": "2ee5cafec0a1771769739ef067bccbcb6ebff10f2fda0c6bc3d76d847aaa858e",
+    "apps/system/aipet/third_party/kaldi-native-fbank/csrc/src/kaldi-math.cc": "a6d188f55cc82ee4e81f35ac54936efab6335d278a48856d8f00bccebde6e15d",
+    "apps/system/aipet/third_party/kaldi-native-fbank/csrc/src/log.cc": "111a5476a06a1c1ba3fdc5a752aa325d83acf1910f7f88ed2803be4b684bef48",
+    "apps/system/aipet/third_party/kaldi-native-fbank/csrc/src/mel-computations.cc": "1cbb9f936dbd5d739d26a4b25d34dca015ecd649381fbd778524489798b4bc5a",
+    "apps/system/aipet/third_party/kaldi-native-fbank/csrc/src/online-feature.cc": "135ecf89223b28177c5afc92332fe494adb783c39318cb5b4c632c9c19c6df57",
+    "apps/system/aipet/third_party/kaldi-native-fbank/csrc/src/rfft.cc": "ee508ab0cfd2c6109ee1046b8482d9620aece7b5209bd98634a789159e5c32bf",
+    "apps/system/aipet/uart_tts.cxx": "e986adab78abb12ab39fef6f70a4bec3c3e90b61a607551454bc085ca863421a",
+    "apps/system/aipet/uart_tts.hxx": "4901d395b5ea60aaf531e84870efa795872be6f020c1d420226bba369625cb61",
+    "apps/system/aipet/voice_asr_decode.c": "c4be4986276badba2f8c8a4323a69817ed8d4f969c46426dc3745e8e6a75ff24",
+    "apps/system/aipet/voice_asr_decode.h": "925f409b447a2789fb78c58a30c21b856870d2077b39f556023ce33ffcb89319",
+    "apps/system/aipet/voice_asr_stream.cxx": "90982af1d31876778d70e57f95cd0cce64c08ebdbe4fad79de3c9972ab9b9ce3",
+    "apps/system/aipet/voice_asr_stream.hxx": "de54c24eb4213d22c245b3cd23468d25ebb353d464aa7d0641f29904a8dc70c9",
+    "apps/system/aipet/voice_local.cxx": "e8cce6d0f8482a640fa66f44add727552a743e77e8d397a24553f4b844bce2da",
+    "apps/system/aipet/voice_local.hxx": "07252dbe741206e192251656b5569d81983030e316ca1ad713610fe05bd0cdf1",
+    "apps/system/aipet/voice_phrase_pipe.cxx": "3b6d0599d64e66abd7914d18fca2ee3667b6adbef5bad315880ee3741228a5be",
+    "apps/system/aipet/voice_phrase_pipe.hxx": "212ff6d8a37321628449968b02acb406a3fa25d4e0fc55761e802ad8dcd2cb20",
+    "apps/system/aipet/voice_play_stream.cxx": "a0479d14e54198cccdb694385f00612be82d827a380f3e12013f080deaad0170",
+    "apps/system/aipet/voice_play_stream.hxx": "b948661e03d2e4c04214dbc4e0b77cd6a83795bfb139dbe144e537689135a6c4",
+    "apps/system/aipet/voice_tts_frontend.cxx": "cc65451db214d51931fb5fc7332da74927c0c4471ed0ac66448b61fdf5d700d8",
+    "apps/system/aipet/voice_tts_frontend.hxx": "fc268581d71a813b553292d5b50819d3450bd921a8af8b34bbcd2ff49c12a61c"
+  },
+  "sdk_restored": {
+    "result": "SDK_RESTORED_BYTE_EXACT",
+    "paths": 241
+  },
+  "arm64_units": {
+    "apps/system/aipet/audio_app.cxx": {
+      "sha256": "7d53871855c7fc837b280add907259ad0af331c1323c00ab3cea4bdc95b98995",
+      "actual_nuttx_flags": true,
+      "max_static_frame": 688,
+      "passed": true
+    },
+    "apps/system/aipet/audio_resample_stream.cxx": {
+      "sha256": "62d63e3508b87208151ea376bd6218c52a57d45a570b8a87b4027a10baaf1ea1",
+      "actual_nuttx_flags": true,
+      "max_static_frame": 128,
+      "passed": true
+    },
+    "apps/system/aipet/voice_asr_stream.cxx": {
+      "sha256": "90982af1d31876778d70e57f95cd0cce64c08ebdbe4fad79de3c9972ab9b9ce3",
+      "actual_nuttx_flags": true,
+      "max_static_frame": 352,
+      "passed": true
+    },
+    "apps/system/aipet/voice_play_stream.cxx": {
+      "sha256": "a0479d14e54198cccdb694385f00612be82d827a380f3e12013f080deaad0170",
+      "actual_nuttx_flags": true,
+      "max_static_frame": 160,
+      "passed": true
+    },
+    "apps/system/aipet/voice_phrase_pipe.cxx": {
+      "sha256": "3b6d0599d64e66abd7914d18fca2ee3667b6adbef5bad315880ee3741228a5be",
+      "actual_nuttx_flags": true,
+      "max_static_frame": 832,
+      "passed": true
+    },
+    "apps/system/aipet/voice_tts_frontend.cxx": {
+      "sha256": "cc65451db214d51931fb5fc7332da74927c0c4471ed0ac66448b61fdf5d700d8",
+      "actual_nuttx_flags": true,
+      "max_static_frame": 2384,
+      "passed": true
+    },
+    "apps/system/aipet/pet_routes.cxx": {
+      "sha256": "c33a0838601ef4450f4106b63e676515106093c807cf171c53abbb9228d22cb6",
+      "actual_nuttx_flags": true,
+      "max_static_frame": 624,
+      "passed": true
+    },
+    "apps/system/aipet/local_llm.cxx": {
+      "sha256": "4a350086dcdb8f93ba2b1256cf60e11e64bc1a1a50b4c5e20fd88df5a702c204",
+      "actual_nuttx_flags": true,
+      "max_static_frame": 2112,
+      "passed": true
+    },
+    "apps/system/aipet/aipet_main.cxx": {
+      "sha256": "d3e9fa58df29fb74554eae8a4fb1726afd470c55b8e0fe0032b4199bd2df30c9",
+      "actual_nuttx_flags": true,
+      "max_static_frame": 32,
+      "passed": true
+    },
+    "apps/system/aipetllm/aipetllm_modelcheck.c": {
+      "sha256": "de7420c54e9f2beae29476499ddafb90898a37e7cc4df57c6c57c4891ad7ca56",
+      "actual_nuttx_flags": true,
+      "max_static_frame": 1600,
+      "passed": true
+    },
+    "vendor/allwinnertech/chips/a733/a733_i2s0_audio.c": {
+      "sha256": "dfac5b88122382ed821d56ed4b8e6a1daf842c7b231ed8265039bbea06a52dad",
+      "actual_nuttx_flags": true,
+      "max_static_frame": 1488,
+      "passed": true
+    },
+    "vendor/allwinnertech/chips/a733/a733_audio_client.c": {
+      "sha256": "a733a1bee619d6d7bdf31ce2d061e4ae5340f67401855062f70af140a8395c90",
+      "actual_nuttx_flags": true,
+      "max_static_frame": 80,
+      "passed": true
+    }
+  },
+  "asr_cpu_oracle": {
+    "result": "ONLINE_ASR_CPU_ORACLE_EXACT",
+    "cases": [
+      {
+        "case": "cmd_open_light_16k",
+        "text": "帮我打开灯",
+        "chunks_before_finish": 1,
+        "chunks_total": 2,
+        "first_encoder_at_input_seconds": 1.1,
+        "same_all_logical_encoder_outputs": true,
+        "same_tokens_positions": true,
+        "host_wall_seconds": 0.10900000005494803,
+        "host_only": true,
+        "npu_executed": false
+      },
+      {
+        "case": "cmd_time_16k",
+        "text": "现在几点了",
+        "chunks_before_finish": 1,
+        "chunks_total": 2,
+        "first_encoder_at_input_seconds": 1.1,
+        "same_all_logical_encoder_outputs": true,
+        "same_tokens_positions": true,
+        "host_wall_seconds": 0.10999999998603016,
+        "host_only": true,
+        "npu_executed": false
+      },
+      {
+        "case": "neg_silence_3s_16k",
+        "text": "",
+        "chunks_before_finish": 3,
+        "chunks_total": 4,
+        "first_encoder_at_input_seconds": 1.1,
+        "same_all_logical_encoder_outputs": true,
+        "same_tokens_positions": true,
+        "host_wall_seconds": 0.1559999999590218,
+        "host_only": true,
+        "npu_executed": false
+      }
+    ],
+    "board_executed": false,
+    "native_nbg_layout_qualified": false,
+    "full_offline_chain": false
+  },
+  "tts_cpu_oracle": {
+    "onnxruntime": "1.23.2",
+    "host_only": true,
+    "board_executed": false,
+    "full_offline_chain": false,
+    "tts": {
+      "model_sha256": {
+        "model-steps-3.onnx": "ff1cc7f7abdedc4eeec668a4a0dc2e72a0c314c5637d5fce885345b490bd08de",
+        "tokens.txt": "56209b2bf609d5ac1d66ede6dae7bf5254bd3f8aa24c4a6823713d5b884d87ba",
+        "lexicon.txt": "38b886d46aefa50da6322a64d72fd595d5f4fae1051adb160d647541b1e0a4a2"
+      },
+      "reference_source_sha256": "2b3055a8e606ab927582bd8e1c297b0031db411e6f0be0601c7ff8b3fb560a1f",
+      "cases": [
+        {
+          "text": "你好",
+          "ids": [
+            [
+              1,
+              1116,
+              1,
+              597,
+              1
+            ]
+          ],
+          "exact_reference": true,
+          "mel_shape": [
+            1,
+            80,
+            70
+          ],
+          "mel_sha256": "78fc9a61792bbcd14373fefd496c35dc436bc528b66e905dbc9d31c9eb02f4ff",
+          "cpu_seconds": 0.03100000007543713,
+          "npu": false
+        },
+        {
+          "text": "测试成功",
+          "ids": [
+            [
+              1,
+              143,
+              1,
+              1518,
+              1,
+              191,
+              1,
+              525,
+              1
+            ]
+          ],
+          "exact_reference": true,
+          "mel_shape": [
+            1,
+            80,
+            115
+          ],
+          "mel_sha256": "4374811531011f93151ccb5125671072986660725caab0d3a7b5bf1b43fb1490",
+          "cpu_seconds": 0.046999999904073775,
+          "npu": false
+        },
+        {
+          "text": "你好，测试成功。",
+          "ids": [
+            [
+              1,
+              1116,
+              1,
+              597,
+              1,
+              2,
+              1
+            ],
+            [
+              1,
+              143,
+              1,
+              1518,
+              1,
+              191,
+              1,
+              525,
+              1,
+              3,
+              1
+            ]
+          ],
+          "exact_reference": true
+        },
+        {
+          "text": "今天心情很好！",
+          "ids": [
+            [
+              1,
+              705,
+              1,
+              1645,
+              1,
+              1775,
+              1,
+              1326,
+              1,
+              612,
+              1,
+              597,
+              1,
+              4,
+              1
+            ]
+          ],
+          "exact_reference": true
+        },
+        {
+          "text": "前进",
+          "ids": [
+            [
+              1,
+              1301,
+              1,
+              708,
+              1
+            ]
+          ],
+          "exact_reference": true
+        },
+        {
+          "text": "左转，右转。",
+          "ids": [
+            [
+              1,
+              2066,
+              1,
+              2007,
+              1,
+              2,
+              1
+            ],
+            [
+              1,
+              1868,
+              1,
+              2007,
+              1,
+              3,
+              1
+            ]
+          ],
+          "exact_reference": true
+        },
+        {
+          "text": "重庆银行",
+          "ids": [
+            [
+              1,
+              201,
+              1,
+              1328,
+              1,
+              1846,
+              1,
+              591,
+              1
+            ]
+          ],
+          "exact_reference": true
+        },
+        {
+          "text": "中华人民共和国",
+          "ids": [
+            [
+              1,
+              1980,
+              1,
+              641,
+              1,
+              1381,
+              1,
+              1036,
+              1,
+              528,
+              1,
+              601,
+              1,
+              571,
+              1
+            ]
+          ],
+          "exact_reference": true
+        },
+        {
+          "text": "晚安，好梦。",
+          "ids": [
+            [
+              1,
+              1712,
+              1,
+              20,
+              1,
+              2,
+              1
+            ],
+            [
+              1,
+              597,
+              1,
+              1013,
+              1,
+              3,
+              1
+            ]
+          ],
+          "exact_reference": true
+        },
+        {
+          "text": "谢谢你",
+          "ids": [
+            [
+              1,
+              1773,
+              1,
+              1773,
+              1,
+              1117,
+              1
+            ]
+          ],
+          "exact_reference": true
+        },
+        {
+          "text": "123",
+          "ids": [
+            [
+              1,
+              1840,
+              1,
+              428,
+              1,
+              1445,
+              1
+            ]
+          ],
+          "exact_reference": true
+        },
+        {
+          "text": "音量50",
+          "ids": [
+            [
+              1,
+              1845,
+              1,
+              893,
+              1,
+              1742,
+              1,
+              911,
+              1
+            ]
+          ],
+          "exact_reference": true
+        }
+      ],
+      "target_acoustic_runtime": false,
+      "full_tts": false
+    }
+  },
+  "real_llm": {
+    "minicpm": {
+      "full_logits_compared": 13,
+      "maxabs": 0,
+      "log_sha256": "fd5254f2bee7831cb98cce1f7169110644fe21528c707c70e505e140b07bbc43"
+    },
+    "qwen": {
+      "full_logits_compared": 13,
+      "maxabs": 0,
+      "log_sha256": "9f2ca1f9d9b700b5350eaad7d19fe8b960cf9ba52ce30a00ebaf3bf05b3ef11e"
+    }
+  },
+  "host_prefill": {
+    "times": {
+      "1": [
+        2.623991498,
+        2.577534551
+      ],
+      "4": [
+        2.262958755,
+        2.238502592
+      ]
+    },
+    "fraction_faster": 0.13458832954120992,
+    "board_proof": false
+  },
+  "logs": {
+    "out/v181-voice-stream-build-r6.log": "3776bb3fef5f3bdf4fa1a5db62ab897afd6486239522a2c357002f8bf9419b56",
+    "out/v181-i2s-stream-r1.log": "8f3a6115ecaf38d6eee9cc502742f4b9ae4191252ea671f835f97d01a25e2a16",
+    "out/v181-i2s-live-r2.log": "38fd0fdfb38a2ea09d710fefdbb805f9e8c5da4a83ccefe3caf55e90f21f464f",
+    "out/v181-routes-r2.log": "ad738c92c67096a02e297d46c97f9ed241747485afe4f54238a531dc60fd16d3",
+    "out/v181-llm-app-regression-r1.log": "d5a7cf1fe2a664d18932a976a103640a81e929810001d723528bb773df9c7f13",
+    "out/v181-audio-app-regression-r2.log": "802ce17b1742e507a52fd0d1f84e15671d45c314f4c0068a530a850eb5fa6dae",
+    "out/v181-mcu-regression-r1.log": "520984d3a7ac679ebc1e9cbbbd1ce40d7a88c1dce4e4734f83523d30bcc29da9",
+    "out/v181-asr-real-stream-r3.log": "b237b6c306cf6c2c3838c26f0d3252be5ab0338e8b423ef2e80d81edb2b9218b",
+    "out/v181-tts-real-r1.log": "95bc420a01c5e503466244fcf69cbbac83df8c53eb4fe82528b4a8b8e4de7849",
+    "out/v181-minicpm-batch-r1.log": "fd5254f2bee7831cb98cce1f7169110644fe21528c707c70e505e140b07bbc43",
+    "out/v181-qwen-batch-r1.log": "9f2ca1f9d9b700b5350eaad7d19fe8b960cf9ba52ce30a00ebaf3bf05b3ef11e",
+    "out/v181-minicpm-bench-r1.log": "95a94004dd1ef850fdaacdf7fb921f1d777d7393ab2769cce8260f6f8cbba20e"
+  },
+  "build_log_sha256": "dbe28135f6762481d5275f879ce30773887c8707c0fd8e44477731f3e622f790",
+  "artifacts": {
+    "Image": {
+      "bytes": 2813480,
+      "sha256": "bb18194d9f5d9f311bc1cc35754a6e91de4c014d6aafa818ac06b07e06a672ee"
+    },
+    "nuttx.elf": {
+      "bytes": 3882896,
+      "sha256": "04b6605361e788d07fbf3e22ef32c2a6c13188015b7c7ee7a546b8ea8dce8ec7"
+    },
+    "build.config": {
+      "bytes": 103245,
+      "sha256": "d7963dbb4aed3c1d48cdc95e319462b6a3b13dff9bf199eb3969b4417e142220"
+    }
+  },
+  "new_sd_image": false,
+  "board_executed": false,
+  "full_offline_chain_complete": false,
+  "target_general_asr_provider": false,
+  "target_matcha_acoustic_executor": false,
+  "first_audible_3_to_4_seconds_accepted": false,
+  "asr_stream_retained_in_final_elf": false
+}

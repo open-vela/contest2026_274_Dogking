@@ -1,0 +1,7 @@
+[01m[K/mnt/d/My-Program/AI-Agent-Program/GPTsprogram/Openvela/A733-A7Z-ALL-Files/contest2026_274_Dogking-dev-ai-contest-2026/board/a733-cubie-a7z/openvela-overlay/apps/system/aipet/voice_general_asr.cxx:[m[K In function '[01m[Kint aipet::{anonymous}::[01;32m[Ktokens[m[K(aipet::VoiceGeneralAsr*, const char*)[m[K':
+[01m[K/mnt/d/My-Program/AI-Agent-Program/GPTsprogram/Openvela/A733-A7Z-ALL-Files/contest2026_274_Dogking-dev-ai-contest-2026/board/a733-cubie-a7z/openvela-overlay/apps/system/aipet/voice_general_asr.cxx:114:9:[m[K [01;35m[Kwarning: [m[Kdeclaration of '[01m[Krc[m[K' shadows a previous local [[01;35m[K-Wshadow[m[K]
+  114 |     int [01;35m[Krc[m[K=-errno;std::printf("asr-v210: stage=tokens-open path=%s error=%d\n",name,rc);return rc;
+      |         [01;35m[K^~[m[K
+[01m[K/mnt/d/My-Program/AI-Agent-Program/GPTsprogram/Openvela/A733-A7Z-ALL-Files/contest2026_274_Dogking-dev-ai-contest-2026/board/a733-cubie-a7z/openvela-overlay/apps/system/aipet/voice_general_asr.cxx:111:32:[m[K [01;36m[Knote: [m[Kshadowed declaration is here
+  111 |   char name[128],line[512];int [01;36m[Krc[m[K=path(name,sizeof(name),dir,"tokens.txt");
+      |                                [01;36m[K^~[m[K

@@ -861,7 +861,20 @@ void nx_start(void)
 
   /* Then start the other CPUs */
 
+#ifdef CONFIG_A733_BOOT_DIAGNOSTICS
+  /* Do not silently proceed with an incomplete eight-core scheduler when
+   * PSCI rejected a CPU. A non-returning firmware SMC cannot be timed out
+   * here; SMP request/return markers identify that distinct failure.
+   */
+
+  if (nx_smp_start() < 0)
+    {
+      a733_boot_marker("STOP v188: SMP start failed\r\n");
+      PANIC();
+    }
+#else
   DEBUGVERIFY(nx_smp_start());
+#endif
 
 #endif /* CONFIG_SMP */
 

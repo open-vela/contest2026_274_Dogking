@@ -1,0 +1,18 @@
+{
+  "result": "V218_ACTUAL_LOCALHOST_HTTPS_GATEWAY_PASSED_MOCK_EDGE",
+  "checks": [
+    "TLS",
+    "unauthenticated-TLS-handshake-timeout",
+    "bearer-auth",
+    "path",
+    "length-cap",
+    "invalid-payload",
+    "PCM-contract",
+    "safe-upstream-error",
+    "shutdown"
+  ],
+  "real_edge_synthesis": false,
+  "real_mp3_decode": false,
+  "cloud_api_executed": false,
+  "hardware_executed": false
+}

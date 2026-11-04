@@ -1,0 +1,1 @@
+PASS: actual I2S stream TX function: 1/63/64/480/4800 frames, stereo duplication, volume, bounded faults, prebuffer safety and cleanup (simulated MMIO)

@@ -1,0 +1,30 @@
+{
+  "result": "HOST_CPP_CPU_ACOUSTIC_EXECUTED",
+  "target_runtime": false,
+  "npu_executed": false,
+  "full_voice_chain": false,
+  "command": [
+    "g++",
+    "-std=c++17",
+    "-O1",
+    "-g",
+    "-Wall",
+    "-Wextra",
+    "-Werror",
+    "-fsanitize=address,undefined",
+    "-fno-omit-frame-pointer",
+    "-I/mnt/d/My-Program/AI-Agent-Program/GPTsprogram/Openvela/A733-A7Z-ALL-Files/contest2026_274_Dogking-dev-ai-contest-2026/board/a733-cubie-a7z/openvela-overlay/apps/system/aipet",
+    "/mnt/d/My-Program/AI-Agent-Program/GPTsprogram/Openvela/A733-A7Z-ALL-Files/contest2026_274_Dogking-dev-ai-contest-2026/tools/test-acoustic-capi-v184.cxx",
+    "/mnt/d/My-Program/AI-Agent-Program/GPTsprogram/Openvela/A733-A7Z-ALL-Files/contest2026_274_Dogking-dev-ai-contest-2026/board/a733-cubie-a7z/openvela-overlay/apps/system/aipet/voice_acoustic.cxx",
+    "/mnt/d/My-Program/AI-Agent-Program/GPTsprogram/Openvela/A733-A7Z-ALL-Files/contest2026_274_Dogking-dev-ai-contest-2026/board/a733-cubie-a7z/openvela-overlay/apps/system/aipet/voice_tts_frontend.cxx",
+    "/mnt/d/My-Program/AI-Agent-Program/GPTsprogram/Openvela/A733-A7Z-ALL-Files/contest2026_274_Dogking-dev-ai-contest-2026/out/ort-capi-host-v184-r1/libonnxruntime.so.1.23.2",
+    "-Wl,-rpath,/mnt/d/My-Program/AI-Agent-Program/GPTsprogram/Openvela/A733-A7Z-ALL-Files/contest2026_274_Dogking-dev-ai-contest-2026/out/ort-capi-host-v184-r1",
+    "-pthread",
+    "-o",
+    "/mnt/d/My-Program/AI-Agent-Program/GPTsprogram/Openvela/A733-A7Z-ALL-Files/contest2026_274_Dogking-dev-ai-contest-2026/out/acoustic-capi-host-v184-r2/test"
+  ],
+  "sources": {
+    "voice_acoustic.cxx": "50da447b2b409f2caa630f9a5decda5e0642e24a8d6bc078fb967c279e69fef0",
+    "voice_tts_frontend.cxx": "cc65451db214d51931fb5fc7332da74927c0c4471ed0ac66448b61fdf5d700d8"
+  }
+}

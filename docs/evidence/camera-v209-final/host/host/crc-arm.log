@@ -1,0 +1,2 @@
+/mnt/d/My-Program/AI-Agent-Program/GPTsprogram/Openvela/quickly-openvela/prebuilts/gcc/linux-x86_64/aarch64-none-elf/bin/../lib/gcc/aarch64-none-elf/13.4.0/../../../../aarch64-none-elf/bin/ld: warning: /tmp/crc208-arm-t2iqeipd/test.elf has a LOAD segment with RWX permissions
+PASS actual ARM IEEE CRC opcodes, MRS/affinity gate, on-core selftest, seeds/alignment/chunks/counts/all six output sizes under QEMU; NOT A733 timing

@@ -1,0 +1,114 @@
+audio: saved; applies next operation and survives reboot.
+aipet audio: output result=0
+audio: saved; applies next operation and survives reboot.
+aipet audio: volume result=0
+voice-service: worker logs on board serial console; use service status from SSH; safe to disconnect this starting shell
+voice-service-v1.1(v219): active=1 pid=0 stage=preparing-MIC-OFF stop=0 error=0 turns=0 empty=0 overlong=0 floor=400
+product-backend=none; cloud and local histories are separate RAM sessions
+product-policy-v228: mode=auto automatic-local-fallback=1; cloud failures never select local ASR/LLM/TTS
+product-v225: routed cloud/local; half-duplex; explicit run or saved boot consent; desktop bounded commands, no AEC/barge-in/fault bypass; status != acoustic acceptance
+voice-load-v215: load-stage=spawn-pending stage-age-ms=0 since-start-ms=0; elapsed is NOT disk throughput
+product-v225: MCU link-start=0; desktop command session, no repeated manual arm
+product-route-v1: turn=1 frozen=cloud reason=network-and-cloud-configured; each turn re-evaluated, never switch after action/audio
+product-v1: READY MIC ON; waiting with opening pre-roll, half-duplex
+product-v1: speech detected; opening audio retained
+product-v1: MIC OFF; RX stopped, ASR finalizing
+cloud-recovery-v226: ASR attempt=1/3 status=-5; same retained PCM, BEFORE dispatch
+cloud-recovery-v226: ASR attempt=2/3 status=-5; same retained PCM, BEFORE dispatch
+product-v1: [asr backend=cloud] 前进一百二十三步
+product-route-v1: intent=mcu ack-status=-13; never retry motor
+cloud-recovery-v226: TTS attempt=1/3 status=-5; retry UNPLAYED clause only, no semantic/action replay
+cloud-recovery-v226: TTS attempt=2/3 status=-5; retry UNPLAYED clause only, no semantic/action replay
+cloud-prefetch-v227: clauses=1/1 elapsed-ms=3016 slots=2; joined owned PCM, no played-prefix replay
+product-tts-v1: backend=selected-cloud clauses=1/1 status=0; no local substitution
+product-route-v1: turn=2 frozen=cloud reason=network-and-cloud-configured; each turn re-evaluated, never switch after action/audio
+product-v1: READY MIC ON; waiting with opening pre-roll, half-duplex
+voice-service: cooperative stop requested; wait for active=0; never task_delete/kill an NPU owner
+voice-service-v1.1(v219): active=1 pid=18380 stage=READY-idle-MIC-ON stop=1 error=0 turns=1 empty=0 overlong=0 floor=400
+product-backend=cloud; cloud and local histories are separate RAM sessions
+product-policy-v228: mode=auto automatic-local-fallback=1; cloud failures never select local ASR/LLM/TTS
+product-v225: routed cloud/local; half-duplex; explicit run or saved boot consent; desktop bounded commands, no AEC/barge-in/fault bypass; status != acoustic acceptance
+voice-load-v215: load-stage=engines-prepared stage-age-ms=0 since-start-ms=6039; elapsed is NOT disk throughput
+product-v1: stopped=-125; microphone OFF; engines released, weights may remain resident
+voice-service: worker logs on board serial console; use service status from SSH; safe to disconnect this starting shell
+voice-service-v1.1(v219): active=1 pid=0 stage=preparing-MIC-OFF stop=0 error=0 turns=0 empty=0 overlong=0 floor=400
+product-backend=none; cloud and local histories are separate RAM sessions
+product-policy-v228: mode=auto automatic-local-fallback=1; cloud failures never select local ASR/LLM/TTS
+product-v225: routed cloud/local; half-duplex; explicit run or saved boot consent; desktop bounded commands, no AEC/barge-in/fault bypass; status != acoustic acceptance
+voice-load-v215: load-stage=spawn-pending stage-age-ms=0 since-start-ms=0; elapsed is NOT disk throughput
+product-v225: MCU link-start=0; desktop command session, no repeated manual arm
+product-route-v1: turn=1 frozen=cloud reason=network-and-cloud-configured; each turn re-evaluated, never switch after action/audio
+product-v1: READY MIC ON; waiting with opening pre-roll, half-duplex
+product-v1: speech detected; opening audio retained
+product-v1: MIC OFF; RX stopped, ASR finalizing
+cloud-recovery-v226: ASR attempt=1/3 status=-5; same retained PCM, BEFORE dispatch
+cloud-recovery-v226: ASR attempt=2/3 status=-5; same retained PCM, BEFORE dispatch
+product-route-v1: cloud-ASR=-5; retained PCM re-recognized locally BEFORE any dispatch
+product-v1: [asr backend=local] 前进一百二十三步
+product-route-v1: intent=mcu ack-status=-13; never retry motor
+product-route-v1: turn=2 frozen=local reason=cloud-unconfigured-or-cooldown; each turn re-evaluated, never switch after action/audio
+voice-load-v215: BEGIN stage=product-LLM-preload path=- mono-us=1084628671
+voice-load-v215: END stage=product-LLM-preload status=0 elapsed-ms=0
+voice-load-v215: BEGIN stage=product-ASR-vocoder-prepare path=- mono-us=1084629596
+voice-load-v215: END stage=product-ASR-vocoder-prepare status=0 elapsed-ms=0
+product-v1: READY MIC ON; waiting with opening pre-roll, half-duplex
+voice-service: cooperative stop requested; wait for active=0; never task_delete/kill an NPU owner
+voice-service-v1.1(v219): active=1 pid=18380 stage=READY-idle-MIC-ON stop=1 error=0 turns=1 empty=0 overlong=0 floor=400
+product-backend=local; cloud and local histories are separate RAM sessions
+product-policy-v228: mode=auto automatic-local-fallback=1; cloud failures never select local ASR/LLM/TTS
+product-v225: routed cloud/local; half-duplex; explicit run or saved boot consent; desktop bounded commands, no AEC/barge-in/fault bypass; status != acoustic acceptance
+voice-load-v215: load-stage=engines-prepared stage-age-ms=0 since-start-ms=3023; elapsed is NOT disk throughput
+product-v1: stopped=-125; microphone OFF; engines released, weights may remain resident
+voice-service: worker logs on board serial console; use service status from SSH; safe to disconnect this starting shell
+voice-service-v1.1(v219): active=1 pid=0 stage=preparing-MIC-OFF stop=0 error=0 turns=0 empty=0 overlong=0 floor=400
+product-backend=none; cloud and local histories are separate RAM sessions
+product-policy-v228: mode=auto automatic-local-fallback=1; cloud failures never select local ASR/LLM/TTS
+product-v225: routed cloud/local; half-duplex; explicit run or saved boot consent; desktop bounded commands, no AEC/barge-in/fault bypass; status != acoustic acceptance
+voice-load-v215: load-stage=spawn-pending stage-age-ms=0 since-start-ms=0; elapsed is NOT disk throughput
+product-v225: MCU link-start=0; desktop command session, no repeated manual arm
+cloud-recovery-v226: link attempt=1/3 network=0; MIC OFF
+cloud-recovery-v226: link attempt=2/3 network=0; MIC OFF
+cloud-recovery-v226: link attempt=3/3 network=0; MIC OFF
+product-route-v1: turn=1 frozen=local reason=network-down; each turn re-evaluated, never switch after action/audio
+voice-load-v215: BEGIN stage=product-LLM-preload path=- mono-us=1087648945
+voice-load-v215: END stage=product-LLM-preload status=0 elapsed-ms=0
+voice-load-v215: BEGIN stage=product-ASR-vocoder-prepare path=- mono-us=1087650202
+voice-load-v215: END stage=product-ASR-vocoder-prepare status=0 elapsed-ms=0
+product-v1: READY MIC ON; waiting with opening pre-roll, half-duplex
+voice-service: cooperative stop requested; wait for active=0; never task_delete/kill an NPU owner
+voice-service-v1.1(v219): active=1 pid=18380 stage=READY-idle-MIC-ON stop=1 error=0 turns=0 empty=0 overlong=0 floor=400
+product-backend=local; cloud and local histories are separate RAM sessions
+product-policy-v228: mode=auto automatic-local-fallback=1; cloud failures never select local ASR/LLM/TTS
+product-v225: routed cloud/local; half-duplex; explicit run or saved boot consent; desktop bounded commands, no AEC/barge-in/fault bypass; status != acoustic acceptance
+voice-load-v215: load-stage=engines-prepared stage-age-ms=0 since-start-ms=3020; elapsed is NOT disk throughput
+product-v1: stopped=-125; microphone OFF; engines released, weights may remain resident
+voice-service: worker logs on board serial console; use service status from SSH; safe to disconnect this starting shell
+voice-service-v1.1(v219): active=1 pid=0 stage=preparing-MIC-OFF stop=0 error=0 turns=0 empty=0 overlong=0 floor=400
+product-backend=none; cloud and local histories are separate RAM sessions
+product-policy-v228: mode=auto automatic-local-fallback=1; cloud failures never select local ASR/LLM/TTS
+product-v225: routed cloud/local; half-duplex; explicit run or saved boot consent; desktop bounded commands, no AEC/barge-in/fault bypass; status != acoustic acceptance
+voice-load-v215: load-stage=spawn-pending stage-age-ms=0 since-start-ms=0; elapsed is NOT disk throughput
+product-v225: MCU link-start=0; desktop command session, no repeated manual arm
+cloud-recovery-v226: link attempt=1/3 network=0; MIC OFF
+product-route-v1: turn=1 frozen=cloud reason=network-and-cloud-configured; each turn re-evaluated, never switch after action/audio
+product-v1: READY MIC ON; waiting with opening pre-roll, half-duplex
+product-v1: speech detected; opening audio retained
+product-v1: MIC OFF; RX stopped, ASR finalizing
+product-v1: [asr backend=cloud] 前进一百二十三步
+product-route-v1: intent=mcu ack-status=-13; never retry motor
+cloud-prefetch-v227: clauses=1/1 elapsed-ms=0 slots=2; joined owned PCM, no played-prefix replay
+product-tts-v1: backend=selected-cloud clauses=1/1 status=0; no local substitution
+product-route-v1: turn=2 frozen=cloud reason=network-and-cloud-configured; each turn re-evaluated, never switch after action/audio
+product-v1: READY MIC ON; waiting with opening pre-roll, half-duplex
+voice-service: cooperative stop requested; wait for active=0; never task_delete/kill an NPU owner
+voice-service-v1.1(v219): active=1 pid=18380 stage=READY-idle-MIC-ON stop=1 error=0 turns=1 empty=0 overlong=0 floor=400
+product-backend=cloud; cloud and local histories are separate RAM sessions
+product-policy-v228: mode=auto automatic-local-fallback=1; cloud failures never select local ASR/LLM/TTS
+product-v225: routed cloud/local; half-duplex; explicit run or saved boot consent; desktop bounded commands, no AEC/barge-in/fault bypass; status != acoustic acceptance
+voice-load-v215: load-stage=engines-prepared stage-age-ms=0 since-start-ms=2; elapsed is NOT disk throughput
+product-v1: stopped=-125; microphone OFF; engines released, weights may remain resident
+cloud-recovery-v226: TTS attempt=1/3 status=-5; retry UNPLAYED clause only, no semantic/action replay
+cloud-recovery-v226: TTS attempt=2/3 status=-5; retry UNPLAYED clause only, no semantic/action replay
+cloud-prefetch-v227: clauses=1/2 elapsed-ms=3037 slots=2; joined owned PCM, no played-prefix replay
+product-tts-v1: backend=selected-cloud clauses=1/2 status=-5; no local substitution
+PASS v226 ACTUAL service/TTS recovery: ASR third attempt success, exactly one dispatch; exhausted ASR -> local before dispatch; no service exit; TTS unplayed-clause-only retries, no played-prefix/action replay; stop/restart/lease cleanup. MOCK network/MIC/engines/UART, NOT board.

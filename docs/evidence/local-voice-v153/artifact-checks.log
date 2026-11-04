@@ -1,0 +1,5 @@
+a733-layout: file=2643752 runtime=36933632 bytes
+a733-layout: page alignment/segments/stack/Image footprint passed
+Windows rg marker scan:
+local-frontend: rate=16000
+CPU Kaldi fbank only

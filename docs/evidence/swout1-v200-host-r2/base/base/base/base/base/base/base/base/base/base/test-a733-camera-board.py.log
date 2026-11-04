@@ -1,0 +1,1 @@
+PASS: fixed camera CCU/PIO whitelist, decode, short reads, failures, deadlines/wrap; SYNTHETIC only

@@ -1,0 +1,58 @@
+{
+  "result": "USER_REPORTED_TWO_REAL_CAPTURES_AND_DISPLAY_PASS_C_REPLAY_MATCHED",
+  "source_commit": "fa53647e5ce1d7b421cbf2523d95141e19233834",
+  "serial_sha256": "964ff8bbcafa30590c6a9b377fbc05a5eafe2164143e822764451b77a093a7d8",
+  "bundles": [
+    {
+      "directory": "camera203a",
+      "sha256": {
+        "complete.txt": "45a48cece97929eac3e4b78d03bf95d6b64f483b99222ccfd715edcdb0a52102",
+        "frame.raw": "6fc1c33fe4c382983bafde6f40c964eaeae84223e0f83c0155e21d35473388eb",
+        "model-rgb.bin": "c9dff480dd52f1b95b260132d7bd552c8c91335a395ef2c17c6431b1f8821ff0",
+        "preview.ppm": "d1cd04e6a50f7690290670066f44c89ee52c6b3ea6f905e648b087b56420cfc7",
+        "preview.rgb": "854e12525e6712e233b8994d02161f41370dcb04c94674a06a3fb3f418a9b4fa",
+        "view.ppm": "a1e8bcc86d273a1a1fa0ebc98eecc624fcbb00a0da7391409be9f07e85bf338e",
+        "view.rgb": "9ecd271e7eb421296a97b13b38d900748a5d58aeacf9bd21326820d6e09a208b",
+        "view.txt": "3521d464f47778760dddc600eccd3640e9e6d7413fc437c23e7255373e2d11b6",
+        "vision-rgb.bin": "8c076e073be90e7af4df7e9a4a596791eb1d9870af6ccdb8dbc91432188a2700"
+      },
+      "raw_crc32": "de24c3db",
+      "board_fingerprint": "5b9d2742",
+      "model_crc32": "92c8e643",
+      "vision_crc32": "b6bb96bb",
+      "complete": "origin=real-published-DMA-frame\nwidth=1920\nheight=1080\nstride=3840\nbytes=4147200\npixel=raw10le-bggr\npreview=128x160-RGB24-letterbox-display-only-levels\nISP-colour-qualified=0\nmodel=640x640-RGB24-padding114-unlevelled\nmodel-image=640x360 pad=0,140\nmodel-input-crc32=92c8e643 convention=NuttX-seed0-no-xor\n",
+      "tone": "profile=cpu-raw-tone-v203\nblack=64\ngain-q8=512\nRGB-q8=512/256/256\nrotation=180\ngamma=2.2\nsource-raw-crc32=de24c3db\nvision-input-crc32=b6bb96bb convention=NuttX-seed0-no-xor\ninput=640x640-RGB24-padding114\nimage=640x360 pad=0,140\nmanual-WB=not-calibrated\naccuracy-qualified=0\n",
+      "production_c_byte_exact": true,
+      "source_unchanged": true
+    },
+    {
+      "directory": "camera203b",
+      "sha256": {
+        "complete.txt": "cb0e18c45b81148b12c9e67ca8607ced6380fac38e628a29eaa4030d8586c1d7",
+        "frame.raw": "3322e66fed68d708a7f1fbf37f5ad07ea39b7883182e04ee8a4c0f9a3ddc28a3",
+        "model-rgb.bin": "4be6727894b5a2e25ee487c8bad18d203e39f29d6ae9861ac435c5a2df230e16",
+        "preview.ppm": "1a0a81f922d0712f1edef676c9ab70570d24b39eaf5e1ae7f934b1755b9e1596",
+        "preview.rgb": "60b039c7b0a19461d840a0b7862efc679352dcc1b57bf6d60e843e58a50c3093",
+        "view.ppm": "cc2a2248c9980eff90e1e2e9824dd714691f4f572284cb1d095dcfb853cd4e2b",
+        "view.rgb": "c837ead12d23a403c527af5f06d37c16c77ff55ed3fcd8df66825c090cb73a2b",
+        "view.txt": "886e073a0923b4e9bc7a56ecf2b924d58788b3f20c6e1da06c7ced68babb301c",
+        "vision-rgb.bin": "19c665b34d9b6e456691e3a5640cc6247077c04936d9a741938b432fe4268bc0"
+      },
+      "raw_crc32": "065ab8ee",
+      "board_fingerprint": "7a12fbec",
+      "model_crc32": "aedeaa2c",
+      "vision_crc32": "e03915e3",
+      "complete": "origin=real-published-DMA-frame\nwidth=1920\nheight=1080\nstride=3840\nbytes=4147200\npixel=raw10le-bggr\npreview=128x160-RGB24-letterbox-display-only-levels\nISP-colour-qualified=0\nmodel=640x640-RGB24-padding114-unlevelled\nmodel-image=640x360 pad=0,140\nmodel-input-crc32=aedeaa2c convention=NuttX-seed0-no-xor\n",
+      "tone": "profile=cpu-raw-tone-v203\nblack=64\ngain-q8=512\nRGB-q8=512/256/256\nrotation=180\ngamma=2.2\nsource-raw-crc32=065ab8ee\nvision-input-crc32=e03915e3 convention=NuttX-seed0-no-xor\ninput=640x640-RGB24-padding114\nimage=640x360 pad=0,140\nmanual-WB=not-calibrated\naccuracy-qualified=0\n",
+      "production_c_byte_exact": true,
+      "source_unchanged": true
+    }
+  ],
+  "photographs_archived": false,
+  "host_replay_is_not_new_capture": true,
+  "reported_colour_normal": true,
+  "cold_boot_loops": false,
+  "continuous_video": false,
+  "isp_ae_awb": false,
+  "yolo_accuracy_tested": false
+}

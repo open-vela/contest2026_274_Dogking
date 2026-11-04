@@ -1,0 +1,13 @@
+--- a/frameworks/connectivity/bluetooth/CMakeLists.txt
++++ b/frameworks/connectivity/bluetooth/CMakeLists.txt
+@@ -25,7 +25,9 @@
+   set(BLUETOOTH_DIR ${CMAKE_CURRENT_SOURCE_DIR})
+ 
+   # Flags
+-  set(CFLAGS)
++  # Retain this component's socket/queue checks during A733 bring-up.
++  # Release NDEBUG otherwise removes checks and leaves assert-only locals.
++  set(CFLAGS -UNDEBUG)
+   set(CSRCS)
+   set(INCDIR)
+ 

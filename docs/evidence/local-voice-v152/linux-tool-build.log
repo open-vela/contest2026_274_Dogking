@@ -1,0 +1,6 @@
+make: Entering directory '/mnt/d/My-Program/AI-Agent-Program/GPTsprogram/Openvela/A733-A7Z-ALL-Files/contest2026_274_Dogking-dev-ai-contest-2026/tools/npu-voice'
+mkdir -p ../../out/npu-voice-bullseye
+aarch64-linux-gnu-gcc --sysroot=/mnt/d/My-Program/AI-Agent-Program/GPTsprogram/Openvela/A733-A7Z-ALL-Files/a733-viplite-golden/bullseye-sysroot -isystem /mnt/d/My-Program/AI-Agent-Program/GPTsprogram/Openvela/A733-A7Z-ALL-Files/a733-viplite-golden/bullseye-sysroot/usr/aarch64-linux-gnu/include -B/mnt/d/My-Program/AI-Agent-Program/GPTsprogram/Openvela/A733-A7Z-ALL-Files/a733-viplite-golden/bullseye-sysroot/usr/aarch64-linux-gnu/lib -L/mnt/d/My-Program/AI-Agent-Program/GPTsprogram/Openvela/A733-A7Z-ALL-Files/a733-viplite-golden/bullseye-sysroot/usr/aarch64-linux-gnu/lib -std=c11 -D_POSIX_C_SOURCE=200809L -O2 -g -Wall -Wextra -Werror \
+  -I../../../a733-ai-sdk-reference/viplite-tina/v2.0/inc voice-golden.c -L../../../a733-ai-sdk-reference/viplite-tina/v2.0 -Wl,-rpath,'$ORIGIN/lib' \
+  -lNBGlinker -lVIPhal -lm -lpthread -ldl -o ../../out/npu-voice-bullseye/voice-golden-linux-aarch64
+make: Leaving directory '/mnt/d/My-Program/AI-Agent-Program/GPTsprogram/Openvela/A733-A7Z-ALL-Files/contest2026_274_Dogking-dev-ai-contest-2026/tools/npu-voice'

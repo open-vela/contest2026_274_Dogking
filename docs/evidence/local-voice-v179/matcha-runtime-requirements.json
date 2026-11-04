@@ -1,0 +1,111 @@
+{
+  "model_sha256": "ff1cc7f7abdedc4eeec668a4a0dc2e72a0c314c5637d5fce885345b490bd08de",
+  "model_bytes": 75624188,
+  "onnx_version": "1.17.0",
+  "opset": {
+    "": 14
+  },
+  "inputs": [
+    {
+      "name": "x",
+      "type": "INT64",
+      "shape": [
+        "N",
+        "L"
+      ]
+    },
+    {
+      "name": "x_length",
+      "type": "INT64",
+      "shape": [
+        "N"
+      ]
+    },
+    {
+      "name": "noise_scale",
+      "type": "FLOAT",
+      "shape": [
+        1
+      ]
+    },
+    {
+      "name": "length_scale",
+      "type": "FLOAT",
+      "shape": [
+        1
+      ]
+    }
+  ],
+  "outputs": [
+    {
+      "name": "mel",
+      "type": "FLOAT",
+      "shape": [
+        "N",
+        80,
+        "L"
+      ]
+    }
+  ],
+  "nodes": 4802,
+  "subgraphs": 0,
+  "operators": {
+    "Add": 342,
+    "Cast": 141,
+    "Ceil": 2,
+    "Clip": 1,
+    "Concat": 171,
+    "Constant": 1423,
+    "ConstantOfShape": 1,
+    "Conv": 113,
+    "ConvTranspose": 3,
+    "CumSum": 1,
+    "Div": 132,
+    "Equal": 1,
+    "Exp": 13,
+    "Flatten": 3,
+    "Gather": 152,
+    "Gemm": 24,
+    "Identity": 124,
+    "InstanceNormalization": 39,
+    "Less": 3,
+    "MatMul": 157,
+    "Mul": 417,
+    "Neg": 12,
+    "Pad": 1,
+    "Pow": 71,
+    "RandomNormalLike": 1,
+    "Range": 3,
+    "Reciprocal": 6,
+    "ReduceMax": 1,
+    "ReduceMean": 106,
+    "ReduceSum": 1,
+    "Relu": 11,
+    "Reshape": 217,
+    "Shape": 208,
+    "Sigmoid": 3,
+    "Sin": 18,
+    "Slice": 94,
+    "Softmax": 24,
+    "Softplus": 42,
+    "Sqrt": 107,
+    "Squeeze": 3,
+    "Sub": 54,
+    "Tanh": 42,
+    "Tile": 3,
+    "Transpose": 149,
+    "Unsqueeze": 356,
+    "Where": 6
+  },
+  "random_ops": {
+    "RandomNormalLike": 1
+  },
+  "control_flow": {},
+  "raw_initializer_bytes": 74269068,
+  "external_initializers": 0,
+  "static_only": true,
+  "maximum_runtime_memory_known": false,
+  "target_cpu_executor_available": false,
+  "target_tts_ready": false,
+  "note": "An operator list is not an implementation. Dynamic shapes, bounded durations, allocation, random state and live-tensor lifetimes still need a real RTOS CPU engine."
+}

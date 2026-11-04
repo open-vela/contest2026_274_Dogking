@@ -1,0 +1,18 @@
+patching file frameworks/connectivity/bluetooth/tools/bt_tools.c
+Hunk #1 succeeded at 1948 (offset 2 lines).
+Hunk #4 succeeded at 2023 (offset -1 lines).
+Hunk #13 succeeded at 2273 (offset -2 lines).
+patching file frameworks/connectivity/bluetooth/tools/scan.c
+Hunk #2 succeeded at 97 (offset -9 lines).
+Hunk #3 succeeded at 190 (offset -16 lines).
+patching file frameworks/connectivity/bluetooth/service/stacks/zephyr/sal_adapter_le_interface.c
+patching file frameworks/connectivity/bluetooth/service/src/adapter_state.c
+bttool console normalization/EOF/limit tests: PASS
+cmd#1 pair: rc=0 (accepted; async operation may still be pending)
+cmd#2 x: rc=0 (accepted; async operation may still be pending)
+Too many arguments; command ignored
+cmd#3 state: rc=-4 (mock error)
+cmd execute error: [mock error]
+cmd#4 quit: rc=-2 (quit)
+bttool parser whitespace/argv sentinel/limit/quit tests: PASS
+live CLI/SAL/state sources match patch (terminal LF normalized): PASS

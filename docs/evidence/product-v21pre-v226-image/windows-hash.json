@@ -1,0 +1,8 @@
+{
+  "image": "openvela-a733-cubie-a7z-sd-v2.1pre-v226-candidate.img",
+  "bytes": 2147483648,
+  "sha256": "63aa91f38a6223e0b3ae0d549f3be17020916824aa5273c15906697188799683",
+  "kernel_sha256": "cff8aa15e8e0c243a78970f416f03be2ead9ad053da4a2ee0a1c1b3038c6eb30",
+  "platform": "Windows PowerShell Get-FileHash",
+  "physical_disk_written": false
+}

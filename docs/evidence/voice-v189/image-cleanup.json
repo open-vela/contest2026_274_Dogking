@@ -1,0 +1,22 @@
+{
+  "files": [
+    {
+      "name": "openvela-a733-cubie-a7z-sd-v185-kernel-only-incomplete.img",
+      "bytes": 2147483648,
+      "sha256": "44eb5d340309b4c634bce66443a13dedc403d3d8ebb8d99d707a89bb147561cf"
+    },
+    {
+      "name": "openvela-a733-cubie-a7z-sd-v185-kernel-only-incomplete-r2.img",
+      "bytes": 2147483648,
+      "sha256": "fbaecf354f4afd997d4f8a4de7bb8f61569aa50091c64a4f5a38d6807e9a92f0"
+    }
+  ],
+  "measured_free_delta": 4294967296,
+  "current_v188_preserved": true,
+  "v185_complete_base_preserved": true,
+  "result": "DELETED_TWO_FAILED_INTERMEDIATE_IMAGES",
+  "free_before": 47456874496,
+  "logical_bytes_removed": 4294967296,
+  "free_after": 51751841792,
+  "recycle_bin_recovery": false
+}

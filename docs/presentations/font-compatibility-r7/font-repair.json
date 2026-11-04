@@ -1,0 +1,62 @@
+{
+  "source": "D:\\My-Program\\AI-Agent-Program\\GPTsprogram\\Openvela\\决赛答辩\\第一版_20261031\\Vela伴星_决赛答辩_第一版_r4.pptx",
+  "sourceSha256": "6d7ba078aa610624b3ab10592717ba0b9ec602ac9e748eaa4a871ed6a9736c0e",
+  "candidate": "D:\\My-Program\\AI-Agent-Program\\GPTsprogram\\Openvela\\决赛答辩\\.build-v1\\r7\\candidate.pptx",
+  "candidateSha256": "7c9b064db5eb8869918110b95e1b162c94b35eca6d0537c369f690290fad93e9",
+  "slides": 24,
+  "latin": "Arial",
+  "eastAsian": "Microsoft YaHei",
+  "editedViaArtifactTool": true,
+  "surgicalOriginalPackage": true,
+  "changedParts": [
+    "ppt/presentation.xml",
+    "ppt/theme/theme1.xml",
+    "ppt/slideMasters/slideMaster1.xml",
+    "ppt/slideMasters/theme/theme2.xml",
+    "ppt/slideLayouts/slideLayout1.xml",
+    "ppt/notesMasters/theme/theme3.xml",
+    "ppt/slides/slide1.xml",
+    "ppt/slides/slide2.xml",
+    "ppt/slides/slide3.xml",
+    "ppt/slides/slide4.xml",
+    "ppt/slides/slide5.xml",
+    "ppt/slides/slide6.xml",
+    "ppt/slides/slide7.xml",
+    "ppt/slides/slide8.xml",
+    "ppt/slides/slide9.xml",
+    "ppt/slides/slide10.xml",
+    "ppt/slides/slide11.xml",
+    "ppt/slides/slide12.xml",
+    "ppt/slides/slide13.xml",
+    "ppt/slides/charts/chart1.xml",
+    "ppt/slides/slide14.xml",
+    "ppt/slides/slide15.xml",
+    "ppt/slides/slide16.xml",
+    "ppt/slides/slide17.xml",
+    "ppt/slides/slide18.xml",
+    "ppt/slides/slide19.xml",
+    "ppt/slides/slide20.xml",
+    "ppt/slides/slide21.xml",
+    "ppt/slides/slide22.xml",
+    "ppt/slides/slide23.xml",
+    "ppt/slides/slide24.xml",
+    "ppt/_rels/presentation.xml.rels"
+  ],
+  "removedFontParts": [
+    "ppt/fonts/font.dat",
+    "ppt/fonts/font2.dat"
+  ],
+  "fontDeclarations": 2289,
+  "softBreaks": [
+    "ppt/slides/slide6.xml",
+    "ppt/slides/slide16.xml"
+  ],
+  "architectureFramesGrown": [
+    "13",
+    "17",
+    "21",
+    "25"
+  ],
+  "sourcePreserved": true,
+  "nativePowerPointTested": false
+}

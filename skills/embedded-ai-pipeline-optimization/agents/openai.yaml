@@ -1,0 +1,4 @@
+interface:
+  display_name: "嵌入式 AI 全链路优化"
+  short_description: "按阶段计时优化 ASR、TTS、LLM 与 YOLO，保留数值、声学与多轮验证"
+  default_prompt: "使用 $embedded-ai-pipeline-optimization 分析当前日志，定位延迟或多轮卡顿，提出可验证且可回退的优化方案。"

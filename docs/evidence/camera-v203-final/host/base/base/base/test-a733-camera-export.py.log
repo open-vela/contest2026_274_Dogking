@@ -1,0 +1,1 @@
+PASS: actual capture/export FILE CLI, four Bayer previews, SAME-RAW model tensor/padding/CRC, strict device/size, no overwrite; SIMULATED DEVICE ONLY

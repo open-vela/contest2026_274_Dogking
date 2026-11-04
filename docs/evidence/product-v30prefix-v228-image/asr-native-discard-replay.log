@@ -1,0 +1,56 @@
+voice-load-v215: BEGIN stage=asr-tokens path=out/v228-product-gates-r1/asr-native-discard-replay/model mono-us=1010806117
+voice-load-v215: END stage=asr-tokens status=0 elapsed-ms=3
+asr-prepare-v213: tokens-us=3588 status=0
+voice-load-v215: BEGIN stage=asr-native-query path=out/v228-product-gates-r1/asr-native-discard-replay/model/asr-encoder.a7tv mono-us=1010812224
+voice-load-v215: END stage=asr-native-query status=0 elapsed-ms=0
+voice-load-v215: BEGIN stage=asr-native-prepare path=out/v228-product-gates-r1/asr-native-discard-replay/model/asr-encoder.a7tv mono-us=1010812918
+voice-load-v215: END stage=asr-native-prepare status=0 elapsed-ms=0
+asr-prepare-v213: role=asr-encoder query-alloc-us=694 prepare-us=585 status=0
+voice-load-v215: BEGIN stage=asr-native-query path=out/v228-product-gates-r1/asr-native-discard-replay/model/asr-decoder.a7tv mono-us=1010813508
+voice-load-v215: END stage=asr-native-query status=0 elapsed-ms=1
+voice-load-v215: BEGIN stage=asr-native-prepare path=out/v228-product-gates-r1/asr-native-discard-replay/model/asr-decoder.a7tv mono-us=1010815528
+voice-load-v215: END stage=asr-native-prepare status=0 elapsed-ms=0
+asr-prepare-v213: role=asr-decoder query-alloc-us=2020 prepare-us=524 status=0
+voice-load-v215: BEGIN stage=asr-native-query path=out/v228-product-gates-r1/asr-native-discard-replay/model/asr-joiner.a7tv mono-us=1010816127
+voice-load-v215: END stage=asr-native-query status=0 elapsed-ms=0
+voice-load-v215: BEGIN stage=asr-native-prepare path=out/v228-product-gates-r1/asr-native-discard-replay/model/asr-joiner.a7tv mono-us=1010817033
+voice-load-v215: END stage=asr-native-prepare status=0 elapsed-ms=0
+asr-prepare-v213: role=asr-joiner query-alloc-us=905 prepare-us=662 status=0
+PASS v224: three partial-state discards perform zero final tensor calls; no text; same clients and cold next-state replay
+cmd_open_light_16k: 帮我打开灯 chunks=2 same-three-clients
+cmd_time_16k: 现在几点了 chunks=2 same-three-clients
+neg_silence_3s_16k:  chunks=4 same-three-clients
+cmd_open_light_16k: 帮我打开灯 chunks=2 same-three-clients
+cmd_time_16k: 现在几点了 chunks=2 same-three-clients
+neg_silence_3s_16k:  chunks=4 same-three-clients
+asr-compute-v190: encoder=4/1674us decoder=1/1us joiner=96/878us; HOST; no target affinity/inference qualification
+asr-v210: accept-batches=300 accept-us=10703 final-flush-us=3768 status=0; nested NPU times are not additive and not E2E latency
+asr-v211: received=48000 staged-bytes=0 qualified-batches=75 tail-frames=92 max-stage-ms=40; no dropped PCM
+voice-load-v215: BEGIN stage=asr-tokens path=out/v228-product-gates-r1/asr-native-discard-replay/model mono-us=1010921993
+voice-load-v215: END stage=asr-tokens status=0 elapsed-ms=3
+asr-prepare-v213: tokens-us=3772 status=0
+asr-compute-v190: encoder=0/0us decoder=0/0us joiner=0/0us; HOST; no target affinity/inference qualification
+asr-v210: accept-batches=0 accept-us=0 final-flush-us=0 status=-125; nested NPU times are not additive and not E2E latency
+asr-v211: received=0 staged-bytes=0 qualified-batches=0 tail-frames=0 max-stage-ms=40; no dropped PCM
+voice-load-v215: BEGIN stage=asr-tokens path=out/v228-product-gates-r1/asr-native-discard-replay/model mono-us=1010926026
+voice-load-v215: END stage=asr-tokens status=0 elapsed-ms=2
+asr-prepare-v213: tokens-us=3202 status=0
+voice-load-v215: BEGIN stage=asr-native-query path=out/v228-product-gates-r1/asr-native-discard-replay/model/asr-encoder.a7tv mono-us=1010930810
+voice-load-v215: END stage=asr-native-query status=0 elapsed-ms=0
+voice-load-v215: BEGIN stage=asr-native-prepare path=out/v228-product-gates-r1/asr-native-discard-replay/model/asr-encoder.a7tv mono-us=1010931466
+voice-load-v215: END stage=asr-native-prepare status=0 elapsed-ms=0
+asr-prepare-v213: role=asr-encoder query-alloc-us=656 prepare-us=570 status=0
+voice-load-v215: BEGIN stage=asr-native-query path=out/v228-product-gates-r1/asr-native-discard-replay/model/asr-decoder.a7tv mono-us=1010932047
+voice-load-v215: END stage=asr-native-query status=0 elapsed-ms=0
+voice-load-v215: BEGIN stage=asr-native-prepare path=out/v228-product-gates-r1/asr-native-discard-replay/model/asr-decoder.a7tv mono-us=1010932673
+voice-load-v215: END stage=asr-native-prepare status=0 elapsed-ms=0
+asr-prepare-v213: role=asr-decoder query-alloc-us=626 prepare-us=593 status=0
+voice-load-v215: BEGIN stage=asr-native-query path=out/v228-product-gates-r1/asr-native-discard-replay/model/asr-joiner.a7tv mono-us=1010933290
+voice-load-v215: END stage=asr-native-query status=0 elapsed-ms=0
+voice-load-v215: BEGIN stage=asr-native-prepare path=out/v228-product-gates-r1/asr-native-discard-replay/model/asr-joiner.a7tv mono-us=1010933803
+voice-load-v215: END stage=asr-native-prepare status=0 elapsed-ms=0
+asr-prepare-v213: role=asr-joiner query-alloc-us=512 prepare-us=527 status=0
+asr-compute-v190: encoder=1/444us decoder=1/3us joiner=0/0us; HOST; no target affinity/inference qualification
+asr-v210: accept-batches=1 accept-us=2609 final-flush-us=0 status=-84; nested NPU times are not additive and not E2E latency
+asr-v211: received=28416 staged-bytes=0 qualified-batches=1 tail-frames=0 max-stage-ms=40; no dropped PCM
+PASS: native capture replay + 35-state feedback, cancellation, finite/output gates; mock calls=518, NPU=NOT_EXECUTED

@@ -12,15 +12,20 @@
 #include <syslog.h>
 
 #include <nuttx/fs/fs.h>
-#ifdef CONFIG_BOARD_A7Z_ST7735
-#  include <nuttx/board.h>
-#  include <nuttx/lcd/lcd_dev.h>
-#endif
-
 #include <arch/board/board.h>
 #include <arch/chip/a733_peripherals.h>
 
 #include "arm64_internal.h"
+
+#ifdef CONFIG_BOARD_LATE_INITIALIZE
+void board_late_initialize(void)
+{
+  /* Use the standard AppBringUp thread for global C++ constructors.
+   * Hardware/storage registration remains in board_app_initialize(), via
+   * NSH's existing BOARDIOC_INIT. Do NOT initialize or mount it twice.
+   */
+}
+#endif
 
 #if defined(CONFIG_UTILS_SSH) && !defined(CONFIG_SYSTEM_A733SERVICES)
 static void a7z_sshd_autostart(void)
@@ -130,6 +135,13 @@ int board_app_initialize(uintptr_t arg)
          ret < 0 ? "failed" : "ready", ret);
 #endif
 
+#ifdef CONFIG_A733_UFS_READONLY
+  /* Register diagnostics only. Optional UFS must never delay SD boot. */
+  ret = a733_ufs_initialize();
+  syslog(ret < 0 ? LOG_ERR : LOG_INFO,
+         "A733: UFS manual read-only interface registration (%d)\n", ret);
+#endif
+
 #ifdef CONFIG_A733_NPU_CHECKPOINT
   ret = a733_npu_initialize();
   syslog(ret < 0 ? LOG_ERR : LOG_INFO,
@@ -140,7 +152,7 @@ int board_app_initialize(uintptr_t arg)
 #ifdef CONFIG_A733_UART4
   ret = a733_uart4_initialize();
   syslog(ret < 0 ? LOG_ERR : LOG_INFO,
-         "A733: UART4 TW-TTS port %s (%d)\n",
+         "A733: UART4 STM32 115200 port %s (%d)\n",
          ret < 0 ? "failed" : "ready at /dev/ttyS4", ret);
 #endif
 
@@ -159,23 +171,11 @@ int board_app_initialize(uintptr_t arg)
          ret < 0 ? "failed" : "ready", ret);
 #endif
 
-#ifdef CONFIG_BOARD_A7Z_EARLY_ST7735
-  /* Opt-in only.  board_lcd_getdev() runs the whole panel command table and a
-   * 128x160 clear, which over the polling SPI1 lower-half is the slowest step
-   * in bring-up.  Doing that here means an unattached or miswired panel stalls
-   * the boot before NSH, with no console to explain it.  By default the panel is
-   * registered on first use by the display app via a7z_lcd_ensure_registered().
-   */
-
-  ret = board_lcd_initialize();
-  if (ret >= 0)
-    {
-      ret = lcddev_register(0);
-    }
-
+#ifdef CONFIG_A733_IMX214_CHECKPOINT
+  ret = a733_camera_diag_initialize();
   syslog(ret < 0 ? LOG_ERR : LOG_INFO,
-         "A733: ST7735 LCD %s (%d)\n",
-         ret < 0 ? "failed" : "ready at /dev/lcd0", ret);
+         "A733: IMX214 passive board inventory (%d); NOT capture-ready\n",
+         ret);
 #endif
 
 #ifdef CONFIG_A733_SDMMC0

@@ -1,0 +1,17 @@
+{
+  "date_local": "2026-10-31",
+  "method": "PowerShell Get-FileHash -Algorithm SHA256; compared with sidecar and release summary",
+  "result": "NEW_IMAGE_MATCHED_AND_PRIOR_IMAGES_UNCHANGED",
+  "new_image": {
+    "name": "openvela-a733-cubie-a7z-sd-v1.0-v217-product-audited.img",
+    "bytes": 2147483648,
+    "sha256": "98daee1f3b4653d3d65a14a3e92c2713560aac2fd6183946d2b06b7a3c79bc21"
+  },
+  "preserved_images": {
+    "openvela-a733-cubie-a7z-sd-v1.0-v217-product-candidate.img": "ffe8078be4a41be6b336b062ea4ff49e28f9a4ea452f3335fcb520c232ddc4b4",
+    "openvela-a733-cubie-a7z-sd-v216-voice-quality-candidate.img": "14aaa2dad1c0b0edd0814f2680ea712a8a8b02695047c5dbe3dafc899ccc7e40",
+    "openvela-a733-cubie-a7z-sd-v204-camera-yolo-live-candidate.img": "f21a9d0bd8aab20264db3e44273ebf372c629f33ee7bba6c49659f0e2e82326d"
+  },
+  "physical_disks_written": false,
+  "hardware_verified": false
+}

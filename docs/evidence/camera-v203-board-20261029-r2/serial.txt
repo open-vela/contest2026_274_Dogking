@@ -1,0 +1,119 @@
+
+[boot188] CTOR enter=0x0000000040640be0
+[boot188] CTOR done index=0x0000000000000013
+[boot188] CTOR enter=0x0000000040640c10
+[boot188] CTOR done index=0x0000000000000014
+[boot188] CTOR enter=0x0000000040640ca0
+[boot188] CTOR done index=0x0000000000000015
+[boot188] CTOR enter=0x0000000040664b90
+[boot188] CTOR done index=0x0000000000000016
+[boot188] CTOR enter=0x00000000407df640
+[boot188] CTOR done index=0x0000000000000017
+AX20
+
+X1
+PR
+PR
+PR
+
+NuttShell (NSH)
+nsh> RI
+RX
+
+nsh> display raw8
+display: initializing ST7735 direct 8-bit path
+display: ST7735 direct path ready
+display: raw8 path passed (128x160 RGB565, MSB first)
+nsh> camera capture /data/camera203a
+camera-control-v203: V1.11/J5 guarded repeat RAW + read-only exposure diagnostics
+state=2 stage=RAW-frame-validated-controls-restored error=0 cleanup=0 command-error=0 owned=0 consumed=1
+power: source=same-boot-U-Boot-image-handoff ready=434d5031 bytes=03/00/ff/17/c1/0d
+runtime-PMIC-access=NONE rails-retained=ASSUMED physical-voltage=NOT-MEASURED
+MCLK: configured=0 Hz measured=UNKNOWN; prepare holds reset/STBY LOW
+reads=52698 writes=1849 polls=1 elapsed-ms=226 last-address=02002e8c
+id-experiment: attempted=1 reads=1 chip-id=0214 match=1 error=0 polls=50081 bus-quarantined=0
+mode-experiment: attempted=1 blob-error=0 writes=153 reads=17 verified=14/14 last-reg=0100 error=0
+packet-experiment: attempted=1 stage=receiver-ready-NOT-a-frame receiver-error=0 cleanup=0 owned=0 ready=0
+source: on-attempted=1 on-error=0 stop-error=0; bounded RAW DMA to private frame pool
+packets: raw-headers=0 fs-observations=1 fe-observations=1 status=0000004f errors=00000000 last-header=00010001
+receiver: reads=174 writes=62 elapsed=62 last-address=02003844 phy-debug=00000000 phy-frequency=00000000 pll-ref=f8675f00 pll-peri=ff126310
+PK-before: cfg1=ffffffff cfg2=ffffffff drv1=11111111 drv2=11111111; target=PK10..19/mux2/10mA; unrelated PK fields preserved
+receiver-first: error=0 address=00000000 mask=00000000 expected=00000000 observed=00000000
+receiver-cleanup: error=0 address=00000000 mask=00000000 expected=00000000 observed=00000000
+frame: requested=1 attempted=1 stage=RAW-frame-valid-after-stop-and-guard-check error=0 cleanup=0 owned=0 completed=1 published=1 validation=0
+frame-data: address=458fc040 bytes=4147200 stride=3840 format=RAW10-LE16 vendor-BGGR min=64 max=1023 fingerprint=5b9d2742 status=00000083 parser=00000000 xy=00000780 fifo=00000000
+frame-mapping: CPU-identity CSI-master1 version=00000016 enable=00000000 bypass=00000001 mbus=00040307; NO-IOMMU-TABLE/RESET/BYPASS-WRITES
+frame-first: error=0 address=00000000 mask=00000000 expected=00000000 observed=00000000
+frame-cleanup: error=0 address=00000000 mask=00000000 expected=00000000 observed=00000000
+frame-final: dma=00000083 parser=00000000 mapping-enable=00000000 bypass=00000001
+frame-sizing: active-top=00000001 length=07800780 flip=04380780 restored-top=70000000 length=02800500 flip=02d00500
+strict-qualification=NONE; RAW requires published=1; NO-ISP-IMAGE-TUNING
+repeat-v203: generation=1 readers=0 ready=1 max=32 same-boot-cached-power; any failed cycle requires reboot
+sensor-readback: frame-lines=2128 exposure-lines=2118 analog-code=0000 (read-only, NO AE/gain writes)
+control: prepare | calibrate | normal-clock | id-experiment OR mode-experiment OR link-experiment OR frame-experiment | park
+normal boot has no handoff: prepare returns ENODATA with ZERO MMIO; see camera boot-help
+camera: real RAW + RGB/PPM preview saved in /data/camera203a; display image /data/camera203a/preview.rgb
+camera-v203: enhanced upright preview: display image /data/camera203a/view.rgb; optional vision input /data/camera203a/vision-rgb.bin (see VIEW.txt; legacy files retained)
+nsh> display image /data/camera203a/view.rgb
+display: RGB24 file shown; image origin depends on the supplied file
+nsh> camera capture /data/camera203b
+camera-control-v203: V1.11/J5 guarded repeat RAW + read-only exposure diagnostics
+state=2 stage=RAW-frame-validated-controls-restored error=0 cleanup=0 command-error=0 owned=0 consumed=1
+power: source=same-boot-U-Boot-image-handoff ready=434d5031 bytes=03/00/ff/17/c1/0d
+runtime-PMIC-access=NONE rails-retained=ASSUMED physical-voltage=NOT-MEASURED
+MCLK: configured=0 Hz measured=UNKNOWN; prepare holds reset/STBY LOW
+reads=52671 writes=1849 polls=1 elapsed-ms=226 last-address=02002e8c
+id-experiment: attempted=1 reads=1 chip-id=0214 match=1 error=0 polls=50054 bus-quarantined=0
+mode-experiment: attempted=1 blob-error=0 writes=153 reads=17 verified=14/14 last-reg=0100 error=0
+packet-experiment: attempted=1 stage=receiver-ready-NOT-a-frame receiver-error=0 cleanup=0 owned=0 ready=0
+source: on-attempted=1 on-error=0 stop-error=0; bounded RAW DMA to private frame pool
+packets: raw-headers=0 fs-observations=1 fe-observations=1 status=0000004f errors=00000000 last-header=00010001
+receiver: reads=174 writes=62 elapsed=62 last-address=02003844 phy-debug=00000000 phy-frequency=00000000 pll-ref=f8675f00 pll-peri=ff126310
+PK-before: cfg1=ffffffff cfg2=ffffffff drv1=11111111 drv2=11111111; target=PK10..19/mux2/10mA; unrelated PK fields preserved
+receiver-first: error=0 address=00000000 mask=00000000 expected=00000000 observed=00000000
+receiver-cleanup: error=0 address=00000000 mask=00000000 expected=00000000 observed=00000000
+frame: requested=1 attempted=1 stage=RAW-frame-valid-after-stop-and-guard-check error=0 cleanup=0 owned=0 completed=1 published=1 validation=0
+frame-data: address=458fc040 bytes=4147200 stride=3840 format=RAW10-LE16 vendor-BGGR min=64 max=1023 fingerprint=7a12fbec status=00000083 parser=00000000 xy=00000780 fifo=00000000
+frame-mapping: CPU-identity CSI-master1 version=00000016 enable=00000000 bypass=00000001 mbus=00040307; NO-IOMMU-TABLE/RESET/BYPASS-WRITES
+frame-first: error=0 address=00000000 mask=00000000 expected=00000000 observed=00000000
+frame-cleanup: error=0 address=00000000 mask=00000000 expected=00000000 observed=00000000
+frame-final: dma=00000083 parser=00000000 mapping-enable=00000000 bypass=00000001
+frame-sizing: active-top=00000001 length=07800780 flip=04380780 restored-top=70000000 length=02800500 flip=02d00500
+strict-qualification=NONE; RAW requires published=1; NO-ISP-IMAGE-TUNING
+repeat-v203: generation=2 readers=0 ready=1 max=32 same-boot-cached-power; any failed cycle requires reboot
+sensor-readback: frame-lines=2128 exposure-lines=2118 analog-code=0000 (read-only, NO AE/gain writes)
+control: prepare | calibrate | normal-clock | id-experiment OR mode-experiment OR link-experiment OR frame-experiment | park
+normal boot has no handoff: prepare returns ENODATA with ZERO MMIO; see camera boot-help
+camera: real RAW + RGB/PPM preview saved in /data/camera203b; display image /data/camera203b/preview.rgb
+camera-v203: enhanced upright preview: display image /data/camera203b/view.rgb; optional vision input /data/camera203b/vision-rgb.bin (see VIEW.txt; legacy files retained)
+nsh> display image /data/camera203b/view.rgb
+display: RGB24 file shown; image origin depends on the supplied file
+nsh> camera control status
+camera-control-v203: V1.11/J5 guarded repeat RAW + read-only exposure diagnostics
+state=2 stage=RAW-frame-validated-controls-restored error=0 cleanup=0 command-error=0 owned=0 consumed=1
+power: source=same-boot-U-Boot-image-handoff ready=434d5031 bytes=03/00/ff/17/c1/0d
+runtime-PMIC-access=NONE rails-retained=ASSUMED physical-voltage=NOT-MEASURED
+MCLK: configured=0 Hz measured=UNKNOWN; prepare holds reset/STBY LOW
+reads=52671 writes=1849 polls=1 elapsed-ms=226 last-address=02002e8c
+id-experiment: attempted=1 reads=1 chip-id=0214 match=1 error=0 polls=50054 bus-quarantined=0
+mode-experiment: attempted=1 blob-error=0 writes=153 reads=17 verified=14/14 last-reg=0100 error=0
+packet-experiment: attempted=1 stage=receiver-ready-NOT-a-frame receiver-error=0 cleanup=0 owned=0 ready=0
+source: on-attempted=1 on-error=0 stop-error=0; bounded RAW DMA to private frame pool
+packets: raw-headers=0 fs-observations=1 fe-observations=1 status=0000004f errors=00000000 last-header=00010001
+receiver: reads=174 writes=62 elapsed=62 last-address=02003844 phy-debug=00000000 phy-frequency=00000000 pll-ref=f8675f00 pll-peri=ff126310
+PK-before: cfg1=ffffffff cfg2=ffffffff drv1=11111111 drv2=11111111; target=PK10..19/mux2/10mA; unrelated PK fields preserved
+receiver-first: error=0 address=00000000 mask=00000000 expected=00000000 observed=00000000
+receiver-cleanup: error=0 address=00000000 mask=00000000 expected=00000000 observed=00000000
+frame: requested=1 attempted=1 stage=RAW-frame-valid-after-stop-and-guard-check error=0 cleanup=0 owned=0 completed=1 published=1 validation=0
+frame-data: address=458fc040 bytes=4147200 stride=3840 format=RAW10-LE16 vendor-BGGR min=64 max=1023 fingerprint=7a12fbec status=00000083 parser=00000000 xy=00000780 fifo=00000000
+frame-mapping: CPU-identity CSI-master1 version=00000016 enable=00000000 bypass=00000001 mbus=00040307; NO-IOMMU-TABLE/RESET/BYPASS-WRITES
+frame-first: error=0 address=00000000 mask=00000000 expected=00000000 observed=00000000
+frame-cleanup: error=0 address=00000000 mask=00000000 expected=00000000 observed=00000000
+frame-final: dma=00000083 parser=00000000 mapping-enable=00000000 bypass=00000001
+frame-sizing: active-top=00000001 length=07800780 flip=04380780 restored-top=70000000 length=02800500 flip=02d00500
+strict-qualification=NONE; RAW requires published=1; NO-ISP-IMAGE-TUNING
+repeat-v203: generation=2 readers=0 ready=1 max=32 same-boot-cached-power; any failed cycle requires reboot
+sensor-readback: frame-lines=2128 exposure-lines=2118 analog-code=0000 (read-only, NO AE/gain writes)
+control: prepare | calibrate | normal-clock | id-experiment OR mode-experiment OR link-experiment OR frame-experiment | park
+normal boot has no handoff: prepare returns ENODATA with ZERO MMIO; see camera boot-help
+nsh>

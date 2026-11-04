@@ -1,0 +1,139 @@
+SDK staging backup: /mnt/d/My-Program/AI-Agent-Program/GPTsprogram/Openvela/A733-A7Z-ALL-Files/contest2026_274_Dogking-dev-ai-contest-2026/out/sdk-staging/a733-build-staging.oVMqci
+openvela-boundary: passed (official public APIs above vendor BSP)
+patching file nuttx/arch/arm64/include/arch.h
+Hunk #1 succeeded at 219 (offset 1 line).
+patching file nuttx/arch/arm64/src/common/arm64_head.S
+patching file nuttx/arch/arm64/src/common/arm64_cpustart.c
+patching file nuttx/sched/init/nx_smpstart.c
+patching file nuttx/libs/libc/misc/lib_cxx_initialize.c
+patching file nuttx/drivers/lcd/st7735.c
+Hunk #1 succeeded at 204 with fuzz 1.
+Hunk #3 succeeded at 511 with fuzz 1.
+patching file apps/nshlib/nsh_ddcmd.c
+v178: forced local LLM/app staged timestamps; source bytes unchanged
+patching file packages/ai_agent/src/agent_main.c
+Hunk #1 succeeded at 30 with fuzz 1.
+Hunk #2 succeeded at 148 (offset -5 lines).
+Hunk #3 succeeded at 168 with fuzz 2 (offset -10 lines).
+Hunk #4 succeeded at 391 (offset 1 line).
+Hunk #5 succeeded at 530 (offset 8 lines).
+patching file packages/ai_agent/CMakeLists.txt
+Hunk #2 succeeded at 151 (offset -29 lines).
+patching file packages/ai_agent/src/infra/vela_tls.c
+Hunk #1 succeeded at 48 with fuzz 1.
+Hunk #2 succeeded at 118 with fuzz 1.
+Hunk #3 succeeded at 133 with fuzz 1.
+Hunk #4 succeeded at 238 with fuzz 1.
+patching file packages/ai_agent/src/tools/tool_registry.c
+Hunk #1 succeeded at 89 with fuzz 1.
+patching file packages/ai_agent/src/core/agent_loop.c
+Hunk #1 succeeded at 662 (offset 1 line).
+Hunk #3 succeeded at 892 with fuzz 2 (offset -1 lines).
+Hunk #4 succeeded at 1494 (offset -8 lines).
+Hunk #5 succeeded at 1510 (offset -5 lines).
+patching file packages/ai_agent/src/core/session_mgr.c
+patching file packages/ai_agent/src/tools/skill_loader.c
+Hunk #2 succeeded at 372 (offset -2 lines).
+patching file packages/ai_agent/src/agent_main.c
+Hunk #1 succeeded at 381 (offset 7 lines).
+patching file packages/ai_agent/src/infra/vela_tls.c
+patching file packages/ai_agent/src/agent_main.c
+Hunk #1 succeeded at 349 (offset 6 lines).
+Hunk #2 succeeded at 588 (offset 8 lines).
+patching file packages/ai_agent/CMakeLists.txt
+Hunk #1 succeeded at 18 with fuzz 1.
+patching file packages/ai_agent/src/infra/config_store.c
+Hunk #1 succeeded at 24 with fuzz 1.
+Hunk #2 succeeded at 119 (offset 4 lines).
+Hunk #3 succeeded at 127 (offset 4 lines).
+Hunk #4 succeeded at 133 with fuzz 1 (offset 2 lines).
+Hunk #5 succeeded at 144 with fuzz 1.
+patching file packages/ai_agent/src/voice/volc_tts.c
+patching file packages/ai_agent/src/voice/volc_asr.c
+patching file apps/system/readline/readline_common.c
+Hunk #1 succeeded at 639 with fuzz 1 (offset 1 line).
+patching file frameworks/connectivity/bluetooth/CMakeLists.txt
+Hunk #1 succeeded at 20 (offset -5 lines).
+patching file nuttx/drivers/serial/uart_bth4.c
+patching file frameworks/connectivity/bluetooth/service/stacks/zephyr/sal_adapter_interface.c
+Hunk #2 succeeded at 1623 (offset -1 lines).
+patching file frameworks/connectivity/bluetooth/service/stacks/zephyr/sal_connection_manager.c
+patching file frameworks/connectivity/bluetooth/service/src/connection_manager.c
+patching file frameworks/connectivity/bluetooth/service/utils/btsnoop_writer.c
+patching file external/zblue/zblue/subsys/bluetooth/host/hci_core.h
+patching file external/zblue/zblue/subsys/bluetooth/host/id.c
+Hunk #2 succeeded at 1619 with fuzz 1 (offset -1 lines).
+patching file external/zblue/zblue/port/kernel/thread.c
+Hunk #2 succeeded at 110 (offset 2 lines).
+patching file external/zblue/zblue/port/kernel/poll.c
+Hunk #3 succeeded at 262 (offset -1 lines).
+Hunk #4 succeeded at 276 (offset -3 lines).
+Hunk #5 succeeded at 291 (offset -5 lines).
+patching file external/zblue/CMakeLists.default.txt
+patching file frameworks/connectivity/bluetooth/tools/bt_tools.c
+Hunk #1 succeeded at 1948 (offset 2 lines).
+Hunk #4 succeeded at 2023 (offset -1 lines).
+Hunk #13 succeeded at 2273 (offset -2 lines).
+patching file frameworks/connectivity/bluetooth/tools/scan.c
+Hunk #2 succeeded at 97 (offset -9 lines).
+Hunk #3 succeeded at 190 (offset -16 lines).
+patching file frameworks/connectivity/bluetooth/service/stacks/zephyr/sal_adapter_le_interface.c
+patching file frameworks/connectivity/bluetooth/service/src/adapter_state.c
+patching file frameworks/connectivity/bluetooth/tools/bt_tools.c
+Hunk #1 succeeded at 19 (offset -1 lines).
+patching file frameworks/connectivity/bluetooth/tools/scan.c
+Hunk #1 succeeded at 18 (offset -2 lines).
+Hunk #2 succeeded at 33 (offset 1 line).
+Hunk #3 succeeded at 82 (offset 3 lines).
+Hunk #4 succeeded at 94 (offset 1 line).
+Hunk #5 succeeded at 123 (offset -9 lines).
+Hunk #6 succeeded at 205 (offset -2 lines).
+Hunk #7 succeeded at 220 (offset -8 lines).
+Hunk #8 succeeded at 230 (offset -7 lines).
+Hunk #9 succeeded at 251 (offset -7 lines).
+patching file frameworks/connectivity/bluetooth/service/src/adapter_state.c
+Hunk #1 succeeded at 340 (offset 4 lines).
+patching file frameworks/connectivity/bluetooth/service/stacks/zephyr/sal_adapter_le_interface.c
+Hunk #1 succeeded at 1009 (offset 1 line).
+Hunk #2 succeeded at 1035 (offset 1 line).
+patching file external/zblue/zblue/subsys/bluetooth/host/hci_core.c
+patching file external/zblue/zblue/subsys/bluetooth/host/scan.c
+patching file frameworks/connectivity/bluetooth/service/stacks/zephyr/hci_h4.c
+patching file frameworks/connectivity/bluetooth/service/stacks/zephyr/sal_le_scan_interface.c
+patching file nuttx/fs/fat/fs_fat32.h
+patching file nuttx/fs/fat/fs_fat32.c
+Hunk #1 succeeded at 34 (offset 1 line).
+Hunk #2 succeeded at 337 (offset -1 lines).
+Hunk #6 succeeded at 1382 (offset -9 lines).
+Hunk #7 succeeded at 1598 (offset 2 lines).
+Hunk #8 succeeded at 1607 (offset 1 line).
+[0/1] Re-running CMake...
+-- NuttX Host Tools
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /mnt/d/My-Program/AI-Agent-Program/GPTsprogram/Openvela/quickly-openvela/cmake_out/cubie-a7z_nsh_v192_camera/bin_host
+-- ╭─────────────────────────────────────────────────╮
+-- │  Vela build custom modules base on NuttX build  |
+-- ╰─────────────────────────────────────────────────╯
+CMake Warning at /mnt/d/My-Program/AI-Agent-Program/GPTsprogram/Openvela/quickly-openvela/apps/cmake/nuttx_add_rust.cmake:28 (message):
+  Missing required LLVM parameters for Rust support.  Skipping Rust build
+  logic.  Required: LLVM_ARCHTYPE='aarch64', LLVM_ABITYPE='aapcs64',
+  LLVM_CPUTYPE=''
+Call Stack (most recent call first):
+  /mnt/d/My-Program/AI-Agent-Program/GPTsprogram/Openvela/quickly-openvela/apps/cmake/nuttx_add_jidl.cmake:22 (include)
+  /mnt/d/My-Program/AI-Agent-Program/GPTsprogram/Openvela/quickly-openvela/apps/CMakeLists.txt:34 (include)
+
+
+CMake Warning at /mnt/d/My-Program/AI-Agent-Program/GPTsprogram/Openvela/quickly-openvela/apps/cmake/nuttx_add_rust.cmake:28 (message):
+  Missing required LLVM parameters for Rust support.  Skipping Rust build
+  logic.  Required: LLVM_ARCHTYPE='aarch64', LLVM_ABITYPE='aapcs64',
+  LLVM_CPUTYPE=''
+Call Stack (most recent call first):
+  /mnt/d/My-Program/AI-Agent-Program/GPTsprogram/Openvela/quickly-openvela/apps/CMakeLists.txt:39 (include)
+
+
+CONFIG_ZEPHYR_REPO_DEFAULT
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /mnt/d/My-Program/AI-Agent-Program/GPTsprogram/Openvela/quickly-openvela/cmake_out/cubie-a7z_nsh_v192_camera
+ninja: error: rebuilding 'build.ninja': interrupted by user

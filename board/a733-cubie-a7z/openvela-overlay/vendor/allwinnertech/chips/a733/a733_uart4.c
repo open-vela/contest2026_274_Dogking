@@ -8,7 +8,8 @@
  *
  * The register address, reset/gate bit and PJ24/PJ25 mux are taken from the
  * official sun60iw2 BSP.  Polling is intentional: TW-TTS traffic is tiny and
- * this keeps the first hardware acceptance test independent of GIC/DMA.
+ * this keeps hardware acceptance independent of GIC/DMA. v177 dedicates this
+ * port exclusively to the STM32 link at 115200; legacy TTS must not open it.
  */
 
 #include <nuttx/config.h>
@@ -57,7 +58,7 @@
 #define UART_USR_TFNF          (1u << 1)
 
 #define A733_UART4_CLOCK       24000000u
-#define A733_UART4_BAUD        9600u
+#define A733_UART4_BAUD        115200u
 #define A733_UART4_TIMEOUT     MSEC2TICK(1000)
 #define A733_UART4_GATE        (1u << 0)
 #define A733_UART4_RESET       (1u << 16)
@@ -66,6 +67,7 @@
                                 9u * A733_PIO_STRIDE + 0x0c)
 
 static mutex_t g_uart4_lock = NXMUTEX_INITIALIZER;
+static bool g_uart4_opened;
 
 static ssize_t a733_uart4_diag_read(struct file *filep, char *buffer,
                                     size_t buflen)
@@ -87,7 +89,7 @@ static ssize_t a733_uart4_diag_read(struct file *filep, char *buffer,
     }
 
   length = (size_t)snprintf(report, sizeof(report),
-    "A733 UART4 TW-TTS checkpoint\n"
+    "A733 UART4 STM32 link v177\n"
     "node: /dev/ttyS4 baud=%u format=8N1 polling=1\n"
     "clock: apb-uart=%08lx source=%lu divider=%lu "
     "bgr=%08lx gate=%lu reset=%lu\n"
@@ -161,6 +163,20 @@ static void a733_pinmux(unsigned int bank, unsigned int pin,
 
 static int a733_uart4_open(struct file *filep)
 {
+  int ret = nxmutex_lock(&g_uart4_lock);
+  if (ret < 0) return ret;
+  ret = g_uart4_opened ? -EBUSY : OK;
+  if (!ret) g_uart4_opened = true;
+  nxmutex_unlock(&g_uart4_lock);
+  return ret;
+}
+
+static int a733_uart4_close(struct file *filep)
+{
+  int ret = nxmutex_lock(&g_uart4_lock);
+  if (ret < 0) return ret;
+  g_uart4_opened = false;
+  nxmutex_unlock(&g_uart4_lock);
   return OK;
 }
 
@@ -222,6 +238,11 @@ static ssize_t a733_uart4_write(struct file *filep, const char *buffer,
       while ((getreg32(A733_UART4_BASE + UART_LSR) & UART_LSR_THRE) == 0 &&
              (getreg32(A733_UART4_BASE + UART_USR) & UART_USR_TFNF) == 0)
         {
+          if ((filep->f_oflags & O_NONBLOCK) != 0)
+            {
+              nxmutex_unlock(&g_uart4_lock);
+              return written != 0 ? (ssize_t)written : -EAGAIN;
+            }
           if (clock_systime_ticks() - start > A733_UART4_TIMEOUT)
             {
               nxmutex_unlock(&g_uart4_lock);
@@ -250,12 +271,12 @@ static int a733_uart4_ioctl(struct file *filep, int cmd,
 
       memset(termiosp, 0, sizeof(*termiosp));
       /* NuttX keeps the encoded baud selector in c_cflag and the numeric
-       * baud rate in c_speed.  B9600 is an encoded selector, not 9600.
-       * Mixing the two made cfsetospeed() turn c_speed into 9600 and the
+       * baud rate in c_speed. B115200 is an encoded selector, not 115200.
+       * Mixing selectors and numeric rates made the legacy TTS driver's
        * following TCSETS comparison reject it with EINVAL.
        */
 
-      termiosp->c_cflag = CS8 | CREAD | CLOCAL | B9600;
+      termiosp->c_cflag = CS8 | CREAD | CLOCAL | B115200;
       termiosp->c_speed = A733_UART4_BAUD;
       return OK;
     }
@@ -267,7 +288,9 @@ static int a733_uart4_ioctl(struct file *filep, int cmd,
           return -EINVAL;
         }
 
-      return cfgetospeed(termiosp) == A733_UART4_BAUD ? OK : -EINVAL;
+      return cfgetospeed(termiosp) == A733_UART4_BAUD &&
+             (termiosp->c_cflag & CSIZE) == CS8 &&
+             !(termiosp->c_cflag & (PARENB | CSTOPB)) ? OK : -EINVAL;
     }
 
   return -ENOTTY;
@@ -276,6 +299,7 @@ static int a733_uart4_ioctl(struct file *filep, int cmd,
 static const struct file_operations g_uart4_fops =
 {
   .open  = a733_uart4_open,
+  .close = a733_uart4_close,
   .read  = a733_uart4_read,
   .write = a733_uart4_write,
   .ioctl = a733_uart4_ioctl,
@@ -283,7 +307,8 @@ static const struct file_operations g_uart4_fops =
 
 int a733_uart4_initialize(void)
 {
-  uint32_t divisor = A733_UART4_CLOCK / (16u * A733_UART4_BAUD);
+  uint32_t divisor = (A733_UART4_CLOCK + 8u * A733_UART4_BAUD) /
+                     (16u * A733_UART4_BAUD);
   uint32_t value;
   int ret;
 

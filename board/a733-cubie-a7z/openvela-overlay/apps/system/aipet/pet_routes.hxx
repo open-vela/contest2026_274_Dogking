@@ -6,11 +6,17 @@ namespace aipet {
  * Not registered by default; no model loading in the online-only build. */
 using LocalRouteBackend = int (*)(const char *text, char *reply, std::size_t cap);
 void set_local_route_backend(LocalRouteBackend backend);
+/* Provisional UTF-8 text only, never an actuator channel. Bound to the
+ * synchronous route caller; foreign threads cannot publish into its sink. */
+int local_route_stream(const char *data,std::size_t bytes);
 Rules default_routes();
 /* Ordered Linux rules schema; bounded, no credentials or Python imports. */
 bool load_routes(const char *path, Rules &out);
 std::string expand_clock_template(const std::string &text);
 int routed_ask(const char *text, bool inspect, bool force_cloud);
 int routed_local_ask(const char *text);
+/* Local LLM + local TTS only. No network fallback or MCU dispatch. */
+int routed_offline_ask(const char *text);
+int routed_offline_stream_ask(const char *text);
 int uart_tts_control(const char *command, const char *text = nullptr);
 }

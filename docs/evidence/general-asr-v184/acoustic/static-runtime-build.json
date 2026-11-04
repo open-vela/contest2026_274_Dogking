@@ -1,0 +1,21 @@
+{
+  "phase": "build",
+  "steps": [
+    {
+      "command": [
+        "/mnt/d/My-Program/AI-Agent-Program/GPTsprogram/Openvela/A733-A7Z-ALL-Files/contest2026_274_Dogking-dev-ai-contest-2026/out/ort-tools-v183/unpacked/cmake/data/bin/cmake",
+        "--build",
+        "/mnt/d/My-Program/AI-Agent-Program/GPTsprogram/Openvela/A733-A7Z-ALL-Files/contest2026_274_Dogking-dev-ai-contest-2026/out/ort-nuttx-v184-r1/build",
+        "--target",
+        "onnxruntime_session",
+        "--parallel",
+        "6"
+      ],
+      "exit": 0,
+      "log": "/mnt/d/My-Program/AI-Agent-Program/GPTsprogram/Openvela/A733-A7Z-ALL-Files/contest2026_274_Dogking-dev-ai-contest-2026/out/ort-build-v184-newabi-r6-0.log"
+    }
+  ],
+  "elapsed_seconds": 57.674741410000024,
+  "target_hardware_executed": false,
+  "full_voice_chain": false
+}

@@ -1,0 +1,2 @@
+PASS: 551 SWOUT1 command-model cases; all 256 control/voltage states; one permitted bit3 write or idempotent no-write; CRC/identity/voltage/readback/failure gates; NO HARDWARE CLAIM
+PRIMARY pmu_axp8191.c e6faa518a123c374b8f9148327f5e4aeeb2d89eb2bc3e91dae9a35e06d964c59 pmu_axp8191.h 7f8e6b5742b2906da8f448caedbd0de99f0300fa22814515cfed09612f19738f

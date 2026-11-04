@@ -1,0 +1,1 @@
+PASS v207/v208 actual tiled decoder exact struct bytes, zero/random/tie/NaN/infinity fixtures; no model/hardware execution

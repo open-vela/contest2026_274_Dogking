@@ -1,0 +1,6 @@
+A7TV manifest/39-tensor/state/error tests: 8 groups PASS (CPU only)
+A7TV actual driver adapter: 20 groups PASS (mock HW/files, NOT board acceptance)
+Public NPU tensor client: 11 groups PASS (mock ioctl, no board execution)
+Actual runtime allocator + real client: pool=1048576 free=606208 encoder-rounds=16 hw-mock=0 PASS
+Actual runtime allocator + real client: pool=2097152 free=1654784 encoder-rounds=16 hw-mock=16 PASS
+Actual runtime allocator + real client: pool=8388608 free=7946240 encoder-rounds=16 hw-mock=16 PASS

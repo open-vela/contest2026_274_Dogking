@@ -1,0 +1,47 @@
+{
+  "result": "HOST_REPORT_CHECKS_PASSED_NOT_BOARD_TESTED",
+  "version": 202,
+  "source_head": "41da1866362d78a835a07c9f0560bbf52095a022",
+  "source_sha256": {
+    "tools/a733-camera-report-v202.py": "4ff50a9e256c63a58b2cb0413dafb1eafb2403782a8e0b26f3bb77a229e26205",
+    "tools/test-a733-camera-report-v202.py": "d1f4ada1c660bf90c4d3d33fd1d067d1a89458a79b18b65ca8899f648bf4d998",
+    "tools/check-a733-camera-report-v202.py": "5b843a1d8689c94c9ad0063929a5cdac86632955cd1880f0064e78e6471210e1",
+    "tools/a733-camera-vision-v201.py": "70641b5972461bd94d61a462b8f2d12e3d66d2e0171640324d164687f4c98465"
+  },
+  "tests": [
+    {
+      "command": [
+        "/usr/bin/python3",
+        "/mnt/d/My-Program/AI-Agent-Program/GPTsprogram/Openvela/A733-A7Z-ALL-Files/contest2026_274_Dogking-dev-ai-contest-2026/tools/check-a733-camera-vision-v201.py",
+        "--output",
+        "/mnt/d/My-Program/AI-Agent-Program/GPTsprogram/Openvela/A733-A7Z-ALL-Files/contest2026_274_Dogking-dev-ai-contest-2026/docs/evidence/camera-report-v202-wsl-final/v201-base"
+      ],
+      "exit": 0,
+      "log": "check-0.log",
+      "sha256": "7f2aa339a6f717b09426d5b78f42acded93e16aa3dc7d758705de6546d28e7d1"
+    },
+    {
+      "command": [
+        "/usr/bin/python3",
+        "/mnt/d/My-Program/AI-Agent-Program/GPTsprogram/Openvela/A733-A7Z-ALL-Files/contest2026_274_Dogking-dev-ai-contest-2026/tools/test-a733-camera-report-v202.py"
+      ],
+      "exit": 0,
+      "log": "check-1.log",
+      "sha256": "40b6264f07c38b2dcdc6200c4c9f4a11f3b49eeda0f4f406dddf75d2751e3235"
+    }
+  ],
+  "demo_sha256": {
+    "model.png": "e95ed47c9fe6a170dfd9616177cd5c288c1f7ffee08c961973c37b0fc66912fc",
+    "model-boxes.png": "e95ed47c9fe6a170dfd9616177cd5c288c1f7ffee08c961973c37b0fc66912fc",
+    "preview-boxes.png": "ba25c29f733b24b52dc4a35e8cd02562432e8fd15dbc890072d865b6b1e79e79",
+    "lcd-schematic.png": "646c59981b718ec0e95995a17a5f8b802e15a48fbe1689f015d828f6fdb51ff4",
+    "report.html": "f0073802e4e9fddcf9f37f091ecbed28ed328164609e892a36053679b25c4760",
+    "DEMO.json": "0d2d4e865a011610ef838bba6ffa66eaa26c64f7851146c7855e5566da7acb13"
+  },
+  "v201_base_summary_sha256": "ab19dd94d38c41b8f9f725548757db7afac4296a369fd3934301b74a7fed5b7d",
+  "firmware_modified": false,
+  "new_image": false,
+  "board_connected": false,
+  "hardware_verified": false,
+  "cpu_oracle_all_bayer_run": true
+}

@@ -1,0 +1,48 @@
+{
+  "result": "V204_LIVE_HOST_ARM_FULL_LINK_PASSED_NOT_BOARD_TESTED",
+  "firmware_commit": "fe641a49de964208f9092da39f408acb764c22d6",
+  "firmware_source_sha256": {
+    "board/a733-cubie-a7z/openvela-overlay/apps/system/a733camera/a733camera_main.c": "2635c6d35f55046348b4713b9c43bbce01281bc5a5473d96b74d259a158ba9f3",
+    "board/a733-cubie-a7z/openvela-overlay/apps/system/a733camera/a733_camera_image.c": "7816220875f454ead9f65d0c2193b18e695c08a0e97d9e1f5ebb3dca72cf2c73",
+    "board/a733-cubie-a7z/openvela-overlay/apps/system/a733camera/a733_camera_live.c": "fc118bab1f8c5df3a27b053885344226e2bd5807274919b893c7ee8771b685dd",
+    "board/a733-cubie-a7z/openvela-overlay/apps/system/a733display/a733display_main.c": "c0f2dda3670ee5cf7c27236ec94d29d551324ffab1046d9f5fede0113994d587",
+    "board/a733-cubie-a7z/openvela-overlay/vendor/allwinnertech/chips/a733/a733_camera_control.c": "8b419974c635cdde0acea96e69fb49cd8fd30a92ff9359c95195a3e86830ba0f",
+    "board/a733-cubie-a7z/openvela-overlay/vendor/allwinnertech/chips/a733/a733_npu_runtime.c": "1626293ded2c151ade6ca78acfd59c702afdaf57cf56f04f65508f1e07bf159a"
+  },
+  "build_artifact_sha256": {
+    "nuttx": "8c1580f8f74cfcf19d938cdd60eb898a89b0e2675c2ba8511c43f6a8f66a79c1",
+    "nuttx.bin": "cd6bf4cc8e9ec6d2fee01f92ee2c660f8abadca563c530aca47377f536c22cc9",
+    "nuttx.map": "a1303381d881a2fbb11b2e2ac5b165c456f9b20216aeeae27ae53cd6ae897778",
+    ".config": "75ca8f3b6093966a3c3a80c016996e564181254e233bbf1a457362bcec2a2b7b"
+  },
+  "sdk_restore": {
+    "result": "SDK_RESTORED_BYTE_EXACT",
+    "paths": 291
+  },
+  "build_log_sha256": "e8c228044802f0eb389197d0d26b5d5bc18c1b734cdb0c38c96ecfc76255c239",
+  "symbols": {
+    "a733_camera_live_command": "0x40297080",
+    "a733_camera_live_busy": "0x40296144",
+    "a733_display_live_begin": "0x40299da0",
+    "a733_display_live_frame": "0x4029981c",
+    "a733_display_live_end": "0x40299c60"
+  },
+  "frame_pool": {
+    "address": "0x45903000",
+    "bytes": 4194304
+  },
+  "runtime_end": "0x45dd5000",
+  "constructors": 24,
+  "tests": {
+    "test-a733-live-v204.py": "275fcf2a9e28a994050cf8dab666fdc4aaf80c903394ce6055ba79e2591d97aa",
+    "test-a733-live-display-v204.py": "27232582e0b13cbd79b037b14480fea49ad79e3244ba9bdd413058cb21c91a22",
+    "test-a733-tone-compat-v204.py": "f4cb12c1b50cbf94c058a8752acf3a61e2f1adb56178f372a49024ca2d11cf3d",
+    "test-a733-live-vfs-v204.py": "bff348b8be8aa83849f7b0671e0115aaabcdeec42f71f16a239629c6f9279461",
+    "test-a733-live-log-v204.py": "0248a1884eb6ec9e8df2cf2e137155dc32bdbd3afc4d6a52c229dca4d864ac9b",
+    "test-a733-camera-v203.py": "541fef3e465f204a1ce0ff7fea35af27556cdd62246c365754f3f30f3fd39386"
+  },
+  "npu_execution_core_unchanged": true,
+  "npu_path_extension": "two exact /camram-v204 files only; old ABI unchanged",
+  "hardware_verified": false,
+  "continuous_video_qualified": false
+}

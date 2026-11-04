@@ -1,0 +1,20 @@
+{
+  "result": "SYNTHETIC_UI_DEMO_NOT_CAMERA_OR_NPU",
+  "synthetic_demo": true,
+  "raw": {
+    "min": 0,
+    "max": 1023,
+    "mean": 512,
+    "standard_deviation": 0,
+    "zero_fraction": 0,
+    "saturation_fraction": 0,
+    "warnings": [
+      "SYNTHETIC_DEMO: example numbers, not measured RAW statistics"
+    ]
+  },
+  "input_crc32": "NOT-MEASURED",
+  "bayer": "NOT-QUALIFIED",
+  "inference_bound": false,
+  "detections": [],
+  "hardware_verified": false
+}

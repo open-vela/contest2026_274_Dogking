@@ -1,0 +1,135 @@
+PASS v221fix1: sub-trigger room-noise fluctuations end after700ms, not8s discard
+dialogue-rx-v214: result=0 monitored=729600 accepted48=165120 speech=1 limited=0 queue=47; idle PCM not saved
+gate-end-v221fix1: noise-rms=0 last-rms=0 voiced-blocks=200 quiet-blocks=70; 10ms blocks,700ms endpoint,8s hard discard
+dialogue-rx-v214: result=0 monitored=81600 accepted48=81600 speech=1 limited=0 queue=28; idle PCM not saved
+gate-end-v221fix1: noise-rms=0 last-rms=0 voiced-blocks=100 quiet-blocks=70; 10ms blocks,700ms endpoint,8s hard discard
+dialogue-rx-v214: result=0 monitored=948480 accepted48=384000 speech=1 limited=1 queue=49; idle PCM not saved
+gate-end-v221fix1: noise-rms=0 last-rms=2000 voiced-blocks=776 quiet-blocks=0; 10ms blocks,700ms endpoint,8s hard discard
+dialogue-rx-v214: result=-125 monitored=48480 accepted48=0 speech=0 limited=0 queue=0; idle PCM not saved
+gate-end-v221fix1: noise-rms=0 last-rms=0 voiced-blocks=0 quiet-blocks=0; 10ms blocks,700ms endpoint,8s hard discard
+dialogue-rx-v214: result=-5 monitored=585120 accepted48=480 speech=1 limited=0 queue=42; idle PCM not saved
+gate-end-v221fix1: noise-rms=0 last-rms=2000 voiced-blocks=18 quiet-blocks=0; 10ms blocks,700ms endpoint,8s hard discard
+dialogue-rx-v214: result=-75 monitored=624000 accepted48=59520 speech=1 limited=0 queue=52; idle PCM not saved
+gate-end-v221fix1: noise-rms=0 last-rms=2000 voiced-blocks=100 quiet-blocks=0; 10ms blocks,700ms endpoint,8s hard discard
+PASS v214 production gate/capture: unbounded idle, DC rejection, impulse rejection, opening pre-roll, short speech, 500ms pause, 700ms endpoint, 8s discard flag, cancel/overflow/sink/retained owner; HOST ONLY
+voice-load-v215: BEGIN stage=general-provider-configure path=/data/npu/tts mono-us=507234431
+voice-load-v215: requested-ASR=/data/npu/asr requested-TTS=/data/npu/tts
+general-voice: RAM-only candidate installed; ASR=NPU acoustic=CPU vocoder=NPU; no auto capture/cloud fallback; TARGET ACCEPTANCE REQUIRED
+voice-load-v215: END stage=general-provider-configure status=0 elapsed-ms=1
+voice-prepare-v213: asr-us=3 vocoder-us=0 status=0; MIC still OFF
+voice-session-v190: prepared ASR once in 4 us; same-command RAM reuse, per-turn states cleared
+general-asr: MIC ON; live 48k->16k FIR->NPU; capture-side energy endpoint; no actions
+general-asr: MIC OFF; capture/consumer stopped before final decode or playback
+general-asr: result=0 samples16=0 chunks=1 queue-peak=0 ended=0; native NPU candidate, not E2E acceptance
+voice-stage: mic-stopped-mono-us=0 transcript-ready-mono-us=507237358; mic stop is NOT true end-of-speech (energy endpoint is diagnostic)
+general-asr: MIC ON; live 48k->16k FIR->NPU; capture-side energy endpoint; no actions
+general-asr: MIC OFF; capture/consumer stopped before final decode or playback
+general-asr: result=0 samples16=0 chunks=1 queue-peak=0 ended=0; native NPU candidate, not E2E acceptance
+voice-stage: mic-stopped-mono-us=0 transcript-ready-mono-us=507237366; mic stop is NOT true end-of-speech (energy endpoint is diagnostic)
+general-asr: MIC ON; live 48k->16k FIR->NPU; capture-side energy endpoint; no actions
+general-asr: MIC OFF; capture/consumer stopped before final decode or playback
+general-asr: result=0 samples16=0 chunks=1 queue-peak=0 ended=0; native NPU candidate, not E2E acceptance
+voice-stage: mic-stopped-mono-us=0 transcript-ready-mono-us=507237368; mic stop is NOT true end-of-speech (energy endpoint is diagnostic)
+voice-prepare-v213: asr-us=0 vocoder-us=0 status=-12; MIC still OFF
+voice-prepare-v213: asr-us=1 vocoder-us=0 status=-5; MIC still OFF
+voice-prepare-v213: asr-us=0 vocoder-us=0 status=0; MIC still OFF
+voice-session-v190: prepared ASR once in 1 us; same-command RAM reuse, per-turn states cleared
+general-asr: MIC ON; live 48k->16k FIR->NPU; capture-side energy endpoint; no actions
+general-asr: MIC OFF; capture/consumer stopped before final decode or playback
+general-asr: result=-75 samples16=0 chunks=1 queue-peak=0 ended=0; native NPU candidate, not E2E acceptance
+voice-stage: mic-stopped-mono-us=0 transcript-ready-mono-us=0; mic stop is NOT true end-of-speech (energy endpoint is diagnostic)
+voice-prepare-v213: asr-us=0 vocoder-us=0 status=0; MIC still OFF
+voice-session-v190: prepared ASR once in 0 us; same-command RAM reuse, per-turn states cleared
+general-asr: MIC ON; live 48k->16k FIR->NPU; capture-side energy endpoint; no actions
+general-asr: MIC OFF; capture/consumer stopped before final decode or playback
+general-asr: result=0 samples16=0 chunks=1 queue-peak=0 ended=0; native NPU candidate, not E2E acceptance
+voice-stage: mic-stopped-mono-us=0 transcript-ready-mono-us=507237391; mic stop is NOT true end-of-speech (energy endpoint is diagnostic)
+general-asr: MIC ON; live 48k->16k FIR->NPU; capture-side energy endpoint; no actions
+general-asr: MIC OFF; capture/consumer stopped before final decode or playback
+general-asr: result=0 samples16=0 chunks=1 queue-peak=0 ended=0; native NPU candidate, not E2E acceptance
+voice-stage: mic-stopped-mono-us=0 transcript-ready-mono-us=507237398; mic stop is NOT true end-of-speech (energy endpoint is diagnostic)
+voice-prepare-v213: asr-us=0 vocoder-us=0 status=0; MIC still OFF
+voice-session-v190: prepared ASR once in 0 us; same-command RAM reuse, per-turn states cleared
+voice-resident-v214: asr=0 accepted16=0 limited=0; models retained by SAME live task
+voice-stage-v214: capture-stop-mono-us=0 consumer-done-mono-us=0 asr-ready-mono-us=507237408 tail-us=0 status=0
+voice-resident-v214: asr=0 accepted16=0 limited=1; models retained by SAME live task
+voice-stage-v214: capture-stop-mono-us=0 consumer-done-mono-us=0 asr-ready-mono-us=507237412 tail-us=0 status=0
+voice-resident-v214: asr=0 accepted16=0 limited=0; models retained by SAME live task
+voice-stage-v214: capture-stop-mono-us=0 consumer-done-mono-us=0 asr-ready-mono-us=507237414 tail-us=0 status=0
+voice-resident-v214: asr=0 accepted16=0 limited=0; models retained by SAME live task
+voice-stage-v214: capture-stop-mono-us=0 consumer-done-mono-us=0 asr-ready-mono-us=507237415 tail-us=0 status=0
+PASS v214 actual session wait: one engine group, once-per-turn deadline refresh after arbitrary idle, no partial overlong turn, empty turn then resume
+general-asr: uninstalled; no capture/inference running
+PASS: same-command ASR/vocoder reuse, per-turn reset, replacement exclusion, open/prepare/capture failure cleanup and empty transcript (host mocks)
+voice-load-v215: BEGIN stage=general-provider-configure path=/data/npu/tts mono-us=507237999
+voice-load-v215: requested-ASR=/data/npu/asr requested-TTS=/data/npu/tts
+general-voice: RAM-only candidate installed; ASR=NPU acoustic=CPU vocoder=NPU; no auto capture/cloud fallback; TARGET ACCEPTANCE REQUIRED
+voice-load-v215: END stage=general-provider-configure status=0 elapsed-ms=0
+voice-prepare-v213: asr-us=0 vocoder-us=0 status=0; MIC still OFF
+voice-session-v190: prepared ASR once in 1 us; same-command RAM reuse, per-turn states cleared
+PASS: downstream retained worker pins ASR/TTS/config owner until reboot (intentional quarantine, not leak-free recovery)
+audio: saved; applies next operation and survives reboot.
+aipet audio: output result=0
+audio: saved; applies next operation and survives reboot.
+aipet audio: volume result=0
+audio: saved; applies next operation and survives reboot.
+aipet audio: gain result=0
+voice-service: worker logs on board serial console; use service status from SSH; safe to disconnect this starting shell
+voice-service-v216: active=1 pid=0 stage=preparing-MIC-OFF stop=0 error=0 turns=0 empty=0 overlong=0 floor=400
+local-only half-duplex; explicit start; no boot recording/AEC/barge-in/cloud/MCU actions; status is not acoustic acceptance
+voice-load-v215: load-stage=spawn-pending stage-age-ms=0 since-start-ms=0; elapsed is NOT disk throughput
+voice-load-v215: BEGIN stage=service-settings path=- mono-us=532859616
+voice-load-v215: END stage=service-settings status=0 elapsed-ms=1
+voice-load-v215: BEGIN stage=service-storage-TTS path=- mono-us=532861701
+voice-load-v215: keeping explicitly selected RAM provider; no storage auto-switch
+voice-load-v215: END stage=service-storage-TTS status=0 elapsed-ms=0
+voice-load-v215: BEGIN stage=service-LLM-preload path=- mono-us=532862824
+voice-load-v215: END stage=service-LLM-preload status=0 elapsed-ms=0
+voice-load-v215: BEGIN stage=service-ASR-vocoder-prepare path=- mono-us=532863796
+voice-load-v215: END stage=service-ASR-vocoder-prepare status=0 elapsed-ms=0
+voice-service: READY MIC ON; continuously waiting, up to 400ms RAM pre-roll
+voice-service: READY MIC ON; continuously waiting, up to 400ms RAM pre-roll
+voice-service: utterance exceeds 8s including pre-roll; discarded, no partial LLM turn
+voice-service: READY MIC ON; continuously waiting, up to 400ms RAM pre-roll
+voice-service: speech detected; retaining opening audio
+voice-service: MIC OFF; RX stopped, draining/finalizing ASR
+voice-service: MIC OFF (half-duplex); [asr] 你好
+voice-service: READY MIC ON; continuously waiting, up to 400ms RAM pre-roll
+voice-service: speech detected; retaining opening audio
+voice-service: MIC OFF; RX stopped, draining/finalizing ASR
+voice-service: MIC OFF (half-duplex); [asr] 你好
+voice-service: READY MIC ON; continuously waiting, up to 400ms RAM pre-roll
+voice-service-v216: active=1 pid=1091 stage=READY-idle-MIC-ON stop=0 error=0 turns=2 empty=1 overlong=1 floor=400
+local-only half-duplex; explicit start; no boot recording/AEC/barge-in/cloud/MCU actions; status is not acoustic acceptance
+voice-load-v215: load-stage=engines-prepared stage-age-ms=0 since-start-ms=6; elapsed is NOT disk throughput
+audio: resident service owns engines; use service stop/status before changing audio
+audio: resident service owns engines; use service stop/status before changing audio
+voice-service-v216: active=1 pid=1091 stage=READY-idle-MIC-ON stop=0 error=0 turns=2 empty=1 overlong=1 floor=400
+local-only half-duplex; explicit start; no boot recording/AEC/barge-in/cloud/MCU actions; status is not acoustic acceptance
+voice-load-v215: load-stage=engines-prepared stage-age-ms=1 since-start-ms=6; elapsed is NOT disk throughput
+voice-service: cooperative stop requested; wait for active=0; never task_delete/kill an NPU owner
+voice-service-v216: active=1 pid=1091 stage=READY-idle-MIC-ON stop=1 error=0 turns=2 empty=1 overlong=1 floor=400
+local-only half-duplex; explicit start; no boot recording/AEC/barge-in/cloud/MCU actions; status is not acoustic acceptance
+voice-load-v215: load-stage=engines-prepared stage-age-ms=1 since-start-ms=7; elapsed is NOT disk throughput
+voice-load-v215: BEGIN stage=service-close path=- mono-us=532866941
+voice-load-v215: END stage=service-close status=0 elapsed-ms=0
+voice-service: MIC OFF; stopped status=-125; owner engines closed
+voice-service: worker logs on board serial console; use service status from SSH; safe to disconnect this starting shell
+voice-service-v216: active=1 pid=0 stage=preparing-MIC-OFF stop=0 error=0 turns=0 empty=0 overlong=0 floor=400
+local-only half-duplex; explicit start; no boot recording/AEC/barge-in/cloud/MCU actions; status is not acoustic acceptance
+voice-load-v215: load-stage=spawn-pending stage-age-ms=0 since-start-ms=0; elapsed is NOT disk throughput
+voice-load-v215: BEGIN stage=service-settings path=- mono-us=532868444
+voice-load-v215: END stage=service-settings status=0 elapsed-ms=1
+voice-load-v215: BEGIN stage=service-storage-TTS path=- mono-us=532870053
+voice-load-v215: keeping explicitly selected RAM provider; no storage auto-switch
+voice-load-v215: END stage=service-storage-TTS status=0 elapsed-ms=0
+voice-load-v215: BEGIN stage=service-LLM-preload path=- mono-us=532870864
+voice-load-v215: END stage=service-LLM-preload status=-5 elapsed-ms=0
+voice-load-v215: BEGIN stage=service-close path=- mono-us=532871547
+voice-load-v215: END stage=service-close status=0 elapsed-ms=0
+voice-service: MIC OFF; stopped status=-5; owner engines closed
+voice-service: start rejected before spawning/TTS/NPU; LLM preflight=-2
+voice-service-v216: active=0 pid=1091 stage=off stop=0 error=-2 turns=0 empty=0 overlong=0 floor=400
+local-only half-duplex; explicit start; no boot recording/AEC/barge-in/cloud/MCU actions; status is not acoustic acceptance
+voice-load-v215: load-stage=none stage-age-ms=0 since-start-ms=3; elapsed is NOT disk throughput
+PASS v214 actual service lifecycle: independent builtin spawn entry, single preload/session, empty/overlong ignored, two replies, config exclusion, idle cooperative stop, restart/preflight failure; HOST MOCKS NOT NUTTX task acceptance

@@ -1,0 +1,144 @@
+--- a/packages/ai_agent/src/voice/volc_asr.c
++++ b/packages/ai_agent/src/voice/volc_asr.c
+@@ -46,6 +46,7 @@
+ #include "mbedtls/error.h"
+ #include "mbedtls/net_sockets.h"
+ #include "mbedtls/ssl.h"
++#include "mbedtls/x509_crt.h"
+ #include "netutils/base64.h"
+ 
+ #include <errno.h>
+@@ -81,6 +82,8 @@
+ /* TLS context for ASR connection (not pooled — single use) */
+ typedef struct {
+     mbedtls_ssl_context ssl;
++    mbedtls_x509_crt ca;
++    struct timespec deadline;
+     mbedtls_ssl_config cfg;
+     mbedtls_net_context net;
+     mbedtls_ctr_drbg_context ctr_drbg;
+@@ -100,15 +103,28 @@
+ 
+ /* ── TLS connect / free ──────────────────────────────────────── */
+ 
++static int asr_expired(asr_tls_ctx_t* ctx)
++{
++    struct timespec now;
++    clock_gettime(CLOCK_MONOTONIC, &now);
++    return now.tv_sec > ctx->deadline.tv_sec ||
++        (now.tv_sec == ctx->deadline.tv_sec && now.tv_nsec >= ctx->deadline.tv_nsec);
++}
++
++
+ static int asr_tls_connect(asr_tls_ctx_t* ctx,
+     const char* host, const char* port)
+ {
+     int ret;
+ 
+     mbedtls_ssl_init(&ctx->ssl);
++    mbedtls_x509_crt_init(&ctx->ca);
++    clock_gettime(CLOCK_MONOTONIC, &ctx->deadline);
++    ctx->deadline.tv_sec += 60;
+     mbedtls_ssl_config_init(&ctx->cfg);
+     mbedtls_net_init(&ctx->net);
+     mbedtls_ctr_drbg_init(&ctx->ctr_drbg);
++    if (time(NULL) < 1704067200) return -EPERM;
+ 
+     const char* pers = "volc_asr";
+ 
+@@ -145,9 +161,11 @@
+ 
+     mbedtls_net_set_block(&ctx->net);
+     if (ctx->net.fd >= 0) {
+-        struct timeval tv = { .tv_sec = 30, .tv_usec = 0 };
++        struct timeval tv = { .tv_sec = 5, .tv_usec = 0 };
+ 
+         setsockopt(ctx->net.fd, SOL_SOCKET, SO_RCVTIMEO,
++            &tv, sizeof(tv));
++        setsockopt(ctx->net.fd, SOL_SOCKET, SO_SNDTIMEO,
+             &tv, sizeof(tv));
+     }
+ 
+@@ -175,7 +193,11 @@
+     mbedtls_ssl_conf_alpn_protocols(&ctx->cfg, alpn);
+ #endif
+ 
+-    mbedtls_ssl_conf_authmode(&ctx->cfg, MBEDTLS_SSL_VERIFY_OPTIONAL);
++    if (mbedtls_x509_crt_parse_file(&ctx->ca, "/data/ai_agent/ca.pem") != 0) {
++        return -EACCES;
++    }
++    mbedtls_ssl_conf_ca_chain(&ctx->cfg, &ctx->ca, NULL);
++    mbedtls_ssl_conf_authmode(&ctx->cfg, MBEDTLS_SSL_VERIFY_REQUIRED);
+     mbedtls_ssl_conf_rng(&ctx->cfg, mbedtls_ctr_drbg_random,
+         &ctx->ctr_drbg);
+ 
+@@ -189,6 +211,7 @@
+         mbedtls_net_send, mbedtls_net_recv, NULL);
+ 
+     while ((ret = mbedtls_ssl_handshake(&ctx->ssl)) != 0) {
++        if (asr_expired(ctx)) return -ETIMEDOUT;
+         if (ret != MBEDTLS_ERR_SSL_WANT_READ
+             && ret != MBEDTLS_ERR_SSL_WANT_WRITE) {
+             syslog(LOG_ERR, "[%s] handshake: -0x%04x\n", TAG, -ret);
+@@ -206,6 +229,7 @@
+     mbedtls_net_free(&ctx->net);
+     mbedtls_ssl_free(&ctx->ssl);
+     mbedtls_ssl_config_free(&ctx->cfg);
++    mbedtls_x509_crt_free(&ctx->ca);
+     mbedtls_ctr_drbg_free(&ctx->ctr_drbg);
+ }
+ 
+@@ -217,6 +241,7 @@
+     size_t written = 0;
+ 
+     while (written < len) {
++        if (asr_expired(ctx)) return -ETIMEDOUT;
+         int ret = mbedtls_ssl_write(&ctx->ssl, buf + written,
+             len - written);
+ 
+@@ -236,6 +261,7 @@
+     size_t got = 0;
+ 
+     while (got < len) {
++        if (asr_expired(ctx)) return -ETIMEDOUT;
+         int ret = mbedtls_ssl_read(&ctx->ssl, buf + got, len - got);
+ 
+         if (ret > 0) {
+@@ -307,10 +333,11 @@
+     }
+ 
+     /* Read HTTP 101 response */
+-    char resp[WS_BUF_SIZE];
++    char resp[WS_BUF_SIZE] = {0};
+     size_t rlen = 0;
+ 
+     while (rlen < sizeof(resp) - 1) {
++        if (asr_expired(ctx)) return -ETIMEDOUT;
+         int r = mbedtls_ssl_read(&ctx->ssl,
+             (unsigned char*)resp + rlen,
+             sizeof(resp) - 1 - rlen);
+@@ -616,7 +643,7 @@
+ static int recv_volc_response(asr_tls_ctx_t* ctx,
+     char* text_out, size_t text_cap)
+ {
+-    unsigned char* buf = malloc(WS_BUF_SIZE);
++    unsigned char* buf = malloc(WS_BUF_SIZE + 1);
+ 
+     if (!buf) {
+         return -ENOMEM;
+@@ -920,6 +947,7 @@
+         + (asr_t1.tv_nsec - asr_t0.tv_nsec) / 1000000;
+ 
+     asr_tls_free(&ctx);
++    if (ret != 1) { text_out[0] = 0; return -ETIMEDOUT; }
+ 
+     if (text_out[0] == '\0') {
+         syslog(LOG_WARNING, "[%s] No text recognized (%ldms)\n",
+@@ -1046,6 +1074,7 @@
+ 
+     asr_tls_free(&s->tls);
+     free(s);
++    if (ret != 1) { text_out[0] = 0; return -ETIMEDOUT; }
+ 
+     if (text_out[0] == '\0') {
+         syslog(LOG_WARNING, "[%s] stream: no text recognized\n",

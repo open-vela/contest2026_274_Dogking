@@ -1,6 +1,7 @@
 /* SPDX-License-Identifier: Apache-2.0 */
 #include "agent_secret.h"
 #include "agent_bridge.h"
+#include "cloud_voice.h"
 #include <cJSON.h>
 #include <system/a733_services.h>
 #include <errno.h>
@@ -84,14 +85,15 @@ static int ascii_field(const char *s)
 }
 static cJSON *existing(void)
 {
-  char data[4097];
   FILE *f=fopen(AIPET_SETUP_DIR "/config/config.json","rb");
   if (!f) return errno==ENOENT ? cJSON_CreateObject() : NULL;
-  size_t n=fread(data,1,sizeof(data)-1,f);
+  char *data=calloc(1,16385);
+  if(!data){fclose(f);return NULL;}
+  size_t n=fread(data,1,16384,f);
   int extra=fgetc(f), failed=ferror(f); fclose(f);
-  if (failed || extra!=EOF) { aipet_wipe(data,sizeof(data)); return NULL; }
+  if (failed || extra!=EOF) { aipet_wipe(data,16385);free(data); return NULL; }
   data[n]=0;
-  cJSON *root=cJSON_Parse(data); aipet_wipe(data,sizeof(data));
+  cJSON *root=cJSON_ParseWithOpts(data,NULL,1); aipet_wipe(data,16385);free(data);
   if (!cJSON_IsObject(root)) { cJSON_Delete(root); return NULL; }
   return root;
 }
@@ -108,7 +110,8 @@ static int save(cJSON *root)
   int fd=open(tmp,O_WRONLY|O_CREAT|O_EXCL|O_NOFOLLOW,0600), r=0;
   if (fd<0) { free(json); return -errno; }
   size_t size=strlen(json), done=0;
-  while (done<size) {
+  if(size>16384)r=-EMSGSIZE;
+  while (!r && done<size) {
     ssize_t n=write(fd,json+done,size-done);
     if (n<0 && errno==EINTR) continue;
     if (n<=0) { r=-EIO; break; }
@@ -166,4 +169,111 @@ done:
   if (r) printf("aipet setup failed: %d (no key printed)\n",r);
   pthread_mutex_unlock(&setup_lock);
   return r ? 1 : 0;
+}
+
+/* Explicit voice provisioning. Never reuse the LLM key as an ASR/TTS key.
+ * The official config store rereads this file; one atomic save keeps the
+ * token/app id/voice choices coherent without logging any credential.
+ */
+int aipet_voice_setup(void)
+{
+  char app[128]={0}, token[256]={0}, api[128]={0};
+  char speaker[64]={0}, cluster[128]={0};
+  char sealed_token[572]={0}, sealed_api[316]={0};
+  cJSON *root=NULL;
+  int r=0;
+  if (pthread_mutex_trylock(&setup_lock)) return -EBUSY;
+  puts("Official Volcengine voice setup (separate service/billing from the LLM).");
+  puts("Enter=keep existing; nonempty secrets replace encrypted values. No upload during setup.");
+  r=line("ASR app id [Enter=keep]: ",app,sizeof(app),0);
+  if (!r) r=line("ASR access token (hidden, Enter=keep): ",token,sizeof(token),1);
+  if (!r) r=line("TTS V3 API key (hidden, Enter=keep): ",api,sizeof(api),1);
+  if (!r) r=line("TTS speaker id [Enter=keep/default]: ",speaker,sizeof(speaker),0);
+  if (!r) r=line("ASR cluster [Enter=keep/default]: ",cluster,sizeof(cluster),0);
+  if (r) goto done;
+  if ((app[0] && !ascii_field(app)) || (token[0] && !ascii_field(token)) ||
+      (api[0] && !ascii_field(api)) || (speaker[0] && !ascii_field(speaker)) ||
+      (cluster[0] && !ascii_field(cluster))) { r=-EINVAL; goto done; }
+  root=existing();
+  if (!root) { r=-EINVAL; goto done; }
+  if (token[0]) {
+    r=aipet_secret_seal(token,sealed_token,sizeof(sealed_token));
+    if (!r) r=field(root,"volc_token",sealed_token);
+  }
+  if (!r && api[0]) {
+    r=aipet_secret_seal(api,sealed_api,sizeof(sealed_api));
+    if (!r) r=field(root,"volc_api_key",sealed_api);
+  }
+  if (!r && app[0]) r=field(root,"volc_appkey",app);
+  if (!r && speaker[0]) r=field(root,"volc_speaker",speaker);
+  if (!r && cluster[0]) r=field(root,"volc_asr_cluster",cluster);
+  if (!r) r=save(root);
+done:
+  cJSON_Delete(root);
+  aipet_wipe(token,sizeof(token)); aipet_wipe(api,sizeof(api));
+  aipet_wipe(sealed_token,sizeof(sealed_token)); aipet_wipe(sealed_api,sizeof(sealed_api));
+  pthread_mutex_unlock(&setup_lock);
+  if (!r) puts("Voice config saved; key material not printed. Use audio asr/speak explicitly to test.");
+  else printf("Voice setup failed: %d; previous config retained.\n",r);
+  return r;
+}
+
+/* Selection is separate from provisioning: saving credentials never starts a
+ * microphone, changes local/cloud product mode or spends service credits. */
+int aipet_voice_provider_select(const char *kind,const char *provider)
+{
+  if(!aipet_cloud_provider_valid(kind,provider))return -EINVAL;
+  if(pthread_mutex_trylock(&setup_lock))return -EBUSY;
+  cJSON *root=existing();int rc=root?0:-EINVAL;
+  if(!rc)rc=field(root,!strcmp(kind,"asr")?"cloud_asr_provider":"cloud_tts_provider",provider);
+  if(!rc)rc=save(root);
+  cJSON_Delete(root);pthread_mutex_unlock(&setup_lock);return rc;
+}
+struct voice_field {const char *name;const char *prompt;int secret;};
+int aipet_voice_provider_setup(const char *provider)
+{
+  if(!provider)return -EINVAL;
+  if(!strcmp(provider,"volc"))return aipet_voice_setup();
+  const struct voice_field xfyun[]={
+    {"xfyun_appid","Xfyun APPID [Enter=keep]: ",0},
+    {"xfyun_api_key","Xfyun APIKey (hidden, Enter=keep): ",1},
+    {"xfyun_api_secret","Xfyun APISecret (hidden, Enter=keep): ",1},
+    {"xfyun_voice","Xfyun voice [Enter=keep/default xiaoyan]: ",0}};
+  const struct voice_field tencent[]={
+    {"tencent_secret_id","Tencent SecretId (hidden, Enter=keep): ",1},
+    {"tencent_secret_key","Tencent SecretKey (hidden, Enter=keep): ",1},
+    {"tencent_session_token","Tencent optional STS token (hidden, Enter=keep, -=clear): ",1},
+    {"tencent_asr_engine","Tencent ASR engine [Enter=keep/default 16k_zh]: ",0},
+    {"tencent_voice_type","Tencent voice type [Enter=keep/default 1001]: ",0}};
+  const struct voice_field edge[]={
+    {"edge_gateway_host","Edge HTTPS companion hostname (no scheme/path, Enter=keep): ",0},
+    {"edge_gateway_port","Edge HTTPS companion port [Enter=keep/default 443]: ",0},
+    {"edge_gateway_token","Edge companion bearer token (hidden, Enter=keep): ",1},
+    {"edge_voice","Edge voice [Enter=keep/default zh-CN-XiaoxiaoNeural]: ",0}};
+  const struct voice_field *fields=NULL;unsigned count=0;
+  if(!strcmp(provider,"xfyun")){fields=xfyun;count=sizeof(xfyun)/sizeof(*xfyun);}
+  if(!strcmp(provider,"tencent")){fields=tencent;count=sizeof(tencent)/sizeof(*tencent);}
+  if(!strcmp(provider,"edge")){fields=edge;count=sizeof(edge)/sizeof(*edge);}
+  if(!fields)return -EINVAL;
+  if(pthread_mutex_trylock(&setup_lock))return -EBUSY;
+  int rc=0;cJSON *root=existing();if(!root)rc=-EINVAL;
+  puts("Voice-only credentials: hidden/encrypted on this board; Enter=keep. No service call.");
+  if(!strcmp(provider,"edge"))puts("Edge is experimental TTS ONLY, requires an HTTPS companion + MP3 decode; NOT a Microsoft-supported developer API or native RTOS Edge client.");
+  char value[256]={0},sealed[1024]={0};
+  for(unsigned i=0;i<count&&!rc;i++) {
+    rc=line(fields[i].prompt,value,sizeof(value),fields[i].secret);
+    if(!rc&&value[0]&&!ascii_field(value))rc=-EINVAL;
+    if(!rc&&value[0]) {
+      if(!strcmp(fields[i].name,"tencent_session_token")&&!strcmp(value,"-"))cJSON_DeleteItemFromObjectCaseSensitive(root,fields[i].name);
+      else {
+        if(fields[i].secret)rc=aipet_secret_seal(value,sealed,sizeof(sealed));
+        if(!rc)rc=field(root,fields[i].name,fields[i].secret?sealed:value);
+      }
+    }
+    aipet_wipe(value,sizeof(value));aipet_wipe(sealed,sizeof(sealed));
+  }
+  if(!rc)rc=save(root);
+  cJSON_Delete(root);pthread_mutex_unlock(&setup_lock);
+  puts(rc?"Voice setup failed; prior config retained, no secret printed.":"Voice credentials saved. Choose ASR/TTS separately with 'aipet audio providers asr|tts <name>'. No live validation yet.");
+  return rc;
 }

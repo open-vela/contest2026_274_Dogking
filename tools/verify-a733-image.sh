@@ -34,6 +34,8 @@ if [ -n "$expected_kernel_hash" ]; then
   test "$actual_kernel_hash" = "$expected_kernel_hash"
 fi
 
-/usr/sbin/sgdisk -v "$image"
+sgdisk_tool=${A733_SGDISK:-$(command -v sgdisk)}
+test -x "$sgdisk_tool"
+"$sgdisk_tool" -v "$image"
 echo "Image bytes: $(stat -c %s "$image")"
 sha256sum "$image"

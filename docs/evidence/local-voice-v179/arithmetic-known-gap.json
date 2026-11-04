@@ -1,0 +1,6 @@
+{
+  "text": "1+1=2",
+  "frontend_result": -61,
+  "known_gap": "Arithmetic symbol normalization is not implemented; rejects whole request instead of dropping symbols.",
+  "full_tts_ready": false
+}

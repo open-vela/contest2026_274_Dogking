@@ -1,0 +1,68 @@
+{
+  "result": "PASS_FONT_REPAIR_CONTENT_NOTES_IMAGES_WORKBOOK_PRESERVED",
+  "source_sha256": "6d7ba078aa610624b3ab10592717ba0b9ec602ac9e748eaa4a871ed6a9736c0e",
+  "target_sha256": "7c9b064db5eb8869918110b95e1b162c94b35eca6d0537c369f690290fad93e9",
+  "slides": 24,
+  "native_tables": 4,
+  "fonts_checked": 2295,
+  "approved_soft_breaks": [
+    "ppt/slides/slide16.xml",
+    "ppt/slides/slide6.xml"
+  ],
+  "geometry_changes": {
+    "slide6_frame_height": {
+      "shape_ids": [
+        "13",
+        "17",
+        "21",
+        "25"
+      ],
+      "from_emu": 1905000,
+      "to_emu": 2286000
+    }
+  },
+  "preserved_workbooks": [
+    "ppt/embeddings/chart-data-snapshot-001.xlsx"
+  ],
+  "preserved_binary_parts": 8,
+  "preserved_non_font_xml": 124,
+  "changed_font_parts": [
+    "ppt/_rels/presentation.xml.rels",
+    "ppt/notesMasters/theme/theme3.xml",
+    "ppt/presentation.xml",
+    "ppt/slideLayouts/slideLayout1.xml",
+    "ppt/slideMasters/slideMaster1.xml",
+    "ppt/slideMasters/theme/theme2.xml",
+    "ppt/slides/charts/chart1.xml",
+    "ppt/slides/slide1.xml",
+    "ppt/slides/slide10.xml",
+    "ppt/slides/slide11.xml",
+    "ppt/slides/slide12.xml",
+    "ppt/slides/slide13.xml",
+    "ppt/slides/slide14.xml",
+    "ppt/slides/slide15.xml",
+    "ppt/slides/slide16.xml",
+    "ppt/slides/slide17.xml",
+    "ppt/slides/slide18.xml",
+    "ppt/slides/slide19.xml",
+    "ppt/slides/slide2.xml",
+    "ppt/slides/slide20.xml",
+    "ppt/slides/slide21.xml",
+    "ppt/slides/slide22.xml",
+    "ppt/slides/slide23.xml",
+    "ppt/slides/slide24.xml",
+    "ppt/slides/slide3.xml",
+    "ppt/slides/slide4.xml",
+    "ppt/slides/slide5.xml",
+    "ppt/slides/slide6.xml",
+    "ppt/slides/slide7.xml",
+    "ppt/slides/slide8.xml",
+    "ppt/slides/slide9.xml",
+    "ppt/theme/theme1.xml"
+  ],
+  "removed_conflicting_font_parts": [
+    "ppt/fonts/font.dat",
+    "ppt/fonts/font2.dat"
+  ],
+  "native_PowerPoint_tested": false
+}

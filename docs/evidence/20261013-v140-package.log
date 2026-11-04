@@ -1,0 +1,20 @@
+Extracting openvela partition...
+e2fsck 1.47.2 (1-Jan-2025)
+Pass 1: Checking inodes, blocks, and sizes
+Pass 2: Checking directory structure
+Pass 3: Checking directory connectivity
+Pass 4: Checking reference counts
+Pass 5: Checking group summary information
+openvela: 19/29696 files (10.5% non-contiguous), 3490/29696 blocks
+e2fsck 1.47.2 (1-Jan-2025)
+Pass 1: Checking inodes, blocks, and sizes
+Pass 2: Checking directory structure
+Pass 3: Checking directory connectivity
+Pass 4: Checking reference counts
+Pass 5: Checking group summary information
+openvela: 19/29696 files (10.5% non-contiguous), 3581/29696 blocks
+Copying the known-good source image...
+Kernel SHA256:
+0298d4a7fb63b352c925e7da229e23dc08ffb8f0bce8c900a0e446d05f2edb10  /mnt/d/My-Program/AI-Agent-Program/GPTsprogram/Openvela/quickly-openvela/cmake_out/cubie-a7z_nsh_v140_official_ble/nuttx.bin
+Final image SHA256:
+307a05d0bddb4f954c87a3957ac03d7e394bb490298a33db7389b91105aaa6e5  ../openvela-a733-cubie-a7z-sd-ble-v140-official-host-candidate.img

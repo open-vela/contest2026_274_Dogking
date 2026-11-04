@@ -1,0 +1,432 @@
+{
+  "result": "V226_VOICE_HOST_ARM_PASSED_NOT_BOARD",
+  "tests": [
+    {
+      "name": "quality",
+      "command": [
+        "python3",
+        "tools/test-pet-quality-v216.py"
+      ],
+      "seconds": 18.207549137,
+      "sha256": "5b61a6c4b599746de1749506044b4abd22f5376e4ef637527f58830a5293e25d"
+    },
+    {
+      "name": "load-storage",
+      "command": [
+        "python3",
+        "tools/test-voice-load-storage-v215.py"
+      ],
+      "seconds": 4.493088217000036,
+      "sha256": "1dd5b23f1c016782f5cf15e6f3df98ecd7cd9397ebaf9452b852a4b9d817c735"
+    },
+    {
+      "name": "resident",
+      "command": [
+        "python3",
+        "tools/test-resident-v214.py"
+      ],
+      "seconds": 116.28779008799995,
+      "sha256": "992ebc961c0e36ff8e10af6cc1b47b2f186b856076b31d7bc6a7d62b80b22fc5"
+    },
+    {
+      "name": "monitor-driver",
+      "command": [
+        "python3",
+        "tools/test-monitor-driver-v214.py"
+      ],
+      "seconds": 0.8700294510000504,
+      "sha256": "b4cbc845ccc4a94e4bbdd2645e587a8d72a733ceb323bb19466dba14209835a1"
+    },
+    {
+      "name": "repair",
+      "command": [
+        "python3",
+        "tools/test-repair-v212.py"
+      ],
+      "seconds": 2.8850021380000044,
+      "sha256": "b26c8bf1c11fd4e43256db254e74e0a4cf1ec15acee84e51d5e132bc4c60a472"
+    },
+    {
+      "name": "q8-workspace",
+      "command": [
+        "python3",
+        "tools/test-q8-workspace-v211.py"
+      ],
+      "seconds": 17.065709590999973,
+      "sha256": "ca5722be6a313bc6abd328f55be7cd05345b0e36b5b48066c6c333e5e4f3e69c"
+    },
+    {
+      "name": "asr-tail",
+      "command": [
+        "python3",
+        "tools/test-asr-tail-v211.py"
+      ],
+      "seconds": 97.011234522,
+      "sha256": "753b0224cf97f1a139f6574525acc5ecba1fd58a78461b2dc751e9938d926376"
+    },
+    {
+      "name": "session",
+      "command": [
+        "bash",
+        "tools/test-voice-session-v190.sh",
+        "out/v226-voice-base-r1/session"
+      ],
+      "seconds": 7.105059496000081,
+      "sha256": "d92da0b2b72745fb2da9ff0b670a0e78d01e2da4831564da20098052c115663e"
+    },
+    {
+      "name": "asr",
+      "command": [
+        "python3",
+        "tools/npu-voice/test-general-asr-v184.py",
+        "out/v226-voice-base-r1/asr"
+      ],
+      "seconds": 154.1004890700001,
+      "sha256": "18dbb4e99163c44aa40b9bf5e9037381cc0973cbf82b4ea0c38ac6a3843e6ce7"
+    },
+    {
+      "name": "tts",
+      "command": [
+        "python3",
+        "tools/npu-voice/test-tts-engine-v185.py",
+        "out/v226-voice-base-r1/tts"
+      ],
+      "seconds": 45.61894792400017,
+      "sha256": "a0d0b8ac914be3e67b5a4dec308b7087643506ee2da75df1fd24fd52ae8e94dd"
+    },
+    {
+      "name": "stream",
+      "command": [
+        "bash",
+        "tools/build-voice-stream-v181.sh",
+        "out/v226-voice-base-r1/stream"
+      ],
+      "seconds": 203.71697507700014,
+      "sha256": "d3e7078ac32026bb99c67df69eb1622cf33e6bbd9b2fe12f4e3dacc07ca17861"
+    },
+    {
+      "name": "audio",
+      "command": [
+        "bash",
+        "tools/test-aipet-audio.sh"
+      ],
+      "seconds": 123.94193940799983,
+      "sha256": "3a56ab56fd02dcaa0e67e1d07c4267bc9d6fafed3d0e3951fa5fc66b4177ed3b"
+    },
+    {
+      "name": "llm-affinity",
+      "command": [
+        "python3",
+        "tools/test-llm-affinity-v210.py"
+      ],
+      "seconds": 1.7836603050000122,
+      "sha256": "8b4906d9c5ece2b903cf6026b4c8d635dea8881275dcf48ed08b537e50d5afa1"
+    },
+    {
+      "name": "llm-contract",
+      "command": [
+        "bash",
+        "tools/test-aipet-llm-v178.sh"
+      ],
+      "seconds": 50.36827376399992,
+      "sha256": "0b3dbc8f800dc59fc532c180020eca6af3a17e21215dc54202974b36bf2c309b"
+    },
+    {
+      "name": "frontend",
+      "command": [
+        "bash",
+        "tools/test-frontend-audit.sh",
+        "out/a733-kws-wav-v161-r2/voice/kws/wav",
+        "out/a733-openvela-kws-v158-r2/voice/kws"
+      ],
+      "seconds": 37.34550435699998,
+      "sha256": "515e25c17d13d332dae65eed60328d4b63ba381a92a4f780002e0558e6baacc4"
+    },
+    {
+      "name": "capture",
+      "command": [
+        "python3",
+        "tools/test-live-capture-v182.py"
+      ],
+      "seconds": 10.218335209000088,
+      "sha256": "930b57d64a42dfd8569841bb8f47148c4b3a75d8c11b8dc9be8e3ca6f903ef71"
+    },
+    {
+      "name": "tensor",
+      "command": [
+        "bash",
+        "tools/test-a733-tensor.sh"
+      ],
+      "seconds": 26.697573103999957,
+      "sha256": "92bd6726c70889c84baf3d4bb46612fa84f5cc9852ed253299751744ea4520bc"
+    },
+    {
+      "name": "tensor-arm",
+      "command": [
+        "python3",
+        "tools/test-tensor-crc-arm-v210.py"
+      ],
+      "seconds": 9.420589105999852,
+      "sha256": "e9b2c952bc58e73c62061784f12c55af5683c4ae5e615311a4d29760640d2f56"
+    },
+    {
+      "name": "voice-arm",
+      "command": [
+        "python3",
+        "tools/check-a733-voice-arm-v216.py",
+        "out/v226-voice-base-r1/voice-arm"
+      ],
+      "seconds": 831.965418018,
+      "sha256": "4f3a23e722f3edee0862c181332c8b29991bb75816bdae55734c379a58cd00a4"
+    },
+    {
+      "name": "resident-lease-v219",
+      "command": [
+        "python3",
+        "tools/test-resident-lease-v219.py"
+      ],
+      "seconds": 9.259285226999964,
+      "sha256": "3cc2288bdc1da016e842f93df67169c411dc5a2de11178650f3e72a0843637ca"
+    },
+    {
+      "name": "runtime-lease-v219",
+      "command": [
+        "python3",
+        "tools/test-product-turn-lease-v219.py"
+      ],
+      "seconds": 24.25719296399984,
+      "sha256": "b2a094c93962b1453852e711c3eb97edb32dcb6efce5a6349c8e4505d0c2ef5d"
+    },
+    {
+      "name": "wifi-v219",
+      "command": [
+        "python3",
+        "tools/test-wifi-v219.py"
+      ],
+      "seconds": 2.127752507000423,
+      "sha256": "3162a1fae971324735aa5b5d04d0aee9ce7def21d7b23dcdc9d39976988d15a9"
+    },
+    {
+      "name": "product-core",
+      "command": [
+        "bash",
+        "tools/test-product-v1.sh"
+      ],
+      "seconds": 23.501038295999933,
+      "sha256": "d5b1a9f8796cca9c7bfa348be3a1e84eb9022ec022e4c987c32fcf9d9038cc61"
+    },
+    {
+      "name": "product-service",
+      "command": [
+        "python3",
+        "tools/test-product-service-v1.py"
+      ],
+      "seconds": 66.26431997200007,
+      "sha256": "8811a12f842dff3904a8077da6976d5524f764c5022835a3e175a5690b552df2"
+    },
+    {
+      "name": "mcu",
+      "command": [
+        "bash",
+        "tools/test-aipet-mcu.sh"
+      ],
+      "seconds": 74.28829405299985,
+      "sha256": "8a9ff90998b512e02040edd41e3ca07bb488ed6269688f9e55051c95b94bffc6"
+    },
+    {
+      "name": "product-arm",
+      "command": [
+        "python3",
+        "tools/check-cloud-arm-v218.py",
+        "--build",
+        "/mnt/d/My-Program/AI-Agent-Program/GPTsprogram/Openvela/quickly-openvela/cmake_out/cubie-a7z_nsh_v226_product_v21pre",
+        "--output",
+        "/mnt/d/My-Program/AI-Agent-Program/GPTsprogram/Openvela/A733-A7Z-ALL-Files/contest2026_274_Dogking-dev-ai-contest-2026/out/v226-product-gates-r1/arm"
+      ],
+      "seconds": 165.88678839899967,
+      "sha256": "6b23f80af9d515f9e7422ed06940a7bfe1909868be247d2e495181d012b3b56e"
+    },
+    {
+      "name": "preview-profile-v220",
+      "command": [
+        "python3",
+        "tools/test-preview-v220.py"
+      ],
+      "seconds": 10.389215587999843,
+      "sha256": "0bf532238b9fcbbab5fc979968152f59fe6fd0fed2769cf930d9571b85eee10f"
+    },
+    {
+      "name": "mcu-v221",
+      "command": [
+        "python3",
+        "tools/test-mcu-v221.py",
+        "--output",
+        "/mnt/d/My-Program/AI-Agent-Program/GPTsprogram/Openvela/A733-A7Z-ALL-Files/contest2026_274_Dogking-dev-ai-contest-2026/out/v226-product-gates-r1/mcu-v221"
+      ],
+      "seconds": 54.07854519399962,
+      "sha256": "1a5ef99644f32c59d72b3715929567debe71e037365b55006b4e82dfdcd3086a"
+    },
+    {
+      "name": "voicefix",
+      "command": [
+        "python3",
+        "tools/test-v223-voicefix.py",
+        "--output",
+        "/mnt/d/My-Program/AI-Agent-Program/GPTsprogram/Openvela/A733-A7Z-ALL-Files/contest2026_274_Dogking-dev-ai-contest-2026/out/v226-product-gates-r1/voicefix"
+      ],
+      "seconds": 3.5729537699999128,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "real-acoustic",
+      "command": [
+        "python3",
+        "tools/npu-voice/test-tts-engine-v185.py",
+        "/mnt/d/My-Program/AI-Agent-Program/GPTsprogram/Openvela/A733-A7Z-ALL-Files/contest2026_274_Dogking-dev-ai-contest-2026/out/v226-product-gates-r1/real-acoustic"
+      ],
+      "seconds": 13.294948651999675,
+      "sha256": "2790d6b204cd6db3138a5b662e7455f2e4390e49e4eea3a8b15692a90f478fb2"
+    },
+    {
+      "name": "voicefix-arm",
+      "command": [
+        "python3",
+        "tools/check-voice-v224-arm.py",
+        "/mnt/d/My-Program/AI-Agent-Program/GPTsprogram/Openvela/A733-A7Z-ALL-Files/contest2026_274_Dogking-dev-ai-contest-2026/out/v226-product-gates-r1/voicefix-arm"
+      ],
+      "seconds": 99.14089481700012,
+      "sha256": "ff7be15d039a535435c0c7e60650dc0d5b2116308ddd7fc2b0d46252c5cb785c"
+    },
+    {
+      "name": "temporal-endpoint",
+      "command": [
+        "python3",
+        "tools/test-v224-endpoint-regression.py"
+      ],
+      "seconds": 0.7170076520001203,
+      "sha256": "a366158e92b361e1e190a256860256422e2d0a9738cef371632fa383f05fe5be"
+    },
+    {
+      "name": "asr-native-discard-replay",
+      "command": [
+        "python3",
+        "tools/npu-voice/test-general-asr-v184.py",
+        "/mnt/d/My-Program/AI-Agent-Program/GPTsprogram/Openvela/A733-A7Z-ALL-Files/contest2026_274_Dogking-dev-ai-contest-2026/out/v226-product-gates-r1/asr-native-discard-replay"
+      ],
+      "seconds": 49.42543724799998,
+      "sha256": "7605595d6a8ff4bdc7995306928ca9f98e4d3eaa483046e88b2009429e179432"
+    },
+    {
+      "name": "v225-command-route",
+      "command": [
+        "python3",
+        "tools/test-product-v225.py"
+      ],
+      "seconds": 7.081149171000106,
+      "sha256": "be80b057d08e6a6c779c89e0d149fc09bc96ee5e625f6470175b35620c068efd"
+    },
+    {
+      "name": "v225-boot-policy",
+      "command": [
+        "python3",
+        "tools/test-boot-policy-v225.py"
+      ],
+      "seconds": 1.167860013000336,
+      "sha256": "76e2f9f9ae8ff1bb54d13f61556252bb31a3165ede472e4206e3e868f0a252dd"
+    },
+    {
+      "name": "v225-boot-worker",
+      "command": [
+        "python3",
+        "tools/test-product-boot-v225.py"
+      ],
+      "seconds": 41.157676120999895,
+      "sha256": "67c8653d00dd367800bc37577dc980781c6e1d3b4168fe8e88fa8657598cce79"
+    },
+    {
+      "name": "cloud-recovery-v226",
+      "command": [
+        "python3",
+        "tools/test-cloud-recovery-v226.py"
+      ],
+      "seconds": 54.081777351000255,
+      "sha256": "ee44dd80b371c4e67c65af2253b5930b18c50622e0fc2fbfe501234b4858ab8b"
+    },
+    {
+      "name": "wifi-recovery-v226",
+      "command": [
+        "python3",
+        "tools/test-wifi-recovery-v226.py"
+      ],
+      "seconds": 0.46616198399988207,
+      "sha256": "66b8f2d1d1eab9e6ca7abbdc66228be06a5bd18584badf6395b230eaf62d592b"
+    },
+    {
+      "name": "actual-wss-v226",
+      "command": [
+        "python3",
+        "tools/test-cloud-socket-v218.py",
+        "--mbedtls-build",
+        "out/cloud-voice-v218-mbedtls-host-r1",
+        "--output",
+        "/mnt/d/My-Program/AI-Agent-Program/GPTsprogram/Openvela/A733-A7Z-ALL-Files/contest2026_274_Dogking-dev-ai-contest-2026/out/v226-product-gates-r1/actual-wss"
+      ],
+      "seconds": 9.386604443000124,
+      "sha256": "786ff4265c5b35a3334dd74e7a0ea24ac19021fc7fb0392c700a2f3838a173d0"
+    },
+    {
+      "name": "cloud-providers-v226",
+      "command": [
+        "python3",
+        "tools/test-cloud-voice-v218.py",
+        "--output",
+        "/mnt/d/My-Program/AI-Agent-Program/GPTsprogram/Openvela/A733-A7Z-ALL-Files/contest2026_274_Dogking-dev-ai-contest-2026/out/v226-product-gates-r1/cloud-providers"
+      ],
+      "seconds": 12.644911491999665,
+      "sha256": "2139abcc19845e690138da740824f73dbfd993072ad53aa8bc55a8ec3fb3bee5"
+    }
+  ],
+  "hardware_executed": false,
+  "physical_audio_onset_measured": false,
+  "latency_3_to_5_seconds": false,
+  "baseline_directory": "out/v226-voice-base-r1",
+  "baseline_summary_sha256": "23960640e8a1e29d9867a69f7ea4e83a1c8fbcc1466cae08d73bffa440ddf2ef",
+  "product": "desktop-pet-v2.1pre-v226-candidate",
+  "cloud_api_executed": false,
+  "software_gates": 40,
+  "default_local_history_pairs": 0,
+  "real_GGUF_reference": "out/llm-quality-v220-r1/summary.json",
+  "real_GGUF_reference_sha256": "5beee04c9bc0d0a27b6956be4146c077bfa1456dfb95ceea47379f558aa0c20d",
+  "inherited_LLM_math_sources": {
+    "board/a733-cubie-a7z/openvela-overlay/apps/system/aipet/pet_persona.hxx": "15af43bd372e53bc0684efc6f8b2aa17854b91de55c7169f1cce3cc3b12122a1",
+    "board/a733-cubie-a7z/openvela-overlay/apps/system/aipetllm/aipetllm_modelcheck.c": "7d225446adc626c38e4c70184c94dcd22c5efd19c87eadb0dbc95ed9fc116de5",
+    "board/a733-cubie-a7z/openvela-overlay/apps/system/aipetllm/aipetllm_prefill.inc": "4f3e928814a7e8bd3942a4e521d6c444381d6c85b848550cdc86a1951a057853",
+    "board/a733-cubie-a7z/openvela-overlay/apps/system/aipetllm/aipetllm_api.cxx": "9a5db1ea2192af86f77807d694bfd0276c50fbb5455a6b90f82ae5aff5f63e50",
+    "board/a733-cubie-a7z/openvela-overlay/apps/system/aipetllm/aipetllm_api.h": "cffb8a7715c49b3681684b68646ee35a8c61e5ef2f4764568c73dd49eee249b2",
+    "board/a733-cubie-a7z/openvela-overlay/apps/system/aipetllm/aipetllm_sequence.h": "90fcb3365499fedb44609ec93def5548a68c5bb54ad54dc5f799182014d74a33",
+    "board/a733-cubie-a7z/openvela-overlay/apps/system/aipetllm/aipetllm_bpe.cxx": "b05f7b454dbe2e0fd174e990c41d327407695bf6775ae2b924910fcd4dfb7c60",
+    "tools/test-llm-quality-v216.cxx": "60704a52b9e7a5ec5126aeb361f747d1ef2fe973f5eb0b2641f88bdeb6acb4d3",
+    "board/a733-cubie-a7z/openvela-overlay/apps/system/aipet/local_llm.cxx": "db06249d5fe8f16a09fb0eb2d90ae2c0a8fbbb5eaf9e17b5e5329fc6cfd52172"
+  },
+  "application_delta": {
+    "board/a733-cubie-a7z/openvela-overlay/apps/system/aipet/product_runtime.cxx": {
+      "reference": "78fdd9be0d811cf7bcbff164c0d557c1abeae952f5d4ea08a3dec78249153625",
+      "current": "7ce8ea983bfed4b1855e69ac8cee1e8420acfc9b3f06aea4ae540e6b5e1d4f80",
+      "reason": "v225 real settings, mute and opt-in boot integration; covered by runtime/service/boot tests"
+    }
+  },
+  "boot_listening_default": false,
+  "desktop_exact_human_command_consent": true,
+  "spoken_numeric_steps_scale": 10,
+  "voice_move_speed": 2,
+  "voice_move_Hz": 300,
+  "board_tested": false,
+  "cloud_account_calls": false,
+  "system_scheduling_changed": false,
+  "recovery_attempts": 3,
+  "local_hold_ms": 120000,
+  "resident_cloud_mode": "cloud-preferred-with-local-fallback",
+  "action_replay": false,
+  "played_audio_replay": false,
+  "rf_or_AP_qualified": false
+}

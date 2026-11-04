@@ -1,0 +1,504 @@
+{
+  "result": "STATIC_AARCH64_LIBRARIES_COMPILED_NOT_FIRMWARE_LINKED",
+  "schema": 184,
+  "ort_version": "1.23.2",
+  "commit": "a83fc4d58cb48eb68890dd689f94f28288cf2278",
+  "architecture": "ELF64-little-AArch64",
+  "libc": "NuttX",
+  "libcxx": "17.0.6",
+  "required_abi": {
+    "CONFIG_LIBCXX": "y",
+    "CONFIG_CXX_MINI_LOCALIZATION": "y",
+    "CONFIG_CXX_WCHAR": "y",
+    "CONFIG_CXX_EXCEPTION": "n",
+    "CONFIG_CXX_RTTI": "n",
+    "CONFIG_BUILD_FLAT": "y"
+  },
+  "libraries": [
+    {
+      "path": "lib/libabsl_base.a",
+      "bytes": 25236,
+      "sha256": "a12b28879e2a5ad478645d0b9e8f62a154a4849a57f7ed78d9f60c4aa4cd20bd",
+      "objects": 5
+    },
+    {
+      "path": "lib/libabsl_log_severity.a",
+      "bytes": 11980,
+      "sha256": "fa38b4a03fb39cbf53970f39dfa1084c4f00f2526de1a3a07468b6b74893ac11",
+      "objects": 1
+    },
+    {
+      "path": "lib/libabsl_malloc_internal.a",
+      "bytes": 1040,
+      "sha256": "a45b9043d9ca982ef32ea258ae316017e6e3d783a89f943d26a8a0c86b87d1c0",
+      "objects": 1
+    },
+    {
+      "path": "lib/libabsl_raw_logging_internal.a",
+      "bytes": 9786,
+      "sha256": "144f2f53ebbf84d02e7dfb786c9d0d63b345558ba74b61b6ec33534d139e4ca8",
+      "objects": 1
+    },
+    {
+      "path": "lib/libabsl_spinlock_wait.a",
+      "bytes": 3714,
+      "sha256": "616b827d99797032f5d727122d80cfe842aee1c17712574b3db0f96b670183ae",
+      "objects": 1
+    },
+    {
+      "path": "lib/libabsl_strerror.a",
+      "bytes": 4042,
+      "sha256": "da189ac1cc65a2ac7b8023d909b655743de8981d1c18c907fa35e2b495f2ac60",
+      "objects": 1
+    },
+    {
+      "path": "lib/libabsl_throw_delegate.a",
+      "bytes": 14742,
+      "sha256": "deb7d7ec1a9c0778b743662d8497872c94dfa6c9279767a4b2cbbc8228882706",
+      "objects": 1
+    },
+    {
+      "path": "lib/libabsl_tracing_internal.a",
+      "bytes": 2026,
+      "sha256": "774863a294647c0b9df1c3f96645b5eef06a9087d7f4d16ce945bc7673498f2c",
+      "objects": 1
+    },
+    {
+      "path": "lib/libabsl_hashtablez_sampler.a",
+      "bytes": 21232,
+      "sha256": "488dcf4d456ad2fe14551aeb97e0ebf09d51371715e34631c22a2dd71e09870e",
+      "objects": 2
+    },
+    {
+      "path": "lib/libabsl_raw_hash_set.a",
+      "bytes": 46956,
+      "sha256": "0c202abc29a326ce48e75bec8d9d5ad8fc1dc70d90971d614e99a4e944c47c9f",
+      "objects": 1
+    },
+    {
+      "path": "lib/libabsl_crc32c.a",
+      "bytes": 20914,
+      "sha256": "ddabaece84b1d821d7d0691fda9da141352a71e3b5e433879c9681b3a139dfec",
+      "objects": 4
+    },
+    {
+      "path": "lib/libabsl_crc_cord_state.a",
+      "bytes": 18078,
+      "sha256": "746c8e4236c6e6729eb417b520cd9ee27fed19bb0d20317b82ffcbb5b4b39d6f",
+      "objects": 1
+    },
+    {
+      "path": "lib/libabsl_crc_cpu_detect.a",
+      "bytes": 1686,
+      "sha256": "0b0527a253cba46edf2a00fa9b7a94a09d22b1a301d3cc925929d10501e55282",
+      "objects": 1
+    },
+    {
+      "path": "lib/libabsl_crc_internal.a",
+      "bytes": 18218,
+      "sha256": "3e1413e7776345c63d1df7f6eed9f84fd5dd3e3fd5bf026099a3571cbe350d07",
+      "objects": 2
+    },
+    {
+      "path": "lib/libabsl_debugging_internal.a",
+      "bytes": 3198,
+      "sha256": "d859a62b99a2f312f10728b87ba6f8b9419408db9c0ea7a6c5f0b3fd97d3ddef",
+      "objects": 3
+    },
+    {
+      "path": "lib/libabsl_decode_rust_punycode.a",
+      "bytes": 3418,
+      "sha256": "137dce8c8502fd64e6c2cfafbf45cadcaccab9072659bb9a9c640c512ac026b5",
+      "objects": 1
+    },
+    {
+      "path": "lib/libabsl_demangle_internal.a",
+      "bytes": 79134,
+      "sha256": "0a0426bfa63fe5eda5890d28787afde2a33f433fe691c76b97e2fffb929de6f2",
+      "objects": 1
+    },
+    {
+      "path": "lib/libabsl_demangle_rust.a",
+      "bytes": 22208,
+      "sha256": "5ee2bf7d1d39d6117625ae5c4c85b140c2d2bf15215fa7b9637f463c3c5ba31c",
+      "objects": 1
+    },
+    {
+      "path": "lib/libabsl_examine_stack.a",
+      "bytes": 7410,
+      "sha256": "16798c25bf865885d58e8aedfd977e9fc7a064baa8d2d57583231464e56c4337",
+      "objects": 1
+    },
+    {
+      "path": "lib/libabsl_leak_check.a",
+      "bytes": 3362,
+      "sha256": "8cf5f0d280e3b47821307b0c583b8b79b8faefc078bc2bc12dd2bcc62e471e8d",
+      "objects": 1
+    },
+    {
+      "path": "lib/libabsl_stacktrace.a",
+      "bytes": 8898,
+      "sha256": "a76d741ef6bd7174b31e3a027cf0618b79f25a3ee9e4478734bd6408c422f741",
+      "objects": 1
+    },
+    {
+      "path": "lib/libabsl_symbolize.a",
+      "bytes": 3614,
+      "sha256": "1e5a8b130c31399b2e8fad62cbb09aa44863fca004867d4a3efa86adbf732075",
+      "objects": 1
+    },
+    {
+      "path": "lib/libabsl_utf8_for_code_point.a",
+      "bytes": 1774,
+      "sha256": "9d5547553545c00c9ebb7ca7c4ad324dfbabf5110d7c8c27ca157133a132e862",
+      "objects": 1
+    },
+    {
+      "path": "lib/libabsl_flags_commandlineflag.a",
+      "bytes": 3582,
+      "sha256": "6455406de2aee56634b92b2032cd37d021d1599b4438afa2d5256f4d603b1668",
+      "objects": 1
+    },
+    {
+      "path": "lib/libabsl_flags_commandlineflag_internal.a",
+      "bytes": 2700,
+      "sha256": "fecb733031a1443706133abd843878af3b5324f56f353d28fe74e9eeb28b514c",
+      "objects": 1
+    },
+    {
+      "path": "lib/libabsl_flags_config.a",
+      "bytes": 44848,
+      "sha256": "e21e42352d554189741b312ca8f19a36449375902bb367b6cc851b5aa9e4be11",
+      "objects": 1
+    },
+    {
+      "path": "lib/libabsl_flags_internal.a",
+      "bytes": 47582,
+      "sha256": "3d408a8a9162358286c1ed9669eb08e0453e1be4f71e27916b35079afe2d741e",
+      "objects": 1
+    },
+    {
+      "path": "lib/libabsl_flags_marshalling.a",
+      "bytes": 53362,
+      "sha256": "da42fe29f202ce5c54b7a81d924ffbcc7c4293fde611b65de33d9c33800e77b3",
+      "objects": 1
+    },
+    {
+      "path": "lib/libabsl_flags_private_handle_accessor.a",
+      "bytes": 4954,
+      "sha256": "1fd40a25bb77d072e4bcb4da112deac7f881cefb9547d55e4981181088fa0c40",
+      "objects": 1
+    },
+    {
+      "path": "lib/libabsl_flags_program_name.a",
+      "bytes": 6580,
+      "sha256": "20a608e40baa7c1ac67ba0ef8f50182ef1f5780d5bf59513e24d9613fa72d52b",
+      "objects": 1
+    },
+    {
+      "path": "lib/libabsl_flags_reflection.a",
+      "bytes": 70818,
+      "sha256": "1d0ca2a7ab2c69b73fcbc9c733570595a5c227c929ea6d1acc825d594677d326",
+      "objects": 1
+    },
+    {
+      "path": "lib/libabsl_city.a",
+      "bytes": 4828,
+      "sha256": "88b23cecc9c6e44b59ab0fe35152a4115b92999803417de70b5169bcd6096817",
+      "objects": 1
+    },
+    {
+      "path": "lib/libabsl_hash.a",
+      "bytes": 4662,
+      "sha256": "bfad7b2fcd8fe6d315ec5ae83f56be5093a2e18b68f583d26ab0e31f2ea76374",
+      "objects": 1
+    },
+    {
+      "path": "lib/libabsl_low_level_hash.a",
+      "bytes": 1752,
+      "sha256": "1ac130f0aca1e5d6298984c2a08c42ed03428063133a055fa7136684a92903f1",
+      "objects": 1
+    },
+    {
+      "path": "lib/libabsl_log_globals.a",
+      "bytes": 17614,
+      "sha256": "4849ff364cf5860968f32d9c708371f594c91b59089ec01137ef7ee0bcab79a6",
+      "objects": 1
+    },
+    {
+      "path": "lib/libabsl_log_internal_check_op.a",
+      "bytes": 71342,
+      "sha256": "925ff18c88edc423134310b943d628faf9df382b7c4802bd7484bc5baa8754aa",
+      "objects": 1
+    },
+    {
+      "path": "lib/libabsl_log_internal_conditions.a",
+      "bytes": 3110,
+      "sha256": "98a859692af78756d1d18156c10d8d6fb2c885b32c176fb98f0ce97506a51c68",
+      "objects": 1
+    },
+    {
+      "path": "lib/libabsl_log_internal_fnmatch.a",
+      "bytes": 2140,
+      "sha256": "0a2125debeaa7c55158477f6e5f12e1257517ff32a7ecb10f702e0f9c425c63d",
+      "objects": 1
+    },
+    {
+      "path": "lib/libabsl_log_internal_format.a",
+      "bytes": 7576,
+      "sha256": "d4ec8ec17cdf6190520899c48578eb4eb68377da644816cd2d7438490295f6d6",
+      "objects": 1
+    },
+    {
+      "path": "lib/libabsl_log_internal_globals.a",
+      "bytes": 10052,
+      "sha256": "360e69e9daa84d49166b61333d76a3e00e682a4d99dab20409b658d6aa2491b8",
+      "objects": 1
+    },
+    {
+      "path": "lib/libabsl_log_internal_log_sink_set.a",
+      "bytes": 19340,
+      "sha256": "170a565131756ef7c9616f196ea106782cf83164dab7f45f336d85a055329784",
+      "objects": 1
+    },
+    {
+      "path": "lib/libabsl_log_internal_message.a",
+      "bytes": 80234,
+      "sha256": "67240e6959286df6855c1c641b8759e3775bb706260ad05eb9eaf7a29972fbf8",
+      "objects": 1
+    },
+    {
+      "path": "lib/libabsl_log_internal_nullguard.a",
+      "bytes": 1974,
+      "sha256": "1d5287e395b6e132eae4a8cb1c907b30aceabdcb79005f1835f76679523c3802",
+      "objects": 1
+    },
+    {
+      "path": "lib/libabsl_log_internal_proto.a",
+      "bytes": 6776,
+      "sha256": "32f64fb8104fbe7f8ff2d8917969d4b4bd13bbe64ab3f29235f050afb9e6deb3",
+      "objects": 1
+    },
+    {
+      "path": "lib/libabsl_log_internal_structured_proto.a",
+      "bytes": 14466,
+      "sha256": "d608b218d9427d4e733f26d63bea02149b71cb1f11cc4305418495e3ac994327",
+      "objects": 1
+    },
+    {
+      "path": "lib/libabsl_log_sink.a",
+      "bytes": 2240,
+      "sha256": "a8018ad71a2a5146681e731bc71bfbc23a476cb68f7af7039905185f9922dc5a",
+      "objects": 1
+    },
+    {
+      "path": "lib/libabsl_vlog_config_internal.a",
+      "bytes": 23792,
+      "sha256": "7b7f830d17e809048593946eef720597e3b3a306b6d4f31b293b54c341143583",
+      "objects": 1
+    },
+    {
+      "path": "lib/libabsl_int128.a",
+      "bytes": 27578,
+      "sha256": "5f6fc2839eff103f9f923410ca5f6737b34082fac0c44831b5e794a8ad6be0f3",
+      "objects": 1
+    },
+    {
+      "path": "lib/libabsl_exponential_biased.a",
+      "bytes": 3420,
+      "sha256": "6c6f442d6cbfd8dfffca7827d5766763887d77ee301b97311a233f883cefa781",
+      "objects": 1
+    },
+    {
+      "path": "lib/libabsl_cord.a",
+      "bytes": 130702,
+      "sha256": "152e123c9d8149319256f7967ee3f4cf87a7bcdb6e512416e3d7b6e887ded809",
+      "objects": 2
+    },
+    {
+      "path": "lib/libabsl_cord_internal.a",
+      "bytes": 155758,
+      "sha256": "d12c1daf170b79eda8d0e9dc5e075bdaa981fda4cdefd412d5c9adbdc9823c37",
+      "objects": 6
+    },
+    {
+      "path": "lib/libabsl_cordz_functions.a",
+      "bytes": 2282,
+      "sha256": "bbbe2bfbd6cdaf0d87bff3e5098ffe94d0fecd8294282e70b60616718cd27515",
+      "objects": 1
+    },
+    {
+      "path": "lib/libabsl_cordz_handle.a",
+      "bytes": 11322,
+      "sha256": "4acaeaa4f3cf925856778a70d009afacf3191cc7d449e9fd7ab216fba033a9c1",
+      "objects": 1
+    },
+    {
+      "path": "lib/libabsl_cordz_info.a",
+      "bytes": 17644,
+      "sha256": "1ce20ce53d5229f39f807eff080e165d6c49c2fa7d2d9a9361f7fd511342c4ad",
+      "objects": 1
+    },
+    {
+      "path": "lib/libabsl_str_format_internal.a",
+      "bytes": 186550,
+      "sha256": "495066e76d70b7f9f8f2d9f0e470360b406267f995b9cb836ab7432eacadd018",
+      "objects": 6
+    },
+    {
+      "path": "lib/libabsl_string_view.a",
+      "bytes": 1028,
+      "sha256": "64daa8e2f4235f10fd80c14494f785b6ad810012d129f85b2276f044c967ed58",
+      "objects": 1
+    },
+    {
+      "path": "lib/libabsl_strings.a",
+      "bytes": 214088,
+      "sha256": "600cb51f9893c798e047fd277355a8ece072df5b474dcec30a3185d8d54c6d2e",
+      "objects": 14
+    },
+    {
+      "path": "lib/libabsl_strings_internal.a",
+      "bytes": 12722,
+      "sha256": "1635172957cc5f8cb074a605a44bb09acc7ae52766fea2fa21aaafda93bad2dd",
+      "objects": 3
+    },
+    {
+      "path": "lib/libabsl_graphcycles_internal.a",
+      "bytes": 1028,
+      "sha256": "19d17a8d9f3688d8166f7785a2e5e37cc9bc9e9ab6e598459cd251420b565b64",
+      "objects": 1
+    },
+    {
+      "path": "lib/libabsl_kernel_timeout_internal.a",
+      "bytes": 10228,
+      "sha256": "0668782ea314a349568d10211ee2f81851e5900d24eaba294213644860a5bf20",
+      "objects": 1
+    },
+    {
+      "path": "lib/libabsl_synchronization.a",
+      "bytes": 100506,
+      "sha256": "7dbf28789c0860d84983f43051a11489cdae444188fd7a8dad805f5d26f018e4",
+      "objects": 12
+    },
+    {
+      "path": "lib/libabsl_civil_time.a",
+      "bytes": 46184,
+      "sha256": "e2083461fbad6419c4db73c7f2340557a3b8eacd3b52f7f15d69ae3099ac5e4e",
+      "objects": 1
+    },
+    {
+      "path": "lib/libabsl_time.a",
+      "bytes": 135012,
+      "sha256": "cd04c91bb623ef54a1579b3d999a29f01d417af909e218342c86f7e34c6b4065",
+      "objects": 5
+    },
+    {
+      "path": "lib/libabsl_time_zone.a",
+      "bytes": 246174,
+      "sha256": "15a79f4a9763414c619a87a2c2e21b784b3f9d8a0aa52998e6ba32091d5fb817",
+      "objects": 9
+    },
+    {
+      "path": "lib/libflatbuffers.a",
+      "bytes": 1060280,
+      "sha256": "786ebaa7db6c9c9f20e7ffa5cee8a941dceaf91b7ca060fa760126d03260bc9e",
+      "objects": 4
+    },
+    {
+      "path": "lib/libonnx.a",
+      "bytes": 15685560,
+      "sha256": "ddee861115debd86ca627edfc5f16d6cd5429819854aa26b45b0f167a23cc105",
+      "objects": 53
+    },
+    {
+      "path": "lib/libonnx_proto.a",
+      "bytes": 626540,
+      "sha256": "7fb8b1676705727dda19ceeb4be1759e54c61190ce63ab71766a3dd3c450feb6",
+      "objects": 3
+    },
+    {
+      "path": "lib/libprotobuf-lite.a",
+      "bytes": 1326768,
+      "sha256": "2851bb933bdcaa30f9e4d08e0a42db4f8313076e7f2ed7e6a528e30a0394d2ad",
+      "objects": 32
+    },
+    {
+      "path": "lib/libonnxruntime_common.a",
+      "bytes": 1106222,
+      "sha256": "9fe906e69f8c05532b36348f074f1a91ea2ce7f36a13b35d28478a9fd5a2efe2",
+      "objects": 25
+    },
+    {
+      "path": "lib/libonnxruntime_flatbuffers.a",
+      "bytes": 68254,
+      "sha256": "ab9ae815f99b8cc207797b51b07a2c4dfbbed69c47df15ba768339757440f075",
+      "objects": 1
+    },
+    {
+      "path": "lib/libonnxruntime_framework.a",
+      "bytes": 6728558,
+      "sha256": "36431ca5aa71ef7b828809e838554b4a7592d31c957042773ea10d5d12009d4f",
+      "objects": 76
+    },
+    {
+      "path": "lib/libonnxruntime_graph.a",
+      "bytes": 851596,
+      "sha256": "3749a63eaf35611876bbc3d70caf1476b069951dc70ede80fac4567e346b4efd",
+      "objects": 9
+    },
+    {
+      "path": "lib/libonnxruntime_lora.a",
+      "bytes": 103348,
+      "sha256": "bc3ab12f0353f252af1af431c275a54b83fbe40ac39e6e87dc3027f36e20341e",
+      "objects": 1
+    },
+    {
+      "path": "lib/libonnxruntime_mlas.a",
+      "bytes": 2575082,
+      "sha256": "56d604df0fee83ca3dbb0d0ae1e90af81d208d5204d60c15cebaf6fe1c287159",
+      "objects": 78
+    },
+    {
+      "path": "lib/libonnxruntime_optimizer.a",
+      "bytes": 26270,
+      "sha256": "df6c20cf576979684390a6b88694ac4f40d8bc43d79a174d7814a694765f3a21",
+      "objects": 2
+    },
+    {
+      "path": "lib/libonnxruntime_providers.a",
+      "bytes": 26326950,
+      "sha256": "9e5b21adf0bd07733ab4bb9aa446254e763475a92dc1d5ba3be66c4ee693badd",
+      "objects": 112
+    },
+    {
+      "path": "lib/libonnxruntime_session.a",
+      "bytes": 1860996,
+      "sha256": "e02d9636202e6c317b4aab5d6ceb5e2b23ad5ab2d1d4d69113c7d8f0458a427b",
+      "objects": 19
+    },
+    {
+      "path": "lib/libonnxruntime_util.a",
+      "bytes": 639918,
+      "sha256": "50e362b9e50530b092d31563fbfe7536937d1d3053fc118f3faa66b9805ed452",
+      "objects": 2
+    }
+  ],
+  "toolchain_sha256": "f9233443bf497566dd357f256ab7564199acd90865b2ea405459532b119a2a93",
+  "patches": {
+    "abseil-20250512-nuttx-elf.patch": "67cc90552670cf401ba4d8b517f75ea0befa3731d8b918c545532483eee64bf6",
+    "abseil-20250512-nuttx-time.patch": "baade7ee2b42960b771f881264165f2ab3b9b318b4150f08c8e447daefe5b906",
+    "nuttx-arm64-a733-aff1-cpuid.patch": "92660b3425131d36672a4153b7a57201d93b550a04f00a387db08232a7af4e25",
+    "nuttx-fat-filepath.patch": "82915794f3400bbdcde0500258aecca1143fa3b43e7168453a1a13004b11bcc8",
+    "nuttx-st7735-werror.patch": "784acdaeb59a8de99487ebb2151337e295989cdbab04cb8f5063f52cf2264e16",
+    "onnxruntime-v1.23.2-nuttx-cmake.patch": "ae85998b2e3c0d41515d088edf0e2fc04384b3da7d9cf921f2568245a00e65fa",
+    "onnxruntime-v1.23.2-nuttx-env.patch": "db0b99002308292aac107d6e82ce4fec1bcc2be5f8ad270047649affdcf817c3",
+    "onnxruntime-v1.23.2-nuttx-logging.patch": "efc0ec74b68a004b476b29adb182e1012703796c9842dc4555fd33edbbd05cd7",
+    "onnxruntime-v1.23.2-nuttx-matcha-profile.patch": "c256bfd8f154314bb3f97258f338e6d9dab0ce03c91b7956d365b3a7e37487b8"
+  },
+  "build_report_sha256": "4c81dabf1058b145303c52fcbf95a915d656cf22c48ea61f594e368269f4e3b6",
+  "firmware_linked": false,
+  "hardware_executed": false,
+  "models_included": false,
+  "linux_shared_libraries": false
+}

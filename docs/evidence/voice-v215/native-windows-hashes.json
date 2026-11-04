@@ -1,0 +1,12 @@
+{
+  "result": "NATIVE_WINDOWS_SHA256_MATCH",
+  "image": "openvela-a733-cubie-a7z-sd-v215-voice-load-ufs-candidate.img",
+  "bytes": 2147483648,
+  "sha256": "a2cb7afe4bf003dfba82f9798e35cd76cfa4918438efebb2f5c393de7ccca771",
+  "kernel_bytes": 7176896,
+  "kernel_sha256": "c238b0d990060d935ea49adc2bf1db494d5f06456ff63c11e246947eb952e6d3",
+  "old_v214_sha256": "c9569622ad928b0730bd79c8be6f17156249b5f5f9e4e858ea3aa1df9ce0bfa6",
+  "physical_board_tested": false,
+  "physical_disks_written": false,
+  "ufs_speed_changed": false
+}

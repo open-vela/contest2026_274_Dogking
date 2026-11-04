@@ -1,0 +1,1 @@
+PASS: 280 single-frame transaction cases including 259 callback-after-effect faults; 35ms preemption, real deadline, frozen clock and safety gates; SYNTHETIC ONLY

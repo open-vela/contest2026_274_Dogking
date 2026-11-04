@@ -1,0 +1,10 @@
+product-route-v1: vision error=-110; no fabricated detections
+product-route-v1: intent=mcu ack-status=0; never retry motor
+product-route-v1: intent=mcu ack-status=-22; never retry motor
+product-route-v1: intent=mcu ack-status=0; never retry motor
+product-route-v1: vision error=-110; no fabricated detections
+product-route-v1: intent=mcu ack-status=0; never retry motor
+product-route-v1: intent=mcu ack-status=-22; never retry motor
+product-route-v1: intent=mcu ack-status=0; never retry motor
+PASS product v1: frozen cloud/local policy, exact vision/motion intents, Chinese bounded steps, no duplicate speech/action replay, fresh same-frame COCO labels, truthful failures. HOST MOCKS, NOT hardware.
+PASS actual runtime: cleanup EOWNERDEAD overrides cancellation; cooperative SIGINT retained and drained after safe scope. MOCK camera, NOT board.

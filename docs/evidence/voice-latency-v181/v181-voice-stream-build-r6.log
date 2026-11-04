@@ -1,0 +1,14 @@
+stream-resample: frames=1 exact whole-WAV equivalence; chunk sizes 1/147/512/51200 PASS
+stream-resample: frames=15 exact whole-WAV equivalence; chunk sizes 1/147/512/51200 PASS
+stream-resample: frames=16 exact whole-WAV equivalence; chunk sizes 1/147/512/51200 PASS
+stream-resample: frames=17 exact whole-WAV equivalence; chunk sizes 1/147/512/51200 PASS
+stream-resample: frames=2205 exact whole-WAV equivalence; chunk sizes 1/147/512/51200 PASS
+stream-resample: frames=51200 exact whole-WAV equivalence; chunk sizes 1/147/512/51200 PASS
+stream-resample: frames=110250 exact whole-WAV equivalence; chunk sizes 1/147/512/51200 PASS
+stream-resample: frames=220500 exact whole-WAV equivalence; chunk sizes 1/147/512/51200 PASS
+PASS: sticky sink failure, bounded streaming, no per-chunk phase restart
+PASS: playback before synthesis completion; bounded producer/consumer, sink/provider/underrun errors and reusable cleanup (host mocks)
+PASS: synthesis overlaps generation, UTF8/role/tool rejection, whitespace, bounded phrases and error propagation (host mocks)
+TTS frontend UTF8/OOV/digits/blank/mel-tail/PCM tests PASS
+PASS: online ASR early scheduling, exact chunk/tail boundaries, no partial publication, sticky failures and state cleanup (mock engines)
+PASS: streaming resampler compiled/tested; ASR stream oracle bridge built, not target provider

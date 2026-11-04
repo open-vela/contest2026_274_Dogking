@@ -1,0 +1,2 @@
+PASS 3849 seeded/misaligned/chunked CRC and exact fused byte counts; all 256 byte patterns, zero/poison/full RGB; HOST ONLY
+HOST ONLY 8MB CRC byte/slicing8 seconds: [0.011515182333331117, 0.0027810203333350123] NOT A733 timing or FPS

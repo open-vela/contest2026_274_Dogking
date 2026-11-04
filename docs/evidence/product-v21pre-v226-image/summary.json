@@ -1,0 +1,60 @@
+{
+  "result": "V226_FULL_SOFTWARE_IMAGE_VERIFIED_NOT_BOARD_TESTED",
+  "firmware_commit": "935a7b10c301f52b00f190d518751576def8583c",
+  "image": "openvela-a733-cubie-a7z-sd-v2.1pre-v226-candidate.img",
+  "bytes": 2147483648,
+  "sha256": "63aa91f38a6223e0b3ae0d549f3be17020916824aa5273c15906697188799683",
+  "kernel_sha256": "cff8aa15e8e0c243a78970f416f03be2ead9ad053da4a2ee0a1c1b3038c6eb30",
+  "sealed_directory": "out/v226-product-v21pre-release-r1",
+  "package_directory": "out/product-v21pre-v226-package-r1",
+  "build_report_directory": "out/product-v21pre-v226-build-r2",
+  "voice_gate_directory": "out/v226-product-gates-r1",
+  "full_gate_directory": "out/v226-full-link-r4",
+  "software_gates": 40,
+  "SDK_restored_paths": 316,
+  "old_images_preserved": {
+    "openvela-a733-cubie-a7z-sd-v1.1-v219-candidate.img": "fe7a28ce9996e3344a1866610c7cdb9137a1088965b0207161df6ffab4c3359f",
+    "openvela-a733-cubie-a7z-sd-v1.2-v220-preview.img": "89a6d7f7d508427da0b4f193566c49d958451cc52c8e628a680f32a1062200a1",
+    "openvela-a733-cubie-a7z-sd-v1.2fix-v221-preview.img": "c07d26842cc0ddaa4a1e16b957c2c06297c94980c1af9c92bd6a303f5d8bac2c",
+    "openvela-a733-cubie-a7z-sd-v1.3fix-v223-candidate.img": "43380317ae7958d0d2eb12e61984603d411b05d478fbfa1db8d7ad20b522bb31",
+    "openvela-a733-cubie-a7z-sd-v1.3fix2-v224-candidate.img": "30ca81ce9d0aeb846207b0f816603bfcafb389804763a393c4a18186cb0be25b",
+    "openvela-a733-cubie-a7z-sd-v2.0pre-v225-candidate.img": "cd4cd64097720b7da15abef1ee7f1e8291c258888a8683590a8c537998ddc51c"
+  },
+  "default_local_history_pairs": 0,
+  "MCU_upstream": "efdb437948eda62cbc782692eb8fd291e5d914ae",
+  "inherited_LLM_math_sources": {
+    "board/a733-cubie-a7z/openvela-overlay/apps/system/aipet/pet_persona.hxx": "15af43bd372e53bc0684efc6f8b2aa17854b91de55c7169f1cce3cc3b12122a1",
+    "board/a733-cubie-a7z/openvela-overlay/apps/system/aipetllm/aipetllm_modelcheck.c": "7d225446adc626c38e4c70184c94dcd22c5efd19c87eadb0dbc95ed9fc116de5",
+    "board/a733-cubie-a7z/openvela-overlay/apps/system/aipetllm/aipetllm_prefill.inc": "4f3e928814a7e8bd3942a4e521d6c444381d6c85b848550cdc86a1951a057853",
+    "board/a733-cubie-a7z/openvela-overlay/apps/system/aipetllm/aipetllm_api.cxx": "9a5db1ea2192af86f77807d694bfd0276c50fbb5455a6b90f82ae5aff5f63e50",
+    "board/a733-cubie-a7z/openvela-overlay/apps/system/aipetllm/aipetllm_api.h": "cffb8a7715c49b3681684b68646ee35a8c61e5ef2f4764568c73dd49eee249b2",
+    "board/a733-cubie-a7z/openvela-overlay/apps/system/aipetllm/aipetllm_sequence.h": "90fcb3365499fedb44609ec93def5548a68c5bb54ad54dc5f799182014d74a33",
+    "board/a733-cubie-a7z/openvela-overlay/apps/system/aipetllm/aipetllm_bpe.cxx": "b05f7b454dbe2e0fd174e990c41d327407695bf6775ae2b924910fcd4dfb7c60",
+    "tools/test-llm-quality-v216.cxx": "60704a52b9e7a5ec5126aeb361f747d1ef2fe973f5eb0b2641f88bdeb6acb4d3",
+    "board/a733-cubie-a7z/openvela-overlay/apps/system/aipet/local_llm.cxx": "db06249d5fe8f16a09fb0eb2d90ae2c0a8fbbb5eaf9e17b5e5329fc6cfd52172"
+  },
+  "application_delta": {
+    "board/a733-cubie-a7z/openvela-overlay/apps/system/aipet/product_runtime.cxx": {
+      "reference": "78fdd9be0d811cf7bcbff164c0d557c1abeae952f5d4ea08a3dec78249153625",
+      "current": "7ce8ea983bfed4b1855e69ac8cee1e8420acfc9b3f06aea4ae540e6b5e1d4f80",
+      "reason": "v225 real settings, mute and opt-in boot integration; covered by runtime/service/boot tests"
+    }
+  },
+  "physical_disks_written": false,
+  "ufs_written": false,
+  "board_tested": false,
+  "latency_accepted": false,
+  "boot_listening_default": false,
+  "desktop_exact_human_command_consent": true,
+  "autonomous_motion": false,
+  "spoken_numeric_steps_scale": 10,
+  "voice_move_Hz": 300,
+  "PR_created": false,
+  "git_pushed": false,
+  "recovery_attempts": 3,
+  "local_hold_ms": 120000,
+  "resident_cloud_mode": "cloud-preferred-with-local-fallback",
+  "action_replay": false,
+  "played_audio_replay": false,
+  "resumed_evidence_only": true
+}

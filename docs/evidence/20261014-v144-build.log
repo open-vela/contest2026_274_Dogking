@@ -1,0 +1,2168 @@
+openvela-boundary: passed (official public APIs above vendor BSP)
+patching file nuttx/arch/arm64/include/arch.h
+Hunk #1 succeeded at 219 (offset 1 line).
+patching file nuttx/drivers/lcd/st7735.c
+Hunk #1 succeeded at 204 with fuzz 1.
+Hunk #3 succeeded at 511 with fuzz 1.
+patching file packages/ai_agent/src/agent_main.c
+Hunk #1 succeeded at 30 with fuzz 1.
+Hunk #2 succeeded at 148 (offset -5 lines).
+Hunk #3 succeeded at 168 with fuzz 2 (offset -10 lines).
+Hunk #4 succeeded at 391 (offset 1 line).
+Hunk #5 succeeded at 530 (offset 8 lines).
+patching file packages/ai_agent/CMakeLists.txt
+Hunk #2 succeeded at 151 (offset -29 lines).
+patching file packages/ai_agent/src/infra/vela_tls.c
+Hunk #1 succeeded at 48 with fuzz 1.
+Hunk #2 succeeded at 118 with fuzz 1.
+Hunk #3 succeeded at 133 with fuzz 1.
+Hunk #4 succeeded at 238 with fuzz 1.
+patching file packages/ai_agent/src/tools/tool_registry.c
+Hunk #1 succeeded at 89 with fuzz 1.
+patching file packages/ai_agent/src/core/agent_loop.c
+Hunk #1 succeeded at 662 (offset 1 line).
+Hunk #3 succeeded at 892 with fuzz 2 (offset -1 lines).
+Hunk #4 succeeded at 1494 (offset -8 lines).
+Hunk #5 succeeded at 1510 (offset -5 lines).
+patching file packages/ai_agent/src/core/session_mgr.c
+patching file packages/ai_agent/src/tools/skill_loader.c
+Hunk #2 succeeded at 372 (offset -2 lines).
+patching file packages/ai_agent/src/agent_main.c
+Hunk #1 succeeded at 381 (offset 7 lines).
+patching file packages/ai_agent/src/infra/vela_tls.c
+patching file packages/ai_agent/src/agent_main.c
+Hunk #1 succeeded at 349 (offset 6 lines).
+Hunk #2 succeeded at 588 (offset 8 lines).
+patching file packages/ai_agent/CMakeLists.txt
+Hunk #1 succeeded at 18 with fuzz 1.
+patching file packages/ai_agent/src/infra/config_store.c
+Hunk #1 succeeded at 24 with fuzz 1.
+Hunk #2 succeeded at 119 (offset 4 lines).
+Hunk #3 succeeded at 127 (offset 4 lines).
+Hunk #4 succeeded at 133 with fuzz 1 (offset 2 lines).
+Hunk #5 succeeded at 144 with fuzz 1.
+patching file apps/system/readline/readline_common.c
+Hunk #1 succeeded at 639 with fuzz 1 (offset 1 line).
+patching file frameworks/connectivity/bluetooth/CMakeLists.txt
+Hunk #1 succeeded at 20 (offset -5 lines).
+patching file nuttx/drivers/serial/uart_bth4.c
+patching file frameworks/connectivity/bluetooth/service/stacks/zephyr/sal_adapter_interface.c
+Hunk #2 succeeded at 1623 (offset -1 lines).
+patching file frameworks/connectivity/bluetooth/service/stacks/zephyr/sal_connection_manager.c
+patching file frameworks/connectivity/bluetooth/service/src/connection_manager.c
+patching file frameworks/connectivity/bluetooth/service/utils/btsnoop_writer.c
+patching file external/zblue/zblue/subsys/bluetooth/host/hci_core.h
+patching file external/zblue/zblue/subsys/bluetooth/host/id.c
+Hunk #2 succeeded at 1619 with fuzz 1 (offset -1 lines).
+patching file external/zblue/zblue/port/kernel/thread.c
+Hunk #2 succeeded at 110 (offset 2 lines).
+patching file external/zblue/zblue/port/kernel/poll.c
+Hunk #3 succeeded at 262 (offset -1 lines).
+Hunk #4 succeeded at 276 (offset -3 lines).
+Hunk #5 succeeded at 291 (offset -5 lines).
+patching file external/zblue/CMakeLists.default.txt
+patching file frameworks/connectivity/bluetooth/tools/bt_tools.c
+Hunk #1 succeeded at 1948 (offset 2 lines).
+Hunk #4 succeeded at 2023 (offset -1 lines).
+Hunk #13 succeeded at 2273 (offset -2 lines).
+patching file frameworks/connectivity/bluetooth/tools/scan.c
+Hunk #2 succeeded at 97 (offset -9 lines).
+Hunk #3 succeeded at 190 (offset -16 lines).
+patching file frameworks/connectivity/bluetooth/service/stacks/zephyr/sal_adapter_le_interface.c
+patching file frameworks/connectivity/bluetooth/service/src/adapter_state.c
+patching file frameworks/connectivity/bluetooth/tools/bt_tools.c
+Hunk #1 succeeded at 19 (offset -1 lines).
+patching file frameworks/connectivity/bluetooth/tools/scan.c
+Hunk #1 succeeded at 18 (offset -2 lines).
+Hunk #2 succeeded at 33 (offset 1 line).
+Hunk #3 succeeded at 82 (offset 3 lines).
+Hunk #4 succeeded at 94 (offset 1 line).
+Hunk #5 succeeded at 123 (offset -9 lines).
+Hunk #6 succeeded at 205 (offset -2 lines).
+Hunk #7 succeeded at 220 (offset -8 lines).
+Hunk #8 succeeded at 230 (offset -7 lines).
+Hunk #9 succeeded at 251 (offset -7 lines).
+patching file frameworks/connectivity/bluetooth/service/src/adapter_state.c
+Hunk #1 succeeded at 340 (offset 4 lines).
+patching file frameworks/connectivity/bluetooth/service/stacks/zephyr/sal_adapter_le_interface.c
+Hunk #1 succeeded at 1009 (offset 1 line).
+Hunk #2 succeeded at 1035 (offset 1 line).
+patching file external/zblue/zblue/subsys/bluetooth/host/hci_core.c
+patching file external/zblue/zblue/subsys/bluetooth/host/scan.c
+patching file frameworks/connectivity/bluetooth/service/stacks/zephyr/hci_h4.c
+patching file frameworks/connectivity/bluetooth/service/stacks/zephyr/sal_le_scan_interface.c
+patching file nuttx/fs/fat/fs_fat32.h
+patching file nuttx/fs/fat/fs_fat32.c
+Hunk #1 succeeded at 34 (offset 1 line).
+Hunk #2 succeeded at 337 (offset -1 lines).
+Hunk #6 succeeded at 1382 (offset -9 lines).
+Hunk #7 succeeded at 1598 (offset 2 lines).
+Hunk #8 succeeded at 1607 (offset 1 line).
+[0/1] Re-running CMake...
+-- NuttX Host Tools
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /mnt/d/My-Program/AI-Agent-Program/GPTsprogram/Openvela/quickly-openvela/cmake_out/cubie-a7z_nsh_v144_ble_reopen/bin_host
+-- ╭─────────────────────────────────────────────────╮
+-- │  Vela build custom modules base on NuttX build  |
+-- ╰─────────────────────────────────────────────────╯
+CMake Warning at /mnt/d/My-Program/AI-Agent-Program/GPTsprogram/Openvela/quickly-openvela/apps/cmake/nuttx_add_rust.cmake:28 (message):
+  Missing required LLVM parameters for Rust support.  Skipping Rust build
+  logic.  Required: LLVM_ARCHTYPE='aarch64', LLVM_ABITYPE='aapcs64',
+  LLVM_CPUTYPE=''
+Call Stack (most recent call first):
+  /mnt/d/My-Program/AI-Agent-Program/GPTsprogram/Openvela/quickly-openvela/apps/cmake/nuttx_add_jidl.cmake:22 (include)
+  /mnt/d/My-Program/AI-Agent-Program/GPTsprogram/Openvela/quickly-openvela/apps/CMakeLists.txt:34 (include)
+
+
+CMake Warning at /mnt/d/My-Program/AI-Agent-Program/GPTsprogram/Openvela/quickly-openvela/apps/cmake/nuttx_add_rust.cmake:28 (message):
+  Missing required LLVM parameters for Rust support.  Skipping Rust build
+  logic.  Required: LLVM_ARCHTYPE='aarch64', LLVM_ABITYPE='aapcs64',
+  LLVM_CPUTYPE=''
+Call Stack (most recent call first):
+  /mnt/d/My-Program/AI-Agent-Program/GPTsprogram/Openvela/quickly-openvela/apps/CMakeLists.txt:39 (include)
+
+
+CONFIG_ZEPHYR_REPO_DEFAULT
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /mnt/d/My-Program/AI-Agent-Program/GPTsprogram/Openvela/quickly-openvela/cmake_out/cubie-a7z_nsh_v144_ble_reopen
+[1/1987] cd /mnt/d/My-Program/AI-Agent-Program/GPTsprogram/Openvela/quickly-openvela/cmake_out/cubie-a7z_nsh_v144_ble_reopen/libs/libc/misc && /mnt/d/My-Program/AI-Agent-Program/GPTsprogram/Openvela/quickly-openvela/prebuilts/tools/cmake/bin/cmake -E touch /mnt/d/My-Program/AI-Agent-Program/GPTsprogram/Openvela/quickly-openvela/nuttx/libs/libc/misc/lib_utsname.c
+[2/1987] Refreshing AI Agent build timestamp
+[3/1987] cd /mnt/d/My-Program/AI-Agent-Program/GPTsprogram/Openvela/quickly-openvela/nuttx && /mnt/d/My-Program/AI-Agent-Program/GPTsprogram/Openvela/quickly-openvela/prebuilts/tools/cmake/bin/cmake -DKCONFIG_CONFIG=/mnt/d/My-Program/AI-Agent-Program/GPTsprogram/Openvela/quickly-openvela/vendor/allwinnertech/boards/a733/cubie-a7z/configs/nsh/defconfig -DNUTTX_DIR=/mnt/d/My-Program/AI-Agent-Program/GPTsprogram/Openvela/quickly-openvela/nuttx -DCMAKE_BINARY_DIR=/mnt/d/My-Program/AI-Agent-Program/GPTsprogram/Openvela/quickly-openvela/cmake_out/cubie-a7z_nsh_v144_ble_reopen -P /mnt/d/My-Program/AI-Agent-Program/GPTsprogram/Openvela/quickly-openvela/nuttx/cmake/nuttx_generate_dts.cmake
+[4/1987] Generating bin output directories
+[5/1987] Generating dramboot.ld.tmp
+[6/1987] Building ASM object arch/CMakeFiles/arch.dir/arm64/src/common/arm64_vector_table.S.o
+[7/1987] Building ASM object arch/CMakeFiles/arch.dir/arm64/src/common/arm64_fork_func.S.o
+[8/1987] Building ASM object arch/CMakeFiles/arch.dir/arm64/src/common/arm64_vectors.S.o
+[9/1987] Building C object arch/CMakeFiles/arch.dir/arm64/src/common/arm64_nputs.c.o
+[10/1987] Building C object arch/CMakeFiles/arch.dir/arm64/src/common/arm64_boot.c.o
+[11/1987] Building C object arch/CMakeFiles/arch.dir/arm64/src/common/arm64_createstack.c.o
+[12/1987] Building C object arch/CMakeFiles/arch.dir/arm64/src/common/arm64_releasestack.c.o
+[13/1987] Building C object arch/CMakeFiles/arch.dir/arm64/src/common/arm64_stackframe.c.o
+[14/1987] Building C object apps/system/libuv/CMakeFiles/libuv.dir/libuv/src/unix/poll.c.o
+[15/1987] Building C object apps/system/libuv/CMakeFiles/libuv.dir/libuv/src/unix/thread.c.o
+[16/1987] Building C object arch/CMakeFiles/arch.dir/arm64/src/common/arm64_initialstate.c.o
+[17/1987] Building C object apps/system/libuv/CMakeFiles/libuv.dir/libuv/src/unix/loop.c.o
+[18/1987] Building C object arch/CMakeFiles/arch.dir/arm64/src/common/arm64_initialize.c.o
+[19/1987] Building C object apps/system/libuv/CMakeFiles/libuv.dir/libuv/src/thread-common.c.o
+[20/1987] Building C object apps/system/libuv/CMakeFiles/libuv.dir/libuv/src/unix/core.c.o
+[21/1987] Building C object apps/system/libuv/CMakeFiles/libuv.dir/libuv/src/unix/posix-hrtime.c.o
+[22/1987] Building C object apps/system/libuv/CMakeFiles/libuv.dir/libuv/src/uv-data-getter-setters.c.o
+[23/1987] Building C object apps/system/libuv/CMakeFiles/libuv.dir/libuv/src/version.c.o
+[24/1987] Building C object apps/system/libuv/CMakeFiles/libuv.dir/libuv/src/idna.c.o
+[25/1987] Building C object apps/system/libuv/CMakeFiles/libuv.dir/libuv/src/unix/linux.c.o
+[26/1987] Building C object apps/system/libuv/CMakeFiles/libuv.dir/libuv/src/strscpy.c.o
+[27/1987] Building C object apps/system/libuv/CMakeFiles/libuv.dir/libuv/src/unix/random-devurandom.c.o
+[28/1987] Building C object apps/system/libuv/CMakeFiles/libuv.dir/libuv/src/uv-common.c.o
+[29/1987] Building C object apps/system/libuv/CMakeFiles/libuv.dir/libuv/src/random.c.o
+[30/1987] Building C object apps/system/libuv/CMakeFiles/libuv.dir/libuv/src/unix/tty.c.o
+[31/1987] Building C object apps/system/libuv/CMakeFiles/libuv.dir/libuv/src/unix/loop-watcher.c.o
+[32/1987] Building C object apps/system/libuv/CMakeFiles/libuv.dir/libuv/src/unix/nuttx.c.o
+[33/1987] Building C object apps/system/libuv/CMakeFiles/libuv.dir/libuv/src/unix/signal.c.o
+[34/1987] Building C object apps/system/libuv/CMakeFiles/libuv.dir/libuv/src/threadpool.c.o
+[35/1987] Building C object apps/system/libuv/CMakeFiles/libuv.dir/libuv/src/unix/stream.c.o
+[36/1987] Building C object apps/system/libuv/CMakeFiles/libuv.dir/libuv/src/unix/async.c.o
+[37/1987] Building C object apps/system/libuv/CMakeFiles/libuv.dir/libuv/src/unix/pipe.c.o
+[38/1987] Building C object apps/system/libuv/CMakeFiles/libuv.dir/libuv/src/fs-poll.c.o
+[39/1987] Building C object apps/system/libuv/CMakeFiles/libuv.dir/libuv/src/unix/fs.c.o
+[40/1987] Building C object apps/system/libuv/CMakeFiles/libuv.dir/libuv/src/timer.c.o
+[41/1987] Building C object apps/system/libuv/CMakeFiles/libuv.dir/libuv/src/unix/sysinfo-loadavg.c.o
+[42/1987] Building C object apps/system/libuv/CMakeFiles/libuv.dir/libuv/src/unix/sysinfo-memory.c.o
+[43/1987] Building C object apps/system/libuv/CMakeFiles/libuv.dir/libuv/src/unix/process-spawn.c.o
+[44/1987] Building C object apps/system/libuv/CMakeFiles/libuv.dir/libuv/src/unix/getaddrinfo.c.o
+[45/1987] Building C object apps/system/libuv/CMakeFiles/libuv.dir/libuv/src/inet.c.o
+[46/1987] Building C object apps/system/libuv/CMakeFiles/libuv.dir/libuv/src/unix/getnameinfo.c.o
+[47/1987] Building C object apps/system/libuv/CMakeFiles/libuv.dir/libuv/src/unix/tcp.c.o
+[48/1987] Building C object apps/system/libuv/CMakeFiles/libuv.dir/libuv/src/unix/udp.c.o
+[49/1987] Building C object apps/system/libuv/CMakeFiles/libuv.dir/mnt/d/My-Program/AI-Agent-Program/GPTsprogram/Openvela/quickly-openvela/apps/frameworks/system/utils/uv/src/uv_async_queue.c.o
+[50/1987] Building C object apps/system/libuv/CMakeFiles/libuv.dir/mnt/d/My-Program/AI-Agent-Program/GPTsprogram/Openvela/quickly-openvela/apps/frameworks/system/utils/uv/src/uv_mqueue.c.o
+[51/1987] Building C object apps/system/libuv/CMakeFiles/libuv.dir/mnt/d/My-Program/AI-Agent-Program/GPTsprogram/Openvela/quickly-openvela/apps/frameworks/system/utils/uv/src/uv_brightness.c.o
+[52/1987] Building C object apps/system/libuv/CMakeFiles/libuv.dir/mnt/d/My-Program/AI-Agent-Program/GPTsprogram/Openvela/quickly-openvela/apps/frameworks/system/utils/uv/src/uv_locale.c.o
+[53/1987] Building C object apps/system/libuv/CMakeFiles/libuv.dir/mnt/d/My-Program/AI-Agent-Program/GPTsprogram/Openvela/quickly-openvela/apps/frameworks/system/utils/uv/src/uv_property.c.o
+[54/1987] Building C object apps/system/libuv/CMakeFiles/libuv.dir/mnt/d/My-Program/AI-Agent-Program/GPTsprogram/Openvela/quickly-openvela/apps/frameworks/system/utils/uv/src/uv_aes.c.o
+[55/1987] Building C object apps/system/libuv/CMakeFiles/libuv.dir/mnt/d/My-Program/AI-Agent-Program/GPTsprogram/Openvela/quickly-openvela/apps/frameworks/system/utils/uv/src/uv_devinfo.c.o
+[56/1987] Building C object apps/system/libuv/CMakeFiles/libuv.dir/mnt/d/My-Program/AI-Agent-Program/GPTsprogram/Openvela/quickly-openvela/apps/frameworks/system/utils/uv/src/uv_crypto.c.o
+[57/1987] Building C object apps/system/libuv/CMakeFiles/libuv.dir/mnt/d/My-Program/AI-Agent-Program/GPTsprogram/Openvela/quickly-openvela/apps/frameworks/system/utils/uv/src/uv_hkdf.c.o
+[58/1987] Building C object apps/system/libuv/CMakeFiles/libuv.dir/mnt/d/My-Program/AI-Agent-Program/GPTsprogram/Openvela/quickly-openvela/apps/frameworks/system/utils/uv/src/uv_ecdh.c.o
+[59/1987] Building C object apps/system/libuv/CMakeFiles/libuv.dir/mnt/d/My-Program/AI-Agent-Program/GPTsprogram/Openvela/quickly-openvela/apps/frameworks/system/utils/uv/src/uv_db.c.o
+[60/1987] Building C object apps/netutils/mqttc/CMakeFiles/mqttc.dir/MQTT-C/src/mqtt_pal.c.o
+[61/1987] Building C object apps/netutils/mqttc/CMakeFiles/mqttc.dir/MQTT-C/src/mqtt.c.o
+[62/1987] Building C object apps/system/libuv/CMakeFiles/libuv.dir/mnt/d/My-Program/AI-Agent-Program/GPTsprogram/Openvela/quickly-openvela/apps/frameworks/system/utils/uv/src/uv_request.c.o
+[63/1987] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/amigaos.c.o
+[64/1987] Building C object apps/system/libuv/CMakeFiles/libuv.dir/mnt/d/My-Program/AI-Agent-Program/GPTsprogram/Openvela/quickly-openvela/apps/frameworks/system/utils/uv/src/app_verify.c.o
+[65/1987] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/asyn-ares.c.o
+[66/1987] Building C object apps/system/libuv/CMakeFiles/libuv.dir/mnt/d/My-Program/AI-Agent-Program/GPTsprogram/Openvela/quickly-openvela/apps/frameworks/system/utils/uv/src/uv_networkcache.c.o
+[67/1987] Building C object apps/system/libuv/CMakeFiles/libuv.dir/mnt/d/My-Program/AI-Agent-Program/GPTsprogram/Openvela/quickly-openvela/apps/frameworks/system/utils/uv/src/uv_networkstatus.c.o
+[68/1987] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/asyn-thread.c.o
+[69/1987] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/altsvc.c.o
+[70/1987] Linking C static library apps/system/libuv/liblibuv.a
+[71/1987] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/c-hyper.c.o
+[72/1987] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/base64.c.o
+[73/1987] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/bufq.c.o
+[74/1987] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/cf-h2-proxy.c.o
+[75/1987] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/bufref.c.o
+[76/1987] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/cf-haproxy.c.o
+[77/1987] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/cf-h1-proxy.c.o
+[78/1987] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/cf-https-connect.c.o
+[79/1987] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/curl_addrinfo.c.o
+[80/1987] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/curl_des.c.o
+[81/1987] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/cf-socket.c.o
+[82/1987] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/conncache.c.o
+[83/1987] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/cfilters.c.o
+[84/1987] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/content_encoding.c.o
+[85/1987] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/curl_endian.c.o
+[86/1987] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/cookie.c.o
+[87/1987] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/connect.c.o
+[88/1987] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/curl_fnmatch.c.o
+[89/1987] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/curl_get_line.c.o
+[90/1987] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/curl_gethostname.c.o
+[91/1987] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/curl_gssapi.c.o
+[92/1987] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/curl_multibyte.c.o
+[93/1987] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/curl_memrchr.c.o
+[94/1987] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/curl_ntlm_wb.c.o
+[95/1987] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/curl_path.c.o
+[96/1987] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/curl_rtmp.c.o
+[97/1987] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/curl_sasl.c.o
+[98/1987] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/curl_sspi.c.o
+[99/1987] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/curl_threads.c.o
+[100/1987] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/curl_range.c.o
+[101/1987] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/curl_ntlm_core.c.o
+[102/1987] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/dynbuf.c.o
+[103/1987] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/dynhds.c.o
+[104/1987] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/curl_trc.c.o
+[105/1987] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/easygetopt.c.o
+[106/1987] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/easyoptions.c.o
+[107/1987] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/doh.c.o
+[108/1987] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/dict.c.o
+[109/1987] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/fileinfo.c.o
+[110/1987] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/easy.c.o
+[111/1987] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/escape.c.o
+[112/1987] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/fopen.c.o
+[113/1987] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/file.c.o
+[114/1987] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/getenv.c.o
+[115/1987] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/gopher.c.o
+[116/1987] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/hash.c.o
+[117/1987] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/formdata.c.o
+[118/1987] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/ftplistparser.c.o
+[119/1987] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/ftp.c.o
+[120/1987] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/getinfo.c.o
+[121/1987] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/hmac.c.o
+[122/1987] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/hostasyn.c.o
+[123/1987] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/headers.c.o
+[124/1987] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/hostip6.c.o
+[125/1987] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/hostip.c.o
+[126/1987] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/hostip4.c.o
+[127/1987] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/http2.c.o
+[128/1987] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/hostsyn.c.o
+[129/1987] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/hsts.c.o
+[130/1987] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/http_negotiate.c.o
+[131/1987] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/http1.c.o
+[132/1987] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/http_chunks.c.o
+[133/1987] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/http_aws_sigv4.c.o
+[134/1987] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/http_digest.c.o
+[135/1987] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/http.c.o
+[136/1987] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/http_ntlm.c.o
+[137/1987] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/imap.c.o
+[138/1987] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/inet_ntop.c.o
+[139/1987] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/if2ip.c.o
+[140/1987] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/idn.c.o
+[141/1987] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/http_proxy.c.o
+[142/1987] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/inet_pton.c.o
+[143/1987] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/krb5.c.o
+[144/1987] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/ldap.c.o
+[145/1987] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/macos.c.o
+[146/1987] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/llist.c.o
+[147/1987] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/md4.c.o
+[148/1987] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/memdebug.c.o
+[149/1987] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/md5.c.o
+[150/1987] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/mprintf.c.o
+[151/1987] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/netrc.c.o
+[152/1987] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/openldap.c.o
+[153/1987] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/nonblock.c.o
+[154/1987] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/noproxy.c.o
+[155/1987] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/parsedate.c.o
+[156/1987] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/mime.c.o
+[157/1987] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/mqtt.c.o
+[158/1987] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/multi.c.o
+[159/1987] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/pop3.c.o
+[160/1987] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/pingpong.c.o
+[161/1987] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/psl.c.o
+[162/1987] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/rtsp.c.o
+[163/1987] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/rename.c.o
+[164/1987] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/progress.c.o
+[165/1987] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/rand.c.o
+[166/1987] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/sha256.c.o
+[167/1987] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/select.c.o
+[168/1987] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/slist.c.o
+[169/1987] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/sendf.c.o
+[170/1987] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/smb.c.o
+[171/1987] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/setopt.c.o
+[172/1987] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/smtp.c.o
+[173/1987] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/share.c.o
+[174/1987] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/socks_gssapi.c.o
+[175/1987] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/socks_sspi.c.o
+[176/1987] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/socketpair.c.o
+[177/1987] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/splay.c.o
+[178/1987] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/socks.c.o
+[179/1987] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/strcase.c.o
+[180/1987] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/strdup.c.o
+[181/1987] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/strtok.c.o
+[182/1987] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/strtoofft.c.o
+[183/1987] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/system_win32.c.o
+[184/1987] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/speedcheck.c.o
+[185/1987] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/telnet.c.o
+[186/1987] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/strerror.c.o
+[187/1987] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/tftp.c.o
+[188/1987] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/timediff.c.o
+[189/1987] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/timeval.c.o
+[190/1987] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/vauth/cleartext.c.o
+[191/1987] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/vauth/digest_sspi.c.o
+[192/1987] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/urlapi.c.o
+[193/1987] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/vauth/gsasl.c.o
+[194/1987] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/transfer.c.o
+[195/1987] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/vauth/krb5_gssapi.c.o
+[196/1987] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/vauth/krb5_sspi.c.o
+[197/1987] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/url.c.o
+[198/1987] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/vauth/cram.c.o
+[199/1987] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/vauth/ntlm_sspi.c.o
+[200/1987] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/vauth/digest.c.o
+[201/1987] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/vauth/oauth2.c.o
+[202/1987] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/vauth/spnego_gssapi.c.o
+[203/1987] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/vauth/ntlm.c.o
+[204/1987] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/vauth/spnego_sspi.c.o
+[205/1987] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/version_win32.c.o
+[206/1987] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/vquic/curl_msh3.c.o
+[207/1987] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/vquic/curl_ngtcp2.c.o
+[208/1987] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/vquic/curl_quiche.c.o
+[209/1987] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/vtls/bearssl.c.o
+[210/1987] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/version.c.o
+[211/1987] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/vauth/vauth.c.o
+[212/1987] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/vtls/gtls.c.o
+[213/1987] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/vtls/hostcheck.c.o
+[214/1987] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/vtls/keylog.c.o
+[215/1987] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/vtls/mbedtls_threadlock.c.o
+[216/1987] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/vquic/vquic.c.o
+[217/1987] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/vtls/openssl.c.o
+[218/1987] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/vtls/rustls.c.o
+[219/1987] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/vtls/schannel.c.o
+[220/1987] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/vtls/schannel_verify.c.o
+[221/1987] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/vtls/wolfssl.c.o
+[222/1987] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/vtls/x509asn1.c.o
+[223/1987] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/warnless.c.o
+[224/1987] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/vtls/sectransp.c.o
+[225/1987] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/ws.c.o
+[226/1987] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/tool_listhelp.c.o
+[227/1987] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/src/tool_binmode.c.o
+[228/1987] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/src/slist_wc.c.o
+[229/1987] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/vtls/mbedtls.c.o
+[230/1987] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/src/tool_bname.c.o
+[231/1987] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/vtls/vtls.c.o
+[232/1987] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/src/tool_cb_dbg.c.o
+[233/1987] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/src/tool_cb_hdr.c.o
+[234/1987] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/src/tool_cb_prg.c.o
+[235/1987] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/src/tool_cb_rea.c.o
+[236/1987] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/src/tool_cb_see.c.o
+[237/1987] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/src/tool_cfgable.c.o
+[238/1987] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/src/tool_cb_wrt.c.o
+[239/1987] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/src/tool_doswin.c.o
+[240/1987] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/src/tool_dirhie.c.o
+[241/1987] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/src/tool_easysrc.c.o
+[242/1987] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/src/tool_filetime.c.o
+[243/1987] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/src/tool_findfile.c.o
+[244/1987] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/src/tool_formparse.c.o
+[245/1987] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/src/tool_getpass.c.o
+[246/1987] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/src/tool_getparam.c.o
+[247/1987] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/src/tool_help.c.o
+[248/1987] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/src/tool_helpers.c.o
+[249/1987] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/src/tool_libinfo.c.o
+[250/1987] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/src/tool_msgs.c.o
+[251/1987] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/src/tool_operhlp.c.o
+[252/1987] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/src/tool_parsecfg.c.o
+[253/1987] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/src/tool_paramhlp.c.o
+[254/1987] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/src/tool_operate.c.o
+[255/1987] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/src/tool_progress.c.o
+[256/1987] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/src/tool_setopt.c.o
+[257/1987] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/src/tool_sleep.c.o
+[258/1987] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/src/tool_stderr.c.o
+[259/1987] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/src/tool_strdup.c.o
+[260/1987] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/src/tool_vms.c.o
+[261/1987] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/src/tool_util.c.o
+[262/1987] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/src/tool_urlglob.c.o
+[263/1987] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/src/tool_xattr.c.o
+[264/1987] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/src/tool_writeout_json.c.o
+[265/1987] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/src/tool_writeout.c.o
+[266/1987] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/src/var.c.o
+[267/1987] Building C object apps/frameworks/connectivity/bluetooth/CMakeFiles/libbluetooth.dir/framework/common/bt_hash.c.o
+[268/1987] Building C object apps/frameworks/connectivity/bluetooth/CMakeFiles/libbluetooth.dir/framework/common/bt_addr.c.o
+[269/1987] Building C object apps/frameworks/connectivity/bluetooth/CMakeFiles/libbluetooth.dir/framework/common/advertiser_data.c.o
+[270/1987] Building C object apps/frameworks/connectivity/bluetooth/CMakeFiles/libbluetooth.dir/framework/common/advertiser_data_helper.c.o
+[271/1987] Building C object apps/frameworks/connectivity/bluetooth/CMakeFiles/libbluetooth.dir/framework/common/callbacks_list.c.o
+[272/1987] Building C object apps/frameworks/connectivity/bluetooth/CMakeFiles/libbluetooth.dir/framework/common/bt_uuid.c.o
+[273/1987] Building C object apps/frameworks/connectivity/bluetooth/CMakeFiles/libbluetooth.dir/framework/common/euv_pty.c.o
+[274/1987] Building C object apps/frameworks/connectivity/bluetooth/CMakeFiles/libbluetooth.dir/framework/common/euv_pipe.c.o
+[275/1987] Building C object apps/frameworks/connectivity/bluetooth/CMakeFiles/libbluetooth.dir/framework/common/uv_thread_loop.c.o
+[276/1987] Building C object apps/frameworks/connectivity/bluetooth/CMakeFiles/libbluetooth.dir/framework/api/bluetooth.c.o
+[277/1987] Building C object apps/frameworks/connectivity/bluetooth/CMakeFiles/libbluetooth.dir/framework/api/bt_adapter.c.o
+[278/1987] Building C object apps/frameworks/connectivity/bluetooth/CMakeFiles/libbluetooth.dir/framework/api/bt_device.c.o
+[279/1987] Building C object apps/frameworks/connectivity/bluetooth/CMakeFiles/libbluetooth.dir/framework/api/bt_gattc.c.o
+[280/1987] Building C object apps/frameworks/connectivity/bluetooth/CMakeFiles/libbluetooth.dir/framework/api/bt_trace.c.o
+[281/1987] Building C object apps/frameworks/connectivity/bluetooth/CMakeFiles/libbluetooth.dir/service/ipc/socket/src/bt_socket.c.o
+[282/1987] Building C object apps/frameworks/connectivity/bluetooth/CMakeFiles/libbluetooth.dir/framework/api/bt_le_scan.c.o
+[283/1987] Building C object apps/frameworks/connectivity/bluetooth/CMakeFiles/libbluetooth.dir/service/ipc/bluetooth_ipc.c.o
+[284/1987] Building C object apps/frameworks/connectivity/bluetooth/CMakeFiles/libbluetooth.dir/framework/socket/bt_adapter.c.o
+[285/1987] Building C object apps/frameworks/connectivity/bluetooth/CMakeFiles/libbluetooth.dir/framework/socket/bt_device.c.o
+[286/1987] Building C object apps/frameworks/connectivity/bluetooth/CMakeFiles/libbluetooth.dir/framework/socket/bluetooth.c.o
+[287/1987] Building C object apps/frameworks/connectivity/bluetooth/CMakeFiles/libbluetooth.dir/service/ipc/socket/src/bt_socket_manager.c.o
+[288/1987] Building C object apps/frameworks/connectivity/bluetooth/CMakeFiles/libbluetooth.dir/service/ipc/socket/src/bt_socket_client.c.o
+[289/1987] Building C object apps/frameworks/connectivity/bluetooth/CMakeFiles/libbluetooth.dir/service/ipc/socket/src/bt_socket_server.c.o
+[290/1987] Building C object apps/frameworks/connectivity/bluetooth/CMakeFiles/libbluetooth.dir/service/ipc/socket/src/bt_socket_device.c.o
+[291/1987] Building C object apps/frameworks/connectivity/bluetooth/CMakeFiles/libbluetooth.dir/service/ipc/socket/src/bt_socket_adapter.c.o
+[292/1987] Building C object apps/frameworks/connectivity/bluetooth/CMakeFiles/libbluetooth.dir/framework/socket/bt_gattc.c.o
+[293/1987] Building C object apps/frameworks/connectivity/bluetooth/CMakeFiles/libbluetooth.dir/service/ipc/socket/src/bt_socket_gattc.c.o
+[294/1987] Building C object apps/frameworks/connectivity/bluetooth/CMakeFiles/libbluetooth.dir/service/src/manager_service.c.o
+[295/1987] Building C object apps/frameworks/connectivity/bluetooth/CMakeFiles/libbluetooth.dir/service/src/connection_manager.c.o
+[296/1987] Building C object apps/frameworks/connectivity/bluetooth/CMakeFiles/libbluetooth.dir/service/common/service_loop.c.o
+[297/1987] Building C object apps/frameworks/connectivity/bluetooth/CMakeFiles/libbluetooth.dir/service/common/bt_storage.c.o
+[298/1987] Building C object apps/frameworks/connectivity/bluetooth/CMakeFiles/libbluetooth.dir/framework/socket/bt_le_scan.c.o
+[299/1987] Building C object apps/frameworks/connectivity/bluetooth/CMakeFiles/libbluetooth.dir/framework/socket/bt_trace.c.o
+[300/1987] Building C object apps/frameworks/connectivity/bluetooth/CMakeFiles/libbluetooth.dir/service/ipc/socket/src/bt_socket_scan.c.o
+[301/1987] Building C object apps/frameworks/connectivity/bluetooth/CMakeFiles/libbluetooth.dir/service/ipc/socket/src/bt_socket_log.c.o
+[302/1987] Building C object apps/frameworks/connectivity/bluetooth/CMakeFiles/libbluetooth.dir/service/src/btservice.c.o
+[303/1987] Building C object apps/frameworks/connectivity/bluetooth/CMakeFiles/libbluetooth.dir/service/src/device.c.o
+[304/1987] Building C object apps/frameworks/connectivity/bluetooth/CMakeFiles/libbluetooth.dir/service/vendor/bt_vendor.c.o
+[305/1987] Building C object apps/frameworks/connectivity/bluetooth/CMakeFiles/libbluetooth.dir/service/src/hci_parser.c.o
+[306/1987] Building C object apps/frameworks/connectivity/bluetooth/CMakeFiles/libbluetooth.dir/service/src/adapter_service.c.o
+[307/1987] Building C object apps/frameworks/connectivity/bluetooth/CMakeFiles/libbluetooth.dir/service/vhal/bt_hci_filter.c.o
+[308/1987] Building C object apps/frameworks/connectivity/bluetooth/CMakeFiles/libbluetooth.dir/service/src/adapter_state.c.o
+[309/1987] Building C object apps/frameworks/connectivity/bluetooth/CMakeFiles/libbluetooth.dir/service/stacks/zephyr/sal_debug_interface.c.o
+[310/1987] Building C object apps/frameworks/connectivity/bluetooth/CMakeFiles/libbluetooth.dir/service/src/scan_filter.c.o
+[311/1987] Building C object apps/frameworks/connectivity/bluetooth/CMakeFiles/libbluetooth.dir/service/src/scan_manager.c.o
+[312/1987] Building C object apps/frameworks/connectivity/bluetooth/CMakeFiles/libbluetooth.dir/service/profiles/system/telephony_interface.c.o
+[313/1987] Building C object apps/frameworks/connectivity/bluetooth/CMakeFiles/libbluetooth.dir/service/stacks/stack_manager.c.o
+[314/1987] Building C object apps/frameworks/connectivity/bluetooth/CMakeFiles/libbluetooth.dir/service/stacks/zephyr/hci_h4.c.o
+[315/1987] Building C object apps/frameworks/connectivity/bluetooth/CMakeFiles/libbluetooth.dir/service/profiles/service_manager.c.o
+[316/1987] Building C object apps/frameworks/connectivity/bluetooth/CMakeFiles/libbluetooth.dir/service/stacks/zephyr/sal_zblue.c.o
+[317/1987] Building C object apps/frameworks/connectivity/bluetooth/CMakeFiles/libbluetooth.dir/service/stacks/zephyr/sal_connection_manager.c.o
+[318/1987] Building C object apps/frameworks/connectivity/bluetooth/CMakeFiles/libbluetooth.dir/service/stacks/zephyr/sal_adapter_interface.c.o
+[319/1987] Building C object apps/frameworks/connectivity/bluetooth/CMakeFiles/libbluetooth.dir/service/profiles/gatt/gattc_event.c.o
+[320/1987] Building C object apps/frameworks/connectivity/bluetooth/CMakeFiles/libbluetooth.dir/service/stacks/zephyr/sal_le_scan_interface.c.o
+[321/1987] Building C object apps/frameworks/connectivity/bluetooth/CMakeFiles/libbluetooth.dir/service/stacks/zephyr/sal_adapter_le_interface.c.o
+[322/1987] Building C object apps/frameworks/connectivity/bluetooth/CMakeFiles/libbluetooth.dir/service/profiles/gatt/gattc_service.c.o
+[323/1987] Building C object apps/frameworks/connectivity/bluetooth/CMakeFiles/libbluetooth.dir/service/stacks/zephyr/sal_gatt_client_interface.c.o
+[324/1987] Building C object apps/frameworks/connectivity/bluetooth/CMakeFiles/libbluetooth.dir/service/utils/btsnoop_log.c.o
+[325/1987] Building C object apps/frameworks/system/utils/CMakeFiles/framework_utils.dir/trace/trace.c.o
+[326/1987] Building C object apps/frameworks/connectivity/bluetooth/CMakeFiles/libbluetooth.dir/service/utils/btsnoop_writer.c.o
+[327/1987] Building C object apps/frameworks/connectivity/bluetooth/CMakeFiles/libbluetooth.dir/service/utils/btsnoop_filter.c.o
+[328/1987] Building C object apps/frameworks/system/utils/CMakeFiles/framework_utils.dir/kvdb/common.c.o
+[329/1987] Building C object apps/frameworks/system/utils/CMakeFiles/framework_utils.dir/kvdb/client.c.o
+[330/1987] Building C object apps/frameworks/connectivity/bluetooth/CMakeFiles/libbluetooth.dir/service/vhal/bt_vhal.c.o
+[331/1987] Building C object apps/frameworks/system/utils/CMakeFiles/framework_utils.dir/kvdb/system_properties.c.o
+[332/1987] Building C object apps/frameworks/system/utils/CMakeFiles/framework_utils.dir/kvdb/backend.c.o
+[333/1987] Building C object apps/frameworks/system/utils/CMakeFiles/framework_utils.dir/kvdb/unqlite.c.o
+[334/1987] Building C object apps/frameworks/connectivity/bluetooth/CMakeFiles/libbluetooth.dir/tools/utils.c.o
+[335/1987] Building C object arch/CMakeFiles/arch.dir/arm64/src/common/arm64_perf.c.o
+[336/1987] Building C object arch/CMakeFiles/arch.dir/arm64/src/common/arm64_getintstack.c.o
+[337/1987] Building C object arch/CMakeFiles/arch.dir/arm64/src/common/arm64_usestack.c.o
+[338/1987] Building C object arch/CMakeFiles/arch.dir/arm64/src/common/arm64_fork.c.o
+[339/1987] Building C object arch/CMakeFiles/arch.dir/arm64/src/common/arm64_exit.c.o
+[340/1987] Building C object arch/CMakeFiles/arch.dir/arm64/src/common/arm64_registerdump.c.o
+[341/1987] Building C object apps/frameworks/connectivity/bluetooth/CMakeFiles/libbluetooth.dir/tools/gatt_client.c.o
+[342/1987] Building C object apps/frameworks/connectivity/bluetooth/CMakeFiles/libbluetooth.dir/service/utils/log_server.c.o
+[343/1987] Building C object arch/CMakeFiles/arch.dir/arm64/src/common/arm64_tcbinfo.c.o
+[344/1987] Building C object apps/frameworks/connectivity/bluetooth/CMakeFiles/libbluetooth.dir/tools/log.c.o
+[345/1987] Building C object arch/CMakeFiles/arch.dir/arm64/src/common/arm64_cpuidlestack.c.o
+[346/1987] Building C object arch/CMakeFiles/arch.dir/arm64/src/common/arm64_schedulesigaction.c.o
+[347/1987] Building C object arch/CMakeFiles/arch.dir/arm64/src/common/arm64_sigdeliver.c.o
+[348/1987] Building C object arch/CMakeFiles/arch.dir/arm64/src/common/arm64_cache.c.o
+[349/1987] Building C object arch/CMakeFiles/arch.dir/arm64/src/common/arm64_arch_timer.c.o
+[350/1987] Building C object arch/CMakeFiles/arch.dir/arm64/src/common/arm64_doirq.c.o
+[351/1987] Building C object arch/CMakeFiles/arch.dir/arm64/src/common/arm64_idle.c.o
+[352/1987] Building C object arch/CMakeFiles/arch.dir/arm64/src/common/arm64_fatal.c.o
+[353/1987] Building C object arch/CMakeFiles/arch.dir/arm64/src/common/arm64_syscall.c.o
+[354/1987] Building ASM object arch/CMakeFiles/arch.dir/arm64/src/common/arm64_fpu_func.S.o
+[355/1987] Building C object arch/CMakeFiles/arch.dir/arm64/src/common/arm64_allocateheap.c.o
+[356/1987] Building ASM object arch/CMakeFiles/arch.dir/mnt/d/My-Program/AI-Agent-Program/GPTsprogram/Openvela/quickly-openvela/vendor/allwinnertech/chips/a733/a733_image_header.S.o
+[357/1987] Building C object arch/CMakeFiles/arch.dir/arm64/src/common/arm64_hwdebug.c.o
+[358/1987] Building C object arch/CMakeFiles/arch.dir/arm64/src/common/arm64_gicv3.c.o
+[359/1987] Building C object arch/CMakeFiles/arch.dir/arm64/src/common/arm64_mmu.c.o
+[360/1987] Building C object arch/CMakeFiles/arch.dir/arm64/src/common/arm64_cpu_psci.c.o
+[361/1987] Building C object arch/CMakeFiles/arch.dir/arm64/src/common/arm64_smpcall.c.o
+[362/1987] Building C object arch/CMakeFiles/arch.dir/arm64/src/common/arm64_cpustart.c.o
+[363/1987] Building C object arch/CMakeFiles/arch.dir/mnt/d/My-Program/AI-Agent-Program/GPTsprogram/Openvela/quickly-openvela/vendor/allwinnertech/chips/a733/a733_boot.c.o
+[364/1987] Building C object arch/CMakeFiles/arch.dir/arm64/src/common/arm64_fpu.c.o
+[365/1987] Building C object arch/CMakeFiles/arch.dir/mnt/d/My-Program/AI-Agent-Program/GPTsprogram/Openvela/quickly-openvela/vendor/allwinnertech/chips/a733/a733_watchdog.c.o
+[366/1987] Building C object arch/CMakeFiles/arch.dir/mnt/d/My-Program/AI-Agent-Program/GPTsprogram/Openvela/quickly-openvela/vendor/allwinnertech/chips/a733/a733_tsadc.c.o
+[367/1987] Building C object arch/CMakeFiles/arch.dir/mnt/d/My-Program/AI-Agent-Program/GPTsprogram/Openvela/quickly-openvela/vendor/allwinnertech/chips/a733/a733_hwdiag.c.o
+[368/1987] Building C object apps/frameworks/connectivity/bluetooth/CMakeFiles/libbluetooth.dir/tools/scan.c.o
+[369/1987] Building C object arch/CMakeFiles/arch.dir/mnt/d/My-Program/AI-Agent-Program/GPTsprogram/Openvela/quickly-openvela/vendor/allwinnertech/chips/a733/a733_serial.c.o
+[370/1987] Building C object arch/CMakeFiles/arch.dir/mnt/d/My-Program/AI-Agent-Program/GPTsprogram/Openvela/quickly-openvela/vendor/allwinnertech/chips/a733/a733_trng.c.o
+[371/1987] Building C object arch/CMakeFiles/arch.dir/mnt/d/My-Program/AI-Agent-Program/GPTsprogram/Openvela/quickly-openvela/vendor/allwinnertech/chips/a733/a733_npu_memory.c.o
+[372/1987] Building C object arch/CMakeFiles/arch.dir/mnt/d/My-Program/AI-Agent-Program/GPTsprogram/Openvela/quickly-openvela/vendor/allwinnertech/chips/a733/a733_npu.c.o
+[373/1987] Building C object binfmt/CMakeFiles/binfmt.dir/binfmt_globals.c.o
+[374/1987] Building C object binfmt/CMakeFiles/binfmt.dir/binfmt_initialize.c.o
+[375/1987] Building C object arch/CMakeFiles/arch.dir/mnt/d/My-Program/AI-Agent-Program/GPTsprogram/Openvela/quickly-openvela/vendor/allwinnertech/chips/a733/a733_sdmmc.c.o
+[376/1987] Building C object arch/CMakeFiles/arch.dir/mnt/d/My-Program/AI-Agent-Program/GPTsprogram/Openvela/quickly-openvela/vendor/allwinnertech/chips/a733/a733_usb_camera.c.o
+[377/1987] Building C object binfmt/CMakeFiles/binfmt.dir/binfmt_register.c.o
+[378/1987] Building C object arch/CMakeFiles/arch.dir/mnt/d/My-Program/AI-Agent-Program/GPTsprogram/Openvela/quickly-openvela/vendor/allwinnertech/chips/a733/a733_header_peripherals.c.o
+[379/1987] Building C object arch/CMakeFiles/arch.dir/mnt/d/My-Program/AI-Agent-Program/GPTsprogram/Openvela/quickly-openvela/vendor/allwinnertech/chips/a733/a733_uart4.c.o
+[380/1987] Building C object arch/CMakeFiles/arch.dir/mnt/d/My-Program/AI-Agent-Program/GPTsprogram/Openvela/quickly-openvela/vendor/allwinnertech/chips/a733/a733_i2s0_audio.c.o
+[381/1987] Building C object arch/CMakeFiles/arch.dir/mnt/d/My-Program/AI-Agent-Program/GPTsprogram/Openvela/quickly-openvela/vendor/allwinnertech/chips/a733/a733_npu_runtime.c.o
+[382/1987] Building C object binfmt/CMakeFiles/binfmt.dir/binfmt_unregister.c.o
+[383/1987] Building C object binfmt/CMakeFiles/binfmt.dir/binfmt_loadmodule.c.o
+[384/1987] Building C object arch/CMakeFiles/arch.dir/mnt/d/My-Program/AI-Agent-Program/GPTsprogram/Openvela/quickly-openvela/vendor/allwinnertech/chips/a733/a733_wifi_usb.c.o
+[385/1987] Building C object binfmt/CMakeFiles/binfmt.dir/binfmt_unloadmodule.c.o
+[386/1987] Building C object binfmt/CMakeFiles/binfmt.dir/binfmt_copyargv.c.o
+[387/1987] Building C object binfmt/CMakeFiles/binfmt.dir/binfmt_exec.c.o
+[388/1987] Building C object binfmt/CMakeFiles/binfmt.dir/binfmt_copyactions.c.o
+[389/1987] Building C object binfmt/CMakeFiles/binfmt.dir/binfmt_execmodule.c.o
+[390/1987] Building C object binfmt/CMakeFiles/binfmt.dir/binfmt_execsymtab.c.o
+[391/1987] Building C object binfmt/CMakeFiles/binfmt.dir/binfmt_copyattr.c.o
+[392/1987] Building C object binfmt/CMakeFiles/binfmt.dir/binfmt_dumpmodule.c.o
+[393/1987] Building C object binfmt/CMakeFiles/binfmt.dir/builtin.c.o
+[394/1987] Building C object crypto/CMakeFiles/crypto.dir/crypto.c.o
+[395/1987] Building C object crypto/CMakeFiles/crypto.dir/testmngr.c.o
+[396/1987] Building C object crypto/CMakeFiles/crypto.dir/blake2s.c.o
+[397/1987] Building C object crypto/CMakeFiles/crypto.dir/bn.c.o
+[398/1987] Building C object crypto/CMakeFiles/crypto.dir/ecc.c.o
+[399/1987] Building C object drivers/CMakeFiles/drivers.dir/bch/bchlib_setup.c.o
+[400/1987] Building C object drivers/CMakeFiles/drivers.dir/bch/bchlib_read.c.o
+[401/1987] Building C object drivers/CMakeFiles/drivers.dir/bch/bchlib_teardown.c.o
+[402/1987] Building C object drivers/CMakeFiles/drivers.dir/bch/bchlib_write.c.o
+[403/1987] Building C object drivers/CMakeFiles/drivers.dir/bch/bchdev_register.c.o
+[404/1987] Building C object drivers/CMakeFiles/drivers.dir/bch/bchlib_cache.c.o
+[405/1987] Building C object drivers/CMakeFiles/drivers.dir/bch/bchdev_unregister.c.o
+[406/1987] Building C object drivers/CMakeFiles/drivers.dir/ioexpander/gpio.c.o
+[407/1987] Building C object drivers/CMakeFiles/drivers.dir/i2c/i2c_driver.c.o
+[408/1987] Building C object drivers/CMakeFiles/drivers.dir/bch/bchdev_driver.c.o
+[409/1987] Building C object drivers/CMakeFiles/drivers.dir/lcd/st7735.c.o
+[410/1987] Building C object drivers/CMakeFiles/drivers.dir/lcd/lcd_dev.c.o
+[411/1987] Building C object drivers/CMakeFiles/drivers.dir/misc/dev_null.c.o
+[412/1987] Building C object drivers/CMakeFiles/drivers.dir/misc/dev_zero.c.o
+[413/1987] Building C object drivers/CMakeFiles/drivers.dir/misc/mkrd.c.o
+[414/1987] Building C object drivers/CMakeFiles/drivers.dir/misc/ramdisk.c.o
+[415/1987] Building C object drivers/CMakeFiles/drivers.dir/loop/losetup.c.o
+[416/1987] Building C object drivers/CMakeFiles/drivers.dir/mmcsd/mmcsd_sdio.c.o
+[417/1987] Building C object drivers/CMakeFiles/drivers.dir/pipes/fifo.c.o
+[418/1987] Building C object drivers/CMakeFiles/drivers.dir/pipes/pipe.c.o
+[419/1987] Building C object drivers/CMakeFiles/drivers.dir/net/netdev_upperhalf.c.o
+[420/1987] Building C object drivers/CMakeFiles/drivers.dir/pipes/pipe_common.c.o
+[421/1987] Building C object drivers/CMakeFiles/drivers.dir/sensors/sensor.c.o
+[422/1987] Building C object drivers/CMakeFiles/drivers.dir/serial/serial_io.c.o
+[423/1987] Building C object drivers/CMakeFiles/drivers.dir/serial/uart_16550.c.o
+[424/1987] Building C object drivers/CMakeFiles/drivers.dir/serial/serial.c.o
+[425/1987] Building C object drivers/CMakeFiles/drivers.dir/serial/ptmx.c.o
+[426/1987] Building C object drivers/CMakeFiles/drivers.dir/syslog/syslog_initialize.c.o
+[427/1987] Building C object drivers/CMakeFiles/drivers.dir/serial/pty.c.o
+[428/1987] Building C object drivers/CMakeFiles/drivers.dir/spi/spi_transfer.c.o
+[429/1987] Building C object drivers/CMakeFiles/drivers.dir/serial/uart_bth4.c.o
+[430/1987] Building C object drivers/CMakeFiles/drivers.dir/spi/spi_driver.c.o
+[431/1987] Building C object drivers/CMakeFiles/drivers.dir/syslog/syslog_flush.c.o
+[432/1987] Building C object drivers/CMakeFiles/drivers.dir/syslog/vsyslog.c.o
+[433/1987] Building C object drivers/CMakeFiles/drivers.dir/syslog/setlogmask.c.o
+[434/1987] Building C object drivers/CMakeFiles/drivers.dir/syslog/syslog_channel.c.o
+[435/1987] Building C object drivers/CMakeFiles/drivers.dir/syslog/syslog_write.c.o
+[436/1987] Building C object drivers/CMakeFiles/drivers.dir/timers/arch_alarm.c.o
+[437/1987] Building C object drivers/CMakeFiles/drivers.dir/timers/watchdog.c.o
+[438/1987] Building C object drivers/CMakeFiles/drivers.dir/syslog/ramlog.c.o
+[439/1987] Building C object drivers/CMakeFiles/drivers.dir/timers/oneshot.c.o
+[440/1987] Building C object drivers/CMakeFiles/drivers.dir/wireless/bluetooth/bt_driver.c.o
+[441/1987] Building C object drivers/CMakeFiles/drivers.dir/timers/pwm.c.o
+[442/1987] Building C object fs/CMakeFiles/fs.dir/fs_heap.c.o
+[443/1987] Building C object fs/CMakeFiles/fs.dir/driver/fs_unregisterdriver.c.o
+[444/1987] Building C object fs/CMakeFiles/fs.dir/driver/fs_registerpipedriver.c.o
+[445/1987] Building C object fs/CMakeFiles/fs.dir/driver/fs_registerdriver.c.o
+[446/1987] Building C object fs/CMakeFiles/fs.dir/fs_initialize.c.o
+[447/1987] Building C object fs/CMakeFiles/fs.dir/driver/fs_unregisterpipedriver.c.o
+[448/1987] Building C object fs/CMakeFiles/fs.dir/driver/fs_unregisterblockdriver.c.o
+[449/1987] Building C object fs/CMakeFiles/fs.dir/driver/fs_registerblockdriver.c.o
+[450/1987] Building C object fs/CMakeFiles/fs.dir/driver/fs_openblockdriver.c.o
+[451/1987] Building C object fs/CMakeFiles/fs.dir/driver/fs_closeblockdriver.c.o
+[452/1987] Building C object fs/CMakeFiles/fs.dir/driver/fs_findblockdriver.c.o
+[453/1987] Building C object fs/CMakeFiles/fs.dir/driver/fs_blockpartition.c.o
+[454/1987] Building C object fs/CMakeFiles/fs.dir/driver/fs_closemtddriver.c.o
+[455/1987] Building C object fs/CMakeFiles/fs.dir/driver/fs_findmtddriver.c.o
+[456/1987] Building C object drivers/CMakeFiles/drivers.dir/drivers_initialize.c.o
+[457/1987] Building C object fs/CMakeFiles/fs.dir/driver/fs_blockmerge.c.o
+[458/1987] Building C object fs/CMakeFiles/fs.dir/driver/fs_blockproxy.c.o
+[459/1987] Building C object fs/CMakeFiles/fs.dir/fat/fs_fat32.c.o
+[460/1987] Building C object fs/CMakeFiles/fs.dir/fat/fs_fat32attrib.c.o
+[461/1987] Building C object fs/CMakeFiles/fs.dir/inode/fs_foreachinode.c.o
+[462/1987] Building C object fs/CMakeFiles/fs.dir/fat/fs_fat32dirent.c.o
+[463/1987] Building C object fs/CMakeFiles/fs.dir/fat/fs_fat32util.c.o
+[464/1987] Building C object fs/CMakeFiles/fs.dir/inode/fs_files.c.o
+[465/1987] Building C object fs/CMakeFiles/fs.dir/inode/fs_inode.c.o
+[466/1987] Building C object fs/CMakeFiles/fs.dir/inode/fs_inodeaddref.c.o
+[467/1987] Building C object fs/CMakeFiles/fs.dir/inode/fs_inodebasename.c.o
+[468/1987] Building C object fs/CMakeFiles/fs.dir/inode/fs_inodefind.c.o
+[469/1987] Building C object fs/CMakeFiles/fs.dir/inode/fs_inodefree.c.o
+[470/1987] Building C object fs/CMakeFiles/fs.dir/inode/fs_inodegetpath.c.o
+[471/1987] Building C object fs/CMakeFiles/fs.dir/inode/fs_inoderemove.c.o
+[472/1987] Building C object fs/CMakeFiles/fs.dir/inode/fs_inodereserve.c.o
+[473/1987] Building C object fs/CMakeFiles/fs.dir/inode/fs_inoderelease.c.o
+[474/1987] Building C object fs/CMakeFiles/fs.dir/inode/fs_inodesearch.c.o
+[475/1987] Building C object fs/CMakeFiles/fs.dir/mmap/fs_mmap.c.o
+[476/1987] Building C object fs/CMakeFiles/fs.dir/mmap/fs_msync.c.o
+[477/1987] Building C object fs/CMakeFiles/fs.dir/mmap/fs_munmap.c.o
+[478/1987] Building C object fs/CMakeFiles/fs.dir/mount/fs_umount2.c.o
+[479/1987] Building C object fs/CMakeFiles/fs.dir/mount/fs_mount.c.o
+[480/1987] Building C object fs/CMakeFiles/fs.dir/mount/fs_foreachmountpoint.c.o
+[481/1987] Building C object fs/CMakeFiles/fs.dir/mmap/fs_anonmap.c.o
+[482/1987] Building C object fs/CMakeFiles/fs.dir/mount/fs_procfs_mount.c.o
+[483/1987] Building C object fs/CMakeFiles/fs.dir/mqueue/mq_unlink.c.o
+[484/1987] Building C object fs/CMakeFiles/fs.dir/partition/fs_partition.c.o
+[485/1987] Building C object fs/CMakeFiles/fs.dir/mqueue/mq_close.c.o
+[486/1987] Building C object fs/CMakeFiles/fs.dir/mqueue/mq_open.c.o
+[487/1987] Building C object fs/CMakeFiles/fs.dir/procfs/fs_procfscpuload.c.o
+[488/1987] Building C object fs/CMakeFiles/fs.dir/procfs/fs_procfscpuinfo.c.o
+[489/1987] Building C object fs/CMakeFiles/fs.dir/procfs/fs_procfscritmon.c.o
+[490/1987] Building C object fs/CMakeFiles/fs.dir/partition/fs_gpt.c.o
+[491/1987] Building C object fs/CMakeFiles/fs.dir/procfs/fs_procfsfdt.c.o
+[492/1987] Building C object fs/CMakeFiles/fs.dir/procfs/fs_procfsiobinfo.c.o
+[493/1987] Building C object fs/CMakeFiles/fs.dir/procfs/fs_procfs.c.o
+[494/1987] Building C object fs/CMakeFiles/fs.dir/procfs/fs_procfsmeminfo.c.o
+[495/1987] Building C object fs/CMakeFiles/fs.dir/procfs/fs_procfsutil.c.o
+[496/1987] Building C object fs/CMakeFiles/fs.dir/procfs/fs_procfsuptime.c.o
+[497/1987] Building C object fs/CMakeFiles/fs.dir/procfs/fs_procfstcbinfo.c.o
+[498/1987] Building C object fs/CMakeFiles/fs.dir/procfs/fs_procfsproc.c.o
+[499/1987] Building C object fs/CMakeFiles/fs.dir/semaphore/sem_close.c.o
+[500/1987] Building C object fs/CMakeFiles/fs.dir/semaphore/sem_open.c.o
+[501/1987] Building C object fs/CMakeFiles/fs.dir/procfs/fs_procfsversion.c.o
+[502/1987] Building C object fs/CMakeFiles/fs.dir/semaphore/sem_unlink.c.o
+[503/1987] Building C object fs/CMakeFiles/fs.dir/socket/accept.c.o
+[504/1987] Building C object fs/CMakeFiles/fs.dir/socket/socket.c.o
+[505/1987] Building C object fs/CMakeFiles/fs.dir/socket/socketpair.c.o
+[506/1987] Building C object fs/CMakeFiles/fs.dir/vfs/fs_chstat.c.o
+[507/1987] Building C object fs/CMakeFiles/fs.dir/vfs/fs_close.c.o
+[508/1987] Building C object fs/CMakeFiles/fs.dir/vfs/fs_dup.c.o
+[509/1987] Building C object fs/CMakeFiles/fs.dir/vfs/fs_dup3.c.o
+[510/1987] Building C object fs/CMakeFiles/fs.dir/vfs/fs_dup2.c.o
+[511/1987] Building C object fs/CMakeFiles/fs.dir/vfs/fs_fchstat.c.o
+[512/1987] Building C object fs/CMakeFiles/fs.dir/vfs/fs_fcntl.c.o
+[513/1987] Building C object fs/CMakeFiles/fs.dir/vfs/fs_fstatfs.c.o
+[514/1987] Building C object fs/CMakeFiles/fs.dir/vfs/fs_lseek.c.o
+[515/1987] Building C object fs/CMakeFiles/fs.dir/vfs/fs_fstat.c.o
+[516/1987] Building C object fs/CMakeFiles/fs.dir/vfs/fs_ioctl.c.o
+[517/1987] Building C object fs/CMakeFiles/fs.dir/vfs/fs_epoll.c.o
+[518/1987] Building C object fs/CMakeFiles/fs.dir/vfs/fs_mkdir.c.o
+[519/1987] Building C object fs/CMakeFiles/fs.dir/vfs/fs_pread.c.o
+[520/1987] Building C object fs/CMakeFiles/fs.dir/vfs/fs_pwrite.c.o
+[521/1987] Building C object fs/CMakeFiles/fs.dir/vfs/fs_open.c.o
+[522/1987] Building C object fs/CMakeFiles/fs.dir/vfs/fs_poll.c.o
+[523/1987] Building C object fs/CMakeFiles/fs.dir/vfs/fs_read.c.o
+[524/1987] Building C object fs/CMakeFiles/fs.dir/vfs/fs_rename.c.o
+[525/1987] Building C object fs/CMakeFiles/fs.dir/vfs/fs_rmdir.c.o
+[526/1987] Building C object fs/CMakeFiles/fs.dir/vfs/fs_uio.c.o
+[527/1987] Building C object fs/CMakeFiles/fs.dir/vfs/fs_statfs.c.o
+[528/1987] Building C object fs/CMakeFiles/fs.dir/vfs/fs_select.c.o
+[529/1987] Building C object fs/CMakeFiles/fs.dir/vfs/fs_stat.c.o
+[530/1987] Building C object fs/CMakeFiles/fs.dir/vfs/fs_sendfile.c.o
+[531/1987] Building C object fs/CMakeFiles/fs.dir/vfs/fs_unlink.c.o
+[532/1987] Building C object fs/CMakeFiles/fs.dir/vfs/fs_write.c.o
+[533/1987] Building C object fs/CMakeFiles/fs.dir/vfs/fs_syncfs.c.o
+[534/1987] Building C object fs/CMakeFiles/fs.dir/vfs/fs_dir.c.o
+[535/1987] Building C object libs/libc/CMakeFiles/c.dir/dirent/lib_readdirr.c.o
+[536/1987] Building C object fs/CMakeFiles/fs.dir/vfs/fs_fsync.c.o
+[537/1987] Building C object fs/CMakeFiles/fs.dir/vfs/fs_truncate.c.o
+[538/1987] Building C object libs/libc/CMakeFiles/c.dir/assert/lib_assert.c.o
+[539/1987] Building C object fs/CMakeFiles/fs.dir/vfs/fs_readlink.c.o
+[540/1987] Building C object fs/CMakeFiles/fs.dir/vfs/fs_link.c.o
+[541/1987] Building C object fs/CMakeFiles/fs.dir/vfs/fs_symlink.c.o
+[542/1987] Building C object fs/CMakeFiles/fs.dir/vfs/fs_lock.c.o
+[543/1987] Building C object libs/libc/CMakeFiles/c.dir/dirent/lib_scandir.c.o
+[544/1987] Building C object libs/libc/CMakeFiles/c.dir/dirent/lib_telldir.c.o
+[545/1987] Building C object libs/libc/CMakeFiles/c.dir/dirent/lib_opendir.c.o
+[546/1987] Building C object libs/libc/CMakeFiles/c.dir/dirent/lib_nftw.c.o
+[547/1987] Building C object libs/libc/CMakeFiles/c.dir/dirent/lib_fdopendir.c.o
+[548/1987] Building C object libs/libc/CMakeFiles/c.dir/dirent/lib_readdir.c.o
+[549/1987] Building C object libs/libc/CMakeFiles/c.dir/dirent/lib_closedir.c.o
+[550/1987] Building C object libs/libc/CMakeFiles/c.dir/dirent/lib_rewinddir.c.o
+[551/1987] Building C object libs/libc/CMakeFiles/c.dir/dirent/lib_seekdir.c.o
+[552/1987] Building C object libs/libc/CMakeFiles/c.dir/environ/env_getenvironptr.c.o
+[553/1987] Building C object libs/libc/CMakeFiles/c.dir/environ/env_dup.c.o
+[554/1987] Building C object libs/libc/CMakeFiles/c.dir/environ/env_release.c.o
+[555/1987] Building C object libs/libc/CMakeFiles/c.dir/environ/env_putenv.c.o
+[556/1987] Building C object libs/libc/CMakeFiles/c.dir/environ/env_findvar.c.o
+[557/1987] Building C object libs/libc/CMakeFiles/c.dir/environ/env_removevar.c.o
+[558/1987] Building C object libs/libc/CMakeFiles/c.dir/environ/env_clearenv.c.o
+[559/1987] Building C object libs/libc/CMakeFiles/c.dir/errno/lib_errno.c.o
+[560/1987] Building C object libs/libc/CMakeFiles/c.dir/environ/env_getenv.c.o
+[561/1987] Building C object libs/libc/CMakeFiles/c.dir/environ/env_setenv.c.o
+[562/1987] Building C object libs/libc/CMakeFiles/c.dir/environ/env_unsetenv.c.o
+[563/1987] Building C object libs/libc/CMakeFiles/c.dir/environ/env_foreach.c.o
+[564/1987] Building C object libs/libc/CMakeFiles/c.dir/grp/lib_getgrgid.c.o
+[565/1987] Building C object libs/libc/CMakeFiles/c.dir/grp/lib_getgrnam.c.o
+[566/1987] Building C object libs/libc/CMakeFiles/c.dir/inttypes/lib_strtoimax.c.o
+[567/1987] Building C object libs/libc/CMakeFiles/c.dir/inttypes/lib_strtoumax.c.o
+[568/1987] Building C object libs/libc/CMakeFiles/c.dir/grp/lib_getgrbuf.c.o
+[569/1987] Building C object libs/libc/CMakeFiles/c.dir/misc/lib_circbuf.c.o
+[570/1987] Building C object libs/libc/CMakeFiles/c.dir/misc/lib_mknod.c.o
+[571/1987] Building C object libs/libc/CMakeFiles/c.dir/misc/lib_utsname.c.o
+[572/1987] Building C object libs/libc/CMakeFiles/c.dir/misc/lib_umask.c.o
+[573/1987] Building C object libs/libc/CMakeFiles/c.dir/misc/lib_getrandom.c.o
+[574/1987] Building C object libs/libc/CMakeFiles/c.dir/misc/lib_memfd.c.o
+[575/1987] Building C object libs/libc/CMakeFiles/c.dir/misc/lib_fchmodat.c.o
+[576/1987] Building C object libs/libc/CMakeFiles/c.dir/misc/lib_idr.c.o
+[577/1987] Building C object libs/libc/CMakeFiles/c.dir/misc/lib_fstatat.c.o
+[578/1987] Building C object libs/libc/CMakeFiles/c.dir/misc/lib_getfullpath.c.o
+[579/1987] Building C object libs/libc/CMakeFiles/c.dir/misc/lib_cxx_initialize.c.o
+[580/1987] Building C object libs/libc/CMakeFiles/c.dir/misc/lib_openat.c.o
+[581/1987] Building C object libs/libc/CMakeFiles/c.dir/misc/lib_mkdirat.c.o
+[582/1987] Building C object libs/libc/CMakeFiles/c.dir/misc/lib_ratelimit.c.o
+[583/1987] Building C object libs/libc/CMakeFiles/c.dir/misc/lib_utimensat.c.o
+[584/1987] Building C object libs/libc/CMakeFiles/c.dir/misc/lib_mkfifo.c.o
+[585/1987] Building C object libs/libc/CMakeFiles/c.dir/misc/lib_sem_mutex_noinline.c.o
+[586/1987] Building C object libs/libc/CMakeFiles/c.dir/misc/lib_tempbuffer.c.o
+[587/1987] Building C object libs/libc/CMakeFiles/c.dir/misc/lib_dumpbuffer.c.o
+[588/1987] Building C object libs/libc/CMakeFiles/c.dir/misc/lib_debug.c.o
+[589/1987] Building C object libs/libc/CMakeFiles/c.dir/misc/lib_dumpvbuffer.c.o
+[590/1987] Building C object libs/libc/CMakeFiles/c.dir/misc/lib_lrucache.c.o
+[591/1987] Building C object libs/libc/CMakeFiles/c.dir/misc/lib_glob.c.o
+[592/1987] Building C object libs/libc/CMakeFiles/c.dir/misc/lib_ftok.c.o
+[593/1987] Building C object libs/libc/CMakeFiles/c.dir/misc/lib_backtrace.c.o
+[594/1987] Building C object libs/libc/CMakeFiles/c.dir/misc/lib_err.c.o
+[595/1987] Building C object libs/libc/CMakeFiles/c.dir/net/lib_addrconfig.c.o
+[596/1987] Building C object libs/libc/CMakeFiles/c.dir/misc/lib_fdcheck.c.o
+[597/1987] Building C object libs/libc/CMakeFiles/c.dir/net/lib_inetaddr.c.o
+[598/1987] Building C object libs/libc/CMakeFiles/c.dir/net/lib_inetntop.c.o
+[599/1987] Building C object libs/libc/CMakeFiles/c.dir/net/lib_inetpton.c.o
+[600/1987] Building C object libs/libc/CMakeFiles/c.dir/net/lib_inetnetwork.c.o
+[601/1987] Building C object libs/libc/CMakeFiles/c.dir/net/lib_inetntoa.c.o
+[602/1987] Building C object libs/libc/CMakeFiles/c.dir/net/lib_etherntoa.c.o
+[603/1987] Building C object libs/libc/CMakeFiles/c.dir/net/lib_freeifaddrs.c.o
+[604/1987] Building C object libs/libc/CMakeFiles/c.dir/net/lib_etheraton.c.o
+[605/1987] Building C object libs/libc/CMakeFiles/c.dir/net/lib_getifaddrs.c.o
+[606/1987] Building C object libs/libc/CMakeFiles/c.dir/net/lib_nameindex.c.o
+[607/1987] Building C object libs/libc/CMakeFiles/c.dir/net/lib_freenameindex.c.o
+[608/1987] Building C object libs/libc/CMakeFiles/c.dir/net/lib_indextoname.c.o
+[609/1987] Building C object libs/libc/CMakeFiles/c.dir/net/lib_nametoindex.c.o
+[610/1987] Building C object libs/libc/CMakeFiles/c.dir/netdb/lib_netdb.c.o
+[611/1987] Building C object libs/libc/CMakeFiles/c.dir/netdb/lib_h_errno.c.o
+[612/1987] Building C object libs/libc/CMakeFiles/c.dir/netdb/lib_gethostbyname2r.c.o
+[613/1987] Building C object libs/libc/CMakeFiles/c.dir/netdb/lib_gethostbyname2.c.o
+[614/1987] Building C object libs/libc/CMakeFiles/c.dir/netdb/lib_gethostbyaddr.c.o
+[615/1987] Building C object libs/libc/CMakeFiles/c.dir/netdb/lib_gethostentbynamer.c.o
+[616/1987] Building C object libs/libc/CMakeFiles/c.dir/netdb/lib_getservbyname.c.o
+[617/1987] Building C object libs/libc/CMakeFiles/c.dir/netdb/lib_gethostbyaddrr.c.o
+[618/1987] Building C object libs/libc/CMakeFiles/c.dir/netdb/lib_gaistrerror.c.o
+[619/1987] Building C object libs/libc/CMakeFiles/c.dir/netdb/lib_getservbynamer.c.o
+[620/1987] Building C object libs/libc/CMakeFiles/c.dir/netdb/lib_getservbyport.c.o
+[621/1987] Building C object libs/libc/CMakeFiles/c.dir/netdb/lib_getservbyportr.c.o
+[622/1987] Building C object libs/libc/CMakeFiles/c.dir/netdb/lib_freeaddrinfo.c.o
+[623/1987] Building C object libs/libc/CMakeFiles/c.dir/netdb/lib_getnameinfo.c.o
+[624/1987] Building C object libs/libc/CMakeFiles/c.dir/netdb/lib_getaddrinfo.c.o
+[625/1987] Building C object libs/libc/CMakeFiles/c.dir/netdb/lib_rexec.c.o
+[626/1987] Building C object libs/libc/CMakeFiles/c.dir/netdb/lib_proto.c.o
+[627/1987] Building C object libs/libc/CMakeFiles/c.dir/netdb/lib_dnsnotify.c.o
+[628/1987] Building C object libs/libc/CMakeFiles/c.dir/netdb/lib_dnsinit.c.o
+[629/1987] Building C object libs/libc/CMakeFiles/c.dir/netdb/lib_dnsbind.c.o
+[630/1987] Building C object libs/libc/CMakeFiles/c.dir/obstack/lib_obstack_init.c.o
+[631/1987] Building C object libs/libc/CMakeFiles/c.dir/netdb/lib_dnsdefaultserver.c.o
+[632/1987] Building C object libs/libc/CMakeFiles/c.dir/netdb/lib_dnsquery.c.o
+[633/1987] Building C object libs/libc/CMakeFiles/c.dir/obstack/lib_obstack_free.c.o
+[634/1987] Building C object libs/libc/CMakeFiles/c.dir/netdb/lib_dnsaddserver.c.o
+[635/1987] Building C object libs/libc/CMakeFiles/c.dir/netdb/lib_dnsforeach.c.o
+[636/1987] Building C object libs/libc/CMakeFiles/c.dir/netdb/lib_dnsqueryfamily.c.o
+[637/1987] Building C object libs/libc/CMakeFiles/c.dir/netdb/lib_dnscache.c.o
+[638/1987] Building C object libs/libc/CMakeFiles/c.dir/obstack/lib_obstack_vprintf.c.o
+[639/1987] Building C object libs/libc/CMakeFiles/c.dir/obstack/lib_obstack_make_room.c.o
+[640/1987] Building C object libs/libc/CMakeFiles/c.dir/obstack/lib_obstack_malloc.c.o
+[641/1987] Building C object libs/libc/CMakeFiles/c.dir/pthread/pthread_getspecific.c.o
+[642/1987] Building C object libs/libc/CMakeFiles/c.dir/pthread/pthread_setspecific.c.o
+[643/1987] Building C object libs/libc/CMakeFiles/c.dir/pthread/pthread_keycreate.c.o
+[644/1987] Building C object libs/libc/CMakeFiles/c.dir/pthread/pthread_attr_init.c.o
+[645/1987] Building C object libs/libc/CMakeFiles/c.dir/pthread/pthread_attr_destroy.c.o
+[646/1987] Building C object libs/libc/CMakeFiles/c.dir/pthread/pthread_attr_setschedpolicy.c.o
+[647/1987] Building C object libs/libc/CMakeFiles/c.dir/pthread/pthread_attr_getschedpolicy.c.o
+[648/1987] Building C object libs/libc/CMakeFiles/c.dir/pthread/pthread_keydelete.c.o
+[649/1987] Building C object libs/libc/CMakeFiles/c.dir/pthread/pthread_attr_setinheritsched.c.o
+[650/1987] Building C object libs/libc/CMakeFiles/c.dir/pthread/pthread_attr_setdetachstate.c.o
+[651/1987] Building C object libs/libc/CMakeFiles/c.dir/pthread/pthread_attr_getinheritsched.c.o
+[652/1987] Building C object libs/libc/CMakeFiles/c.dir/pthread/pthread_attr_getdetachstate.c.o
+[653/1987] Building C object libs/libc/CMakeFiles/c.dir/pthread/pthread_attr_setstackaddr.c.o
+[654/1987] Building C object libs/libc/CMakeFiles/c.dir/pthread/pthread_attr_getstackaddr.c.o
+[655/1987] Building C object libs/libc/CMakeFiles/c.dir/pthread/pthread_attr_setstacksize.c.o
+[656/1987] Building C object libs/libc/CMakeFiles/c.dir/pthread/pthread_attr_getstacksize.c.o
+[657/1987] Building C object libs/libc/CMakeFiles/c.dir/pthread/pthread_attr_setstack.c.o
+[658/1987] Building C object libs/libc/CMakeFiles/c.dir/pthread/pthread_attr_getstack.c.o
+[659/1987] Building C object libs/libc/CMakeFiles/c.dir/pthread/pthread_attr_setschedparam.c.o
+[660/1987] Building C object libs/libc/CMakeFiles/c.dir/pthread/pthread_attr_getschedparam.c.o
+[661/1987] Building C object libs/libc/CMakeFiles/c.dir/pthread/pthread_attr_setscope.c.o
+[662/1987] Building C object libs/libc/CMakeFiles/c.dir/pthread/pthread_attr_getscope.c.o
+[663/1987] Building C object libs/libc/CMakeFiles/c.dir/pthread/pthread_attr_setguardsize.c.o
+[664/1987] Building C object libs/libc/CMakeFiles/c.dir/pthread/pthread_attr_getguardsize.c.o
+[665/1987] Building C object libs/libc/CMakeFiles/c.dir/pthread/pthread_barrierattr_init.c.o
+[666/1987] Building C object libs/libc/CMakeFiles/c.dir/pthread/pthread_barrierattr_setpshared.c.o
+[667/1987] Building C object libs/libc/CMakeFiles/c.dir/pthread/pthread_barrierattr_destroy.c.o
+[668/1987] Building C object libs/libc/CMakeFiles/c.dir/pthread/pthread_barrierattr_getpshared.c.o
+[669/1987] Building C object libs/libc/CMakeFiles/c.dir/pthread/pthread_barrierdestroy.c.o
+[670/1987] Building C object libs/libc/CMakeFiles/c.dir/pthread/pthread_barrierinit.c.o
+[671/1987] Building C object libs/libc/CMakeFiles/c.dir/pthread/pthread_condattr_init.c.o
+[672/1987] Building C object libs/libc/CMakeFiles/c.dir/pthread/pthread_barrierwait.c.o
+[673/1987] Building C object libs/libc/CMakeFiles/c.dir/pthread/pthread_condattr_destroy.c.o
+[674/1987] Building C object libs/libc/CMakeFiles/c.dir/pthread/pthread_condattr_getpshared.c.o
+[675/1987] Building C object libs/libc/CMakeFiles/c.dir/pthread/pthread_condattr_setpshared.c.o
+[676/1987] Building C object libs/libc/CMakeFiles/c.dir/pthread/pthread_condattr_setclock.c.o
+[677/1987] Building C object libs/libc/CMakeFiles/c.dir/pthread/pthread_condattr_getclock.c.o
+[678/1987] Building C object libs/libc/CMakeFiles/c.dir/pthread/pthread_condinit.c.o
+[679/1987] Building C object libs/libc/CMakeFiles/c.dir/pthread/pthread_condbroadcast.c.o
+[680/1987] Building C object libs/libc/CMakeFiles/c.dir/pthread/pthread_condtimedwait.c.o
+[681/1987] Building C object libs/libc/CMakeFiles/c.dir/pthread/pthread_condclockwait.c.o
+[682/1987] Building C object libs/libc/CMakeFiles/c.dir/pthread/pthread_conddestroy.c.o
+[683/1987] Building C object libs/libc/CMakeFiles/c.dir/pthread/pthread_create.c.o
+[684/1987] Building C object libs/libc/CMakeFiles/c.dir/pthread/pthread_condsignal.c.o
+[685/1987] Building C object libs/libc/CMakeFiles/c.dir/pthread/pthread_condwait.c.o
+[686/1987] Building C object libs/libc/CMakeFiles/c.dir/pthread/pthread_equal.c.o
+[687/1987] Building C object libs/libc/CMakeFiles/c.dir/pthread/pthread_kill.c.o
+[688/1987] Building C object libs/libc/CMakeFiles/c.dir/pthread/pthread_exit.c.o
+[689/1987] Building C object libs/libc/CMakeFiles/c.dir/pthread/pthread_setname_np.c.o
+[690/1987] Building C object libs/libc/CMakeFiles/c.dir/pthread/pthread_get_stackaddr_np.c.o
+[691/1987] Building C object libs/libc/CMakeFiles/c.dir/pthread/pthread_getname_np.c.o
+[692/1987] Building C object libs/libc/CMakeFiles/c.dir/pthread/pthread_get_stacksize_np.c.o
+[693/1987] Building C object libs/libc/CMakeFiles/c.dir/pthread/pthread_mutexattr_init.c.o
+[694/1987] Building C object libs/libc/CMakeFiles/c.dir/pthread/pthread_mutexattr_destroy.c.o
+[695/1987] Building C object libs/libc/CMakeFiles/c.dir/pthread/pthread_mutexattr_getpshared.c.o
+[696/1987] Building C object libs/libc/CMakeFiles/c.dir/pthread/pthread_mutexattr_setpshared.c.o
+[697/1987] Building C object libs/libc/CMakeFiles/c.dir/pthread/pthread_mutexattr_setprotocol.c.o
+[698/1987] Building C object libs/libc/CMakeFiles/c.dir/pthread/pthread_mutexattr_getprotocol.c.o
+[699/1987] Building C object libs/libc/CMakeFiles/c.dir/pthread/pthread_mutexattr_settype.c.o
+[700/1987] Building C object libs/libc/CMakeFiles/c.dir/pthread/pthread_mutexattr_gettype.c.o
+[701/1987] Building C object libs/libc/CMakeFiles/c.dir/pthread/pthread_mutexattr_setrobust.c.o
+[702/1987] Building C object libs/libc/CMakeFiles/c.dir/pthread/pthread_mutexattr_getrobust.c.o
+[703/1987] Building C object libs/libc/CMakeFiles/c.dir/pthread/pthread_mutexattr_setprioceiling.c.o
+[704/1987] Building C object libs/libc/CMakeFiles/c.dir/pthread/pthread_mutexattr_getprioceiling.c.o
+[705/1987] Building C object libs/libc/CMakeFiles/c.dir/pthread/pthread_mutex.c.o
+[706/1987] Building C object libs/libc/CMakeFiles/c.dir/pthread/pthread_mutex_destroy.c.o
+[707/1987] Building C object libs/libc/CMakeFiles/c.dir/pthread/pthread_mutex_getprioceiling.c.o
+[708/1987] Building C object libs/libc/CMakeFiles/c.dir/pthread/pthread_mutex_lock.c.o
+[709/1987] Building C object libs/libc/CMakeFiles/c.dir/pthread/pthread_mutex_init.c.o
+[710/1987] Building C object libs/libc/CMakeFiles/c.dir/pthread/pthread_mutex_setprioceiling.c.o
+[711/1987] Building C object libs/libc/CMakeFiles/c.dir/pthread/pthread_mutex_timedlock.c.o
+[712/1987] Building C object libs/libc/CMakeFiles/c.dir/pthread/pthread_mutex_trylock.c.o
+[713/1987] Building C object libs/libc/CMakeFiles/c.dir/pthread/pthread_yield.c.o
+[714/1987] Building C object libs/libc/CMakeFiles/c.dir/pthread/pthread_mutex_unlock.c.o
+[715/1987] Building C object libs/libc/CMakeFiles/c.dir/pthread/pthread_once.c.o
+[716/1987] Building C object libs/libc/CMakeFiles/c.dir/pthread/pthread_atfork.c.o
+[717/1987] Building C object libs/libc/CMakeFiles/c.dir/pthread/pthread_rwlockattr_init.c.o
+[718/1987] Building C object libs/libc/CMakeFiles/c.dir/pthread/pthread_rwlockattr_destroy.c.o
+[719/1987] Building C object libs/libc/CMakeFiles/c.dir/pthread/pthread_rwlockattr_getpshared.c.o
+[720/1987] Building C object libs/libc/CMakeFiles/c.dir/pthread/pthread_rwlockattr_setpshared.c.o
+[721/1987] Building C object libs/libc/CMakeFiles/c.dir/pthread/pthread_rwlock.c.o
+[722/1987] Building C object libs/libc/CMakeFiles/c.dir/pthread/pthread_rwlock_rdlock.c.o
+[723/1987] Building C object libs/libc/CMakeFiles/c.dir/pthread/pthread_setcancelstate.c.o
+[724/1987] Building C object libs/libc/CMakeFiles/c.dir/pthread/pthread_rwlock_wrlock.c.o
+[725/1987] Building C object libs/libc/CMakeFiles/c.dir/pthread/pthread_setcanceltype.c.o
+[726/1987] Building C object libs/libc/CMakeFiles/c.dir/pthread/pthread_testcancel.c.o
+[727/1987] Building C object libs/libc/CMakeFiles/c.dir/pthread/pthread_getcpuclockid.c.o
+[728/1987] Building C object libs/libc/CMakeFiles/c.dir/pthread/pthread_self.c.o
+[729/1987] Building C object libs/libc/CMakeFiles/c.dir/pthread/pthread_gettid_np.c.o
+[730/1987] Building C object libs/libc/CMakeFiles/c.dir/pthread/pthread_mutex_inconsistent.c.o
+[731/1987] Building C object libs/libc/CMakeFiles/c.dir/pthread/pthread_mutex_consistent.c.o
+[732/1987] Building C object libs/libc/CMakeFiles/c.dir/pthread/pthread_concurrency.c.o
+[733/1987] Building C object libs/libc/CMakeFiles/c.dir/pthread/pthread_attr_getaffinity.c.o
+[734/1987] Building C object libs/libc/CMakeFiles/c.dir/pthread/pthread_attr_setaffinity.c.o
+[735/1987] Building C object libs/libc/CMakeFiles/c.dir/sched/sched_getprioritymax.c.o
+[736/1987] Building C object libs/libc/CMakeFiles/c.dir/pwd/lib_getpwent.c.o
+[737/1987] Building C object libs/libc/CMakeFiles/c.dir/sched/sched_getprioritymin.c.o
+[738/1987] Building C object libs/libc/CMakeFiles/c.dir/pwd/lib_getspnam.c.o
+[739/1987] Building C object libs/libc/CMakeFiles/c.dir/pwd/lib_getpwbuf.c.o
+[740/1987] Building C object libs/libc/CMakeFiles/c.dir/sched/clock_getcpuclockid.c.o
+[741/1987] Building C object libs/libc/CMakeFiles/c.dir/sched/task_cancelpt.c.o
+[742/1987] Building C object libs/libc/CMakeFiles/c.dir/sched/task_setcancelstate.c.o
+[743/1987] Building C object libs/libc/CMakeFiles/c.dir/sched/task_setcanceltype.c.o
+[744/1987] Building C object libs/libc/CMakeFiles/c.dir/search/hcreate_r.c.o
+[745/1987] Building C object libs/libc/CMakeFiles/c.dir/sched/task_startup.c.o
+[746/1987] Building C object libs/libc/CMakeFiles/c.dir/sched/task_getpid.c.o
+[747/1987] Building C object libs/libc/CMakeFiles/c.dir/semaphore/sem_init.c.o
+[748/1987] Building C object libs/libc/CMakeFiles/c.dir/search/hcreate.c.o
+[749/1987] Building C object libs/libc/CMakeFiles/c.dir/semaphore/sem_setprotocol.c.o
+[750/1987] Building C object libs/libc/CMakeFiles/c.dir/semaphore/sem_getprotocol.c.o
+[751/1987] Building C object libs/libc/CMakeFiles/c.dir/semaphore/sem_getvalue.c.o
+[752/1987] Building C object libs/libc/CMakeFiles/c.dir/semaphore/sem_destroy.c.o
+[753/1987] Building C object libs/libc/CMakeFiles/c.dir/semaphore/sem_wait.c.o
+[754/1987] Building C object libs/libc/CMakeFiles/c.dir/semaphore/sem_trywait.c.o
+[755/1987] Building C object libs/libc/CMakeFiles/c.dir/semaphore/sem_timedwait.c.o
+[756/1987] Building C object libs/libc/CMakeFiles/c.dir/semaphore/sem_open.c.o
+[757/1987] Building C object libs/libc/CMakeFiles/c.dir/semaphore/sem_clockwait.c.o
+[758/1987] Building C object libs/libc/CMakeFiles/c.dir/semaphore/sem_post.c.o
+[759/1987] Building C object libs/libc/CMakeFiles/c.dir/semaphore/sem_close.c.o
+[760/1987] Building C object libs/libc/CMakeFiles/c.dir/semaphore/sem_unlink.c.o
+[761/1987] Building C object libs/libc/CMakeFiles/c.dir/signal/sig_addset.c.o
+[762/1987] Building C object libs/libc/CMakeFiles/c.dir/signal/sig_delset.c.o
+[763/1987] Building C object libs/libc/CMakeFiles/c.dir/signal/sig_emptyset.c.o
+[764/1987] Building C object libs/libc/CMakeFiles/c.dir/signal/sig_fillset.c.o
+[765/1987] Building C object libs/libc/CMakeFiles/c.dir/signal/sig_isemptyset.c.o
+[766/1987] Building C object libs/libc/CMakeFiles/c.dir/signal/sig_ismember.c.o
+[767/1987] Building C object libs/libc/CMakeFiles/c.dir/signal/sig_nandset.c.o
+[768/1987] Building C object libs/libc/CMakeFiles/c.dir/signal/sig_pause.c.o
+[769/1987] Building C object libs/libc/CMakeFiles/c.dir/signal/sig_raise.c.o
+[770/1987] Building C object libs/libc/CMakeFiles/c.dir/signal/sig_xorset.c.o
+[771/1987] Building C object libs/libc/CMakeFiles/c.dir/spawn/lib_psfa_addclose.c.o
+[772/1987] Building C object libs/libc/CMakeFiles/c.dir/signal/sig_psignal.c.o
+[773/1987] Building C object libs/libc/CMakeFiles/c.dir/spawn/lib_psfa_addopen.c.o
+[774/1987] Building C object libs/libc/CMakeFiles/c.dir/spawn/lib_psfa_destroy.c.o
+[775/1987] Building C object libs/libc/CMakeFiles/c.dir/spawn/lib_psfa_adddup2.c.o
+[776/1987] Building C object libs/libc/CMakeFiles/c.dir/spawn/lib_psa_init.c.o
+[777/1987] Building C object libs/libc/CMakeFiles/c.dir/spawn/lib_psa_destroy.c.o
+[778/1987] Building C object libs/libc/CMakeFiles/c.dir/stdio/lib_fileno.c.o
+[779/1987] Building C object libs/libc/CMakeFiles/c.dir/stdio/lib_sprintf.c.o
+[780/1987] Building C object libs/libc/CMakeFiles/c.dir/stdio/lib_asprintf.c.o
+[781/1987] Building C object libs/libc/CMakeFiles/c.dir/stdio/lib_vsprintf.c.o
+[782/1987] Building C object libs/libc/CMakeFiles/c.dir/stdio/lib_snprintf.c.o
+[783/1987] Building C object libs/libc/CMakeFiles/c.dir/stdio/lib_printf.c.o
+[784/1987] Building C object libs/libc/CMakeFiles/c.dir/stdio/lib_vsnprintf.c.o
+[785/1987] Building C object libs/libc/CMakeFiles/c.dir/stdio/lib_dprintf.c.o
+[786/1987] Building C object libs/libc/CMakeFiles/c.dir/stdio/lib_vdprintf.c.o
+[787/1987] Building C object libs/libc/CMakeFiles/c.dir/stdio/lib_vasprintf.c.o
+[788/1987] Building C object libs/libc/CMakeFiles/c.dir/stdio/lib_vprintf.c.o
+[789/1987] Building C object libs/libc/CMakeFiles/c.dir/stdio/lib_perror.c.o
+[790/1987] Building C object libs/libc/CMakeFiles/c.dir/stdio/lib_putchar.c.o
+[791/1987] Building C object libs/libc/CMakeFiles/c.dir/stdio/lib_sscanf.c.o
+[792/1987] Building C object libs/libc/CMakeFiles/c.dir/stdio/lib_getchar.c.o
+[793/1987] Building C object libs/libc/CMakeFiles/c.dir/stdio/lib_puts.c.o
+[794/1987] Building C object libs/libc/CMakeFiles/c.dir/stdio/lib_gets_s.c.o
+[795/1987] Building C object libs/libc/CMakeFiles/c.dir/stdio/lib_vsscanf.c.o
+[796/1987] Building C object libs/libc/CMakeFiles/c.dir/stdio/lib_gets.c.o
+[797/1987] Building C object libs/libc/CMakeFiles/c.dir/stdio/lib_libdgets.c.o
+[798/1987] Building C object libs/libc/CMakeFiles/c.dir/stdio/lib_tempnam.c.o
+[799/1987] Building C object libs/libc/CMakeFiles/c.dir/stdio/lib_remove.c.o
+[800/1987] Building C object libs/libc/CMakeFiles/c.dir/stdio/lib_tmpnam.c.o
+[801/1987] Building C object libs/libc/CMakeFiles/c.dir/stdio/lib_renameat.c.o
+[802/1987] Building C object libs/libc/CMakeFiles/c.dir/stdio/lib_fread.c.o
+[803/1987] Building C object libs/libc/CMakeFiles/c.dir/stdio/lib_putwchar.c.o
+[804/1987] Building C object libs/libc/CMakeFiles/c.dir/stdio/lib_fseek.c.o
+[805/1987] Building C object libs/libc/CMakeFiles/c.dir/stdio/lib_libfread_unlocked.c.o
+[806/1987] Building C object libs/libc/CMakeFiles/c.dir/stdio/lib_freopen.c.o
+[807/1987] Building C object libs/libc/CMakeFiles/c.dir/stdio/lib_ftell.c.o
+[808/1987] Building C object libs/libc/CMakeFiles/c.dir/stdio/lib_fopen.c.o
+[809/1987] Building C object libs/libc/CMakeFiles/c.dir/stdio/lib_fclose.c.o
+[810/1987] Building C object libs/libc/CMakeFiles/c.dir/stdio/lib_fseeko.c.o
+[811/1987] Building C object libs/libc/CMakeFiles/c.dir/stdio/lib_ftello.c.o
+[812/1987] Building C object libs/libc/CMakeFiles/c.dir/stdio/lib_fsetpos.c.o
+[813/1987] Building C object libs/libc/CMakeFiles/c.dir/stdio/lib_getdelim.c.o
+[814/1987] Building C object libs/libc/CMakeFiles/c.dir/stdio/lib_getc.c.o
+[815/1987] Building C object libs/libc/CMakeFiles/c.dir/stdio/lib_fgetpos.c.o
+[816/1987] Building C object libs/libc/CMakeFiles/c.dir/stdio/lib_fgetc.c.o
+[817/1987] Building C object libs/libc/CMakeFiles/c.dir/stdio/lib_fwrite.c.o
+[818/1987] Building C object libs/libc/CMakeFiles/c.dir/stdio/lib_fgets.c.o
+[819/1987] Building C object libs/libc/CMakeFiles/c.dir/stdio/lib_fflush.c.o
+[820/1987] Building C object libs/libc/CMakeFiles/c.dir/stdio/lib_libfwrite.c.o
+[821/1987] Building C object libs/libc/CMakeFiles/c.dir/stdio/lib_libfgets.c.o
+[822/1987] Building C object libs/libc/CMakeFiles/c.dir/stdio/lib_libflushall.c.o
+[823/1987] Building C object libs/libc/CMakeFiles/c.dir/stdio/lib_wrflush_unlocked.c.o
+[824/1987] Building C object libs/libc/CMakeFiles/c.dir/stdio/lib_libfflush.c.o
+[825/1987] Building C object libs/libc/CMakeFiles/c.dir/stdio/lib_rdflush_unlocked.c.o
+[826/1987] Building C object libs/libc/CMakeFiles/c.dir/stdio/lib_putc.c.o
+[827/1987] Building C object libs/libc/CMakeFiles/c.dir/stdio/lib_fputc.c.o
+[828/1987] Building C object libs/libc/CMakeFiles/c.dir/stdio/lib_fprintf.c.o
+[829/1987] Building C object libs/libc/CMakeFiles/c.dir/stdio/lib_ungetc.c.o
+[830/1987] Building C object libs/libc/CMakeFiles/c.dir/stdio/lib_fputs.c.o
+[831/1987] Building C object libs/libc/CMakeFiles/c.dir/stdio/lib_vfprintf.c.o
+[832/1987] Building C object libs/libc/CMakeFiles/c.dir/stdio/lib_feof.c.o
+[833/1987] Building C object libs/libc/CMakeFiles/c.dir/stdio/lib_ferror.c.o
+[834/1987] Building C object libs/libc/CMakeFiles/c.dir/stdio/lib_clearerr.c.o
+[835/1987] Building C object libs/libc/CMakeFiles/c.dir/stdio/lib_rewind.c.o
+[836/1987] Building C object libs/libc/CMakeFiles/c.dir/stdio/lib_scanf.c.o
+[837/1987] Building C object libs/libc/CMakeFiles/c.dir/stdio/lib_vscanf.c.o
+[838/1987] Building C object libs/libc/CMakeFiles/c.dir/stdio/lib_fscanf.c.o
+[839/1987] Building C object libs/libc/CMakeFiles/c.dir/stdio/lib_vfscanf.c.o
+[840/1987] Building C object libs/libc/CMakeFiles/c.dir/stdio/lib_setbuf.c.o
+[841/1987] Building C object libs/libc/CMakeFiles/c.dir/stdio/lib_tmpfile.c.o
+[842/1987] Building C object libs/libc/CMakeFiles/c.dir/stdio/lib_setvbuf.c.o
+[843/1987] Building C object libs/libc/CMakeFiles/c.dir/stdio/lib_libfilelock.c.o
+[844/1987] Building C object libs/libc/CMakeFiles/c.dir/stdio/lib_putwc.c.o
+[845/1987] Building C object libs/libc/CMakeFiles/c.dir/stdio/lib_setbuffer.c.o
+[846/1987] Building C object libs/libc/CMakeFiles/c.dir/stdio/lib_fputwc.c.o
+[847/1987] Building C object libs/libc/CMakeFiles/c.dir/stdio/lib_fputws.c.o
+[848/1987] Building C object libs/libc/CMakeFiles/c.dir/stdio/lib_libgetstreams.c.o
+[849/1987] Building C object libs/libc/CMakeFiles/c.dir/stdio/lib_fmemopen.c.o
+[850/1987] Building C object libs/libc/CMakeFiles/c.dir/stdio/lib_fopencookie.c.o
+[851/1987] Building C object libs/libc/CMakeFiles/c.dir/stdio/lib_fgetwc.c.o
+[852/1987] Building C object libs/libc/CMakeFiles/c.dir/stdio/lib_open_memstream.c.o
+[853/1987] Building C object libs/libc/CMakeFiles/c.dir/stdio/lib_getwc.c.o
+[854/1987] Building C object libs/libc/CMakeFiles/c.dir/stdio/lib_ungetwc.c.o
+[855/1987] Building C object libs/libc/CMakeFiles/c.dir/stdlib/lib_rand.c.o
+[856/1987] Building C object libs/libc/CMakeFiles/c.dir/stdlib/lib_abort.c.o
+[857/1987] Building C object libs/libc/CMakeFiles/c.dir/stdlib/lib_getprogname.c.o
+[858/1987] Building C object libs/libc/CMakeFiles/c.dir/stdlib/lib_realpath.c.o
+[859/1987] Building C object libs/libc/CMakeFiles/c.dir/stdlib/lib_strtol.c.o
+[860/1987] Building C object libs/libc/CMakeFiles/c.dir/stdlib/lib_rand48.c.o
+[861/1987] Building C object libs/libc/CMakeFiles/c.dir/stdlib/lib_exit.c.o
+[862/1987] Building C object libs/libc/CMakeFiles/c.dir/stdlib/lib_strtoll.c.o
+[863/1987] Building C object libs/libc/CMakeFiles/c.dir/stdlib/lib_reallocarray.c.o
+[864/1987] Building C object libs/libc/CMakeFiles/c.dir/stdlib/lib_strtoul.c.o
+[865/1987] Building C object libs/libc/CMakeFiles/c.dir/stdlib/lib_srand.c.o
+[866/1987] Building C object libs/libc/CMakeFiles/c.dir/stdlib/lib_strtoull.c.o
+[867/1987] Building C object libs/libc/CMakeFiles/c.dir/stdlib/lib_checkbase.c.o
+[868/1987] Building C object libs/libc/CMakeFiles/c.dir/stdlib/lib_mktemp.c.o
+[869/1987] Building C object libs/libc/CMakeFiles/c.dir/stdlib/lib_aligned_alloc.c.o
+[870/1987] Building C object libs/libc/CMakeFiles/c.dir/stdlib/lib_mkstemp.c.o
+[871/1987] Building C object libs/libc/CMakeFiles/c.dir/stdlib/lib_posix_memalign.c.o
+[872/1987] Building C object libs/libc/CMakeFiles/c.dir/stdlib/lib_strtold.c.o
+[873/1987] Building C object libs/libc/CMakeFiles/c.dir/stdlib/lib_mblen.c.o
+[874/1987] Building C object libs/libc/CMakeFiles/c.dir/stdlib/lib_mkdtemp.c.o
+[875/1987] Building C object libs/libc/CMakeFiles/c.dir/stdlib/lib_mbtowc.c.o
+[876/1987] Building C object libs/libc/CMakeFiles/c.dir/stdlib/lib_wctomb.c.o
+[877/1987] Building C object libs/libc/CMakeFiles/c.dir/stdlib/lib_valloc.c.o
+[878/1987] Building C object libs/libc/CMakeFiles/c.dir/stdlib/lib_mbstowcs.c.o
+[879/1987] Building C object libs/libc/CMakeFiles/c.dir/stdlib/lib_wcstombs.c.o
+[880/1987] Building C object libs/libc/CMakeFiles/c.dir/stream/lib_memsostream.c.o
+[881/1987] Building C object libs/libc/CMakeFiles/c.dir/stdlib/lib_ptsnamer.c.o
+[882/1987] Building C object libs/libc/CMakeFiles/c.dir/stream/lib_meminstream.c.o
+[883/1987] Building C object libs/libc/CMakeFiles/c.dir/stream/lib_memoutstream.c.o
+[884/1987] Building C object libs/libc/CMakeFiles/c.dir/stream/lib_memsistream.c.o
+[885/1987] Building C object libs/libc/CMakeFiles/c.dir/stdlib/lib_atexit.c.o
+[886/1987] Building C object libs/libc/CMakeFiles/c.dir/stdlib/lib_openpty.c.o
+[887/1987] Building C object libs/libc/CMakeFiles/c.dir/stream/lib_lowoutstream.c.o
+[888/1987] Building C object libs/libc/CMakeFiles/c.dir/stream/lib_rawinstream.c.o
+[889/1987] Building C object libs/libc/CMakeFiles/c.dir/stream/lib_rawoutstream.c.o
+[890/1987] Building C object libs/libc/CMakeFiles/c.dir/stream/lib_rawsistream.c.o
+[891/1987] Building C object libs/libc/CMakeFiles/c.dir/stream/lib_rawsostream.c.o
+[892/1987] Building C object libs/libc/CMakeFiles/c.dir/stream/lib_zeroinstream.c.o
+[893/1987] Building C object libs/libc/CMakeFiles/c.dir/stream/lib_nullinstream.c.o
+[894/1987] Building C object libs/libc/CMakeFiles/c.dir/stream/lib_nulloutstream.c.o
+[895/1987] Building C object libs/libc/CMakeFiles/c.dir/stream/lib_mtdoutstream.c.o
+[896/1987] Building C object libs/libc/CMakeFiles/c.dir/stream/lib_libnoflush.c.o
+[897/1987] Building C object libs/libc/CMakeFiles/c.dir/stream/lib_mtdsostream.c.o
+[898/1987] Building C object libs/libc/CMakeFiles/c.dir/stream/lib_hexdumpstream.c.o
+[899/1987] Building C object libs/libc/CMakeFiles/c.dir/stream/lib_libsnoflush.c.o
+[900/1987] Building C object libs/libc/CMakeFiles/c.dir/stream/lib_base64outstream.c.o
+[901/1987] Building C object libs/libc/CMakeFiles/c.dir/stream/lib_bufferedoutstream.c.o
+[902/1987] Building C object libs/libc/CMakeFiles/c.dir/stream/lib_syslogstream.c.o
+[903/1987] Building C object libs/libc/CMakeFiles/c.dir/stream/lib_filesistream.c.o
+[904/1987] Building C object libs/libc/CMakeFiles/c.dir/stream/lib_libbsprintf.c.o
+[905/1987] Building C object libs/libc/CMakeFiles/c.dir/stream/lib_libosprintf.c.o
+[906/1987] Building C object libs/libc/CMakeFiles/c.dir/stream/lib_fileoutstream.c.o
+[907/1987] Building C object libs/libc/CMakeFiles/c.dir/stream/lib_syslograwstream.c.o
+[908/1987] Building C object libs/libc/CMakeFiles/c.dir/stream/lib_stdoutstream.c.o
+[909/1987] Building C object libs/libc/CMakeFiles/c.dir/stream/lib_libvscanf.c.o
+[910/1987] Building C object libs/libc/CMakeFiles/c.dir/stream/lib_stdinstream.c.o
+[911/1987] Building C object libs/libc/CMakeFiles/c.dir/stream/lib_libvsprintf.c.o
+[912/1987] Building C object libs/libc/CMakeFiles/c.dir/stream/lib_stdsistream.c.o
+[913/1987] Building C object libs/libc/CMakeFiles/c.dir/stream/lib_stdsostream.c.o
+[914/1987] Building C object libs/libc/CMakeFiles/c.dir/stream/lib_blkoutstream.c.o
+[915/1987] Building C object libs/libc/CMakeFiles/c.dir/string/lib_isbasedigit.c.o
+[916/1987] Building C object libs/libc/CMakeFiles/c.dir/string/lib_skipspace.c.o
+[917/1987] Building C object libs/libc/CMakeFiles/c.dir/string/lib_strcasecmp.c.o
+[918/1987] Building C object libs/libc/CMakeFiles/c.dir/string/lib_strerror.c.o
+[919/1987] Building C object libs/libc/CMakeFiles/c.dir/string/lib_strncat.c.o
+[920/1987] Building C object libs/libc/CMakeFiles/c.dir/string/lib_strncasecmp.c.o
+[921/1987] Building C object libs/libc/CMakeFiles/c.dir/string/lib_strdup.c.o
+[922/1987] Building C object libs/libc/CMakeFiles/c.dir/string/lib_strsignal.c.o
+[923/1987] Building C object libs/libc/CMakeFiles/c.dir/string/lib_memmove.c.o
+[924/1987] Building C object libs/libc/CMakeFiles/c.dir/string/lib_strndup.c.o
+[925/1987] Building C object libs/libc/CMakeFiles/c.dir/string/lib_strtok.c.o
+[926/1987] Building C object libs/libc/CMakeFiles/c.dir/string/lib_strlcat.c.o
+[927/1987] Building C object libs/libc/CMakeFiles/c.dir/string/lib_strlcpy.c.o
+[928/1987] Building C object libs/libc/CMakeFiles/c.dir/string/lib_memcpy.c.o
+[929/1987] Building C object libs/libc/CMakeFiles/c.dir/string/lib_strnlen.c.o
+[930/1987] Building C object libs/libc/CMakeFiles/c.dir/string/lib_memcmp.c.o
+[931/1987] Building C object libs/libc/CMakeFiles/c.dir/string/lib_memset.c.o
+[932/1987] Building C object libs/libc/CMakeFiles/c.dir/string/lib_strchr.c.o
+[933/1987] Building C object libs/libc/CMakeFiles/c.dir/string/lib_strcmp.c.o
+[934/1987] Building C object libs/libc/CMakeFiles/c.dir/string/lib_strlen.c.o
+[935/1987] Building C object libs/libc/CMakeFiles/c.dir/string/lib_strncpy.c.o
+[936/1987] Building C object libs/libc/CMakeFiles/c.dir/string/lib_memchr.c.o
+[937/1987] Building C object libs/libc/CMakeFiles/c.dir/string/lib_strcat.c.o
+[938/1987] Building C object libs/libc/CMakeFiles/c.dir/string/lib_strchrnul.c.o
+[939/1987] Building C object libs/libc/CMakeFiles/c.dir/string/lib_strcpy.c.o
+[940/1987] Building C object libs/libc/CMakeFiles/c.dir/string/lib_strncmp.c.o
+[941/1987] Building C object libs/libc/CMakeFiles/c.dir/string/lib_strrchr.c.o
+[942/1987] Building C object libs/libc/CMakeFiles/c.dir/symtab/symtab_findbyname.c.o
+[943/1987] Building C object libs/libc/CMakeFiles/c.dir/symtab/symtab_findbyvalue.c.o
+[944/1987] Building C object libs/libc/CMakeFiles/c.dir/termios/lib_isatty.c.o
+[945/1987] Building C object libs/libc/CMakeFiles/c.dir/termios/lib_ttynamer.c.o
+[946/1987] Building C object libs/libc/CMakeFiles/c.dir/syslog/lib_setlogmask.c.o
+[947/1987] Building C object libs/libc/CMakeFiles/c.dir/termios/lib_ttyname.c.o
+[948/1987] Building C object libs/libc/CMakeFiles/c.dir/syslog/lib_syslog.c.o
+[949/1987] Building C object libs/libc/CMakeFiles/c.dir/time/lib_strftime.c.o
+[950/1987] Building C object libs/libc/CMakeFiles/c.dir/time/lib_asctimer.c.o
+[951/1987] Building C object libs/libc/CMakeFiles/c.dir/time/lib_calendar2utc.c.o
+[952/1987] Building C object libs/libc/CMakeFiles/c.dir/time/lib_asctime.c.o
+[953/1987] Building C object libs/libc/CMakeFiles/c.dir/time/lib_localtime.c.o
+[954/1987] Building C object libs/libc/CMakeFiles/c.dir/tls/tls_getinfo.c.o
+[955/1987] Building C object libs/libc/CMakeFiles/c.dir/tls/task_tls.c.o
+[956/1987] Building C object libs/libc/CMakeFiles/c.dir/uio/lib_preadv.c.o
+[957/1987] Building C object libs/libc/CMakeFiles/c.dir/uio/lib_pwritev.c.o
+[958/1987] Building C object libs/libc/CMakeFiles/c.dir/tls/tls_destruct.c.o
+[959/1987] Building C object libs/libc/CMakeFiles/c.dir/unistd/lib_swab.c.o
+[960/1987] Building C object libs/libc/CMakeFiles/c.dir/unistd/lib_access.c.o
+[961/1987] Building C object libs/libc/CMakeFiles/c.dir/unistd/lib_pathconf.c.o
+[962/1987] Building C object libs/libc/CMakeFiles/c.dir/tls/task_tls_destruct.c.o
+[963/1987] Building C object libs/libc/CMakeFiles/c.dir/unistd/lib_daemon.c.o
+[964/1987] Building C object libs/libc/CMakeFiles/c.dir/unistd/lib_sysconf.c.o
+[965/1987] Building C object libs/libc/CMakeFiles/c.dir/unistd/lib_getcwd.c.o
+[966/1987] Building C object libs/libc/CMakeFiles/c.dir/unistd/lib_getentropy.c.o
+[967/1987] Building C object libs/libc/CMakeFiles/c.dir/unistd/lib_getopt.c.o
+[968/1987] Building C object libs/libc/CMakeFiles/c.dir/unistd/lib_getopt_long.c.o
+[969/1987] Building C object libs/libc/CMakeFiles/c.dir/unistd/lib_getopt_common.c.o
+[970/1987] Building C object libs/libc/CMakeFiles/c.dir/unistd/lib_getoptargp.c.o
+[971/1987] Building C object libs/libc/CMakeFiles/c.dir/unistd/lib_getopt_longonly.c.o
+[972/1987] Building C object libs/libc/CMakeFiles/c.dir/unistd/lib_getoptvars.c.o
+[973/1987] Building C object libs/libc/CMakeFiles/c.dir/unistd/lib_getopterrp.c.o
+[974/1987] Building C object libs/libc/CMakeFiles/c.dir/unistd/lib_getoptindp.c.o
+[975/1987] Building C object libs/libc/CMakeFiles/c.dir/unistd/lib_alarm.c.o
+[976/1987] Building C object libs/libc/CMakeFiles/c.dir/unistd/lib_getoptoptp.c.o
+[977/1987] Building C object libs/libc/CMakeFiles/c.dir/unistd/lib_sleep.c.o
+[978/1987] Building C object libs/libc/CMakeFiles/c.dir/unistd/lib_nice.c.o
+[979/1987] Building C object libs/libc/CMakeFiles/c.dir/unistd/lib_setregid.c.o
+[980/1987] Building C object libs/libc/CMakeFiles/c.dir/unistd/lib_setreuid.c.o
+[981/1987] Building C object libs/libc/CMakeFiles/c.dir/unistd/lib_utimes.c.o
+[982/1987] Building C object libs/libc/CMakeFiles/c.dir/unistd/lib_setpriority.c.o
+[983/1987] Building C object libs/libc/CMakeFiles/c.dir/unistd/lib_getrlimit.c.o
+[984/1987] Building C object libs/libc/CMakeFiles/c.dir/unistd/lib_getpriority.c.o
+[985/1987] Building C object libs/libc/CMakeFiles/c.dir/unistd/lib_gethostname.c.o
+[986/1987] Building C object libs/libc/CMakeFiles/c.dir/unistd/lib_sethostname.c.o
+[987/1987] Building C object libs/libc/CMakeFiles/c.dir/unistd/lib_fchownat.c.o
+[988/1987] Building C object libs/libc/CMakeFiles/c.dir/unistd/lib_linkat.c.o
+[989/1987] Building C object libs/libc/CMakeFiles/c.dir/unistd/lib_readlinkat.c.o
+[990/1987] Building C object libs/libc/CMakeFiles/c.dir/unistd/lib_symlinkat.c.o
+[991/1987] Building C object libs/libc/CMakeFiles/c.dir/unistd/lib_getpgrp.c.o
+[992/1987] Building C object libs/libc/CMakeFiles/c.dir/unistd/lib_usleep.c.o
+[993/1987] Building C object libs/libc/CMakeFiles/c.dir/unistd/lib_unlinkat.c.o
+[994/1987] Building C object libs/libc/CMakeFiles/c.dir/unistd/lib_lockf.c.o
+[995/1987] Building C object libs/libc/CMakeFiles/c.dir/unistd/lib_getpgid.c.o
+[996/1987] Building C object libs/libc/CMakeFiles/c.dir/unistd/lib_flock.c.o
+[997/1987] Building C object libs/libc/CMakeFiles/c.dir/unistd/lib_confstr.c.o
+[998/1987] Building C object libs/libc/CMakeFiles/c.dir/unistd/lib_setuid.c.o
+[999/1987] Building C object libs/libc/CMakeFiles/c.dir/unistd/lib_setgid.c.o
+[1000/1987] Building C object libs/libc/CMakeFiles/c.dir/unistd/lib_getuid.c.o
+[1001/1987] Building C object libs/libc/CMakeFiles/c.dir/unistd/lib_getpass.c.o
+[1002/1987] Building C object libs/libc/CMakeFiles/c.dir/unistd/lib_getgid.c.o
+[1003/1987] Building C object libs/libc/CMakeFiles/c.dir/unistd/lib_seteuid.c.o
+[1004/1987] Building C object libs/libc/CMakeFiles/c.dir/unistd/lib_setegid.c.o
+[1005/1987] Building C object libs/libc/CMakeFiles/c.dir/unistd/lib_geteuid.c.o
+[1006/1987] Building C object libs/libc/CMakeFiles/c.dir/unistd/lib_getegid.c.o
+[1007/1987] Building C object libs/libc/CMakeFiles/c.dir/unistd/lib_chdir.c.o
+[1008/1987] Building C object libs/libc/CMakeFiles/c.dir/unistd/lib_fchdir.c.o
+[1009/1987] Building C object libs/libc/CMakeFiles/c.dir/unistd/lib_execl.c.o
+[1010/1987] Building C object libs/libc/CMakeFiles/c.dir/unistd/lib_restoredir.c.o
+[1011/1987] Building C object libs/libc/CMakeFiles/c.dir/unistd/lib_execle.c.o
+[1012/1987] Building C object libs/libc/CMakeFiles/c.dir/unistd/lib_execv.c.o
+[1013/1987] Building C object libs/libc/CMakeFiles/c.dir/unistd/lib_truncate.c.o
+[1014/1987] Building C object libs/libc/CMakeFiles/c.dir/unistd/lib_posix_fallocate.c.o
+[1015/1987] Building C object libs/libc/CMakeFiles/c.dir/unistd/lib_pipe.c.o
+[1016/1987] Building C object libs/libc/CMakeFiles/c.dir/uuid/lib_uuid_from_string.c.o
+[1017/1987] Building C object libs/libc/CMakeFiles/c.dir/uuid/lib_uuid_to_string.c.o
+[1018/1987] Building C object libs/libc/CMakeFiles/c.dir/unistd/lib_crypt.c.o
+[1019/1987] Building C object libs/libc/CMakeFiles/c.dir/unistd/lib_crypt_r.c.o
+[1020/1987] Building C object libs/libc/CMakeFiles/c.dir/wchar/lib_wcslen.c.o
+[1021/1987] Building C object libs/libc/CMakeFiles/c.dir/wchar/lib_wcscmp.c.o
+[1022/1987] Building C object libs/libc/CMakeFiles/c.dir/unistd/lib_fork.c.o
+[1023/1987] Building C object libs/libc/CMakeFiles/c.dir/wchar/lib_wmemchr.c.o
+[1024/1987] Building C object libs/libc/CMakeFiles/c.dir/wchar/lib_wmemcmp.c.o
+[1025/1987] Building C object libs/libc/CMakeFiles/c.dir/wchar/lib_wmemcpy.c.o
+[1026/1987] Building C object libs/libc/CMakeFiles/c.dir/wchar/lib_wmemmove.c.o
+[1027/1987] Building C object libs/libc/CMakeFiles/c.dir/wchar/lib_wctob.c.o
+[1028/1987] Building C object libs/libc/CMakeFiles/c.dir/wchar/lib_wmemset.c.o
+[1029/1987] Building C object libs/libc/CMakeFiles/c.dir/wchar/lib_btowc.c.o
+[1030/1987] Building C object libs/libc/CMakeFiles/c.dir/wchar/lib_mbrtowc.c.o
+[1031/1987] Building C object libs/libc/CMakeFiles/c.dir/wchar/lib_wcslcpy.c.o
+[1032/1987] Building C object libs/libc/CMakeFiles/c.dir/wchar/lib_wcsxfrm.c.o
+[1033/1987] Building C object libs/libc/CMakeFiles/c.dir/wchar/lib_wcrtomb.c.o
+[1034/1987] Building C object libs/libc/CMakeFiles/c.dir/wchar/lib_wcscoll.c.o
+[1035/1987] Building C object libs/libc/CMakeFiles/c.dir/wchar/lib_wcsftime.c.o
+[1036/1987] Building C object libs/libc/CMakeFiles/c.dir/wchar/lib_wcstol.c.o
+[1037/1987] Building C object libs/libc/CMakeFiles/c.dir/wchar/lib_wcstoll.c.o
+[1038/1987] Building C object libs/libc/CMakeFiles/c.dir/wchar/lib_wcstoul.c.o
+[1039/1987] Building C object libs/libc/CMakeFiles/c.dir/wchar/lib_wcstold.c.o
+[1040/1987] Building C object libs/libc/CMakeFiles/c.dir/wchar/lib_wcstoull.c.o
+[1041/1987] Building C object libs/libc/CMakeFiles/c.dir/wchar/lib_wcstof.c.o
+[1042/1987] Building C object libs/libc/CMakeFiles/c.dir/wchar/lib_wcstod.c.o
+[1043/1987] Building C object libs/libc/CMakeFiles/c.dir/wchar/lib_mbsnrtowcs.c.o
+[1044/1987] Building C object libs/libc/CMakeFiles/c.dir/wchar/lib_swprintf.c.o
+[1045/1987] Building C object libs/libc/CMakeFiles/c.dir/wchar/lib_wcsnrtombs.c.o
+[1046/1987] Building C object libs/libc/CMakeFiles/c.dir/wchar/lib_mbsinit.c.o
+[1047/1987] Building C object libs/libc/CMakeFiles/c.dir/wchar/lib_mbrlen.c.o
+[1048/1987] Building C object libs/libc/CMakeFiles/c.dir/wchar/lib_mbsrtowcs.c.o
+[1049/1987] Building C object libs/libc/CMakeFiles/c.dir/wchar/lib_wcsrtombs.c.o
+[1050/1987] Building C object libs/libc/CMakeFiles/c.dir/wchar/lib_wcscpy.c.o
+[1051/1987] Building C object libs/libc/CMakeFiles/c.dir/wchar/lib_wcslcat.c.o
+[1052/1987] Building C object libs/libc/CMakeFiles/c.dir/wchar/lib_wcscat.c.o
+[1053/1987] Building C object libs/libc/CMakeFiles/c.dir/wchar/lib_wcsncat.c.o
+[1054/1987] Building C object libs/libc/CMakeFiles/c.dir/wchar/lib_wcsrchr.c.o
+[1055/1987] Building C object libs/libc/CMakeFiles/c.dir/wchar/lib_wcschr.c.o
+[1056/1987] Building C object libs/libc/CMakeFiles/c.dir/wchar/lib_wcsncpy.c.o
+[1057/1987] Building C object libs/libc/CMakeFiles/c.dir/wchar/lib_wcsncmp.c.o
+[1058/1987] Building C object libs/libc/CMakeFiles/c.dir/wchar/lib_wcscspn.c.o
+[1059/1987] Building C object libs/libc/CMakeFiles/c.dir/wchar/lib_wcspbrk.c.o
+[1060/1987] Building C object libs/libc/CMakeFiles/c.dir/wchar/lib_wcsspn.c.o
+[1061/1987] Building C object libs/libc/CMakeFiles/c.dir/wchar/lib_wcsstr.c.o
+[1062/1987] Building C object libs/libc/CMakeFiles/c.dir/wchar/lib_wcstok.c.o
+[1063/1987] Building C object libs/libc/CMakeFiles/c.dir/wchar/lib_wcswcs.c.o
+[1064/1987] Building C object libs/libc/CMakeFiles/c.dir/wchar/lib_wcwidth.c.o
+[1065/1987] Building C object libs/libc/CMakeFiles/c.dir/wchar/lib_wcswidth.c.o
+[1066/1987] Building CXX object libs/libxx/libcxx/CMakeFiles/libcxx.dir/libcxx/src/condition_variable_destructor.cpp.o
+[1067/1987] Building CXX object libs/libxx/libcxx/CMakeFiles/libcxx.dir/libcxx/src/charconv.cpp.o
+[1068/1987] Building CXX object libs/libxx/libcxx/CMakeFiles/libcxx.dir/libcxx/src/exception.cpp.o
+[1069/1987] Building CXX object libs/libxx/libcxx/CMakeFiles/libcxx.dir/libcxx/src/any.cpp.o
+[1070/1987] Building CXX object libs/libxx/libcxx/CMakeFiles/libcxx.dir/libcxx/src/chrono.cpp.o
+[1071/1987] Building CXX object libs/libxx/libcxx/CMakeFiles/libcxx.dir/libcxx/src/bind.cpp.o
+[1072/1987] Building CXX object libs/libxx/libcxx/CMakeFiles/libcxx.dir/libcxx/src/barrier.cpp.o
+[1073/1987] Building CXX object libs/libxx/libcxx/CMakeFiles/libcxx.dir/libcxx/src/atomic.cpp.o
+[1074/1987] Building CXX object libs/libxx/libcxx/CMakeFiles/libcxx.dir/libcxx/src/algorithm.cpp.o
+[1075/1987] Building CXX object libs/libxx/libcxx/CMakeFiles/libcxx.dir/libcxx/src/condition_variable.cpp.o
+[1076/1987] Building CXX object libs/libxx/libcxx/CMakeFiles/libcxx.dir/libcxx/src/functional.cpp.o
+[1077/1987] Building CXX object libs/libxx/libcxx/CMakeFiles/libcxx.dir/libcxx/src/future.cpp.o
+[1078/1987] Building CXX object libs/libxx/libcxx/CMakeFiles/libcxx.dir/libcxx/src/mutex_destructor.cpp.o
+[1079/1987] Building CXX object libs/libxx/libcxx/CMakeFiles/libcxx.dir/libcxx/src/hash.cpp.o
+[1080/1987] Building CXX object libs/libxx/libcxx/CMakeFiles/libcxx.dir/libcxx/src/legacy_pointer_safety.cpp.o
+[1081/1987] Building CXX object libs/libxx/libcxx/CMakeFiles/libcxx.dir/libcxx/src/legacy_debug_handler.cpp.o
+[1082/1987] Building CXX object libs/libxx/libcxx/CMakeFiles/libcxx.dir/libcxx/src/new_handler.cpp.o
+[1083/1987] Building CXX object libs/libxx/libcxx/CMakeFiles/libcxx.dir/libcxx/src/optional.cpp.o
+[1084/1987] Building CXX object libs/libxx/libcxx/CMakeFiles/libcxx.dir/libcxx/src/memory_resource.cpp.o
+[1085/1987] Building CXX object libs/libxx/libcxx/CMakeFiles/libcxx.dir/libcxx/src/mutex.cpp.o
+[1086/1987] Building CXX object libs/libxx/libcxx/CMakeFiles/libcxx.dir/libcxx/src/memory.cpp.o
+[1087/1987] Building CXX object libs/libxx/libcxx/CMakeFiles/libcxx.dir/libcxx/src/print.cpp.o
+[1088/1987] Building CXX object libs/libxx/libcxx/CMakeFiles/libcxx.dir/libcxx/src/verbose_abort.cpp.o
+[1089/1987] Building CXX object libs/libxx/libcxx/CMakeFiles/libcxx.dir/libcxx/src/random.cpp.o
+[1090/1987] Building CXX object libs/libxx/libcxx/CMakeFiles/libcxx.dir/libcxx/src/random_shuffle.cpp.o
+[1091/1987] Building CXX object libs/libxx/libcxx/CMakeFiles/libcxx.dir/libcxx/src/stdexcept.cpp.o
+[1092/1987] Building CXX object libs/libxx/libcxx/CMakeFiles/libcxx.dir/libcxx/src/shared_mutex.cpp.o
+[1093/1987] Building CXX object libs/libxx/libcxx/CMakeFiles/libcxx.dir/libcxx/src/variant.cpp.o
+[1094/1987] Building CXX object libs/libxx/libcxx/CMakeFiles/libcxx.dir/libcxx/src/string.cpp.o
+[1095/1987] Building CXX object libs/libxx/libcxx/CMakeFiles/libcxx.dir/libcxx/src/system_error.cpp.o
+[1096/1987] Building CXX object libs/libxx/libcxxabi/CMakeFiles/libcxxabi.dir/libcxxabi/src/abort_message.cpp.o
+[1097/1987] Building CXX object libs/libxx/libcxx/CMakeFiles/libcxx.dir/libcxx/src/valarray.cpp.o
+[1098/1987] Building CXX object libs/libxx/libcxx/CMakeFiles/libcxx.dir/libcxx/src/thread.cpp.o
+[1099/1987] Building CXX object libs/libxx/libcxxabi/CMakeFiles/libcxxabi.dir/libcxxabi/src/cxa_default_handlers.cpp.o
+[1100/1987] Building C object mm/CMakeFiles/mm.dir/iob/iob_add_queue.c.o
+[1101/1987] Building CXX object libs/libxx/libcxx/CMakeFiles/libcxx.dir/libcxx/src/vector.cpp.o
+[1102/1987] Building C object mm/CMakeFiles/mm.dir/iob/iob_alloc.c.o
+[1103/1987] Building CXX object libs/libxx/libcxxabi/CMakeFiles/libcxxabi.dir/libcxxabi/src/cxa_thread_atexit.cpp.o
+[1104/1987] Building C object mm/CMakeFiles/mm.dir/iob/iob_alloc_qentry.c.o
+[1105/1987] Building CXX object libs/libxx/libcxxabi/CMakeFiles/libcxxabi.dir/libcxxabi/src/cxa_guard.cpp.o
+[1106/1987] Building CXX object libs/libxx/libcxxabi/CMakeFiles/libcxxabi.dir/libcxxabi/src/fallback_malloc.cpp.o
+[1107/1987] Building C object mm/CMakeFiles/mm.dir/iob/iob_clone.c.o
+[1108/1987] Building CXX object libs/libxx/libcxxabi/CMakeFiles/libcxxabi.dir/libcxxabi/src/cxa_handlers.cpp.o
+[1109/1987] Building C object mm/CMakeFiles/mm.dir/iob/iob_concat.c.o
+[1110/1987] Building C object mm/CMakeFiles/mm.dir/iob/iob_copyin.c.o
+[1111/1987] Building C object mm/CMakeFiles/mm.dir/iob/iob_copyout.c.o
+[1112/1987] Building C object mm/CMakeFiles/mm.dir/iob/iob_contig.c.o
+[1113/1987] Building C object mm/CMakeFiles/mm.dir/iob/iob_free.c.o
+[1114/1987] Building C object mm/CMakeFiles/mm.dir/iob/iob_free_chain.c.o
+[1115/1987] Building C object mm/CMakeFiles/mm.dir/iob/iob_free_qentry.c.o
+[1116/1987] Building CXX object libs/libxx/libcxxabi/CMakeFiles/libcxxabi.dir/libcxxabi/src/stdlib_stdexcept.cpp.o
+[1117/1987] Building C object mm/CMakeFiles/mm.dir/iob/iob_free_queue.c.o
+[1118/1987] Building C object mm/CMakeFiles/mm.dir/iob/iob_initialize.c.o
+[1119/1987] Building C object mm/CMakeFiles/mm.dir/iob/iob_pack.c.o
+[1120/1987] Building C object mm/CMakeFiles/mm.dir/iob/iob_peek_queue.c.o
+[1121/1987] Building C object mm/CMakeFiles/mm.dir/iob/iob_remove_queue.c.o
+[1122/1987] Building C object mm/CMakeFiles/mm.dir/iob/iob_statistics.c.o
+[1123/1987] Building C object mm/CMakeFiles/mm.dir/iob/iob_trimhead.c.o
+[1124/1987] Building C object mm/CMakeFiles/mm.dir/iob/iob_trimhead_queue.c.o
+[1125/1987] Building C object mm/CMakeFiles/mm.dir/iob/iob_trimtail.c.o
+[1126/1987] Building C object mm/CMakeFiles/mm.dir/iob/iob_navail.c.o
+[1127/1987] Building C object mm/CMakeFiles/mm.dir/iob/iob_free_queue_qentry.c.o
+[1128/1987] Building C object mm/CMakeFiles/mm.dir/iob/iob_get_queue_info.c.o
+[1129/1987] Building C object mm/CMakeFiles/mm.dir/iob/iob_tailroom.c.o
+[1130/1987] Building C object mm/CMakeFiles/mm.dir/iob/iob_reserve.c.o
+[1131/1987] Building C object mm/CMakeFiles/mm.dir/iob/iob_update_pktlen.c.o
+[1132/1987] Building C object mm/CMakeFiles/mm.dir/iob/iob_count.c.o
+[1133/1987] Building C object mm/CMakeFiles/mm.dir/kasan/hook.c.o
+[1134/1987] Building C object mm/CMakeFiles/mm.dir/map/mm_map.c.o
+[1135/1987] Building C object mm/CMakeFiles/mm.dir/mempool/mempool.c.o
+[1136/1987] Building CXX object libs/libxx/libcxxabi/CMakeFiles/libcxxabi.dir/libcxxabi/src/cxa_demangle.cpp.o
+[1137/1987] Building C object mm/CMakeFiles/mm.dir/mempool/mempool_procfs.c.o
+[1138/1987] Building C object mm/CMakeFiles/mm.dir/mm_heap/mm_calloc.c.o
+[1139/1987] Building C object mm/CMakeFiles/mm.dir/mempool/mempool_multiple.c.o
+[1140/1987] Building C object mm/CMakeFiles/mm.dir/mm_heap/mm_initialize.c.o
+[1141/1987] Building C object mm/CMakeFiles/mm.dir/mm_heap/mm_shrinkchunk.c.o
+[1142/1987] Building C object mm/CMakeFiles/mm.dir/mm_heap/mm_malloc_size.c.o
+[1143/1987] Building C object mm/CMakeFiles/mm.dir/mm_heap/mm_brkaddr.c.o
+[1144/1987] Building C object mm/CMakeFiles/mm.dir/mm_heap/mm_extend.c.o
+[1145/1987] Building C object mm/CMakeFiles/mm.dir/mm_heap/mm_free.c.o
+[1146/1987] Building C object mm/CMakeFiles/mm.dir/mm_heap/mm_zalloc.c.o
+[1147/1987] Building C object mm/CMakeFiles/mm.dir/mm_heap/mm_mallinfo.c.o
+[1148/1987] Building C object mm/CMakeFiles/mm.dir/mm_heap/mm_foreach.c.o
+[1149/1987] Building C object mm/CMakeFiles/mm.dir/mm_heap/mm_malloc.c.o
+[1150/1987] Building C object mm/CMakeFiles/mm.dir/umm_heap/umm_initialize.c.o
+[1151/1987] Building C object mm/CMakeFiles/mm.dir/mm_heap/mm_memalign.c.o
+[1152/1987] Building C object mm/CMakeFiles/mm.dir/mm_heap/mm_realloc.c.o
+[1153/1987] Building C object mm/CMakeFiles/mm.dir/umm_heap/umm_globals.c.o
+[1154/1987] Building C object mm/CMakeFiles/mm.dir/mm_heap/mm_heapmember.c.o
+[1155/1987] Building C object mm/CMakeFiles/mm.dir/mm_heap/mm_memdump.c.o
+[1156/1987] Building C object mm/CMakeFiles/mm.dir/umm_heap/umm_addregion.c.o
+[1157/1987] Building C object mm/CMakeFiles/mm.dir/umm_heap/umm_malloc_size.c.o
+[1158/1987] Building C object mm/CMakeFiles/mm.dir/umm_heap/umm_brkaddr.c.o
+[1159/1987] Building C object mm/CMakeFiles/mm.dir/umm_heap/umm_calloc.c.o
+[1160/1987] Building C object mm/CMakeFiles/mm.dir/umm_heap/umm_extend.c.o
+[1161/1987] Building C object mm/CMakeFiles/mm.dir/umm_heap/umm_free.c.o
+[1162/1987] Building C object mm/CMakeFiles/mm.dir/umm_heap/umm_mallinfo.c.o
+[1163/1987] Building C object mm/CMakeFiles/mm.dir/umm_heap/umm_malloc.c.o
+[1164/1987] Building C object mm/CMakeFiles/mm.dir/umm_heap/umm_memalign.c.o
+[1165/1987] Building C object mm/CMakeFiles/mm.dir/umm_heap/umm_realloc.c.o
+[1166/1987] Building C object mm/CMakeFiles/mm.dir/umm_heap/umm_zalloc.c.o
+[1167/1987] Building C object mm/CMakeFiles/mm.dir/umm_heap/umm_heapmember.c.o
+[1168/1987] Building C object mm/CMakeFiles/mm.dir/umm_heap/umm_memdump.c.o
+[1169/1987] Building C object net/CMakeFiles/net.dir/arp/arp_input.c.o
+[1170/1987] Building C object net/CMakeFiles/net.dir/arp/arp_out.c.o
+[1171/1987] Building C object net/CMakeFiles/net.dir/arp/arp_format.c.o
+[1172/1987] Building C object net/CMakeFiles/net.dir/arp/arp_poll.c.o
+[1173/1987] Building C object net/CMakeFiles/net.dir/arp/arp_table.c.o
+[1174/1987] Building C object net/CMakeFiles/net.dir/arp/arp_notify.c.o
+[1175/1987] Building C object net/CMakeFiles/net.dir/arp/arp_send.c.o
+[1176/1987] Building C object net/CMakeFiles/net.dir/devif/devif_send.c.o
+[1177/1987] Building C object net/CMakeFiles/net.dir/devif/devif_loopback.c.o
+[1178/1987] Building C object net/CMakeFiles/net.dir/devif/devif_callback.c.o
+[1179/1987] Building C object net/CMakeFiles/net.dir/devif/ipv4_input.c.o
+[1180/1987] Building C object net/CMakeFiles/net.dir/devif/devif_poll.c.o
+[1181/1987] Building C object net/CMakeFiles/net.dir/devif/devif_iobsend.c.o
+[1182/1987] Building C object net/CMakeFiles/net.dir/devif/devif_filesend.c.o
+[1183/1987] Building C object net/CMakeFiles/net.dir/icmp/icmp_input.c.o
+[1184/1987] Building C object net/CMakeFiles/net.dir/icmp/icmp_reply.c.o
+[1185/1987] Building C object net/CMakeFiles/net.dir/icmp/icmp_poll.c.o
+[1186/1987] Building C object net/CMakeFiles/net.dir/icmp/icmp_sockif.c.o
+[1187/1987] Building C object net/CMakeFiles/net.dir/icmp/icmp_recvmsg.c.o
+[1188/1987] Building C object net/CMakeFiles/net.dir/icmp/icmp_sendmsg.c.o
+[1189/1987] Building C object net/CMakeFiles/net.dir/icmp/icmp_conn.c.o
+[1190/1987] Building C object net/CMakeFiles/net.dir/icmp/icmp_netpoll.c.o
+[1191/1987] Building C object net/CMakeFiles/net.dir/icmp/icmp_ioctl.c.o
+[1192/1987] Building C object net/CMakeFiles/net.dir/inet/inet_globals.c.o
+[1193/1987] Building C object net/CMakeFiles/net.dir/inet/inet_txdrain.c.o
+[1194/1987] Building C object net/CMakeFiles/net.dir/inet/inet_sockif.c.o
+[1195/1987] Building C object net/CMakeFiles/net.dir/inet/ipv4_getsockname.c.o
+[1196/1987] Building C object net/CMakeFiles/net.dir/inet/ipv4_getpeername.c.o
+[1197/1987] Building C object net/CMakeFiles/net.dir/inet/ipv4_setsockopt.c.o
+[1198/1987] Building C object net/CMakeFiles/net.dir/inet/ipv4_getsockopt.c.o
+[1199/1987] Building C object net/CMakeFiles/net.dir/local/local_release.c.o
+[1200/1987] Building C object net/CMakeFiles/net.dir/inet/ipv4_build_header.c.o
+[1201/1987] Building C object net/CMakeFiles/net.dir/local/local_bind.c.o
+[1202/1987] Building C object net/CMakeFiles/net.dir/local/local_conn.c.o
+[1203/1987] Building C object net/CMakeFiles/net.dir/local/local_fifo.c.o
+[1204/1987] Building C object net/CMakeFiles/net.dir/local/local_sendpacket.c.o
+[1205/1987] Building C object net/CMakeFiles/net.dir/local/local_recvmsg.c.o
+[1206/1987] Building C object net/CMakeFiles/net.dir/local/local_recvutils.c.o
+[1207/1987] Building C object net/CMakeFiles/net.dir/local/local_listen.c.o
+[1208/1987] Building C object net/CMakeFiles/net.dir/local/local_netpoll.c.o
+[1209/1987] Building C object net/CMakeFiles/net.dir/local/local_sendmsg.c.o
+[1210/1987] Building C object net/CMakeFiles/net.dir/local/local_sockif.c.o
+[1211/1987] Building C object net/CMakeFiles/net.dir/local/local_accept.c.o
+[1212/1987] Building C object net/CMakeFiles/net.dir/local/local_connect.c.o
+[1213/1987] Building C object net/CMakeFiles/net.dir/netdev/netdev_register.c.o
+[1214/1987] Building C object net/CMakeFiles/net.dir/netdev/netdev_txnotify.c.o
+[1215/1987] Building C object net/CMakeFiles/net.dir/netdev/netdev_findbyname.c.o
+[1216/1987] Building C object net/CMakeFiles/net.dir/netdev/netdev_ioctl.c.o
+[1217/1987] Building C object net/CMakeFiles/net.dir/netdev/netdev_findbyindex.c.o
+[1218/1987] Building C object net/CMakeFiles/net.dir/netdev/netdev_findbyaddr.c.o
+[1219/1987] Building C object net/CMakeFiles/net.dir/netdev/netdev_count.c.o
+[1220/1987] Building C object net/CMakeFiles/net.dir/netdev/netdev_ifconf.c.o
+[1221/1987] Building C object net/CMakeFiles/net.dir/netdev/netdev_foreach.c.o
+[1222/1987] Building C object net/CMakeFiles/net.dir/netdev/netdev_unregister.c.o
+[1223/1987] Building C object net/CMakeFiles/net.dir/netdev/netdev_default.c.o
+[1224/1987] Building C object net/CMakeFiles/net.dir/netdev/netdev_lladdrsize.c.o
+[1225/1987] Building C object net/CMakeFiles/net.dir/netdev/netdev_carrier.c.o
+[1226/1987] Building C object net/CMakeFiles/net.dir/netdev/netdev_verify.c.o
+[1227/1987] Building C object net/CMakeFiles/net.dir/netdev/netdev_checksum.c.o
+[1228/1987] Building C object net/CMakeFiles/net.dir/netdev/netdev_input.c.o
+[1229/1987] Building C object net/CMakeFiles/net.dir/netdev/netdev_iob.c.o
+[1230/1987] Building C object net/CMakeFiles/net.dir/procfs/net_procfs.c.o
+[1231/1987] Building C object net/CMakeFiles/net.dir/procfs/net_statistics.c.o
+[1232/1987] Building C object net/CMakeFiles/net.dir/socket/getsockname.c.o
+[1233/1987] Building C object net/CMakeFiles/net.dir/socket/accept.c.o
+[1234/1987] Building C object net/CMakeFiles/net.dir/procfs/net_tcp.c.o
+[1235/1987] Building C object net/CMakeFiles/net.dir/socket/bind.c.o
+[1236/1987] Building C object net/CMakeFiles/net.dir/procfs/netdev_statistics.c.o
+[1237/1987] Building C object net/CMakeFiles/net.dir/socket/connect.c.o
+[1238/1987] Building C object net/CMakeFiles/net.dir/procfs/net_udp.c.o
+[1239/1987] Building C object net/CMakeFiles/net.dir/socket/getpeername.c.o
+[1240/1987] Building C object net/CMakeFiles/net.dir/socket/recv.c.o
+[1241/1987] Building C object net/CMakeFiles/net.dir/socket/listen.c.o
+[1242/1987] Building C object net/CMakeFiles/net.dir/socket/recvfrom.c.o
+[1243/1987] Building C object net/CMakeFiles/net.dir/socket/recvmsg.c.o
+[1244/1987] Building C object net/CMakeFiles/net.dir/socket/sendmsg.c.o
+[1245/1987] Building C object net/CMakeFiles/net.dir/socket/send.c.o
+[1246/1987] Building C object net/CMakeFiles/net.dir/socket/shutdown.c.o
+[1247/1987] Building C object net/CMakeFiles/net.dir/socket/net_close.c.o
+[1248/1987] Building C object net/CMakeFiles/net.dir/socket/socket.c.o
+[1249/1987] Building C object net/CMakeFiles/net.dir/socket/socketpair.c.o
+[1250/1987] Building C object net/CMakeFiles/net.dir/socket/sendto.c.o
+[1251/1987] Building C object net/CMakeFiles/net.dir/socket/net_poll.c.o
+[1252/1987] Building C object net/CMakeFiles/net.dir/socket/net_dup2.c.o
+[1253/1987] Building C object net/CMakeFiles/net.dir/socket/net_mmap.c.o
+[1254/1987] Building C object net/CMakeFiles/net.dir/socket/net_sockif.c.o
+[1255/1987] Building C object net/CMakeFiles/net.dir/socket/net_timeo.c.o
+[1256/1987] Building C object net/CMakeFiles/net.dir/socket/net_fstat.c.o
+[1257/1987] Building C object net/CMakeFiles/net.dir/socket/setsockopt.c.o
+[1258/1987] Building C object net/CMakeFiles/net.dir/socket/getsockopt.c.o
+[1259/1987] Building C object net/CMakeFiles/net.dir/tcp/tcp_accept.c.o
+[1260/1987] Building C object net/CMakeFiles/net.dir/tcp/tcp_connect.c.o
+[1261/1987] Building C object net/CMakeFiles/net.dir/tcp/tcp_recvfrom.c.o
+[1262/1987] Building C object net/CMakeFiles/net.dir/tcp/tcp_send_buffered.c.o
+[1263/1987] Building C object net/CMakeFiles/net.dir/tcp/tcp_seqno.c.o
+[1264/1987] Building C object net/CMakeFiles/net.dir/tcp/tcp_conn.c.o
+[1265/1987] Building C object net/CMakeFiles/net.dir/tcp/tcp_devpoll.c.o
+[1266/1987] Building C object net/CMakeFiles/net.dir/tcp/tcp_finddev.c.o
+[1267/1987] Building C object net/CMakeFiles/net.dir/tcp/tcp_timer.c.o
+[1268/1987] Building C object net/CMakeFiles/net.dir/tcp/tcp_send.c.o
+[1269/1987] Building C object net/CMakeFiles/net.dir/tcp/tcp_appsend.c.o
+[1270/1987] Building C object net/CMakeFiles/net.dir/tcp/tcp_input.c.o
+[1271/1987] Building C object net/CMakeFiles/net.dir/tcp/tcp_listen.c.o
+[1272/1987] Building C object net/CMakeFiles/net.dir/tcp/tcp_close.c.o
+[1273/1987] Building C object net/CMakeFiles/net.dir/tcp/tcp_monitor.c.o
+[1274/1987] Building C object net/CMakeFiles/net.dir/tcp/tcp_callback.c.o
+[1275/1987] Building C object net/CMakeFiles/net.dir/tcp/tcp_ipselect.c.o
+[1276/1987] Building C object net/CMakeFiles/net.dir/tcp/tcp_backlog.c.o
+[1277/1987] Building C object net/CMakeFiles/net.dir/tcp/tcp_recvwindow.c.o
+[1278/1987] Building C object net/CMakeFiles/net.dir/tcp/tcp_netpoll.c.o
+[1279/1987] Building C object net/CMakeFiles/net.dir/tcp/tcp_ioctl.c.o
+[1280/1987] Building C object net/CMakeFiles/net.dir/tcp/tcp_cc.c.o
+[1281/1987] Building C object net/CMakeFiles/net.dir/tcp/tcp_shutdown.c.o
+[1282/1987] Building C object net/CMakeFiles/net.dir/tcp/tcp_wrbuffer.c.o
+[1283/1987] Building C object net/CMakeFiles/net.dir/udp/udp_recvfrom.c.o
+[1284/1987] Building C object net/CMakeFiles/net.dir/udp/udp_sendto_buffered.c.o
+[1285/1987] Building C object net/CMakeFiles/net.dir/udp/udp_devpoll.c.o
+[1286/1987] Building C object net/CMakeFiles/net.dir/udp/udp_conn.c.o
+[1287/1987] Building C object net/CMakeFiles/net.dir/udp/udp_send.c.o
+[1288/1987] Building C object net/CMakeFiles/net.dir/udp/udp_finddev.c.o
+[1289/1987] Building C object net/CMakeFiles/net.dir/udp/udp_input.c.o
+[1290/1987] Building C object net/CMakeFiles/net.dir/udp/udp_close.c.o
+[1291/1987] Building C object net/CMakeFiles/net.dir/udp/udp_ipselect.c.o
+[1292/1987] Building C object net/CMakeFiles/net.dir/udp/udp_callback.c.o
+[1293/1987] Building C object net/CMakeFiles/net.dir/udp/udp_netpoll.c.o
+[1294/1987] Building C object net/CMakeFiles/net.dir/udp/udp_ioctl.c.o
+[1295/1987] Building C object net/CMakeFiles/net.dir/utils/net_dsec2tick.c.o
+[1296/1987] Building C object net/CMakeFiles/net.dir/utils/net_dsec2timeval.c.o
+[1297/1987] Building C object net/CMakeFiles/net.dir/utils/net_timeval2dsec.c.o
+[1298/1987] Building C object net/CMakeFiles/net.dir/udp/udp_wrbuffer.c.o
+[1299/1987] Building C object net/CMakeFiles/net.dir/utils/net_incr32.c.o
+[1300/1987] Building C object net/CMakeFiles/net.dir/utils/net_chksum.c.o
+[1301/1987] Building C object net/CMakeFiles/net.dir/utils/net_ipchksum.c.o
+[1302/1987] Building C object net/CMakeFiles/net.dir/utils/net_snoop.c.o
+[1303/1987] Building C object net/CMakeFiles/net.dir/utils/net_lock.c.o
+[1304/1987] Building C object net/CMakeFiles/net.dir/utils/net_cmsg.c.o
+[1305/1987] Building C object net/CMakeFiles/net.dir/utils/net_mask2pref.c.o
+[1306/1987] Building C object net/CMakeFiles/net.dir/utils/net_tcpchksum.c.o
+[1307/1987] Building C object sched/CMakeFiles/sched.dir/clock/clock_initialize.c.o
+[1308/1987] Building C object net/CMakeFiles/net.dir/utils/net_udpchksum.c.o
+[1309/1987] Building C object sched/CMakeFiles/sched.dir/clock/clock_notifier.c.o
+[1310/1987] Building C object net/CMakeFiles/net.dir/utils/net_icmpchksum.c.o
+[1311/1987] Building C object sched/CMakeFiles/sched.dir/clock/clock_getres.c.o
+[1312/1987] Building C object sched/CMakeFiles/sched.dir/clock/clock_settime.c.o
+[1313/1987] Building C object net/CMakeFiles/net.dir/net_initialize.c.o
+[1314/1987] Building C object sched/CMakeFiles/sched.dir/clock/clock_systime_ticks.c.o
+[1315/1987] Building C object sched/CMakeFiles/sched.dir/clock/clock_gettime.c.o
+[1316/1987] Building C object sched/CMakeFiles/sched.dir/clock/clock_realtime2absticks.c.o
+[1317/1987] Building C object sched/CMakeFiles/sched.dir/clock/clock_systime_timespec.c.o
+[1318/1987] Building C object sched/CMakeFiles/sched.dir/clock/clock_perf.c.o
+[1319/1987] Building C object sched/CMakeFiles/sched.dir/group/group_join.c.o
+[1320/1987] Building C object sched/CMakeFiles/sched.dir/group/group_setuptaskfiles.c.o
+[1321/1987] Building C object sched/CMakeFiles/sched.dir/group/group_setupidlefiles.c.o
+[1322/1987] Building C object sched/CMakeFiles/sched.dir/group/group_create.c.o
+[1323/1987] Building C object sched/CMakeFiles/sched.dir/group/group_foreachchild.c.o
+[1324/1987] Building C object sched/CMakeFiles/sched.dir/group/group_leave.c.o
+[1325/1987] Building C object sched/CMakeFiles/sched.dir/group/group_killchildren.c.o
+[1326/1987] Building C object sched/CMakeFiles/sched.dir/group/group_suspendchildren.c.o
+[1327/1987] Building C object sched/CMakeFiles/sched.dir/group/group_signal.c.o
+[1328/1987] Building C object sched/CMakeFiles/sched.dir/group/group_continue.c.o
+[1329/1987] Building C object sched/CMakeFiles/sched.dir/irq/irq_initialize.c.o
+[1330/1987] Building C object sched/CMakeFiles/sched.dir/init/nx_bringup.c.o
+[1331/1987] Building C object sched/CMakeFiles/sched.dir/init/nx_smpstart.c.o
+[1332/1987] Building C object sched/CMakeFiles/sched.dir/irq/irq_attach.c.o
+[1333/1987] Building C object sched/CMakeFiles/sched.dir/init/nx_start.c.o
+[1334/1987] Building C object sched/CMakeFiles/sched.dir/irq/irq_attach_thread.c.o
+[1335/1987] Building C object sched/CMakeFiles/sched.dir/irq/irq_attach_wqueue.c.o
+[1336/1987] Building C object sched/CMakeFiles/sched.dir/irq/irq_unexpectedisr.c.o
+[1337/1987] Building C object sched/CMakeFiles/sched.dir/irq/irq_dispatch.c.o
+[1338/1987] Building C object sched/CMakeFiles/sched.dir/irq/irq_csection.c.o
+[1339/1987] Building C object sched/CMakeFiles/sched.dir/irq/irq_spinlock.c.o
+[1340/1987] Building C object sched/CMakeFiles/sched.dir/misc/assert.c.o
+[1341/1987] Building C object sched/CMakeFiles/sched.dir/misc/reboot_notifier.c.o
+[1342/1987] Building C object sched/CMakeFiles/sched.dir/misc/panic_notifier.c.o
+[1343/1987] Building C object sched/CMakeFiles/sched.dir/mqueue/mq_initialize.c.o
+[1344/1987] Building C object sched/CMakeFiles/sched.dir/mqueue/mq_waitirq.c.o
+[1345/1987] Building C object sched/CMakeFiles/sched.dir/mqueue/mq_recover.c.o
+[1346/1987] Building C object sched/CMakeFiles/sched.dir/mqueue/mq_send.c.o
+[1347/1987] Building C object sched/CMakeFiles/sched.dir/mqueue/mq_receive.c.o
+[1348/1987] Building C object sched/CMakeFiles/sched.dir/mqueue/mq_sndinternal.c.o
+[1349/1987] Building C object sched/CMakeFiles/sched.dir/mqueue/mq_msgfree.c.o
+[1350/1987] Building C object sched/CMakeFiles/sched.dir/mqueue/mq_rcvinternal.c.o
+[1351/1987] Building C object sched/CMakeFiles/sched.dir/mqueue/mq_msgqalloc.c.o
+[1352/1987] Building C object sched/CMakeFiles/sched.dir/mqueue/mq_setattr.c.o
+[1353/1987] Building C object sched/CMakeFiles/sched.dir/mqueue/mq_getattr.c.o
+[1354/1987] Building C object sched/CMakeFiles/sched.dir/mqueue/mq_msgqfree.c.o
+[1355/1987] Building C object sched/CMakeFiles/sched.dir/mqueue/mq_notify.c.o
+[1356/1987] Building C object sched/CMakeFiles/sched.dir/mqueue/msgctl.c.o
+[1357/1987] Building C object sched/CMakeFiles/sched.dir/mqueue/msgget.c.o
+[1358/1987] Building C object sched/CMakeFiles/sched.dir/mqueue/msginternal.c.o
+[1359/1987] Building C object sched/CMakeFiles/sched.dir/mqueue/msgrcv.c.o
+[1360/1987] Building C object sched/CMakeFiles/sched.dir/mqueue/msgsnd.c.o
+[1361/1987] Building C object sched/CMakeFiles/sched.dir/pthread/pthread_exit.c.o
+[1362/1987] Building C object sched/CMakeFiles/sched.dir/pthread/pthread_join.c.o
+[1363/1987] Building C object sched/CMakeFiles/sched.dir/pthread/pthread_create.c.o
+[1364/1987] Building C object sched/CMakeFiles/sched.dir/pthread/pthread_getschedparam.c.o
+[1365/1987] Building C object sched/CMakeFiles/sched.dir/pthread/pthread_setschedparam.c.o
+[1366/1987] Building C object sched/CMakeFiles/sched.dir/pthread/pthread_detach.c.o
+[1367/1987] Building C object sched/CMakeFiles/sched.dir/pthread/pthread_sigmask.c.o
+[1368/1987] Building C object sched/CMakeFiles/sched.dir/pthread/pthread_cancel.c.o
+[1369/1987] Building C object sched/CMakeFiles/sched.dir/pthread/pthread_completejoin.c.o
+[1370/1987] Building C object sched/CMakeFiles/sched.dir/pthread/pthread_findjoininfo.c.o
+[1371/1987] Building C object sched/CMakeFiles/sched.dir/pthread/pthread_setschedprio.c.o
+[1372/1987] Building C object sched/CMakeFiles/sched.dir/pthread/pthread_release.c.o
+[1373/1987] Building C object sched/CMakeFiles/sched.dir/pthread/pthread_setaffinity.c.o
+[1374/1987] Building C object sched/CMakeFiles/sched.dir/pthread/pthread_getaffinity.c.o
+[1375/1987] Building C object sched/CMakeFiles/sched.dir/sched/sched_getfiles.c.o
+[1376/1987] Building C object sched/CMakeFiles/sched.dir/sched/sched_profil.c.o
+[1377/1987] Building C object sched/CMakeFiles/sched.dir/sched/sched_addreadytorun.c.o
+[1378/1987] Building C object sched/CMakeFiles/sched.dir/sched/sched_removereadytorun.c.o
+[1379/1987] Building C object sched/CMakeFiles/sched.dir/sched/sched_addblocked.c.o
+[1380/1987] Building C object sched/CMakeFiles/sched.dir/sched/sched_removeblocked.c.o
+[1381/1987] Building C object sched/CMakeFiles/sched.dir/sched/sched_gettcb.c.o
+[1382/1987] Building C object sched/CMakeFiles/sched.dir/sched/sched_verifytcb.c.o
+[1383/1987] Building C object sched/CMakeFiles/sched.dir/sched/sched_setparam.c.o
+[1384/1987] Building C object sched/CMakeFiles/sched.dir/sched/sched_setpriority.c.o
+[1385/1987] Building C object sched/CMakeFiles/sched.dir/sched/sched_releasetcb.c.o
+[1386/1987] Building C object sched/CMakeFiles/sched.dir/sched/sched_getparam.c.o
+[1387/1987] Building C object sched/CMakeFiles/sched.dir/sched/sched_setscheduler.c.o
+[1388/1987] Building C object sched/CMakeFiles/sched.dir/sched/sched_yield.c.o
+[1389/1987] Building C object sched/CMakeFiles/sched.dir/sched/sched_getscheduler.c.o
+[1390/1987] Building C object sched/CMakeFiles/sched.dir/sched/sched_rrgetinterval.c.o
+[1391/1987] Building C object sched/CMakeFiles/sched.dir/sched/sched_foreach.c.o
+[1392/1987] Building C object sched/CMakeFiles/sched.dir/sched/sched_lock.c.o
+[1393/1987] Building C object sched/CMakeFiles/sched.dir/sched/sched_unlock.c.o
+[1394/1987] Building C object sched/CMakeFiles/sched.dir/sched/sched_lockcount.c.o
+[1395/1987] Building C object sched/CMakeFiles/sched.dir/sched/sched_idletask.c.o
+[1396/1987] Building C object sched/CMakeFiles/sched.dir/sched/sched_self.c.o
+[1397/1987] Building C object sched/CMakeFiles/sched.dir/sched/sched_getcpu.c.o
+[1398/1987] Building C object sched/CMakeFiles/sched.dir/sched/sched_get_stackinfo.c.o
+[1399/1987] Building C object sched/CMakeFiles/sched.dir/sched/sched_sysinfo.c.o
+[1400/1987] Building C object sched/CMakeFiles/sched.dir/sched/sched_get_tls.c.o
+[1401/1987] Building C object sched/CMakeFiles/sched.dir/sched/sched_get_stateinfo.c.o
+[1402/1987] Building C object sched/CMakeFiles/sched.dir/sched/sched_switchcontext.c.o
+[1403/1987] Building C object sched/CMakeFiles/sched.dir/sched/sched_getaffinity.c.o
+[1404/1987] Building C object sched/CMakeFiles/sched.dir/sched/sched_setaffinity.c.o
+[1405/1987] Building C object sched/CMakeFiles/sched.dir/sched/sched_process_delivered.c.o
+[1406/1987] Building C object sched/CMakeFiles/sched.dir/sched/sched_suspend.c.o
+[1407/1987] Building C object sched/CMakeFiles/sched.dir/semaphore/sem_destroy.c.o
+[1408/1987] Building C object sched/CMakeFiles/sched.dir/sched/sched_roundrobin.c.o
+[1409/1987] Building C object sched/CMakeFiles/sched.dir/sched/sched_processtimer.c.o
+[1410/1987] Building C object sched/CMakeFiles/sched.dir/sched/sched_waitpid.c.o
+[1411/1987] Building C object sched/CMakeFiles/sched.dir/sched/sched_smp.c.o
+[1412/1987] Building C object sched/CMakeFiles/sched.dir/semaphore/sem_wait.c.o
+[1413/1987] Building C object sched/CMakeFiles/sched.dir/semaphore/sem_trywait.c.o
+[1414/1987] Building C object sched/CMakeFiles/sched.dir/semaphore/sem_clockwait.c.o
+[1415/1987] Building C object sched/CMakeFiles/sched.dir/semaphore/sem_tickwait.c.o
+[1416/1987] Building C object sched/CMakeFiles/sched.dir/semaphore/sem_timeout.c.o
+[1417/1987] Building C object sched/CMakeFiles/sched.dir/semaphore/sem_recover.c.o
+[1418/1987] Building C object sched/CMakeFiles/sched.dir/semaphore/sem_post.c.o
+[1419/1987] Building C object sched/CMakeFiles/sched.dir/semaphore/sem_reset.c.o
+[1420/1987] Building C object sched/CMakeFiles/sched.dir/semaphore/sem_rw.c.o
+[1421/1987] Building C object sched/CMakeFiles/sched.dir/semaphore/sem_waitirq.c.o
+[1422/1987] Building C object sched/CMakeFiles/sched.dir/signal/sig_action.c.o
+[1423/1987] Building C object sched/CMakeFiles/sched.dir/signal/sig_allocpendingsigaction.c.o
+[1424/1987] Building C object sched/CMakeFiles/sched.dir/signal/sig_cleanup.c.o
+[1425/1987] Building C object sched/CMakeFiles/sched.dir/signal/sig_findaction.c.o
+[1426/1987] Building C object sched/CMakeFiles/sched.dir/signal/sig_deliver.c.o
+[1427/1987] Building C object sched/CMakeFiles/sched.dir/signal/sig_initialize.c.o
+[1428/1987] Building C object sched/CMakeFiles/sched.dir/signal/sig_pending.c.o
+[1429/1987] Building C object sched/CMakeFiles/sched.dir/signal/sig_releasependingsigaction.c.o
+[1430/1987] Building C object sched/CMakeFiles/sched.dir/signal/sig_releasependingsignal.c.o
+[1431/1987] Building C object sched/CMakeFiles/sched.dir/signal/sig_unmaskpendingsignal.c.o
+[1432/1987] Building C object sched/CMakeFiles/sched.dir/signal/sig_removependingsignal.c.o
+[1433/1987] Building C object sched/CMakeFiles/sched.dir/signal/sig_nanosleep.c.o
+[1434/1987] Building C object sched/CMakeFiles/sched.dir/signal/sig_kill.c.o
+[1435/1987] Building C object sched/CMakeFiles/sched.dir/signal/sig_lowest.c.o
+[1436/1987] Building C object sched/CMakeFiles/sched.dir/signal/sig_dispatch.c.o
+[1437/1987] Building C object sched/CMakeFiles/sched.dir/signal/sig_pause.c.o
+[1438/1987] Building C object sched/CMakeFiles/sched.dir/signal/sig_ppoll.c.o
+[1439/1987] Building C object sched/CMakeFiles/sched.dir/signal/sig_notification.c.o
+[1440/1987] Building C object sched/CMakeFiles/sched.dir/signal/sig_procmask.c.o
+[1441/1987] Building C object sched/CMakeFiles/sched.dir/signal/sig_pselect.c.o
+[1442/1987] Building C object sched/CMakeFiles/sched.dir/signal/sig_sleep.c.o
+[1443/1987] Building C object sched/CMakeFiles/sched.dir/signal/sig_queue.c.o
+[1444/1987] Building C object sched/CMakeFiles/sched.dir/signal/sig_usleep.c.o
+[1445/1987] Building C object sched/CMakeFiles/sched.dir/signal/sig_suspend.c.o
+[1446/1987] Building C object sched/CMakeFiles/sched.dir/signal/sig_waitinfo.c.o
+[1447/1987] Building C object sched/CMakeFiles/sched.dir/signal/sig_tgkill.c.o
+[1448/1987] Building C object sched/CMakeFiles/sched.dir/signal/sig_timedwait.c.o
+[1449/1987] Building C object sched/CMakeFiles/sched.dir/signal/sig_default.c.o
+[1450/1987] Building C object sched/CMakeFiles/sched.dir/task/task_argvstr.c.o
+[1451/1987] Building C object sched/CMakeFiles/sched.dir/task/task_create.c.o
+[1452/1987] Building C object sched/CMakeFiles/sched.dir/task/task_init.c.o
+[1453/1987] Building C object sched/CMakeFiles/sched.dir/task/task_activate.c.o
+[1454/1987] Building C object sched/CMakeFiles/sched.dir/task/task_start.c.o
+[1455/1987] Building C object sched/CMakeFiles/sched.dir/task/task_delete.c.o
+[1456/1987] Building C object sched/CMakeFiles/sched.dir/task/task_setup.c.o
+[1457/1987] Building C object sched/CMakeFiles/sched.dir/task/task_exit.c.o
+[1458/1987] Building C object sched/CMakeFiles/sched.dir/task/task_exithook.c.o
+[1459/1987] Building C object sched/CMakeFiles/sched.dir/task/task_prctl.c.o
+[1460/1987] Building C object sched/CMakeFiles/sched.dir/task/task_restart.c.o
+[1461/1987] Building C object sched/CMakeFiles/sched.dir/task/task_recover.c.o
+[1462/1987] Building C object sched/CMakeFiles/sched.dir/task/task_spawnparms.c.o
+[1463/1987] Building C object sched/CMakeFiles/sched.dir/task/task_cancelpt.c.o
+[1464/1987] Building C object sched/CMakeFiles/sched.dir/task/task_terminate.c.o
+[1465/1987] Building C object sched/CMakeFiles/sched.dir/task/task_join.c.o
+[1466/1987] Building C object sched/CMakeFiles/sched.dir/task/exit.c.o
+[1467/1987] Building C object sched/CMakeFiles/sched.dir/task/task_execve.c.o
+[1468/1987] Building C object sched/CMakeFiles/sched.dir/timer/timer_initialize.c.o
+[1469/1987] Building C object sched/CMakeFiles/sched.dir/task/task_spawn.c.o
+[1470/1987] Building C object sched/CMakeFiles/sched.dir/task/task_fork.c.o
+[1471/1987] Building C object sched/CMakeFiles/sched.dir/timer/timer_delete.c.o
+[1472/1987] Building C object sched/CMakeFiles/sched.dir/task/task_posixspawn.c.o
+[1473/1987] Building C object sched/CMakeFiles/sched.dir/timer/timer_create.c.o
+[1474/1987] Building C object sched/CMakeFiles/sched.dir/timer/timer_getoverrun.c.o
+[1475/1987] Building C object sched/CMakeFiles/sched.dir/timer/timer_getitimer.c.o
+[1476/1987] Building C object sched/CMakeFiles/sched.dir/timer/timer_gettime.c.o
+[1477/1987] Building C object sched/CMakeFiles/sched.dir/timer/timer_settime.c.o
+[1478/1987] Building C object sched/CMakeFiles/sched.dir/timer/timer_setitimer.c.o
+[1479/1987] Building C object sched/CMakeFiles/sched.dir/timer/timer_release.c.o
+[1480/1987] Building C object sched/CMakeFiles/sched.dir/wdog/wd_initialize.c.o
+[1481/1987] Building C object boards/CMakeFiles/board.dir/__/dummy.c.o
+[1482/1987] Building C object sched/CMakeFiles/sched.dir/tls/tls_initinfo.c.o
+[1483/1987] Building C object sched/CMakeFiles/sched.dir/tls/task_uninitinfo.c.o
+[1484/1987] Building C object sched/CMakeFiles/sched.dir/tls/tls_dupinfo.c.o
+[1485/1987] Building C object sched/CMakeFiles/sched.dir/wdog/wd_gettime.c.o
+[1486/1987] Building C object sched/CMakeFiles/sched.dir/tls/task_initinfo.c.o
+[1487/1987] Building C object sched/CMakeFiles/sched.dir/wdog/wd_start.c.o
+[1488/1987] Building C object sched/CMakeFiles/sched.dir/wdog/wd_cancel.c.o
+[1489/1987] Building C object apps/CMakeFiles/apps.dir/dummy.c.o
+[1490/1987] Building C object sched/CMakeFiles/sched.dir/wqueue/kwork_queue.c.o
+[1491/1987] Building C object sched/CMakeFiles/sched.dir/wqueue/kwork_cancel.c.o
+[1492/1987] Building C object sched/CMakeFiles/sched.dir/wqueue/kwork_thread.c.o
+[1493/1987] Building C object boards/CMakeFiles/board.dir/mnt/d/My-Program/AI-Agent-Program/GPTsprogram/Openvela/quickly-openvela/vendor/allwinnertech/boards/a733/cubie-a7z/src/a7z_power.c.o
+[1494/1987] Building C object boards/CMakeFiles/board.dir/mnt/d/My-Program/AI-Agent-Program/GPTsprogram/Openvela/quickly-openvela/vendor/allwinnertech/boards/a733/cubie-a7z/src/a7z_storage.c.o
+[1495/1987] Building C object boards/CMakeFiles/board.dir/mnt/d/My-Program/AI-Agent-Program/GPTsprogram/Openvela/quickly-openvela/vendor/allwinnertech/boards/a733/cubie-a7z/src/a7z_boardinit.c.o
+[1496/1987] Building C object boards/CMakeFiles/board.dir/mnt/d/My-Program/AI-Agent-Program/GPTsprogram/Openvela/quickly-openvela/vendor/allwinnertech/boards/a733/cubie-a7z/src/a7z_gpio.c.o
+[1497/1987] Building C object apps/CMakeFiles/apps.dir/fsutils/mkfatfs/configfat.c.o
+[1498/1987] Building C object boards/CMakeFiles/board.dir/boardctl.c.o
+[1499/1987] Building C object apps/CMakeFiles/apps.dir/fsutils/mkfatfs/mkfatfs.c.o
+[1500/1987] Building C object apps/CMakeFiles/apps.dir/fsutils/mkfatfs/writefat.c.o
+[1501/1987] Building C object boards/CMakeFiles/board.dir/mnt/d/My-Program/AI-Agent-Program/GPTsprogram/Openvela/quickly-openvela/vendor/allwinnertech/boards/a733/cubie-a7z/src/a7z_st7735.c.o
+[1502/1987] Building C object apps/CMakeFiles/apps.dir/netutils/cjson/cJSON/cJSON.c.o
+[1503/1987] Building C object apps/CMakeFiles/apps.dir/netutils/cjson/cJSON/cJSON_Utils.c.o
+[1504/1987] Building C object apps/CMakeFiles/apps.dir/netutils/dhcpc/dhcpc.c.o
+[1505/1987] Building C object apps/CMakeFiles/apps.dir/netutils/netinit/netinit_associate.c.o
+[1506/1987] Building C object apps/CMakeFiles/apps.dir/netutils/iperf/iperf.c.o
+[1507/1987] Building C object apps/CMakeFiles/apps.dir/netutils/ftpd/ftpd.c.o
+[1508/1987] Building C object apps/CMakeFiles/apps.dir/netutils/netlib/netlib_ipv4addrconv.c.o
+[1509/1987] Building C object apps/CMakeFiles/apps.dir/netutils/netlib/netlib_parsehttpurl.c.o
+[1510/1987] Building C object apps/CMakeFiles/apps.dir/netutils/netlib/netlib_ethaddrconv.c.o
+[1511/1987] Building C object apps/CMakeFiles/apps.dir/netutils/netlib/netlib_setifstatus.c.o
+[1512/1987] Building C object apps/CMakeFiles/apps.dir/netutils/netinit/netinit.c.o
+[1513/1987] Building C object apps/CMakeFiles/apps.dir/netutils/netlib/netlib_getifstatus.c.o
+[1514/1987] Building C object apps/CMakeFiles/apps.dir/netutils/netlib/netlib_parseurl.c.o
+[1515/1987] Building C object apps/CMakeFiles/apps.dir/netutils/netlib/netlib_setipv4addr.c.o
+[1516/1987] Building C object apps/CMakeFiles/apps.dir/netutils/netlib/netlib_setdripv4addr.c.o
+[1517/1987] Building C object apps/CMakeFiles/apps.dir/netutils/netlib/netlib_getipv4addr.c.o
+[1518/1987] Building C object apps/CMakeFiles/apps.dir/netutils/netlib/netlib_setipv4netmask.c.o
+[1519/1987] Building C object apps/CMakeFiles/apps.dir/netutils/netlib/netlib_getdripv4addr.c.o
+[1520/1987] Building C object apps/CMakeFiles/apps.dir/netutils/netlib/netlib_getipv4netmask.c.o
+[1521/1987] Building C object apps/CMakeFiles/apps.dir/netutils/netlib/netlib_ipv4adaptor.c.o
+[1522/1987] Building C object apps/CMakeFiles/apps.dir/netutils/netlib/netlib_delarp.c.o
+[1523/1987] Building C object apps/CMakeFiles/apps.dir/netutils/netlib/netlib_getarp.c.o
+[1524/1987] Building C object apps/CMakeFiles/apps.dir/netutils/netlib/netlib_setarp.c.o
+[1525/1987] Building C object apps/CMakeFiles/apps.dir/netutils/netlib/netlib_setipv4dnsaddr.c.o
+[1526/1987] Building C object apps/CMakeFiles/apps.dir/netutils/netlib/netlib_obtainipv4addr.c.o
+[1527/1987] Building C object apps/CMakeFiles/apps.dir/netutils/netlib/netlib_cleardnsaddr.c.o
+[1528/1987] Building C object apps/CMakeFiles/apps.dir/netutils/netlib/netlib_server.c.o
+[1529/1987] Building C object apps/CMakeFiles/apps.dir/netutils/netlib/netlib_listenon.c.o
+[1530/1987] Building C object apps/CMakeFiles/apps.dir/netutils/netlib/netlib_getessid.c.o
+[1531/1987] Building C object apps/CMakeFiles/apps.dir/netutils/netlib/netlib_setmacaddr.c.o
+[1532/1987] Building C object apps/CMakeFiles/apps.dir/netutils/netlib/netlib_setessid.c.o
+[1533/1987] Building C object apps/CMakeFiles/apps.dir/netutils/netlib/netlib_getmacaddr.c.o
+[1534/1987] Building C object apps/CMakeFiles/apps.dir/netutils/netlib/netlib_getiobinfo.c.o
+[1535/1987] Building C object apps/CMakeFiles/apps.dir/netutils/netlib/netlib_setmtu.c.o
+[1536/1987] Building C object apps/CMakeFiles/apps.dir/netutils/netlib/netlib_checkipconnectivity.c.o
+[1537/1987] Building C object apps/CMakeFiles/apps.dir/netutils/netlib/netlib_checkifconnectivity.c.o
+[1538/1987] Building C object apps/CMakeFiles/apps.dir/netutils/netlib/netlib_checkhttpconnectivity.c.o
+[1539/1987] Building C object apps/CMakeFiles/apps.dir/netutils/ntpclient/ntpclient.c.o
+[1540/1987] Building C object apps/CMakeFiles/apps.dir/netutils/ping/icmp_ping.c.o
+[1541/1987] Building C object apps/CMakeFiles/apps.dir/nshlib/nsh_init.c.o
+[1542/1987] Building C object apps/CMakeFiles/apps.dir/nshlib/nsh_system.c.o
+[1543/1987] Building C object apps/CMakeFiles/apps.dir/nshlib/nsh_script.c.o
+[1544/1987] Building C object apps/CMakeFiles/apps.dir/nshlib/nsh_command.c.o
+[1545/1987] Building C object apps/CMakeFiles/apps.dir/nshlib/nsh_console.c.o
+[1546/1987] Building C object apps/CMakeFiles/apps.dir/nshlib/nsh_parse.c.o
+[1547/1987] Building C object apps/CMakeFiles/apps.dir/netutils/webclient/webclient.c.o
+[1548/1987] Building C object apps/CMakeFiles/apps.dir/nshlib/nsh_ddcmd.c.o
+[1549/1987] Building C object apps/CMakeFiles/apps.dir/nshlib/nsh_fscmds.c.o
+[1550/1987] Building C object apps/CMakeFiles/apps.dir/nshlib/nsh_proccmds.c.o
+[1551/1987] Building C object apps/CMakeFiles/apps.dir/nshlib/nsh_mmcmds.c.o
+[1552/1987] Building C object apps/CMakeFiles/apps.dir/nshlib/nsh_prompt.c.o
+[1553/1987] Building C object apps/CMakeFiles/apps.dir/nshlib/nsh_envcmds.c.o
+[1554/1987] Building C object apps/CMakeFiles/apps.dir/nshlib/nsh_timcmds.c.o
+[1555/1987] Building C object apps/CMakeFiles/apps.dir/nshlib/nsh_dbgcmds.c.o
+[1556/1987] Building C object apps/CMakeFiles/apps.dir/nshlib/nsh_session.c.o
+[1557/1987] Building C object apps/CMakeFiles/apps.dir/nshlib/nsh_fsutils.c.o
+[1558/1987] Building C object apps/CMakeFiles/apps.dir/nshlib/nsh_syscmds.c.o
+[1559/1987] Building C object apps/CMakeFiles/apps.dir/nshlib/nsh_fileapps.c.o
+[1560/1987] Building C object apps/CMakeFiles/apps.dir/nshlib/nsh_mntcmds.c.o
+[1561/1987] Building C object apps/CMakeFiles/apps.dir/nshlib/nsh_consolemain.c.o
+[1562/1987] Building C object apps/CMakeFiles/apps.dir/nshlib/nsh_test.c.o
+[1563/1987] Building C object apps/CMakeFiles/apps.dir/system/readline/readline_stream.c.o
+[1564/1987] Building C object apps/CMakeFiles/apps.dir/nshlib/nsh_printf.c.o
+[1565/1987] Building C object apps/CMakeFiles/apps.dir/nshlib/nsh_alias.c.o
+[1566/1987] Building C object apps/CMakeFiles/apps.dir/system/readline/readline.c.o
+[1567/1987] Building C object apps/CMakeFiles/apps.dir/nshlib/nsh_netcmds.c.o
+[1568/1987] Building C object apps/CMakeFiles/apps.dir/nshlib/nsh_wait.c.o
+[1569/1987] Building C object apps/CMakeFiles/apps.dir/system/readline/readline_fd.c.o
+[1570/1987] Building C object apps/CMakeFiles/apps.dir/nshlib/nsh_altconsole.c.o
+[1571/1987] Building C object apps/CMakeFiles/apps.dir/system/readline/readline_common.c.o
+[1572/1987] Building C object apps/CMakeFiles/apps.dir/system/system/system.c.o
+[1573/1987] Building C object apps/crypto/mbedtls/CMakeFiles/mbedtls.dir/mbedtls/library/aria.c.o
+[1574/1987] Building C object apps/crypto/mbedtls/CMakeFiles/mbedtls.dir/mbedtls/library/aes.c.o
+[1575/1987] Building C object apps/crypto/mbedtls/CMakeFiles/mbedtls.dir/mbedtls/library/asn1parse.c.o
+[1576/1987] Building C object apps/CMakeFiles/apps.dir/wireless/wapi/src/network.c.o
+[1577/1987] Building C object apps/crypto/mbedtls/CMakeFiles/mbedtls.dir/mbedtls/library/asn1write.c.o
+[1578/1987] Building C object apps/CMakeFiles/apps.dir/wireless/wapi/src/driver_wext.c.o
+[1579/1987] Building C object apps/CMakeFiles/apps.dir/wireless/wapi/src/util.c.o
+[1580/1987] Building C object apps/crypto/mbedtls/CMakeFiles/mbedtls.dir/mbedtls/library/base64.c.o
+[1581/1987] Building C object apps/crypto/mbedtls/CMakeFiles/mbedtls.dir/mbedtls/library/bignum.c.o
+[1582/1987] Building C object apps/CMakeFiles/apps.dir/wireless/wapi/src/wireless.c.o
+[1583/1987] Building C object apps/crypto/mbedtls/CMakeFiles/mbedtls.dir/mbedtls/library/bignum_core.c.o
+[1584/1987] Building C object apps/crypto/mbedtls/CMakeFiles/mbedtls.dir/mbedtls/library/ccm.c.o
+[1585/1987] Building C object apps/crypto/mbedtls/CMakeFiles/mbedtls.dir/mbedtls/library/camellia.c.o
+[1586/1987] Building C object apps/crypto/mbedtls/CMakeFiles/mbedtls.dir/mbedtls/library/chacha20.c.o
+[1587/1987] Building C object apps/crypto/mbedtls/CMakeFiles/mbedtls.dir/mbedtls/library/chachapoly.c.o
+[1588/1987] Building C object apps/crypto/mbedtls/CMakeFiles/mbedtls.dir/mbedtls/library/bignum_mod.c.o
+[1589/1987] Building C object apps/crypto/mbedtls/CMakeFiles/mbedtls.dir/mbedtls/library/cipher.c.o
+[1590/1987] Building C object apps/crypto/mbedtls/CMakeFiles/mbedtls.dir/mbedtls/library/bignum_mod_raw.c.o
+[1591/1987] Building C object apps/crypto/mbedtls/CMakeFiles/mbedtls.dir/mbedtls/library/cipher_wrap.c.o
+[1592/1987] Building C object apps/crypto/mbedtls/CMakeFiles/mbedtls.dir/mbedtls/library/cmac.c.o
+[1593/1987] Building C object apps/crypto/mbedtls/CMakeFiles/mbedtls.dir/mbedtls/library/des.c.o
+[1594/1987] Building C object apps/crypto/mbedtls/CMakeFiles/mbedtls.dir/mbedtls/library/ecdh.c.o
+[1595/1987] Building C object apps/crypto/mbedtls/CMakeFiles/mbedtls.dir/mbedtls/library/dhm.c.o
+[1596/1987] Building C object apps/crypto/mbedtls/CMakeFiles/mbedtls.dir/mbedtls/library/ctr_drbg.c.o
+[1597/1987] Building C object apps/crypto/mbedtls/CMakeFiles/mbedtls.dir/mbedtls/library/constant_time.c.o
+[1598/1987] Building C object apps/crypto/mbedtls/CMakeFiles/mbedtls.dir/mbedtls/library/ecdsa.c.o
+[1599/1987] Building C object apps/crypto/mbedtls/CMakeFiles/mbedtls.dir/mbedtls/library/ecjpake.c.o
+[1600/1987] Building C object apps/crypto/mbedtls/CMakeFiles/mbedtls.dir/mbedtls/library/ecp_curves.c.o
+[1601/1987] Building C object apps/crypto/mbedtls/CMakeFiles/mbedtls.dir/mbedtls/library/entropy.c.o
+[1602/1987] Building C object apps/crypto/mbedtls/CMakeFiles/mbedtls.dir/mbedtls/library/ecp.c.o
+[1603/1987] Building C object apps/crypto/mbedtls/CMakeFiles/mbedtls.dir/mbedtls/library/entropy_poll.c.o
+[1604/1987] Building C object apps/crypto/mbedtls/CMakeFiles/mbedtls.dir/mbedtls/library/gcm.c.o
+[1605/1987] Building C object apps/crypto/mbedtls/CMakeFiles/mbedtls.dir/mbedtls/library/hash_info.c.o
+[1606/1987] Building C object apps/crypto/mbedtls/CMakeFiles/mbedtls.dir/mbedtls/library/error.c.o
+[1607/1987] Building C object apps/crypto/mbedtls/CMakeFiles/mbedtls.dir/mbedtls/library/hmac_drbg.c.o
+[1608/1987] Building C object apps/crypto/mbedtls/CMakeFiles/mbedtls.dir/mbedtls/library/md5.c.o
+[1609/1987] Building C object apps/crypto/mbedtls/CMakeFiles/mbedtls.dir/mbedtls/library/md.c.o
+[1610/1987] Building C object apps/crypto/mbedtls/CMakeFiles/mbedtls.dir/mbedtls/library/lmots.c.o
+[1611/1987] Building C object apps/crypto/mbedtls/CMakeFiles/mbedtls.dir/mbedtls/library/nist_kw.c.o
+[1612/1987] Building C object apps/crypto/mbedtls/CMakeFiles/mbedtls.dir/mbedtls/library/lms.c.o
+[1613/1987] Building C object apps/crypto/mbedtls/CMakeFiles/mbedtls.dir/mbedtls/library/pem.c.o
+[1614/1987] Building C object apps/crypto/mbedtls/CMakeFiles/mbedtls.dir/mbedtls/library/net_sockets.c.o
+[1615/1987] Building C object apps/crypto/mbedtls/CMakeFiles/mbedtls.dir/mbedtls/library/oid.c.o
+[1616/1987] Building C object apps/crypto/mbedtls/CMakeFiles/mbedtls.dir/mbedtls/library/pk.c.o
+[1617/1987] Building C object apps/crypto/mbedtls/CMakeFiles/mbedtls.dir/mbedtls/library/pk_wrap.c.o
+[1618/1987] Building C object apps/crypto/mbedtls/CMakeFiles/mbedtls.dir/mbedtls/library/pkcs5.c.o
+[1619/1987] Building C object apps/crypto/mbedtls/CMakeFiles/mbedtls.dir/mbedtls/library/pkcs12.c.o
+[1620/1987] Building C object apps/crypto/mbedtls/CMakeFiles/mbedtls.dir/mbedtls/library/platform.c.o
+[1621/1987] Building C object apps/crypto/mbedtls/CMakeFiles/mbedtls.dir/mbedtls/library/pkparse.c.o
+[1622/1987] Building C object apps/crypto/mbedtls/CMakeFiles/mbedtls.dir/mbedtls/library/pkcs7.c.o
+[1623/1987] Building C object apps/crypto/mbedtls/CMakeFiles/mbedtls.dir/mbedtls/library/pkwrite.c.o
+[1624/1987] Building C object apps/crypto/mbedtls/CMakeFiles/mbedtls.dir/mbedtls/library/platform_util.c.o
+[1625/1987] Building C object apps/crypto/mbedtls/CMakeFiles/mbedtls.dir/mbedtls/library/poly1305.c.o
+[1626/1987] Building C object apps/crypto/mbedtls/CMakeFiles/mbedtls.dir/mbedtls/library/psa_crypto_aead.c.o
+[1627/1987] Building C object apps/crypto/mbedtls/CMakeFiles/mbedtls.dir/mbedtls/library/psa_crypto_client.c.o
+[1628/1987] Building C object apps/crypto/mbedtls/CMakeFiles/mbedtls.dir/mbedtls/library/psa_crypto_hash.c.o
+[1629/1987] Building C object apps/crypto/mbedtls/CMakeFiles/mbedtls.dir/mbedtls/library/psa_crypto.c.o
+[1630/1987] Building C object apps/crypto/mbedtls/CMakeFiles/mbedtls.dir/mbedtls/library/psa_crypto_mac.c.o
+[1631/1987] Building C object apps/crypto/mbedtls/CMakeFiles/mbedtls.dir/mbedtls/library/psa_crypto_cipher.c.o
+[1632/1987] Building C object apps/crypto/mbedtls/CMakeFiles/mbedtls.dir/mbedtls/library/psa_crypto_driver_wrappers.c.o
+[1633/1987] Building C object apps/crypto/mbedtls/CMakeFiles/mbedtls.dir/mbedtls/library/psa_crypto_ecp.c.o
+[1634/1987] Building C object apps/crypto/mbedtls/CMakeFiles/mbedtls.dir/mbedtls/library/psa_crypto_slot_management.c.o
+[1635/1987] Building C object apps/crypto/mbedtls/CMakeFiles/mbedtls.dir/mbedtls/library/psa_crypto_storage.c.o
+[1636/1987] Building C object apps/crypto/mbedtls/CMakeFiles/mbedtls.dir/mbedtls/library/psa_crypto_pake.c.o
+[1637/1987] Building C object apps/crypto/mbedtls/CMakeFiles/mbedtls.dir/mbedtls/library/psa_crypto_rsa.c.o
+[1638/1987] Building C object apps/crypto/mbedtls/CMakeFiles/mbedtls.dir/mbedtls/library/psa_its_file.c.o
+[1639/1987] Building C object apps/crypto/mbedtls/CMakeFiles/mbedtls.dir/mbedtls/library/ripemd160.c.o
+[1640/1987] Building C object apps/crypto/mbedtls/CMakeFiles/mbedtls.dir/mbedtls/library/sha1.c.o
+[1641/1987] Building C object apps/crypto/mbedtls/CMakeFiles/mbedtls.dir/mbedtls/library/sha256.c.o
+[1642/1987] Building C object apps/crypto/mbedtls/CMakeFiles/mbedtls.dir/mbedtls/library/sha512.c.o
+[1643/1987] Building C object apps/crypto/mbedtls/CMakeFiles/mbedtls.dir/mbedtls/library/rsa_alt_helpers.c.o
+[1644/1987] Building C object apps/crypto/mbedtls/CMakeFiles/mbedtls.dir/mbedtls/library/psa_util.c.o
+[1645/1987] Building C object apps/crypto/mbedtls/CMakeFiles/mbedtls.dir/mbedtls/library/rsa.c.o
+[1646/1987] Building C object apps/crypto/mbedtls/CMakeFiles/mbedtls.dir/mbedtls/library/ssl_ciphersuites.c.o
+[1647/1987] Building C object apps/crypto/mbedtls/CMakeFiles/mbedtls.dir/mbedtls/library/ssl_cache.c.o
+[1648/1987] Building C object apps/crypto/mbedtls/CMakeFiles/mbedtls.dir/mbedtls/library/ssl_client.c.o
+[1649/1987] Building C object apps/crypto/mbedtls/CMakeFiles/mbedtls.dir/mbedtls/library/ssl_msg.c.o
+[1650/1987] Building C object apps/crypto/mbedtls/CMakeFiles/mbedtls.dir/mbedtls/library/ssl_tls.c.o
+[1651/1987] Building C object apps/crypto/mbedtls/CMakeFiles/mbedtls.dir/mbedtls/library/threading.c.o
+[1652/1987] Building C object apps/crypto/mbedtls/CMakeFiles/mbedtls.dir/mbedtls/library/timing.c.o
+[1653/1987] Building C object apps/crypto/mbedtls/CMakeFiles/mbedtls.dir/mbedtls/library/ssl_tls12_client.c.o
+[1654/1987] Building C object apps/crypto/mbedtls/CMakeFiles/mbedtls.dir/mbedtls/library/ssl_tls12_server.c.o
+[1655/1987] Building C object apps/crypto/mbedtls/CMakeFiles/mbedtls.dir/mbedtls/library/x509_create.c.o
+[1656/1987] Building C object apps/crypto/mbedtls/CMakeFiles/mbedtls.dir/mbedtls/library/x509.c.o
+[1657/1987] Building C object apps/crypto/mbedtls/CMakeFiles/mbedtls.dir/mbedtls/library/x509_crl.c.o
+[1658/1987] Building C object apps/crypto/mbedtls/CMakeFiles/mbedtls.dir/mbedtls/library/x509_csr.c.o
+[1659/1987] Building C object apps/crypto/mbedtls/CMakeFiles/mbedtls.dir/mbedtls/library/x509write_crt.c.o
+[1660/1987] Building C object apps/crypto/mbedtls/CMakeFiles/mbedtls.dir/mbedtls/library/x509_crt.c.o
+[1661/1987] Building C object apps/crypto/tinycrypt/CMakeFiles/tinycrypt.dir/tinycrypt/lib/source/ecc_platform_specific.c.o
+[1662/1987] Linking C static library apps/netutils/mqttc/libmqttc.a
+[1663/1987] Building C object apps/crypto/mbedtls/CMakeFiles/mbedtls.dir/mbedtls/library/x509write_csr.c.o
+[1664/1987] Building C object apps/graphics/lvgl/CMakeFiles/lvgl.dir/lvgl/src/stdlib/clib/lv_sprintf_clib.c.o
+[1665/1987] Building C object apps/graphics/lvgl/CMakeFiles/lvgl.dir/lvgl/src/libs/gpc/gpc.c.o
+[1666/1987] Building C object apps/netutils/iperf/CMakeFiles/apps_iperf.dir/iperf_main.c.o
+[1667/1987] Building C object apps/netutils/netcat/CMakeFiles/apps_netcat.dir/netcat_main.c.o
+[1668/1987] Building C object apps/system/a733ftpd/CMakeFiles/apps_ftpd.dir/a733ftpd_main.c.o
+[1669/1987] Building C object apps/system/a733npu/CMakeFiles/apps_npu.dir/a733npu_main.c.o
+[1670/1987] Building C object apps/system/a733services/CMakeFiles/apps_service.dir/a733services_main.c.o
+[1671/1987] Building C object apps/system/a733services/CMakeFiles/apps_service.dir/services_config.c.o
+[1672/1987] Building C object apps/graphics/lvgl/CMakeFiles/lvgl.dir/lvgl/src/drivers/nuttx/lv_nuttx_image_cache.c.o
+[1673/1987] Building C object apps/graphics/lvgl/CMakeFiles/lvgl.dir/lvgl/src/drivers/nuttx/lv_nuttx_entry.c.o
+[1674/1987] Building C object apps/graphics/lvgl/CMakeFiles/lvgl.dir/lvgl/src/drivers/nuttx/lv_nuttx_fbdev.c.o
+[1675/1987] Building C object apps/system/a733display/CMakeFiles/apps_display.dir/a733display_main.c.o
+[1676/1987] Building C object apps/graphics/lvgl/CMakeFiles/lvgl.dir/lvgl/src/drivers/nuttx/lv_nuttx_lcd.c.o
+[1677/1987] Building C object apps/system/a733wifi/CMakeFiles/apps_wifi.dir/a733wifi_main.c.o
+[1678/1987] Building C object apps/graphics/lvgl/CMakeFiles/lvgl.dir/lvgl/examples/others/imgfont/lv_example_imgfont_1.c.o
+[1679/1987] Building C object apps/system/aipet/CMakeFiles/apps_aipet.dir/agent_setup.c.o
+[1680/1987] Building C object apps/system/aipet/CMakeFiles/apps_aipet.dir/agent_startup.c.o
+[1681/1987] Building C object apps/system/aipetllm/CMakeFiles/apps_aipetllm.dir/aipetllm_cpucheck.c.o
+[1682/1987] Building C object apps/system/aipetllm/CMakeFiles/apps_aipetllm.dir/aipetllm_main.c.o
+[1683/1987] Building C object apps/system/aipetllm/CMakeFiles/apps_aipetllm.dir/aipetllm_tokencheck.c.o
+[1684/1987] Building C object apps/system/aipetllm/CMakeFiles/apps_aipetllm.dir/aipetllm_ggml_quant.c.o
+[1685/1987] Building C object apps/system/aipetllm/CMakeFiles/apps_aipetllm.dir/aipetllm_modelcheck.c.o
+[1686/1987] Building C object apps/system/aipetllm/CMakeFiles/apps_aipetllm.dir/third_party/ggml/src/ggml-quants.c.o
+/mnt/d/My-Program/AI-Agent-Program/GPTsprogram/Openvela/quickly-openvela/apps/system/aipetllm/third_party/ggml/src/ggml-quants.c:26: warning: "UNUSED" redefined
+   26 | #define UNUSED GGML_UNUSED
+      | 
+In file included from /mnt/d/My-Program/AI-Agent-Program/GPTsprogram/Openvela/quickly-openvela/nuttx/include/stdint.h:35,
+                 from /mnt/d/My-Program/AI-Agent-Program/GPTsprogram/Openvela/quickly-openvela/apps/system/aipetllm/third_party/ggml/src/ggml-common.h:470,
+                 from /mnt/d/My-Program/AI-Agent-Program/GPTsprogram/Openvela/quickly-openvela/apps/system/aipetllm/third_party/ggml/src/ggml-quants.c:2:
+/mnt/d/My-Program/AI-Agent-Program/GPTsprogram/Openvela/quickly-openvela/nuttx/include/nuttx/compiler.h:624: note: this is the location of the previous definition
+  624 | #    define UNUSED(a) ((void)(1 || &(a)))
+      | 
+[1687/1987] Building C object apps/system/aipetllm/CMakeFiles/apps_llm.dir/llm_main.c.o
+[1688/1987] Building C object apps/system/aipetllm/CMakeFiles/apps_aipetllm.dir/third_party/ggml/src/ggml-cpu/quants.c.o
+/mnt/d/My-Program/AI-Agent-Program/GPTsprogram/Openvela/quickly-openvela/apps/system/aipetllm/third_party/ggml/src/ggml-cpu/quants.c:23: warning: "UNUSED" redefined
+   23 | #define UNUSED GGML_UNUSED
+      | 
+In file included from /mnt/d/My-Program/AI-Agent-Program/GPTsprogram/Openvela/quickly-openvela/nuttx/include/stdint.h:35,
+                 from /mnt/d/My-Program/AI-Agent-Program/GPTsprogram/Openvela/quickly-openvela/apps/system/aipetllm/third_party/ggml/src/ggml-common.h:470,
+                 from /mnt/d/My-Program/AI-Agent-Program/GPTsprogram/Openvela/quickly-openvela/apps/system/aipetllm/third_party/ggml/src/ggml-cpu/quants.c:2:
+/mnt/d/My-Program/AI-Agent-Program/GPTsprogram/Openvela/quickly-openvela/nuttx/include/nuttx/compiler.h:624: note: this is the location of the previous definition
+  624 | #    define UNUSED(a) ((void)(1 || &(a)))
+      | 
+[1689/1987] Building C object apps/system/aipetllm/CMakeFiles/apps_aipetllm.dir/third_party/ggml/src/ggml-cpu/arch/arm/quants.c.o
+/mnt/d/My-Program/AI-Agent-Program/GPTsprogram/Openvela/quickly-openvela/apps/system/aipetllm/third_party/ggml/src/ggml-cpu/arch/arm/quants.c:24: warning: "UNUSED" redefined
+   24 | #define UNUSED GGML_UNUSED
+      | 
+In file included from /mnt/d/My-Program/AI-Agent-Program/GPTsprogram/Openvela/quickly-openvela/nuttx/include/stdint.h:35,
+                 from /mnt/d/My-Program/AI-Agent-Program/GPTsprogram/Openvela/quickly-openvela/apps/system/aipetllm/third_party/ggml/src/ggml-common.h:470,
+                 from /mnt/d/My-Program/AI-Agent-Program/GPTsprogram/Openvela/quickly-openvela/apps/system/aipetllm/third_party/ggml/src/ggml-cpu/arch/arm/quants.c:2:
+/mnt/d/My-Program/AI-Agent-Program/GPTsprogram/Openvela/quickly-openvela/nuttx/include/nuttx/compiler.h:624: note: this is the location of the previous definition
+  624 | #    define UNUSED(a) ((void)(1 || &(a)))
+      | 
+[1690/1987] Building C object apps/system/dhcpc/CMakeFiles/apps_renew.dir/renew_main.c.o
+[1691/1987] Building C object apps/system/i2c/CMakeFiles/apps_i2c.dir/i2c_bus.c.o
+[1692/1987] Building C object apps/system/i2c/CMakeFiles/apps_i2c.dir/i2c_main.c.o
+[1693/1987] Building C object apps/system/i2c/CMakeFiles/apps_i2c.dir/i2c_common.c.o
+[1694/1987] Building CXX object apps/system/aipetllm/CMakeFiles/apps_aipetllm.dir/aipetllm_cxx.cxx.o
+[1695/1987] Building CXX object apps/system/aipet/CMakeFiles/apps_aipet.dir/aipet_main.cxx.o
+[1696/1987] Building C object apps/system/i2c/CMakeFiles/apps_i2c.dir/i2c_dev.c.o
+[1697/1987] Building CXX object apps/system/aipet/CMakeFiles/apps_aipet.dir/pet_core.cxx.o
+[1698/1987] Building C object apps/system/i2c/CMakeFiles/apps_i2c.dir/i2c_get.c.o
+[1699/1987] Building C object apps/system/i2c/CMakeFiles/apps_i2c.dir/i2c_set.c.o
+[1700/1987] Building CXX object apps/system/aipetllm/CMakeFiles/apps_aipetllm.dir/aipetllm_bpe.cxx.o
+[1701/1987] Building C object apps/system/i2c/CMakeFiles/apps_i2c.dir/i2c_verf.c.o
+[1702/1987] Building CXX object apps/system/aipet/CMakeFiles/apps_aipet.dir/pet_routes.cxx.o
+[1703/1987] Building CXX object apps/system/aipet/CMakeFiles/apps_aipet.dir/local_llm.cxx.o
+[1704/1987] Building C object apps/system/ntpc/CMakeFiles/apps_ntpcstart.dir/ntpcstart_main.c.o
+[1705/1987] Building C object apps/system/ntpc/CMakeFiles/apps_ntpcstop.dir/ntpcstop_main.c.o
+[1706/1987] Building C object apps/system/i2c/CMakeFiles/apps_i2c.dir/i2c_hexdump.c.o
+[1707/1987] Building C object apps/system/i2c/CMakeFiles/apps_i2c.dir/i2c_devif.c.o
+[1708/1987] Building C object apps/system/i2c/CMakeFiles/apps_i2c.dir/i2c_dump.c.o
+[1709/1987] Building C object apps/system/nsh/CMakeFiles/apps_nsh.dir/nsh_main.c.o
+[1710/1987] Building C object apps/system/ntpc/CMakeFiles/apps_ntpcstatus.dir/ntpcstatus_main.c.o
+[1711/1987] Building C object apps/system/ping/CMakeFiles/apps_ping.dir/ping.c.o
+[1712/1987] Building CXX object apps/system/aipet/CMakeFiles/apps_aipet.dir/speech_output.cxx.o
+[1713/1987] Building C object apps/system/spi/CMakeFiles/apps_spi.dir/spi_bus.c.o
+[1714/1987] Building C object apps/system/spi/CMakeFiles/apps_spi.dir/spi_common.c.o
+[1715/1987] Building C object apps/system/spi/CMakeFiles/apps_spi.dir/spi_main.c.o
+[1716/1987] Building C object apps/system/sensortest/CMakeFiles/apps_sensortest.dir/sensortest.c.o
+[1717/1987] Building C object apps/system/spi/CMakeFiles/apps_spi.dir/spi_devif.c.o
+[1718/1987] Building CXX object apps/system/aipet/CMakeFiles/apps_aipet.dir/uart_tts.cxx.o
+[1719/1987] Building C object apps/system/spi/CMakeFiles/apps_spi.dir/spi_exch.c.o
+[1720/1987] Building C object apps/system/zlib/CMakeFiles/zlib.dir/zlib/contrib/minizip/ioapi.c.o
+[1721/1987] Building C object apps/system/zlib/CMakeFiles/zlib.dir/zlib/contrib/minizip/mztools.c.o
+[1722/1987] Building C object apps/system/zlib/CMakeFiles/zlib.dir/zlib/contrib/minizip/unzip.c.o
+[1723/1987] Building C object apps/system/zlib/CMakeFiles/zlib.dir/zlib/adler32.c.o
+[1724/1987] Building C object apps/system/zlib/CMakeFiles/zlib.dir/zlib/compress.c.o
+[1725/1987] Building C object apps/system/zlib/CMakeFiles/zlib.dir/zlib/crc32.c.o
+[1726/1987] Building C object apps/system/zlib/CMakeFiles/zlib.dir/zlib/contrib/minizip/zip.c.o
+[1727/1987] Building C object apps/system/zlib/CMakeFiles/zlib.dir/zlib/gzclose.c.o
+[1728/1987] Building C object apps/system/zlib/CMakeFiles/zlib.dir/zlib/deflate.c.o
+[1729/1987] Building C object apps/system/zlib/CMakeFiles/zlib.dir/zlib/gzlib.c.o
+[1730/1987] Building C object apps/system/zlib/CMakeFiles/zlib.dir/zlib/gzread.c.o
+[1731/1987] Building C object apps/system/zlib/CMakeFiles/zlib.dir/zlib/gzwrite.c.o
+[1732/1987] Building C object apps/system/zlib/CMakeFiles/zlib.dir/zlib/infback.c.o
+[1733/1987] Building C object apps/system/zlib/CMakeFiles/zlib.dir/zlib/inffast.c.o
+[1734/1987] Building C object apps/system/zlib/CMakeFiles/zlib.dir/zlib/inftrees.c.o
+[1735/1987] Building C object apps/system/zlib/CMakeFiles/zlib.dir/zlib/inflate.c.o
+[1736/1987] Building C object apps/system/zlib/CMakeFiles/zlib.dir/zlib/trees.c.o
+[1737/1987] Building C object apps/system/zlib/CMakeFiles/zlib.dir/zlib/uncompr.c.o
+[1738/1987] Building C object apps/system/zlib/CMakeFiles/zlib.dir/zlib/zutil.c.o
+[1739/1987] Building C object apps/packages/ai_agent/CMakeFiles/apps_ai_agent.dir/mnt/d/My-Program/AI-Agent-Program/GPTsprogram/Openvela/quickly-openvela/apps/system/aipet/agent_secret.c.o
+[1740/1987] Building C object apps/wireless/wapi/CMakeFiles/apps_wapi.dir/src/wapi.c.o
+[1741/1987] Building C object apps/packages/ai_agent/CMakeFiles/apps_ai_agent.dir/mnt/d/My-Program/AI-Agent-Program/GPTsprogram/Openvela/quickly-openvela/apps/system/aipet/agent_bridge.c.o
+[1742/1987] Building C object apps/packages/ai_agent/CMakeFiles/apps_ai_agent.dir/src/core/message_bus.c.o
+[1743/1987] Building C object apps/packages/ai_agent/CMakeFiles/apps_ai_agent.dir/src/agent_main.c.o
+[1744/1987] Building C object apps/packages/ai_agent/CMakeFiles/apps_ai_agent.dir/src/core/message_bus_tap.c.o
+[1745/1987] Building C object apps/packages/ai_agent/CMakeFiles/apps_ai_agent.dir/src/core/agent_loop.c.o
+[1746/1987] Building C object apps/packages/ai_agent/CMakeFiles/apps_ai_agent.dir/src/core/agent_trace.c.o
+[1747/1987] Building C object apps/packages/ai_agent/CMakeFiles/apps_ai_agent.dir/src/core/context_builder.c.o
+[1748/1987] Building C object apps/packages/ai_agent/CMakeFiles/apps_ai_agent.dir/src/core/memory_store.c.o
+[1749/1987] Building C object apps/packages/ai_agent/CMakeFiles/apps_ai_agent.dir/src/core/arena_alloc.c.o
+[1750/1987] Building C object apps/packages/ai_agent/CMakeFiles/apps_ai_agent.dir/src/core/session_mgr.c.o
+[1751/1987] Building C object apps/packages/ai_agent/CMakeFiles/apps_ai_agent.dir/src/llm/llm_parse.c.o
+[1752/1987] Building C object apps/packages/ai_agent/CMakeFiles/apps_ai_agent.dir/src/llm/llm_proxy.c.o
+[1753/1987] Building C object apps/packages/ai_agent/CMakeFiles/apps_ai_agent.dir/src/llm/llm_vision.c.o
+[1754/1987] Building C object apps/packages/ai_agent/CMakeFiles/apps_ai_agent.dir/src/llm/llm_cache.c.o
+[1755/1987] Building C object apps/packages/ai_agent/CMakeFiles/apps_ai_agent.dir/src/llm/llm_router.c.o
+[1756/1987] Building C object apps/packages/ai_agent/CMakeFiles/apps_ai_agent.dir/src/infra/config_store.c.o
+[1757/1987] Building C object apps/packages/ai_agent/CMakeFiles/apps_ai_agent.dir/src/infra/http_proxy.c.o
+[1758/1987] Building C object apps/packages/ai_agent/CMakeFiles/apps_ai_agent.dir/src/infra/network_manager.c.o
+[1759/1987] Building C object apps/packages/ai_agent/CMakeFiles/apps_ai_agent.dir/src/infra/cron_service.c.o
+[1760/1987] Building C object apps/packages/ai_agent/CMakeFiles/apps_ai_agent.dir/src/infra/heartbeat.c.o
+[1761/1987] Building C object apps/packages/ai_agent/CMakeFiles/apps_ai_agent.dir/src/infra/vela_tls.c.o
+[1762/1987] Building C object apps/packages/ai_agent/CMakeFiles/apps_ai_agent.dir/src/channels/nsh_commands.c.o
+[1763/1987] Building C object apps/packages/ai_agent/CMakeFiles/apps_ai_agent.dir/src/channels/cmd_voice.c.o
+[1764/1987] Building C object apps/packages/ai_agent/CMakeFiles/apps_ai_agent.dir/src/channels/cmd_llm.c.o
+[1765/1987] Building C object apps/packages/ai_agent/CMakeFiles/apps_ai_agent.dir/src/channels/cmd_channel.c.o
+[1766/1987] Building C object apps/packages/ai_agent/CMakeFiles/apps_ai_agent.dir/src/channels/ws_server.c.o
+[1767/1987] Building C object apps/packages/ai_agent/CMakeFiles/apps_ai_agent.dir/src/tools/tool_registry.c.o
+[1768/1987] Building C object apps/packages/ai_agent/CMakeFiles/apps_ai_agent.dir/src/tools/tool_files.c.o
+[1769/1987] Building C object apps/packages/ai_agent/CMakeFiles/apps_ai_agent.dir/src/tools/tool_get_time.c.o
+[1770/1987] Building C object apps/packages/ai_agent/CMakeFiles/apps_ai_agent.dir/src/tools/tool_cron.c.o
+[1771/1987] Building C object apps/packages/ai_agent/CMakeFiles/apps_ai_agent.dir/src/tools/tool_web_search.c.o
+[1772/1987] Building C object apps/packages/ai_agent/CMakeFiles/apps_ai_agent.dir/src/tools/tool_fetch_url.c.o
+[1773/1987] Building C object apps/packages/ai_agent/CMakeFiles/apps_ai_agent.dir/src/tools/tool_feishu_doc.c.o
+[1774/1987] Building C object apps/packages/ai_agent/CMakeFiles/apps_ai_agent.dir/src/tools/tool_feishu_chat.c.o
+[1775/1987] Building C object apps/packages/ai_agent/CMakeFiles/apps_ai_agent.dir/src/tools/tool_system.c.o
+[1776/1987] Building C object apps/packages/ai_agent/CMakeFiles/apps_ai_agent.dir/src/tools/tool_shell.c.o
+[1777/1987] Building C object apps/packages/ai_agent/CMakeFiles/apps_ai_agent.dir/src/tools/tool_vision.c.o
+[1778/1987] Building C object apps/packages/ai_agent/CMakeFiles/apps_ai_agent.dir/src/tools/tool_health.c.o
+[1779/1987] Building C object apps/packages/ai_agent/CMakeFiles/apps_ai_agent.dir/src/tools/tool_control.c.o
+[1780/1987] Building C object apps/packages/ai_agent/CMakeFiles/apps_ai_agent.dir/src/tools/tool_proxyquickapp.c.o
+[1781/1987] Building C object apps/packages/ai_agent/CMakeFiles/apps_ai_agent.dir/src/tools/tool_guard.c.o
+[1782/1987] Building C object apps/packages/ai_agent/CMakeFiles/apps_ai_agent.dir/src/tools/skill_loader.c.o
+[1783/1987] Building C object apps/packages/ai_agent/CMakeFiles/apps_ai_agent.dir/src/tools/tool_amap.c.o
+[1784/1987] Building C object apps/packages/ai_agent/CMakeFiles/apps_ai_agent.dir/src/voice/volc_tts.c.o
+[1785/1987] Building C object apps/packages/ai_agent/CMakeFiles/apps_ai_agent.dir/src/tools/tool_media.c.o
+[1786/1987] Building C object apps/packages/ai_agent/CMakeFiles/apps_ai_agent.dir/src/voice/voice_tts.c.o
+[1787/1987] Building C object apps/external/android/CMakeFiles/android.dir/dummy.c.o
+[1788/1987] Building C object apps/packages/ai_agent/CMakeFiles/apps_ai_agent.dir/src/voice/voice_asr.c.o
+[1789/1987] Building C object apps/packages/ai_agent/CMakeFiles/apps_ai_agent.dir/src/voice/volc_tts_ws.c.o
+[1790/1987] Building C object apps/packages/ai_agent/CMakeFiles/apps_ai_agent.dir/src/voice/audio_capture.c.o
+[1791/1987] Building C object apps/examples/hello/CMakeFiles/apps_hello.dir/hello_main.c.o
+[1792/1987] Building C object apps/packages/ai_agent/CMakeFiles/apps_ai_agent.dir/src/voice/audio_playback.c.o
+[1793/1987] Building C object apps/packages/ai_agent/CMakeFiles/apps_ai_agent.dir/src/voice/volc_asr.c.o
+[1794/1987] Building C object apps/examples/gpio/CMakeFiles/apps_gpio.dir/gpio_main.c.o
+[1795/1987] Building C object apps/packages/ai_agent/CMakeFiles/apps_ai_agent.dir/src/ui/qrcode_display.c.o
+[1796/1987] Building C object apps/examples/pwm/CMakeFiles/apps_pwm.dir/pwm_main.c.o
+[1797/1987] Linking C static library apps/external/curl/libcurl.a
+[1798/1987] Building C object apps/packages/ai_agent/CMakeFiles/apps_ai_agent.dir/src/voice/voice_channel.c.o
+[1799/1987] Building C object apps/external/curl/CMakeFiles/apps_curl.dir/curl/src/tool_main.c.o
+[1800/1987] Building C object apps/external/libssh/CMakeFiles/libssh.dir/libssh/src/base64.c.o
+[1801/1987] Building C object apps/external/libssh/CMakeFiles/libssh.dir/libssh/src/agent.c.o
+[1802/1987] Building C object apps/external/libssh/CMakeFiles/libssh.dir/libssh/src/bignum.c.o
+[1803/1987] Building C object apps/external/libssh/CMakeFiles/libssh.dir/libssh/src/auth.c.o
+[1804/1987] Building C object apps/external/libssh/CMakeFiles/libssh.dir/libssh/src/buffer.c.o
+[1805/1987] Building C object apps/external/libssh/CMakeFiles/libssh.dir/libssh/src/bind.c.o
+[1806/1987] Building C object apps/external/libssh/CMakeFiles/libssh.dir/libssh/src/bind_config.c.o
+[1807/1987] Building C object apps/external/libssh/CMakeFiles/libssh.dir/libssh/src/callbacks.c.o
+[1808/1987] Building C object apps/external/libssh/CMakeFiles/libssh.dir/libssh/src/chachapoly.c.o
+[1809/1987] Building C object apps/external/libssh/CMakeFiles/libssh.dir/libssh/src/channels.c.o
+[1810/1987] Building C object apps/external/libssh/CMakeFiles/libssh.dir/libssh/src/client.c.o
+[1811/1987] Building C object apps/external/libssh/CMakeFiles/libssh.dir/libssh/src/config_parser.c.o
+[1812/1987] Building C object apps/external/libssh/CMakeFiles/libssh.dir/libssh/src/config.c.o
+[1813/1987] Building C object apps/external/libssh/CMakeFiles/libssh.dir/libssh/src/connect.c.o
+[1814/1987] Building C object apps/external/libssh/CMakeFiles/libssh.dir/libssh/src/connector.c.o
+[1815/1987] Building C object apps/external/libssh/CMakeFiles/libssh.dir/libssh/src/crypto_common.c.o
+[1816/1987] Building C object apps/external/libssh/CMakeFiles/libssh.dir/libssh/src/curve25519.c.o
+[1817/1987] Building C object apps/external/libssh/CMakeFiles/libssh.dir/libssh/src/dh-gex.c.o
+[1818/1987] Building C object apps/external/libssh/CMakeFiles/libssh.dir/libssh/src/dh.c.o
+[1819/1987] Building C object apps/external/libssh/CMakeFiles/libssh.dir/libssh/src/dh_key.c.o
+[1820/1987] Building C object apps/external/libssh/CMakeFiles/libssh.dir/libssh/src/ecdh.c.o
+[1821/1987] Building C object apps/external/libssh/CMakeFiles/libssh.dir/libssh/src/error.c.o
+[1822/1987] Building C object apps/external/libssh/CMakeFiles/libssh.dir/libssh/src/ecdh_mbedcrypto.c.o
+[1823/1987] Building C object apps/external/libssh/CMakeFiles/libssh.dir/libssh/src/external/curve25519_ref.c.o
+[1824/1987] Building C object apps/external/libssh/CMakeFiles/libssh.dir/libssh/src/external/bcrypt_pbkdf.c.o
+[1825/1987] Building C object apps/external/libssh/CMakeFiles/libssh.dir/libssh/src/external/fe25519.c.o
+[1826/1987] Building C object apps/external/libssh/CMakeFiles/libssh.dir/libssh/src/external/ge25519.c.o
+[1827/1987] Building C object apps/external/libssh/CMakeFiles/libssh.dir/libssh/src/external/ed25519.c.o
+[1828/1987] Building C object apps/external/libssh/CMakeFiles/libssh.dir/libssh/src/external/sc25519.c.o
+[1829/1987] Building C object apps/external/libssh/CMakeFiles/libssh.dir/libssh/src/getpass.c.o
+[1830/1987] Building C object apps/external/libssh/CMakeFiles/libssh.dir/libssh/src/getrandom_mbedcrypto.c.o
+[1831/1987] Building C object apps/external/libssh/CMakeFiles/libssh.dir/libssh/src/init.c.o
+[1832/1987] Building C object apps/external/libssh/CMakeFiles/libssh.dir/libssh/src/gzip.c.o
+[1833/1987] Building C object apps/external/libssh/CMakeFiles/libssh.dir/libssh/src/kdf.c.o
+[1834/1987] Building C object apps/external/libssh/CMakeFiles/libssh.dir/libssh/src/kex.c.o
+[1835/1987] Building C object apps/external/libssh/CMakeFiles/libssh.dir/libssh/src/known_hosts.c.o
+[1836/1987] Building C object apps/external/libssh/CMakeFiles/libssh.dir/libssh/src/knownhosts.c.o
+[1837/1987] Building C object apps/external/libssh/CMakeFiles/libssh.dir/libssh/src/libmbedcrypto.c.o
+[1838/1987] Building C object apps/external/libssh/CMakeFiles/libssh.dir/libssh/src/match.c.o
+[1839/1987] Building C object apps/external/libssh/CMakeFiles/libssh.dir/libssh/src/legacy.c.o
+[1840/1987] Building C object apps/external/libssh/CMakeFiles/libssh.dir/libssh/src/log.c.o
+[1841/1987] Building C object apps/external/libssh/CMakeFiles/libssh.dir/libssh/src/mbedcrypto_missing.c.o
+[1842/1987] Building C object apps/external/libssh/CMakeFiles/libssh.dir/libssh/src/md_mbedcrypto.c.o
+[1843/1987] Building C object apps/external/libssh/CMakeFiles/libssh.dir/libssh/src/misc.c.o
+[1844/1987] Building C object apps/external/libssh/CMakeFiles/libssh.dir/libssh/src/messages.c.o
+[1845/1987] Building C object apps/external/libssh/CMakeFiles/libssh.dir/libssh/src/pcap.c.o
+[1846/1987] Building C object apps/external/libssh/CMakeFiles/libssh.dir/libssh/src/options.c.o
+[1847/1987] Building C object apps/external/libssh/CMakeFiles/libssh.dir/libssh/src/packet_cb.c.o
+[1848/1987] Building C object apps/external/libssh/CMakeFiles/libssh.dir/libssh/src/packet_crypt.c.o
+[1849/1987] Building C object apps/external/libssh/CMakeFiles/libssh.dir/libssh/src/packet.c.o
+[1850/1987] Building C object apps/external/libssh/CMakeFiles/libssh.dir/libssh/src/pki_ed25519.c.o
+[1851/1987] Building C object apps/external/libssh/CMakeFiles/libssh.dir/libssh/src/pki_container_openssh.c.o
+[1852/1987] Building C object apps/external/libssh/CMakeFiles/libssh.dir/libssh/src/pki.c.o
+[1853/1987] Building C object apps/external/libssh/CMakeFiles/libssh.dir/libssh/src/pki_ed25519_common.c.o
+[1854/1987] Building C object apps/external/libssh/CMakeFiles/libssh.dir/libssh/src/pki_mbedcrypto.c.o
+[1855/1987] Building C object apps/external/libssh/CMakeFiles/libssh.dir/libssh/src/scp.c.o
+[1856/1987] Building C object apps/external/libssh/CMakeFiles/libssh.dir/libssh/src/poll.c.o
+[1857/1987] Building C object apps/external/libssh/CMakeFiles/libssh.dir/libssh/src/string.c.o
+[1858/1987] Building C object apps/external/libssh/CMakeFiles/libssh.dir/libssh/src/sftpserver.c.o
+[1859/1987] Building C object apps/external/libssh/CMakeFiles/libssh.dir/libssh/src/server.c.o
+[1860/1987] Building C object apps/external/libssh/CMakeFiles/libssh.dir/libssh/src/threads/noop.c.o
+[1861/1987] Building C object apps/external/libssh/CMakeFiles/libssh.dir/libssh/src/threads.c.o
+[1862/1987] Building C object apps/external/libssh/CMakeFiles/libssh.dir/libssh/src/socket.c.o
+[1863/1987] Building C object apps/external/libssh/CMakeFiles/libssh.dir/libssh/src/session.c.o
+[1864/1987] Building C object apps/external/libssh/CMakeFiles/libssh.dir/libssh/src/sftp.c.o
+[1865/1987] Building C object apps/external/libssh/CMakeFiles/libssh.dir/libssh/src/threads/mbedtls.c.o
+[1866/1987] Building C object apps/external/libssh/CMakeFiles/libssh.dir/libssh/src/threads/pthread.c.o
+[1867/1987] Building C object apps/external/libssh/CMakeFiles/libssh.dir/libssh/src/token.c.o
+[1868/1987] Building C object apps/external/libssh/CMakeFiles/apps_scp.dir/libssh/examples/libssh_scp.c.o
+[1869/1987] Building C object apps/external/libssh/CMakeFiles/apps_scp.dir/libssh/examples/authentication.c.o
+[1870/1987] Building C object apps/external/libssh/CMakeFiles/apps_ssh.dir/libssh/examples/connect_ssh.c.o
+[1871/1987] Building C object apps/external/libssh/CMakeFiles/apps_ssh.dir/libssh/examples/ssh_client.c.o
+[1872/1987] Building C object apps/external/libssh/CMakeFiles/apps_sshd.dir/libssh/examples/knownhosts.c.o
+[1873/1987] Building C object apps/external/libssh/CMakeFiles/libssh.dir/libssh/src/wrapper.c.o
+[1874/1987] Building C object apps/external/libssh/CMakeFiles/apps_sshd.dir/libssh/examples/ssh_server.c.o
+[1875/1987] Building C object apps/external/unqlite/CMakeFiles/unqlite.dir/unqlite/unqlite.c.o
+[1876/1987] Building C object apps/external/zblue/CMakeFiles/zblue.dir/zblue/subsys/bluetooth/common/addr.c.o
+[1877/1987] Building C object apps/external/zblue/CMakeFiles/zblue.dir/zblue/subsys/bluetooth/common/dummy.c.o
+[1878/1987] Building C object apps/external/zblue/CMakeFiles/zblue.dir/zblue/subsys/bluetooth/common/bt_str.c.o
+[1879/1987] Building C object apps/external/zblue/CMakeFiles/zblue.dir/zblue/subsys/bluetooth/common/rpa.c.o
+[1880/1987] Building C object apps/external/zblue/CMakeFiles/zblue.dir/zblue/subsys/bluetooth/host/uuid.c.o
+[1881/1987] Building C object apps/external/zblue/CMakeFiles/zblue.dir/zblue/subsys/bluetooth/host/addr.c.o
+[1882/1987] Building C object apps/external/zblue/CMakeFiles/zblue.dir/zblue/subsys/bluetooth/host/long_wq.c.o
+[1883/1987] Building C object apps/external/zblue/CMakeFiles/zblue.dir/zblue/subsys/bluetooth/host/buf.c.o
+[1884/1987] Building C object apps/external/zblue/CMakeFiles/zblue.dir/zblue/subsys/bluetooth/host/data.c.o
+[1885/1987] Building C object apps/external/zblue/CMakeFiles/zblue.dir/zblue/subsys/bluetooth/host/hci_common.c.o
+[1886/1987] Building C object apps/external/zblue/CMakeFiles/zblue.dir/zblue/subsys/bluetooth/host/hci_core.c.o
+[1887/1987] Building C object apps/external/zblue/CMakeFiles/zblue.dir/zblue/subsys/bluetooth/host/id.c.o
+[1888/1987] Building C object apps/external/zblue/CMakeFiles/zblue.dir/zblue/subsys/bluetooth/host/scan.c.o
+[1889/1987] Building C object apps/external/zblue/CMakeFiles/zblue.dir/zblue/subsys/bluetooth/host/l2cap.c.o
+[1890/1987] Building C object apps/external/zblue/CMakeFiles/zblue.dir/zblue/subsys/bluetooth/host/crypto_tc.c.o
+[1891/1987] Building C object apps/external/zblue/CMakeFiles/zblue.dir/zblue/subsys/bluetooth/host/conn.c.o
+[1892/1987] Building C object apps/external/zblue/CMakeFiles/zblue.dir/zblue/subsys/bluetooth/host/att.c.o
+[1893/1987] Building C object apps/external/zblue/CMakeFiles/zblue.dir/zblue/subsys/bluetooth/host/ecc.c.o
+[1894/1987] Building C object apps/external/zblue/CMakeFiles/zblue.dir/zblue/subsys/bluetooth/host/gatt.c.o
+[1895/1987] Building C object apps/external/zblue/CMakeFiles/zblue.dir/zblue/subsys/bluetooth/host/keys.c.o
+[1896/1987] Building C object apps/external/zblue/CMakeFiles/zblue.dir/zblue/subsys/bluetooth/host/smp.c.o
+[1897/1987] Building C object apps/external/zblue/CMakeFiles/zblue.dir/zblue/subsys/bluetooth/crypto/bt_crypto_tc.c.o
+[1898/1987] Building C object apps/external/zblue/CMakeFiles/zblue.dir/zblue/subsys/bluetooth/crypto/bt_crypto.c.o
+[1899/1987] Building C object apps/external/zblue/CMakeFiles/zblue.dir/zblue/kernel/system_work_q.c.o
+[1900/1987] Building C object apps/external/zblue/CMakeFiles/zblue.dir/zblue/kernel/work.c.o
+[1901/1987] Building C object apps/external/zblue/CMakeFiles/zblue.dir/zblue/port/kernel/atomic_port.c.o
+[1902/1987] Building C object apps/external/zblue/CMakeFiles/zblue.dir/zblue/lib/net_buf/buf_simple.c.o
+[1903/1987] Building C object apps/external/zblue/CMakeFiles/zblue.dir/zblue/port/kernel/fatal.c.o
+[1904/1987] Building C object apps/external/zblue/CMakeFiles/zblue.dir/zblue/port/kernel/init.c.o
+[1905/1987] Building C object apps/external/zblue/CMakeFiles/zblue.dir/zblue/port/kernel/mem_slab.c.o
+[1906/1987] Building C object apps/external/zblue/CMakeFiles/zblue.dir/zblue/port/kernel/mutex.c.o
+[1907/1987] Building C object apps/external/zblue/CMakeFiles/zblue.dir/zblue/port/kernel/poll.c.o
+In function 'register_event',
+    inlined from 'register_events' at /mnt/d/My-Program/AI-Agent-Program/GPTsprogram/Openvela/quickly-openvela/apps/external/zblue/zblue/port/kernel/poll.c:203:4,
+    inlined from 'k_poll' at /mnt/d/My-Program/AI-Agent-Program/GPTsprogram/Openvela/quickly-openvela/apps/external/zblue/zblue/port/kernel/poll.c:251:8:
+/mnt/d/My-Program/AI-Agent-Program/GPTsprogram/Openvela/quickly-openvela/apps/external/zblue/zblue/port/kernel/poll.c:96:23: warning: storing the address of local variable 'poller' in '*<unknown>.poller' [-Wdangling-pointer=]
+   96 |         event->poller = poller;
+      |         ~~~~~~~~~~~~~~^~~~~~~~
+/mnt/d/My-Program/AI-Agent-Program/GPTsprogram/Openvela/quickly-openvela/apps/external/zblue/zblue/port/kernel/poll.c: In function 'k_poll':
+/mnt/d/My-Program/AI-Agent-Program/GPTsprogram/Openvela/quickly-openvela/apps/external/zblue/zblue/port/kernel/poll.c:243:25: note: 'poller' declared here
+  243 |         struct z_poller poller;
+      |                         ^~~~~~
+/mnt/d/My-Program/AI-Agent-Program/GPTsprogram/Openvela/quickly-openvela/apps/external/zblue/zblue/port/kernel/poll.c:239:33: note: 'events' declared here
+  239 | int k_poll(struct k_poll_event *events, int num_events,
+      |            ~~~~~~~~~~~~~~~~~~~~~^~~~~~
+[1908/1987] Linking C static library apps/frameworks/connectivity/bluetooth/liblibbluetooth.a
+[1909/1987] Building C object apps/external/zblue/CMakeFiles/zblue.dir/zblue/port/kernel/queue.c.o
+[1910/1987] Linking C static library apps/frameworks/system/utils/libframework_utils.a
+[1911/1987] Building C object apps/external/zblue/CMakeFiles/zblue.dir/zblue/port/kernel/sched.c.o
+[1912/1987] Building C object apps/external/zblue/CMakeFiles/zblue.dir/zblue/port/kernel/sem.c.o
+[1913/1987] Building C object apps/frameworks/system/utils/CMakeFiles/apps_setprop.dir/kvdb/setprop.c.o
+[1914/1987] Building C object apps/external/zblue/CMakeFiles/zblue.dir/zblue/port/kernel/thread.c.o
+[1915/1987] Building C object apps/external/zblue/CMakeFiles/zblue.dir/zblue/port/kernel/timeout.c.o
+[1916/1987] Building C object apps/frameworks/system/utils/CMakeFiles/apps_getprop.dir/kvdb/getprop.c.o
+[1917/1987] Building C object CMakeFiles/nuttx.dir/empty.c.o
+[1918/1987] Building C object apps/external/zblue/CMakeFiles/zblue.dir/zblue/port/subsys/fs/fs.c.o
+[1919/1987] Building ASM object CMakeFiles/nuttx.dir/arch/arm64/src/common/arm64_head.S.o
+[1920/1987] Building CXX object CMakeFiles/nuttx.dir/empty.cxx.o
+[1921/1987] Linking C static library binfmt/libbinfmt.a
+[1922/1987] Building C object apps/frameworks/system/utils/CMakeFiles/apps_kvdbd.dir/kvdb/server.c.o
+[1923/1987] Linking C static library crypto/libcrypto.a
+[1924/1987] Linking C static library arch/libarch.a
+[1925/1987] Linking C static library drivers/libdrivers.a
+[1926/1987] Linking CXX static library libs/libxx/libcxxabi/liblibcxxabi.a
+[1927/1987] Linking CXX static library libs/libxx/libcxx/liblibcxx.a
+[1928/1987] Linking C static library boards/libboard.a
+[1929/1987] Linking C static library fs/libfs.a
+[1930/1987] Linking C static library mm/libmm.a
+[1931/1987] Building C object apps/external/zblue/CMakeFiles/zblue.dir/zblue/port/lib/net_buf/buf.c.o
+[1932/1987] Linking C static library apps/crypto/tinycrypt/libtinycrypt.a
+[1933/1987] Linking C static library apps/netutils/iperf/libapps_iperf.a
+[1934/1987] Linking C static library apps/netutils/netcat/libapps_netcat.a
+[1935/1987] Linking C static library apps/system/a733display/libapps_display.a
+[1936/1987] Linking C static library apps/system/a733ftpd/libapps_ftpd.a
+[1937/1987] Linking C static library apps/system/a733npu/libapps_npu.a
+[1938/1987] Building C object apps/external/zblue/CMakeFiles/zblue.dir/zblue/port/lib/os/assert.c.o
+[1939/1987] Linking C static library apps/system/a733services/libapps_service.a
+[1940/1987] Linking C static library apps/libapps.a
+[1941/1987] Linking C static library apps/system/a733wifi/libapps_wifi.a
+[1942/1987] Linking C static library apps/system/aipetllm/libapps_llm.a
+[1943/1987] Linking CXX static library apps/system/aipet/libapps_aipet.a
+[1944/1987] Linking C static library apps/system/dhcpc/libapps_renew.a
+[1945/1987] Linking C static library net/libnet.a
+[1946/1987] Linking C static library apps/system/nsh/libapps_nsh.a
+[1947/1987] Linking C static library apps/system/ntpc/libapps_ntpcstart.a
+[1948/1987] Linking CXX static library apps/system/aipetllm/libapps_aipetllm.a
+[1949/1987] Linking C static library apps/system/i2c/libapps_i2c.a
+[1950/1987] Linking C static library apps/system/ntpc/libapps_ntpcstop.a
+[1951/1987] Linking C static library apps/system/ntpc/libapps_ntpcstatus.a
+[1952/1987] Linking C static library apps/system/ping/libapps_ping.a
+[1953/1987] Linking C static library apps/system/sensortest/libapps_sensortest.a
+[1954/1987] Linking C static library apps/system/spi/libapps_spi.a
+[1955/1987] Linking C static library apps/wireless/wapi/libapps_wapi.a
+[1956/1987] Linking C static library sched/libsched.a
+[1957/1987] Linking C static library apps/examples/gpio/libapps_gpio.a
+[1958/1987] Linking C static library apps/examples/hello/libapps_hello.a
+[1959/1987] Linking C static library apps/examples/pwm/libapps_pwm.a
+[1960/1987] Linking C static library apps/external/android/libandroid.a
+[1961/1987] Linking C static library apps/external/curl/libapps_curl.a
+[1962/1987] Linking C static library apps/system/zlib/libzlib.a
+[1963/1987] Linking C static library apps/external/libssh/libapps_scp.a
+[1964/1987] Linking C static library apps/external/libssh/libapps_ssh.a
+[1965/1987] Linking C static library apps/crypto/mbedtls/libmbedtls.a
+[1966/1987] Linking C static library apps/external/libssh/libapps_sshd.a
+[1967/1987] Linking C static library apps/frameworks/system/utils/libapps_setprop.a
+[1968/1987] Linking C static library apps/frameworks/system/utils/libapps_kvdbd.a
+[1969/1987] Linking C static library apps/frameworks/system/utils/libapps_getprop.a
+[1970/1987] Linking C static library apps/external/unqlite/libunqlite.a
+[1971/1987] Linking C static library apps/packages/ai_agent/libapps_ai_agent.a
+[1972/1987] Building C object apps/external/zblue/CMakeFiles/zblue.dir/zblue/port/sections/defines.c.o
+[1973/1987] Linking C static library apps/external/libssh/liblibssh.a
+[1974/1987] Linking C static library apps/external/zblue/libzblue.a
+[1975/1987] Building C object apps/frameworks/connectivity/bluetooth/CMakeFiles/apps_bluetoothd.dir/service/src/main.c.o
+[1976/1987] Building C object apps/frameworks/connectivity/bluetooth/CMakeFiles/apps_adapter_test.dir/tests/adapter_test.c.o
+[1977/1987] Linking C static library apps/frameworks/connectivity/bluetooth/libapps_bluetoothd.a
+[1978/1987] Linking C static library apps/frameworks/connectivity/bluetooth/libapps_adapter_test.a
+[1979/1987] Building C object arch/arm64/src/common/CMakeFiles/STARTUP_OBJS.dir/crt0.c.o
+[1980/1987] Building C object apps/frameworks/connectivity/bluetooth/CMakeFiles/apps_bttool.dir/tools/bt_tools.c.o
+[1981/1987] Linking C static library apps/frameworks/connectivity/bluetooth/libapps_bttool.a
+[1982/1987] Linking C static library libs/libc/libc.a
+[1983/1987] Linking CXX static library apps/graphics/lvgl/liblvgl.a
+[1984/1987] Linking CXX executable nuttx
+Memory region         Used Size  Region Size  %age Used
+/mnt/d/My-Program/AI-Agent-Program/GPTsprogram/Openvela/quickly-openvela/prebuilts/gcc/linux-x86_64/aarch64-none-elf/bin/../lib/gcc/aarch64-none-elf/13.4.0/../../../../aarch64-none-elf/bin/ld: warning: .note.gnu.build-id section discarded, --build-id ignored
+[1985/1987] Generating nuttx.bin
+[1986/1987] Generating System.map
+CONFIG_NETDEV_WIRELESS_IOCTL=y
+CONFIG_WIRELESS_WAPI=y
+CONFIG_WIRELESS_WAPI_CMDTOOL=y
+CONFIG_WIRELESS_WAPI_PROGNAME="wapi"
+CONFIG_WIRELESS_WAPI_STACKSIZE=8192
+CONFIG_WIRELESS_WAPI_PRIORITY=100
+CONFIG_WIRELESS_WAPI_SCAN_MAX_DATA=16384
+# CONFIG_WIRELESS_WAPI_INITCONF is not set
+643701ecb181ae48bc203d87e0ff36b346947bd8dc9017b19faa7425e71ef956  /mnt/d/My-Program/AI-Agent-Program/GPTsprogram/Openvela/quickly-openvela/cmake_out/cubie-a7z_nsh_v144_ble_reopen/nuttx.bin
+a733-layout: file=2581928 runtime=36872192 bytes
+a733-layout: page alignment/segments/stack/Image footprint passed

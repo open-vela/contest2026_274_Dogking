@@ -1,0 +1,2 @@
+HOST benchmark only scalar/plan seconds: [0.006407094333326313, 0.0007003553333409703]
+PASS1024 seeded/chunk CRC cases and800x2 fast-plan/scalar pixel+metadata cases; NOT board performance

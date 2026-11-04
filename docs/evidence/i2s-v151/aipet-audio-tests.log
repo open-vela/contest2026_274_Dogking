@@ -1,0 +1,73 @@
+audio: output=uart volume=50% mic-gain=x5 node=present config=/tmp/aipet-audio-test.RBCFGm/state/config/audio.conf
+official: ASR=volcengine TTS=volcengine; local ASR/LLM unchanged; no background recording
+aipet audio: recording=100 ms gain=x5; local only, no upload
+record saved: /tmp/aipet-audio-test.RBCFGm/record.wav (48k mono S16)
+aipet audio: record result=0
+aipet audio: volume result=-22
+aipet audio: volume result=-22
+aipet audio: volume result=-22
+aipet audio: volume result=-22
+aipet audio: volume result=-22
+aipet audio: volume result=-22
+aipet audio: gain result=-22
+aipet audio: gain result=-22
+audio: saved; applies next operation and survives reboot.
+aipet audio: output result=0
+audio: saved; applies next operation and survives reboot.
+aipet audio: volume result=0
+audio: saved; applies next operation and survives reboot.
+aipet audio: gain result=0
+audio: output=i2s volume=70% mic-gain=x6 node=present config=/tmp/aipet-audio-test.RBCFGm/state/config/audio.conf
+official: ASR=volcengine TTS=volcengine; local ASR/LLM unchanged; no background recording
+aipet audio: play result=0
+aipet audio: recording=100 ms gain=x6; this command uploads PCM to official cloud ASR
+aipet audio: ASR input=16000 Hz mono S16, bytes=3200
+[asr] 你好
+aipet audio: asr result=0
+aipet audio: recording=100 ms gain=x6; this command uploads PCM to official cloud ASR
+aipet audio: asr result=-125
+aipet audio: recording=100 ms gain=x6; this command uploads PCM to official cloud ASR
+aipet audio: ASR input=16000 Hz mono S16, bytes=3200
+[asr] 你好
+aipet audio: official cloud TTS -> I2S (bounded 10s).
+aipet audio: listen result=0
+aipet audio: official cloud TTS -> I2S (bounded 10s).
+aipet audio: speak result=-2
+aipet audio: official cloud TTS -> I2S (bounded 10s).
+aipet audio: speak result=-90
+aipet audio: official cloud TTS -> I2S (bounded 10s).
+aipet audio: speak result=-90
+aipet audio: official cloud TTS -> I2S (bounded 10s).
+aipet audio: speak result=0
+aipet audio: official cloud TTS -> I2S (bounded 10s).
+aipet audio: speak result=-125
+aipet audio: official cloud TTS -> I2S (bounded 10s).
+aipet audio: speak result=0
+audio: saved; applies next operation and survives reboot.
+aipet audio: volume result=0
+aipet audio: I2S muted; no TTS cloud request.
+aipet audio: speak result=0
+audio: saved; applies next operation and survives reboot.
+aipet audio: volume result=0
+aipet audio: recording=100 ms gain=x6; this command uploads PCM to official cloud ASR
+aipet audio: ASR input=16000 Hz mono S16, bytes=3200
+aipet audio: listen result=-84
+aipet audio: recording=100 ms gain=x6; this command uploads PCM to official cloud ASR
+aipet audio: listen result=-75
+aipet audio: official Agent not ready; run aipet start/status first.
+aipet audio: listen result=-19
+audio: saved; applies next operation and survives reboot.
+aipet audio: output result=0
+aipet audio: speak result=-13
+audio: saved; applies next operation and survives reboot.
+aipet audio: output result=0
+aipet audio: speak result=0
+aipet audio: record result=-22
+aipet audio: record result=-22
+aipet audio: volume result=-17
+aipet audio: play result=0
+aipet audio: config error=-22; file unchanged
+PASS: app config persistence, local record/no upload, FIR pass=7069.7 stop=7.8, ASR->route->PCM, UART/off selection, validation/errors, no partial TTS, lock release/reentry
+PASS: complete TTS response, terminal mandatory, no malformed/overflow/partial prefix, binary length and base64 validation
+speech output contracts passed (mock PCM; I2S disabled)
+openvela-boundary: passed (official public APIs above vendor BSP)

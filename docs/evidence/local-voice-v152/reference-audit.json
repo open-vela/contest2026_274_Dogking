@@ -1,0 +1,224 @@
+{
+  "schema": 1,
+  "openvela_voice_ready": false,
+  "audit_only": true,
+  "artifacts": [
+    {
+      "path": "prebuilt/kws/encoder_float_a733.nb",
+      "expected_sha256": "c89747b37baca00ad8bf70126b3bd6b7b36def0875a6bdb33d95bcb8f65707c0",
+      "bytes": 6913752,
+      "sha256": "c89747b37baca00ad8bf70126b3bd6b7b36def0875a6bdb33d95bcb8f65707c0",
+      "format": "NBG (not A7PM)",
+      "version": "00020000",
+      "cid": "1000003b",
+      "existing_metadata_probe_accepts_version": false,
+      "execution_proven": false,
+      "valid": true
+    },
+    {
+      "path": "prebuilt/kws/decoder_float_a733.nb",
+      "expected_sha256": "034f5266ccf5b62cc507593c0c4fec708073365282fc76b15521ee424f3035cc",
+      "bytes": 621224,
+      "sha256": "034f5266ccf5b62cc507593c0c4fec708073365282fc76b15521ee424f3035cc",
+      "format": "NBG (not A7PM)",
+      "version": "00020000",
+      "cid": "1000003b",
+      "existing_metadata_probe_accepts_version": false,
+      "execution_proven": false,
+      "valid": true
+    },
+    {
+      "path": "prebuilt/kws/joiner_float_a733.nb",
+      "expected_sha256": "f51cb0ceca61a44ee6bc8618d3ebbac788e7c3744a210c5c24cac9c6ffa4bf5e",
+      "bytes": 181104,
+      "sha256": "f51cb0ceca61a44ee6bc8618d3ebbac788e7c3744a210c5c24cac9c6ffa4bf5e",
+      "format": "NBG (not A7PM)",
+      "version": "00020000",
+      "cid": "1000003b",
+      "existing_metadata_probe_accepts_version": false,
+      "execution_proven": false,
+      "valid": true
+    },
+    {
+      "path": "prebuilt/kws/tokens.txt",
+      "expected_sha256": "2d3f32311f9b692b964da3c90e830258d3e78e013cb0c992dbfb15cd5a1a71b0",
+      "bytes": 1928,
+      "sha256": "2d3f32311f9b692b964da3c90e830258d3e78e013cb0c992dbfb15cd5a1a71b0",
+      "valid": true
+    },
+    {
+      "path": "prebuilt/vocoder/vocoder_int16_a733.nb",
+      "expected_sha256": "00121f4ccb6d50833ccddc92d14da717e66e2f044c05316924cbf215ecf3403a",
+      "bytes": 2180016,
+      "sha256": "00121f4ccb6d50833ccddc92d14da717e66e2f044c05316924cbf215ecf3403a",
+      "format": "NBG (not A7PM)",
+      "version": "00020000",
+      "cid": "1000003b",
+      "existing_metadata_probe_accepts_version": false,
+      "execution_proven": false,
+      "valid": true
+    }
+  ],
+  "fixtures": [
+    {
+      "path": "cmd_mixed_16k.wav",
+      "rate": 16000,
+      "channels": 1,
+      "frames": 55296,
+      "seconds": 3.456,
+      "sha256": "49724c13e98ff13f065b2dcf78213b4c4ef60d61008b6dfc27f5cb7f78f08c92"
+    },
+    {
+      "path": "cmd_open_light_16k.wav",
+      "rate": 16000,
+      "channels": 1,
+      "frames": 28416,
+      "seconds": 1.776,
+      "sha256": "be2add3f8e1cdf8c328cb6464d294713832120c3e2ebbce092483f95423a4077"
+    },
+    {
+      "path": "cmd_time_16k.wav",
+      "rate": 16000,
+      "channels": 1,
+      "frames": 29568,
+      "seconds": 1.848,
+      "sha256": "c9d88dcce6b6b50a5ecce836a2b88736850cebad93c5e75e39f90a0c81b404d2"
+    },
+    {
+      "path": "cmd_volume_16k.wav",
+      "rate": 16000,
+      "channels": 1,
+      "frames": 35328,
+      "seconds": 2.208,
+      "sha256": "d1e8cfab6f82252e0107d14d637a621c9ba06dcc3f37cae23a392e977b18821e"
+    },
+    {
+      "path": "cmd_weather_16k.wav",
+      "rate": 16000,
+      "channels": 1,
+      "frames": 33024,
+      "seconds": 2.064,
+      "sha256": "19dd89d7ce958f678b75bfdcfa865ba0d7a34496fee5a8ccbc387f7ef827c359"
+    },
+    {
+      "path": "full_nihao_cmd_16k.wav",
+      "rate": 16000,
+      "channels": 1,
+      "frames": 52224,
+      "seconds": 3.264,
+      "sha256": "7a194e659de0b54c3bc92771b3c1f3f1e88debc208d77c484d6cd4e8fe22fffe"
+    },
+    {
+      "path": "full_xiaorui_weather_16k.wav",
+      "rate": 16000,
+      "channels": 1,
+      "frames": 50304,
+      "seconds": 3.144,
+      "sha256": "08e1bbd811168f1789abd684efc7b8a3d72ff53c5326e03a0908e4532c7147c3"
+    },
+    {
+      "path": "neg_noise_3s_16k.wav",
+      "rate": 16000,
+      "channels": 1,
+      "frames": 48000,
+      "seconds": 3.0,
+      "sha256": "34fa4bec8cf425ed7ea319d98c05adccc77e1b3b8a62cf5d6ba4e9b4e62e8529"
+    },
+    {
+      "path": "neg_silence_3s_16k.wav",
+      "rate": 16000,
+      "channels": 1,
+      "frames": 48000,
+      "seconds": 3.0,
+      "sha256": "d303811b8c84619667cd0501342f84ec6cbe69f7aa3856dcf52fabda374c92b8"
+    },
+    {
+      "path": "pipe_nihao_time_16k.wav",
+      "rate": 16000,
+      "channels": 1,
+      "frames": 80384,
+      "seconds": 5.024,
+      "sha256": "13e221120f2a62a480f0f7c0040026ca9fd97dc3ca4488e93c8836cdb4d3b278"
+    },
+    {
+      "path": "pipe_nihao_xiaorui_openlight_16k.wav",
+      "rate": 16000,
+      "channels": 1,
+      "frames": 79232,
+      "seconds": 4.952,
+      "sha256": "1053d6cdf8423cd4d1afad42f8c3d72bc611b03b5318e225c199d9f8c773f25f"
+    },
+    {
+      "path": "pipe_xiaorui_xiaorui_weather_16k.wav",
+      "rate": 16000,
+      "channels": 1,
+      "frames": 83840,
+      "seconds": 5.24,
+      "sha256": "162650941daf978a4062516600295bd7abfea45a62a2ad32e5dc59cc5adc2635"
+    },
+    {
+      "path": "wake_nihao_16k.wav",
+      "rate": 16000,
+      "channels": 1,
+      "frames": 28416,
+      "seconds": 1.776,
+      "sha256": "6336f0e46f5cb0fad44d28e97be8ca6d6440c49d6a5efea2811bd71211245fa5"
+    },
+    {
+      "path": "wake_nihao_xiaorui_16k.wav",
+      "rate": 16000,
+      "channels": 1,
+      "frames": 28416,
+      "seconds": 1.776,
+      "sha256": "466795b62e022e3575bdb849476decdae716a7a99ebe56b0c23527ba28191d83"
+    },
+    {
+      "path": "wake_xiaorui_16k.wav",
+      "rate": 16000,
+      "channels": 1,
+      "frames": 28416,
+      "seconds": 1.776,
+      "sha256": "b28d8073532dcb9c5a35b7efa551ab8e688d0e3c457dc56b0797363d83683cce"
+    },
+    {
+      "path": "wake_xiaorui_xiaorui_16k.wav",
+      "rate": 16000,
+      "channels": 1,
+      "frames": 28416,
+      "seconds": 1.776,
+      "sha256": "a208c207dfb9cf525ed846301da3100fd588c5c8b0148e848af94dc62cfa120b"
+    }
+  ],
+  "blockers": [
+    "prebuilt/kws/encoder_float_a733.nb: NBG v2.0 header; old metadata probe accepts 0x10020 only",
+    "prebuilt/kws/decoder_float_a733.nb: NBG v2.0 header; old metadata probe accepts 0x10020 only",
+    "prebuilt/kws/joiner_float_a733.nb: NBG v2.0 header; old metadata probe accepts 0x10020 only",
+    "prebuilt/vocoder/vocoder_int16_a733.nb: NBG v2.0 header; old metadata probe accepts 0x10020 only",
+    "Model Zoo lacks examples/zipformer",
+    "Model Zoo lacks examples/tts",
+    "Matcha acoustic ONNX and target CPU runtime not ported",
+    "KWS reference encoder 39-in/39-out needs full recurrent-state I/O, not current A7PM limits",
+    "authorized voice prepared packages, Linux golden tensors and target dynamic-input proofs missing",
+    "KWS/ASR frontend + endpointing + Matcha CPU runtime + offline product routing not implemented",
+    "native 22050 Hz playback unsupported; play22k CPU adapter is host-tested only, target pending"
+  ],
+  "zoo": {
+    "path": "..\\model-zoo-extracted\\awnpu_model_zoo-v0.9.0-20260116-83a67d4b",
+    "version": "0.9.0",
+    "zipformer": false,
+    "tts": false
+  },
+  "acoustic": {
+    "cpu_only_in_reference": true,
+    "present": false,
+    "license": "Baker non-commercial dataset; verify deployment rights"
+  },
+  "existing_runtime": {
+    "inputs": 4,
+    "outputs": 8,
+    "regions": 16,
+    "dynamic_input": "one file",
+    "output": "CRC + 32-byte preview",
+    "source_sha256": "1a32ad16b74d8042d55e58ab0e9bf91e63b63d5c25891c28c956b3e2f26ea19e"
+  }
+}

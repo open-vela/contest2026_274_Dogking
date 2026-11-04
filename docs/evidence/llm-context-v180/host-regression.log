@@ -1,0 +1,89 @@
+Agent model policy PASS: auto/legacy/UFS absent or invalid/explicit SD/custom/bounds; no inference retry
+LLM API validation and cleanup tests passed (mock backend)
+local-llm: model saved; unload before switching a resident model
+local-llm: model save failed
+local-llm: warming configured model; dialogue history unchanged
+aipet-local: storage=custom model='/tmp/local-llm-v178.GXjeOyVB/mock-model.gguf'
+local-context: used=0 dropped=0 stored=0 limit=3 RAM-only shared-device-session
+aipet-local: prompt=1 generated=1 first=0.000s rest=0.000s cores=fc
+local-llm: preload ready (0)
+aipet-local: storage=custom model='/tmp/local-llm-v178.GXjeOyVB/mock-model.gguf'
+local-context: used=0 dropped=0 stored=1 limit=3 RAM-only shared-device-session
+aipet-local: prompt=1 generated=1 first=0.000s rest=0.000s cores=fc
+aipet-local: storage=custom model='/tmp/local-llm-v178.GXjeOyVB/mock-model.gguf'
+local-context: used=1 dropped=0 stored=2 limit=3 RAM-only shared-device-session
+aipet-local: prompt=1 generated=1 first=0.000s rest=0.000s cores=fc
+aipet-local: storage=custom model='/tmp/local-llm-v178.GXjeOyVB/mock-model.gguf'
+aipet-local: storage=custom model='/tmp/local-llm-v178.GXjeOyVB/mock-model.gguf'
+local-context: used=2 dropped=0 stored=3 limit=3 RAM-only shared-device-session
+aipet-local: prompt=1 generated=1 first=0.000s rest=0.000s cores=fc
+local-llm: warming configured model; dialogue history unchanged
+aipet-local: storage=custom model='/tmp/local-llm-v178.GXjeOyVB/mock-model.gguf'
+local-context: used=0 dropped=0 stored=3 limit=3 RAM-only shared-device-session
+aipet-local: prompt=1 generated=1 first=0.000s rest=0.000s cores=fc
+local-llm: preload ready (0)
+aipet-local: storage=custom model='/tmp/local-llm-v178.GXjeOyVB/mock-model.gguf'
+local-llm: busy
+local-context: used=3 dropped=0 stored=3 limit=3 RAM-only shared-device-session
+aipet-local: prompt=1 generated=1 first=0.000s rest=0.000s cores=fc
+local-context: cleared; resident weights retained
+aipet-local: storage=custom model='/tmp/local-llm-v178.GXjeOyVB/mock-model.gguf'
+local-context: used=0 dropped=0 stored=1 limit=3 RAM-only shared-device-session
+aipet-local: prompt=1 generated=1 first=0.000s rest=0.000s cores=fc
+usage: aipet local status|on|off|preload|unload|stop|clear
+       aipet local model auto|sd|/absolute/model.gguf
+       aipet local tokens 1..64 | cores fc | context 0..4 (default 3 pairs)
+usage: aipet local status|on|off|preload|unload|stop|clear
+       aipet local model auto|sd|/absolute/model.gguf
+       aipet local tokens 1..64 | cores fc | context 0..4 (default 3 pairs)
+local-context: limit=0 pairs; history cleared, weights retained
+aipet-local: storage=custom model='/tmp/local-llm-v178.GXjeOyVB/mock-model.gguf'
+local-context: used=0 dropped=0 stored=0 limit=0 RAM-only shared-device-session
+aipet-local: prompt=1 generated=1 first=0.000s rest=0.000s cores=fc
+aipet-local: storage=custom model='/tmp/local-llm-v178.GXjeOyVB/mock-model.gguf'
+local-context: used=0 dropped=0 stored=0 limit=0 RAM-only shared-device-session
+aipet-local: prompt=1 generated=1 first=0.000s rest=0.000s cores=fc
+local-context: limit=2 pairs; history cleared, weights retained
+aipet-local: storage=custom model='/tmp/local-llm-v178.GXjeOyVB/mock-model.gguf'
+local-context: used=0 dropped=0 stored=1 limit=2 RAM-only shared-device-session
+aipet-local: prompt=1 generated=1 first=0.000s rest=0.000s cores=fc
+aipet-local: storage=custom model='/tmp/local-llm-v178.GXjeOyVB/mock-model.gguf'
+local-context: used=1 dropped=0 stored=2 limit=2 RAM-only shared-device-session
+aipet-local: prompt=1 generated=1 first=0.000s rest=0.000s cores=fc
+aipet-local: storage=custom model='/tmp/local-llm-v178.GXjeOyVB/mock-model.gguf'
+local-context: used=2 dropped=0 stored=2 limit=2 RAM-only shared-device-session
+aipet-local: prompt=1 generated=1 first=0.000s rest=0.000s cores=fc
+aipet-local: storage=custom model='/tmp/local-llm-v178.GXjeOyVB/mock-model.gguf'
+local-context: used=2 dropped=0 stored=2 limit=2 RAM-only shared-device-session
+aipet-local: prompt=1 generated=1 first=0.000s rest=0.000s cores=fc
+local-llm: model saved; unload before switching a resident model
+aipet-local: storage=custom model='/tmp/local-llm-v178.GXjeOyVB/mock-model.gguf'
+local-context: used=0 dropped=0 stored=1 limit=2 RAM-only shared-device-session
+aipet-local: prompt=1 generated=1 first=0.000s rest=0.000s cores=fc
+local-llm: off
+local-llm: on
+aipet-local: storage=custom model='/tmp/local-llm-v178.GXjeOyVB/mock-model.gguf'
+local-context: used=0 dropped=0 stored=1 limit=2 RAM-only shared-device-session
+aipet-local: prompt=1 generated=1 first=0.000s rest=0.000s cores=fc
+aipet-local: storage=custom model='/tmp/local-llm-v178.GXjeOyVB/mock-model.gguf'
+local-context: used=0 dropped=0 stored=1 limit=2 RAM-only shared-device-session
+aipet-local: prompt=1 generated=1 first=0.000s rest=0.000s cores=fc
+PASS: atomic config, bounded RAM dialogue, stateless preload, clear retaining weights, cancellation/reentry, model/off/unload isolation
+嗨！我是小派，你的桌面小伙伴~
+[emotion=普通 actions=0]
+[route=local_rule fallback=0 elapsed=0 ms]
+aipet: cloud unavailable error=-1; entering fallback
+[route=local_llm fallback=1 elapsed=0 ms]
+aipet: route failed -38
+Local LLM backend is not registered.
+aipet: cloud unavailable error=-1; entering fallback
+测试本地接口
+[emotion=开心 actions=0]
+[route=local_llm fallback=1 elapsed=0 ms]
+测试本地接口
+[emotion=开心 actions=0]
+aipet: I2S TTS failed -19 (text/UI retained; no implicit UART fallback)
+PASS: provisional same-thread streaming, no duplicate final body, no foreign-thread leak
+bounded ordered routes/config/template tests passed
+aipet parser/routing/fallback/state tests passed
+PASS: v178 model routing, bounded API, ARM64 NEON compile and provisional streaming

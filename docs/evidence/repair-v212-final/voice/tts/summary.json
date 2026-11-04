@@ -1,0 +1,38 @@
+{
+  "result": "HOST_CPU_WITH_NPU_STUB_CONTRACT_PASSED",
+  "npu_executed": false,
+  "hardware_executed": false,
+  "audio_saved": false,
+  "full_voice_chain": false,
+  "command": [
+    "g++",
+    "-std=c++17",
+    "-O1",
+    "-g",
+    "-Wall",
+    "-Wextra",
+    "-Werror",
+    "-fno-exceptions",
+    "-fno-rtti",
+    "-fsanitize=address,undefined",
+    "-fno-omit-frame-pointer",
+    "-I/mnt/d/My-Program/AI-Agent-Program/GPTsprogram/Openvela/A733-A7Z-ALL-Files/contest2026_274_Dogking-dev-ai-contest-2026/board/a733-cubie-a7z/openvela-overlay/apps/system/aipet",
+    "-I/mnt/d/My-Program/AI-Agent-Program/GPTsprogram/Openvela/A733-A7Z-ALL-Files/contest2026_274_Dogking-dev-ai-contest-2026/board/a733-cubie-a7z/openvela-overlay/apps/include",
+    "/mnt/d/My-Program/AI-Agent-Program/GPTsprogram/Openvela/A733-A7Z-ALL-Files/contest2026_274_Dogking-dev-ai-contest-2026/tools/test-tts-engine-v185.cxx",
+    "/mnt/d/My-Program/AI-Agent-Program/GPTsprogram/Openvela/A733-A7Z-ALL-Files/contest2026_274_Dogking-dev-ai-contest-2026/board/a733-cubie-a7z/openvela-overlay/apps/system/aipet/voice_tts_engine.cxx",
+    "/mnt/d/My-Program/AI-Agent-Program/GPTsprogram/Openvela/A733-A7Z-ALL-Files/contest2026_274_Dogking-dev-ai-contest-2026/board/a733-cubie-a7z/openvela-overlay/apps/system/aipet/voice_acoustic.cxx",
+    "/mnt/d/My-Program/AI-Agent-Program/GPTsprogram/Openvela/A733-A7Z-ALL-Files/contest2026_274_Dogking-dev-ai-contest-2026/board/a733-cubie-a7z/openvela-overlay/apps/system/aipet/voice_tts_frontend.cxx",
+    "/mnt/d/My-Program/AI-Agent-Program/GPTsprogram/Openvela/A733-A7Z-ALL-Files/contest2026_274_Dogking-dev-ai-contest-2026/out/ort-capi-host-v184-r1/libonnxruntime.so.1.23.2",
+    "-Wl,-rpath,/mnt/d/My-Program/AI-Agent-Program/GPTsprogram/Openvela/A733-A7Z-ALL-Files/contest2026_274_Dogking-dev-ai-contest-2026/out/ort-capi-host-v184-r1",
+    "-pthread",
+    "-Wl,--wrap=getpid",
+    "-o",
+    "/mnt/d/My-Program/AI-Agent-Program/GPTsprogram/Openvela/A733-A7Z-ALL-Files/contest2026_274_Dogking-dev-ai-contest-2026/out/voice-regression-v212-r1/tts/test"
+  ],
+  "sources": {
+    "tools/test-tts-engine-v185.cxx": "f589a2cf7f6d6d2d34268582326f7445904d8e14ef5ef615abc37ee80929dffe",
+    "board/a733-cubie-a7z/openvela-overlay/apps/system/aipet/voice_tts_engine.cxx": "6aba37489447ab043f14289aed17d18edb4babccc9ab685822ff63e5367b93ec",
+    "board/a733-cubie-a7z/openvela-overlay/apps/system/aipet/voice_acoustic.cxx": "9cc3f42c0df57c2c038f840ea01400b01a47d324bc5ecc7f17f5dd475f7538d5",
+    "board/a733-cubie-a7z/openvela-overlay/apps/system/aipet/voice_tts_frontend.cxx": "cc65451db214d51931fb5fc7332da74927c0c4471ed0ac66448b61fdf5d700d8"
+  }
+}

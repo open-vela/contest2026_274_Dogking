@@ -1,0 +1,22 @@
+
+Pinging 10.195.194.22 with 32 bytes of data:
+Reply from 10.195.194.22: bytes=32 time=54ms TTL=128
+Reply from 10.195.194.22: bytes=32 time=7ms TTL=128
+Reply from 10.195.194.22: bytes=32 time=12ms TTL=128
+Reply from 10.195.194.22: bytes=32 time=18ms TTL=128
+Reply from 10.195.194.22: bytes=32 time=13ms TTL=128
+Reply from 10.195.194.22: bytes=32 time=9ms TTL=128
+Reply from 10.195.194.22: bytes=32 time=9ms TTL=128
+Reply from 10.195.194.22: bytes=32 time=16ms TTL=128
+Reply from 10.195.194.22: bytes=32 time=7ms TTL=128
+Reply from 10.195.194.22: bytes=32 time=10ms TTL=128
+Reply from 10.195.194.22: bytes=32 time=55ms TTL=128
+Reply from 10.195.194.22: bytes=32 time=11ms TTL=128
+Reply from 10.195.194.22: bytes=32 time=11ms TTL=128
+Reply from 10.195.194.22: bytes=32 time=8ms TTL=128
+Reply from 10.195.194.22: bytes=32 time=11ms TTL=128
+
+Ping statistics for 10.195.194.22:
+    Packets: Sent = 15, Received = 15, Lost = 0 (0% loss),
+Approximate round trip times in milli-seconds:
+    Minimum = 7ms, Maximum = 55ms, Average = 16ms

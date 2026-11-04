@@ -16,6 +16,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <syslog.h>
+#include <time.h>
 
 #include <nuttx/cache.h>
 #include <nuttx/crc32.h>
@@ -27,9 +28,30 @@
 
 #include "a733_npu_internal.h"
 #include "a733_npu_memory.h"
+#ifdef CONFIG_A733_CAMERA_PERF_TEST
+#include "a733_crc32_fast.h"
+/* Equal NuttX raw seed/chunk convention, only in the camera experiment. */
+#define crc32part a733_raw_crc32
+#endif
+#ifdef CONFIG_A733_NPU_TENSOR_IO
+#include <nuttx/kmalloc.h>
+#include "a733_tensor_plan.h"
+#endif
 
 #define A733_RT_PAGE_SIZE          4096u
+#ifdef CONFIG_A733_NPU_GENERAL_ASR
+#define A733_RT_POOL_SIZE          (8u * 1024u * 1024u)
+#elif defined(CONFIG_A733_NPU_TENSOR_IO)
+/* Keep the fixed LeNet weights reserved in the original first MiB. Tensor
+ * I/O needs two contiguous, page-rounded buffers (encoder: 75 + 74 pages).
+ * The old pool has only 148 free pages split by those legacy reservations.
+ * Grow only the experimental pool inside the existing 32 MiB DMA arena;
+ * the stage VIP/index below must move with its end, not overlap it.
+ */
+#define A733_RT_POOL_SIZE          (2u * 1024u * 1024u)
+#else
 #define A733_RT_POOL_SIZE          (1024u * 1024u)
+#endif
 #define A733_RT_POOL_PAGES         (A733_RT_POOL_SIZE / A733_RT_PAGE_SIZE)
 #define A733_RT_MAX_CONTEXTS       4u
 #define A733_RT_MAX_BUFFERS        16u
@@ -76,7 +98,11 @@
 #define A733_RT_A7PM_WINDOW_SIZE     UINT32_C(0x01000000)
 #define A733_RT_A7PM_STLB_WORDS      4096u
 #define A733_RT_A7PM_STLB_SIZE       (A733_RT_A7PM_STLB_WORDS * 4u)
+#ifdef CONFIG_A733_NPU_GENERAL_ASR
+#define A733_RT_A7PM_POOL_SIZE       (64u * 1024u * 1024u)
+#else
 #define A733_RT_A7PM_POOL_SIZE       (24u * 1024u * 1024u)
+#endif
 #define A733_RT_A7PM_LOAD            (1u << 0)
 #define A733_RT_A7PM_OUTPUT          (1u << 1)
 #define A733_RT_A7PM_COMMAND         (1u << 2)
@@ -99,7 +125,21 @@ struct a733_rt_context_s
 {
   bool active;
   uint32_t id;
+#ifdef CONFIG_A733_CAMERA_PERF_TEST
+  struct a733_rt_live_s *live;
+#endif
+#ifdef CONFIG_A733_NPU_TENSOR_IO
+  struct a733_tensor_resident_s *resident;
+  struct a733_tensor_profile_s tensor_profile;
+#endif
 };
+
+#ifdef CONFIG_A733_NPU_TENSOR_IO
+static void a733_rt_tensor_release(struct a733_rt_context_s *context);
+#endif
+#ifdef CONFIG_A733_CAMERA_PERF_TEST
+static void a733_rt_live_release(struct a733_rt_context_s *context);
+#endif
 
 struct a733_rt_buffer_s
 {
@@ -290,11 +330,18 @@ static size_t a733_rt_align_up(size_t value, size_t align)
 static int a733_rt_validate_path(char *path)
 {
   size_t length;
+  bool live_path = false;
 
   path[A733_NPU_MODEL_PATH_MAX - 1u] = '\0';
   length = strnlen(path, A733_NPU_MODEL_PATH_MAX);
+#ifdef CONFIG_A733_CAMERA_LIVE_TEST
+  /* Official tmpfs must mount in pseudofs, not below the FAT /data mount.
+   * Narrow read-path extension only: no ABI, execution, MMU or DMA change. */
+  live_path = strcmp(path, "/camram-v204/model.a7pm") == 0 ||
+              strcmp(path, "/camram-v204/input.rgb") == 0;
+#endif
   if (length < 7u || length >= A733_NPU_MODEL_PATH_MAX ||
-      strncmp(path, "/data/", 6) != 0 || strstr(path, "..") != NULL ||
+      (strncmp(path, "/data/", 6) != 0 && !live_path) || strstr(path, "..") != NULL ||
       strchr(path, '\\') != NULL)
     {
       return -EINVAL;
@@ -371,6 +418,9 @@ static int a733_rt_open(struct file *filep)
         {
           g_rt_contexts[i].active = true;
           g_rt_contexts[i].id = ++g_rt.next_context;
+#ifdef CONFIG_A733_NPU_TENSOR_IO
+          memset(&g_rt_contexts[i].tensor_profile, 0, sizeof(g_rt_contexts[i].tensor_profile));
+#endif
           g_rt.open_count++;
           filep->f_priv = &g_rt_contexts[i];
           leave_critical_section(flags);
@@ -382,7 +432,7 @@ static int a733_rt_open(struct file *filep)
   return -EMFILE;
 }
 
-static int a733_rt_close(struct file *filep)
+static int a733_rt_close_impl(struct file *filep)
 {
   struct a733_rt_context_s *context = filep->f_priv;
   irqstate_t flags;
@@ -408,6 +458,16 @@ static int a733_rt_close(struct file *filep)
         }
     }
 
+  /* Heap release must not hold an IRQ critical section. Keep the slot active
+   * until its snapshot is gone so concurrent open cannot reuse it mid-close. */
+  leave_critical_section(flags);
+#ifdef CONFIG_A733_NPU_TENSOR_IO
+  a733_rt_tensor_release(context);
+#endif
+#ifdef CONFIG_A733_CAMERA_PERF_TEST
+  a733_rt_live_release(context);
+#endif
+  flags = enter_critical_section();
   context->active = false;
   if (g_rt.open_count > 0)
     {
@@ -976,19 +1036,25 @@ static int a733_rt_yolo_decode(
       plane = sides[scale] * sides[scale];
       reg = heads[scale * 2u];
       cls = heads[scale * 2u + 1u];
-      for (cell = 0; cell < plane; cell++)
+      /* Class-major heads: tile cells so each class is a contiguous read.
+       * Preserve each cell's class order, > tie/NaN semantics and candidate
+       * insertion order. No approximate sigmoid/DFL or fast-math. */
+      for (unsigned base = 0; base < plane; base += 64)
         {
-          best_class = 0;
-          best_logit = cls[cell];
+          unsigned count=plane-base;if(count>64)count=64;
+          float logits[64];uint8_t classes[64];
+          for(unsigned k=0;k<count;++k){logits[k]=cls[base+k];classes[k]=0;}
           for (class_id = 1; class_id < 80; class_id++)
             {
-              if (cls[class_id * plane + cell] > best_logit)
+              const float *values=cls+class_id*plane+base;
+              for(unsigned k=0;k<count;++k)if(values[k]>logits[k])
                 {
-                  best_logit = cls[class_id * plane + cell];
-                  best_class = class_id;
+                  logits[k]=values[k];classes[k]=(uint8_t)class_id;
                 }
             }
-
+          for(cell=base;cell<base+count;++cell)
+            {
+          best_class=classes[cell-base];best_logit=logits[cell-base];
           score = a733_rt_yolo_sigmoid(best_logit);
           if (score >= A733_RT_YOLO_SCORE_THRESHOLD)
             {
@@ -997,6 +1063,7 @@ static int a733_rt_yolo_decode(
               candidate.scale = scale;
               candidate.class_id = best_class;
               a733_rt_yolo_insert(candidates, &candidate_count, &candidate);
+            }
             }
         }
     }
@@ -1179,6 +1246,13 @@ static void a733_rt_a7pm_restore(
   a733_npu_mem_clean(&g_rt_mtlb);
 }
 
+#ifdef CONFIG_A733_CAMERA_PERF_TEST
+#include "a733_npu_live.inc"
+#define A733_PREPARED_READ a733_rt_live_read
+#else
+#define A733_PREPARED_READ a733_rt_file_read_exact
+#endif
+
 static int a733_rt_prepared(const char *path)
 {
   struct a733_rt_a7pm_header_s header;
@@ -1211,6 +1285,12 @@ static int a733_rt_prepared(const char *path)
   bool dynamic = g_rt.dynamic_input_path[0] != '\0';
   size_t report_size;
   int ret;
+#ifdef CONFIG_A733_CAMERA_PERF_TEST
+  struct a733_npu_live_profile_s *profile=g_rt_live?&g_rt_live->profile:NULL;
+  uint64_t perf_start=a733_rt_live_now(),perf_tick=perf_start,hw_start=0;
+  bool opened=false;
+  if(!g_rt_live)g_rt_live_owner=NULL;
+#endif
 
   memset(&header, 0, sizeof(header));
   memset(regions, 0, sizeof(regions));
@@ -1243,13 +1323,20 @@ static int a733_rt_prepared(const char *path)
   g_rt.prepared_tail_changed = false;
   strlcpy(g_rt.prepared_path, path, sizeof(g_rt.prepared_path));
 
+#ifdef CONFIG_A733_CAMERA_PERF_TEST
+  if(g_rt_live)
+    ret=strcmp(path,g_rt_live->path)?-EINVAL:0;
+  else
+    {ret=file_open(&file,path,O_RDONLY|O_CLOEXEC);opened=ret==0;}
+#else
   ret = file_open(&file, path, O_RDONLY | O_CLOEXEC);
+#endif
   if (ret < 0)
     {
       goto out;
     }
 
-  ret = a733_rt_file_read_exact(&file, 0, &header, sizeof(header), NULL);
+  ret = A733_PREPARED_READ(&file, 0, &header, sizeof(header), NULL);
   if (ret < 0)
     {
       goto close;
@@ -1272,7 +1359,7 @@ static int a733_rt_prepared(const char *path)
       goto close;
     }
 
-  ret = a733_rt_file_read_exact(&file, sizeof(header), regions,
+  ret = A733_PREPARED_READ(&file, sizeof(header), regions,
                                 header.region_count * sizeof(regions[0]),
                                 NULL);
   if (ret < 0)
@@ -1289,7 +1376,7 @@ static int a733_rt_prepared(const char *path)
           goto close;
         }
 
-      ret = a733_rt_file_read_exact(
+      ret = A733_PREPARED_READ(
         &file, sizeof(header) + header.region_count * sizeof(regions[0]),
         outputs, output_count * sizeof(outputs[0]), NULL);
       if (ret < 0)
@@ -1306,7 +1393,7 @@ static int a733_rt_prepared(const char *path)
               goto close;
             }
 
-          ret = a733_rt_file_read_exact(
+          ret = A733_PREPARED_READ(
             &file, sizeof(header) +
                    header.region_count * sizeof(regions[0]) +
                    output_count * sizeof(outputs[0]),
@@ -1331,7 +1418,11 @@ static int a733_rt_prepared(const char *path)
                    (header.version == A733_RT_A7PM_VERSION_V3 ?
                     input_count * sizeof(inputs[0]) : 0u);
 
+#ifdef CONFIG_A733_CAMERA_PERF_TEST
+  file_size=g_rt_live?(off_t)g_rt_live->bytes:file_seek(&file,0,SEEK_END);
+#else
   file_size = file_seek(&file, 0, SEEK_END);
+#endif
   if (file_size < 0 || (uint64_t)file_size != header.total_size)
     {
       ret = file_size < 0 ? (int)file_size : -EFBIG;
@@ -1359,8 +1450,14 @@ static int a733_rt_prepared(const char *path)
       goto close;
     }
 
+#ifdef CONFIG_A733_CAMERA_PERF_TEST
+  if(profile)profile->package_us+=a733_rt_live_now()-perf_tick;
+#endif
   for (i = 0; i < header.region_count; i++)
     {
+#ifdef CONFIG_A733_CAMERA_PERF_TEST
+      perf_tick=a733_rt_live_now();
+#endif
       if ((regions[i].flags & ~(A733_RT_A7PM_LOAD |
                                 A733_RT_A7PM_OUTPUT |
                                 A733_RT_A7PM_COMMAND)) != 0 ||
@@ -1417,6 +1514,9 @@ static int a733_rt_prepared(const char *path)
         }
 
       pool_cursor += allocated;
+#ifdef CONFIG_A733_CAMERA_PERF_TEST
+      if(profile)profile->map_us+=a733_rt_live_now()-perf_tick;
+#endif
 
       if ((regions[i].flags & A733_RT_A7PM_LOAD) != 0)
         {
@@ -1429,9 +1529,24 @@ static int a733_rt_prepared(const char *path)
             }
 
           checksum = 0;
-          ret = a733_rt_file_read_exact(&file, regions[i].file_offset,
+#ifdef CONFIG_A733_CAMERA_PERF_TEST
+          perf_tick=a733_rt_live_now();
+          bool input_region=false;
+          for(j=0;j<input_count;++j)if(inputs[j].region_index==i)input_region=true;
+          int skip_input=0;
+          if(input_region && input_count==1 && inputs[0].region_index==i)
+            skip_input=a733_rt_live_skip_input(i,&regions[i],inputs[0].size,inputs[0].crc32,dynamic);
+          if(skip_input<0){ret=skip_input;goto close;}
+          if(skip_input){ret=0;checksum=regions[i].crc32;}
+          else ret=a733_rt_live_load(&file,i,&regions[i],&mapped[i],input_region,&checksum);
+#else
+            ret = A733_PREPARED_READ(&file, regions[i].file_offset,
                                         mapped[i].cpu, regions[i].size,
                                         &checksum);
+#endif
+#ifdef CONFIG_A733_CAMERA_PERF_TEST
+          if(profile)profile->package_us+=a733_rt_live_now()-perf_tick;
+#endif
           if (ret < 0 || checksum != regions[i].crc32)
             {
               ret = ret < 0 ? ret : -EBADMSG;
@@ -1480,8 +1595,12 @@ static int a733_rt_prepared(const char *path)
           inputs[i].size == 0 ||
           inputs[i].size > regions[inputs[i].region_index].size ||
           (regions[inputs[i].region_index].flags & A733_RT_A7PM_LOAD) == 0 ||
+          (
+#ifdef CONFIG_A733_CAMERA_PERF_TEST
+          !(g_rt_live && g_rt_live->input_skipped[inputs[i].region_index]) &&
+#endif
           crc32part(mapped[inputs[i].region_index].cpu,
-                    inputs[i].size, 0) != inputs[i].crc32)
+                    inputs[i].size, 0) != inputs[i].crc32))
         {
           ret = -EPROTO;
           goto close;
@@ -1497,6 +1616,9 @@ static int a733_rt_prepared(const char *path)
         }
     }
 
+#ifdef CONFIG_A733_CAMERA_PERF_TEST
+  perf_tick=a733_rt_live_now();
+#endif
   if (dynamic)
     {
       if (header.version != A733_RT_A7PM_VERSION_V3 || input_count != 1)
@@ -1519,6 +1641,10 @@ static int a733_rt_prepared(const char *path)
       g_rt.dynamic_input_size = inputs[0].size;
     }
 
+#ifdef CONFIG_A733_CAMERA_PERF_TEST
+  if(profile)profile->input_us=a733_rt_live_now()-perf_tick;
+  perf_tick=a733_rt_live_now();
+#endif
   /* VIP2 fetches beyond the final END while draining its command pipeline.
    * The Debian allocator leaves a valid page after the YOLOv5 command
    * allocation, whereas an exact A7PM mapping stopped at 0x01013fff and the
@@ -1594,6 +1720,10 @@ static int a733_rt_prepared(const char *path)
       goto close;
     }
 
+#ifdef CONFIG_A733_CAMERA_PERF_TEST
+  if(profile)profile->map_us+=a733_rt_live_now()-perf_tick;
+  perf_tick=a733_rt_live_now();
+#endif
   for (i = 0; i < output_count; i++)
     {
       memset(mapped[outputs[i].region_index].cpu, 0xa5,
@@ -1609,19 +1739,38 @@ static int a733_rt_prepared(const char *path)
   a733_npu_mem_clean(&init);
   for (i = 0; i < header.region_count; i++)
     {
+#ifdef CONFIG_A733_CAMERA_PERF_TEST
+      if(!a733_rt_live_clean_required(i,&regions[i]))continue;
+#endif
       a733_npu_mem_clean(&mapped[i]);
     }
 
-  a733_npu_mem_clean(&g_rt_prepared_pool);
+#ifdef CONFIG_A733_CAMERA_PERF_TEST
+  /* Each declared region was cleaned above. Preserve the separate speculative
+   * END-tail clean; never drop that coverage when omitting the duplicate
+   * whole-pool clean in a resident run. Legacy runs retain original behaviour. */
+  if(g_rt_live)a733_npu_mem_clean(&command_tail);
+  else
+#endif
+    a733_npu_mem_clean(&g_rt_prepared_pool);
   a733_npu_mem_clean(&g_rt_prepared_stlb);
   a733_npu_mem_clean(&g_rt_mtlb);
 
+#ifdef CONFIG_A733_CAMERA_PERF_TEST
+  if(profile)profile->sync_us=a733_rt_live_now()-perf_tick;
+  hw_start=a733_rt_live_now();
+  if(profile)profile->prepare_us=hw_start-perf_start;
+#endif
   g_rt_cancel = false;
   ret = a733_npu_hw_execute_initialized(
     g_rt.pd_entry,
     A733_RT_TRACE_VIP_BASE + A733_RT_TRACE_INIT_OFFSET,
     regions[header.command_index].vip + header.command_skip,
     A733_NPU_MAX_TIMEOUT_MS, &g_rt_cancel, &g_rt.prepared_hw);
+#ifdef CONFIG_A733_CAMERA_PERF_TEST
+  if(profile)profile->hw_exec_us=a733_rt_live_now()-hw_start;
+  perf_tick=a733_rt_live_now();
+#endif
   g_rt.prepared_hw_status = ret;
   a733_npu_mem_invalidate(&command_tail);
   g_rt.prepared_tail_crc = crc32part(command_tail.cpu,
@@ -1639,15 +1788,14 @@ static int a733_rt_prepared(const char *path)
         &mapped[outputs[i].region_index];
 
       a733_npu_mem_invalidate(output);
-      g_rt.prepared_output_crc[i] =
-        crc32part(output->cpu, outputs[i].size, 0);
+#ifdef CONFIG_A733_CAMERA_PERF_TEST
+      g_rt.prepared_output_crc[i]=a733_raw_scan(output->cpu,outputs[i].size,0,
+                                                &g_rt.prepared_output_changed[i]);
+#else
+      g_rt.prepared_output_crc[i] = crc32part(output->cpu, outputs[i].size, 0);
       for (j = 0; j < outputs[i].size; j++)
-        {
-          if (((uint8_t *)output->cpu)[j] != 0xa5)
-            {
-              g_rt.prepared_output_changed[i]++;
-            }
-        }
+        if (((uint8_t *)output->cpu)[j] != 0xa5)g_rt.prepared_output_changed[i]++;
+#endif
 
       report_size = outputs[i].size;
       if (report_size > sizeof(g_rt.prepared_output[i]))
@@ -1663,6 +1811,25 @@ static int a733_rt_prepared(const char *path)
         }
     }
 
+#ifdef CONFIG_A733_CAMERA_PERF_TEST
+  if(g_rt_live)
+    {
+      for(i=0;i<header.region_count;++i)
+        {
+          bool input=false;for(j=0;j<input_count;++j)if(inputs[j].region_index==i)input=true;
+          g_rt_live->eligible[i]=false;
+          if((regions[i].flags&A733_RT_A7PM_LOAD) && !(regions[i].flags&(A733_RT_A7PM_COMMAND|A733_RT_A7PM_OUTPUT)) && !input)
+            {
+              /* A retained LOAD had already proved immutable. A mismatch
+               * MUST reject this RUN before publishing, not only reload at
+               * the next frame. Cold mutable LOADs remain non-retainable. */
+              if(!a733_rt_live_verify_load(i,&regions[i],&mapped[i]))outputs_valid=false;
+            }
+        }
+    }
+  if(profile)profile->output_us=a733_rt_live_now()-perf_tick;
+  perf_tick=a733_rt_live_now();
+#endif
   if (strncmp(header.name, "yolov8n_6_pcq_a", 16) == 0)
     {
       g_rt.yolo_status = a733_rt_yolo_decode(mapped, outputs, output_count);
@@ -1672,6 +1839,9 @@ static int a733_rt_prepared(const char *path)
         }
     }
 
+#ifdef CONFIG_A733_CAMERA_PERF_TEST
+  if(profile)profile->decode_us=a733_rt_live_now()-perf_tick;
+#endif
   g_rt.guards = a733_npu_mem_check_guards();
   if (g_rt.guards < 0)
     {
@@ -1710,9 +1880,20 @@ static int a733_rt_prepared(const char *path)
   g_rt.prepared_name[sizeof(g_rt.prepared_name) - 1u] = '\0';
 
 close:
+#ifdef CONFIG_A733_CAMERA_PERF_TEST
+  perf_tick=a733_rt_live_now();
+#endif
   a733_rt_a7pm_restore(windows, window_count);
+#ifdef CONFIG_A733_CAMERA_PERF_TEST
+  if(opened)file_close(&file);
+  if(profile)profile->restore_us=a733_rt_live_now()-perf_tick;
+#else
   file_close(&file);
+#endif
 out:
+#ifdef CONFIG_A733_CAMERA_PERF_TEST
+  if(profile)profile->total_us=a733_rt_live_now()-perf_start;
+#endif
   g_rt.prepared_status = ret;
   return ret;
 }
@@ -1808,6 +1989,10 @@ static int a733_rt_run_a7pm(struct a733_npu_run_s *request)
   nxmutex_unlock(&g_rt_run_lock);
   return ret;
 }
+
+#ifdef CONFIG_A733_NPU_TENSOR_IO
+#include "a733_tensor_runtime.inc"
+#endif
 
 static int a733_rt_lenet(void)
 {
@@ -2410,7 +2595,7 @@ static int a733_rt_apitest(struct a733_rt_context_s *context)
   return ret;
 }
 
-static int a733_rt_ioctl(struct file *filep, int cmd, unsigned long arg)
+static int a733_rt_ioctl_impl(struct file *filep, int cmd, unsigned long arg)
 {
   struct a733_rt_context_s *context = filep->f_priv;
   struct a733_rt_buffer_s *entry;
@@ -2431,13 +2616,32 @@ static int a733_rt_ioctl(struct file *filep, int cmd, unsigned long arg)
     }
 
   if (arg == 0 && cmd != A733_NPUIOC_CANCEL &&
-      cmd != A733_NPUIOC_RESET && cmd != A733_NPUIOC_SELFTEST)
+      cmd != A733_NPUIOC_RESET && cmd != A733_NPUIOC_SELFTEST
+#ifdef CONFIG_A733_CAMERA_PERF_TEST
+      && cmd != A733_NPUIOC_LIVE_RELEASE
+#endif
+      )
     {
       return -EINVAL;
     }
 
   switch (cmd)
     {
+#ifdef CONFIG_A733_CAMERA_PERF_TEST
+      case A733_NPUIOC_LIVE_PREPARE:
+        return a733_rt_live_import(context,(struct a733_npu_live_prepare_s *)(uintptr_t)arg);
+      case A733_NPUIOC_LIVE_RUN:
+        return a733_rt_live_run(context,(struct a733_npu_run_s *)(uintptr_t)arg);
+      case A733_NPUIOC_LIVE_PROFILE:
+        {
+          struct a733_npu_live_profile_s *p=(struct a733_npu_live_profile_s *)(uintptr_t)arg;
+          if(p->version!=A733_NPU_LIVE_ABI)return -EINVAL;
+          if(!context->live)return -ENODATA;
+          *p=context->live->profile;return 0;
+        }
+      case A733_NPUIOC_LIVE_RELEASE:
+        a733_rt_live_release(context);return 0;
+#endif
       case A733_NPUIOC_GET_INFO:
         info = (struct a733_npu_info_s *)(uintptr_t)arg;
         memset(info, 0, sizeof(*info));
@@ -2519,6 +2723,25 @@ static int a733_rt_ioctl(struct file *filep, int cmd, unsigned long arg)
         run = (struct a733_npu_run_s *)(uintptr_t)arg;
         return a733_rt_run_a7pm(run);
 
+#ifdef CONFIG_A733_NPU_TENSOR_IO
+      case A733_NPUIOC_TENSOR_QUERY:
+        return a733_rt_tensor_query((struct a733_tensor_query_s *)(uintptr_t)arg);
+
+      case A733_NPUIOC_TENSOR_RUN:
+        return a733_rt_tensor_run(context, (struct a733_tensor_run_s *)(uintptr_t)arg);
+
+      case A733_NPUIOC_TENSOR_PREPARE:
+        return a733_rt_tensor_prepare(context, (struct a733_tensor_query_s *)(uintptr_t)arg);
+
+      case A733_NPUIOC_TENSOR_PROFILE:
+        {
+          struct a733_tensor_profile_s *p = (struct a733_tensor_profile_s *)(uintptr_t)arg;
+          if (p->version != A733_TENSOR_ABI) return -EINVAL;
+          *p = context->tensor_profile;
+          return p->version == A733_TENSOR_ABI ? 0 : -ENODATA;
+        }
+#endif
+
       default:
         break;
     }
@@ -2526,7 +2749,7 @@ static int a733_rt_ioctl(struct file *filep, int cmd, unsigned long arg)
   return -ENOTTY;
 }
 
-static ssize_t a733_rt_write(struct file *filep, const char *buffer,
+static ssize_t a733_rt_write_impl(struct file *filep, const char *buffer,
                              size_t buflen)
 {
   struct a733_npu_model_probe_s model;
@@ -2644,6 +2867,65 @@ static ssize_t a733_rt_write(struct file *filep, const char *buffer,
          (unsigned long)reported_hw->idle, g_rt.guards);
   return ret < 0 ? ret : (ssize_t)buflen;
 }
+
+#ifdef CONFIG_A733_NPU_TENSOR_IO
+/* Serialize all runtime operations with tensor ownership. close/free cannot
+ * release a referenced buffer during RUN. CANCEL remains asynchronous.
+ * Manual /dev/a733-npu diagnostic commands are outside this runtime; do not
+ * run them concurrently with model execution. */
+static int a733_rt_ioctl(struct file *filep, int cmd, unsigned long arg)
+{
+  int ret;
+  if (cmd == A733_NPUIOC_CANCEL)
+    return a733_rt_ioctl_impl(filep, cmd, arg);
+  ret = nxmutex_lock(&g_rt_tensor_gate);
+  if (ret < 0) return ret;
+#ifdef CONFIG_A733_CAMERA_PERF_TEST
+  /* Other runtime clients may overwrite shared prepared storage or reset
+   * hardware. A new resident RUN then reloads its snapshot, never stale RAM. */
+  if(cmd!=A733_NPUIOC_LIVE_RUN && cmd!=A733_NPUIOC_LIVE_PROFILE &&
+     cmd!=A733_NPUIOC_GET_INFO)g_rt_live_owner=NULL;
+#endif
+  if (g_rt_tensor_quarantined && cmd != A733_NPUIOC_GET_INFO &&
+      cmd != A733_NPUIOC_FREE && cmd != A733_NPUIOC_TENSOR_QUERY &&
+      cmd != A733_NPUIOC_TENSOR_RUN && cmd != A733_NPUIOC_SYNC
+#ifdef CONFIG_A733_CAMERA_PERF_TEST
+      && cmd != A733_NPUIOC_LIVE_PROFILE && cmd != A733_NPUIOC_LIVE_RELEASE
+#endif
+      )
+    ret = -EIO;
+  else
+    ret = a733_rt_ioctl_impl(filep, cmd, arg);
+  nxmutex_unlock(&g_rt_tensor_gate);
+  return ret;
+}
+static int a733_rt_close(struct file *filep)
+{
+  int ret = nxmutex_lock(&g_rt_tensor_gate);
+  if (ret < 0) return ret;
+#ifdef CONFIG_A733_CAMERA_PERF_TEST
+  g_rt_live_owner=NULL; /* Conservative lease end even for a foreign close. */
+#endif
+  ret = a733_rt_close_impl(filep);
+  nxmutex_unlock(&g_rt_tensor_gate);
+  return ret;
+}
+static ssize_t a733_rt_write(struct file *filep, const char *buffer, size_t size)
+{
+  ssize_t ret = nxmutex_lock(&g_rt_tensor_gate);
+  if (ret < 0) return ret;
+#ifdef CONFIG_A733_CAMERA_PERF_TEST
+  g_rt_live_owner=NULL;
+#endif
+  ret = g_rt_tensor_quarantined ? -EIO : a733_rt_write_impl(filep, buffer, size);
+  nxmutex_unlock(&g_rt_tensor_gate);
+  return ret;
+}
+#else
+#define a733_rt_ioctl a733_rt_ioctl_impl
+#define a733_rt_close a733_rt_close_impl
+#define a733_rt_write a733_rt_write_impl
+#endif
 
 static const struct file_operations g_a733_rt_fops =
 {

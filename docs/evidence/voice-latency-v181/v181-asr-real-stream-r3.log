@@ -1,0 +1,7 @@
+decoder-epoch-99-avg-1.onnx verified
+encoder-epoch-99-avg-1.onnx verified
+joiner-epoch-99-avg-1.onnx verified
+{"case": "cmd_open_light_16k", "text": "帮我打开灯", "chunks_before_finish": 1, "chunks_total": 2, "first_encoder_at_input_seconds": 1.1, "same_all_logical_encoder_outputs": true, "same_tokens_positions": true, "host_wall_seconds": 0.10900000005494803, "host_only": true, "npu_executed": false}
+{"case": "cmd_time_16k", "text": "现在几点了", "chunks_before_finish": 1, "chunks_total": 2, "first_encoder_at_input_seconds": 1.1, "same_all_logical_encoder_outputs": true, "same_tokens_positions": true, "host_wall_seconds": 0.10999999998603016, "host_only": true, "npu_executed": false}
+{"case": "neg_silence_3s_16k", "text": "", "chunks_before_finish": 3, "chunks_total": 4, "first_encoder_at_input_seconds": 1.1, "same_all_logical_encoder_outputs": true, "same_tokens_positions": true, "host_wall_seconds": 0.1559999999590218, "host_only": true, "npu_executed": false}
+PASS: early encoder execution, exact fbank/state/decoder semantics; not target NPU acceptance

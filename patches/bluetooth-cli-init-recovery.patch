@@ -1,0 +1,163 @@
+--- a/frameworks/connectivity/bluetooth/tools/bt_tools.c
++++ b/frameworks/connectivity/bluetooth/tools/bt_tools.c
+@@ -1946,2 +1946,38 @@
+-#ifdef CONFIG_LIBUV_EXTENSION
+-static void handle_close_cb(uv_handle_t* handle)
++/* NSH and SSH consoles need the official line editor, not raw getline.
++ * Only command names/results are logged; never log pairing arguments. */
++static ssize_t bttool_read_command(char** buffer, size_t* size)
++{
++    ssize_t len;
++#if defined(__NuttX__) && defined(CONFIG_SYSTEM_READLINE)
++    if (!*buffer) {
++        *size = CONFIG_NSH_LINELEN;
++        *buffer = malloc(*size);
++        if (!*buffer)
++            return -1;
++    }
++    len = std_readline(*buffer, *size);
++    if (len >= (ssize_t)*size - 1 && (*buffer)[len - 1] != '\n') {
++        /* readline returns a full fragment before EOL. Consume the rest,
++         * otherwise its tail would become an unintended new command. */
++        PRINT("Command too long; discarding through end of line");
++        do {
++            len = std_readline(*buffer, *size);
++        } while (len >= (ssize_t)*size - 1
++            && (*buffer)[len - 1] != '\n');
++        (*buffer)[0] = '\0';
++        return len <= 0 ? -1 : 0;
++    }
++#else
++    len = getline(buffer, size, stdin);
++#endif
++    if (len <= 0)
++        return -1;
++    while (len > 0 && ((*buffer)[len - 1] == '\r'
++        || (*buffer)[len - 1] == '\n' || (*buffer)[len - 1] == ' '
++        || (*buffer)[len - 1] == '\t'))
++        (*buffer)[--len] = '\0';
++    return len;
++}
++
++#ifdef CONFIG_LIBUV_EXTENSION
++static void handle_close_cb(uv_handle_t* handle)
+@@ -1966,1 +1966,1 @@
+-    while ((tmpstr = strtok_r(tmpstr, " ", &saveptr)) != NULL) {
++    while ((tmpstr = strtok_r(tmpstr, " \t\r\n", &saveptr)) != NULL) {
+@@ -1967,1 +1967,6 @@
+-        _argv[_argc] = tmpstr;
++        if (_argc == (int)ARRAY_SIZE(_argv) - 1) {
++            PRINT("Too many arguments; command ignored");
++            free(buffer);
++            return;
++        }
++        _argv[_argc] = tmpstr;
+@@ -1983,1 +1983,5 @@
+-        if (ret != CMD_OK) {
++        static unsigned int sequence;
++        PRINT("cmd#%u %s: rc=%d (%s)", ++sequence, _argv[0], ret,
++            ret == CMD_OK ? "accepted; async operation may still be pending"
++                          : (ret == -2 ? "quit" : cmd_err_str(ret)));
++        if (ret != CMD_OK) {
+@@ -2089,1 +2089,2 @@
+-    size_t len, size = 0;
++    ssize_t len;
++    size_t size = 0;
+@@ -2124,1 +2124,1 @@
+-        len = getline(&buffer, &size, stdin);
++        len = bttool_read_command(&buffer, &size);
+@@ -2126,1 +2126,3 @@
+-            bttool_quit(&bttool);
++            free(buffer);
++            buffer = NULL;
++            bttool_quit(&bttool);
+@@ -2130,1 +2130,6 @@
+-        buffer[len] = '\0';
++        if (len == 0) {
++            free(buffer);
++            buffer = NULL;
++            continue;
++        }
++        buffer[len] = '\0';
+@@ -2164,1 +2164,2 @@
+-    size_t len, size = 0;
++    ssize_t len;
++    size_t size = 0;
+@@ -2187,4 +2187,6 @@
+-        len = getline(&buffer, &size, stdin);
+-        buffer[len] = '\0';
+-        if (len < 0)
+-            goto quit;
++        len = bttool_read_command(&buffer, &size);
++        if (len < 0)
++            goto quit;
++        if (len == 0)
++            continue;
++        buffer[len] = '\0';
+@@ -2205,1 +2205,1 @@
+-        while ((tmpstr = strtok_r(tmpstr, " ", &saveptr)) != NULL) {
++        while ((tmpstr = strtok_r(tmpstr, " \t\r\n", &saveptr)) != NULL) {
+@@ -2206,1 +2206,6 @@
+-            _argv[_argc] = tmpstr;
++            if (_argc == (int)ARRAY_SIZE(_argv) - 1) {
++                PRINT("Too many arguments; command ignored");
++                _argc = 0;
++                break;
++            }
++            _argv[_argc] = tmpstr;
+@@ -2214,1 +2214,2 @@
+-            ret = execute_command(g_bttool_ins, _argc, _argv);
++            ret = execute_command(g_bttool_ins, _argc, _argv);
++            PRINT("%s: rc=%d", _argv[0], ret);
+--- a/frameworks/connectivity/bluetooth/tools/scan.c
++++ b/frameworks/connectivity/bluetooth/tools/scan.c
+@@ -22,1 +22,2 @@
+-#include "bt_le_scan.h"
++#include "bt_le_scan.h"
++#include "bt_adapter.h"
+@@ -105,2 +105,9 @@
+-    if (g_scanner)
+-        return CMD_ERROR;
++    bt_adapter_state_t state = bt_adapter_get_state(handle);
++    if (state != BT_ADAPTER_STATE_BLE_ON && state != BT_ADAPTER_STATE_ON) {
++        PRINT("Scan blocked: adapter state=%d; wait for BLE_ON(2)/ON(4)", state);
++        return CMD_ERROR;
++    }
++    if (g_scanner) {
++        PRINT("Scan already active; stop it before restarting");
++        return CMD_ERROR;
++    }
+@@ -198,4 +198,8 @@
+-    return CMD_OK;
+-}
+-
+-static int stop_scan_cmd(void* handle, int argc, char* argv[])
++    if (!g_scanner) {
++        PRINT("Scan start rejected by service");
++        return CMD_ERROR;
++    }
++    return CMD_OK;
++}
++
++static int stop_scan_cmd(void* handle, int argc, char* argv[])
+--- a/frameworks/connectivity/bluetooth/service/stacks/zephyr/sal_adapter_le_interface.c
++++ b/frameworks/connectivity/bluetooth/service/stacks/zephyr/sal_adapter_le_interface.c
+@@ -796,2 +796,3 @@
+-        BT_LOGD("zblue init failed (err %d)\n", err);
+-        adapter_on_adapter_state_changed(BT_BREDR_STACK_STATE_OFF);
++        BT_LOGE("zblue init failed (err %d); reboot before retry\n", err);
++        /* A failed LE initialization is not a Classic shutdown event. */
++        adapter_on_adapter_state_changed(BLE_STACK_STATE_OFF);
+--- a/frameworks/connectivity/bluetooth/service/src/adapter_state.c
++++ b/frameworks/connectivity/bluetooth/service/src/adapter_state.c
+@@ -304,3 +304,7 @@
+-    case BLE_ENABLE_TIMEOUT:
+-    case BLE_ENABLE_PROFILE_TIMEOUT:
+-        break;
++    case BLE_DISABLED:
++    case BLE_ENABLE_TIMEOUT:
++    case BLE_ENABLE_PROFILE_TIMEOUT:
++        /* Report a failed start as Off, never stay in BleTurningOn.
++         * Host failure recovery still requires reboot in this milestone. */
++        hsm_transition_to(sm, &off_state);
++        break;

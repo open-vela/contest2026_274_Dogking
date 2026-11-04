@@ -1,0 +1,137 @@
+PASS: 603 frames byte-exact against pinned STM32 C encoder, CRC/fuzz/timeouts/intent limits
+mcu: result=0
+下位机已响应，故障码=0，能力=0x33，运动解锁=0。
+mcu: result=0
+动作未发送：请检查故障并在控制台手动解锁运动。
+mcu: result=-13
+MCU motion armed for 5 minutes. Keep tracks clear; no edge protection is assumed.
+mcu: result=0
+路由检查：UART4 下位机控制（不发送）
+[emotion=普通 actions=0]
+[route=mcu_uart result=0 inspect=1]
+下位机已确认接收动作命令；这不是动作完成确认。
+[emotion=普通 actions=0]
+aipet audio: official cloud TTS -> I2S (bounded 10s).
+[route=mcu_uart result=0 inspect=0]
+动作不明确，未发送。请一次只说前进、后退、左转、右转、停止或向左看。
+[emotion=普通 actions=0]
+aipet audio: official cloud TTS -> I2S (bounded 10s).
+[route=mcu_uart result=-22 inspect=0]
+动作不明确，未发送。请一次只说前进、后退、左转、右转、停止或向左看。
+[emotion=普通 actions=0]
+aipet audio: official cloud TTS -> I2S (bounded 10s).
+[route=mcu_uart result=-22 inspect=0]
+动作不明确，未发送。请一次只说前进、后退、左转、右转、停止或向左看。
+[emotion=普通 actions=0]
+aipet audio: official cloud TTS -> I2S (bounded 10s).
+[route=mcu_uart result=-22 inspect=0]
+动作不明确，未发送。请一次只说前进、后退、左转、右转、停止或向左看。
+[emotion=普通 actions=0]
+aipet audio: official cloud TTS -> I2S (bounded 10s).
+[route=mcu_uart result=-22 inspect=0]
+动作不明确，未发送。请一次只说前进、后退、左转、右转、停止或向左看。
+[emotion=普通 actions=0]
+aipet audio: official cloud TTS -> I2S (bounded 10s).
+[route=mcu_uart result=-22 inspect=0]
+mcu: result=-22
+aipet audio: recording=100 ms gain=x5; this command uploads PCM to official cloud ASR
+aipet audio: ASR input=16000 Hz mono S16, bytes=3200
+[asr] 向左看
+下位机已确认接收动作命令；这不是动作完成确认。
+[emotion=普通 actions=0]
+aipet audio: official cloud TTS -> I2S (bounded 10s).
+[route=mcu_uart result=0 inspect=0]
+aipet audio: listen result=0
+aipet audio: loop result=-22
+aipet audio: loop result=-22
+MIC ON: 2 explicit cloud-ASR turns of 1000 ms; Ctrl+C cancels; no auto-arm.
+voice turn 1/2
+aipet audio: recording=1000 ms gain=x5; this command uploads PCM to official cloud ASR
+aipet audio: ASR input=16000 Hz mono S16, bytes=32000
+[asr] 向右看
+下位机已确认接收动作命令；这不是动作完成确认。
+[emotion=普通 actions=0]
+aipet audio: official cloud TTS -> I2S (bounded 10s).
+[route=mcu_uart result=0 inspect=0]
+voice turn 2/2
+aipet audio: recording=1000 ms gain=x5; this command uploads PCM to official cloud ASR
+aipet audio: ASR input=16000 Hz mono S16, bytes=32000
+[asr] 向右看
+下位机已确认接收动作命令；这不是动作完成确认。
+[emotion=普通 actions=0]
+aipet audio: official cloud TTS -> I2S (bounded 10s).
+[route=mcu_uart result=0 inspect=0]
+MIC OFF: bounded voice loop ended.
+aipet audio: loop result=0
+下位机已确认接收动作命令；这不是动作完成确认。
+[emotion=普通 actions=0]
+aipet audio: official cloud TTS -> I2S (bounded 10s).
+[route=cloud fallback=0 elapsed=5 ms]
+Agent 未调用获授权的控制工具，未确认任何动作。
+[emotion=普通 actions=0]
+aipet audio: official cloud TTS -> I2S (bounded 10s).
+[route=cloud fallback=0 elapsed=0 ms]
+下位机拒绝了命令或参数被钳位，不能确认动作按请求执行。
+mcu: result=-121
+动作未发送：请检查故障并在控制台手动解锁运动。
+mcu: result=-13
+MCU motion armed for 5 minutes. Keep tracks clear; no edge protection is assumed.
+mcu: result=0
+下位机通信未确认，动作结果未知；不会自动重发运动命令。
+mcu: result=-110
+动作未发送：请检查故障并在控制台手动解锁运动。
+mcu: result=-13
+MCU motion armed for 5 minutes. Keep tracks clear; no edge protection is assumed.
+mcu: result=0
+下位机通信未确认，动作结果未知；不会自动重发运动命令。
+mcu: result=-110
+下位机已响应，故障码=0，能力=0x33，运动解锁=0。
+mcu: result=0
+动作未发送：请检查故障并在控制台手动解锁运动。
+mcu: result=-13
+MCU motion armed for 5 minutes. Keep tracks clear; no edge protection is assumed.
+mcu: result=0
+下位机通信未确认，动作结果未知；不会自动重发运动命令。
+mcu: result=-125
+动作未发送：请检查故障并在控制台手动解锁运动。
+mcu: result=-13
+mcu: result=-13
+Fault clear ACK received. Recheck ping before manual arm; this does not enable sensors.
+下位机已确认接收动作命令；这不是动作完成确认。
+mcu: result=0
+下位机已响应，故障码=0，能力=0x33，运动解锁=0。
+mcu: result=0
+MCU motion armed for 5 minutes. Keep tracks clear; no edge protection is assumed.
+mcu: result=0
+下位机通信未确认，动作结果未知；不会自动重发运动命令。
+mcu: result=-67
+下位机已响应，故障码=0，能力=0x33，运动解锁=0。
+mcu: result=0
+动作未发送：请检查故障并在控制台手动解锁运动。
+mcu: result=-13
+mcu: result=-13
+Fault clear ACK received. Recheck ping before manual arm; this does not enable sensors.
+下位机已确认接收动作命令；这不是动作完成确认。
+mcu: result=0
+下位机已响应，故障码=0，能力=0x33，运动解锁=0。
+mcu: result=0
+MCU motion armed for 5 minutes. Keep tracks clear; no edge protection is assumed.
+mcu: result=0
+aipet audio: recording=100 ms gain=x5; this command uploads PCM to official cloud ASR
+aipet audio: ASR input=16000 Hz mono S16, bytes=3200
+[asr] 停止
+下位机已确认停止命令；运动权限已关闭。
+[emotion=普通 actions=0]
+aipet audio: official cloud TTS -> I2S (bounded 10s).
+[route=mcu_uart result=0 inspect=0]
+aipet audio: listen result=0
+动作未发送：请检查故障并在控制台手动解锁运动。
+mcu: result=-13
+UART TTS is disabled in this firmware; use 'aipet audio output i2s'. No UART bytes sent.
+UART TTS is disabled in this firmware; use 'aipet audio output i2s'. No UART bytes sent.
+aipet audio: output result=-95
+Motion disarmed; best-effort STOP requested, ACK not implied.
+mcu: result=0
+PASS: late ACK and fault-before-ACK cannot revive motion; NAK/timeout disarm; no motion retry
+PASS: real application voice-route-UART-TTS pipeline with mocked cloud/PCM and PTY MCU; NOT board acceptance
+openvela-boundary: passed (official public APIs above vendor BSP)

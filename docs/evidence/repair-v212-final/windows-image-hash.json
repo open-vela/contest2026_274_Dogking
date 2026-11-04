@@ -1,0 +1,5 @@
+{
+  "sha256": "3935195bf22940517ceae1a352dbf062e661bffaec70293b297b998dffefb728",
+  "bytes": 2147483648,
+  "implementation": "Windows native .NET SHA256 stream"
+}

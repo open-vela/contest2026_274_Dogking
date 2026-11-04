@@ -1,0 +1,5 @@
+product-route-v225: intent=setting result=0
+product-route-v225: intent=setting result=0
+product-route-v225: intent=setting result=0
+product-route-v225: intent=setting result=0
+PASS inherited v225 routes with v227 units: 30 positive intent cases plus negatives; x20, 512-step/10240-pulse bound, unchanged 300Hz. HOST, not hardware.

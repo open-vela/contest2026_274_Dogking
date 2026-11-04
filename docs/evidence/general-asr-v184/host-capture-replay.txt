@@ -1,0 +1,4 @@
+cmd_open_light_16k: 帮我打开灯 chunks=2
+cmd_time_16k: 现在几点了 chunks=2
+neg_silence_3s_16k:  chunks=4
+PASS: native capture replay + 35-state feedback, cancellation, finite/output gates; mock calls=215, NPU=NOT_EXECUTED

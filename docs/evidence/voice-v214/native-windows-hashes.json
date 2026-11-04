@@ -1,0 +1,10 @@
+{
+  "method": "Native Windows PowerShell Get-FileHash SHA256, independent of WSL packaging",
+  "date": "2026-10-30",
+  "v214_sha256": "c9569622ad928b0730bd79c8be6f17156249b5f5f9e4e858ea3aa1df9ce0bfa6",
+  "v214_bytes": 2147483648,
+  "v214_kernel_sha256": "e2da629baee4fd6418784dc59c1601029b9963efb7bf6342576bff0f990ac1a5",
+  "v213_sha256_unchanged": "9850b49225e54c64f5b1ea54955bfb3d36b0a35cc4998f7114ea14c0eaf53cec",
+  "matches_packager": true,
+  "hardware_executed": false
+}

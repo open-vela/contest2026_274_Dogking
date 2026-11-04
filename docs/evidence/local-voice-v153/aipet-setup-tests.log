@@ -1,0 +1,3 @@
+PTY setup: both providers, default/custom model, hidden key and encrypted JSON passed
+PTY voice setup: hidden long ASR token, encrypted token/TTS key, atomic save preserves LLM config
+Ctrl+C byte/signal and overlong-key rejection restore terminal state

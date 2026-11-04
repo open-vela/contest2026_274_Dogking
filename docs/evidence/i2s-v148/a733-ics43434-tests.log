@@ -1,0 +1,2 @@
+PASS: v148 exhaustive S16 x 16 gains, saturation/clip counts, left mono/header/path, default/custom gain, strict arguments, original amplitude restoration, 13 voice failures preserve old file
+PASS: actual ICS capture: v146 fixture, frame/FIFO units, six intermediate counter checks, reject wrong scaling/stalled/huge counts; stereo/mono/raw, WAV, time gates, legacy, 13 injected failures preserve old file, no leaks, diagnostics

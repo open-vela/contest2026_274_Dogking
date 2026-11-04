@@ -1,0 +1,2 @@
+producer gap regression: result=-32 frames=9120 bytes=18240
+test-play: tools/test-voice-play-stream.cxx:94: int main(): Assertion `starved == 0 && m.frames == 48000 && played == reference' failed.

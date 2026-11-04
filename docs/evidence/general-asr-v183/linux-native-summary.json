@@ -1,0 +1,92 @@
+{
+  "result": "NATIVE_GENERAL_ASR_TEXT_MATCH",
+  "cases": [
+    {
+      "case": "cmd_open_light_16k",
+      "text": "帮我打开灯",
+      "token_ids": [
+        598,
+        520,
+        588,
+        806,
+        2033
+      ],
+      "frame_positions": [
+        0,
+        9,
+        17,
+        22,
+        37
+      ],
+      "expected_cpu_text": "帮我打开灯",
+      "cpu_text_equal": true,
+      "cpu_tokens_equal": true,
+      "cpu_positions_equal": true,
+      "encoder_output_sha256": [
+        "20d1b9554950080291cde3f9e55e28846c459ec75791307f13b9b8c63d2eeba8",
+        "6644fe15663c3a7bb1174a2373e0bea635aac13c77245658351f781a9f309489"
+      ],
+      "retained_native_state_count": 35,
+      "process_seconds": 9.257566498000415,
+      "npu_executed": true,
+      "rtOS_executed": false,
+      "full_voice_chain": false
+    },
+    {
+      "case": "cmd_time_16k",
+      "text": "现在几点了",
+      "token_ids": [
+        528,
+        529,
+        604,
+        610,
+        618
+      ],
+      "frame_positions": [
+        0,
+        12,
+        21,
+        27,
+        39
+      ],
+      "expected_cpu_text": "现在几点了",
+      "cpu_text_equal": true,
+      "cpu_tokens_equal": true,
+      "cpu_positions_equal": true,
+      "encoder_output_sha256": [
+        "5eac7113c1bc957b534d35cae51792acd207f8662682732aa91e706f95726efd",
+        "8ba3a6e165a389e9de51072c56566b1f55a30115f69d4d90f91d1b2713898bd5"
+      ],
+      "retained_native_state_count": 35,
+      "process_seconds": 8.877936531999694,
+      "npu_executed": true,
+      "rtOS_executed": false,
+      "full_voice_chain": false
+    },
+    {
+      "case": "neg_silence_3s_16k",
+      "text": "",
+      "token_ids": [],
+      "frame_positions": [],
+      "expected_cpu_text": "",
+      "cpu_text_equal": true,
+      "cpu_tokens_equal": true,
+      "cpu_positions_equal": true,
+      "encoder_output_sha256": [
+        "2f5e17e1d024721164772234d99efa6dfc77480465f7a6fea7f27107210109bb",
+        "cee67c8044c58ef2b4b4a414caffa12c1019b30f6f28925cb7eb2f38738aa54b",
+        "ba05cf4719f0f358c38d4d43d508e37bd4493e8213ee8c9d6f154429df644bb6",
+        "57b4adcd87ed63b70797bb511f994f164a448fab2a56ecfea6d73624aec81cae"
+      ],
+      "retained_native_state_count": 35,
+      "process_seconds": 14.480117260999577,
+      "npu_executed": true,
+      "rtOS_executed": false,
+      "full_voice_chain": false
+    }
+  ],
+  "calls": 216,
+  "npu_executed": true,
+  "openvela_provider_ready": false,
+  "full_voice_chain": false
+}

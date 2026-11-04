@@ -11,9 +11,9 @@ tmp=$(mktemp -d)
 trap 'rm -f "$tmp/routes" "$tmp/core" "$tmp/cjson.o"; rmdir "$tmp"' EXIT
 gcc -fsanitize=address,undefined -I"$cjson" -c "$cjson/cJSON.c" -o "$tmp/cjson.o"
 g++ -std=c++17 -Wall -Wextra -Werror -fsanitize=address,undefined \
-  -I"$pet" -I"$cjson" "$repo/tools/test-aipet-routes.cxx" \
+  -I"$pet" -I"$pet/../a733display" -I"$cjson" "$repo/tools/test-aipet-routes.cxx" \
   "$pet/pet_routes.cxx" "$pet/pet_core.cxx" "$pet/speech_output.cxx" \
-  "$pet/uart_tts.cxx" "$tmp/cjson.o" -o "$tmp/routes"
+  "$pet/uart_tts.cxx" "$pet/voice_phrase_pipe.cxx" "$tmp/cjson.o" -pthread -o "$tmp/routes"
 "$tmp/routes" "$repo/tools/routes-test-valid.json" "$repo/tools/routes-test-invalid.json"
 g++ -std=c++17 -Wall -Wextra -Werror -fsanitize=address,undefined \
   "$repo/tools/test-aipet-core.cxx" "$pet/pet_core.cxx" -o "$tmp/core"

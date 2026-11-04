@@ -1,0 +1,287 @@
+swout1-v210: VERIFIED; control-before/control-after/DCDC1-config
+40749f4c: 17 1f 17                                           ...
+40749f50: 03 00 ff 17 c1 0d                                  ......
+camera-handoff-v210: committed; SWOUT1 readback passed; runtime retention still ASSUMED
+[13.618]libfdt fdt_path_offset() returned FDT_ERR_BADMAGIC
+[13.627]The storage not support sample function
+[13.714]mac addr => 08:51:49:dc:77:ed
+[13.718]mac addr => 08:51:49:dc:77:ec
+[13.722]no battery, disabled battery functons
+[13.729]update dts
+stop sunxi USB-DRD ok...
+stop sunxi USB1-Host ok...
+[13.755]Starting kernel ...
+
+[13.758]total: 13758 ms
+
+[13.760][mmc]: MMC Device 2 not found
+[13.764][mmc]: mmc 2 not find, so not exit
+NOTICE:  [SCP] :wait arisc ready....
+NOTICE:  [SCP] :arisc version: [d463b9da43dc50320f21ba51c6c51afe2db20d83]
+NOTICE:  [SCP] :arisc startup ready
+NOTICE:  [SCP] :arisc startup notify message feedback
+NOTICE:  [SCP] :sunxi-arisc driver is starting
+NOTICE:  BL3-1: Next image address = 0x40200000
+NOTICE:  BL3-1: Next image spsr = 0x3c5
+- Ready to Boot Primary CPU
+- Boot from EL1
+- Boot to C runtime for OS Initialize
+M0 v188-boot-candidate
+M1
+A7Z0
+A7Z1
+N0
+N1
+H0
+H1
+H2
+H3
+H4
+S0
+S1
+P1
+H5
+N2
+N3
+N4
+[boot188] SMP flush begin=0x0000000000000008
+[boot188] SMP flush done=0x0000000000000000
+[boot188] SMP request cpu=0x0000000000000001
+[boot188] SMP return=0x0000000000000000
+[boot188] SMP request cpu=0x0000000000000002
+[boot188] SMP return=0x0000000000000000
+[boot188] SMP request cpu=0x0000000000000003
+[boot188] SMP return=0x0000000000000000
+[boot188] SMP request cpu=0x0000000000000004
+[boot188] SMP return=0x0000000000000000
+[boot188] SMP request cpu=0x0000000000000005
+[boot188] SMP return=0x0000000000000000
+[boot188] SMP request cpu=0x0000000000000006
+[boot188] SMP return=0x0000000000000000
+[boot188] SMP request cpu=0x0000000000000007
+[boot188] SMP return=0x0000000000000000
+N5
+B0
+B1
+B2
+B3
+B4
+N6
+NA70
+
+NA81
+
+[boot188] CTOR enter=0x00000000404b8c50
+[boot188] CTOR done index=0x0000000000000000
+[boot188] CTOR enter=0x00000000404e03d0
+[boot188] CTOR done index=0x0000000000000001
+[boot188] CTOR enter=0x00000000404e1dd0
+[boot188] CTOR done index=0x0000000000000002
+[boot188] CTOR enter=0x00000000402b9580
+[boot188] CTOR done index=0x0000000000000003
+[boot188] CTOR enter=0x00000000402b9d60
+[boot188] CTOR done index=0x0000000000000004
+[boot188] CTOR enter=0x00000000402d5e30
+[boot188] CTOR done index=0x0000000000000005
+[boot188] CTOR enter=0x000000004042c7d0
+[boot188] CTOR done index=0x0000000000000006
+[boot188] CTOR enter=0x000000004042ec00
+[boot188] CTOR done index=0x0000000000000007
+[boot188] CTOR enter=0x00000000404478b0
+[boot188] CTOR done index=0x0000000000000008
+[boot188] CTOR enter=0x0000000040447d30
+[boot188] CTOR done index=0x0000000000000009
+[boot188] CTOR enter=0x0000000040447fe0
+[boot188] CTOR done index=0x000000000000000a
+[boot188] CTOR enter=0x000000004044ad60
+[boot188] CTOR done index=0x000000000000000b
+[boot188] CTOR enter=0x0000000040487c60
+[boot188] CTOR done index=0x000000000000000c
+[boot188] CTOR enter=0x000000004048dd60
+[boot188] CTOR done index=0x000000000000000d
+[boot188] CTOR enter=0x00000000404dfef0
+[boot188] CTOR done index=0x000000000000000e
+[boot188] CTOR enter=0x00000000404e1f30
+[boot188] CTOR done index=0x000000000000000f
+[boot188] CTOR enter=0x00000000404e5f10
+[boot188] CTOR done index=0x0000000000000010
+[boot188] CTOR enter=0x00000000404e7700
+[boot188] CTOR done index=0x0000000000000011
+[boot188] CTOR enter=0x000000004064a440
+[boot188] CTOR done index=0x0000000000000012
+[boot188] CTOR enter=0x000000004064f880
+[boot188] CTOR done index=0x0000000000000013
+[boot188] CTOR enter=0x000000004064f8b0
+[boot188] CTOR done index=0x0000000000000014
+[boot188] CTOR enter=0x000000004064f940
+[boot188] CTOR done index=0x0000000000000015
+[boot188] CTOR enter=0x0000000040673830
+[boot188] CTOR done index=0x0000000000000016
+[boot188] CTOR enter=0x00000000407ee2e0
+[boot188] CTOR done index=0x0000000000000017
+AX20
+
+X1
+PR
+PR
+PR
+
+NuttShell (NSH)
+nsh> RI
+RX
+
+nsh> camera live-cpu
+live209 cpu role=probe requested=6 actual=6 midr=00000000414fd0b1 affinity-error=0 crc=arm-crc32-selftest-passed timer-hz=24000000 cpu-hz=UNKNOWN-not-measured no-clock-writes
+live209 migration: role=probe before=000000ff requested=00000040 readback=00000040 confirmations=2 attempts=3 elapsed-us=3945 restored=00000000 restore-error=0
+live209 clock: pll-B=f8802700 cpu-B=03000000 rtc=183fb0f7 stable=1 register-estimate-hz=1014000000 physical-hz=NOT-MEASURED
+live209 crc-exec: cpu=6 bytes=65536 repeats=16 raw-crc=bccc7409 changed=65280 software-us=2048 dispatch-us=839 reference-equal=1 result=0 hardware-dispatch-qualified=1 not-FPS
+live209 cpu role=probe requested=7 actual=7 midr=00000000414fd0b1 affinity-error=0 crc=arm-crc32-selftest-passed timer-hz=24000000 cpu-hz=UNKNOWN-not-measured no-clock-writes
+live209 migration: role=probe before=00000040 requested=00000080 readback=00000080 confirmations=2 attempts=3 elapsed-us=3802 restored=00000000 restore-error=0
+live209 clock: pll-B=f8802700 cpu-B=03000000 rtc=183fb0f7 stable=1 register-estimate-hz=1014000000 physical-hz=NOT-MEASURED
+live209 crc-exec: cpu=7 bytes=65536 repeats=16 raw-crc=bccc7409 changed=65280 software-us=2047 dispatch-us=840 reference-equal=1 result=0 hardware-dispatch-qualified=1 not-FPS
+live209 cpu-probe: result=0 restore=0 before=000000ff readback=000000ff camera-NPU-SPI-not-accessed
+nsh> camera live-verify 5 1
+live: accepted seconds=5 detect-every=1 (0=prelviiveew2)0, 9R AcMp up irpoellei=inen;f eurs-dei scpalmaerya  rleiqvuees-tsetdat=u6s  a/c tluiavle=-6s=mtiodpr
+ 0ns0h0>0 0[0K0414fd0b1 affinity-error=0 crc=arm-crc32-selftest-passed timer-hz=24000000 cpu-hz=UNKNOWN-not-measured no-clock-writes
+live209 migration: role=infer-display before=000000ff requested=00000040 readback=00000040 confirmations=2 attempts=3 elapsed-us=3927 restored=00000000 restore-error=0
+live209 clock: pll-B=f8802700 cpu-B=03000000 rtc=183fb0f7 stable=1 register-estimate-hz=1014000000 physical-hz=NOT-MEASURED
+display: initializing ST7735 direct 8-bit path
+display: ST7735 direct path ready
+display: live owner ready; exact model-input background; no MQ pointer transfer
+live205 verify phase=cold input=c4df0898 outputs=605cb065/977cdac3/8e35b8dd/f76b571f/833195d4/30db2979 hit=0 retained=0 equal-legacy=1
+live205 verify phase=warm input=c4df0898 outputs=605cb065/977cdac3/8e35b8dd/f76b571f/833195d4/30db2979 hit=1 retained=4 equal-legacy=1
+live205 verify: PASS same-input legacy/cold/warm all-six-output-CRC and detections; no fallback
+live frame=1 input=c4df0898 boxes=1 inferred=1 capture=210717 prepare=7614 npu=124280 display=34937 us
+live npu seq=1 outputs=605cb065/977cdac3/8e35b8dd/f76b571f/833195d4/30db2979 fallback=0
+live205 npu seq=1 hit=1 retained=4 prep=4003 package=1655 map=146 input=515 sync=1209 hw=17094 output=6036 decode=2001 restore=1 total=29140 us
+live det seq=1 class=0 score=510 box=7,145,631,494
+live frame=2 input=3c135b87 boxes=0 inferred=1 capture=210869 prepare=7629 npu=29285 display=32452 us
+live npu seq=2 outputs=db45119d/797fa11b/575eedc0/62bcf720/d6ea0c78/a136ec69 fallback=0
+live205 npu seq=2 hit=1 retained=4 prep=4058 package=1686 map=153 input=528 sync=1217 hw=17096 output=6038 decode=1888 restore=1 total=29085 us
+live frame=10 input=a5f13545 boxes=1 inferred=1 capture=210865 prepare=7628 npu=29285 display=33100 us
+live npu seq=10 outputs=2a54894a/d7f03fe4/22c26ee7/59764b0c/be0f8631/e382778a fallback=0
+live205 npu seq=10 hit=1 retained=4 prep=4012 package=1641 map=146 input=530 sync=1217 hw=17095 output=6037 decode=1935 restore=1 total=29084 us
+live det seq=10 class=0 score=886 box=122,139,636,493
+camera-live-v209: active=0 stop=0 stage=complete error=0 cleanup=0 frames=18 inference=18 elapsed-ms=7479 fps=2.406 input-crc32=3f01b79f
+live-timing-total-us: capture=3795483 prepare=137306 npu=622262 display=591816; model-RAM=8017024/f5f558c5 no-per-frame-SD-files=1; cooperative stop between bounded operations; NOT MP4/ISP/30fps
+live205: optimized=1 sensor-stream=0 setup-us=2174125 loop-us=5269924 warm-us=4892374 warm-fps-milli=3474 inference-fps-milli=3415 warm-npu-runs=18
+live205 CPU-us: tone=129105 input-crc=8192 tmp-input=3457 display-crc=5589 draw=3116 spi-flush=583092
+live205 overhead-us: prefetch-command=0 logging=96775 successful-frames-wall=5243687; sensor capture overlaps CPU only in live-stream
+live205 validation: requested=1 verified=1 run-ioctls=20; verify adds two first-frame runs, NOT displayed inference frames
+live209: rgb-pipeline=0 input-template=exact-full-region-dynamic-only ISA=runtime-qualified CRC=fallback-preserved no-DVFS-writes
+live205 NPU-us: import=3663 prepare=72244 package=29626 map=2688 input=9499 sync=21902 hw-exec=307722 output=108669 decode=35017 restore=13 total=523746; prepare includes package/map/input/sync; hw-exec includes init/wait
+
+nsh> camera live-pipe 30 1
+live: accepted seconds=30 detect-every=1 (0=prelviiveew2)09,  cRpAuM  rpoilpee=liinnef;e ru-dsies pclaamye rrae qluievset-esdta=t6u sa c/t ulailv=e6-0msitdorp=
+ 0n0s0h0>0 0[4K14fd0b1 affinity-error=0 crc=arm-crc32-selftest-passed timer-hz=24000000 cpu-hz=UNKNOWN-not-measured no-clock-writes
+live209 migration: role=infer-display before=000000ff requested=00000040 readback=00000040 confirmations=2 attempts=3 elapsed-us=3928 restored=00000000 restore-error=0
+live209 clock: pll-B=f8802700 cpu-B=03000000 rtc=183fb0f7 stable=1 register-estimate-hz=1014000000 physical-hz=NOT-MEASURED
+display: live owner ready; exact model-input background; no MQ pointer transfer
+live209 cpu role=prepare requested=7 actual=7 midr=00000000414fd0b1 affinity-error=0 crc=arm-crc32-selftest-passed timer-hz=24000000 cpu-hz=UNKNOWN-not-measured no-clock-writes
+live209 migration: role=prepare before=00000040 requested=00000080 readback=00000080 confirmations=2 attempts=3 elapsed-us=3904 restored=00000000 restore-error=0
+live209 clock: pll-B=f8802700 cpu-B=03000000 rtc=183fb0f7 stable=1 register-estimate-hz=1014000000 physical-hz=NOT-MEASURED
+live frame=1 input=3aab7e53 boxes=1 inferred=1 capture=156485 prepare=7694 npu=30494 display=34826 us
+live npu seq=1 outputs=97e5c03e/2bb266d2/de79c265/e2a0043c/cd09ae64/91a18397 fallback=0
+live205 npu seq=1 hit=0 retained=0 prep=5222 package=2657 map=147 input=537 sync=1406 hw=17096 output=6030 decode=1911 restore=1 total=30264 us
+live det seq=1 class=0 score=590 box=390,177,640,495
+live208 pipe: slots=2 produced=1 consumed=1 discarded-at-stop=1 high-water=1 producer-us=164184 producer-wait-us=1 consumer-wait-us=209943 error=-110 same-frame-binding=1
+camera-live-v209: active=0 stop=0 stage=failed error=-110 cleanup=0 frames=1 inference=1 elapsed-ms=1576 fps=0.634 input-crc32=3aab7e53
+live-timing-total-us: capture=156485 prepare=7694 npu=30494 display=34826; model-RAM=8017024/f5f558c5 no-per-frame-SD-files=1; cooperative stop between bounded operations; NOT MP4/ISP/30fps
+live205: optimized=1 sensor-stream=1 setup-us=1210975 loop-us=275303 warm-us=0 warm-fps-milli=0 inference-fps-milli=3632 warm-npu-runs=0
+live205 CPU-us: tone=7238 input-crc=456 tmp-input=222 display-crc=304 draw=170 spi-flush=34351
+live205 overhead-us: prefetch-command=4 logging=33732 successful-frames-wall=308997; sensor capture overlaps CPU only in live-stream
+live205 validation: requested=0 verified=0 run-ioctls=1; verify adds two first-frame runs, NOT displayed inference frames
+live209: rgb-pipeline=1 input-template=exact-full-region-dynamic-only ISA=runtime-qualified CRC=fallback-preserved no-DVFS-writes
+live205 NPU-us: import=3629 prepare=5222 package=2657 map=147 input=537 sync=1406 hw-exec=17096 output=6030 decode=1911 restore=1 total=30264; prepare includes package/map/input/sync; hw-exec includes init/wait
+
+nsh> camera live-statu
+camera board  (read-only inventory; requires checkpoint node)
+camera selftest  (synthetic CPU pixels; no sensor/device/NPU access)
+camera live <seconds:1..3600> [detect-every:0..60] [model.a7pm] (0=preview only; background task)
+camera live-status | camera live-stop (cooperative stop, no forced hardware reset)
+camera live-stream <seconds> [detect-every] [model] (sensor-on/gated DMA; separate candidate)
+camera live-pipe <seconds> [detect-every] [model] (two owned RGB slots, same-frame YOLO/display)
+camera live-cpu (bounded A76 migration and hardware CRC proof; no camera/NPU/SPI)
+camera live-async[-verify] <seconds> [detect-every] [model] (RGB/NPU/SPI three stages; same-frame two-slot ownership)
+camera live-legacy <seconds> [detect-every] [model] (old one-shot NPU and two-flush path)
+camera live-verify <seconds> [detect-every] [model] (same-input legacy/cold/warm output check)
+camera boot-help (startup steps; ZERO device access)
+camera control status|prepare|calibrate|normal-clock|id-experiment|mode-experiment|link-experiment|frame-experiment|park
+camera capture <NEW-directory> [bggr|rggb|grbg|gbrg] (shared clean-cycle budget; see control status)
+camera tone [black gainQ8 redQ8 greenQ8 blueQ8 rotation:0/180] (preview software only; gains64..2048, black0..255)
+camera export <NEW-directory> [bggr|rggb|grbg|gbrg] (already completed frame, no sensor operation)
+camera process <saved-1920x1080-RAW10-LE16-file> <NEW-directory> [bayer] (CPU/file only, no camera I/O)
+camera prepare <format> <width> <height> <stride> <one-frame-file> <NEW-directory>
+formats: rgb24 | nv12-{601,709}-{limited,full} | raw10{p,le}-{rggb,grbg,gbrg,bggr}
+FILE preparation only, NOT sensor/video capture or realtime inference.
+nsh> aipet audio output i2s
+audio: saved; applies next operation and survives reboot.
+aipet audio: output result=0
+nsh> aipet audio volume 50
+audio: saved; applies next operation and survives reboot.
+aipet audio: volume result=0
+nsh> aipet audio gain 5
+audio: saved; applies next operation and survives reboot.
+aipet audio: gain result=0
+nsh> aipet audio general-voice /data/npu/general-asr /data/npu/general-tts
+general-voice: RAM-only candidate installed; ASR=NPU acoustic=CPU vocoder=NPU; no auto capture/cloud fallback; TARGET ACCEPTANCE REQUIRED
+general-voice: configure result=0
+nsh> cat /dev/a733-camera-control
+camera-control-v203: V1.11/J5 guarded repeat RAW + read-only exposure diagnostics
+state=3 stage=experiment-failed-controls-restored error=-110 cleanup=0 command-error=-110 owned=0 consumed=1
+power: source=same-boot-U-Boot-image-handoff ready=434d5031 bytes=03/00/ff/17/c1/0d
+runtime-PMIC-access=NONE rails-retained=ASSUMED physical-voltage=NOT-MEASURED
+MCLK: configured=0 Hz measured=UNKNOWN; prepare holds reset/STBY LOW
+reads=81443 writes=1849 polls=1 elapsed-ms=310 last-address=02002e8c
+id-experiment: attempted=1 reads=1 chip-id=0214 match=1 error=0 polls=78826 bus-quarantined=0
+mode-experiment: attempted=1 blob-error=0 writes=153 reads=17 verified=14/14 last-reg=0100 error=0
+packet-experiment: attempted=1 stage=receiver-ready-NOT-a-frame receiver-error=0 cleanup=0 owned=0 ready=0
+source: on-attempted=1 on-error=0 stop-error=0; bounded RAW DMA to private frame pool
+packets: raw-headers=0 fs-observations=1 fe-observations=1 status=0000004f errors=00000000 last-header=00010001
+receiver: reads=190 writes=62 elapsed=0 last-address=02003844 phy-debug=00000000 phy-frequency=00000000 pll-ref=f8675f00 pll-peri=ff126310
+PK-before: cfg1=ffffffff cfg2=ffffffff drv1=11111111 drv2=11111111; target=PK10..19/mux2/10mA; unrelated PK fields preserved
+receiver-first: error=0 address=00000000 mask=00000000 expected=00000000 observed=00000000
+receiver-cleanup: error=0 address=00000000 mask=00000000 expected=00000000 observed=00000000
+frame: requested=1 attempted=1 stage=frame-stopped-with-data-error error=-110 cleanup=0 owned=0 completed=0 published=0 validation=0
+frame-data: address=45913040 bytes=4147200 stride=3840 format=RAW10-LE16 vendor-BGGR min=65 max=1023 fingerprint=b035b79e status=00000083 parser=00000000 xy=00000780 fifo=00000000
+frame-mapping: CPU-identity CSI-master1 version=00000016 enable=00000000 bypass=00000001 mbus=00040307; NO-IOMMU-TABLE/RESET/BYPASS-WRITES
+frame-first: error=-110 address=05830254 mask=00000000 expected=00000000 observed=00000000
+frame-cleanup: error=0 address=00000000 mask=00000000 expected=00000000 observed=00000000
+frame-final: dma=00000083 parser=00000000 mapping-enable=00000000 bypass=00000001
+frame-sizing: active-top=00000001 length=07800780 flip=04380780 restored-top=70000000 length=02800500 flip=02d00500
+strict-qualification=NONE; RAW requires published=1; NO-ISP-IMAGE-TUNING
+repeat-v203: generation=19 readers=0 ready=0 max=32768 same-boot-cached-power; any failed cycle requires reboot
+sensor-readback: frame-lines=2128 exposure-lines=2118 analog-code=0000 (read-only, NO AE/gain writes)
+control: prepare | calibrate | normal-clock | id-experiment OR mode-experiment OR link-experiment OR frame-experiment | park
+normal boot has no handoff: prepare returns ENODATA with ZERO MMIO; see camera boot-help
+stream-v206: active=0 stop=0 pending=0 working=0 frames=1 delivered=19 error=-110 cleanup=0 paused=0; sensor-on gated-SCAP, NOT cyclic-DMA; failed capture requires reboot
+nsh> aipet audio local-speak-stream "你好，语音测试成功。"
+voice-compute-v210: target=7 actual=7 part=d0b mask=00000080 confirmations=2 attempts=3 elapsed-us=3692 result=0 restore=0
+voice-compute-v210: target=6 actual=6 part=d0b mask=00000040 confirmations=2 attempts=3 elapsed-us=3762 result=0 restore=0
+local-tts: result=0 acoustic=CPU vocoder=NPU packets=2 samples=67328 cpu-us=1099520 npu-us=167354 first-sink-us=1795777; NOT end-of-speech/physical-audio latency
+local-tts-stream: status=0 first-pcm=1788759 us first-driver-pull=1790787 us frames=146565; audible latency NOT measured
+local-tts-buffer-v189: segments=1 rebuffers=0 rebuffer-wait-us=0; no padding/replay; actual device errors are fatal
+voice-stage: tts-start-mono-us=176671226 first-driver-pull-mono-us=178462013 status=0; driver pull is NOT physical audible onset
+aipet audio: local-speak-stream result=0
+nsh> echo tone=1000,500 > /dev/a733-audio
+nsh> aipet audio local-speak "你好，语音测试成功。"
+local-tts: result=0 acoustic=CPU vocoder=NPU packets=2 samples=67328 cpu-us=1082210 npu-us=156514 first-sink-us=1759924; NOT end-of-speech/physical-audio latency
+aipet audio: local-speak result=0
+nsh> ufs start
+nsh> ls -l /ufs/models
+/ufs/models:
+ -rw-rw-rw-           0 qwen2.5-1.5b-instruct-q4_k_m.gguf
+ -rw-rw-rw-  1117320736 qwen2.5-1.5b-instruct-q4_k_m.v174.gguf
+ -rw-rw-rw-   688065920 MiniCPM5-1B-Q4_K_M.gguf
+nsh> aipet local model auto
+local-llm: model saved; unload before switching a resident model
+nsh> aipet local preload
+local-llm: warming configured model; dialogue history unchanged
+aipet-local: storage=auto-UFS-MiniCPM5 model='/ufs/models/MiniCPM5-1B-Q4_K_M.gguf'
+chatml tokens=38 start=130072 stop=130073 history-pairs=0
+forwardfast: cores-mask=fc workers=6; A76:A55 row weight=3:1; system scheduling unchanged
+forwardfast: loading 688065920 bytes into RAM
+forwardfast: load=9.8353 sec; model reads now RAM-only
+forward1 token=0 layers=24 hidden=1536 heads=16/2
+prefill-cache: reused=0 fresh=38 (exact token-prefix KV)
+

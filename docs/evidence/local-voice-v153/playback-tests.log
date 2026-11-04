@@ -1,0 +1,1 @@
+PASS: production WAV parsing/short reads, 4 rates x mono/stereo x 3 volumes, signed half-word TX, repeat/no pitch shift, prefill/drain, time/error gates, bad headers/paths/FS/alloc, cleanup; NOT hardware acceptance

@@ -1,0 +1,13 @@
+{
+  "project": "ONNX Runtime",
+  "version": "1.23.2",
+  "commit": "a83fc4d58cb48eb68890dd689f94f28288cf2278",
+  "license": "MIT",
+  "source_archive_sha256": "7270fab0d96d964959b35648014230c00fa2a9cb98df087e5fd5c2b2c24c8085",
+  "files": {
+    "LICENSE": "2f07c72751aed99790b8a4869cf2311df85a860b22ded05fa22803587a48922c",
+    "include/onnxruntime_c_api.h": "71125e66180a991d65c9bdbad4aa20daaa1f7a48c7a5c0fa5f18f250ac839a02",
+    "include/onnxruntime_ep_c_api.h": "b92778f50c36ecdf53d0344e0129a78b306afed653f81bba8a9597e3e6e9546f"
+  },
+  "models_included": false
+}

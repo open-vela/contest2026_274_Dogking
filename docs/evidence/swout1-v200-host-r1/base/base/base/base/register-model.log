@@ -1,0 +1,2 @@
+PASS: archived v195 code reproduces 93 reads/29 writes and cleanup address 05810004 in reserved-bit/live-result MODEL; NOT new board evidence
+PASS: BSP primary-header offsets and effective SET=0xA/no RESULT seed verified; legacy model reproduces the reported signature; fixed implementation tested separately

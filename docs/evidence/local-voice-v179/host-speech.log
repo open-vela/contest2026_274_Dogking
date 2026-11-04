@@ -1,0 +1,19 @@
+TTS frontend exact: 你好
+TTS frontend exact: 测试成功
+TTS frontend exact: 你好，测试成功。
+TTS frontend exact: 今天心情很好！
+TTS frontend exact: 前进
+TTS frontend exact: 左转，右转。
+TTS frontend exact: 重庆银行
+TTS frontend exact: 中华人民共和国
+TTS frontend exact: 晚安，好梦。
+TTS frontend exact: 谢谢你
+TTS frontend exact: 123
+TTS frontend exact: 音量50
+decoder-epoch-99-avg-1.onnx verified
+encoder-epoch-99-avg-1.onnx verified
+joiner-epoch-99-avg-1.onnx verified
+CPU ASR / C decoder exact: cmd_open_light_16k '帮我打开灯'
+CPU ASR / C decoder exact: cmd_time_16k '现在几点了'
+CPU ASR / C decoder exact: neg_silence_3s_16k ''
+PASS: host semantic oracle only; no RTOS/NPU/full voice acceptance

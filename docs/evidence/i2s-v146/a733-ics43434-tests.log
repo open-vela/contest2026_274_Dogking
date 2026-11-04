@@ -1,0 +1,1 @@
+PASS: actual ICS capture: byte RX maps/two counts, stereo/left/right/raw ordering, WAV sizes/rates, 5s=5100ms, legacy restore, invalid input, 11 injected failures preserve old file, short writes, no leaks, diagnostic format

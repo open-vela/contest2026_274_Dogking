@@ -1,0 +1,67 @@
+audio: saved; applies next operation and survives reboot.
+aipet audio: output result=0
+audio: saved; applies next operation and survives reboot.
+aipet audio: volume result=0
+audio: saved; applies next operation and survives reboot.
+aipet audio: gain result=0
+voice-service: worker logs on board serial console; use service status from SSH; safe to disconnect this starting shell
+voice-service-v1.1(v219): active=1 pid=0 stage=preparing-MIC-OFF stop=0 error=0 turns=0 empty=0 overlong=0 floor=400
+product-backend=none; cloud and local histories are separate RAM sessions
+product-v225: routed cloud/local; half-duplex; explicit run or saved boot consent; desktop bounded commands, no AEC/barge-in/fault bypass; status != acoustic acceptance
+voice-load-v215: load-stage=spawn-pending stage-age-ms=0 since-start-ms=0; elapsed is NOT disk throughput
+product-v225: MCU link-start=0; desktop command session, no repeated manual arm
+product-route-v1: turn=1 frozen=local reason=forced-local; each turn re-evaluated, never switch after action/audio
+voice-load-v215: BEGIN stage=product-LLM-preload path=- mono-us=1785419024
+voice-load-v215: END stage=product-LLM-preload status=0 elapsed-ms=0
+voice-load-v215: BEGIN stage=product-ASR-vocoder-prepare path=- mono-us=1785419858
+voice-load-v215: END stage=product-ASR-vocoder-prepare status=0 elapsed-ms=0
+product-v1: READY MIC ON; waiting with opening pre-roll, half-duplex
+product-route-v1: turn=1 frozen=local reason=forced-local; each turn re-evaluated, never switch after action/audio
+product-v1: READY MIC ON; waiting with opening pre-roll, half-duplex
+product-v1: overlong utterance discarded, no partial LLM/action
+product-route-v1: turn=1 frozen=local reason=forced-local; each turn re-evaluated, never switch after action/audio
+product-v1: READY MIC ON; waiting with opening pre-roll, half-duplex
+product-v1: speech detected; opening audio retained
+product-v1: MIC OFF; RX stopped, ASR finalizing
+product-v1: [asr backend=local] 识别物体
+product-route-v1: turn=2 frozen=local reason=forced-local; each turn re-evaluated, never switch after action/audio
+voice-load-v215: BEGIN stage=product-ASR-vocoder-prepare path=- mono-us=1785422119
+voice-load-v215: END stage=product-ASR-vocoder-prepare status=0 elapsed-ms=0
+product-v1: READY MIC ON; waiting with opening pre-roll, half-duplex
+product-v1: speech detected; opening audio retained
+product-v1: MIC OFF; RX stopped, ASR finalizing
+product-v1: [asr backend=local] 前进一百二十三步
+product-route-v1: intent=mcu ack-status=-13; never retry motor
+product-route-v1: turn=3 frozen=local reason=forced-local; each turn re-evaluated, never switch after action/audio
+product-v1: READY MIC ON; waiting with opening pre-roll, half-duplex
+product-v1: speech detected; opening audio retained
+product-v1: MIC OFF; RX stopped, ASR finalizing
+product-v1: [asr backend=local] 你好
+product-route-v1: turn=4 frozen=local reason=forced-local; each turn re-evaluated, never switch after action/audio
+product-v1: READY MIC ON; waiting with opening pre-roll, half-duplex
+voice-service-v1.1(v219): active=1 pid=32513 stage=READY-idle-MIC-ON stop=0 error=0 turns=3 empty=1 overlong=1 floor=400
+product-backend=local; cloud and local histories are separate RAM sessions
+product-v225: routed cloud/local; half-duplex; explicit run or saved boot consent; desktop bounded commands, no AEC/barge-in/fault bypass; status != acoustic acceptance
+voice-load-v215: load-stage=engines-prepared stage-age-ms=0 since-start-ms=7; elapsed is NOT disk throughput
+voice-service: cooperative stop requested; wait for active=0; never task_delete/kill an NPU owner
+voice-service-v1.1(v219): active=1 pid=32513 stage=READY-idle-MIC-ON stop=1 error=0 turns=3 empty=1 overlong=1 floor=400
+product-backend=local; cloud and local histories are separate RAM sessions
+product-v225: routed cloud/local; half-duplex; explicit run or saved boot consent; desktop bounded commands, no AEC/barge-in/fault bypass; status != acoustic acceptance
+voice-load-v215: load-stage=engines-prepared stage-age-ms=0 since-start-ms=7; elapsed is NOT disk throughput
+product-v1: stopped=-125; microphone OFF; engines released, weights may remain resident
+voice-service-v1.1(v219): active=0 pid=32513 stage=off stop=1 error=0 turns=3 empty=1 overlong=1 floor=400
+product-backend=none; cloud and local histories are separate RAM sessions
+product-v225: routed cloud/local; half-duplex; explicit run or saved boot consent; desktop bounded commands, no AEC/barge-in/fault bypass; status != acoustic acceptance
+voice-load-v215: load-stage=engines-prepared stage-age-ms=1 since-start-ms=8; elapsed is NOT disk throughput
+product-tts-v1: backend=selected-cloud clauses=2/2 status=0; no local substitution
+voice-service: worker logs on board serial console; use service status from SSH; safe to disconnect this starting shell
+voice-service-v1.1(v219): active=1 pid=0 stage=preparing-MIC-OFF stop=0 error=0 turns=0 empty=0 overlong=0 floor=400
+product-backend=none; cloud and local histories are separate RAM sessions
+product-v225: routed cloud/local; half-duplex; explicit run or saved boot consent; desktop bounded commands, no AEC/barge-in/fault bypass; status != acoustic acceptance
+voice-load-v215: load-stage=spawn-pending stage-age-ms=0 since-start-ms=0; elapsed is NOT disk throughput
+product-v225: MCU link-start=0; desktop command session, no repeated manual arm
+voice-load-v215: BEGIN stage=boot-network-cloud-wait path=- mono-us=1785427520
+voice-load-v215: END stage=boot-network-cloud-wait status=-101 elapsed-ms=60057
+product-boot-v225: network=0 cloud-ready=0; auto may choose local, forced cloud never substituted
+product-v1: stopped=-101; microphone OFF; engines released, weights may remain resident
+PASS PRODUCT SERVICE: real service -> rule dispatcher, 3 automatic turns, empty/overlong discard, UART permission mocked, ASR lease closed for vision/reopened, preload once, stop/join/restart, unconfigured cloud rejects before MIC, explicit cloud TTS with local selected. MOCK engines/PCM, NOT board.

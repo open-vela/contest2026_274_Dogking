@@ -1,0 +1,1 @@
+PASS actual loopback mbedTLS/WebSocket: certificate verification, masked frames, fragmented JSON, ping and invalid/oversize rejection; no external call.

@@ -1,0 +1,25 @@
+e2fsck 1.47.2 (1-Jan-2025)
+Pass 1: Checking inodes, blocks, and sizes
+Pass 2: Checking directory structure
+Pass 3: Checking directory connectivity
+Pass 4: Checking reference counts
+Pass 5: Checking group summary information
+openvela: 24/29696 files (8.3% non-contiguous), 4684/29696 blocks
+PASS: all 197 camera assets byte-equal; existing image opened READ-ONLY
+e2fsck 1.47.2 (1-Jan-2025)
+Pass 1: Checking inodes, blocks, and sizes
+Pass 2: Checking directory structure
+Pass 3: Checking directory connectivity
+Pass 4: Checking reference counts
+Pass 5: Checking group summary information
+openvela: 24/29696 files (8.3% non-contiguous), 4684/29696 blocks
+Embedded kernel bytes: 7057952
+Embedded kernel SHA256: 814fad17690b9eabe7d654a9e0e2fd78ad703d4d05ed162314016f891aec20d9
+
+Caution: Partition 4 doesn't end on a 2048-sector boundary. This may
+result in problems with some disk encryption tools.
+
+No problems found. 32734 free sectors (16.0 MiB) available in 1
+segments, the largest of which is 32734 (16.0 MiB) in size.
+Image bytes: 2147483648
+580e5dbfebb986ffdad885ea22a4a4ef56c6d882b0cdb1fe4569038e87b18acc  /mnt/d/My-Program/AI-Agent-Program/GPTsprogram/Openvela/A733-A7Z-ALL-Files/openvela-a733-cubie-a7z-sd-v197-camera-frame-candidate.img

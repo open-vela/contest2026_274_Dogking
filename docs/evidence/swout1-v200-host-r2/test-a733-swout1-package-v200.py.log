@@ -1,0 +1,1 @@
+PASS: real temporary ext4 installer/readback; kernel byte-identical; boot.scr alias; original extlinux retained; shadow/repeated installs rejected; NO PHYSICAL DEVICES

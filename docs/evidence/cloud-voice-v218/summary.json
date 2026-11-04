@@ -1,0 +1,89 @@
+{
+  "result": "V218_CLOUD_VOICE_SOFTWARE_VERIFIED_NOT_CLOUD_OR_BOARD_ACCEPTED",
+  "firmware_commit": "28929a2999586b621230729b74a205c132294ecb",
+  "base_preserved_tag": "a733-v1.0-v217-audited-20261031",
+  "providers": {
+    "asr": [
+      "volc",
+      "xfyun",
+      "tencent"
+    ],
+    "tts": [
+      "volc",
+      "xfyun",
+      "tencent",
+      "edge"
+    ]
+  },
+  "edge_mode": "EXPERIMENTAL_OPTIONAL_HTTPS_COMPANION_NOT_NATIVE_RTOS",
+  "firmware_directory": "/mnt/d/My-Program/AI-Agent-Program/GPTsprogram/Openvela/quickly-openvela/cmake_out/cubie-a7z_nsh_v218_cloud_voice",
+  "firmware_artifact_sha256": {
+    "nuttx": "e96de639b81eb9e7442c8dce174a3d1bcfb6a136320c6b3145f0f85c9d8f1365",
+    "nuttx.bin": "c4cca0df64af446e51abc82c950284221d26008d7af2d4d84c9d4282bb0726be",
+    "nuttx.map": "bfeb91cb4bfac4599d9f0c94a08eab2d9f156bb6aeb2f748ef571def529360be",
+    ".config": "f579fba9275b91f8e4b53f9ad71dad462e0620c0e5bf64648b6649f1a5b154e0"
+  },
+  "full_gate": {
+    "path": "out/cloud-voice-v218-full-r2/summary.json",
+    "sha256": "0afca4331e845b1bfc8ba8bdc4b0e29e587f00550963e8c004f4bd985a253a64",
+    "evidence_file": "full-gate.json"
+  },
+  "proofs": {
+    "protocol-provider": {
+      "path": "out/cloud-voice-v218-host-r4/summary.json",
+      "sha256": "bd79fa5246a0c09ab5890009d6d16622f354ea403688424a338632ad837932c4",
+      "result": "V218_OFFLINE_PROTOCOL_PROVIDER_PASSED_NOT_CLOUD_OR_BOARD",
+      "evidence_file": "protocol-provider.json"
+    },
+    "TLS-WebSocket": {
+      "path": "out/cloud-voice-v218-socket-r4/summary.json",
+      "sha256": "c26c956e257f200a2cb883159759e5392bf200ae91b01afcb960dfe26e59f57e",
+      "result": "V218_ACTUAL_LOCALHOST_TLS_WEBSOCKET_PASSED",
+      "evidence_file": "TLS-WebSocket.json"
+    },
+    "Edge-HTTPS-handler": {
+      "path": "out/cloud-voice-v218-edge-r2/summary.json",
+      "sha256": "acde24d4996e0f54877b83736d6cccd45ba53ba673579cf21fa35b83767da7af",
+      "result": "V218_ACTUAL_LOCALHOST_HTTPS_GATEWAY_PASSED_MOCK_EDGE",
+      "evidence_file": "Edge-HTTPS-handler.json"
+    },
+    "ARM-units": {
+      "path": "out/cloud-voice-v218-arm-r3/summary.json",
+      "sha256": "f69c18e69ff9a69d3ee2cc07c30bead67a21b16931b7d7ff469cad38c3917e52",
+      "result": "PRODUCT_V1_NUTTX_ARM_COMPILE_NOT_BOARD",
+      "evidence_file": "ARM-units.json"
+    }
+  },
+  "existing_regression": {
+    "setup.log": {
+      "path": "out/cloud-voice-v218-regression-r2/setup.log",
+      "sha256": "3581f26078a701b16b0543ffe7a881c274f2cbf7cd5d4abb58d343396c1be19d",
+      "evidence_file": "suite-setup.log"
+    },
+    "audio.log": {
+      "path": "out/cloud-voice-v218-regression-r1/audio.log",
+      "sha256": "6726ddc36d6019f88621aba319a3ccd97ddf6e46047d0a2f7cb85fb2084afbdc",
+      "evidence_file": "suite-audio.log"
+    },
+    "service.log": {
+      "path": "out/cloud-voice-v218-regression-r1/service.log",
+      "sha256": "3ac95b37d1dff13d87c3108c004a36dd365b822cb0fea8dce0973518fb7d3ce0",
+      "evidence_file": "suite-service.log"
+    },
+    "product.log": {
+      "path": "out/cloud-voice-v218-regression-r1/product.log",
+      "sha256": "d5b1a9f8796cca9c7bfa348be3a1e84eb9022ec022e4c987c32fcf9d9038cc61",
+      "evidence_file": "suite-product.log"
+    }
+  },
+  "entropy_c_abi_checked": true,
+  "sdk_restored_byte_exact": true,
+  "cloud_api_executed": false,
+  "real_edge_synthesis_tested": false,
+  "real_mp3_decode_tested": false,
+  "board_tested": false,
+  "new_SD_image_created": false,
+  "boot_or_recording_or_motion_auto_enabled": false,
+  "PR_created": false,
+  "git_pushed": false
+}

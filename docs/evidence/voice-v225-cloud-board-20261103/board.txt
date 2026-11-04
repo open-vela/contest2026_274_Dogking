@@ -1,0 +1,1645 @@
+RX
+
+nsh>
+nsh>
+nsh> aipet audio service status
+voice-service-v2.0pre(v225): active=0 pid=0 stage=off stop=0 error=0 turns=0 empty=0 overlong=0 floor=400
+product-backend=none; cloud and local histories are separate RAM sessions
+product-v225: routed cloud/local; half-duplex; explicit run or saved boot consent; desktop bounded commands, no AEC/barge-in/fault bypass; status != acoustic acceptance
+voice-load-v215: load-stage=none stage-age-ms=0 since-start-ms=0; elapsed is NOT disk throughput
+nsh> ifconfig
+wlan0   Link encap:Ethernet HWaddr 9c:04:b6:84:44:8d at RUNNING mtu 1500
+        inet addr:192.168.1.195 DRaddr:192.168.1.1 Mask:255.255.255.0
+
+             IPv4   TCP   UDP  ICMP
+Received     04b7  0000  0494  0000
+Dropped      0023  0000  0000  0000
+  IPv4        VHL: 0000   Frg: 0000
+  Checksum   0000  0000  0000  0000
+  TCP         ACK: 0000   SYN: 0000
+              RST: 0000  0000
+              HDR: 0000
+  Type       0000  ----  ----  0000
+Sent         0008  0000  0008  0000
+  Rexmit     ----  0000  ----  ----
+nsh> wifi time
+System UTC: 2026-11-03T10:32:57Z (use ntpcstatus for NTP sample evidence).
+nsh> aipet start
+nsh> aipet audio providers asr xfyun
+cloud-voice-v218: ASR=xfyun credentials=present; TTS=xfyun credentials=present; credentials != API/board acceptance
+choices: ASR=volc|xfyun|tencent; TTS=volc|xfyun|tencent|edge (experimental HTTPS companion gateway, TTS only)
+aipet audio: providers result=0
+nsh> aipet audio providers tts xfyun
+cloud-voice-v218: ASR=xfyun credentials=present; TTS=xfyun credentials=present; credentials != API/board acceptance
+choices: ASR=volc|xfyun|tencent; TTS=volc|xfyun|tencent|edge (experimental HTTPS companion gateway, TTS only)
+aipet audio: providers result=0
+nsh> aipet audio output i2s
+audio: saved; applies next operation and survives reboot.
+aipet audio: output result=0
+nsh> aipet audio volume 50
+audio: saved; applies next operation and survives reboot.
+aipet audio: volume result=0
+nsh> aipet audio providers
+cloud-voice-v218: ASR=xfyun credentials=present; TTS=xfyun credentials=present; credentials != API/board acceptance
+choices: ASR=volc|xfyun|tencent; TTS=volc|xfyun|tencent|edge (experimental HTTPS companion gateway, TTS only)
+aipet audio: providers result=0
+nsh> aipet audio cloud-speak "你好，我是桌宠Vela。"
+cloud-TTS: provider=xfyun status=0 PCM=16k/mono/S16LE; no local substitution
+product-tts-v1: backend=selected-cloud clauses=1/1 status=0; no local substitution
+aipet audio: cloud-speak result=0
+nsh> aipet audio asr 5000
+aipet audio: recording=5000 ms gain=x5; this command uploads PCM to official cloud ASR
+aipet audio: ASR input=16000 Hz mono S16, bytes=160000
+cloud-ASR: provider=xfyun status=-113; no semantic retry
+aipet audio: asr result=-113
+nsh> ping -c 4 192.168.1.1
+PING 192.168.1.1 56 bytes of data
+56 bytes from 192.168.1.1: icmp_seq=0 time=9.0 ms
+56 bytes from 192.168.1.1: icmp_seq=1 time=8.0 ms
+56 bytes from 192.168.1.1: icmp_seq=2 time=12.0 ms
+56 bytes from 192.168.1.1: icmp_seq=3 time=9.0 ms
+4 packets transmitted, 4 received, 0% packet loss, time 4007 ms
+rtt min/avg/max/mdev = 8.000/9.500/12.000/1.500 ms
+nsh> aipet audio asr 5000
+aipet audio: recording=5000 ms gain=x5; this command uploads PCM to official cloud ASR
+aipet audio: ASR input=16000 Hz mono S16, bytes=160000
+cloud-ASR: provider=xfyun status=0; no semantic retry
+[asr] 扛胜凯博了。
+aipet audio: asr result=0
+nsh> aipet mode cloud
+nsh> aipet run
+PR
+PR
+ooice-service:P Rw
+ rkPeRr
+ mlcoug:s  orne sbuolat=r0d
+ smecriua-ld ecsoktnospo-lve;2 2u5s:e  esnearbvliecd=e0 s;t abtouunsd efdro mH USMSAHN;  csoamfmean dtso  mdaisyc oanuntheocrti zthe iosn cset apretr  ncgo msmhaenldl;
+pfvaouilcet-/sleorsvs/iNcAeK- vi2.n0hpirbei(t,v 2n2o5 ):c laecatri/rveet=r1y
+vedM=o8t2i ons tdaigse=aprrmeepda; rbiensgt--MeIfC-fOoFrFt  sStToOpP= r0e qeurerosrt=e0d ,t AuCrKn sn=o0 te mipmtpyli=e0d .o
+= rmlcoun:g =r0e sfullot=o0r
+u4m0c0
+m-dpersodkutcotp--bva2c2k5e:n den=anbolneed;= 1c;l obuod uanndde d lHoUcMaAlN h icsotmomrainedss  amraye  asuetpahroartieze R AoMnc es espseiro ncso
+ mparnod;d ufcatu-lv2t2/5l:o srso/uNtAeKd  icnlhoiubdi/tl,o cnaol c;l ehaarl/f-rdeutprlye
+x;p reoxdpuclti-cvi2t 2r5u:n  MoCUr  lsaivnekd- sbtoaortt =c0o;n sdeesnktt;o pde sckotmompa nbdo usnedsesdi ocno,m nmoa nrdesp,e naot eAd EmCa/nbuaar/f ea-rimn
+a aduilstp lbayyp:a sinsi;t isatlatiuzsi n!g= S Ta7c7o3u5s tdiicr eacccte p8t-abintc ep
+ivtho
+ ce-load-v215: load-stage=spawn-pending stage-age-ms=83 since-start-ms=83; elapsed is NOT disk throughput
+nsh> display: ST7735 direct path ready
+PR
+tIPET LVGL UI avctoiivcee;- luosaed -'vd2i1s5p:l aBEyG IeNm osttiaogne =<bnaomoet>-'n etfwroormk a-ncoltohuedr- wasihte llp.a
+ h=- mono-us=354022870
+voice-load-v215: END stage=boot-network-cloud-wait status=0 elapsed-ms=36
+product-boot-v225: network=1 cloud-ready=1; auto may choose local, forced cloud never substituted
+product-route-v1: turn=1 frozen=cloud reason=forced-cloud; each turn re-evaluated, never switch after action/audio
+voice-compute-v210: target=1 actual=1 part=d05 mask=00000002 confirmations=2 attempts=3 elapsed-us=3379 result=0 restore=0
+product-v1: READY MIC ON; waiting with opening pre-roll, half-duplex
+product-v1: speech detected; opening audio retained
+product-v1: MIC OFF; RX stopped, ASR finalizing
+dialogue-rx-v214: result=0 monitored=240960 accepted48=96960 speech=1 limited=0 queue=40; idle PCM not saved
+gate-end-v221fix1: noise-rms=91 last-rms=74 voiced-blocks=99 quiet-blocks=70; 10ms blocks,700ms endpoint,8s hard discard
+gate-end-v224: continuation-confirm=80ms peak-blocks=8 rejected-short-bursts=2 quiet-peak=70 resets=1 limited=0; energy-only, NOT trained VAD
+cloud-ASR: provider=xfyun status=0; no semantic retry
+product-v1: [asr backend=cloud] 康神开播啦。
+display: emotion=思考
+▒roduct-reply-v1: backendd=icslpoluayd:  teemxto=t▒i▒o▒n▒=弼▒▒▒庿▒▒▒
+ ▒开播了！那我陪你一起守着～你是在等他的哪一局，还是单纯来凑个热闹？
+product-tts-v219: BEGIN backend=cloud; microphone OFF
+display: emotion=开心
+cloud-TTS: provider=xfyun status=0 PCM=16k/mono/S16LE; no local substitution
+cloud-TTS: provider=xfyun status=0 PCM=16k/mono/S16LE; no local substitution
+product-tts-v1: backend=selected-cloud clauses=2/2 status=0; no local substitution
+product-tts-v219: END status=0 elapsed-ms=13661; actual sound requires listening
+product-route-v1: turn=2 frozen=cloud reason=forced-cloud; each turn re-evaluated, never switch after action/audio
+product-v1: READY MIC ON; waiting with opening pre-roll, half-duplex
+product-v1: speech detected; opening audio retained
+product-v1: MIC OFF; RX stopped, ASR finalizing
+dialogue-rx-v214: result=0 monitored=159360 accepted48=77280 speech=1 limited=0 queue=40; idle PCM not saved
+gate-end-v221fix1: noise-rms=82 last-rms=244 voiced-blocks=43 quiet-blocks=70; 10ms blocks,700ms endpoint,8s hard discard
+gate-end-v224: continuation-confirm=80ms peak-blocks=8 rejected-short-bursts=4 quiet-peak=70 resets=1 limited=0; energy-only, NOT trained VAD
+cloud-ASR: provider=xfyun status=-5; no semantic retry
+mcu-desktop-v225: enabled=0; bounded HUMAN commands may authorize once per command; fault/loss/NAK inhibit, no clear/retry
+Motion disarmed; best-effort STOP requested, ACK not implied.
+mcu: result=0
+product-v1: stopped=-5; microphone OFF; engines released, weights may remain resident
+
+nsh> aipet statue
+aipet init (one-time online setup via serial/SSH)
+aipet ask "text" | aipet cancel
+aipet route "text" (inspect only) | cloud "text" (bypass rules)
+aipet start | status; service agent on|off|status
+aipet mcu start|status|ping|arm|disarm|stop|servo|move
+aipet tts status|off (legacy UART TTS retired)
+aipet audio status|setup|output|volume|gain|record|features|play|play22k|asr|listen|speak
+aipet local status|on|off|preload|unload|stop|clear
+aipet local ask "text" | model PATH | tokens N | cores MASK | context 0..4 | batch 1|4
+Boot initialization waits for network/time/config.
+Official Agent + I2S speech + dedicated UART4 STM32 control at 115200.
+nsh> aipet audio service status
+voice-service-v2.0pre(v225): active=0 pid=82 stage=off stop=0 error=-5 turns=1 empty=0 overlong=0 floor=400
+product-backend=none; cloud and local histories are separate RAM sessions
+product-v225: routed cloud/local; half-duplex; explicit run or saved boot consent; desktop bounded commands, no AEC/barge-in/fault bypass; status != acoustic acceptance
+voice-load-v215: load-stage=engines-prepared stage-age-ms=56446 since-start-ms=82323; elapsed is NOT disk throughput
+nsh> aipet run
+PR
+PR
+noice-service: mwcour:k erre sluolgts= 0o
+ m cbuo-ardde ssketropi-avl2 2c5o:n seonlae;b luesde= 0;s ebrovuinced eds tHaUtMuAsN  fcroomm mSaSnHds;  msaayf ea uttoh odrisiczoen noenccet  ptehriloc osmtmaratnidn;g  fsahuelltl/
+c vsosi/cNAeK- sienrhviicbei-tv,2 n.o0 pcrlee(va2r2/5r)et:r ya
+mtMivoet=i1o np iddi=s9a1r mesdt;a gbee=sptr-eepfarfionrgt- MSITCO-PO FrFe qsuteospt=ed0,  eArCroKr =n0o tt uirmnpsl=i0ed .e
+0pmtcy=u0:  orveesrullotn=g0=
+pm cful-oodre=s4k0t0o
+u-vp2r2o5du:c te-nbaabclkeedn=d1;= nboonuen;d ecdl oHuUdM AaNn dc loomcmaaln dhsi smtaoyr aiuetsh oarriez see poanrcaet ep erR AcMo msmeasnsdi;o nfsa
+alptr/oldouscst/-Nv2A2K5 :i nrhoiubtietd,  cnloo ucdl/ealro/craelt;r yh
+ lpfr-odduupclte-xv;2 2e5x:p lMiCcUi t lriunnk -osrt asratv=e0;d  dbeosoktt ocpo ncsoenmtm;a ndde ssketsospi obno,u nndo erde pceomamtaendd sm,a nnuoa lA EaCr/mb
+-rPRge
+<tn/AfaIPuEltT  LbVvyGopLia csesU-;Il  osatcaatdti-uvve2s;1  5!u:=s  eBa Ec'oGduIisNst spitlcaa gya ece=cmbeoopotttai-noncne e
+genwavoromkie-c>ec'-l lofouraoddm-- wvaain2to1 t5ph: aeltroh a=s-hd e-mlsoltn.ao
+n -=ussp=4a4w3n-5p4e3n9d3i3
+ g stage-age-ms=86 since-start-ms=86; elapsed is NOT disk throughput
+nsh> voice-load-v215: END stage=boot-network-cloud-wait status=0 elapsed-ms=45
+product-boot-v225: network=1 cloud-ready=1; auto may choose local, forced cloud never substituted
+product-route-v1: turn=1 frozen=cloud reason=forced-cloud; each turn re-evaluated, never switch after action/audio
+product-v1: READY MIC ON; waiting with opening pre-roll, half-duplex
+mic-monitor-v219: idle-ms=5000 blocks=489 rms=141 raw-peak=635 noise-rms=102 trigger-rms=400; waiting for speech, no PCM saved
+product-v1: speech detected; opening audio retained
+product-v1: MIC OFF; RX stopped, ASR finalizing
+dialogue-rx-v214: result=0 monitored=553440 accepted48=104160 speech=1 limited=0 queue=40; idle PCM not saved
+gate-end-v221fix1: noise-rms=99 last-rms=122 voiced-blocks=120 quiet-blocks=70; 10ms blocks,700ms endpoint,8s hard discard
+gate-end-v224: continuation-confirm=80ms peak-blocks=8 rejected-short-bursts=4 quiet-peak=70 resets=1 limited=0; energy-only, NOT trained VAD
+cloud-ASR: provider=xfyun status=0; no semantic retry
+product-v1: [asr backend=cloud] 前进40步。
+mcu-route-v225: pulses=400 speed=2 (explicit numeric voice steps x10; ACK is not completion)
+product-route-v1: intent=mcu ack-status=0; never retry motor
+product-reply-v1: backend=cloud text=下位机已接收运动命令，预测距离字段=184（单位0.1毫米）；这不是动作完成确认，也不是实际位移测量。
+-vsplay: emotprioodnu=c▒t▒-▒t▒t▒s
+  219: BEGIN backend=cloud; microphone OFF
+cloud-TTS: provider=xfyun status=-5 PCM=16k/mono/S16LE; no local substitution
+product-tts-v1: backend=selected-cloud clauses=0/2 status=-5; no local substitution
+product-tts-v219: END status=-5 elapsed-ms=201; actual sound requires listening
+product-v1: turn failed=-5; not retried; listener resumes
+mcu-desktop-v225: enabled=0; bounded HUMAN commands may authorize once per command; fault/loss/NAK inhibit, no clear/retry
+Motion disarmed; best-effort STOP requested, ACK not implied.
+mcu: result=0
+product-v1: stopped=-101; microphone OFF; engines released, weights may remain resident
+
+nsh> aipet audio service status
+voice-service-v2.0pre(v225): active=0 pid=91 stage=off stop=0 error=-101 turns=0 empty=0 overlong=0 floor=400
+product-backend=none; cloud and local histories are separate RAM sessions
+product-v225: routed cloud/local; half-duplex; explicit run or saved boot consent; desktop bounded commands, no AEC/barge-in/fault bypass; status != acoustic acceptance
+voice-load-v215: load-stage=settings stage-age-ms=14968 since-start-ms=30905; elapsed is NOT disk throughput
+nsh> ps
+  PID GROUP CPU(AFFINITY)   PRI POLICY   TYPE    NPX STATE    EVENT     SIGMASK            STACK COMMAND
+    0     0 000(0x000000ff)   0 FIFO     Kthread   - Running            0000000000000000 0008112 CPU0 IDLE
+    1     0 001(0x000000ff)   0 FIFO     Kthread   - Assigned           0000000000000000 0008112 CPU1 IDLE
+    2     0 002(0x000000ff)   0 FIFO     Kthread   - Running            0000000000000000 0008112 CPU2 IDLE
+    3     0 003(0x000000ff)   0 FIFO     Kthread   - Running            0000000000000000 0008112 CPU3 IDLE
+    4     0 004(0x000000ff)   0 FIFO     Kthread   - Running            0000000000000000 0008112 CPU4 IDLE
+    5     0 005(0x000000ff)   0 FIFO     Kthread   - Running            0000000000000000 0008112 CPU5 IDLE
+    6     0 006(0x000000ff)   0 FIFO     Kthread   - Running            0000000000000000 0008112 CPU6 IDLE
+    7     0 007(0x000000ff)   0 FIFO     Kthread   - Running            0000000000000000 0008112 CPU7 IDLE
+    8     0 ---(0x000000ff) 224 RR       Kthread   - Waiting  Semaphore 0000000000000000 0008048 hpwork 0x408e0240 0x408e02c8
+   10    10 001(0x000000ff) 100 RR       Task      - Running            0000000000000000 0008080 nsh_main
+   11     0 ---(0x000000ff) 100 RR       Kthread   - Waiting  Signal    0000000000000000 0008080 a733-wlan-rx
+   13     0 ---(0x000000ff) 120 RR       Kthread   - Waiting  Signal    0000000000000000 0003984 a7z-uart-rx
+   31    31 ---(0x000000ff) 100 RR       Task      - Waiting  Signal    0000000000000000 0032656 ai_agent
+   41    31 ---(0x000000ff)  50 FIFO     pthread   - Waiting  Semaphore 0000000000000000 0016304 ai_agent 0x402f61b0 0x45e45d60
+   44    31 ---(0x000000ff)  40 FIFO     pthread   - Waiting  Semaphore 0000000000000000 0008112 ai_agent 0x403007b4 0x45e97000
+   46    31 ---(0x000000ff)   3 FIFO     pthread   - Waiting  Signal    0000000000000000 0008112 ai_agent 0x40301a24 0x45e97000
+   48    31 ---(0x000000ff)  60 FIFO     pthread   - Waiting  Semaphore 0000000000000000 0032688 ai_agent 0x402f739c 0x45e45e70
+   83    83 ---(0x000000ff) 100 RR       Task      - Waiting  Signal    0000000000000004 0262016 aipet --mcu-worker
+nsh> dmesg
+33 BT: firmware mode=5 HCI-port=1 readback=1 (mailbox/USB)
+[   17.230003] [CPU0] [10] nsh_main: A733 WIFI: uploaded /data/aic/fmacfw_8800d80_u02.bin (358072 bytes) to 00120000
+[   17.334003] [CPU0] [10] nsh_main: A733 WIFI: D80 patch config version=06090101 cfg=00177158 struct=00177c00 pairs=0017d318
+[   17.336002] [CPU0] [10] nsh_main: A733 WIFI: D80 firmware started, waiting for runtime USB device
+[   17.722101] [CPU0] [10] nsh_main: A733 WIFI: USB device addr=1 VID:PID=a69c:8d81 class=ef/02/01 bcdUSB=2.00 EP0=64
+[   17.724157] [CPU0] [10] nsh_main: A733 WIFI: interface=0 alt=0 class=e0/01/01 endpoints=3
+[   17.724193] [CPU0] [10] nsh_main: A733 WIFI: endpoint=83 attr=03 maxpacket=64 interval=4 interface=0/0
+[   17.724234] [CPU0] [10] nsh_main: A733 WIFI: endpoint=84 attr=02 maxpacket=512 interval=0 interface=0/0
+[   17.724276] [CPU0] [10] nsh_main: A733 WIFI: endpoint=04 attr=02 maxpacket=512 interval=0 interface=0/0
+[   17.724318] [CPU0] [10] nsh_main: A733 WIFI: interface=1 alt=0 class=e0/01/01 endpoints=2
+[   17.724354] [CPU0] [10] nsh_main: A733 WIFI: endpoint=85 attr=01 maxpacket=0 interval=4 interface=1/0
+[   17.724395] [CPU0] [10] nsh_main: A733 WIFI: endpoint=05 attr=01 maxpacket=0 interval=4 interface=1/0
+[   17.724436] [CPU0] [10] nsh_main: A733 WIFI: interface=1 alt=1 class=e0/01/01 endpoints=2
+[   17.724472] [CPU0] [10] nsh_main: A733 WIFI: endpoint=85 attr=01 maxpacket=9 interval=4 interface=1/1
+[   17.724513] [CPU0] [10] nsh_main: A733 WIFI: endpoint=05 attr=01 maxpacket=9 interval=4 interface=1/1
+[   17.724554] [CPU0] [10] nsh_main: A733 WIFI: interface=1 alt=2 class=e0/01/01 endpoints=2
+[   17.724590] [CPU0] [10] nsh_main: A733 WIFI: endpoint=85 attr=01 maxpacket=17 interval=4 interface=1/2
+[   17.724632] [CPU0] [10] nsh_main: A733 WIFI: endpoint=05 attr=01 maxpacket=17 interval=4 interface=1/2
+[   17.724673] [CPU0] [10] nsh_main: A733 WIFI: interface=1 alt=3 class=e0/01/01 endpoints=2
+[   17.724709] [CPU0] [10] nsh_main: A733 WIFI: endpoint=85 attr=01 maxpacket=25 interval=4 interface=1/3
+[   17.724751] [CPU0] [10] nsh_main: A733 WIFI: endpoint=05 attr=01 maxpacket=25 interval=4 interface=1/3
+[   17.724792] [CPU0] [10] nsh_main: A733 WIFI: interface=1 alt=4 class=e0/01/01 endpoints=2
+[   17.724828] [CPU0] [10] nsh_main: A733 WIFI: endpoint=85 attr=01 maxpacket=33 interval=4 interface=1/4
+[   17.724869] [CPU0] [10] nsh_main: A733 WIFI: endpoint=05 attr=01 maxpacket=33 interval=4 interface=1/4
+[   17.724911] [CPU0] [10] nsh_main: A733 WIFI: interface=1 alt=5 class=e0/01/01 endpoints=2
+[   17.724947] [CPU0] [10] nsh_main: A733 WIFI: endpoint=85 attr=01 maxpacket=49 interval=4 interface=1/5
+[   17.724988] [CPU0] [10] nsh_main: A733 WIFI: endpoint=05 attr=01 maxpacket=49 interval=4 interface=1/5
+[   17.725031] [CPU0] [10] nsh_main: A733 WIFI: interface=2 alt=0 class=ff/ff/ff endpoints=4
+[   17.725068] [CPU0] [10] nsh_main: A733 WIFI: endpoint=01 attr=02 maxpacket=512 interval=0 interface=2/0
+[   17.725109] [CPU0] [10] nsh_main: A733 WIFI: endpoint=81 attr=02 maxpacket=512 interval=0 interface=2/0
+[   17.725151] [CPU0] [10] nsh_main: A733 WIFI: endpoint=02 attr=02 maxpacket=512 interval=0 interface=2/0
+[   17.725193] [CPU0] [10] nsh_main: A733 WIFI: endpoint=82 attr=02 maxpacket=512 interval=0 interface=2/0
+[   17.736239] [CPU0] [10] nsh_main: A733 WIFI: USB enumeration passed config=1 interfaces=3 descriptors=8 endpoints=19 total=222
+[   17.736291] [CPU0] [10] nsh_main: A733 WIFI: runtime map WLAN data=01/01 msg=02/02 BT event=03 ACL=04/04
+[   17.746003] [CPU0] [10] nsh_main: A733 WIFI: runtime MM_VERSION passed lmac=06090101 machw=0002fdfb/00014047 phy=5ee24111/01020000 features=01e877d7 sta=32 vif=4
+[   17.750003] [CPU0] [10] nsh_main: A733 WIFI: LMAC stack start passed 5g=1 vendor=00
+[   17.754003] [CPU0] [10] nsh_main: A733 WIFI: efuse MAC 9c:04:b6:84:44:8d
+[   17.754033] [CPU0] [10] nsh_main: A733 WIFI: LMAC stack checkpoint (0)
+[   18.852003] [CPU0] [10] nsh_main: A733 WIFI: RF calibration passed rx=00175a64/00175cf8 tx=0017683c/001769c4
+[   18.852047] [CPU0] [10] nsh_main: A733 WIFI: RF configuration checkpoint (0)
+[   18.860003] [CPU0] [10] nsh_main: A733 WIFI: runtime MM_VERSION passed lmac=06090101 machw=0002fdfb/00014047 phy=5ee24111/01020000 features=01e877d7 sta=32 vif=4
+[   18.864003] [CPU0] [10] nsh_main: A733 WIFI: ME configuration passed HT=1 VHT=0 HE=0 BW=40 PS=0 cfm=0
+[   18.864043] [CPU0] [10] nsh_main: A733 WIFI: ME configuration checkpoint (0)
+[   18.868003] [CPU0] [10] nsh_main: A733 WIFI: CN channel table passed 2g=14 5g=25 cfm=0
+[   18.868038] [CPU0] [10] nsh_main: A733 WIFI: regulatory channel checkpoint (0)
+[   18.872003] [CPU0] [10] nsh_main: A733 WIFI: station VIF passed index=0 MAC=9c:04:b6:84:44:8d
+[   18.872042] [CPU0] [10] nsh_main: A733 WIFI: station VIF checkpoint (0)
+[   18.876003] [CPU0] [10] nsh_main: A733 WIFI: MAC/PHY start passed UAPSD=300 ms LPCLK=20 ppm cfm=0
+[   18.876041] [CPU0] [10] nsh_main: A733 WIFI: MAC/PHY start checkpoint (0)
+[   18.876070] [CPU0] [10] nsh_main: A733 WIFI: runtime transport checkpoint (0)
+[   18.876100] [CPU0] [10] nsh_main: A733 WIFI: D80 firmware bytes=408616 runtime=a69c:8d81 (0)
+[   18.876147] [CPU0] [10] nsh_main: A733 BT: official H4 transport registration (0)
+[   18.876188] [CPU0] [10] nsh_main: A733 WIFI: wlan0 registered; serialized USB RX worker pid=11
+[   18.876227] [CPU0] [10] nsh_main: A733: onboard FCU760K USB/firmware checkpoint ready (0)
+[   18.877305] [CPU0] [10] nsh_main: A733 USB host: before reset cap=30 ver=0120 hcs=02000140 id=33313130
+[   20.341323] [CPU0] [10] nsh_main: A733 USB combo v114: ctrl=00000111/01100001/00000000/00000011 status=00000001 maps=00000000/00000000 ready=1
+[   20.361387] [CPU0] [10] nsh_main: A733 USB PHY v114: reset-free host handoff passed id=33313130 gctl=30c11404 u2=02102400 u3=01001102 iscr=0100b000 physts=00000008
+[   20.361453] [CPU0] [10] nsh_main: A733 USB host: CCU-reset halted handoff passed; HCRST suppressed cmd=00000000 sts=00000001 id=33313130
+[   20.361514] [CPU0] [10] nsh_main: A733 xHCI v114: running slots=8 scratch=2 page=00000001 rtsoff=00001000 cmd=00000001 sts=00000000
+[   21.862363] [CPU0] [10] nsh_main: A733 UVC: USB2/xHCI2 probe=-19 ports=000002a0/000002a0 DWC3=33313130 maxports=2
+[   21.862409] [CPU0] [10] nsh_main: A733 USB diagnostic node registered; host probe=-19 (not audio-ready)
+[   21.862449] [CPU0] [10] nsh_main: A733: external USB0 UVC checkpoint ready (0)
+[   21.862493] [CPU0] [10] nsh_main: A733: optional service startup dispatcher (0)
+[   21.863557] [CPU1] [12] service: A733 service: ufs spawn=0 pid=14
+[   21.866251] [CPU1] [12] service: A733 service: wifi spawn=0 pid=15
+[   21.868180] [CPU0] [12] service: A733 service: aipet spawn=0 pid=25
+[   21.868230] [CPU3] [25] aipet: AIPET startup: waiting=network
+[   21.887290] [CPU2] [14] ufs: UFS startup: stage=mounted-existing-FAT result=0 ready=1; no format, SD retained
+[   22.443003] [CPU0] [15] wifi: A733 WIFI: active scan passed channels=14 indications=3 results=3 firmware=3 ack=1
+[   22.627003] [CPU0] [15] wifi: A733 WIFI: active scan passed channels=4 indications=2 results=5 firmware=2 ack=1
+[   22.865003] [CPU0] [15] wifi: A733 WIFI: active scan passed channels=5 indications=4 results=9 firmware=4 ack=1
+[   23.189003] [CPU0] [15] wifi: A733 WIFI: association control plane passed ssid='ZBCK-E-5G_Wi-Fi5' vif=0 ap=0 channel=0 protected=1
+[   23.191003] [CPU0] [15] wifi: A733 WIFI: openvela WEXT WPA2 started ssid='ZBCK-E-5G_Wi-Fi5'; waiting for four-way handshake
+[   23.218005] [CPU1] [11] a733-wlan-rx: A733 WIFI: WPA2 M1 received, M2 submitted to USB; waiting for authenticated M3
+[   23.237003] [CPU0] [11] a733-wlan-rx: A733 WIFI: WPA2 four-way handshake passed; CCMP PTK/GTK installed and controlled port open
+[   23.237057] [CPU0] [11] a733-wlan-rx: A733 WIFI: DHCP started on wlan0 pid=28
+[   24.872543] [CPU0] [25] aipet: AIPET startup: waiting=clock
+[   26.428008] [CPU1] [28] a733-dhcp: A733 WIFI: DHCP passed address=192.168.1.195 router=192.168.1.1 dns=59.49.49.49 lease=86400 s gratuitous-arp=3/0
+[   26.705497] [CPU2] [15] wifi: A733 Wi-Fi saved connection finished (0); no password prompt
+[   36.878485] [CPU0] [25] aipet: AIPET startup: waiting=starting
+[   36.878533] [CPU0] [25] aipet: A733 service: [ai_agent s p a w3n6=.08 7p8i5d5=23]1
+[CPU1] [31] ai_agent: [agent] AI Agent - Vela AI Agent starting (build: Nov  1 2026 21:17:59)
+[   36.878620] [CPU1] [31] ai_agent: [agent] [boot +0ms] P0: timezone set
+[   36.880468] [CPU1] [31] ai_agent: [agent] [boot +1ms] P0: storage ready
+[   36.880503] [CPU1] [31] ai_agent: [agent] [boot +1ms] heap: arena=4179636224 free=4178997344 used=638880
+[   36.881918] [CPU1] [31] ai_agent: [cfgstore] Config store ready at /data/ai_agent/config/config.json
+[   36.881943] [CPU1] [31] ai_agent: [agent] [boot +3ms] P1: config_store_init (rc=0)
+[   36.881977] [CPU1] [31] ai_agent: [bus] Message bus initialized (depth 16)
+[   36.882010] [CPU1] [31] ai_agent: [agent] [boot +3ms] P1: message_bus_init (rc=0)
+[   36.882042] [CPU1] [31] ai_agent: [memory] Initializing memory store at /data/ai_agent
+[   36.887519] [CPU1] [31] ai_agent: [memory] Memory store initialized successfully
+[   36.887549] [CPU1] [31] ai_agent: [agent] [boot +8ms] P1: memory_store_init (rc=0)
+[   36.887581] [CPU1] [31] ai_agent: [session] Session manager initialized at /data/ai_agent/sessions
+[   36.887609] [CPU1] [31] ai_agent: [agent] [boot +9ms] P1: session_mgr_init (rc=0)
+[   36.887641] [CPU1] [31] ai_agent: [proxy] Loading proxy config...
+[   36.890017] [CPU1] [31] ai_agent: [proxy] No proxy (direct connection)
+[   36.890045] [CPU1] [31] ai_agent: [agent] [boot +11ms] P2: http_proxy_init (rc=0)
+[   36.896626] [CPU1] [31] ai_agent: [llm] LLM proxy initialized (model: deepseek-flash, host: api.deepseek.com)
+[   36.896659] [CPU1] [31] ai_agent: [agent] [boot +18ms] P3: llm_proxy_init (rc=0)
+[   36.902541] [CPU1] [31] ai_agent: [llm_router] Router initialized: 0 backends, profile=0
+[   36.902574] [CPU1] [31] ai_agent: [agent] [boot +24ms] P3: llm_router_init (rc=0)
+[   36.907280] [CPU1] [31] ai_agent: [web_search] No search key. Use: set_tavily_key / set_search_key
+[   36.907318] [CPU1] [31] ai_agent: [tools] Registered tool: get_weather
+[   36.907341] [CPU1] [31] ai_agent: [tools] Registered tool: get_current_time
+[   36.907412] [CPU1] [31] ai_agent: [tools] Tools JSON built (2 builtin + 0 providers)
+[   36.907445] [CPU1] [31] ai_agent: [tools] Tool registry initialized
+[   36.907471] [CPU1] [31] ai_agent: [agent] [boot +28ms] P3: tool_registry_init (rc=0)
+[   36.907504] [CPU1] [31] ai_agent: [guard] Tool guard initialized (max_input=32768, rate_window=60s, rate_max=10)
+[   36.907548] [CPU1] [31] ai_agent: [agent] [boot +28ms] P3: tool_guard_init (rc=0)
+[   36.907579] [CPU1] [31] ai_agent: [skills] Initializing skills system
+[   36.908747] [CPU1] [31] ai_agent: [skills] Skill exists: /data/ai_agent/skills/weather.md
+[   36.909458] [CPU1] [31] ai_agent: [skills] Skill exists: /data/ai_agent/skills/daily-briefing.md
+[   36.910168] [CPU1] [31] ai_agent: [skills] Skill exists: /data/ai_agent/skills/skill-creator.md
+[   36.910878] [CPU1] [31] ai_agent: [skills] Skill exists: /data/ai_agent/skills/system-health.md
+[   36.911591] [CPU1] [31] ai_agent: [skills] Skill exists: /data/ai_agent/skills/reminder.md
+[   36.912301] [CPU1] [31] ai_agent: [skills] Skill exists: /data/ai_agent/skills/note-taker.md
+[   36.913239] [CPU1] [31] ai_agent: [skills] Skill exists: /data/ai_agent/skills/translate.md
+[   36.914176] [CPU1] [31] ai_agent: [skills] Skill exists: /data/ai_agent/skills/news-digest.md
+[   36.915115] [CPU1] [31] ai_agent: [skills] Skill exists: /data/ai_agent/skills/feishu-test.md
+[   36.916053] [CPU1] [31] ai_agent: [skills] Skill exists: /data/ai_agent/skills/task-manager.md
+[   36.916075] [CPU1] [31] ai_agent: [skills] Skills system ready (10 built-in)
+[   36.916104] [CPU1] [31] ai_agent: [agent] [boot +37ms] P3: skill_loader_init (rc=0)
+[   36.916136] [CPU1] [31] ai_agent: [agent] Agent loop initialized
+[   36.916160] [CPU1] [31] ai_agent: [agent] [boot +37ms] P3: agent_loop_init (rc=0)
+[   36.916646] [CPU1] [31] ai_agent: [cron] No cron file, starting fresh
+[   36.916673] [CPU1] [31] ai_agent: [agent] [boot +38ms] P3: cron_service_init (rc=0)
+[   36.916705] [CPU1] [31] ai_agent: [heartbeat] Heartbeat service initialized (file: /data/ai_agent/HEARTBEAT.md, interval: 1800s)
+[   36.916743] [CPU1] [31] ai_agent: [agent] [boot +38ms] P3: heartbeat_init (rc=0)
+[   36.916774] [CPU1] [31] ai_agent: [voice] Voice channel initializing
+[   36.916800] [CPU1] [31] ai_agent: [voice_tts] Registered backend: volcengine
+[   36.919164] [CPU1] [31] ai_agent: [voice_asr] Registered backend: volcengine
+[   36.922693] [CPU1] [31] ai_agent: [agent] [boot +44ms] P3: voice_channel_init (rc=0)
+[   36.922727] [CPU1] [31] ai_agent: NSH commands registered
+[   36.922750] [CPU1] [31] ai_agent: [agent] [boot +44ms] P4: nsh_commands_init (rc=0)
+[   [36 .  93262.79912]2 7[9C2P]U 1[]C P[U301]]  [ai_agent4:1 ][ agentai_agent]:  [[bagento]o tO u+t4b4omusn]d  Pd5i:s poauttcbho usntda rdtiesdp
+atch thread started
+[   36.922855] [CPU1] [31] ai_agent: [cron] Cron started (0 jobs, interval 10s)
+[   36.922890] [CPU1] [31] ai_agent: [heartbeat] Heartbeat started (every 30 min)
+[   36.922920] [CPU1] [31] ai_agent: [agent] [boot +44ms] P5: cron + heartbeat started
+[   3[6. 9 2 23965.89]2 2[9C5P9U]1 ][ C[P3U10]]  ai_agent[:4 7[]agent ]ai_agent :[ b[oagento]t  N+et4w4omrsk]  wPa5t:c hneertwor ks_twaarttcehd
+thread started (async)
+[   36.923017] [CPU1] [31] ai_agent: [agent] [boot +44ms] P6:[  n s h3_6c.om9m2a3n0d3s8_]s t[aCrPtU 0(]r c[=407)]
+ ai_agent[:  [ netmgr ]3 6F.o9u2n3d0 6i0f]a c[eC Pwlan0U 1a]d d[r3 1192.168.1.195]
+ ai_agent: [agent] [boot +44ms] AI Agent ready. Type 'help' in NSH for command[s .
+ 36.923107] [CPU0] [47] ai_agent: [netmgr] Found iface wlan0 addr 192.168.1.195
+[   36.923159] [CPU0] [47] ai_agent: [netmgr] Found iface wlan0 addr 192.168.1.195
+[   36.923183] [CPU0] [47] ai_agent: [agent] Network connected: 192.168.1.195
+[   36.923214][  [ C P3U60.] 9[24372]2 0ai_agent]:  [[CtoolsP]U 1R]e g[i4s8t]e rai_agente:d  [tagento]o lA gpernotv ildoeorp:  ststm32-uart4a
+rted, fre[e   h e3a6p.: 942137296117]5 6[8C0P
+U0] [47] ai_agent: [tap] registered tap for cha[n n e l3 6'.pet9'2
+329[2 ]   [3C6P.U912]3 3[0408]]  [ai_agentC:P U[0agent]]  [B4u7f]f eai_agentr:s :[ agentc]t xA=ll8 1n9e2t whoirskt =s8e1r9v2i cteoso ls=t8a1r9t2e
+d!
+[   36.923356] [CPU1] [48] ai_agent: [agent] Tool output pool: 2 x 16384 bytes
+[   36.923573] [CPU1] [48] ai_agent: [tools] Tools JSON built (2 builtin + 1 providers)
+[   36.923608] [CPU1] [48] ai_agent: [agent] Tools JSON loaded: 1244 bytes
+[  170.498070] [CPU0] [51] aipet: A733 service: aipet spawn=0 pid=52
+[  352.964083] [CPU1] [79] aipet: A733 service: aipet spawn=0 pid=81
+[  362.990660] [CPU0] [48] ai_agent: [agent] Processing message from pet:pet-1
+[  363.016224] [CPU0] [48] ai_agent: [skills] Skills summary: 814 bytes
+[  363.016253] [CPU0] [48] ai_agent: [context] System prompt built: 4095 bytes
+[  363.017013] [CPU0] [48] ai_agent: [llm_router] No available backend
+[  363.017042] [CPU0] [48] ai_agent: [trace:6ae9b92000000000] BEGIN chat=pet-1 chan=pet
+[  363.017386] [CPU0] [48] ai_agent: [llm] OpenAI API with tools (model: deepseek-flash, 6037 bytes)
+[  363.017834] [CPU0] [48] ai_agent: [vela_tls] Handshake start: Host=api.deepseek.com, UNIX=1793702176
+[  363.384086] [CPU1] [48] ai_agent: [vela_tls] Handshake OK: TLSv1.2 / TLS-ECDHE-RSA-WITH-AES-256-GCM-SHA384
+[  363.619041] [CPU1] [48] ai_agent: [vela_tls] HTTP first-byte=209 ms
+[  363.619119] [CPU1] [48] ai_agent: [vela_tls] HTTP status=200 framing=chunked
+[  365.113072] [CPU0] [48] ai_agent: [vela_tls] HTTP complete=1703 ms encoded-bytes=879
+[  365.113180] [CPU0] [48] ai_agent: [llm] Response: 119 bytes text, 0 tool calls, finish=end_turn
+[  365.113217] [CPU0] [48] ai_agent: [agent] LLM resp: text=119, tool_use=0, calls=0
+[  365.113251] [CPU0] [48] ai_agent: [trace:6ae9b92000000000] iter=0 tool=(none) latency=2096ms llm=ok backend=-1
+[  365.113288] [CPU0] [48] ai_agent: [trace:6ae9b92000000000] END status=ok iters=1 tools=0 llm_ms=2096 elapsed=2s backend=-1
+[  365.129083] [CPU0] [41] ai_agent: [agent] Dispatching response → pet:pet-1
+[  443.466072] [CPU1] [89] aipet: A733 service: aipet spawn=0 pid=90
+nsh> aipet mode auto
+nsh> aipet run
+PR
+PR
+ oice-service:m cuw:o rrkeesru llto=g0s
+  nm cbuo-adersdk tsoerpi-avl2 2c5:o nesnoalbel;e du=s0e; s ebrovuincdee ds tHaUMtAuNs  cformomma nSdSsH;  msaayf ea uttoh odriiszceo nonnceec tp etro icso msmtaarntdi;n gfa uslhte/lll
+csvso/iNcAKe -isnehrivibciet-,v 2n.o0 pcrleea(rv/2r2e5t):r ya
+ tMiotvieo=n1  dpiisda=r1m16e ds;t abgees=tp-reefpfoarrti nSgT-OMPIC -rOeqFuFe sstteopd=,0  AeCrKr onro=t0  itmuprlnised=.0
+nemmcptuy:= 0r eosuvletr=l0o
+vg=m0c uf-dleosokrt=o40p0-
+l2p2r5:o deuncatb-lbeadc=k1e;nd =bnoounndee;d  cHlUouMdA Na ncdo mlmoacnadls  hmiasyt aourtiheosr airzee  osnepcaer apteer  RcAoMmm asneds;s ifonasu
+htp/rloodsusc/tN-AKv 2i2n5h:i briotu,t edn oc lcolueadr//lroectalr;y
+ parlofd-udcutpl-evx2;2 5e: xMpClUi cliti nrku-ns toarr ts=a0;ve dd ebsoktootp  ccoonsmemnatn;d  sdeessskitoonp,  bnooun dreedp eacotmemda nmdasn,u aClo  arAmE
+g/bPaRr
+me-inA/IPfEauTl Lt VbGLy paUsIs a;c stitavet;us u !s=e  a'dciouspsltiacy  aecmcoteiptoan n<cena
+tae>oi' cfe-rlomo aad-nvot21he5r:  slhoeadll-.s
+- ge=settings stage-age-ms=7 since-start-ms=83; elapsed is NOT disk throupgrhopduuctt
+ rnosuht>e -[1K: turn=1 frozen=cloud reason=network-and-cloud-configured; each turn re-evaluated, never switch after action/audio
+product-v1: READY MIC ON; waiting with opening pre-roll, half-duplex
+mic-monitor-v219: idle-ms=5000 blocks=489 rms=62 raw-peak=360 noise-rms=69 trigger-rms=400; waiting for speech, no PCM saved
+product-v1: speech detected; opening audio retained
+product-v1: MIC OFF; RX stopped, ASR finalizing
+dialogue-rx-v214: result=0 monitored=334560 accepted48=103200 speech=1 limited=0 queue=40; idle PCM not saved
+gate-end-v221fix1: noise-rms=92 last-rms=72 voiced-blocks=109 quiet-blocks=70; 10ms blocks,700ms endpoint,8s hard discard
+gate-end-v224: continuation-confirm=80ms peak-blocks=8 rejected-short-bursts=2 quiet-peak=70 resets=2 limited=0; energy-only, NOT trained VAD
+cloud-ASR: provider=xfyun status=0; no semantic retry
+product-v1: [asr backend=cloud] 前进100步。
+mcu-route-v225: pulses=1000 speed=2 (explicit numeric voice steps x10; ACK is not completion)
+product-route-v1: intent=mcu ack-status=0; never retry motor
+product-reply-v1: backend=cloud text=下位机已接收运动命令，预测距离字段=255（饱和，超过25.4毫米）；这不是动作完成确认，也不是实际位移测量。
+product-tts-v219: BEGIN backend=cloud; microphone OFF
+display: emotion=普通
+cloud-TTS: provider=xfyun status=0 PCM=16k/mono/S16LE; no local substitution
+cloud-TTS: provider=xfyun status=0 PCM=16k/mono/S16LE; no local substitution
+product-tts-v1: backend=selected-cloud clauses=2/2 status=0; no local substitution
+product-tts-v219: END status=0 elapsed-ms=18919; actual sound requires listening
+product-route-v1: turn=2 frozen=cloud reason=network-and-cloud-configured; each turn re-evaluated, never switch after action/audio
+product-v1: READY MIC ON; waiting with opening pre-roll, half-duplex
+mic-monitor-v219: idle-ms=5000 blocks=489 rms=146 raw-peak=530 noise-rms=72 trigger-rms=400; waiting for speech, no PCM saved
+product-v1: speech detected; opening audio retained
+product-v1: MIC OFF; RX stopped, ASR finalizing
+dialogue-rx-v214: result=0 monitored=321120 accepted48=80160 speech=1 limited=0 queue=40; idle PCM not saved
+gate-end-v221fix1: noise-rms=89 last-rms=150 voiced-blocks=53 quiet-blocks=70; 10ms blocks,700ms endpoint,8s hard discard
+gate-end-v224: continuation-confirm=80ms peak-blocks=8 rejected-short-bursts=10 quiet-peak=70 resets=2 limited=0; energy-only, NOT trained VAD
+cloud-ASR: provider=xfyun status=0; no semantic retry
+product-v1: [asr backend=cloud] 这就正常了。
+display: emotion=思考
+product-v1: turn failed=-5; not retried; listener resumes
+product-route-v1: turn=2 frozen=local reason=cloud-unconfigured-or-cooldown; each turn re-evaluated, never switch after action/audio
+product-load-v1: ASR=/data/npu/general-asr TTS=/data/npu/general-tts source=UFS-voice-assets-absent; SD-default status=0; microphone OFF
+voice-load-v215: BEGIN stage=general-provider-configure path=/data/npu/general-tts mono-us=752538279
+voice-load-v215: requested-ASR=/data/npu/general-asr requested-TTS=/data/npu/general-tts
+voice-load-v215: BEGIN stage=tts-tokens-lexicon path=/data/npu/general-tts mono-us=752554923
+voice-load-v215: END stage=tts-tokens-lexicon status=0 elapsed-ms=1391
+voice-load-v215: BEGIN stage=acoustic-read-crc path=/data/npu/general-tts/model-steps-3.basic.ort mono-us=753952634
+voice-load-v215: PROGRESS stage=acoustic-read-crc bytes=8388608/65033312 elapsed-ms=1395
+voice-load-v215: PROGRESS stage=acoustic-read-crc bytes=16777216/65033312 elapsed-ms=2787
+voice-load-v215: PROGRESS stage=acoustic-read-crc bytes=25165824/65033312 elapsed-ms=4180
+voice-load-v215: PROGRESS stage=acoustic-read-crc bytes=33554432/65033312 elapsed-ms=5569
+voice-load-v215: PROGRESS stage=acoustic-read-crc bytes=41943040/65033312 elapsed-ms=6961
+voice-load-v215: PROGRESS stage=acoustic-read-crc bytes=50331648/65033312 elapsed-ms=8354
+voice-load-v215: PROGRESS stage=acoustic-read-crc bytes=58720256/65033312 elapsed-ms=9747
+voice-load-v215: PROGRESS stage=acoustic-read-crc bytes=65033312/65033312 elapsed-ms=10797
+voice-load-v215: END stage=acoustic-read-crc status=0 elapsed-ms=10805
+voice-load-v215: BEGIN stage=acoustic-ORT-session path=/data/npu/general-tts/model-steps-3.basic.ort mono-us=764764508
+voice-load-v215: END stage=acoustic-ORT-session status=0 elapsed-ms=8383
+general-voice: RAM-only candidate installed; ASR=NPU acoustic=CPU vocoder=NPU; no auto capture/cloud fallback; TARGET ACCEPTANCE REQUIRED
+voice-load-v215: END stage=general-provider-configure status=0 elapsed-ms=20627
+voice-load-v215: BEGIN stage=product-LLM-preload path=- mono-us=773172954
+llm-preflight-v215: model='/ufs/models/MiniCPM5-1B-Q4_K_M.gguf' storage=auto-UFS-MiniCPM5 bytes=688065920 status=0; header only, no model load
+llm-preflight-v215: model='/ufs/models/MiniCPM5-1B-Q4_K_M.gguf' storage=auto-UFS-MiniCPM5 bytes=688065920 status=0; header only, no model load
+local-llm: warming configured model; dialogue history unchanged
+local-latency-v220: history=off pairs=0; persona, resident weights and exact-prefix KV retained; full replies
+aipet-local: storage=auto-UFS-MiniCPM5 model='/ufs/models/MiniCPM5-1B-Q4_K_M.gguf'
+chatml tokens=83 start=130072 stop=130073 history-pairs=0
+forwardfast: cores-mask=fc workers=6; A76:A55 row weight=3:1; system scheduling unchanged
+forwardfast: loading 688065920 bytes into RAM
+llm-load-v215: bytes=67108864/688065920 elapsed-ms=960 (file-read/RAM load, not inference)
+llm-load-v215: bytes=134217728/688065920 elapsed-ms=1924 (file-read/RAM load, not inference)
+llm-load-v215: bytes=201326592/688065920 elapsed-ms=2887 (file-read/RAM load, not inference)
+llm-load-v215: bytes=268435456/688065920 elapsed-ms=3852 (file-read/RAM load, not inference)
+llm-load-v215: bytes=335544320/688065920 elapsed-ms=4815 (file-read/RAM load, not inference)
+llm-load-v215: bytes=402653184/688065920 elapsed-ms=5779 (file-read/RAM load, not inference)
+llm-load-v215: bytes=469762048/688065920 elapsed-ms=6742 (file-read/RAM load, not inference)
+llm-load-v215: bytes=536870912/688065920 elapsed-ms=7706 (file-read/RAM load, not inference)
+llm-load-v215: bytes=603979776/688065920 elapsed-ms=8669 (file-read/RAM load, not inference)
+llm-load-v215: bytes=671088640/688065920 elapsed-ms=9634 (file-read/RAM load, not inference)
+llm-load-v215: bytes=688065920/688065920 elapsed-ms=9885 (file-read/RAM load, not inference)
+forwardfast: load=9.8937 sec; model reads now RAM-only
+forward1 token=0 layers=24 hidden=1536 heads=16/2
+prefill-cache: reused=0 fresh=83 (exact token-prefix KV)
+llm-pool-v212: configure mask=fc; per-worker affinity/RR, no global scheduler change
+prefill-batch: width=4 tokens=82 batches=21; serial final prompt/decode
+llm-latency-v220: prompt=83 reused=0 fresh=83 batched=82 batch-ms=17469.857; final prompt+LM-head still required; no board first-audio claim
+
+assistant>
+causal prefill/generation returned; prompt=83 generated=1 finish=length; evaluated-prefix KV retained on success
+forwardfast: compute=18.0144 sec; causal forward checkpoint; model resident; bounded generation finished
+forwardfast: cache retained; use aipetllm unload to free
+local-context: used=0 dropped=0 stored=0 limit=0 RAM-only shared-device-session
+aipet-local: prompt=83 generated=1 first=17.848s rest=0.000s cores=fc
+local-llm: preload ready (0)
+voice-load-v215: END stage=product-LLM-preload status=0 elapsed-ms=29776
+voice-load-v215: BEGIN stage=product-ASR-vocoder-prepare path=- mono-us=802955972
+voice-compute-v210: target=6 actual=6 part=d0b mask=00000040 confirmations=2 attempts=3 elapsed-us=3826 result=0 restore=0
+voice-load-v215: BEGIN stage=asr-tokens path=/data/npu/general-asr mono-us=802977599
+voice-load-v215: END stage=asr-tokens status=0 elapsed-ms=43
+asr-prepare-v213: tokens-us=48276 status=0
+voice-load-v215: BEGIN stage=asr-native-query path=/data/npu/general-asr/asr-encoder.a7tv mono-us=803030200
+voice-load-v215: END stage=asr-native-query status=0 elapsed-ms=13
+voice-load-v215: BEGIN stage=asr-native-prepare path=/data/npu/general-asr/asr-encoder.a7tv mono-us=803049918
+voice-load-v215: END stage=asr-native-prepare status=0 elapsed-ms=6705
+asr-prepare-v213: role=asr-encoder query-alloc-us=19717 prepare-us=6711454 status=0
+voice-load-v215: BEGIN stage=asr-native-query path=/data/npu/general-asr/asr-decoder.a7tv mono-us=809768741
+voice-load-v215: END stage=asr-native-query status=0 elapsed-ms=11
+voice-load-v215: BEGIN stage=asr-native-prepare path=/data/npu/general-asr/asr-decoder.a7tv mono-us=809785505
+voice-load-v215: END stage=asr-native-prepare status=0 elapsed-ms=1041
+asr-prepare-v213: role=asr-decoder query-alloc-us=16764 prepare-us=1047697 status=0
+voice-load-v215: BEGIN stage=asr-native-query path=/data/npu/general-asr/asr-joiner.a7tv mono-us=810840575
+voice-load-v215: END stage=asr-native-query status=0 elapsed-ms=11
+voice-load-v215: BEGIN stage=asr-native-prepare path=/data/npu/general-asr/asr-joiner.a7tv mono-us=810857499
+voice-load-v215: END stage=asr-native-prepare status=0 elapsed-ms=926
+asr-prepare-v213: role=asr-joiner query-alloc-us=16925 prepare-us=932983 status=0
+voice-load-v215: BEGIN stage=vocoder-query path=/data/npu/general-tts/vocoder.a7tv mono-us=811803994
+voice-load-v215: END stage=vocoder-query status=0 elapsed-ms=10
+voice-load-v215: BEGIN stage=vocoder-native-prepare path=/data/npu/general-tts/vocoder.a7tv mono-us=811819775
+voice-load-v215: END stage=vocoder-native-prepare status=0 elapsed-ms=1165
+voice-prepare-v213: asr-us=8840825 vocoder-us=1187492 status=0; MIC still OFF
+voice-session-v190: prepared ASR once in 10035164 us; same-command RAM reuse, per-turn states cleared
+voice-load-v215: END stage=product-ASR-vocoder-prepare status=0 elapsed-ms=10051
+product-v1: READY MIC ON; waiting with opening pre-roll, half-duplex
+
+nsh> mic-monitor-v219: idle-ms=5000 blocks=489 rms=227 raw-peak=845 noise-rms=134 trigger-rms=402; waiting for speech, no PCM saved
+aipet audio output i2s
+product-v1: camera owns NPU/SPI; wait for cleanup=0 before audio; no forced reset
+nsh> mic-monitor-v219: idle-ms=10002 blocks=989 rms=138 raw-peak=480 noise-rms=78 trigger-rms=400; waiting for speech, no PCM saved
+
+nsh> service wifi on
+wifi autostart on; applies next boot (running tasks unchanged).
+nsh>
+nsh> mic-monitor-v219: idle-ms=15003 blocks=1489 rms=155 raw-peak=625 noise-rms=94 trigger-rms=400; waiting for speech, no PCM saved
+
+nsh> mic-monitor-v219: idle-ms=20004 blocks=1990 rms=116 raw-peak=640 noise-rms=109 trigger-rms=400; waiting for speech, no PCM saved
+service ssh on
+ssh autostart on; applies next boot (running tasks unchanged).
+nsh> mic-monitor-v219: idle-ms=25005 blocks=2490 rms=116 raw-peak=650 noise-rms=90 trigger-rms=400; waiting for speech, no PCM saved
+
+nsh> service agent on
+agent autostart on; applies next boot (running tasks unchanged).
+nsh> mic-monitor-v219: idle-ms=30006 blocks=2990 rms=67 raw-peak=385 noise-rms=66 trigger-rms=400; waiting for speech, no PCM saved
+
+nsh> service ufs on
+ufs autostart on; applies next boot (running tasks unchanged).
+nsh> product-v1: speech detected; opening audio retained
+product-v1: MIC OFF; RX stopped, ASR finalizing
+dialogue-rx-v214: result=0 monitored=1633920 accepted48=84000 speech=1 limited=0 queue=71; idle PCM not saved
+gate-end-v221fix1: noise-rms=109 last-rms=181 voiced-blocks=68 quiet-blocks=70; 10ms blocks,700ms endpoint,8s hard discard
+gate-end-v224: continuation-confirm=80ms peak-blocks=8 rejected-short-bursts=1 quiet-peak=70 resets=2 limited=0; energy-only, NOT trained VAD
+voice-load-v215: BEGIN stage=resident-ASR-finalize path=- mono-us=847353498
+voice-load-v215: END stage=resident-ASR-finalize status=0 elapsed-ms=818
+voice-resident-v214: asr=0 accepted16=28000 limited=0; models retained by SAME live task
+voice-stage-v214: capture-stop-mono-us=847159145 consumer-done-mono-us=847319291 asr-ready-mono-us=848186469 tail-us=1027324 status=0
+product-v1: [asr backend=local] 康神开播
+display: emotion=思考
+local-latency-v220: history=off pairs=0; persona, resident weights and exact-prefix KV retained; full replies
+aipet-local: storage=auto-UFS-MiniCPM5 model='/ufs/models/MiniCPM5-1B-Q4_K_M.gguf'
+chatml tokens=83 start=130072 stop=130073 history-pairs=0
+forwardfast: cores-mask=fc workers=6; A76:A55 row weight=3:1; system scheduling unchanged
+forwardfast: cache-hit; load=0 sec; no model SD reads
+forwardfast: tensor-directory cache-hit; no GGUF metadata rescan
+forward1 token=0 layers=24 hidden=1536 heads=16/2
+prefill-cache: reused=70 fresh=13 (exact token-prefix KV)
+aipet autostart onprefill-batch: width=4 tokens=12 batches=3; serial final prompt/decode
+llm-latency-v220: prompt=83 reused=70 fresh=13 batched=12 batch-ms=3428.413; final prompt+LM-head still required; no board first-audio claim
+
+pet autostart on; applies next boot (running tasks unchanged).
+product-boot-v225: saved explicit microphone + desktop command consent for next boot; keep wiring/desk clear. Configure 'service wifi on', 'service ssh on' and 'service ufs on' separately; credentials are NOT replaced.
+nsh>
+assistant> [local-stream first-visible=3878 ms; provisional text, no actions]
+哇哦！voice-compute-v210: target=7 actual=7 part=d0b mask=00000080 confirmations=2 attempts=3 elapsed-us=3913 result=0 restore=0
+tts-pcm-v212: samples=21760 nonzero=19188 peak=10528; before volume/resampling, NOT acoustic acceptance
+local-tts: result=0 acoustic=CPU vocoder=NPU packets=1 samples=21760 cpu-us=384609 npu-us=77624 first-sink-us=474152; NOT end-of-speech/physical-audio latency
+康神又来啦！tts-pcm-v212: samples=41728 nonzero=38133 peak=7420; before volume/resampling, NOT acoustic acceptance
+local-tts: result=0 acoustic=CPU vocoder=NPU packets=1 samples=41728 cpu-us=685258 npu-us=78537 first-sink-us=786340; NOT end-of-speech/physical-audio latency
+快来一起看看这个有趣的节目吧！tts-pcm-v212: samples=74240 nonzero=70591 peak=10232; before volume/resampling, NOT acoustic acceptance
+local-tts: result=0 acoustic=CPU vocoder=NPU packets=2 samples=74240 cpu-us=1227215 npu-us=156485 first-sink-us=1351704; NOT end-of-speech/physical-audio latency
+有什么问题或者想聊的话题吗？tts-pcm-v212: samples=69888 nonzero=66265 peak=17552; before volume/resampling, NOT acoustic acceptance
+local-tts: result=0 acoustic=CPU vocoder=NPU packets=2 samples=69888 cpu-us=1159231 npu-us=155806 first-sink-us=1263765; NOT end-of-speech/physical-audio latency
+service status😊
+ssh autostart: on
+ftp autostart: off
+wifi autostart: on
+agent autostart: on
+pet autostart: on
+ufs autostart: on
+nsh>
+causal prefill/generation returned; prompt=83 generated=29 finish=eos; evaluated-prefix KV retained on success
+forwardfast: compute=19.0449 sec; causal forward checkpoint; model resident; bounded generation finished
+local-context: used=0 dropped=0 stored=0 limit=0 RAM-only shared-device-session
+aipet-local: prompt=83 generated=29 first=3.810s rest=15.212s cores=fc
+
+[local-stream complete]
+tts-pcm-v212: samples=5376 nonzero=4253 peak=74; before volume/resampling, NOT acoustic acceptance
+local-tts: result=0 acoustic=CPU vocoder=NPU packets=1 samples=5376 cpu-us=134199 npu-us=78687 first-sink-us=216199; NOT end-of-speech/physical-audio latency
+local-tts-buffer-v189: segments=4 rebuffers=3 rebuffer-wait-us=6465719; no padding/replay; actual device errors are fatal
+voice-stage: tts-start-mono-us=848208129 first-driver-pull-mono-us=853273024 status=0; driver pull is NOT physical audible onset
+local-voice-pipeline: status=0 phrases=5/5 first-phrase=4602850 us first-synthesis-start=4603219 us; PCM/device timing separate
+[emotion=普通 actions=0]
+[route=local_llm speech=local fallback=0 actions=disabled]
+display: emotion=普通
+product-route-v1: turn=3 frozen=cloud reason=network-and-cloud-configured; each turn re-evaluated, never switch after action/audio
+asr-compute-v190: encoder=2/1221785us decoder=5/25161us joiner=48/379933us; scoped CPU6, double MIDR/MPIDR proof; NPU unchanged
+asr-v210: accept-batches=175 accept-us=935485 final-flush-us=812401 status=0; nested NPU times are not additive and not E2E latency
+asr-v211: received=28000 staged-bytes=0 qualified-batches=43 tail-frames=25 max-stage-ms=40; no dropped PCM
+product-v1: READY MIC ON; waiting with opening pre-roll, half-duplex
+
+nsh> service status
+ssh autostart: on
+ftp autostart: off
+wifi autostart: on
+agent autostart: on
+pet autostart: on
+ufs autostart: on
+nsh> mic-monitor-v219: idle-ms=5001 blocks=489 rms=102 raw-peak=600 noise-rms=91 trigger-rms=400; waiting for speech, no PCM saved
+product-v1: speech detected; opening audio retained
+product-v1: MIC OFF; RX stopped, ASR finalizing
+dialogue-rx-v214: result=0 monitored=383040 accepted48=90720 speech=1 limited=0 queue=40; idle PCM not saved
+gate-end-v221fix1: noise-rms=100 last-rms=215 voiced-blocks=38 quiet-blocks=70; 10ms blocks,700ms endpoint,8s hard discard
+gate-end-v224: continuation-confirm=80ms peak-blocks=8 rejected-short-bursts=6 quiet-peak=70 resets=1 limited=0; energy-only, NOT trained VAD
+cloud-ASR: provider=xfyun status=0; no semantic retry
+product-v1: [asr backend=cloud] 康神开播了。
+display: emotion=思考
+▒roduct-reply-v1: backend=cloud text=收到收到，康神开播啦～我陪你一起守着。不过我看不到直播画面，▒d▒i▒s▒p▒la▒y▒:▒ ▒e▒m▒▒o▒t▒i▒o▒n▒=▒忼▒▒▒屿▒▒▒
+ ▒得怎么样？
+product-tts-v219: BEGIN backend=cloud; microphone OFF
+display: emotion=开心
+aipet autostart status
+pet autostart: on
+nsh> cloud-TTS: provider=xfyun status=0 PCM=16k/mono/S16LE; no local substitution
+cloud-TTS: provider=xfyun status=0 PCM=16k/mono/S16LE; no local substitution
+product-tts-v1: backend=selected-cloud clauses=2/2 status=0; no local substitution
+product-tts-v219: END status=0 elapsed-ms=15338; actual sound requires listening
+product-route-v1: turn=4 frozen=cloud reason=network-and-cloud-configured; each turn re-evaluated, never switch after action/audio
+product-v1: READY MIC ON; waiting with opening pre-roll, half-duplex
+product-v1: speech detected; opening audio retained
+product-v1: MIC OFF; RX stopped, ASR finalizing
+dialogue-rx-v214: result=0 monitored=219360 accepted48=92640 speech=1 limited=0 queue=40; idle PCM not saved
+gate-end-v221fix1: noise-rms=71 last-rms=104 voiced-blocks=30 quiet-blocks=70; 10ms blocks,700ms endpoint,8s hard discard
+gate-end-v224: continuation-confirm=80ms peak-blocks=8 rejected-short-bursts=2 quiet-peak=70 resets=1 limited=0; energy-only, NOT trained VAD
+cloud-ASR: provider=xfyun status=0; no semantic retry
+product-v1: [asr backend=cloud] 这。
+display: emotion=思考
+product-reply-v1: backend=cloud text=康神开播啦～我看不到画面，你跟我说说他这局打得怎么样？
+▒roduct-tts-v219: BEGIN backend=cdliosupdl;ay :m iecmrootpihoonn=e ▒O▒F▒F▒
+ ▒
+display: emotion=开心
+cloud-TTS: provider=xfyun status=-5 PCM=16k/mono/S16LE; no local substitution
+product-tts-v1: backend=selected-cloud clauses=0/1 status=-5; no local substitution
+product-tts-v219: END status=-5 elapsed-ms=208; actual sound requires listening
+product-v1: turn failed=-5; not retried; listener resumes
+product-route-v1: turn=4 frozen=local reason=cloud-unconfigured-or-cooldown; each turn re-evaluated, never switch after action/audio
+voice-load-v215: BEGIN stage=product-ASR-vocoder-prepare path=- mono-us=907804716
+voice-load-v215: BEGIN stage=asr-tokens path=/data/npu/general-asr mono-us=907815003
+voice-load-v215: END stage=asr-tokens status=0 elapsed-ms=42
+asr-prepare-v213: tokens-us=47900 status=0
+voice-load-v215: BEGIN stage=asr-native-query path=/data/npu/general-asr/asr-encoder.a7tv mono-us=907867260
+voice-load-v215: END stage=asr-native-query status=0 elapsed-ms=13
+voice-load-v215: BEGIN stage=asr-native-prepare path=/data/npu/general-asr/asr-encoder.a7tv mono-us=907886888
+voice-load-v215: END stage=asr-native-prepare status=0 elapsed-ms=6706
+asr-prepare-v213: role=asr-encoder query-alloc-us=19628 prepare-us=6712392 status=0
+voice-load-v215: BEGIN stage=asr-native-query path=/data/npu/general-asr/asr-decoder.a7tv mono-us=914606650
+voice-load-v215: END stage=asr-native-query status=0 elapsed-ms=11
+voice-load-v215: BEGIN stage=asr-native-prepare path=/data/npu/general-asr/asr-decoder.a7tv mono-us=914623414
+voice-load-v215: END stage=asr-native-prepare status=0 elapsed-ms=1041
+asr-prepare-v213: role=asr-decoder query-alloc-us=16764 prepare-us=1047765 status=0
+voice-load-v215: BEGIN stage=asr-native-query path=/data/npu/general-asr/asr-joiner.a7tv mono-us=915678552
+voice-load-v215: END stage=asr-native-query status=0 elapsed-ms=11
+voice-load-v215: BEGIN stage=asr-native-prepare path=/data/npu/general-asr/asr-joiner.a7tv mono-us=915695473
+voice-load-v215: END stage=asr-native-prepare status=0 elapsed-ms=927
+asr-prepare-v213: role=asr-joiner query-alloc-us=16921 prepare-us=933115 status=0
+voice-load-v215: BEGIN stage=vocoder-query path=/data/npu/general-tts/vocoder.a7tv mono-us=916642105
+voice-load-v215: END stage=vocoder-query status=0 elapsed-ms=10
+voice-load-v215: BEGIN stage=vocoder-native-prepare path=/data/npu/general-tts/vocoder.a7tv mono-us=916657885
+voice-load-v215: END stage=vocoder-native-prepare status=0 elapsed-ms=1165
+voice-prepare-v213: asr-us=8830202 vocoder-us=1187632 status=0; MIC still OFF
+voice-session-v190: prepared ASR once in 10024680 us; same-command RAM reuse, per-turn states cleared
+voice-load-v215: END stage=product-ASR-vocoder-prepare status=0 elapsed-ms=10040
+product-v1: READY MIC ON; waiting with opening pre-roll, half-duplex
+mic-monitor-v219: idle-ms=5001 blocks=489 rms=58 raw-peak=590 noise-rms=64 trigger-rms=400; waiting for speech, no PCM saved
+product-v1: speech detected; opening audio retained
+product-v1: MIC OFF; RX stopped, ASR finalizing
+dialogue-rx-v214: result=0 monitored=433440 accepted48=96480 speech=1 limited=0 queue=83; idle PCM not saved
+gate-end-v221fix1: noise-rms=85 last-rms=98 voiced-blocks=102 quiet-blocks=70; 10ms blocks,700ms endpoint,8s hard discard
+gate-end-v224: continuation-confirm=80ms peak-blocks=8 rejected-short-bursts=0 quiet-peak=70 resets=1 limited=0; energy-only, NOT trained VAD
+voice-load-v215: BEGIN stage=resident-ASR-finalize path=- mono-us=927847884
+voice-load-v215: END stage=resident-ASR-finalize status=0 elapsed-ms=816
+voice-resident-v214: asr=0 accepted16=32160 limited=0; models retained by SAME live task
+voice-stage-v214: capture-stop-mono-us=926985143 consumer-done-mono-us=927813851 asr-ready-mono-us=928678033 tail-us=1692890 status=0
+product-v1: [asr backend=local] 康神开播啦
+display: emotion=思考
+local-latency-v220: history=off pairs=0; persona, resident weights and exact-prefix KV retained; full replies
+aipet-local: storage=auto-UFS-MiniCPM5 model='/ufs/models/MiniCPM5-1B-Q4_K_M.gguf'
+chatml tokens=84 start=130072 stop=130073 history-pairs=0
+forwardfast: cores-mask=fc workers=6; A76:A55 row weight=3:1; system scheduling unchanged
+forwardfast: cache-hit; load=0 sec; no model SD reads
+forwardfast: tensor-directory cache-hit; no GGUF metadata rescan
+forward1 token=0 layers=24 hidden=1536 heads=16/2
+prefill-cache: reused=74 fresh=10 (exact token-prefix KV)
+prefill-batch: width=4 tokens=9 batches=3; serial final prompt/decode
+llm-latency-v220: prompt=84 reused=74 fresh=10 batched=9 batch-ms=2638.247; final prompt+LM-head still required; no board first-audio claim
+
+assistant> [local-stream first-visible=3088 ms; provisional text, no actions]
+哇哦！tts-pcm-v212: samples=21760 nonzero=19147 peak=7928; before volume/resampling, NOT acoustic acceptance
+local-tts: result=0 acoustic=CPU vocoder=NPU packets=1 samples=21760 cpu-us=369675 npu-us=77734 first-sink-us=459330; NOT end-of-speech/physical-audio latency
+康神又开播啦！tts-pcm-v212: samples=44544 nonzero=41007 peak=7588; before volume/resampling, NOT acoustic acceptance
+local-tts: result=0 acoustic=CPU vocoder=NPU packets=1 samples=44544 cpu-us=719777 npu-us=77936 first-sink-us=821742; NOT end-of-speech/physical-audio latency
+快来一起看看精彩内容吧！tts-pcm-v212: samples=67328 nonzero=63764 peak=9696; before volume/resampling, NOT acoustic acceptance
+local-tts: result=0 acoustic=CPU vocoder=NPU packets=2 samples=67328 cpu-us=1107558 npu-us=155006 first-sink-us=1211288; NOT end-of-speech/physical-audio latency
+😊
+causal prefill/generation returned; prompt=84 generated=20 finish=eos; evaluated-prefix KV retained on success
+forwardfast: compute=13.2632 sec; causal forward checkpoint; model resident; bounded generation finished
+local-context: used=0 dropped=0 stored=0 limit=0 RAM-only shared-device-session
+aipet-local: prompt=84 generated=20 first=3.021s rest=10.219s cores=fc
+
+[local-stream complete]
+tts-pcm-v212: samples=5376 nonzero=4526 peak=85; before volume/resampling, NOT acoustic acceptance
+local-tts: result=0 acoustic=CPU vocoder=NPU packets=1 samples=5376 cpu-us=129909 npu-us=78969 first-sink-us=212185; NOT end-of-speech/physical-audio latency
+local-tts-buffer-v189: segments=3 rebuffers=2 rebuffer-wait-us=4738478; no padding/replay; actual device errors are fatal
+voice-stage: tts-start-mono-us=928699949 first-driver-pull-mono-us=932967021 status=0; driver pull is NOT physical audible onset
+local-voice-pipeline: status=0 phrases=4/4 first-phrase=3819933 us first-synthesis-start=3820404 us; PCM/device timing separate
+[emotion=普通 actions=0]
+[route=local_llm speech=local fallback=0 actions=disabled]
+rroduct-route-v1: turn=5 frdoizsepnl=aclyo:u de mroetaisoonn==▒n▒e▒t▒w▒o
+ k-and-cloud-configured; each turn re-evaluated, never switch after action/audio
+asr-compute-v190: encoder=3/1836315us decoder=6/30333us joiner=72/570720us; scoped CPU6, double MIDR/MPIDR proof; NPU unchanged
+asr-v210: accept-batches=201 accept-us=1772348 final-flush-us=809578 status=0; nested NPU times are not additive and not E2E latency
+asr-v211: received=32160 staged-bytes=0 qualified-batches=50 tail-frames=95 max-stage-ms=40; no dropped PCM
+product-v1: READY MIC ON; waiting with opening pre-roll, half-duplex
+product-v1: speech detected; opening audio retained
+product-v1: MIC OFF; RX stopped, ASR finalizing
+dialogue-rx-v214: result=0 monitored=216480 accepted48=96480 speech=1 limited=0 queue=40; idle PCM not saved
+gate-end-v221fix1: noise-rms=125 last-rms=133 voiced-blocks=104 quiet-blocks=70; 10ms blocks,700ms endpoint,8s hard discard
+gate-end-v224: continuation-confirm=80ms peak-blocks=8 rejected-short-bursts=0 quiet-peak=70 resets=1 limited=0; energy-only, NOT trained VAD
+cloud-ASR: provider=xfyun status=-5; no semantic retry
+product-route-v1: cloud-ASR=-5; retained PCM re-recognized locally BEFORE any dispatch
+voice-load-v215: BEGIN stage=asr-tokens path=/data/npu/general-asr mono-us=948940003
+voice-load-v215: END stage=asr-tokens status=0 elapsed-ms=42
+asr-prepare-v213: tokens-us=47693 status=0
+voice-load-v215: BEGIN stage=asr-native-query path=/data/npu/general-asr/asr-encoder.a7tv mono-us=948992089
+voice-load-v215: END stage=asr-native-query status=0 elapsed-ms=13
+voice-load-v215: BEGIN stage=asr-native-prepare path=/data/npu/general-asr/asr-encoder.a7tv mono-us=949011714
+voice-load-v215: END stage=asr-native-prepare status=0 elapsed-ms=6705
+asr-prepare-v213: role=asr-encoder query-alloc-us=19624 prepare-us=6711679 status=0
+voice-load-v215: BEGIN stage=asr-native-query path=/data/npu/general-asr/asr-decoder.a7tv mono-us=955730762
+voice-load-v215: END stage=asr-native-query status=0 elapsed-ms=11
+voice-load-v215: BEGIN stage=asr-native-prepare path=/data/npu/general-asr/asr-decoder.a7tv mono-us=955747529
+voice-load-v215: END stage=asr-native-prepare status=0 elapsed-ms=1041
+asr-prepare-v213: role=asr-decoder query-alloc-us=16768 prepare-us=1047370 status=0
+voice-load-v215: BEGIN stage=asr-native-query path=/data/npu/general-asr/asr-joiner.a7tv mono-us=956802271
+voice-load-v215: END stage=asr-native-query status=0 elapsed-ms=11
+voice-load-v215: BEGIN stage=asr-native-prepare path=/data/npu/general-asr/asr-joiner.a7tv mono-us=956819193
+voice-load-v215: END stage=asr-native-prepare status=0 elapsed-ms=927
+asr-prepare-v213: role=asr-joiner query-alloc-us=16922 prepare-us=933252 status=0
+asr-compute-v190: encoder=3/1833870us decoder=7/35320us joiner=72/571009us; scoped CPU6, double MIDR/MPIDR proof; NPU unchanged
+asr-v210: accept-batches=1 accept-us=1646911 final-flush-us=808566 status=0; nested NPU times are not additive and not E2E latency
+asr-v211: received=32160 staged-bytes=0 qualified-batches=1 tail-frames=95 max-stage-ms=40; no dropped PCM
+product-v1: [asr backend=local] 你认识康神吗
+-isplay: emotion=▒l▒o▒c▒a▒l
+ latency-v220: history=off pairs=0; persona, resident weights and exact-prefix KV retained; full replies
+aipet-local: storage=auto-UFS-MiniCPM5 model='/ufs/models/MiniCPM5-1B-Q4_K_M.gguf'
+chatml tokens=84 start=130072 stop=130073 history-pairs=0
+forwardfast: cores-mask=fc workers=6; A76:A55 row weight=3:1; system scheduling unchanged
+forwardfast: cache-hit; load=0 sec; no model SD reads
+forwardfast: tensor-directory cache-hit; no GGUF metadata rescan
+forward1 token=0 layers=24 hidden=1536 heads=16/2
+prefill-cache: reused=70 fresh=14 (exact token-prefix KV)
+prefill-batch: width=4 tokens=13 batches=4; serial final prompt/decode
+llm-latency-v220: prompt=84 reused=70 fresh=14 batched=13 batch-ms=3735.865; final prompt+LM-head still required; no board first-audio claim
+
+assistant> [local-stream first-visible=4186 ms; provisional text, no actions]
+抱歉，我无法确认“康神”的具体身份或相关信息。如果您能提供更多背景信息或tts-pcm-v212: samples=152064 nonzero=137759 peak=10864; before volume/resampling, NOT acoustic acceptance
+local-tts: result=0 acoustic=CPU vocoder=NPU packets=5 samples=152064 cpu-us=2519953 npu-us=391739 first-sink-us=1817850; NOT end-of-speech/physical-audio latency
+具体问题，我会尽力帮助您。tts-pcm-v212: samples=91904 nonzero=88033 peak=7160; before volume/resampling, NOT acoustic acceptance
+local-tts: result=0 acoustic=CPU vocoder=NPU packets=2 samples=91904 cpu-us=1514527 npu-us=153931 first-sink-us=3085607; NOT end-of-speech/physical-audio latency
+
+causal prefill/generation returned; prompt=84 generated=28 finish=eos; evaluated-prefix KV retained on success
+forwardfast: compute=20.5072 sec; causal forward checkpoint; model resident; bounded generation finished
+local-context: used=0 dropped=0 stored=0 limit=0 RAM-only shared-device-session
+aipet-local: prompt=84 generated=28 first=4.118s rest=16.366s cores=fc
+
+[local-stream complete]
+tts-pcm-v212: samples=45312 nonzero=41768 peak=12376; before volume/resampling, NOT acoustic acceptance
+local-tts: result=0 acoustic=CPU vocoder=NPU packets=1 samples=45312 cpu-us=758455 npu-us=78698 first-sink-us=2337241; NOT end-of-speech/physical-audio latency
+local-tts-buffer-v189: segments=2 rebuffers=1 rebuffer-wait-us=1237235; no padding/replay; actual device errors are fatal
+voice-stage: tts-start-mono-us=960272280 first-driver-pull-mono-us=971106024 status=0; driver pull is NOT physical audible onset
+local-voice-pipeline: status=0 phrases=3/3 first-phrase=9027572 us first-synthesis-start=9029076 us; PCM/device timing separate
+[emotion=普通 actions=0]
+[route=local_llm speech=local fallback=0 actions=disabled]
+display: emotion=普通
+product-route-v1: turn=6 frozen=cloud reason=network-and-cloud-configured; each turn re-evaluated, never switch after action/audio
+product-v1: READY MIC ON; waiting with opening pre-roll, half-duplex
+product-v1: speech detected; opening audio retained
+
+nsh> product-v1: MIC OFF; RX stopped, ASR finalizing
+dialogue-rx-v214: result=0 monitored=197760 accepted48=113760 speech=1 limited=0 queue=40; idle PCM not saved
+gate-end-v221fix1: noise-rms=64 last-rms=74 voiced-blocks=68 quiet-blocks=70; 10ms blocks,700ms endpoint,8s hard discard
+gate-end-v224: continuation-confirm=80ms peak-blocks=8 rejected-short-bursts=6 quiet-peak=70 resets=3 limited=0; energy-only, NOT trained VAD
+powecloud-ASR: provider=xfyun status=-5; no semantic retry
+product-route-v1: cloud-ASR=-5; retained PCM re-recognized locally BEFORE any dispatch
+voice-load-v215: BEGIN stage=asr-tokens path=/data/npu/general-asr mono-us=991464004
+voice-load-v215: END stage=asr-tokens status=0 elapsed-ms=42
+asr-prepare-v213: tokens-us=47684 status=0
+voice-load-v215: BEGIN stage=asr-native-query path=/data/npu/general-asr/asr-encoder.a7tv mono-us=991516083
+voice-load-v215: END stage=asr-native-query status=0 elapsed-ms=13
+voice-load-v215: BEGIN stage=asr-native-prepare path=/data/npu/general-asr/asr-encoder.a7tv mono-us=991535707
+roff
+voice-load-v215: END stage=asr-native-prepare status=0 elapsed-ms=6705
+asr-prepare-v213: role=asr-encoder query-alloc-us=19624 prepare-us=6711434 status=0
+voice-load-v215: BEGIN stage=asr-native-query path=/data/npu/general-asr/asr-decoder.a7tv mono-us=998254511
+......
+
+
+[267]HELLO! BOOT0 is starting!
+[270]BOOT0 commit : {4721ad08}
+[273]board gpio withstand voltage auto mode
+[288]dram_para_total:0xf
+[291]vaild para:6  select dram para10
+[mmc]: mmc driver ver 2025-10-16 17:10
+[mmc]: Wrong media type 0x0
+[mmc]: ***Try SD card 0***
+[mmc]: HSSDR52/SDR25 4 bit
+[mmc]: 50000000 Hz
+[mmc]: 30436 MB
+[mmc]: ***SD/MMC 0 init OK!!!***
+[339]DRAM BOOT DRIVE INFO: V0.601
+[343]DRAM_VCC set to 1100 mv
+[346]DRAM CLK =1800 MHZ
+[348]DRAM Type =8 (8:LPDDR4,9:LPDDR5)
+[453]Training result is = 7
+[456]DRAM Pstate 1 training, frequency is 1200 Mhz
+[569]Training result is = 7
+[572]DRAM Pstate 2 training, frequency is 800 Mhz
+[782]Training result is = 7
+[784]DRAM Pstate 3 training, frequency is 400 Mhz
+[4009]Training result is = 7
+[4012]DRAM Pstate 0 training, frequency is 1800 Mhz
+[4020]Actual DRAM SIZE =4096 M
+[4023]DRAM SIZE =4096 MBytes, para1 = 310a, para2 = 10001001, dram_tpr13 = 6067
+[4037]DRAM simple test OK.
+[4043]error:bad magic.
+[4107]error: dtb not found for scp
+[4111]mmc not para
+[4113]Jump to ATF: monitor_base = 0x48000000, uboot_base = 0x4a000000, optee_base = 0x0
+NOTICE:  BL31: OP-TEE 32bit detected
+NOTICE:  BL31: U-BOOT 32bit detected
+NOTICE:  BL31: dram size is 4294967296 bytes
+NOTICE:  BL31: v2.5(debug):48e54578a
+NOTICE:  BL31: Built : 14:13:06, Jul  2 2025
+NOTICE:  BL31: No DTB found.
+ERROR:   Error initializing runtime service opteed_fast
+
+
+U-Boot 2018.07-17-boot-aw2501-g4c7078cfdf7-dirty (Apr 29 2026 - 10:03:59 +0000) Allwinner Technology
+
+[04.169]CPU:   Allwinner Family
+[04.172]Model: Radxa Cubie A7A
+I2C:   ready
+[04.235]DRAM:  4 GiB
+[04.244]Relocation Offset is: 75d89000
+[04.298]secure enable bit: 0
+[04.301]PMU: AXP8191
+[04.303]PMU: AXP8191 VER_A
+FDT ERROR:fdt_get_regulator_name:get property handle twi-supply error:FDT_ERR_INTERNAL
+[04.315]bmu_axp515_probe pmic_bus_read fail
+[04.319][AXP8191] onoff status: 0x50 = 0x1, 0x51 = 0x0
+[04.324][AXP8191] charge status: 0x4 = 0x0
+[04.328]CPU=1014 MHz,PLL6=1200 Mhz,AHB=200 Mhz, APB1=24Mhz  MBus=600Mhz
+[04.334]gic: sec monitor mode
+SPI ALL:   ready
+[04.378]flash init start
+[04.380]workmode = 0,storage type = 1
+[04.383][mmc]: mmc driver ver uboot2018:2024-10-18 9:01:00 -- uboot2018:2025-03-28 10:03:00
+[04.392][mmc]: get sdc_type fail and use default host:tm1.
+[04.400][mmc]: can't find node "mmc0",will add new node
+[04.404][mmc]: fdt err returned <no error>
+[04.408][mmc]: Using default timing para
+[04.412][mmc]: SUNXI SDMMC Controller Version:0x50530
+[04.440][mmc]: card_caps:0x3000000a
+[04.443][mmc]: host_caps:0x3000003f
+[04.449]sunxi flash init ok
+get value error
+[04.460]Loading Environment from SUNXI_FLASH... OK
+No ethernet found.
+[04.498]NOT support bridge yet
+[04.500]Warn: no find panel or bridge
+[04.504]hdmi0@5520000 disconnected
+[04.507]drm hdmi get mode: 1920x1080@60Hz
+hdmi0@5520000: use force output detailed mode clock 148500 kHz, flags[5]
+    H: 1920 2008 2052 2200
+    V: 1080 1084 1089 1125
+bus_format: 0
+partno erro : can't find partition bootloader
+[04.537]bootloader is not found!
+partno erro : can't find partition boot-resource
+[04.545]boot-resource is not found!
+[04.549]Can not load logo.bmp file!
+[04.552]load logo fail
+[04.561]the secure storage item0 copy0 magic is bad
+[04.573]the secure storage item0 copy1 magic is bad
+[04.578]usb burn from boot
+delay time 0
+[04.584]usb prepare ok
+[04.887]overtime
+[04.891]do_burn_from_boot usb : no usb exist
+skip update boot_param
+cann't get the boot_base from the env
+[04.902]update part info
+[04.907]battery temp is -1
+[04.912]update bootcmd
+[04.920](not enough data: expected >= 8 cells, got 4 cells)
+Link up timeout
+Speed change timeout
+PCIe speed of Gen1
+Override default fdtfile to allwinner/sun60i-a733-cubie-a7z.dtb
+[07.362]libfdt fdt_check_header(): FDT_ERR_BADMAGIC
+[07.368]libfdt fdt_path_offset() returned FDT_ERR_BADMAGIC
+[07.373][mmc]: get sunxi-mmc0 string failed
+[07.378]The storage not support sample function
+[07.384]## error: update_fdt_dram_para_from_bootpara : FDT_ERR_NOTFOUND
+[07.391]chip id : 0x00005100 0x00004900 0x0000c418 0x00002354
+[07.396]mac addr => 08:51:49:dc:77:ed
+[07.399]chip id : 0x00005100 0x00004900 0x0000c418 0x00002354
+[07.405]mac addr => 08:51:49:dc:77:ec
+[07.409]/chosen/rng-seed node not exit
+[07.412]no battery, disabled battery functons
+[07.417]Could not find nodeoffset for bat_supply
+[07.421]update dts
+curr_device:0
+Device: SUNXI SD/MMC
+Manufacturer ID: 3
+OEM: 5344
+Name: SD32G
+Bus Speed: 50000000
+Mode : SD High Speed (50MHz)
+Rd Block Len: 512
+SD version 3.0
+High Capacity: Yes
+Capacity: 29.7 GiB
+Bus Width: 4-bit
+Erase Group Size: 512 Bytes
+[ufs]info:Driver version 0.0.24 2024.12.30 16:00
+[ufs]info:Cal words 0x60:val 0x98620000, 0x64:val 0x4d1d9753
+[ufs]info:[RX, TX]: gear=[4, 4], lane[2, 2], pwr[FAST MODE, FAST MODE], rate = 2
+[ufs]err:Warning wExceptionEventStatus 20 !!!!!!!
+[ufs]err:Warning wExceptionEventStatus 20 !!!!!!!
+[ufs]err:Warning wExceptionEventStatus 20 !!!!!!!
+[ufs]err:Warning wExceptionEventStatus 20 !!!!!!!
+[ufs]err:Warning wExceptionEventStatus 20 !!!!!!!
+[ufs]err:Warning wExceptionEventStatus 20 !!!!!!!
+[ufs]err:Warning wExceptionEventStatus 20 !!!!!!!
+[ufs]err:Warning wExceptionEventStatus 20 !!!!!!!
+[ufs]err:Warning wExceptionEventStatus 20 !!!!!!!
+[ufs]err:Warning wExceptionEventStatus 20 !!!!!!!
+[ufs]info:Eol info 1
+[ufs]info:life time a 1
+[ufs]info:life time b 1
+[ufs]info:qTotalRawDeviceCapacity 0xEE78000, max_num_alloc_units 0x773c
+[ufs]info:dNumAllocUnits:0x773c
+ [ufs]err:sc st 2
+[ufs]err:scsi status:Check conditon
+[ufs]err:dump:bfeb6f60: 70 00 06 00 00 00 00 0a 00 00 00 00 29 00 00 00    p...........)...
+[ufs]info:blk size 4096,capacity 31256576 block
+Hit any key to stop autoboot:  0
+starting USB...
+USB0:   start sunxi  USB-DRD...
+config usb clk ok
+sunxi USB-DRD init ok...
+USB EHCI 1.00
+scanning bus 0 for devices... 1 USB Device(s) found
+USB1:   start sunxi  USB1-Host...
+config usb clk ok
+sunxi USB1-Host init ok...
+USB EHCI 1.00
+scanning bus 1 for devices... 1 USB Device(s) found
+       scanning usb for storage devices... 0 Storage Device(s) found
+
+Device 0: device type unknown
+... is now current device
+** Bad device usb 0 **
+** Bad device usb 0 **
+mmc0 is current device
+Scanning mmc 0:2...
+Scanning mmc 0:3...
+Found U-Boot script /boot/boot.scr
+2215 bytes read in 14 ms (154.3 KiB/s)
+## Executing script at 4fc00000
+camera-handoff-v225: loading exact Image and reading PMIC
+7254952 bytes read in 323 ms (21.4 MiB/s)
+CRC32 for 40080000 ... 4076b3a7 ==> 1c3bbf74
+660 bytes read in 31 ms (20.5 KiB/s)
+Setting bus to 0
+193692 bytes read in 25 ms (7.4 MiB/s)
+swout1-v225: checking DCDC enable10/voltage12
+40760f52: ff 17                                              ..
+swout1-v225: control11 before (only 17 or1f)
+40760f4c: 17                                                 .
+pmu_value:0x1f
+Setting bus to 0
+swout1-v225: control11 readback (requires1f)
+40760f4d: 1f                                                 .
+swout1-v225: voltage12 readback (requires17)
+40760f4e: 17                                                 .
+swout1-v225: VERIFIED; control-before/control-after/DCDC1-config
+40760f4c: 17 1f 17                                           ...
+40760f50: 03 00 ff 17 c1 0d                                  ......
+camera-handoff-v225: committed; SWOUT1 readback passed; runtime retention still ASSUMED
+[13.646]libfdt fdt_path_offset() returned FDT_ERR_BADMAGIC
+[13.655]The storage not support sample function
+[13.741]mac addr => 08:51:49:dc:77:ed
+[13.745]mac addr => 08:51:49:dc:77:ec
+[13.750]no battery, disabled battery functons
+[13.757]update dts
+stop sunxi USB-DRD ok...
+stop sunxi USB1-Host ok...
+[13.782]Starting kernel ...
+
+[13.785]total: 13785 ms
+
+[13.787][mmc]: MMC Device 2 not found
+[13.791][mmc]: mmc 2 not find, so not exit
+NOTICE:  [SCP] :wait arisc ready....
+NOTICE:  [SCP] :arisc version: [d463b9da43dc50320f21ba51c6c51afe2db20d83]
+NOTICE:  [SCP] :arisc startup ready
+NOTICE:  [SCP] :arisc startup notify message feedback
+NOTICE:  [SCP] :sunxi-arisc driver is starting
+NOTICE:  BL3-1: Next image address = 0x40200000
+NOTICE:  BL3-1: Next image spsr = 0x3c5
+- Ready to Boot Primary CPU
+- Boot from EL1
+- Boot to C runtime for OS Initialize
+M0 v188-boot-candidate
+M1
+A7Z0
+A7Z1
+N0
+N1
+H0
+H1
+H2
+H3
+H4
+S0
+S1
+P1
+H5
+N2
+N3
+N4
+[boot188] SMP flush begin=0x0000000000000008
+[boot188] SMP flush done=0x0000000000000000
+[boot188] SMP request cpu=0x0000000000000001
+[boot188] SMP return=0x0000000000000000
+[boot188] SMP request cpu=0x0000000000000002
+[boot188] SMP return=0x0000000000000000
+[boot188] SMP request cpu=0x0000000000000003
+[boot188] SMP return=0x0000000000000000
+[boot188] SMP request cpu=0x0000000000000004
+[boot188] SMP return=0x0000000000000000
+[boot188] SMP request cpu=0x0000000000000005
+[boot188] SMP return=0x0000000000000000
+[boot188] SMP request cpu=0x0000000000000006
+[boot188] SMP return=0x0000000000000000
+[boot188] SMP request cpu=0x0000000000000007
+[boot188] SMP return=0x0000000000000000
+N5
+B0
+B1
+B2
+B3
+B4
+N6
+AN07
+
+AN18
+
+[boot188] CTOR enter=0x00000000404ca010
+[boot188] CTOR done index=0x0000000000000000
+[boot188] CTOR enter=0x00000000404f1720
+[boot188] CTOR done index=0x0000000000000001
+[boot188] CTOR enter=0x00000000404f3130
+[boot188] CTOR done index=0x0000000000000002
+[boot188] CTOR enter=0x00000000402c894c
+[boot188] CTOR done index=0x0000000000000003
+[boot188] CTOR enter=0x00000000402c9208
+[boot188] CTOR done index=0x0000000000000004
+[boot188] CTOR enter=0x00000000402e6c08
+[boot188] CTOR done index=0x0000000000000005
+[boot188] CTOR enter=0x000000004043db90
+[boot188] CTOR done index=0x0000000000000006
+[boot188] CTOR enter=0x000000004043ffc0
+[boot188] CTOR done index=0x0000000000000007
+[boot188] CTOR enter=0x0000000040458c70
+[boot188] CTOR done index=0x0000000000000008
+[boot188] CTOR enter=0x00000000404590f0
+[boot188] CTOR done index=0x0000000000000009
+[boot188] CTOR enter=0x00000000404593a0
+[boot188] CTOR done index=0x000000000000000a
+[boot188] CTOR enter=0x000000004045c120
+[boot188] CTOR done index=0x000000000000000b
+[boot188] CTOR enter=0x0000000040499020
+[boot188] CTOR done index=0x000000000000000c
+[boot188] CTOR enter=0x000000004049f120
+[boot188] CTOR done index=0x000000000000000d
+[boot188] CTOR enter=0x00000000404f1240
+[boot188] CTOR done index=0x000000000000000e
+[boot188] CTOR enter=0x00000000404f3290
+[boot188] CTOR done index=0x000000000000000f
+[boot188] CTOR enter=0x00000000404f7270
+[boot188] CTOR done index=0x0000000000000010
+[boot188] CTOR enter=0x00000000404f8a60
+[boot188] CTOR done index=0x0000000000000011
+[boot188] CTOR enter=0x000000004065b7a0
+[boot188] CTOR done index=0x0000000000000012
+[boot188] CTOR enter=0x0000000040660be0
+[boot188] CTOR done index=0x0000000000000013
+[boot188] CTOR enter=0x0000000040660c10
+[boot188] CTOR done index=0x0000000000000014
+[boot188] CTOR enter=0x0000000040660ca0
+[boot188] CTOR done index=0x0000000000000015
+[boot188] CTOR enter=0x0000000040684b90
+[boot188] CTOR done index=0x0000000000000016
+[boot188] CTOR enter=0x00000000407ff610
+[boot188] CTOR done index=0x0000000000000017
+XA20
+
+X1
+PR
+PR
+PR
+
+NuttShell (NSH)
+nsh> RI
+PR
+PR
+PR
+PR
+ooice-service: PwR
+ rPkRer
+ slcoug:s  roens ubolta=rd0
+  mecrui-alde sckotnospol-ev;2 25u:s ee nsaebrlveicde= 0s;t abtouusn defdr oHmU MSSANH ;c osmafmea ntdos  dmiasyc oauntnheocrti tzeh iosn cstea rptei; ncgo msmhaelnld
+p vfoaiuclet-/sleosrsv/iNcAeK-v 2i.n0hpibriet(,v 2n2o5 )c:l eaactri/vree=t1ry
+vidM=ot2i9o ns tdagies=aprrmeedp;a rbiensgt--MeIfC-foOrFtF  SsTtoOpP= 0r eeqrureosrt=e0d,  tAuCrKn sn=o0t  eimpmtpyl=i0e d.o
+=4mrcluon:g =r0e sfullto=o0r
+- m0c0u
+mpdreosdkutcotp--vb2a2c5k:en de=nnaobnleed;= 1c;lo ubdo uanndedd  lHoUcMalA Nh icsotmmoarnidess  amraey  sauetphaorraitez eR AoMnc see spseiro ncso
+emapnrdo;d ufcat-uvl2t2/5l:os sr/oNuAteKd  icnlhoibuidt/,l oncoa lc;l ehaalrf/-rdeutpryl
+ xp;r eoxdpulcitc-vi2t2 5r:u n MoCrU  slainvke-ds tbaorott= 0c;on sdeenstk;to pd ecsokmtompa nbdo suensdseido cno,m mnaon rdesp,e naote dA EmCa/nbaur/gle -arimn
+afdaiulstp lbayyp:a sisn;i tsitaaltiuzsin g! =S Ta7co7u3s5t idcir eacctc e8pt-abnicte p
+itvho
+ ce-load-v215: load-stage=spawn-pending stage-age-ms=83 since-start-ms=83; elapsed is NOT disk throughput
+display: ST7735 direct path ready
+PR
+sIPET vLoViGceL- lUoIa dac-tvi2v1e5;:  uBsEeG IN' dsitsapglaey= beomoott-inoent w<ornka-mcel>'o ufdr-owmai ta npoatthehr= - smhoenlol-.u
+ =22943365
+voice-load-v215: END stage=boot-network-cloud-wait status=0 elapsed-ms=6096
+product-boot-v225: network=1 cloud-ready=1; auto may choose local, forced cloud never substituted
+product-route-v1: turn=1 frozen=cloud reason=network-and-cloud-configured; each turn re-evaluated, never switch after action/audio
+product-boot-v225: models READY; greeting before MIC ON: 我是桌宠vela，有什么可以帮助您的吗
+cloud-TTS: provider=xfyun status=0 PCM=16k/mono/S16LE; no local substitution
+product-tts-v1: backend=selected-cloud clauses=1/1 status=0; no local substitution
+voice-compute-v210: target=1 actual=1 part=d05 mask=00000002 confirmations=2 attempts=3 elapsed-us=3225 result=0 restore=0
+product-v1: READY MIC ON; waiting with opening pre-roll, half-duplex
+product-v1: speech detected; opening audio retained
+product-v1: MIC OFF; RX stopped, ASR finalizing
+dialogue-rx-v214: result=0 monitored=136320 accepted48=97920 speech=1 limited=0 queue=40; idle PCM not saved
+gate-end-v221fix1: noise-rms=112 last-rms=116 voiced-blocks=108 quiet-blocks=70; 10ms blocks,700ms endpoint,8s hard discard
+gate-end-v224: continuation-confirm=80ms peak-blocks=8 rejected-short-bursts=0 quiet-peak=70 resets=1 limited=0; energy-only, NOT trained VAD
+cloud-ASR: provider=xfyun status=0; no semantic retry
+product-v1: [asr backend=cloud] 你认识康胜吗？
+display: emotion=思考
+product-v1: turn failed=-5; not retried; listener resumes
+product-route-v1: turn=1 frozen=local reason=cloud-unconfigured-or-cooldown; each turn re-evaluated, never switch after action/audio
+product-load-v1: ASR=/data/npu/general-asr TTS=/data/npu/general-tts source=UFS-voice-assets-absent; SD-default status=0; microphone OFF
+voice-load-v215: BEGIN stage=general-provider-configure path=/data/npu/general-tts mono-us=47574271
+voice-load-v215: requested-ASR=/data/npu/general-asr requested-TTS=/data/npu/general-tts
+voice-load-v215: BEGIN stage=tts-tokens-lexicon path=/data/npu/general-tts mono-us=47590828
+voice-load-v215: END stage=tts-tokens-lexicon status=0 elapsed-ms=1389
+voice-load-v215: BEGIN stage=acoustic-read-crc path=/data/npu/general-tts/model-steps-3.basic.ort mono-us=48986763
+voice-load-v215: PROGRESS stage=acoustic-read-crc bytes=8388608/65033312 elapsed-ms=1392
+voice-load-v215: PROGRESS stage=acoustic-read-crc bytes=16777216/65033312 elapsed-ms=2782
+voice-load-v215: PROGRESS stage=acoustic-read-crc bytes=25165824/65033312 elapsed-ms=4172
+voice-load-v215: PROGRESS stage=acoustic-read-crc bytes=33554432/65033312 elapsed-ms=5558
+voice-load-v215: PROGRESS stage=acoustic-read-crc bytes=41943040/65033312 elapsed-ms=6949
+voice-load-v215: PROGRESS stage=acoustic-read-crc bytes=50331648/65033312 elapsed-ms=8338
+voice-load-v215: PROGRESS stage=acoustic-read-crc bytes=58720256/65033312 elapsed-ms=9728
+voice-load-v215: PROGRESS stage=acoustic-read-crc bytes=65033312/65033312 elapsed-ms=10776
+voice-load-v215: END stage=acoustic-read-crc status=0 elapsed-ms=10784
+voice-load-v215: BEGIN stage=acoustic-ORT-session path=/data/npu/general-tts/model-steps-3.basic.ort mono-us=59777348
+voice-load-v215: END stage=acoustic-ORT-session status=0 elapsed-ms=8356
+general-voice: RAM-only candidate installed; ASR=NPU acoustic=CPU vocoder=NPU; no auto capture/cloud fallback; TARGET ACCEPTANCE REQUIRED
+voice-load-v215: END stage=general-provider-configure status=0 elapsed-ms=20578
+voice-load-v215: BEGIN stage=product-LLM-preload path=- mono-us=68159376
+llm-preflight-v215: model='/ufs/models/MiniCPM5-1B-Q4_K_M.gguf' storage=auto-UFS-MiniCPM5 bytes=688065920 status=0; header only, no model load
+llm-preflight-v215: model='/ufs/models/MiniCPM5-1B-Q4_K_M.gguf' storage=auto-UFS-MiniCPM5 bytes=688065920 status=0; header only, no model load
+local-llm: warming configured model; dialogue history unchanged
+local-latency-v220: history=off pairs=0; persona, resident weights and exact-prefix KV retained; full replies
+aipet-local: storage=auto-UFS-MiniCPM5 model='/ufs/models/MiniCPM5-1B-Q4_K_M.gguf'
+chatml tokens=83 start=130072 stop=130073 history-pairs=0
+forwardfast: cores-mask=fc workers=6; A76:A55 row weight=3:1; system scheduling unchanged
+forwardfast: loading 688065920 bytes into RAM
+llm-load-v215: bytes=67108864/688065920 elapsed-ms=965 (file-read/RAM load, not inference)
+llm-load-v215: bytes=134217728/688065920 elapsed-ms=1933 (file-read/RAM load, not inference)
+llm-load-v215: bytes=201326592/688065920 elapsed-ms=2900 (file-read/RAM load, not inference)
+llm-load-v215: bytes=268435456/688065920 elapsed-ms=3869 (file-read/RAM load, not inference)
+llm-load-v215: bytes=335544320/688065920 elapsed-ms=4836 (file-read/RAM load, not inference)
+llm-load-v215: bytes=402653184/688065920 elapsed-ms=5804 (file-read/RAM load, not inference)
+llm-load-v215: bytes=469762048/688065920 elapsed-ms=6771 (file-read/RAM load, not inference)
+llm-load-v215: bytes=536870912/688065920 elapsed-ms=7740 (file-read/RAM load, not inference)
+llm-load-v215: bytes=603979776/688065920 elapsed-ms=8706 (file-read/RAM load, not inference)
+llm-load-v215: bytes=671088640/688065920 elapsed-ms=9675 (file-read/RAM load, not inference)
+llm-load-v215: bytes=688065920/688065920 elapsed-ms=9928 (file-read/RAM load, not inference)
+forwardfast: load=9.9351 sec; model reads now RAM-only
+forward1 token=0 layers=24 hidden=1536 heads=16/2
+prefill-cache: reused=0 fresh=83 (exact token-prefix KV)
+llm-pool-v212: configure mask=fc; per-worker affinity/RR, no global scheduler change
+prefill-batch: width=4 tokens=82 batches=21; serial final prompt/decode
+llm-latency-v220: prompt=83 reused=0 fresh=83 batched=82 batch-ms=17462.393; final prompt+LM-head still required; no board first-audio claim
+
+assistant>
+causal prefill/generation returned; prompt=83 generated=1 finish=length; evaluated-prefix KV retained on success
+forwardfast: compute=18.0065 sec; causal forward checkpoint; model resident; bounded generation finished
+forwardfast: cache retained; use aipetllm unload to free
+local-context: used=0 dropped=0 stored=0 limit=0 RAM-only shared-device-session
+aipet-local: prompt=83 generated=1 first=17.840s rest=0.000s cores=fc
+local-llm: preload ready (0)
+voice-load-v215: END stage=product-LLM-preload status=0 elapsed-ms=29810
+voice-load-v215: BEGIN stage=product-ASR-vocoder-prepare path=- mono-us=97976136
+voice-compute-v210: target=6 actual=6 part=d0b mask=00000040 confirmations=2 attempts=3 elapsed-us=3748 result=0 restore=0
+voice-load-v215: BEGIN stage=asr-tokens path=/data/npu/general-asr mono-us=97997599
+voice-load-v215: END stage=asr-tokens status=0 elapsed-ms=42
+asr-prepare-v213: tokens-us=48192 status=0
+voice-load-v215: BEGIN stage=asr-native-query path=/data/npu/general-asr/asr-encoder.a7tv mono-us=98050149
+voice-load-v215: END stage=asr-native-query status=0 elapsed-ms=13
+voice-load-v215: BEGIN stage=asr-native-prepare path=/data/npu/general-asr/asr-encoder.a7tv mono-us=98069786
+voice-load-v215: END stage=asr-native-prepare status=0 elapsed-ms=6711
+asr-prepare-v213: role=asr-encoder query-alloc-us=19637 prepare-us=6717419 status=0
+voice-load-v215: BEGIN stage=asr-native-query path=/data/npu/general-asr/asr-decoder.a7tv mono-us=104794575
+voice-load-v215: END stage=asr-native-query status=0 elapsed-ms=11
+voice-load-v215: BEGIN stage=asr-native-prepare path=/data/npu/general-asr/asr-decoder.a7tv mono-us=104811339
+voice-load-v215: END stage=asr-native-prepare status=0 elapsed-ms=1042
+asr-prepare-v213: role=asr-decoder query-alloc-us=16764 prepare-us=1048460 status=0
+voice-load-v215: BEGIN stage=asr-native-query path=/data/npu/general-asr/asr-joiner.a7tv mono-us=105867172
+voice-load-v215: END stage=asr-native-query status=0 elapsed-ms=11
+voice-load-v215: BEGIN stage=asr-native-prepare path=/data/npu/general-asr/asr-joiner.a7tv mono-us=105884095
+voice-load-v215: END stage=asr-native-prepare status=0 elapsed-ms=928
+asr-prepare-v213: role=asr-joiner query-alloc-us=16922 prepare-us=933998 status=0
+voice-load-v215: BEGIN stage=vocoder-query path=/data/npu/general-tts/vocoder.a7tv mono-us=106831698
+voice-load-v215: END stage=vocoder-query status=0 elapsed-ms=10
+voice-load-v215: BEGIN stage=vocoder-native-prepare path=/data/npu/general-tts/vocoder.a7tv mono-us=106847481
+voice-load-v215: END stage=vocoder-native-prepare status=0 elapsed-ms=1166
+voice-prepare-v213: asr-us=8848452 vocoder-us=1188599 status=0; MIC still OFF
+voice-session-v190: prepared ASR once in 10043898 us; same-command RAM reuse, per-turn states cleared
+voice-load-v215: END stage=product-ASR-vocoder-prepare status=0 elapsed-ms=10059
+product-v1: READY MIC ON; waiting with opening pre-roll, half-duplex
+product-v1: speech detected; opening audio retained
+product-v1: MIC OFF; RX stopped, ASR finalizing
+dialogue-rx-v214: result=0 monitored=263040 accepted48=112800 speech=1 limited=0 queue=83; idle PCM not saved
+gate-end-v221fix1: noise-rms=127 last-rms=95 voiced-blocks=127 quiet-blocks=70; 10ms blocks,700ms endpoint,8s hard discard
+gate-end-v224: continuation-confirm=80ms peak-blocks=8 rejected-short-bursts=1 quiet-peak=70 resets=4 limited=0; energy-only, NOT trained VAD
+voice-load-v215: BEGIN stage=resident-ASR-finalize path=- mono-us=114175497
+voice-load-v215: END stage=resident-ASR-finalize status=0 elapsed-ms=818
+voice-resident-v214: asr=0 accepted16=37600 limited=0; models retained by SAME live task
+voice-stage-v214: capture-stop-mono-us=113628147 consumer-done-mono-us=114141290 asr-ready-mono-us=115008052 tail-us=1379906 status=0
+product-v1: [asr backend=local] 抗盛开波兰知道吗
+display: emotion=思考
+local-latency-v220: history=off pairs=0; persona, resident weights and exact-prefix KV retained; full replies
+aipet-local: storage=auto-UFS-MiniCPM5 model='/ufs/models/MiniCPM5-1B-Q4_K_M.gguf'
+chatml tokens=85 start=130072 stop=130073 history-pairs=0
+forwardfast: cores-mask=fc workers=6; A76:A55 row weight=3:1; system scheduling unchanged
+forwardfast: cache-hit; load=0 sec; no model SD reads
+forwardfast: tensor-directory cache-hit; no GGUF metadata rescan
+forward1 token=0 layers=24 hidden=1536 heads=16/2
+prefill-cache: reused=70 fresh=15 (exact token-prefix KV)
+prefill-batch: width=4 tokens=14 batches=4; serial final prompt/decode
+llm-latency-v220: prompt=85 reused=70 fresh=15 batched=14 batch-ms=4036.187; final prompt+LM-head still required; no board first-audio claim
+
+assistant> [local-stream first-visible=4489 ms; provisional text, no actions]
+对不起，我无法回答关于“抗盛开波兰”的问题，因为voice-compute-v210: target=7 actual=7 part=d0b mask=00000080 confirmations=2 attempts=3 elapsed-us=3645 result=0 restore=0
+这可能tts-pcm-v212: samples=134400 nonzero=120798 peak=12280; before volume/resampling, NOT acoustic acceptance
+local-tts: result=0 acoustic=CPU vocoder=NPU packets=4 samples=134400 cpu-us=2262270 npu-us=312920 first-sink-us=550211; NOT end-of-speech/physical-audio latency
+涉及敏感或未公开的信息。如果您有tts-pcm-v212: samples=90112 nonzero=86326 peak=13032; before volume/resampling, NOT acoustic acceptance
+local-tts: result=0 acoustic=CPU vocoder=NPU packets=2 samples=90112 cpu-us=1464872 npu-us=154434 first-sink-us=1568245; NOT end-of-speech/physical-audio latency
+其他问题或需要帮助，请随时告诉我，我会尽力为您提供tts-pcm-v212: samples=118784 nonzero=111498 peak=10432; before volume/resampling, NOT acoustic acceptance
+local-tts: result=0 acoustic=CPU vocoder=NPU packets=3 samples=118784 cpu-us=1953407 npu-us=233649 first-sink-us=1343541; NOT end-of-speech/physical-audio latency
+支持。
+causal prefill/generation returned; prompt=85 generated=38 finish=eos; evaluated-prefix KV retained on success
+forwardfast: compute=27.2033 sec; causal forward checkpoint; model resident; bounded generation finished
+local-context: used=0 dropped=0 stored=0 limit=0 RAM-only shared-device-session
+aipet-local: prompt=85 generated=38 first=4.422s rest=22.756s cores=fc
+
+[local-stream complete]
+tts-pcm-v212: samples=59648 nonzero=56012 peak=13384; before volume/resampling, NOT acoustic acceptance
+local-tts: result=0 acoustic=CPU vocoder=NPU packets=2 samples=59648 cpu-us=994510 npu-us=168183 first-sink-us=1473100; NOT end-of-speech/physical-audio latency
+RX
+
+nsh> local-tts-buffer-v189: segments=3 rebuffers=2 rebuffer-wait-us=3006481; no padding/replay; actual device errors are fatal
+voice-stage: tts-start-mono-us=115030755 first-driver-pull-mono-us=124547024 status=0; driver pull is NOT physical audible onset
+local-voice-pipeline: status=0 phrases=4/4 first-phrase=8979403 us first-synthesis-start=8980596 us; PCM/device timing separate
+[emotion=普通 actions=0]
+[route=local_llm speech=local fallback=0 actions=disabled]
+eisplay: emoptrioodnu=c▒t▒-▒r▒o▒u▒t
+ -v1: turn=2 frozen=cloud reason=network-and-cloud-configured; each turn re-evaluated, never switch after action/audio
+asr-compute-v190: encoder=3/1838253us decoder=9/45442us joiner=72/570786us; scoped CPU6, double MIDR/MPIDR proof; NPU unchanged
+asr-v210: accept-batches=235 accept-us=1801667 final-flush-us=811985 status=0; nested NPU times are not additive and not E2E latency
+asr-v211: received=37600 staged-bytes=0 qualified-batches=58 tail-frames=61 max-stage-ms=40; no dropped PCM
+product-v1: READY MIC ON; waiting with opening pre-roll, half-duplex
+
+nsh> smic-monitor-v219: idle-ms=5000 blocks=489 rms=84 raw-peak=505 noise-rms=84 trigger-rms=400; waiting for speech, no PCM saved
+nsh> aipet stop
+Motion disarmed; best-effort STOP requested, ACK not implied.
+mcu: result=0
+voice-service: cooperative stop requested; wait forp raocdtucitv-ev=10:;  nMeICv eOr FtFa;s kR_Xd eslteotpep/ekdi,l lAS Ra nf iNnPUa loiwzniengr
+
+voiced-isaelrovgiucee--rvx2-.v02p1r4e:( vr2e2s5u)lt:= -a1c2t5iv em=o1n iptiodr=e2d9= 45s1t6a8g0e =aacscre-pftienda4l8i=zi0n sgp-eMeIcCh-=O0F Fl sitmoopt=e1d =e0r rqoure=u-e5= 0t;u rindsl=e1 P CeMm pntoyt= 0s aovveerdl
+xnggat=e0- efnldo-ovr2=2410f0i
+0p1r:o ndouicste--barcmkse=n8d6 =lcalsotu-dr;m sc=l1o2u1d  vaonid cleodc-abll ohciksst=o0 rqiueis eta-rbel oscekpsa=r0a;t e 1R0AmsM  bsleoscskison,s7
+o0pmrs oednudcpto-vi2n2t5,:8 sr ohuatredd d icslcoaudr/dl
+ cgaatle;- ehnadl-fv-2d2u4p:le xc;o netixnpulaitciiotn -rcuonn foirr ms=a8ve0dm sb opeoatk -cbolnsoecnkts;= 0d ersekjteocpt ebdo-suhnodretd- bcoumrmsatnsd=0s ,q unioe AtE-Cp/ebaakr=g0e -riesne/tfsa=u0lt  lbiympiatesds=;0 ;s taetnuesr gy!-=o nalcyo,u sNtOiTc  tarcacienpetda nVcAeD
+v
+ oice-load-v215: load-stage=mecnug-idneessk-toppr-evp2ar2e5d:  setnaabglee-da=ge0-;m sb=o9un5d9e0d  siHnUcMeA-Ns tcaormtm-amnsd=s1 3m3a6y 4a0u;t heollrpiszeed o nicse  NpOeTr  dciosmkm atnhdr;o ugfhapuultt/
+ nosshs>/ N[KK inhibit, no clear/retry
+Motion disarmed; best-effort STOP requested, ACK not implied.
+mcu: result=0
+product-v1: stopped=-125; microphone OFF; engines released, weights may remain resident
+
+nsh> wifi connect 706E
+Scanning 2.4/5 GHz...
+[0] 5G   5805 MHz  -27 dBm  Xiaomi 17 Pro
+[1] 5G   5805 MHz  -35 dBm  706E
+[2] 5G   5220 MHz  -81 dBm  Jin-innovalley
+[3] 5G   5180 MHz  -68 dBm  cwei
+[4] 5G   5180 MHz  -47 dBm  ZBCK-E-5G
+[5] 5G   5180 MHz  -59 dBm  Redmi Note 13R
+[6] 2.4G 2462 MHz  -53 dBm  ZBCK-E
+[7] 5G   5180 MHz  -49 dBm  ZBCK-E-5G_Wi-Fi5
+WPA2 passphrase:
+Associating, completing WPA2 and waiting for DHCP...
+Connected; WPA2 and DHCP passed.
+Last successful Wi-Fi saved on this board for next boot.
+nsh> aipet auto
+aipet init (one-time online setup via serial/SSH)
+aipet ask "text" | aipet cancel
+aipet route "text" (inspect only) | cloud "text" (bypass rules)
+aipet start | status; service agent on|off|status
+aipet mcu start|status|ping|arm|disarm|stop|servo|move
+aipet tts status|off (legacy UART TTS retired)
+aipet audio status|setup|output|volume|gain|record|features|play|play22k|asr|listen|speak
+aipet local status|on|off|preload|unload|stop|clear
+aipet local ask "text" | model PATH | tokens N | cores MASK | context 0..4 | batch 1|4
+Boot initialization waits for network/time/config.
+Official Agent + I2S speech + dedicated UART4 STM32 control at 115200.
+nsh> aipet run
+PR
+PR
+ooice-service:m cwuo:r kreers ullotg=s0
+ n mbcoua-rdde ssketropi-avl2 2c5on:s oelnea;b luesde= 0s;e rbvoiucndee ds tHaUtMuAsN  fcroomm mSaSnHds;  msaayf e atuot hdoirsiczeo nonenccte  tpherlosc osmtmaratnidn;g  fsahuelltl/
+t vsosi/cNAeK- sienrhviicbei-tv,2 n.o0 pcrlee(avr2/2r5e):t rayc
+eiMvoet=i1o np diids=a2r4m3 esdt;a gbee=sptr-eepffaorritn gS-MTIOPC -rOeFFq usetsotpe=d0,  eArCrKo rn=o0t  itmuprlnise=d0.
+gmmpctyu=:0  roevseurllto=n0
+-=m0c uf-lodoers=k4t0o0p
+uvp2r25o:d uecnta-bbalcekde=n1;d =bnoounned;e dc lHoUuMdA Na ncd olmomcaanld sh imsatyo aruitehso rairze es eonpcaer aptee rR AcMo msmaensds;i ofnsa
+alptr/lodouscst/-NAvK2 2i5n:h irboiutt,e dn oc lcolued/alro/craelt;r yh
+ plfr-odduupclte-xv;2 2e5x: pMlCiUc itl irnukn- sotra rst=a0ve;d  dbeosoktt ocpo ncsoemnmta;n dd essekstsoipo nb,o unnod erde pceaotmemda nmdsa,n unabl  AaErCm/
+gePrR
+< -in/AIfPauElTt  LbVGypLa UsIs ;a scttaivtue;s  !us= ea 'cdouissptilacy a ecmcoepttioannce
+geavmoeic>'e- lfroaodm- av2n1o5t:h elr oashde-lslt.a
+c =settings stage-age-ms=7 since-start-ms=83; elapsed is NOT disk throughppruodtu
+ nts-hro>u e[K-v1: turn=1 frozen=cloud reason=network-and-cloud-configured; each turn re-evaluated, never switch after action/audio
+product-v1: READY MIC ON; waiting with opening pre-roll, half-duplex
+product-v1: speech detected; opening audio retained
+product-v1: MIC OFF; RX stopped, ASR finalizing
+dialogue-rx-v214: result=0 monitored=235680 accepted48=96000 speech=1 limited=0 queue=40; idle PCM not saved
+gate-end-v221fix1: noise-rms=91 last-rms=82 voiced-blocks=104 quiet-blocks=70; 10ms blocks,700ms endpoint,8s hard discard
+gate-end-v224: continuation-confirm=80ms peak-blocks=8 rejected-short-bursts=0 quiet-peak=70 resets=1 limited=0; energy-only, NOT trained VAD
+cloud-ASR: provider=xfyun status=0; no semantic retry
+product-v1: [asr backend=cloud] 康神开播了。
+display: emotion=思考
+product-reply-v1: backend=cloud text=哦！康神开播啦，你是不是已经蹲在直播间了？我这边看不到直播画面，不过可以陪你一起等精d▒i▒s▒p▒l▒ay▒:▒ ▒e▒m▒o▒t▒i▒o▒n▒=廼▒▒▒廿▒▒▒
+ ▒播什么呀，游戏还是聊天？
+product-tts-v219: BEGIN backend=cloud; microphone OFF
+display: emotion=开心
+cloud-TTS: provider=xfyun status=0 PCM=16k/mono/S16LE; no local substitution
+cloud-TTS: provider=xfyun status=-110 PCM=16k/mono/S16LE; no local substitution
+product-tts-v1: backend=selected-cloud clauses=1/3 status=-110; no local substitution
+product-tts-v219: END status=-110 elapsed-ms=74275; actual sound requires listening
+product-v1: turn failed=-110; not retried; listener resumes
+product-route-v1: turn=1 frozen=local reason=cloud-unconfigured-or-cooldown; each turn re-evaluated, never switch after action/audio
+voice-load-v215: BEGIN stage=product-LLM-preload path=- mono-us=312827577
+llm-preflight-v215: model='/ufs/models/MiniCPM5-1B-Q4_K_M.gguf' storage=auto-UFS-MiniCPM5 bytes=688065920 status=0; header only, no model load
+llm-preflight-v215: model='/ufs/models/MiniCPM5-1B-Q4_K_M.gguf' storage=auto-UFS-MiniCPM5 bytes=688065920 status=0; header only, no model load
+local-llm: warming configured model; dialogue history unchanged
+local-latency-v220: history=off pairs=0; persona, resident weights and exact-prefix KV retained; full replies
+aipet-local: storage=auto-UFS-MiniCPM5 model='/ufs/models/MiniCPM5-1B-Q4_K_M.gguf'
+chatml tokens=83 start=130072 stop=130073 history-pairs=0
+forwardfast: cores-mask=fc workers=6; A76:A55 row weight=3:1; system scheduling unchanged
+forwardfast: cache-hit; load=0 sec; no model SD reads
+forwardfast: tensor-directory cache-hit; no GGUF metadata rescan
+forward1 token=0 layers=24 hidden=1536 heads=16/2
+prefill-cache: reused=70 fresh=13 (exact token-prefix KV)
+aipet status
+agent: ready pid=46 error=0; initializer=idle waiting=finished
+agent autostart: on
+ready means local engine attached; cloud TLS connects on first request.
+nsh> prefill-batch: width=4 tokens=12 batches=3; serial final prompt/decode
+llm-latency-v220: prompt=83 reused=70 fresh=13 batched=12 batch-ms=3426.704; final prompt+LM-head still required; no board first-audio claim
+
+assistant>
+causal prefill/generation returned; prompt=83 generated=1 finish=length; evaluated-prefix KV retained on success
+forwardfast: compute=3.8305 sec; causal forward checkpoint; model resident; bounded generation finished
+local-context: used=0 dropped=0 stored=0 limit=0 RAM-only shared-device-session
+aipet-local: prompt=83 generated=1 first=3.807s rest=0.000s cores=fc
+local-llm: preload ready (0)
+voice-load-v215: END stage=product-LLM-preload status=0 elapsed-ms=3985
+voice-load-v215: BEGIN stage=product-ASR-vocoder-prepare path=- mono-us=316819590
+voice-load-v215: BEGIN stage=asr-tokens path=/data/npu/general-asr mono-us=316830003
+voice-load-v215: END stage=asr-tokens status=0 elapsed-ms=42
+asr-prepare-v213: tokens-us=47790 status=0
+voice-load-v215: BEGIN stage=asr-native-query path=/data/npu/general-asr/asr-encoder.a7tv mono-us=316882156
+voice-load-v215: END stage=asr-native-query status=0 elapsed-ms=13
+voice-load-v215: BEGIN stage=asr-native-prepare path=/data/npu/general-asr/asr-encoder.a7tv mono-us=316901784
+voice-load-v215: END stage=asr-native-prepare status=0 elapsed-ms=6709
+asr-prepare-v213: role=asr-encoder query-alloc-us=19627 prepare-us=6715316 status=0
+voice-load-v215: BEGIN stage=asr-native-query path=/data/npu/general-asr/asr-decoder.a7tv mono-us=323624469
+voice-load-v215: END stage=asr-native-query status=0 elapsed-ms=11
+voice-load-v215: BEGIN stage=asr-native-prepare path=/data/npu/general-asr/asr-decoder.a7tv mono-us=323641232
+voice-load-v215: END stage=asr-native-prepare status=0 elapsed-ms=1041
+asr-prepare-v213: role=asr-decoder query-alloc-us=16763 prepare-us=1047998 status=0
+voice-load-v215: BEGIN stage=asr-native-query path=/data/npu/general-asr/asr-joiner.a7tv mono-us=324696602
+voice-load-v215: END stage=asr-native-query status=0 elapsed-ms=11
+voice-load-v215: BEGIN stage=asr-native-prepare path=/data/npu/general-asr/asr-joiner.a7tv mono-us=324713524
+voice-load-v215: END stage=asr-native-prepare status=0 elapsed-ms=927
+asr-prepare-v213: role=asr-joiner query-alloc-us=16921 prepare-us=933549 status=0
+voice-load-v215: BEGIN stage=vocoder-query path=/data/npu/general-tts/vocoder.a7tv mono-us=325660589
+voice-load-v215: END stage=vocoder-query status=0 elapsed-ms=10
+voice-load-v215: BEGIN stage=vocoder-native-prepare path=/data/npu/general-tts/vocoder.a7tv mono-us=325676370
+voice-load-v215: END stage=vocoder-native-prepare status=0 elapsed-ms=1166
+voice-prepare-v213: asr-us=8833803 vocoder-us=1188358 status=0; MIC still OFF
+voice-session-v190: prepared ASR once in 10029007 us; same-command RAM reuse, per-turn states cleared
+voice-load-v215: END stage=product-ASR-vocoder-prepare status=0 elapsed-ms=10045
+product-v1: READY MIC ON; waiting with opening pre-roll, half-duplex
+mic-monitor-v219: idle-ms=5000 blocks=489 rms=112 raw-peak=600 noise-rms=94 trigger-rms=400; waiting for speech, no PCM saved
+product-v1: speech detected; opening audio retained
+product-v1: MIC OFF; RX stopped, ASR finalizing
+dialogue-rx-v214: result=0 monitored=403680 accepted48=90720 speech=1 limited=0 queue=83; idle PCM not saved
+gate-end-v221fix1: noise-rms=118 last-rms=262 voiced-blocks=90 quiet-blocks=70; 10ms blocks,700ms endpoint,8s hard discard
+gate-end-v224: continuation-confirm=80ms peak-blocks=8 rejected-short-bursts=0 quiet-peak=70 resets=2 limited=0; energy-only, NOT trained VAD
+voice-load-v215: BEGIN stage=resident-ASR-finalize path=- mono-us=335450282
+voice-load-v215: END stage=resident-ASR-finalize status=0 elapsed-ms=828
+voice-resident-v214: asr=0 accepted16=30240 limited=0; models retained by SAME live task
+voice-stage-v214: capture-stop-mono-us=335386143 consumer-done-mono-us=335416163 asr-ready-mono-us=336293094 tail-us=906951 status=0
+product-v1: [asr backend=local] 你认识康震吗
+display: emotion=思考
+local-latency-v220: history=off pairs=0; persona, resident weights and exact-prefix KV retained; full replies
+aipet-local: storage=auto-UFS-MiniCPM5 model='/ufs/models/MiniCPM5-1B-Q4_K_M.gguf'
+chatml tokens=84 start=130072 stop=130073 history-pairs=0
+forwardfast: cores-mask=fc workers=6; A76:A55 row weight=3:1; system scheduling unchanged
+forwardfast: cache-hit; load=0 sec; no model SD reads
+forwardfast: tensor-directory cache-hit; no GGUF metadata rescan
+forward1 token=0 layers=24 hidden=1536 heads=16/2
+prefill-cache: reused=70 fresh=14 (exact token-prefix KV)
+prefill-batch: width=4 tokens=13 batches=4; serial final prompt/decode
+llm-latency-v220: prompt=84 reused=70 fresh=14 batched=13 batch-ms=3731.567; final prompt+LM-head still required; no board first-audio claim
+
+assistant> [local-stream first-visible=4181 ms; provisional text, no actions]
+抱歉，我目前无法提供关于“康震”的具体信息。如果您能提供tts-pcm-v212: samples=144896 nonzero=132264 peak=12288; before volume/resampling, NOT acoustic acceptance
+local-tts: result=0 acoustic=CPU vocoder=NPU packets=5 samples=144896 cpu-us=2391631 npu-us=391290 first-sink-us=521536; NOT end-of-speech/physical-audio latency
+更多背景或上下文，我将尽力帮助您。
+causal prefill/generation returned; prompt=84 generated=26 finish=eos; evaluated-prefix KV retained on success
+forwardfast: compute=18.4245 sec; causal forward checkpoint; model resident; bounded generation finished
+local-context: used=0 dropped=0 stored=0 limit=0 RAM-only shared-device-session
+aipet-local: prompt=84 generated=26 first=4.114s rest=14.287s cores=fc
+
+[local-stream complete]
+
+nsh> dmesg
+33 interval=4 interface=1/4
+[   17.724872] [CPU0] [10] nsh_main: A733 WIFI: endpoint=05 attr=01 maxpacket=33 interval=4 interface=1/4
+[   17.724913] [CPU0] [10] nsh_main: A733 WIFI: interface=1 alt=5 class=e0/01/01 endpoints=2
+[   17.724949] [CPU0] [10] nsh_main: A733 WIFI: endpoint=85 attr=01 maxpacket=49 interval=4 interface=1/5
+[   17.724990] [CPU0] [10] nsh_main: A733 WIFI: endpoint=05 attr=01 maxpacket=49 interval=4 interface=1/5
+[   17.725033] [CPU0] [10] nsh_main: A733 WIFI: interface=2 alt=0 class=ff/ff/ff endpoints=4
+[   17.725069] [CPU0] [10] nsh_main: A733 WIFI: endpoint=01 attr=02 maxpacket=512 interval=0 interface=2/0
+[   17.725111] [CPU0] [10] nsh_main: A733 WIFI: endpoint=81 attr=02 maxpacket=512 interval=0 interface=2/0
+[   17.725153] [CPU0] [10] nsh_main: A733 WIFI: endpoint=02 attr=02 maxpacket=512 interval=0 interface=2/0
+[   17.725194] [CPU0] [10] nsh_main: A733 WIFI: endpoint=82 attr=02 maxpacket=512 interval=0 interface=2/0
+[   17.736241] [CPU0] [10] nsh_main: A733 WIFI: USB enumeration passed config=1 interfaces=3 descriptors=8 endpoints=19 total=222
+[   17.736292] [CPU0] [10] nsh_main: A733 WIFI: runtime map WLAN data=01/01 msg=02/02 BT event=03 ACL=04/04
+[   17.747004] [CPU0] [10] nsh_main: A733 WIFI: runtime MM_VERSION passed lmac=06090101 machw=0002fdfb/00014047 phy=5ee24111/01020000 features=01e877d7 sta=32 vif=4
+[   17.753003] [CPU0] [10] nsh_main: A733 WIFI: LMAC stack start passed 5g=1 vendor=00
+[   17.758003] [CPU0] [10] nsh_main: A733 WIFI: efuse MAC 9c:04:b6:84:44:8d
+[   17.758033] [CPU0] [10] nsh_main: A733 WIFI: LMAC stack checkpoint (0)
+[   18.852003] [CPU0] [10] nsh_main: A733 WIFI: RF calibration passed rx=00175a64/00175cf8 tx=0017683c/001769c4
+[   18.852047] [CPU0] [10] nsh_main: A733 WIFI: RF configuration checkpoint (0)
+[   18.862003] [CPU0] [10] nsh_main: A733 WIFI: runtime MM_VERSION passed lmac=06090101 machw=0002fdfb/00014047 phy=5ee24111/01020000 features=01e877d7 sta=32 vif=4
+[   18.868004] [CPU0] [10] nsh_main: A733 WIFI: ME configuration passed HT=1 VHT=0 HE=0 BW=40 PS=0 cfm=0
+[   18.868043] [CPU0] [10] nsh_main: A733 WIFI: ME configuration checkpoint (0)
+[   18.874003] [CPU0] [10] nsh_main: A733 WIFI: CN channel table passed 2g=14 5g=25 cfm=0
+[   18.874038] [CPU0] [10] nsh_main: A733 WIFI: regulatory channel checkpoint (0)
+[   18.880004] [CPU0] [10] nsh_main: A733 WIFI: station VIF passed index=0 MAC=9c:04:b6:84:44:8d
+[   18.880042] [CPU0] [10] nsh_main: A733 WIFI: station VIF checkpoint (0)
+[   18.886003] [CPU0] [10] nsh_main: A733 WIFI: MAC/PHY start passed UAPSD=300 ms LPCLK=20 ppm cfm=0
+[   18.886041] [CPU0] [10] nsh_main: A733 WIFI: MAC/PHY start checkpoint (0)
+[   18.886070] [CPU0] [10] nsh_main: A733 WIFI: runtime transport checkpoint (0)
+[   18.886100] [CPU0] [10] nsh_main: A733 WIFI: D80 firmware bytes=408616 runtime=a69c:8d81 (0)
+[   18.886147] [CPU0] [10] nsh_main: A733 BT: official H4 transport registration (0)
+[   18.886188] [CPU0] [10] nsh_main: A733 WIFI: wlan0 registered; serialized USB RX worker pid=11
+[   18.886228] [CPU0] [10] nsh_main: A733: onboard FCU760K USB/firmware checkpoint ready (0)
+[   18.887307] [CPU0] [10] nsh_main: A733 USB host: before reset cap=30 ver=0120 hcs=02000140 id=33313130
+[   20.351619] [CPU0] [10] nsh_main: A733 USB combo v114: ctrl=00000111/01100001/00000000/00000011 status=00000001 maps=00000000/00000000 ready=1
+[   20.371681] [CPU0] [10] nsh_main: A733 USB PHY v114: reset-free host handoff passed id=33313130 gctl=30c11404 u2=02102400 u3=01001102 iscr=0100b000 physts=00000008
+[   20.371749] [CPU0] [10] nsh_main: A733 USB host: CCU-reset halted handoff passed; HCRST suppressed cmd=00000000 sts=00000001 id=33313130
+[   20.371810] [CPU0] [10] nsh_main: A733 xHCI v114: running slots=8 scratch=2 page=00000001 rtsoff=00001000 cmd=00000001 sts=00000000
+[   21.872661] [CPU0] [10] nsh_main: A733 UVC: USB2/xHCI2 probe=-19 ports=000002a0/000002a0 DWC3=33313130 maxports=2
+[   21.872707] [CPU0] [10] nsh_main: A733 USB diagnostic node registered; host probe=-19 (not audio-ready)
+[   21.872747] [CPU0] [10] nsh_main: A733: external USB0 UVC checkpoint ready (0)
+[   21.872792] [CPU0] [10] nsh_main: A733: optional service startup dispatcher (0)
+[   21.874150] [CPU1] [12] service: A733 service: ufs spawn=0 pid=14
+[   21.875388] [CPU1] [12] service: A733 service: sshd spawn=0 pid=15
+[   21.878955] [CPU0] [12] service: A733 service: wifi spawn=0 pid=25
+[   21.881615] [CPU1] [15] sshd: SSHD: listening pid=15 0.0.0.0:22; max-sessions=4
+[   21.882493] [CPU3] [12] service: A733 service: aipet spawn=0 pid=26
+[   21.882542] [CPU1] [26] aipet: AIPET startup: waiting=network
+[   21.885106] [CPU1] [12] service: A733 service: aipet spawn=0 pid=27
+[   21.886310] [CPU0] [27] aipet: A733 service: aipet spawn=0 pid=28
+[   21.900320] [CPU2] [14] ufs: UFS startup: stage=mounted-existing-FAT result=0 ready=1; no format, SD retained
+[   22.459009] [CPU2] [25] wifi: A733 WIFI: active scan passed channels=14 indications=3 results=2 firmware=2 ack=1
+[   22.643005] [CPU2] [25] wifi: A733 WIFI: active scan passed channels=4 indications=7 results=9 firmware=7 ack=1
+[   22.881006] [CPU2] [25] wifi: A733 WIFI: active scan passed channels=5 indications=2 results=11 firmware=2 ack=1
+[   23.177005] [CPU0] [25] wifi: A733 WIFI: association control plane passed ssid='ZBCK-E-5G_Wi-Fi5' vif=0 ap=0 channel=0 protected=1
+[   23.179008] [CPU1] [25] wifi: A733 WIFI: openvela WEXT WPA2 started ssid='ZBCK-E-5G_Wi-Fi5'; waiting for four-way handshake
+[   23.228003] [CPU0] [11] a733-wlan-rx: A733 WIFI: WPA2 M1 received, M2 submitted to USB; waiting for authenticated M3
+[   23.255005] [CPU1] [11] a733-wlan-rx: A733 WIFI: WPA2 four-way handshake passed; CCMP PTK/GTK installed and controlled port open
+[   23.255060] [CPU1] [11] a733-wlan-rx: A733 WIFI: DHCP started on wlan0 pid=41
+[   24.886524] [CPU0] [26] aipet: AIPET startup: waiting=clock
+[   26.421009] [CPU1] [41] a733-dhcp: A733 WIFI: DHCP passed address=192.168.1.195 router=192.168.1.1 dns=59.49.49.49 lease=86400 s gratuitous-arp=3/0
+[   26.693584] [CPU1] [25] wifi: A733 Wi-Fi saved connection finished (0); no password prompt
+[   28.889510] [CPU0] [26] aipet: AIPET startup: waiting=starting
+[   28.889558] [CPU0] [26] aipet: A733 service[:  ai_agent   s2p8a.wn8=809 5p7i5d]= 4[6C
+PU1] [46] ai_agent: [agent] AI Agent - Vela AI Agent starting (build: Nov  1 2026 21:17:59)
+[   28.889642] [CPU1] [46] ai_agent: [agent] [boot +0ms] P0: timezone set
+[   28.891514] [CPU1] [46] ai_agent: [agent] [boot +1ms] P0: storage ready
+[   28.891556] [CPU1] [46] ai_agent: [agent] [boot +1ms] heap: arena=4179636224 free=4178620800 used=1015424
+[   28.892989] [CPU1] [46] ai_agent: [cfgstore] Config store ready at /data/ai_agent/config/config.json
+[   28.893019] [CPU1] [46] ai_agent: [agent] [boot +3ms] P1: config_store_init (rc=0)
+[   28.893052] [CPU1] [46] ai_agent: [bus] Message bus initialized (depth 16)
+[   28.893082] [CPU1] [46] ai_agent: [agent] [boot +3ms] P1: message_bus_init (rc=0)
+[   28.893114] [CPU1] [46] ai_agent: [memory] Initializing memory store at /data/ai_agent
+[   28.898642] [CPU1] [46] ai_agent: [memory] Memory store initialized successfully
+[   28.898673] [CPU1] [46] ai_agent: [agent] [boot +9ms] P1: memory_store_init (rc=0)
+[   28.898704] [CPU1] [46] ai_agent: [session] Session manager initialized at /data/ai_agent/sessions
+[   28.898733] [CPU1] [46] ai_agent: [agent] [boot +9ms] P1: session_mgr_init (rc=0)
+[   28.898764] [CPU1] [46] ai_agent: [proxy] Loading proxy config...
+[   28.901151] [CPU1] [46] ai_agent: [proxy] No proxy (direct connection)
+[   28.901178] [CPU1] [46] ai_agent: [agent] [boot +11ms] P2: http_proxy_init (rc=0)
+[   28.907798] [CPU1] [46] ai_agent: [llm] LLM proxy initialized (model: deepseek-flash, host: api.deepseek.com)
+[   28.907831] [CPU1] [46] ai_agent: [agent] [boot +18ms] P3: llm_proxy_init (rc=0)
+[   28.913745] [CPU1] [46] ai_agent: [llm_router] Router initialized: 0 backends, profile=0
+[   28.913778] [CPU1] [46] ai_agent: [agent] [boot +24ms] P3: llm_router_init (rc=0)
+[   28.918510] [CPU1] [46] ai_agent: [web_search] No search key. Use: set_tavily_key / set_search_key
+[   28.918548] [CPU1] [46] ai_agent: [tools] Registered tool: get_weather
+[   28.918571] [CPU1] [46] ai_agent: [tools] Registered tool: get_current_time
+[   28.918643] [CPU1] [46] ai_agent: [tools] Tools JSON built (2 builtin + 0 providers)
+[   28.918676] [CPU1] [46] ai_agent: [tools] Tool registry initialized
+[   28.918701] [CPU1] [46] ai_agent: [agent] [boot +29ms] P3: tool_registry_init (rc=0)
+[   28.918735] [CPU1] [46] ai_agent: [guard] Tool guard initialized (max_input=32768, rate_window=60s, rate_max=10)
+[   28.918779] [CPU1] [46] ai_agent: [agent] [boot +29ms] P3: tool_guard_init (rc=0)
+[   28.918810] [CPU1] [46] ai_agent: [skills] Initializing skills system
+[   28.919990] [CPU1] [46] ai_agent: [skills] Skill exists: /data/ai_agent/skills/weather.md
+[   28.920708] [CPU1] [46] ai_agent: [skills] Skill exists: /data/ai_agent/skills/daily-briefing.md
+[   28.921424] [CPU1] [46] ai_agent: [skills] Skill exists: /data/ai_agent/skills/skill-creator.md
+[   28.922141] [CPU1] [46] ai_agent: [skills] Skill exists: /data/ai_agent/skills/system-health.md
+[   28.922857] [CPU1] [46] ai_agent: [skills] Skill exists: /data/ai_agent/skills/reminder.md
+[   28.923573] [CPU1] [46] ai_agent: [skills] Skill exists: /data/ai_agent/skills/note-taker.md
+[   28.924517] [CPU1] [46] ai_agent: [skills] Skill exists: /data/ai_agent/skills/translate.md
+[   28.925462] [CPU1] [46] ai_agent: [skills] Skill exists: /data/ai_agent/skills/news-digest.md
+[   28.926406] [CPU1] [46] ai_agent: [skills] Skill exists: /data/ai_agent/skills/feishu-test.md
+[   28.927350] [CPU1] [46] ai_agent: [skills] Skill exists: /data/ai_agent/skills/task-manager.md
+[   28.927372] [CPU1] [46] ai_agent: [skills] Skills system ready (10 built-in)
+[   28.927402] [CPU1] [46] ai_agent: [agent] [boot +37ms] P3: skill_loader_init (rc=0)
+[   28.927434] [CPU1] [46] ai_agent: [agent] Agent loop initialized
+[   28.927458] [CPU1] [46] ai_agent: [agent] [boot +37ms] P3: agent_loop_init (rc=0)
+[   28.927950] [CPU1] [46] ai_agent: [cron] No cron file, starting fresh
+[   28.927977] [CPU1] [46] ai_agent: [agent] [boot +38ms] P3: cron_service_init (rc=0)
+[   28.928010] [CPU1] [46] ai_agent: [heartbeat] Heartbeat service initialized (file: /data/ai_agent/HEARTBEAT.md, interval: 1800s)
+[   28.928048] [CPU1] [46] ai_agent: [agent] [boot +38ms] P3: heartbeat_init (rc=0)
+[   28.928079] [CPU1] [46] ai_agent: [voice] Voice channel initializing
+[   28.928105] [CPU1] [46] ai_agent: [voice_tts] Registered backend: volcengine
+[   28.930483] [CPU1] [46] ai_agent: [voice_asr] Registered backend: volcengine
+[   28.934036] [CPU1] [46] ai_agent: [agent] [boot +44ms] P3: voice_channel_init (rc=0)
+[   28.934069] [CPU1] [46] ai_agent: NSH commands registered
+[   28.934092] [CPU1] [46] ai_agent: [agent] [boot +44ms] P4: nsh_commands_init (rc=0)
+[  [ 2 8 . 92384.13933]4 1[3C4P]U 1[]C P[U406]]  [ai_agent4:8 ][ agentai_agent]:  [[bagento]o tO u+t4b4omusn]d  Pd5i:s poauttcbho usntda rdtiesdp
+atch thread started
+[   28.934197] [CPU1] [46] ai_agent: [cron] Cron started (0 jobs, interval 10s)
+[   28.934232] [CPU1] [46] ai_agent: [heartbeat] Heartbeat started (every 30 min)
+[   28.934262] [CPU1] [46] ai_agent: [agent] [boot +44ms] P5: cron + heartbeat started
+[   [28 .  92384.29983]4 2[9C9P]U 1[]C P[U406]]  [ai_agent5:1 ][ agentai_agent]:  [[bagento]o tN e+t4w4omrsk]  wPa5t:c hneert wsotrakr_tweadt
+ch thread started (async)
+[   28.934355] [CPU1] [46] ai_agent: [agent] [boot +44ms] [P 6 :  2n8s.h_9c3o4m3m7a5n]d s[_CsPtUa0r]t  [(5r1c]= 0ai_agent):
+ [[netmgr ]   F2o8u.nd9 3i4f3a9c9e]  wlan0[ CaPdUd1r]  192.168.1.195[
+46] ai_agent: [agent] [boot +44ms] AI Agent ready. Type 'help' in NSH for com[m a n d2s8..
+934443] [CPU0] [51] ai_agent: [netmgr] Found iface wlan0 addr 192.168.1.195
+[   28.934497] [CPU0] [51] ai_agent: [netmgr] Found iface wlan0 addr 192.168.1.195
+[   28.934521] [CPU0] [51] ai_agent: [agent] Network connected: 192.168.1.195
+[   28.934551] [CPU0] [51] ai_agent[:   [ tools2]8 .Re9g3i4s5t6e3r]e d[ CtPoUo1l]  p[r5o2v]i dai_agente:r :[ agentstm32-uart4]
+ Agent [l o o p2 8s.ta9r3t4e5d9,2 ]f r[eCeP Uh0e]a p[:5 1]4 1ai_agent7:8 7[9t9a2p6]4
+registered tap for channel 'pet'
+[   28.934633] [CPU0] [51] ai_agent: [agent] All networ[k   s e2r8v.ic9e3s4 6s5t1a]r t[eCdP!U
+1] [52] ai_agent: [agent] Buffers: ctx=8192 hist=8192 tool=8192
+[   28.934705] [CPU1] [52] ai_agent: [agent] Tool output pool: 2 x 16384 bytes
+[   28.934920] [CPU1] [52] ai_agent: [tools] Tools JSON built (2 builtin + 1 providers)
+[   28.934955] [CPU1] [52] ai_agent: [agent] Tools JSON loaded: 1244 bytes
+[   41.495950] [CPU1] [52] ai_agent: [agent] Processing message from pet:pet-1
+[   41.521694] [CPU1] [52] ai_agent: [skills] Skills summary: 814 bytes
+[   41.521723] [CPU1] [52] ai_agent: [context] System prompt built: 4095 bytes
+[   41.522800] [CPU1] [52] ai_agent: [llm_router] No available backend
+[   41.522829] [CPU1] [52] ai_agent: [trace:6ae9bbe800000000] BEGIN chat=pet-1 chan=pet
+[   41.523182] [CPU1] [52] ai_agent: [llm] OpenAI API with tools (model: deepseek-flash, 6255 bytes)
+[   41.523629] [CPU1] [52] ai_agent: [vela_tls] Handshake start: Host=api.deepseek.com, UNIX=1793702888
+[   47.534012] [CPU0] [52] ai_agent: [vela_tls] net_connect api.deepseek.com:443 ret=0x52
+[   47.534048] [CPU0] [52] ai_agent: [agent] LLM call failed (iter 0)
+[   47.534074] [CPU0] [52] ai_agent: [trace:6ae9bbe800000000] iter=0 tool=(none) latency=6011ms llm=fail backend=-1
+[   47.534111] [CPU0] [52] ai_agent: [trace:6ae9bbe800000000] END status=fail iters=1 tools=0 llm_ms=6011 elapsed=6s backend=-1
+[   47.534165] [CPU1] [48] ai_agent: [agent] Dispatching response → pet:pet-1
+[  185.305010] [CPU1] [213] wifi: A733 WIFI: active scan passed channels=14 indications=5 results=2 firmware=2 ack=1
+[  185.619006] [CPU1] [213] wifi: A733 WIFI: active scan passed channels=4 indications=5 results=6 firmware=5 ack=1
+[  186.021007] [CPU1] [213] wifi: A733 WIFI: active scan passed channels=5 indications=3 results=8 firmware=3 ack=1
+[  197.331005] [CPU1] [213] wifi: A733 WIFI: association control plane passed ssid='706E' vif=0 ap=1 channel=1 protected=1
+[  197.333009] [CPU0] [213] wifi: A733 WIFI: openvela WEXT WPA2 started ssid='706E'; waiting for four-way handshake
+[  197.373004] [CPU1] [11] a733-wlan-rx: A733 WIFI: WPA2 M1 received, M2 submitted to USB; waiting for authenticated M3
+[  197.399009] [CPU0] [11] a733-wlan-rx: A733 WIFI: WPA2 four-way handshake passed; CCMP PTK/GTK installed and controlled port open
+[  197.399067] [CPU0] [11] a733-wlan-rx: A733 WIFI: DHCP started on wlan0 pid=221
+[  199.448010] [CPU0] [221] a733-dhcp: A733 WIFI: DHCP passed address=10.195.194.171 router=10.195.194.239 dns=10.195.194.239 lease=3600 s gratuitous-arp=3/0
+[  217.421080] [CPU1] [233] aipet: A733 service: aipet spawn=0 pid=236
+[  225.988776] [CPU0] [52] ai_agent: [agent] Processing message from pet:pet-2
+[  226.025671] [CPU1] [52] ai_agent: [skills] Skills summary: 814 bytes
+[  226.025704] [CPU1] [52] ai_agent: [context] System prompt built: 4095 bytes
+[  226.026476] [CPU1] [52] ai_agent: [llm_router] No available backend
+[  226.026504] [CPU1] [52] ai_agent: [trace:6ae9bca03c2fb9d7] BEGIN chat=pet-2 chan=pet
+[  226.026849] [CPU1] [52] ai_agent: [llm] OpenAI API with tools (model: deepseek-flash, 6037 bytes)
+[  226.027306] [CPU1] [52] ai_agent: [vela_tls] Handshake start: Host=api.deepseek.com, UNIX=1793703072
+[  232.547092] [CPU0] [52] ai_agent: [vela_tls] Handshake OK: TLSv1.2 / TLS-ECDHE-RSA-WITH-AES-256-GCM-SHA384
+[  232.733040] [CPU0] [52] ai_agent: [vela_tls] HTTP first-byte=154 ms
+[  232.733120] [CPU0] [52] ai_agent: [vela_tls] HTTP status=200 framing=chunked
+[  238.470025] [CPU1] [52] ai_agent: [vela_tls] HTTP complete=5891 ms encoded-bytes=1177
+[  238.470147] [CPU1] [52] ai_agent: [llm] Response: 194 bytes text, 0 tool calls, finish=end_turn
+[  238.470184] [CPU1] [52] ai_agent: [agent] LLM resp: text=194, tool_use=0, calls=0
+[  238.470218] [CPU1] [52] ai_agent: [trace:6ae9bca03c2fb9d7] iter=0 tool=(none) latency=12443ms llm=ok backend=-1
+[  238.470255] [CPU1] [52] ai_agent: [trace:6ae9bca03c2fb9d7] END status=ok iters=1 tools=0 llm_ms=12443 elapsed=13s backend=-1
+[  238.488084] [CPU1] [48] ai_agent: [agent] Dispatching response → pet:pet-2
+nsh>

@@ -1,0 +1,73 @@
+{
+  "result": "ORIGINAL_ONNX_VS_CPP_C_API_CPU_MATCH",
+  "ort_version": "1.23.2",
+  "cases": [
+    {
+      "case": 0,
+      "shape": [
+        1,
+        80,
+        70
+      ],
+      "ids": 5,
+      "max_abs": 0.0,
+      "relative_l2": 0.0,
+      "cpp_mel_sha256": "b857fac0fbf41c95a3e30e193308981db70ca7a12df22ca3ce672dbe5c114021"
+    },
+    {
+      "case": 1,
+      "shape": [
+        1,
+        80,
+        115
+      ],
+      "ids": 9,
+      "max_abs": 0.0,
+      "relative_l2": 0.0,
+      "cpp_mel_sha256": "8cc4b209e12ee172c3d84b7f7e8f28985d94cea016d8509f646746733b4ee4b3"
+    },
+    {
+      "case": 2,
+      "shape": [
+        1,
+        80,
+        87
+      ],
+      "ids": 7,
+      "max_abs": 0.0,
+      "relative_l2": 0.0,
+      "cpp_mel_sha256": "b308524290173788304cd3fb5e0b22da7aaef474904a56b91b8d329c6adbe3c3"
+    },
+    {
+      "case": 3,
+      "shape": [
+        1,
+        80,
+        143
+      ],
+      "ids": 11,
+      "max_abs": 0.0,
+      "relative_l2": 0.0,
+      "cpp_mel_sha256": "cec99eb318f88eb01c469b1f472055555f15ec5b2067262712f60b817efe2115"
+    },
+    {
+      "case": 4,
+      "shape": [
+        1,
+        80,
+        143
+      ],
+      "ids": 13,
+      "max_abs": 0.0,
+      "relative_l2": 0.0,
+      "cpp_mel_sha256": "57e396bb1af5a64c5b8fe724e8ab5a57f0e5c72c105dafcc51509c3582b83995"
+    }
+  ],
+  "noise_scale": 0.0,
+  "noise_zero_purpose": "equivalence only, not production voice noise choice",
+  "acoustic_backend": "CPU",
+  "vocoder_executed": false,
+  "npu_executed": false,
+  "target_runtime": false,
+  "full_voice_chain": false
+}

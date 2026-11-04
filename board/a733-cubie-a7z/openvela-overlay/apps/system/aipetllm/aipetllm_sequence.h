@@ -2,14 +2,14 @@
 #ifndef AIPETLLM_SEQUENCE_H
 #define AIPETLLM_SEQUENCE_H
 #include <stdint.h>
-#define AIPETLLM_SEQUENCE_LIMIT 64
+#define AIPETLLM_SEQUENCE_LIMIT 256
 #define AIPETLLM_INPUT_LIMIT 512
 struct aipetllm_sequence_s
 {
   uint32_t input[AIPETLLM_INPUT_LIMIT];
   uint32_t input_count;
   uint32_t generate_limit;
-  uint32_t output[64];
+  uint32_t output[AIPETLLM_SEQUENCE_LIMIT];
   uint32_t output_count;
   uint32_t eos;
   uint32_t chat_stop;

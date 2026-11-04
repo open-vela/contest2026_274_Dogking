@@ -1,0 +1,33 @@
+tts-pcm-v212: samples=17920 nonzero=0 peak=0; before volume/resampling, NOT acoustic acceptance
+local-tts: result=0 acoustic=CPU vocoder=NPU packets=1 samples=17920 cpu-us=56483 npu-us=348 first-sink-us=58223; NOT end-of-speech/physical-audio latency
+tts-pcm-v212: samples=29440 nonzero=0 peak=0; before volume/resampling, NOT acoustic acceptance
+local-tts: result=0 acoustic=CPU vocoder=NPU packets=1 samples=29440 cpu-us=51408 npu-us=97 first-sink-us=52180; NOT end-of-speech/physical-audio latency
+tts-pcm-v212: samples=22272 nonzero=0 peak=0; before volume/resampling, NOT acoustic acceptance
+local-tts: result=0 acoustic=CPU vocoder=NPU packets=1 samples=22272 cpu-us=46209 npu-us=46 first-sink-us=46566; NOT end-of-speech/physical-audio latency
+tts-pcm-v212: samples=36608 nonzero=0 peak=0; before volume/resampling, NOT acoustic acceptance
+local-tts: result=0 acoustic=CPU vocoder=NPU packets=1 samples=36608 cpu-us=66549 npu-us=77 first-sink-us=67113; NOT end-of-speech/physical-audio latency
+tts-pcm-v212: samples=36608 nonzero=0 peak=0; before volume/resampling, NOT acoustic acceptance
+local-tts: result=0 acoustic=CPU vocoder=NPU packets=1 samples=36608 cpu-us=61508 npu-us=103 first-sink-us=62414; NOT end-of-speech/physical-audio latency
+tts-pcm-v212: samples=0 nonzero=0 peak=0; before volume/resampling, NOT acoustic acceptance
+local-tts: result=-61 acoustic=CPU vocoder=NPU packets=0 samples=0 cpu-us=0 npu-us=0 first-sink-us=-1; NOT end-of-speech/physical-audio latency
+tts-pcm-v212: samples=0 nonzero=0 peak=0; before volume/resampling, NOT acoustic acceptance
+local-tts: result=-125 acoustic=CPU vocoder=NPU packets=0 samples=0 cpu-us=0 npu-us=0 first-sink-us=-1; NOT end-of-speech/physical-audio latency
+tts-pcm-v212: samples=0 nonzero=0 peak=0; before volume/resampling, NOT acoustic acceptance
+local-tts: result=-84 acoustic=CPU vocoder=NPU packets=0 samples=0 cpu-us=41053 npu-us=83 first-sink-us=-1; NOT end-of-speech/physical-audio latency
+tts-pcm-v212: samples=0 nonzero=0 peak=0; before volume/resampling, NOT acoustic acceptance
+local-tts: result=-5 acoustic=CPU vocoder=NPU packets=0 samples=0 cpu-us=36276 npu-us=0 first-sink-us=-1; NOT end-of-speech/physical-audio latency
+tts-pcm-v212: samples=0 nonzero=0 peak=0; before volume/resampling, NOT acoustic acceptance
+local-tts: result=-125 acoustic=CPU vocoder=NPU packets=0 samples=0 cpu-us=35952 npu-us=89 first-sink-us=-1; NOT end-of-speech/physical-audio latency
+tts-pcm-v212: samples=17920 nonzero=0 peak=0; before volume/resampling, NOT acoustic acceptance
+local-tts: result=0 acoustic=CPU vocoder=NPU packets=1 samples=17920 cpu-us=41278 npu-us=48 first-sink-us=41643; NOT end-of-speech/physical-audio latency
+tts-pcm-v212: samples=17920 nonzero=0 peak=0; before volume/resampling, NOT acoustic acceptance
+local-tts: result=0 acoustic=CPU vocoder=NPU packets=1 samples=17920 cpu-us=35978 npu-us=49 first-sink-us=36309; NOT end-of-speech/physical-audio latency
+tts-pcm-v212: samples=17920 nonzero=0 peak=0; before volume/resampling, NOT acoustic acceptance
+local-tts: result=0 acoustic=CPU vocoder=NPU packets=1 samples=17920 cpu-us=36058 npu-us=100 first-sink-us=36731; NOT end-of-speech/physical-audio latency
+tts-pcm-v212: samples=17920 nonzero=0 peak=0; before volume/resampling, NOT acoustic acceptance
+local-tts: result=0 acoustic=CPU vocoder=NPU packets=1 samples=17920 cpu-us=36029 npu-us=47 first-sink-us=36388; NOT end-of-speech/physical-audio latency
+PASS: same-command vocoder prepare once for three phrases; close at explicit session end
+tts-pcm-v212: samples=17920 nonzero=0 peak=0; before volume/resampling, NOT acoustic acceptance
+local-tts: result=0 acoustic=CPU vocoder=NPU packets=1 samples=17920 cpu-us=36110 npu-us=113 first-sink-us=36538; NOT end-of-speech/physical-audio latency
+PASS: default noise=1 executes real CPU acoustic with finite mel; NOT a voice-quality/NPU test
+PASS: CPU mel -> exact padded native input; NPU STUB calls=13; fd lifecycle/cancel/NaN tail/sink failure/reuse; NO audio saved, NO NPU execution

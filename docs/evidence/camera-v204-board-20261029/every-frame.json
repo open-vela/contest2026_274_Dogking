@@ -1,0 +1,20 @@
+{
+  "result": "REPORTED_LIVE_RUN_LOG_CONSISTENT_NOT_HARDWARE_ACCEPTANCE",
+  "requested_seconds": 30,
+  "detect_every": 1,
+  "completed_frames": 35,
+  "completed_inferences": 35,
+  "elapsed_ms": 32045,
+  "reported_fps": "1.092",
+  "stop_requested": false,
+  "logged_frames": 35,
+  "distinct_logged_input_crc": 35,
+  "detections": 60,
+  "zero_detection_inferences": 5,
+  "last_input_crc": "0c46e754",
+  "binary_identity_verified": false,
+  "visual_accuracy_verified": false,
+  "hardware_verified": false,
+  "note": "Only internal consistency of supplied text; preview-only frames are sparsely logged. Preserve original log and inspect real display/scene/temperature separately.",
+  "source_sha256": "99506b17bfd4c2a18caec3f68e0f44a743c38207baf10bc84b55b6a9d837ed17"
+}

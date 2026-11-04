@@ -1,0 +1,37 @@
+{
+  "aipetllm_modelcheck.c": {
+    "source": "board/a733-cubie-a7z/openvela-overlay/apps/system/aipetllm/aipetllm_modelcheck.c",
+    "sha256": "c3cbfbba984fcf0e192221f18a0d518b5103ebfecb89af71bbc8e18a7b6aecd9",
+    "actual_nuttx_flags": true,
+    "max_static_frame": 1504,
+    "passed": true
+  },
+  "aipetllm_api.cxx": {
+    "source": "board/a733-cubie-a7z/openvela-overlay/apps/system/aipetllm/aipetllm_api.cxx",
+    "sha256": "67fbc1ba9c0eba53805c138d1da7d22f0fd33b8c69a903eb1ce0cf2c296300fc",
+    "actual_nuttx_flags": true,
+    "max_static_frame": 2464,
+    "passed": true
+  },
+  "aipetllm_bpe.cxx": {
+    "source": "board/a733-cubie-a7z/openvela-overlay/apps/system/aipetllm/aipetllm_bpe.cxx",
+    "sha256": "b05f7b454dbe2e0fd174e990c41d327407695bf6775ae2b924910fcd4dfb7c60",
+    "actual_nuttx_flags": true,
+    "max_static_frame": 512,
+    "passed": true
+  },
+  "local_llm.cxx": {
+    "source": "board/a733-cubie-a7z/openvela-overlay/apps/system/aipet/local_llm.cxx",
+    "sha256": "cda6cdf6ee5a0e7051b99514d47e858cf11788cce28bf222f4259226b3887650",
+    "actual_nuttx_flags": true,
+    "max_static_frame": 2112,
+    "passed": true
+  },
+  "aipet_main.cxx": {
+    "source": "board/a733-cubie-a7z/openvela-overlay/apps/system/aipet/aipet_main.cxx",
+    "sha256": "dbece1a9ea73e705101157630cedfc6c38e5b4e35ce4bcea9954e2fa3623c9a3",
+    "actual_nuttx_flags": true,
+    "max_static_frame": 32,
+    "passed": true
+  }
+}

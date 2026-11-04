@@ -1,0 +1,14 @@
+[130][BT]: BLE-LIFE scan-stop worker-begin
+[132][BT]: BLE-LIFE scan-stop worker-end rc=%d
+[121][BT]: BLE-LIFE scan-start worker-begin
+[123][BT]: BLE-LIFE scan-start worker-end rc=%d
+[157][BT]: BLE-LIFE scan-start enqueue (not controller completion)
+[171][BT]: BLE-LIFE scan-stop enqueue (not controller completion)
+[103][h4]: BLE-LIFE H4 write stalled; reconnect/reboot required
+BLE-LIFE command-pool timeout opcode=%04x
+BLE-LIFE sync-wait opcode=%04x
+BLE-LIFE sync-done opcode=%04x rc=%d
+BLE-LIFE disable controller-reset
+BLE-LIFE disable transport-close
+BLE-LIFE quiesce timeout init=%d tx=%d rx=%d; reboot required
+BLE-LIFE quiesce complete

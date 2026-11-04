@@ -1,0 +1,62 @@
+{
+  "result": "CAMERA_V192_HOST_AND_ARM_OBJECTS_PASSED_NOT_HARDWARE",
+  "files": [
+    {
+      "source": "board/a733-cubie-a7z/openvela-overlay/vendor/allwinnertech/chips/a733/a733_imx214_cold.c",
+      "maximum_stack_frame": 80,
+      "object_sha256": "49b1df54303b7c3a86c8ca1c81dd28de1f1de0c2188937af1213bd0956bdde20"
+    },
+    {
+      "source": "board/a733-cubie-a7z/openvela-overlay/vendor/allwinnertech/chips/a733/a733_camera_control.c",
+      "maximum_stack_frame": 176,
+      "object_sha256": "27f92c908f380155736ad75b5e23b6bfcb374820ceeb0d3ff26cdf6ef3a6d859"
+    },
+    {
+      "source": "board/a733-cubie-a7z/openvela-overlay/vendor/allwinnertech/chips/a733/a733_camera_diag.c",
+      "maximum_stack_frame": 112,
+      "object_sha256": "a6d933c6dc10c42e1aa87b33d9ad69f0a74941b594447f28c9669f33d0b98dc3"
+    },
+    {
+      "source": "board/a733-cubie-a7z/openvela-overlay/apps/system/a733camera/a733camera_main.c",
+      "maximum_stack_frame": 1840,
+      "object_sha256": "95b5414ec4181ff786cbc9f48dcdb74a1b9088a0b01838e80e88a533c3297897"
+    }
+  ],
+  "source_sha256": {
+    "board/a733-cubie-a7z/openvela-overlay/vendor/allwinnertech/chips/a733/a733_imx214_cold.c": "1260ee8612b9ecbfe4431e8eceab2c81e19a27dd91708b12a322ba1689f7d992",
+    "board/a733-cubie-a7z/openvela-overlay/vendor/allwinnertech/chips/a733/a733_camera_control.c": "8b2a838595900f90e4d594c4b5d49cacb44305d42e3c5b0bec3167d4cb2f6ec2",
+    "board/a733-cubie-a7z/openvela-overlay/vendor/allwinnertech/chips/a733/a733_camera_diag.c": "b1ea66a57d5e36bfb904c5c14eb126d57feaf69f2ebac0a4293e1a4f0208ad79",
+    "board/a733-cubie-a7z/openvela-overlay/apps/system/a733camera/a733camera_main.c": "90d7d1edee23eea26c60abfd27120179d8f786b3c7d52c4fedcbb829f965741d",
+    "board/a733-cubie-a7z/openvela-overlay/vendor/allwinnertech/chips/a733/a733_imx214_cold.h": "654773496b782c6ca5e745b375d6903f833f6bee0c385793f4a83c7cdd28630d",
+    "board/a733-cubie-a7z/openvela-overlay/vendor/allwinnertech/chips/a733/a733_camera_power_handoff.h": "484b59adb22d120cb63b1dddb718b94c77149b7b5c007bb0bca041e9325bde41",
+    "tools/build-a733-camera-v192.sh": "03d633a442a6320aef6836fb59d8bb5f73153a869a9259b8edf889c4d8dc871e",
+    "tools/build-a733-camera-handoff-v192.py": "622aefa6ba82f11b834305172d03832ec0f6086dee6ea222c18a51c7a23cd6d7",
+    "tools/test-a733-imx214-cold.c": "ce1c5def79cc3c8e552aae50fa3d3c8b8a786f39cfacd37d9b35aec21e6ed641",
+    "tools/test-a733-camera-control.c": "a34bac6bede79856bb0f0b2f6c6e91061ca7ed695e5899dee558a274b263c567",
+    "tools/test-a733-camera-handoff-v192.py": "431e73e6e147fe730f27d8c050cbdf9bc318db66773d51eddacba42fafb2b5cb",
+    "tools/check-a733-camera-v192.py": "2d2a5e5ab8a45d8bd035f3f31c3c241490ba92fc98b93d112d9b3013bb5ce027",
+    "tools/test-a733-camera-control.py": "703a69c6a55366fff5794ac98533104d39b9a1991f755ef57b1dbda0acb58520",
+    "tools/test-a733-imx214-cold.py": "596cdfcb26ebce30c40027cdcad7a45fb7043af3d1c5e2111219817e8e238925",
+    "tools/camera-control-host-fixture/arm64_internal.h": "13965e89ea7cdcd90a8f8be7a1b4152b60e4f265f800e03bddcd0a0509ca9626",
+    "tools/camera-control-host-fixture/nuttx/clock.h": "9db91c95903688bf71a50851fdca68e93cd15d4c6b596e2352d7604a057e9309",
+    "tools/camera-control-host-fixture/nuttx/config.h": "adcb40cfc300c4b21c017dcc509797d39692046a6edb7a9b77f1d3b3da8374f8",
+    "tools/camera-control-host-fixture/nuttx/mutex.h": "1f153811e8d47edeca3d9e3ca8fe23059cc5cdd2244f63cb5bc49e4eb9c0b06f",
+    "tools/camera-control-host-fixture/nuttx/signal.h": "b4d8abc1c60bf36eaaa3e6019b61202bfaafa14700a8cb76f6322b8b92c20bb0",
+    "tools/camera-control-host-fixture/nuttx/fs/fs.h": "70bfe14e806f902b424964b355ee3dcb2eb64236243ece009ca1fda637c04cef"
+  },
+  "logs": {
+    "a733camera_main.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "a733_camera_control.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "a733_camera_diag.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "a733_imx214_cold.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "test-a733-camera-control.py.log": "f26ecc84706a474bd9ee8a4be3c43c7c30289220ab63793b7b3e63452231a33c",
+    "test-a733-camera-handoff-v192.py.log": "69f8a5774e5c5941f9d067e06bd263dcad3ab52ede44bf2b9539f557d7dd12f2",
+    "test-a733-imx214-cold.py.log": "63f4755d7de94936ad4b3c8aec1fb7c714df025f3875e5c5c2ef0e5ee77c646a"
+  },
+  "full_firmware_linked": false,
+  "sdk_modified": false,
+  "hardware_verified": false,
+  "sensor_transfers": false,
+  "camera_capture": false,
+  "power_live_measurement": false
+}

@@ -1,0 +1,450 @@
+......
+
+
+[249]HELLO! BOOT0 is starting!
+[252]BOOT0 commit : {4721ad08}
+[255]board gpio withstand voltage auto mode
+[270]dram_para_total:0xf
+[272]vaild para:6  select dram para10
+[mmc]: mmc driver ver 2025-10-16 17:10
+[mmc]: Wrong media type 0x0
+[mmc]: ***Try SD card 0***
+[mmc]: HSSDR52/SDR25 4 bit
+[mmc]: 50000000 Hz
+[mmc]: 30436 MB
+[mmc]: ***SD/MMC 0 init OK!!!***
+[321]boot param - magic error
+[324]DRAM BOOT DRIVE INFO: V0.601
+[328]DRAM_VCC set to 1100 mv
+[3576]Training result is = 7
+[3579]DRAM Pstate 0 training, frequency is 1800 Mhz
+[3587][AUTO DEBUG]16 bit,2 ranks training success!
+[6838]Training result is = 7
+[6841]DRAM Pstate 0 training, frequency is 1800 Mhz
+[10094]Training result is = 7
+[10097]DRAM Pstate 0 training, frequency is 1800 Mhz
+[10105]DRAM CLK =1800 MHZ
+[10108]DRAM Type =8 (8:LPDDR4,9:LPDDR5)
+[10213]Training result is = 7
+[10216]DRAM Pstate 1 training, frequency is 1200 Mhz
+[10329]Training result is = 7
+[10332]DRAM Pstate 2 training, frequency is 800 Mhz
+[10542]Training result is = 7
+[10545]DRAM Pstate 3 training, frequency is 400 Mhz
+[13771]Training result is = 7
+[13774]DRAM Pstate 0 training, frequency is 1800 Mhz
+[13782]Actual DRAM SIZE =4096 M
+[13785]DRAM SIZE =4096 MBytes, para1 = 310a, para2 = 10001001, dram_tpr13 = 6067
+[13800]DRAM simple test OK.
+[13805]error:bad magic.
+[13870]error: dtb not found for scp
+[13873]mmc not para
+[13875]Jump to ATF: monitor_base = 0x48000000, uboot_base = 0x4a000000, optee_base = 0x0
+NOTICE:  BL31: OP-TEE 32bit detected
+NOTICE:  BL31: U-BOOT 32bit detected
+NOTICE:  BL31: dram size is 4294967296 bytes
+NOTICE:  BL31: v2.5(debug):48e54578a
+NOTICE:  BL31: Built : 14:13:06, Jul  2 2025
+NOTICE:  BL31: No DTB found.
+ERROR:   Error initializing runtime service opteed_fast
+
+
+U-Boot 2018.07-17-boot-aw2501-g4c7078cfdf7-dirty (Apr 29 2026 - 10:03:59 +0000) Allwinner Technology
+
+[13.931]CPU:   Allwinner Family
+[13.934]Model: Radxa Cubie A7A
+I2C:   ready
+[13.998]DRAM:  4 GiB
+[14.006]Relocation Offset is: 75d89000
+[14.060]secure enable bit: 0
+[14.064]PMU: AXP8191
+[14.066]PMU: AXP8191 VER_A
+FDT ERROR:fdt_get_regulator_name:get property handle twi-supply error:FDT_ERR_INTERNAL
+[14.077]bmu_axp515_probe pmic_bus_read fail
+[14.081][AXP8191] onoff status: 0x50 = 0x1, 0x51 = 0x0
+[14.086][AXP8191] charge status: 0x4 = 0x0
+[14.090]CPU=1014 MHz,PLL6=1200 Mhz,AHB=200 Mhz, APB1=24Mhz  MBus=600Mhz
+[14.096]gic: sec monitor mode
+SPI ALL:   ready
+[14.141]flash init start
+[14.143]workmode = 0,storage type = 1
+[14.146][mmc]: mmc driver ver uboot2018:2024-10-18 9:01:00 -- uboot2018:2025-03-28 10:03:00
+[14.154][mmc]: get sdc_type fail and use default host:tm1.
+[14.162][mmc]: can't find node "mmc0",will add new node
+[14.167][mmc]: fdt err returned <no error>
+[14.171][mmc]: Using default timing para
+[14.174][mmc]: SUNXI SDMMC Controller Version:0x50530
+[14.203][mmc]: card_caps:0x3000000a
+[14.206][mmc]: host_caps:0x3000003f
+[14.211]sunxi flash init ok
+get value error
+[14.223]Loading Environment from SUNXI_FLASH... OK
+No ethernet found.
+[14.260]NOT support bridge yet
+[14.263]Warn: no find panel or bridge
+[14.267]hdmi0@5520000 disconnected
+[14.270]drm hdmi get mode: 1920x1080@60Hz
+hdmi0@5520000: use force output detailed mode clock 148500 kHz, flags[5]
+    H: 1920 2008 2052 2200
+    V: 1080 1084 1089 1125
+bus_format: 0
+partno erro : can't find partition bootloader
+[14.299]bootloader is not found!
+partno erro : can't find partition boot-resource
+[14.308]boot-resource is not found!
+[14.311]Can not load logo.bmp file!
+[14.314]load logo fail
+[14.324]the secure storage item0 copy0 magic is bad
+[14.336]the secure storage item0 copy1 magic is bad
+[14.340]usb burn from boot
+delay time 0
+[14.347]usb prepare ok
+[14.650]overtime
+[14.654]do_burn_from_boot usb : no usb exist
+cann't get the boot_base from the env
+[14.697]update part info
+[14.701]battery temp is -1
+[14.706]update bootcmd
+[14.714](not enough data: expected >= 8 cells, got 4 cells)
+Link up timeout
+Speed change timeout
+PCIe speed of Gen1
+Override default fdtfile to allwinner/sun60i-a733-cubie-a7z.dtb
+[17.156]libfdt fdt_check_header(): FDT_ERR_BADMAGIC
+[17.162]libfdt fdt_path_offset() returned FDT_ERR_BADMAGIC
+[17.168][mmc]: get sunxi-mmc0 string failed
+[17.173]The storage not support sample function
+[17.178]## error: update_fdt_dram_para_from_bootpara : FDT_ERR_NOTFOUND
+[17.185]chip id : 0x00005100 0x00004900 0x0000c418 0x00002354
+[17.191]mac addr => 08:51:49:dc:77:ed
+[17.194]chip id : 0x00005100 0x00004900 0x0000c418 0x00002354
+[17.200]mac addr => 08:51:49:dc:77:ec
+[17.204]/chosen/rng-seed node not exit
+[17.207]no battery, disabled battery functons
+[17.212]Could not find nodeoffset for bat_supply
+[17.216]update dts
+curr_device:0
+Device: SUNXI SD/MMC
+Manufacturer ID: 3
+OEM: 5344
+Name: SD32G
+Bus Speed: 50000000
+Mode : SD High Speed (50MHz)
+Rd Block Len: 512
+SD version 3.0
+High Capacity: Yes
+Capacity: 29.7 GiB
+Bus Width: 4-bit
+Erase Group Size: 512 Bytes
+[ufs]info:Driver version 0.0.24 2024.12.30 16:00
+[ufs]info:Cal words 0x60:val 0x98620000, 0x64:val 0x4d1d9753
+[ufs]info:[RX, TX]: gear=[4, 4], lane[2, 2], pwr[FAST MODE, FAST MODE], rate = 2
+[ufs]err:Warning wExceptionEventStatus 20 !!!!!!!
+[ufs]err:Warning wExceptionEventStatus 20 !!!!!!!
+[ufs]err:Warning wExceptionEventStatus 20 !!!!!!!
+[ufs]err:Warning wExceptionEventStatus 20 !!!!!!!
+[ufs]err:Warning wExceptionEventStatus 20 !!!!!!!
+[ufs]err:Warning wExceptionEventStatus 20 !!!!!!!
+[ufs]err:Warning wExceptionEventStatus 20 !!!!!!!
+[ufs]err:Warning wExceptionEventStatus 20 !!!!!!!
+[ufs]err:Warning wExceptionEventStatus 20 !!!!!!!
+[ufs]err:Warning wExceptionEventStatus 20 !!!!!!!
+[ufs]info:Eol info 1
+[ufs]info:life time a 1
+[ufs]info:life time b 1
+[ufs]info:qTotalRawDeviceCapacity 0xEE78000, max_num_alloc_units 0x773c
+[ufs]info:dNumAllocUnits:0x773c
+ [ufs]err:sc st 2
+[ufs]err:scsi status:Check conditon
+[ufs]err:dump:bfeb6f60: 70 00 06 00 00 00 00 0a 00 00 00 00 29 00 00 00    p...........)...
+[ufs]info:blk size 4096,capacity 31256576 block
+Hit any key to stop autoboot:  0
+starting USB...
+USB0:   start sunxi  USB-DRD...
+config usb clk ok
+sunxi USB-DRD init ok...
+USB EHCI 1.00
+scanning bus 0 for devices... 1 USB Device(s) found
+USB1:   start sunxi  USB1-Host...
+config usb clk ok
+sunxi USB1-Host init ok...
+USB EHCI 1.00
+scanning bus 1 for devices... 1 USB Device(s) found
+       scanning usb for storage devices... 0 Storage Device(s) found
+
+Device 0: device type unknown
+... is now current device
+** Bad device usb 0 **
+** Bad device usb 0 **
+mmc0 is current device
+Scanning mmc 0:2...
+Scanning mmc 0:3...
+Found /boot/extlinux/extlinux.conf
+Retrieving file: /boot/extlinux/extlinux.conf
+196 bytes read in 15 ms (12.7 KiB/s)
+1:      openvela A733 (minimal SD image)
+Retrieving file: /boot/openvela/a733/Image
+2701272 bytes read in 133 ms (19.4 MiB/s)
+Retrieving file: /boot/dtb/sun60i-a733-cubie-a7z.dtb
+193692 bytes read in 25 ms (7.4 MiB/s)
+[21.910]libfdt fdt_path_offset() returned FDT_ERR_BADMAGIC
+[21.919]The storage not support sample function
+[22.006]mac addr => 08:51:49:dc:77:ed
+[22.010]mac addr => 08:51:49:dc:77:ec
+[22.014]no battery, disabled battery functons
+[22.021]update dts
+stop sunxi USB-DRD ok...
+stop sunxi USB1-Host ok...
+[22.047]Starting kernel ...
+
+[22.050]total: 22050 ms
+
+[22.052][mmc]: MMC Device 2 not found
+[22.056][mmc]: mmc 2 not find, so not exit
+NOTICE:  [SCP] :wait arisc ready....
+NOTICE:  [SCP] :arisc version: [d463b9da43dc50320f21ba51c6c51afe2db20d83]
+NOTICE:  [SCP] :arisc startup ready
+NOTICE:  [SCP] :arisc startup notify message feedback
+NOTICE:  [SCP] :sunxi-arisc driver is starting
+NOTICE:  BL3-1: Next image address = 0x40200000
+NOTICE:  BL3-1: Next image spsr = 0x3c5
+- Ready to Boot Primary CPU
+- Boot from EL1
+- Boot to C runtime for OS Initialize
+M0 v141-layout
+M1
+A7Z0
+A7Z1
+N0
+N1
+H0
+H1
+H2
+H3
+H4
+S0
+S1
+P1
+H5
+N2
+N3
+N4
+RRR deReeR -e 5-Ra
+dy y o    eeaayaeBaa da0dddyyydt
+  BB BBy t Bt  ttoBooto1  oo
+toBt  et  oooBoto ooo o2ottS
+cocSooo    BSS SSoceSeet3oecenc c
+  d  C dnnenn Aocdd0CddnoP
+UUU U CCC nUPPPdPAC
+-    P1
+P
+
+
+
+ -U
+  2 -BA- o
+BBBo -o
+o f fooftBoooB ooo otf4ottBtr  t
+mEfm  L frtmrfrrNo ro6oo mmom
+1 11L    r 1NEEoEEL7LLLmE
+-1
+XL
+
+
+
+ 01--
+oBBo B--
+
+    BBtoooooooo ttttt    ot tttoCooo     CCrCC  u  rrrnruuutunnnnimttttiiiiem mmmefeee  o  ffrffoo oorrOrr   S OOO OSSSIS    niIIIInntnniiiiitatttilizzzeiaallzllieiiiz
+    eee
+
+
+
+- Boot to C runt-im Beo fotor t Oo S C Inruintitialmeiz efo
+r OS Initialize
+N8
+X1
+PR
+PR
+PR
+
+NuttShell (NSH)
+nsh> RI
+RX
+
+nsh> free
+      total       used       free    maxused    maxfree  nused  nfree name
+ 4239093760      55328 4239038432      66272 4143972320     98      5 Umem
+nsh> cat /dev/a733-ufs
+A733 UFS v166 board qualification candidate (NOT usable UFS storage)
+last=0 stage=idle registered=0 quarantine=0 owns=0 lun=0
+ccu: axi=81000000 cfg=80000018 bgr=000f0001
+last-snapshot: version=00000000 cap=00000000 hcs=00000000 is=00000000 ocs=0 response=00000000 elapsed-ms=0
+media: model='' blocks=0 block-bytes=0 capacity-bytes=0 commands=0 read-bytes=0
+dma: resident=0 bytes=69632 retained-until-reboot=1
+control: board | probe | attach-ro=<lun:0..7>
+board: read-only CCU/RTC collection; no HCI/PMIC/DMA/clock writes
+probe/attach-ro: blocked until real board power provider is qualified
+probe snapshots registers only; does NOT prove device/link presence
+attach-ro REQUIRES firmware-initialized active idle link and device
+cold-PMIC/PHY-init=not-implemented writes=disabled auto-mount=disabled
+SD boot and /data unchanged; no reset, retry, format, migration or erase
+board-v166: sampled=0 stable=0 last=0 stage=not-sampled attempts=0 reads=0 last-address=00000000
+pll: ref=00000000 peri0=00000000 pat0=00000000 pat1=00000000
+fabric: store-ahb=00000000 store-mbus=00000000 msi-lite1=00000000
+ufs-ccu: axi=00000000 cfg=00000000 bgr=00000000 ref=00000000
+rtc: xo=00000000 xo1=00000000 dcxo-selected-hz=0 (selector only, NOT measured)
+decode: axi-mux=0 div=0 cfg-mux=0 div=0 reset-release-mask=0 gate-mask=00
+clock rates are NOT inferred from PLL names; raw values retained
+qualification: rails=unknown domain=unknown ownership=unknown dma-map=unknown hci-access=blocked
+PMIC-SMC=not-called PMIC-I2C=not-touched cold-start=blocked
+nsh> time "echo board > /dev/a733-ufs"
+
+0.0000 sec
+nsh> cat /dev/a733-ufs
+A733 UFS v166 board qualification candidate (NOT usable UFS storage)
+last=-22 stage=snapshot-collected-not-power-qualified registered=0 quarantine=0 owns=0 lun=0
+ccu: axi=81000000 cfg=80000018 bgr=000f0001
+last-snapshot: version=00000000 cap=00000000 hcs=00000000 is=00000000 ocs=0 response=00000000 elapsed-ms=0
+media: model='' blocks=0 block-bytes=0 capacity-bytes=0 commands=0 read-bytes=0
+dma: resident=0 bytes=69632 retained-until-reboot=1
+control: board | probe | attach-ro=<lun:0..7>
+board: read-only CCU/RTC collection; no HCI/PMIC/DMA/clock writes
+probe/attach-ro: blocked until real board power provider is qualified
+probe snapshots registers only; does NOT prove device/link presence
+attach-ro REQUIRES firmware-initialized active idle link and device
+cold-PMIC/PHY-init=not-implemented writes=disabled auto-mount=disabled
+SD boot and /data unchanged; no reset, retry, format, migration or erase
+board-v166: sampled=1 stable=1 last=0 stage=snapshot-collected-not-power-qualified attempts=1 reads=26 last-address=0709016c
+pll: ref=f8675f00 peri0=ff126310 pat0=00000000 pat1=30000000
+fabric: store-ahb=110103ff store-mbus=f1055803 msi-lite1=00030001
+ufs-ccu: axi=81000000 cfg=80000018 bgr=000f0001 ref=00000000
+rtc: xo=183fb0f7 xo1=00000511 dcxo-selected-hz=26000000 (selector only, NOT measured)
+decode: axi-mux=1 div=1 cfg-mux=0 div=25 reset-release-mask=f gate-mask=7f
+clock rates are NOT inferred from PLL names; raw values retained
+qualification: rails=unknown domain=unknown ownership=unknown dma-map=unknown hci-access=blocked
+PMIC-SMC=not-called PMIC-I2C=not-touched cold-start=blocked
+nsh> time "echo board > /dev/a733-ufs"
+
+0.0000 sec
+nsh> cat /dev/a733-ufs
+A733 UFS v166 board qualification candidate (NOT usable UFS storage)
+last=-22 stage=snapshot-collected-not-power-qualified registered=0 quarantine=0 owns=0 lun=0
+ccu: axi=81000000 cfg=80000018 bgr=000f0001
+last-snapshot: version=00000000 cap=00000000 hcs=00000000 is=00000000 ocs=0 response=00000000 elapsed-ms=0
+media: model='' blocks=0 block-bytes=0 capacity-bytes=0 commands=0 read-bytes=0
+dma: resident=0 bytes=69632 retained-until-reboot=1
+control: board | probe | attach-ro=<lun:0..7>
+board: read-only CCU/RTC collection; no HCI/PMIC/DMA/clock writes
+probe/attach-ro: blocked until real board power provider is qualified
+probe snapshots registers only; does NOT prove device/link presence
+attach-ro REQUIRES firmware-initialized active idle link and device
+cold-PMIC/PHY-init=not-implemented writes=disabled auto-mount=disabled
+SD boot and /data unchanged; no reset, retry, format, migration or erase
+board-v166: sampled=1 stable=1 last=0 stage=snapshot-collected-not-power-qualified attempts=2 reads=26 last-address=0709016c
+pll: ref=f8675f00 peri0=ff126310 pat0=00000000 pat1=30000000
+fabric: store-ahb=110103ff store-mbus=f1055803 msi-lite1=00030001
+ufs-ccu: axi=81000000 cfg=80000018 bgr=000f0001 ref=00000000
+rtc: xo=183fb0f7 xo1=00000511 dcxo-selected-hz=26000000 (selector only, NOT measured)
+decode: axi-mux=1 div=1 cfg-mux=0 div=25 reset-release-mask=f gate-mask=7f
+clock rates are NOT inferred from PLL names; raw values retained
+qualification: rails=unknown domain=unknown ownership=unknown dma-map=unknown hci-access=blocked
+PMIC-SMC=not-called PMIC-I2C=not-touched cold-start=blocked
+nsh> dmesg
+[   22.284668] [CPU0] [ 9] nsh_main: A733: procfs mounted; 4 GiB split RAM enabled
+[   22.284713] [CPU0] [ 9] nsh_main: A733: user LED ready (0)
+[   22.284740] [CPU0] [ 9] nsh_main: A733: watchdog ready (0)
+[   22.334835] [CPU0] [ 9] nsh_main: A733: THS first sample pending code=0 ints=00000000 gpadc_clk=80000000 ths_bgr=00010001; registering sensor
+[   22.334899] [CPU0] [ 9] nsh_main: A733: temp0 registered; conversion pending
+[   22.334931] [CPU0] [ 9] nsh_main: A733: merged hardware diagnostics ready (0)
+[   22.335366] [CPU0] [ 9] nsh_main: A733 TRNG: CE v00300201 startup/continuous test passed; /dev/random and /dev/urandom ready
+[   22.335415] [CPU0] [ 9] nsh_main: A733: hardware TRNG ready (0)
+[   22.335441] [CPU0] [ 9] nsh_main: A733: UFS manual read-only interface registration (0)
+[   22.335984] [CPU0] [ 9] nsh_main: A733 NPU: VIP2 power/clock/identity checkpoint passed (0), id=00009000/00009202/20230518/1000003b
+[   22.345142] [CPU0] [ 9] nsh_main: A733 NPU runtime: /dev/npu0 ready (0), pool=404c1000/2097152 vip=02000000 pd=00404b91 lenet=40749000/404d1000 prepared=4079d000/25165824
+[   22.345210] [CPU0] [ 9] nsh_main: A733: VIP2 NPU hardware checkpoint ready (0)
+[   22.345269] [CPU0] [ 9] nsh_main: A733: UART4 TW-TTS port ready at /dev/ttyS4 (0)
+[   22.345296] [CPU0] [ 9] nsh_main: A733: I2S0 audio checkpoint ready at /dev/a733-audio (0)
+[   22.345362] [CPU0] [ 9] nsh_main: A733: header I2C/SPI and fan PWM ready (0)
+[   22.576006] [CPU0] [ 9] nsh_main: A733 SDMMC0: /dev/mmcsd0 requested (PIO, 400 kHz/12 MHz, 4-bit)
+[   22.576045] [CPU0] [ 9] nsh_main: A733: SDMMC0 ready (0)
+[   22.578896] [CPU0] [ 9] nsh_main: A733 GPT: entry=1 node=/dev/a7z-firmware first=32768 blocks=32768 name=primary
+[   22.578939] [CPU0] [ 9] nsh_main: A733 GPT: entry=2 node=/dev/a7z-efi first=65536 blocks=614400 name=primary
+[   22.578980] [CPU0] [ 9] nsh_main: A733 GPT: entry=3 node=/dev/a7z-openvela first=679936 blocks=237568 name=primary
+[   22.579025] [CPU0] [ 9] nsh_main: A733 GPT: entry=4 node=/dev/a7z-data first=917504 blocks=3276767 name=data
+[   22.579668] [CPU0] [ 9] nsh_main: A733 FAT: /dev/a7z-data mounted read/write at /data
+[   22.579701] [CPU0] [ 9] nsh_main: A733: GPT/FAT storage ready (0)
+[   22.750797] [CPU0] [ 9] nsh_main: A733 WIFI: FCU760K USB1 root port connected at high speed (0), version=0100 port=00001005
+[   22.764853] [CPU0] [ 9] nsh_main: A733 WIFI: USB device addr=1 VID:PID=a69c:8d80 class=00/00/00 bcdUSB=2.00 EP0=64
+[   22.766910] [CPU0] [ 9] nsh_main: A733 WIFI: interface=0 alt=0 class=ff/ff/ff endpoints=2
+[   22.766947] [CPU0] [ 9] nsh_main: A733 WIFI: endpoint=01 attr=02 maxpacket=512 interval=0 interface=0/0
+[   22.766989] [CPU0] [ 9] nsh_main: A733 WIFI: endpoint=82 attr=02 maxpacket=512 interval=0 interface=0/0
+[   22.778037] [CPU0] [ 9] nsh_main: A733 WIFI: USB enumeration passed config=1 interfaces=1 descriptors=1 endpoints=2 total=32
+[   22.783004] [CPU0] [ 9] nsh_main: A733 WIFI: AIC BootROM read32 [40500000]=fb078820 bulk=20/24 response=0401 (0)
+[   22.795004] [CPU0] [ 9] nsh_main: A733 WIFI: uploaded /data/aic/fw_adid_8800d80_u02.bin (1708 bytes) to 00201940
+[   22.948003] [CPU0] [ 9] nsh_main: A733 WIFI: uploaded /data/aic/fw_patch_8800d80_u02.bin (32700 bytes) to 001e0000
+[   23.025004] [CPU0] [ 9] nsh_main: A733 WIFI: uploaded /data/aic/fw_patch_8800d80_u02_ext0.bin (16136 bytes) to 0020b43c
+[   23.479003] [CPU0] [ 9] nsh_main: A733 BT: firmware mode=5 HCI-port=1 readback=1 (mailbox/USB)
+[   25.488004] [CPU0] [ 9] nsh_main: A733 WIFI: uploaded /data/aic/fmacfw_8800d80_u02.bin (358072 bytes) to 00120000
+[   25.612003] [CPU0] [ 9] nsh_main: A733 WIFI: D80 patch config version=06090101 cfg=00177158 struct=00177c00 pairs=0017d318
+[   25.615003] [CPU0] [ 9] nsh_main: A733 WIFI: D80 firmware started, waiting for runtime USB device
+[   26.000102] [CPU0] [ 9] nsh_main: A733 WIFI: USB device addr=1 VID:PID=a69c:8d81 class=ef/02/01 bcdUSB=2.00 EP0=64
+[   26.002158] [CPU0] [ 9] nsh_main: A733 WIFI: interface=0 alt=0 class=e0/01/01 endpoints=3
+[   26.002195] [CPU0] [ 9] nsh_main: A733 WIFI: endpoint=83 attr=03 maxpacket=64 interval=4 interface=0/0
+[   26.002236] [CPU0] [ 9] nsh_main: A733 WIFI: endpoint=84 attr=02 maxpacket=512 interval=0 interface=0/0
+[   26.002278] [CPU0] [ 9] nsh_main: A733 WIFI: endpoint=04 attr=02 maxpacket=512 interval=0 interface=0/0
+[   26.002320] [CPU0] [ 9] nsh_main: A733 WIFI: interface=1 alt=0 class=e0/01/01 endpoints=2
+[   26.002356] [CPU0] [ 9] nsh_main: A733 WIFI: endpoint=85 attr=01 maxpacket=0 interval=4 interface=1/0
+[   26.002397] [CPU0] [ 9] nsh_main: A733 WIFI: endpoint=05 attr=01 maxpacket=0 interval=4 interface=1/0
+[   26.002438] [CPU0] [ 9] nsh_main: A733 WIFI: interface=1 alt=1 class=e0/01/01 endpoints=2
+[   26.002475] [CPU0] [ 9] nsh_main: A733 WIFI: endpoint=85 attr=01 maxpacket=9 interval=4 interface=1/1
+[   26.002516] [CPU0] [ 9] nsh_main: A733 WIFI: endpoint=05 attr=01 maxpacket=9 interval=4 interface=1/1
+[   26.002556] [CPU0] [ 9] nsh_main: A733 WIFI: interface=1 alt=2 class=e0/01/01 endpoints=2
+[   26.002593] [CPU0] [ 9] nsh_main: A733 WIFI: endpoint=85 attr=01 maxpacket=17 interval=4 interface=1/2
+[   26.002634] [CPU0] [ 9] nsh_main: A733 WIFI: endpoint=05 attr=01 maxpacket=17 interval=4 interface=1/2
+[   26.002675] [CPU0] [ 9] nsh_main: A733 WIFI: interface=1 alt=3 class=e0/01/01 endpoints=2
+[   26.002712] [CPU0] [ 9] nsh_main: A733 WIFI: endpoint=85 attr=01 maxpacket=25 interval=4 interface=1/3
+[   26.002753] [CPU0] [ 9] nsh_main: A733 WIFI: endpoint=05 attr=01 maxpacket=25 interval=4 interface=1/3
+[   26.002794] [CPU0] [ 9] nsh_main: A733 WIFI: interface=1 alt=4 class=e0/01/01 endpoints=2
+[   26.002831] [CPU0] [ 9] nsh_main: A733 WIFI: endpoint=85 attr=01 maxpacket=33 interval=4 interface=1/4
+[   26.002872] [CPU0] [ 9] nsh_main: A733 WIFI: endpoint=05 attr=01 maxpacket=33 interval=4 interface=1/4
+[   26.002913] [CPU0] [ 9] nsh_main: A733 WIFI: interface=1 alt=5 class=e0/01/01 endpoints=2
+[   26.002949] [CPU0] [ 9] nsh_main: A733 WIFI: endpoint=85 attr=01 maxpacket=49 interval=4 interface=1/5
+[   26.002991] [CPU0] [ 9] nsh_main: A733 WIFI: endpoint=05 attr=01 maxpacket=49 interval=4 interface=1/5
+[   26.003033] [CPU0] [ 9] nsh_main: A733 WIFI: interface=2 alt=0 class=ff/ff/ff endpoints=4
+[   26.003070] [CPU0] [ 9] nsh_main: A733 WIFI: endpoint=01 attr=02 maxpacket=512 interval=0 interface=2/0
+[   26.003111] [CPU0] [ 9] nsh_main: A733 WIFI: endpoint=81 attr=02 maxpacket=512 interval=0 interface=2/0
+[   26.003153] [CPU0] [ 9] nsh_main: A733 WIFI: endpoint=02 attr=02 maxpacket=512 interval=0 interface=2/0
+[   26.003195] [CPU0] [ 9] nsh_main: A733 WIFI: endpoint=82 attr=02 maxpacket=512 interval=0 interface=2/0
+[   26.014242] [CPU0] [ 9] nsh_main: A733 WIFI: USB enumeration passed config=1 interfaces=3 descriptors=8 endpoints=19 total=222
+[   26.014293] [CPU0] [ 9] nsh_main: A733 WIFI: runtime map WLAN data=01/01 msg=02/02 BT event=03 ACL=04/04
+[   26.026003] [CPU0] [ 9] nsh_main: A733 WIFI: runtime MM_VERSION passed lmac=06090101 machw=0002fdfb/00014047 phy=5ee24111/01020000 features=01e877d7 sta=32 vif=4
+[   26.032004] [CPU0] [ 9] nsh_main: A733 WIFI: LMAC stack start passed 5g=1 vendor=00
+[   26.037003] [CPU0] [ 9] nsh_main: A733 WIFI: efuse MAC 9c:04:b6:84:44:8d
+[   26.037033] [CPU0] [ 9] nsh_main: A733 WIFI: LMAC stack checkpoint (0)
+[   27.138004] [CPU0] [ 9] nsh_main: A733 WIFI: RF calibration passed rx=00175a64/00175cf8 tx=0017683c/001769c4
+[   27.138047] [CPU0] [ 9] nsh_main: A733 WIFI: RF configuration checkpoint (0)
+[   27.150003] [CPU0] [ 9] nsh_main: A733 WIFI: runtime MM_VERSION passed lmac=06090101 machw=0002fdfb/00014047 phy=5ee24111/01020000 features=01e877d7 sta=32 vif=4
+[   27.156003] [CPU0] [ 9] nsh_main: A733 WIFI: ME configuration passed HT=1 VHT=0 HE=0 BW=40 PS=0 cfm=0
+[   27.156043] [CPU0] [ 9] nsh_main: A733 WIFI: ME configuration checkpoint (0)
+[   27.161003] [CPU0] [ 9] nsh_main: A733 WIFI: CN channel table passed 2g=14 5g=25 cfm=0
+[   27.161038] [CPU0] [ 9] nsh_main: A733 WIFI: regulatory channel checkpoint (0)
+[   27.166003] [CPU0] [ 9] nsh_main: A733 WIFI: station VIF passed index=0 MAC=9c:04:b6:84:44:8d
+[   27.166042] [CPU0] [ 9] nsh_main: A733 WIFI: station VIF checkpoint (0)
+[   27.172004] [CPU0] [ 9] nsh_main: A733 WIFI: MAC/PHY start passed UAPSD=300 ms LPCLK=20 ppm cfm=0
+[   27.172042] [CPU0] [ 9] nsh_main: A733 WIFI: MAC/PHY start checkpoint (0)
+[   27.172070] [CPU0] [ 9] nsh_main: A733 WIFI: runtime transport checkpoint (0)
+[   27.172101] [CPU0] [ 9] nsh_main: A733 WIFI: D80 firmware bytes=408616 runtime=a69c:8d81 (0)
+[   27.172148] [CPU0] [ 9] nsh_main: A733 BT: official H4 transport registration (0)
+[   27.172189] [CPU0] [ 9] nsh_main: A733 WIFI: wlan0 registered; serialized USB RX worker pid=10
+[   27.172229] [CPU0] [ 9] nsh_main: A733: onboard FCU760K USB/firmware checkpoint ready (0)
+[   27.173307] [CPU0] [ 9] nsh_main: A733 USB host: before reset cap=30 ver=0120 hcs=02000140 id=33313130
+[   28.637696] [CPU0] [ 9] nsh_main: A733 USB combo v114: ctrl=00000111/01100001/00000000/00000011 status=00000001 maps=00000000/00000000 ready=1
+[   28.657759] [CPU0] [ 9] nsh_main: A733 USB PHY v114: reset-free host handoff passed id=33313130 gctl=30c11404 u2=02102400 u3=01001102 iscr=0100b000 physts=00000008
+[   28.657827] [CPU0] [ 9] nsh_main: A733 USB host: CCU-reset halted handoff passed; HCRST suppressed cmd=00000000 sts=00000001 id=33313130
+[   28.657888] [CPU0] [ 9] nsh_main: A733 xHCI v114: running slots=8 scratch=2 page=00000001 rtsoff=00001000 cmd=00000001 sts=00000000
+[   30.158753] [CPU0] [ 9] nsh_main: A733 UVC: USB2/xHCI2 probe=-19 ports=000002a0/000002a0 DWC3=33313130 maxports=2
+[   30.158798] [CPU0] [ 9] nsh_main: A733 USB diagnostic node registered; host probe=-19 (not audio-ready)
+[   30.158839] [CPU0] [ 9] nsh_main: A733: external USB0 UVC checkpoint ready (0)
+[   30.158882] [CPU0] [ 9] nsh_main: A733: optional service startup dispatcher (0)
+nsh>

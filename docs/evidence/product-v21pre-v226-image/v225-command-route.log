@@ -1,0 +1,5 @@
+product-route-v225: intent=setting result=0
+product-route-v225: intent=setting result=0
+product-route-v225: intent=setting result=0
+product-route-v225: intent=setting result=0
+PASS v225: 30 positive intent cases plus negatives, actual product dispatch priority; x10 bounded pulses, 300Hz gear, settings. HOST, no UART/NPU/acoustic acceptance.

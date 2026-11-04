@@ -1,0 +1,33 @@
+{
+  "result": "V216_SOFTWARE_IMAGE_VERIFIED_NOT_BOARD_ACCEPTED",
+  "firmware_commit": "1b8a7fc7cce886b752dcb0e236d35e3f318095a3",
+  "image": "openvela-a733-cubie-a7z-sd-v216-voice-quality-candidate.img",
+  "bytes": 2147483648,
+  "sha256": "14aaa2dad1c0b0edd0814f2680ea712a8a8b02695047c5dbe3dafc899ccc7e40",
+  "kernel_sha256": "4d722dad15168e2ea4eb84a5d46f54ec62c6af5b82f7413414bdc6db966eb4c6",
+  "kernel_bytes": 7185088,
+  "regressions": 19,
+  "arm_units": 18,
+  "microphone_hardware_measured": false,
+  "physical_audio_onset_measured": false,
+  "latency_3_to_5_seconds_accepted": false,
+  "full_duplex": false,
+  "boot_recording": false,
+  "old_v213_preserved": true,
+  "old_v214_preserved": true,
+  "old_v215_preserved": true,
+  "asr_speedup_accepted": false,
+  "tts_voice_quality_accepted": false,
+  "physical_disks_written": false,
+  "ufs_written": false,
+  "sealed_directory": "out/v216-release-20261030",
+  "recovery_directory": "out/checkpoints/a733-v216-voice-quality-recovery-20261030",
+  "references": {
+    "full-link-summary.json": "a57d6fd4d53dc7abcaa47514fdde6172e0e4009734c1115c77778e913f46697c",
+    "host-arm-summary.json": "aa97f45e40f2a562d503707cde32c12c1da0868bfe5af4989894c60d860080b3",
+    "monitor-driver-host.log": "b4cbc845ccc4a94e4bbdd2645e587a8d72a733ceb323bb19466dba14209835a1",
+    "package-summary.json": "556442913db2b78a6122b4cb3a879faa1ada48e5a812369b830ecd89db535a37",
+    "resident-host.log": "6952bc11ec6b6f01ce157b65f60a9d929b10d8c825f31b0617e855e5dca84d24",
+    "sdk-restored.json": "45b5499ce6abea32613cb300b28253a3f5c29dfeb6df836d8bab569b37ff39ed"
+  }
+}

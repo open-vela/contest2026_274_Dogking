@@ -1,0 +1,19 @@
+local-tts: result=0 acoustic=CPU vocoder=NPU packets=1 samples=17920 cpu-us=46446 npu-us=123 first-sink-us=47396; NOT end-of-speech/physical-audio latency
+local-tts: result=0 acoustic=CPU vocoder=NPU packets=1 samples=29440 cpu-us=56252 npu-us=53 first-sink-us=56586; NOT end-of-speech/physical-audio latency
+local-tts: result=0 acoustic=CPU vocoder=NPU packets=1 samples=22272 cpu-us=46213 npu-us=50 first-sink-us=46512; NOT end-of-speech/physical-audio latency
+local-tts: result=0 acoustic=CPU vocoder=NPU packets=1 samples=36608 cpu-us=61475 npu-us=52 first-sink-us=61806; NOT end-of-speech/physical-audio latency
+local-tts: result=0 acoustic=CPU vocoder=NPU packets=1 samples=36608 cpu-us=61169 npu-us=52 first-sink-us=61509; NOT end-of-speech/physical-audio latency
+local-tts: result=-61 acoustic=CPU vocoder=NPU packets=0 samples=0 cpu-us=0 npu-us=0 first-sink-us=-1; NOT end-of-speech/physical-audio latency
+local-tts: result=-125 acoustic=CPU vocoder=NPU packets=0 samples=0 cpu-us=0 npu-us=0 first-sink-us=-1; NOT end-of-speech/physical-audio latency
+local-tts: result=-84 acoustic=CPU vocoder=NPU packets=0 samples=0 cpu-us=36068 npu-us=50 first-sink-us=-1; NOT end-of-speech/physical-audio latency
+local-tts: result=-5 acoustic=CPU vocoder=NPU packets=0 samples=0 cpu-us=35924 npu-us=1 first-sink-us=-1; NOT end-of-speech/physical-audio latency
+local-tts: result=-125 acoustic=CPU vocoder=NPU packets=0 samples=0 cpu-us=36036 npu-us=51 first-sink-us=-1; NOT end-of-speech/physical-audio latency
+local-tts: result=0 acoustic=CPU vocoder=NPU packets=1 samples=17920 cpu-us=35971 npu-us=51 first-sink-us=36287; NOT end-of-speech/physical-audio latency
+local-tts: result=0 acoustic=CPU vocoder=NPU packets=1 samples=17920 cpu-us=36050 npu-us=77 first-sink-us=36441; NOT end-of-speech/physical-audio latency
+local-tts: result=0 acoustic=CPU vocoder=NPU packets=1 samples=17920 cpu-us=35899 npu-us=50 first-sink-us=36197; NOT end-of-speech/physical-audio latency
+local-tts: result=0 acoustic=CPU vocoder=NPU packets=1 samples=17920 cpu-us=41088 npu-us=50 first-sink-us=41379; NOT end-of-speech/physical-audio latency
+PASS: same-command vocoder prepare once for three phrases; close at explicit session end
+local-tts: result=0 acoustic=CPU vocoder=NPU packets=1 samples=17920 cpu-us=35832 npu-us=128 first-sink-us=36223; NOT end-of-speech/physical-audio latency
+PASS: default noise=1 executes real CPU acoustic with finite mel; NOT a voice-quality/NPU test
+PASS: CPU mel -> exact padded native input; NPU STUB calls=13; fd lifecycle/cancel/NaN tail/sink failure/reuse; NO audio saved, NO NPU execution
+

@@ -1,0 +1,160 @@
+
+/mnt/d/My-Program/AI-Agent-Program/GPTsprogram/Openvela/quickly-openvela/cmake_out/cubie-a7z_nsh_v192_camera/nuttx:     file format elf64-littleaarch64
+
+
+Disassembly of section .image_header:
+
+Disassembly of section .text:
+
+0000000040222100 <nx_bringup>:
+    40222100:	f81f0ffe 	str	x30, [sp, #-16]!
+    40222104:	d0002e00 	adrp	x0, 407e4000 <_etext>
+    40222108:	91265c00 	add	x0, x0, #0x997
+    4022210c:	97ff7da7 	bl	402017a8 <a733_boot_marker>
+    40222110:	52800022 	mov	w2, #0x1                   	// #1
+    40222114:	90002fa1 	adrp	x1, 40816000 <boot_string_jump_to_c_entry+0x31f8f>
+    40222118:	90002e60 	adrp	x0, 407ee000 <boot_string_jump_to_c_entry+0x9f8f>
+    4022211c:	910c1c21 	add	x1, x1, #0x307
+    40222120:	91390400 	add	x0, x0, #0xe41
+    40222124:	94014c49 	bl	40275248 <setenv>
+    40222128:	d0002e00 	adrp	x0, 407e4000 <_etext>
+    4022212c:	91267000 	add	x0, x0, #0x99c
+    40222130:	97ff7d9e 	bl	402017a8 <a733_boot_marker>
+    40222134:	940015a1 	bl	402277b8 <work_start_highpri>
+    40222138:	d0002e00 	adrp	x0, 407e4000 <_etext>
+    4022213c:	91268400 	add	x0, x0, #0x9a1
+    40222140:	97ff7d9a 	bl	402017a8 <a733_boot_marker>
+    40222144:	d0002e00 	adrp	x0, 407e4000 <_etext>
+    40222148:	91269800 	add	x0, x0, #0x9a6
+    4022214c:	97ff7d97 	bl	402017a8 <a733_boot_marker>
+    40222150:	94014b9e 	bl	40274fc8 <get_environ_ptr>
+    40222154:	aa0003e7 	mov	x7, x0
+    40222158:	d2800006 	mov	x6, #0x0                   	// #0
+    4022215c:	52a00084 	mov	w4, #0x40000               	// #262144
+    40222160:	d2800003 	mov	x3, #0x0                   	// #0
+    40222164:	52800c82 	mov	w2, #0x64                  	// #100
+    40222168:	52800041 	mov	w1, #0x2                   	// #2
+    4022216c:	90000005 	adrp	x5, 40222000 <nx_start+0x344>
+    40222170:	d0002e00 	adrp	x0, 407e4000 <_etext>
+    40222174:	9101f0a5 	add	x5, x5, #0x7c
+    40222178:	9126ac00 	add	x0, x0, #0x9ab
+    4022217c:	94000dd4 	bl	402258cc <nxthread_create>
+    40222180:	f84107fe 	ldr	x30, [sp], #16
+    40222184:	d0002e00 	adrp	x0, 407e4000 <_etext>
+    40222188:	9126d800 	add	x0, x0, #0x9b6
+    4022218c:	17ff7d87 	b	402017a8 <a733_boot_marker>
+
+Disassembly of section .vector:
+
+
+/mnt/d/My-Program/AI-Agent-Program/GPTsprogram/Openvela/quickly-openvela/cmake_out/cubie-a7z_nsh_v192_camera/nuttx:     file format elf64-littleaarch64
+
+
+Disassembly of section .image_header:
+
+Disassembly of section .text:
+
+000000004022207c <nx_start_task>:
+    4022207c:	d0002e00 	adrp	x0, 407e4000 <_etext>
+    40222080:	9125fc00 	add	x0, x0, #0x97f
+    40222084:	f81c0ffe 	str	x30, [sp, #-64]!
+    40222088:	97ff7dc8 	bl	402017a8 <a733_boot_marker>
+    4022208c:	f9000bff 	str	xzr, [sp, #16]
+    40222090:	94002827 	bl	4022c12c <board_late_initialize>
+    40222094:	910063e0 	add	x0, sp, #0x18
+    40222098:	9401564a 	bl	402779c0 <posix_spawnattr_init>
+    4022209c:	52800c80 	mov	w0, #0x64                  	// #100
+    402220a0:	b9001fe0 	str	w0, [sp, #28]
+    402220a4:	d2840000 	mov	x0, #0x2000                	// #8192
+    402220a8:	f9001be0 	str	x0, [sp, #48]
+    402220ac:	d0002e00 	adrp	x0, 407e4000 <_etext>
+    402220b0:	91261000 	add	x0, x0, #0x984
+    402220b4:	97ff7dbd 	bl	402017a8 <a733_boot_marker>
+    402220b8:	94015098 	bl	40276318 <lib_cxx_initialize>
+    402220bc:	910043e4 	add	x4, sp, #0x10
+    402220c0:	910063e3 	add	x3, sp, #0x18
+    402220c4:	d0000041 	adrp	x1, 4022c000 <nxsig_pendingset+0x4c>
+    402220c8:	91258021 	add	x1, x1, #0x960
+    402220cc:	d2800005 	mov	x5, #0x0                   	// #0
+    402220d0:	d2800002 	mov	x2, #0x0                   	// #0
+    402220d4:	d0002e00 	adrp	x0, 407e4000 <_etext>
+    402220d8:	91262400 	add	x0, x0, #0x989
+    402220dc:	9400118c 	bl	4022670c <task_spawn>
+    402220e0:	d0002e00 	adrp	x0, 407e4000 <_etext>
+    402220e4:	91264800 	add	x0, x0, #0x992
+    402220e8:	97ff7db0 	bl	402017a8 <a733_boot_marker>
+    402220ec:	910063e0 	add	x0, sp, #0x18
+    402220f0:	94015657 	bl	40277a4c <posix_spawnattr_destroy>
+    402220f4:	52800000 	mov	w0, #0x0                   	// #0
+    402220f8:	f84407fe 	ldr	x30, [sp], #64
+    402220fc:	d65f03c0 	ret
+
+Disassembly of section .vector:
+
+
+/mnt/d/My-Program/AI-Agent-Program/GPTsprogram/Openvela/quickly-openvela/cmake_out/cubie-a7z_nsh_v192_camera/nuttx:     file format elf64-littleaarch64
+
+
+Disassembly of section .image_header:
+
+Disassembly of section .text:
+
+0000000040276318 <lib_cxx_initialize>:
+    40276318:	a9bc53f3 	stp	x19, x20, [sp, #-64]!
+    4027631c:	90002b73 	adrp	x19, 407e2000 <_sinit>
+    40276320:	91000273 	add	x19, x19, #0x0
+    40276324:	90002b74 	adrp	x20, 407e2000 <_sinit>
+    40276328:	91030294 	add	x20, x20, #0xc0
+    4027632c:	a9015bf5 	stp	x21, x22, [sp, #16]
+    40276330:	90002bd5 	adrp	x21, 407ee000 <boot_string_jump_to_c_entry+0x9f8f>
+    40276334:	90002bd6 	adrp	x22, 407ee000 <boot_string_jump_to_c_entry+0x9f8f>
+    40276338:	91339ab5 	add	x21, x21, #0xce6
+    4027633c:	9133c6d6 	add	x22, x22, #0xcf1
+    40276340:	a90263f7 	stp	x23, x24, [sp, #32]
+    40276344:	aa1303f8 	mov	x24, x19
+    40276348:	f9001bfe 	str	x30, [sp, #48]
+    4027634c:	eb14027f 	cmp	x19, x20
+    40276350:	540000c3 	b.cc	40276368 <lib_cxx_initialize+0x50>  // b.lo, b.ul, b.last
+    40276354:	a9415bf5 	ldp	x21, x22, [sp, #16]
+    40276358:	a94263f7 	ldp	x23, x24, [sp, #32]
+    4027635c:	f9401bfe 	ldr	x30, [sp, #48]
+    40276360:	a8c453f3 	ldp	x19, x20, [sp], #64
+    40276364:	d65f03c0 	ret
+    40276368:	f9400277 	ldr	x23, [x19]
+    4027636c:	b4000137 	cbz	x23, 40276390 <lib_cxx_initialize+0x78>
+    40276370:	aa1703e1 	mov	x1, x23
+    40276374:	aa1503e0 	mov	x0, x21
+    40276378:	97fe2d15 	bl	402017cc <a733_boot_value>
+    4027637c:	d63f02e0 	blr	x23
+    40276380:	cb180261 	sub	x1, x19, x24
+    40276384:	aa1603e0 	mov	x0, x22
+    40276388:	9343fc21 	asr	x1, x1, #3
+    4027638c:	97fe2d10 	bl	402017cc <a733_boot_value>
+    40276390:	91002273 	add	x19, x19, #0x8
+    40276394:	17ffffee 	b	4027634c <lib_cxx_initialize+0x34>
+
+Disassembly of section .vector:
+
+
+/mnt/d/My-Program/AI-Agent-Program/GPTsprogram/Openvela/quickly-openvela/cmake_out/cubie-a7z_nsh_v192_camera/nuttx:     file format elf64-littleaarch64
+
+
+Disassembly of section .image_header:
+
+Disassembly of section .text:
+
+00000000402011d4 <boot_stage_puts>:
+    402011d4:	d53800a0 	mrs	x0, mpidr_el1
+    402011d8:	d3483c00 	ubfx	x0, x0, #8, #8
+    402011dc:	b4000040 	cbz	x0, 402011e4 <boot_stage_puts+0x10>
+    402011e0:	d65f03c0 	ret
+    402011e4:	a9bf7bff 	stp	xzr, x30, [sp, #-16]!
+    402011e8:	38401420 	ldrb	w0, [x1], #1
+    402011ec:	7100001f 	cmp	w0, #0x0
+    402011f0:	54000060 	b.eq	402011fc <boot_stage_puts+0x28>  // b.none
+    402011f4:	94000375 	bl	40201fc8 <arm64_lowputc>
+    402011f8:	17fffffc 	b	402011e8 <boot_stage_puts+0x14>
+    402011fc:	a8c17bff 	ldp	xzr, x30, [sp], #16
+    40201200:	d65f03c0 	ret
+
+Disassembly of section .vector:

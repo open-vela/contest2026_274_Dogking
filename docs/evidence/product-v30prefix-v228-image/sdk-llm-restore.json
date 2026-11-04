@@ -1,0 +1,9 @@
+{
+  "path": "packages/ai_agent/src/llm/llm_proxy.c",
+  "before": {
+    "bytes": 26992,
+    "sha256": "f7b20668564bd05913ed5a49fd8c5c9aba185f2ac12ba9f93b8b5ae8af58e92a"
+  },
+  "after_sha256": "f7b20668564bd05913ed5a49fd8c5c9aba185f2ac12ba9f93b8b5ae8af58e92a",
+  "result": "EXACT_RESTORED_AND_RECHECKED_AT_SEAL"
+}

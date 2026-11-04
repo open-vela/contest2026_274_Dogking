@@ -1,0 +1,24 @@
+喵~你好！
+[emotion=普通 actions=0]
+[route=local_rule fallback=0 elapsed=0 ms]
+aipet: cloud unavailable error=-1; entering fallback
+[route=local_llm fallback=1 elapsed=0 ms]
+aipet: route failed -38
+Local LLM backend is not registered.
+aipet: cloud unavailable error=-1; entering fallback
+测试本地接口
+[emotion=开心 actions=0]
+[route=local_llm fallback=1 elapsed=0 ms]
+测试本地接口
+[emotion=开心 actions=0]
+aipet: I2S TTS failed -19 (text/UI retained; no implicit UART fallback)
+[local-stream first-visible=0 ms; provisional text, no actions]
+你好。
+[local-stream complete]
+local-voice-pipeline: status=0 phrases=1/1 first-phrase=421 us first-synthesis-start=1176 us; PCM/device timing separate
+[emotion=普通 actions=0]
+[route=local_llm speech=local fallback=0 actions=disabled]
+local-voice-pipeline: status=-32 phrases=0/1 first-phrase=79 us first-synthesis-start=113 us; PCM/device timing separate
+PASS: provisional same-thread streaming, no duplicate final body, no foreign-thread leak
+bounded ordered routes/config/template tests passed
+aipet parser/routing/fallback/state tests passed

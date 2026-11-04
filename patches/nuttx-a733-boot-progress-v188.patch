@@ -1,0 +1,137 @@
+diff --git a/nuttx/arch/arm64/src/common/arm64_head.S b/nuttx/arch/arm64/src/common/arm64_head.S
+--- a/nuttx/arch/arm64/src/common/arm64_head.S
++++ b/nuttx/arch/arm64/src/common/arm64_head.S
+@@ -358,6 +358,15 @@
+  */
+ 
+ boot_stage_puts:
++#ifdef CONFIG_A733_BOOT_DIAGNOSTICS
++    /* Keep CPU0's progress legible. Only assembly banners are suppressed;
++     * secondary fault diagnostics still use the normal early UART path.
++     */
++    get_cpu_id x0
++    cbz   x0, 3f
++    ret
++3:
++#endif
+     stp   xzr, x30, [sp, #-16]!
+ 1:
+     ldrb  w0, [x1], #1       /* Load next char */
+diff --git a/nuttx/arch/arm64/src/common/arm64_cpustart.c b/nuttx/arch/arm64/src/common/arm64_cpustart.c
+--- a/nuttx/arch/arm64/src/common/arm64_cpustart.c
++++ b/nuttx/arch/arm64/src/common/arm64_cpustart.c
+@@ -151,10 +151,11 @@
+ }
+ #endif
+ 
+-static void arm64_start_cpu(int cpu_num)
++static int arm64_start_cpu(int cpu_num)
+ {
+ #ifdef CONFIG_ARM64_PSCI
+   uint64_t cpu_mpid = arm64_get_mpid(cpu_num);
++  int ret;
+ #endif
+ 
+ #ifdef CONFIG_SCHED_INSTRUMENTATION
+@@ -165,15 +166,18 @@
+ #endif
+ 
+ #ifdef CONFIG_ARM64_PSCI
+-  if (psci_cpu_on(cpu_mpid, (uint64_t)__start))
++  ret = psci_cpu_on(cpu_mpid, (uint64_t)__start);
++  if (ret != 0)
+     {
+       serr("Failed to boot secondary CPU core %d (MPID:%#lx)\n", cpu_num,
+            cpu_mpid);
+-      return;
++      return ret;
+     }
+ #else
+   UP_SEV();
+ #endif
++
++  return 0;
+ }
+ 
+ /****************************************************************************
+@@ -218,9 +222,7 @@
+   sched_note_cpu_start(this_task(), cpu);
+ #endif
+ 
+-  arm64_start_cpu(cpu);
+-
+-  return 0;
++  return arm64_start_cpu(cpu);
+ }
+ 
+ /* the C entry of secondary cores */
+diff --git a/nuttx/sched/init/nx_smpstart.c b/nuttx/sched/init/nx_smpstart.c
+--- a/nuttx/sched/init/nx_smpstart.c
++++ b/nuttx/sched/init/nx_smpstart.c
+@@ -40,6 +40,10 @@
+ #include "group/group.h"
+ #include "sched/sched.h"
+ #include "init/init.h"
++
++#ifdef CONFIG_A733_BOOT_DIAGNOSTICS
++extern void a733_boot_value(const char *stage, uint64_t value);
++#endif
+ 
+ #ifdef CONFIG_SMP
+ 
+@@ -122,7 +126,13 @@
+ 
+   /* Flush dcache before start other CPUs. */
+ 
++#ifdef CONFIG_A733_BOOT_DIAGNOSTICS
++  a733_boot_value("SMP flush begin", CONFIG_SMP_NCPUS);
++#endif
+   up_flush_dcache_all();
++#ifdef CONFIG_A733_BOOT_DIAGNOSTICS
++  a733_boot_value("SMP flush done", 0);
++#endif
+ 
+   /* Start all of the other CPUs.  CPU0 is already running. */
+ 
+@@ -130,7 +140,13 @@
+     {
+       /* Start the CPU */
+ 
++#ifdef CONFIG_A733_BOOT_DIAGNOSTICS
++      a733_boot_value("SMP request cpu", cpu);
++#endif
+       ret = up_cpu_start(cpu);
++#ifdef CONFIG_A733_BOOT_DIAGNOSTICS
++      a733_boot_value("SMP return", (int64_t)ret);
++#endif
+       if (ret < 0)
+         {
+           serr("ERROR: Failed to start CPU%d: %d\n", cpu, ret);
+diff --git a/nuttx/libs/libc/misc/lib_cxx_initialize.c b/nuttx/libs/libc/misc/lib_cxx_initialize.c
+--- a/nuttx/libs/libc/misc/lib_cxx_initialize.c
++++ b/nuttx/libs/libc/misc/lib_cxx_initialize.c
+@@ -34,6 +34,10 @@
+ #include <stdlib.h>
+ 
+ #include "libc.h"
++
++#ifdef CONFIG_A733_BOOT_DIAGNOSTICS
++extern void a733_boot_value(const char *stage, uint64_t value);
++#endif
+ 
+ /****************************************************************************
+  * External References
+@@ -87,7 +91,13 @@
+       if (initializer)
+         {
+           sinfo("Calling %p\n", initializer);
++#ifdef CONFIG_A733_BOOT_DIAGNOSTICS
++          a733_boot_value("CTOR enter", (uintptr_t)initializer);
++#endif
+           initializer();
++#ifdef CONFIG_A733_BOOT_DIAGNOSTICS
++          a733_boot_value("CTOR done index", initp - _sinit);
++#endif
+         }
+     }
+ #  endif

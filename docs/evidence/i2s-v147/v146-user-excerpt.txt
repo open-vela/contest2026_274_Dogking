@@ -1,0 +1,26 @@
+User-provided serial excerpt, received 2026-10-15. Not an assistant SSH run.
+Boot output was supplied separately by the user and reached NSH.
+
+nsh> echo init > /dev/a733-audio
+nsh> time "echo icscapture=5000 > /dev/a733-audio"
+
+5.1067 sec
+nsh> cat /dev/a733-audio
+A733 I2S0 MAX98357A/INMP441/ICS43434 acceptance driver v146
+state=ready initialized=1 pll-locked=1 last=-5 last-op=ics43434 probes=4 tones=0 captures=0 timeouts=0 samples=480000
+stream-proof: tx-count=0 rx-count=244801 capture-nonzero=238991 raw-nonzero=239953 warmup=9600 first-raw=00006ac0 last-raw=00000000 capture-min=-4895 capture-max=5766
+capture-proof: mode=pcm16 slot=2(stereo) status=-5 committed=0 requested=5000 ms elapsed=5100 ms target-rx=489600 consumed-rx=489600 hw-rx=244801 fifo-peak=2 intsta=00000011
+capture-config: bclk-polarity=0 lrck-polarity=0 PB8-pull=2(down) fmt0=00001f57 rxmap3=00000100 pb-pull=00160005
+capture-stats: units=S16 zero=241009 sign-transitions=163748 sum-square=22148514553 raw-low55=0 raw-lowaa=0
+capture-output: /data/ics43434-stereo.wav
+capture-profile: mic=ICS43434 rx-channels=2 file-channels=2 chcfg=00000011 rxchsel=00110000; transport status is NOT acoustic acceptance
+capture-plan: rate=48000 slots=2 sample=24 slot=32 module=24.576MHz bclk=3.072MHz mclk=off
+ccu: pll-audio1=f9147f00 module=82000018 bus-reset=00010001
+regs: ctl=00000000 fmt0=00001f57 fifoctl=00000005 fifosta=10800080 clkdiv=00000050 chcfg=00000011 rev=00021000
+channel-map: txsel=00110003 txmap=00000000/00000010 rxsel=00110000 rxmap=00000000/00000000/00000000/00000100
+pins: PB5/BCLK=pin12 PB6/LRCK=pin35 PB7/DOUT0=pin40 PB8/DIN0=pin38 mux=3 cfg0=333f7777 cfg1=00000223 pull=00160005
+nsh> ls -l /data/ics43434-stereo.wav
+nsh: ls: stat failed: 2
+nsh>
+
+User clarified logic analyzer mapping: D0=LRCLK, D1=BCLK, D2=SD.

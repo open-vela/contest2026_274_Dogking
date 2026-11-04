@@ -1,0 +1,29 @@
+{
+  "result": "V214_SOFTWARE_IMAGE_VERIFIED_NOT_BOARD_ACCEPTED",
+  "firmware_commit": "0890208eede1fc819bd61a84a890b0ed597f280b",
+  "image": "openvela-a733-cubie-a7z-sd-v214-voice-resident-candidate.img",
+  "bytes": 2147483648,
+  "sha256": "c9569622ad928b0730bd79c8be6f17156249b5f5f9e4e858ea3aa1df9ce0bfa6",
+  "kernel_sha256": "e2da629baee4fd6418784dc59c1601029b9963efb7bf6342576bff0f990ac1a5",
+  "kernel_bytes": 7172800,
+  "regressions": 17,
+  "arm_units": 17,
+  "microphone_hardware_measured": false,
+  "physical_audio_onset_measured": false,
+  "latency_3_to_5_seconds_accepted": false,
+  "full_duplex": false,
+  "boot_recording": false,
+  "old_v213_preserved": true,
+  "physical_disks_written": false,
+  "ufs_written": false,
+  "sealed_directory": "out/v214-release-20261030",
+  "recovery_directory": "out/checkpoints/a733-v214-voice-resident-recovery-20261030",
+  "references": {
+    "full-link-summary.json": "423ddafb16d6206be424ca9b9a1a88f485346136e187cc9a893ab58e10d81c9b",
+    "host-arm-summary.json": "a0b1be4a6453e4747d580881b4fe505355979aeec0dfed18ff08249d4956706c",
+    "monitor-driver-host.log": "b4cbc845ccc4a94e4bbdd2645e587a8d72a733ceb323bb19466dba14209835a1",
+    "package-summary.json": "091cf211e9878a2367eca7e281acdc5330f27692ef30bd9f3360554d33efefb6",
+    "resident-host.log": "6cfd40d649e7cda4342cafc2ed0fe6e9ea19f07d7bd0c48a88bbead327bd6892",
+    "sdk-restored.json": "1b6332b1a535b0e1649de8ca3ae180ca2c1e12262f7a55c919ef8ea788734bb7"
+  }
+}

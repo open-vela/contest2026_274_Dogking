@@ -1,0 +1,6 @@
+PASS real path validator: old /data preserved; exactly two RAM files only with LIVE config
+PASS real path validator: old /data preserved; exactly two RAM files only with LIVE config
+fs_mount.c 402d5dcc31a60c62fd400e2baac166d349aba7871450fff4c008b30db6478890
+fs_inodereserve.c 7821bc31ecc3d1adf198c6f9d28930760e995ea089c41af9e768dfffb586a5f4
+fs_umount2.c 84314e63ef0872e506c689fe07f3dd51febb475b6c0b3906043d2097258c7a34
+PASS SDK pseudofs-root mount / automatic unmount-inode-removal source contracts; no real mount claimed

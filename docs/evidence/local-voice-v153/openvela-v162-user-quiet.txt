@@ -1,0 +1,345 @@
+N2
+N3
+N4
+R eNR--- 5e   --aRRR
+yy oy  deaaeyaeaB da0dadddyydyt
+ toB    t tB tto oo1otBo
+Stt BBooB otoo BoBooBooo 2toott
+necoodo   SctSSSB3 eeeeSocScc
+n PCC dCcen nncnAodd0dondC  d
+PPC1    UC PACP
+-U  PUUUU
+U
+
+
+
+--B-A-
+ 2  - o
+Bo -BBoo toB
+f           o oBooBooottof4tto rt
+r    moLfrrmr roo o6ofrmEmmom
+ E7LLLL NEmE1 EEL
+L-1    1E1
+
+1
+ X
+
+0B--
+    -
+ o   BBoBB
+          oooot oooottttto    tttt Coooo     rCCCC    urnrrrutuuuinnnnttttmieiiim mmmefeee  o  fffrfooo orrrOr    S OOOOSSSSI  n  IIiIInnntniiiiittttzeeeiiaaaiallllziieiizzz
+    e
+
+
+
+n Boot to-  C Brouotnt timoe C f roru nOtiS meIn ifotira OliSz Ie
+ itialize
+N8
+X1
+PR
+PR
+PR
+
+NuttShell (NSH)
+nsh> RI
+RX
+
+nsh> aipet audio record 2000
+aipet audio: recording=2000 ms gain=x5; local only, no upload
+record saved: /data/aipet-record.wav (48k mono S16)
+aipet audio: record result=0
+nsh> aipet audio volume 25
+audio: saved; applies next operation and survives reboot.
+aipet audio: volume result=0
+nsh> aipet audio play /data/aipet-record.wav
+aipet audio: play result=0
+nsh> aipet audio record 2000
+aipet audio: recording=2000 ms gain=x5; local only, no upload
+record saved: /data/aipet-record.wav (48k mono S16)
+aipet audio: record result=0
+nsh> cat /dev/a733-audio
+A733 I2S0 MAX98357A/INMP441/ICS43434 acceptance driver v162
+playback: status=0 plays=1 volume=25% rate=48000 channels=1 frames=96000 sent=96000 elapsed=2000 ms intsta=00000050
+state=ready initialized=1 pll-locked=1 last=0 last-op=icsvoice probes=5 tones=0 captures=2 timeouts=0 samples=96000
+stream-proof: tx-count=96001 rx-count=100801 capture-nonzero=95827 raw-nonzero=95988 warmup=9600 first-raw=000076f0 last-raw=00002130 capture-min=-1480 capture-max=1325
+capture-proof: mode=pcm16 slot=0(left) status=0 committed=0 requested=2000 ms elapsed=2100 ms target-rx=201600 consumed-rx=201600 hw-rx=100801 fifo-peak=2 intsta=00000051
+capture-config: bclk-polarity=0 lrck-polarity=0 PB8-pull=2(down) fmt0=00001f57 rxmap3=00000100 pb-pull=00160005
+capture-stats: units=S16 zero=173 sign-transitions=1404 sum-square=12912998500 raw-low55=0 raw-lowaa=0
+capture-output: RAM (no file)
+processing: voice=1 applied=1 gain=5 clipped=0 input-min=-296 input-max=265; capture-stats/min/max describe output
+capture-profile: mic=ICS43434 rx-channels=2 file-channels=1 chcfg=00000011 rxchsel=00110000; transport status is NOT acoustic acceptance
+counter-policy=frame-candidate expected-hw=100800 actual-hw=100801 counter-status=0 points=3 FIFO-words/HW=9600/4801,105600/52801,201600/100801,0/0,0/0,0/0
+capture-plan: rate=48000 slots=2 sample=24 slot=32 module=24.576MHz bclk=3.072MHz mclk=off
+ccu: pll-audio1=f9147f00 module=82000018 bus-reset=00010001
+regs: ctl=00000000 fmt0=00001f57 fifoctl=00000005 fifosta=10800080 clkdiv=00000050 chcfg=00000011 rev=00021000
+channel-map: txsel=00110003 txmap=00000000/00000010 rxsel=00110000 rxmap=00000000/00000000/00000000/00000100
+pins: PB5/BCLK=pin12 PB6/LRCK=pin35 PB7/DOUT0=pin40 PB8/DIN0=pin38; PB5/6/8 mux=3 PB7=GPIO-low idle/RX, I2S TX; cfg0=133f7777 cfg1=00000223 pull=00160005 data=00000000
+max98357a: BCLK=PB5 LRC=PB6 DIN=PB7; SD_MODE must be high; OUTP/OUTN are differential
+inmp441: SCK=PB5 WS=PB6 SD=PB8 VDD=3.3V; default-slot=right(1)
+ics43434: SCK=PB5 WS=PB6 SD=PB8; dual-slot, no LR strap assumed; bare VDD=1.65..3.63V; combined-module VCC per vendor, NOT bare VDD
+ics: icscapture=<ms> (stereo) | icsleft=<ms> | icsright=<ms> | icsraw=<ms> (stereo S24 in S32); 100..10000 ms
+voice: icsvoice=<ms>[,<gain:1..16>] (left mono S16, default x5; /data/ics43434-voice.wav; no AGC)
+speaker: play=/data/file.wav | volume=0..100 (default 25%); PCM16 WAV, max10s
+control: probe | init | tone=<hz>,<ms> (official S16 path) | tone32=<hz>,<ms> (legacy compare) | capture=<ms> (default right) | captureleft=<ms> | captureright=<ms> | capture32=<ms> | off
+matrix: capturecfg=<slot:0/1>,<bclk:0/1>,<pull:0/2>,<ms:100..10000>; each config has its own WAV; repeating it replaces that config only
+capture-files: /data/inmp441.wav (48kHz mono signed-16 WAV), /data/inmp441-raw32.bin (sign-extended S24 FIFO words)
+nsh> aipet audio status
+audio: output=uart volume=25% mic-gain=x5 node=present config=/data/ai_agent/config/audio.conf
+official: ASR=not-ready TTS=not-ready; local ASR/LLM unchanged; no background recording
+nsh> aipet audio gain 5
+audio: saved; applies next operation and survives reboot.
+aipet audio: gain result=0
+nsh> time "aipet audio record 2000"
+aipet audio: recording=2000 ms gain=x5; local only, no upload
+record saved: /data/aipet-record.wav (48k mono S16)
+aipet audio: record result=0
+
+2.2585 sec
+nsh> aipet audio volume 25
+audio: saved; applies next operation and survives reboot.
+aipet audio: volume result=0
+nsh> aipet audio play /data/aipet-record.wav
+aipet audio: play result=0
+nsh> cat /dev/a733-audio
+A733 I2S0 MAX98357A/INMP441/ICS43434 acceptance driver v162
+playback: status=0 plays=2 volume=25% rate=48000 channels=1 frames=96000 sent=96000 elapsed=2000 ms intsta=00000050
+state=ready initialized=1 pll-locked=1 last=0 last-op=play probes=11 tones=0 captures=3 timeouts=0 samples=96000
+stream-proof: tx-count=96001 rx-count=100801 capture-nonzero=95769 raw-nonzero=95989 warmup=9600 first-raw=000075f0 last-raw=ffff99d0 capture-min=-2100 capture-max=1355
+capture-proof: mode=pcm16 slot=0(left) status=0 committed=0 requested=2000 ms elapsed=2100 ms target-rx=201600 consumed-rx=201600 hw-rx=100801 fifo-peak=2 intsta=00000051
+capture-config: bclk-polarity=0 lrck-polarity=0 PB8-pull=2(down) fmt0=00001f57 rxmap3=00000100 pb-pull=00160005
+capture-stats: units=S16 zero=231 sign-transitions=1719 sum-square=13692116775 raw-low55=0 raw-lowaa=0
+capture-output: RAM (no file)
+processing: voice=1 applied=1 gain=5 clipped=0 input-min=-420 input-max=271; capture-stats/min/max describe output
+capture-profile: mic=ICS43434 rx-channels=2 file-channels=1 chcfg=00000011 rxchsel=00110000; transport status is NOT acoustic acceptance
+counter-policy=frame-candidate expected-hw=100800 actual-hw=100801 counter-status=0 points=3 FIFO-words/HW=9600/4801,105600/52801,201600/100801,0/0,0/0,0/0
+capture-plan: rate=48000 slots=2 sample=24 slot=32 module=24.576MHz bclk=3.072MHz mclk=off
+ccu: pll-audio1=f9147f00 module=82000018 bus-reset=00010001
+regs: ctl=00000000 fmt0=00001f37 fifoctl=00000005 fifosta=10800080 clkdiv=00000050 chcfg=00000011 rev=00021000
+channel-map: txsel=00110003 txmap=00000000/00000010 rxsel=00110000 rxmap=00000000/00000000/00000000/00000100
+pins: PB5/BCLK=pin12 PB6/LRCK=pin35 PB7/DOUT0=pin40 PB8/DIN0=pin38; PB5/6/8 mux=3 PB7=GPIO-low idle/RX, I2S TX; cfg0=133f7777 cfg1=00000223 pull=00160005 data=00000000
+max98357a: BCLK=PB5 LRC=PB6 DIN=PB7; SD_MODE must be high; OUTP/OUTN are differential
+inmp441: SCK=PB5 WS=PB6 SD=PB8 VDD=3.3V; default-slot=right(1)
+ics43434: SCK=PB5 WS=PB6 SD=PB8; dual-slot, no LR strap assumed; bare VDD=1.65..3.63V; combined-module VCC per vendor, NOT bare VDD
+ics: icscapture=<ms> (stereo) | icsleft=<ms> | icsright=<ms> | icsraw=<ms> (stereo S24 in S32); 100..10000 ms
+voice: icsvoice=<ms>[,<gain:1..16>] (left mono S16, default x5; /data/ics43434-voice.wav; no AGC)
+speaker: play=/data/file.wav | volume=0..100 (default 25%); PCM16 WAV, max10s
+control: probe | init | tone=<hz>,<ms> (official S16 path) | tone32=<hz>,<ms> (legacy compare) | capture=<ms> (default right) | captureleft=<ms> | captureright=<ms> | capture32=<ms> | off
+matrix: capturecfg=<slot:0/1>,<bclk:0/1>,<pull:0/2>,<ms:100..10000>; each config has its own WAV; repeating it replaces that config only
+capture-files: /data/inmp441.wav (48kHz mono signed-16 WAV), /data/inmp441-raw32.bin (sign-extended S24 FIFO words)
+nsh> time "aipet audio record 2000"
+aipet audio: recording=2000 ms gain=x5; local only, no upload
+record saved: /data/aipet-record.wav (48k mono S16)
+aipet audio: record result=0
+
+2.2505 sec
+nsh> aipet audio play /data/aipet-record.wav
+aipet audio: play result=0
+nsh> cat /dev/a733-audio
+A733 I2S0 MAX98357A/INMP441/ICS43434 acceptance driver v162
+playback: status=0 plays=3 volume=25% rate=48000 channels=1 frames=96000 sent=96000 elapsed=2000 ms intsta=00000050
+state=ready initialized=1 pll-locked=1 last=0 last-op=play probes=17 tones=0 captures=4 timeouts=0 samples=96000
+stream-proof: tx-count=96001 rx-count=100801 capture-nonzero=95804 raw-nonzero=95991 warmup=9600 first-raw=00006fb0 last-raw=ffffbcf0 capture-min=-20870 capture-max=19670
+capture-proof: mode=pcm16 slot=0(left) status=0 committed=0 requested=2000 ms elapsed=2100 ms target-rx=201600 consumed-rx=201600 hw-rx=100801 fifo-peak=2 intsta=00000051
+capture-config: bclk-polarity=0 lrck-polarity=0 PB8-pull=2(down) fmt0=00001f57 rxmap3=00000100 pb-pull=00160005
+capture-stats: units=S16 zero=196 sign-transitions=1713 sum-square=232415295275 raw-low55=0 raw-lowaa=0
+capture-output: RAM (no file)
+processing: voice=1 applied=1 gain=5 clipped=0 input-min=-4174 input-max=3934; capture-stats/min/max describe output
+capture-profile: mic=ICS43434 rx-channels=2 file-channels=1 chcfg=00000011 rxchsel=00110000; transport status is NOT acoustic acceptance
+counter-policy=frame-candidate expected-hw=100800 actual-hw=100801 counter-status=0 points=3 FIFO-words/HW=9600/4801,105600/52801,201600/100801,0/0,0/0,0/0
+capture-plan: rate=48000 slots=2 sample=24 slot=32 module=24.576MHz bclk=3.072MHz mclk=off
+ccu: pll-audio1=f9147f00 module=82000018 bus-reset=00010001
+regs: ctl=00000000 fmt0=00001f37 fifoctl=00000005 fifosta=10800080 clkdiv=00000050 chcfg=00000011 rev=00021000
+channel-map: txsel=00110003 txmap=00000000/00000010 rxsel=00110000 rxmap=00000000/00000000/00000000/00000100
+pins: PB5/BCLK=pin12 PB6/LRCK=pin35 PB7/DOUT0=pin40 PB8/DIN0=pin38; PB5/6/8 mux=3 PB7=GPIO-low idle/RX, I2S TX; cfg0=133f7777 cfg1=00000223 pull=00160005 data=00000000
+max98357a: BCLK=PB5 LRC=PB6 DIN=PB7; SD_MODE must be high; OUTP/OUTN are differential
+inmp441: SCK=PB5 WS=PB6 SD=PB8 VDD=3.3V; default-slot=right(1)
+ics43434: SCK=PB5 WS=PB6 SD=PB8; dual-slot, no LR strap assumed; bare VDD=1.65..3.63V; combined-module VCC per vendor, NOT bare VDD
+ics: icscapture=<ms> (stereo) | icsleft=<ms> | icsright=<ms> | icsraw=<ms> (stereo S24 in S32); 100..10000 ms
+voice: icsvoice=<ms>[,<gain:1..16>] (left mono S16, default x5; /data/ics43434-voice.wav; no AGC)
+speaker: play=/data/file.wav | volume=0..100 (default 25%); PCM16 WAV, max10s
+control: probe | init | tone=<hz>,<ms> (official S16 path) | tone32=<hz>,<ms> (legacy compare) | capture=<ms> (default right) | captureleft=<ms> | captureright=<ms> | capture32=<ms> | off
+matrix: capturecfg=<slot:0/1>,<bclk:0/1>,<pull:0/2>,<ms:100..10000>; each config has its own WAV; repeating it replaces that config only
+capture-files: /data/inmp441.wav (48kHz mono signed-16 WAV), /data/inmp441-raw32.bin (sign-extended S24 FIFO words)
+nsh> npu info
+A733 VIP2 ABI v4 CID=1000003b cores=1 page=4096 pool=2093056 free=1654784 buffers=16 timeout=5000 ms
+nsh> free
+      total       used       free    maxused    maxfree  nused  nfree name
+ 4239110144      63456 4239046688     462640 4143972320     98      4 Umem
+nsh> time "aipet audio kwsmic /data/npu/voice 5000"
+npukws-input: recording=5000 ms gain=x5; local RAM only; record THEN infer; no file/upload/actions
+npukws-input: buffered frontend PCM=16000/mono/S16 frames=500 bins=80; capture already stopped; NOT live streaming
+npukws-input: EXPERIMENTAL buffered-input; unknown native outputs have NO golden accuracy proof; no Agent/cloud/physical actions
+npukws: cpu-policy=cpu6 clean=bounded validation=all-native-CRCs driver-crc=slice8 app-crc=slice8
+npukws: resident=3 cold-prepare-us=1402384; buffered features only; no cloud/ASR/Agent actions
+npukws profile[0]: validate/rebuild/map/clean/hw/check/commit/restore/total-us=1142/995693/4822/22962/1265299/119393/2322/15/2411668 clean-bytes=242319360 tables=1966080 rebuilt=242319360 app-check-us=92615
+npukws profile[1]: validate/rebuild/map/clean/hw/check/commit/restore/total-us=16/2386/57/64/1077/97/1/0/3698 clean-bytes=606208 tables=32768 rebuilt=606208 app-check-us=21
+npukws profile[2]: validate/rebuild/map/clean/hw/check/commit/restore/total-us=1317/90123/6494/3230/93095/6473/55/61/200888 clean-bytes=24576000 tables=3932160 rebuilt=24576000 app-check-us=2539
+npukws timing: chunks=30 completed=30 sum-us=2727622 p50-us=90764 p95-us=91057 max-us=94469 over-160ms=0 search-us=6381 affinity-restored=1
+npukws-input: status=0 calls=151 candidates=0 known=1 unknown=150 chain=36b1139e feature-crc=261ef442 frames=500 unused-tail=7 elapsed-us=4221811; resident released; acoustic accuracy NOT accepted
+aipet audio: kwsmic result=0
+
+9.7010 sec
+nsh> cat /dev/a733-audio
+A733 I2S0 MAX98357A/INMP441/ICS43434 acceptance driver v162
+playback: status=0 plays=3 volume=25% rate=48000 channels=1 frames=96000 sent=96000 elapsed=2000 ms intsta=00000050
+state=ready initialized=1 pll-locked=1 last=0 last-op=icsvoice probes=22 tones=0 captures=5 timeouts=0 samples=240000
+stream-proof: tx-count=96001 rx-count=244801 capture-nonzero=239422 raw-nonzero=239969 warmup=9600 first-raw=00005170 last-raw=ffffeba0 capture-min=-1595 capture-max=1755
+capture-proof: mode=pcm16 slot=0(left) status=0 committed=0 requested=5000 ms elapsed=5100 ms target-rx=489600 consumed-rx=489600 hw-rx=244801 fifo-peak=2 intsta=00000051
+capture-config: bclk-polarity=0 lrck-polarity=0 PB8-pull=2(down) fmt0=00001f57 rxmap3=00000100 pb-pull=00160005
+capture-stats: units=S16 zero=578 sign-transitions=4303 sum-square=20116486850 raw-low55=0 raw-lowaa=0
+capture-output: RAM (no file)
+processing: voice=1 applied=1 gain=5 clipped=0 input-min=-319 input-max=351; capture-stats/min/max describe output
+capture-profile: mic=ICS43434 rx-channels=2 file-channels=1 chcfg=00000011 rxchsel=00110000; transport status is NOT acoustic acceptance
+counter-policy=frame-candidate expected-hw=244800 actual-hw=244801 counter-status=0 points=6 FIFO-words/HW=9600/4801,105600/52801,201600/100801,297600/148801,393600/196801,489600/244801
+capture-plan: rate=48000 slots=2 sample=24 slot=32 module=24.576MHz bclk=3.072MHz mclk=off
+ccu: pll-audio1=f9147f00 module=82000018 bus-reset=00010001
+regs: ctl=00000000 fmt0=00001f57 fifoctl=00000005 fifosta=10800080 clkdiv=00000050 chcfg=00000011 rev=00021000
+channel-map: txsel=00110003 txmap=00000000/00000010 rxsel=00110000 rxmap=00000000/00000000/00000000/00000100
+pins: PB5/BCLK=pin12 PB6/LRCK=pin35 PB7/DOUT0=pin40 PB8/DIN0=pin38; PB5/6/8 mux=3 PB7=GPIO-low idle/RX, I2S TX; cfg0=133f7777 cfg1=00000223 pull=00160005 data=00000000
+max98357a: BCLK=PB5 LRC=PB6 DIN=PB7; SD_MODE must be high; OUTP/OUTN are differential
+inmp441: SCK=PB5 WS=PB6 SD=PB8 VDD=3.3V; default-slot=right(1)
+ics43434: SCK=PB5 WS=PB6 SD=PB8; dual-slot, no LR strap assumed; bare VDD=1.65..3.63V; combined-module VCC per vendor, NOT bare VDD
+ics: icscapture=<ms> (stereo) | icsleft=<ms> | icsright=<ms> | icsraw=<ms> (stereo S24 in S32); 100..10000 ms
+voice: icsvoice=<ms>[,<gain:1..16>] (left mono S16, default x5; /data/ics43434-voice.wav; no AGC)
+speaker: play=/data/file.wav | volume=0..100 (default 25%); PCM16 WAV, max10s
+control: probe | init | tone=<hz>,<ms> (official S16 path) | tone32=<hz>,<ms> (legacy compare) | capture=<ms> (default right) | captureleft=<ms> | captureright=<ms> | capture32=<ms> | off
+matrix: capturecfg=<slot:0/1>,<bclk:0/1>,<pull:0/2>,<ms:100..10000>; each config has its own WAV; repeating it replaces that config only
+capture-files: /data/inmp441.wav (48kHz mono signed-16 WAV), /data/inmp441-raw32.bin (sign-extended S24 FIFO words)
+nsh> npu info
+A733 VIP2 ABI v4 CID=1000003b cores=1 page=4096 pool=2093056 free=1654784 buffers=16 timeout=5000 ms
+nsh> free
+      total       used       free    maxused    maxfree  nused  nfree name
+ 4239110144      63456 4239046688   11482608 4143972320     98      4 Umem
+nsh> time "aipet audio kwsmic /data/npu/voice 5000"
+npukws-input: recording=5000 ms gain=x5; local RAM only; record THEN infer; no file/upload/actions
+npukws-input: buffered frontend PCM=16000/mono/S16 frames=500 bins=80; capture already stopped; NOT live streaming
+npukws-input: EXPERIMENTAL buffered-input; unknown native outputs have NO golden accuracy proof; no Agent/cloud/physical actions
+npukws: cpu-policy=cpu6 clean=bounded validation=all-native-CRCs driver-crc=slice8 app-crc=slice8
+npukws: resident=3 cold-prepare-us=1401763; buffered features only; no cloud/ASR/Agent actions
+npukws profile[0]: validate/rebuild/map/clean/hw/check/commit/restore/total-us=1136/995337/4823/22968/1266993/119458/2329/20/2413074 clean-bytes=242319360 tables=1966080 rebuilt=242319360 app-check-us=92475
+npukws profile[1]: validate/rebuild/map/clean/hw/check/commit/restore/total-us=115/26085/630/719/11836/1040/7/4/40441 clean-bytes=6668288 tables=360448 rebuilt=6668288 app-check-us=160
+npukws profile[2]: validate/rebuild/map/clean/hw/check/commit/restore/total-us=3697/284850/20859/10481/299335/20565/207/162/640275 clean-bytes=79052800 tables=12648448 rebuilt=79052800 app-check-us=7807
+npukws timing: chunks=30 completed=30 sum-us=3225818 p50-us=94495 p95-us=156575 max-us=162279 over-160ms=1 search-us=19732 affinity-restored=1
+npukws-input candidate: word=0 name=你好小瑞 frame=35 probability=0.172592491; diagnostic only
+npukws-input: status=0 calls=427 candidates=1 known=11 unknown=416 chain=0c0f889b feature-crc=a16fe30b frames=500 unused-tail=7 elapsed-us=4730046; resident released; acoustic accuracy NOT accepted
+aipet audio: kwsmic result=0
+
+10.2100 sec
+nsh> cat /dev/a733-audio
+A733 I2S0 MAX98357A/INMP441/ICS43434 acceptance driver v162
+playback: status=0 plays=3 volume=25% rate=48000 channels=1 frames=96000 sent=96000 elapsed=2000 ms intsta=00000050
+state=ready initialized=1 pll-locked=1 last=0 last-op=icsvoice probes=27 tones=0 captures=6 timeouts=0 samples=240000
+stream-proof: tx-count=96001 rx-count=244801 capture-nonzero=239787 raw-nonzero=239980 warmup=9600 first-raw=00006a80 last-raw=00007db0 capture-min=-32768 capture-max=32767
+capture-proof: mode=pcm16 slot=0(left) status=0 committed=0 requested=5000 ms elapsed=5100 ms target-rx=489600 consumed-rx=489600 hw-rx=244801 fifo-peak=2 intsta=00000051
+capture-config: bclk-polarity=0 lrck-polarity=0 PB8-pull=2(down) fmt0=00001f57 rxmap3=00000100 pb-pull=00160005
+capture-stats: units=S16 zero=213 sign-transitions=4236 sum-square=3327823309348 raw-low55=0 raw-lowaa=0
+capture-output: RAM (no file)
+processing: voice=1 applied=1 gain=5 clipped=1022 input-min=-32768 input-max=32767; capture-stats/min/max describe output
+capture-profile: mic=ICS43434 rx-channels=2 file-channels=1 chcfg=00000011 rxchsel=00110000; transport status is NOT acoustic acceptance
+counter-policy=frame-candidate expected-hw=244800 actual-hw=244801 counter-status=0 points=6 FIFO-words/HW=9600/4801,105600/52801,201600/100801,297600/148801,393600/196801,489600/244801
+capture-plan: rate=48000 slots=2 sample=24 slot=32 module=24.576MHz bclk=3.072MHz mclk=off
+ccu: pll-audio1=f9147f00 module=82000018 bus-reset=00010001
+regs: ctl=00000000 fmt0=00001f57 fifoctl=00000005 fifosta=10800080 clkdiv=00000050 chcfg=00000011 rev=00021000
+channel-map: txsel=00110003 txmap=00000000/00000010 rxsel=00110000 rxmap=00000000/00000000/00000000/00000100
+pins: PB5/BCLK=pin12 PB6/LRCK=pin35 PB7/DOUT0=pin40 PB8/DIN0=pin38; PB5/6/8 mux=3 PB7=GPIO-low idle/RX, I2S TX; cfg0=133f7777 cfg1=00000223 pull=00160005 data=00000000
+max98357a: BCLK=PB5 LRC=PB6 DIN=PB7; SD_MODE must be high; OUTP/OUTN are differential
+inmp441: SCK=PB5 WS=PB6 SD=PB8 VDD=3.3V; default-slot=right(1)
+ics43434: SCK=PB5 WS=PB6 SD=PB8; dual-slot, no LR strap assumed; bare VDD=1.65..3.63V; combined-module VCC per vendor, NOT bare VDD
+ics: icscapture=<ms> (stereo) | icsleft=<ms> | icsright=<ms> | icsraw=<ms> (stereo S24 in S32); 100..10000 ms
+voice: icsvoice=<ms>[,<gain:1..16>] (left mono S16, default x5; /data/ics43434-voice.wav; no AGC)
+speaker: play=/data/file.wav | volume=0..100 (default 25%); PCM16 WAV, max10s
+control: probe | init | tone=<hz>,<ms> (official S16 path) | tone32=<hz>,<ms> (legacy compare) | capture=<ms> (default right) | captureleft=<ms> | captureright=<ms> | capture32=<ms> | off
+matrix: capturecfg=<slot:0/1>,<bclk:0/1>,<pull:0/2>,<ms:100..10000>; each config has its own WAV; repeating it replaces that config only
+capture-files: /data/inmp441.wav (48kHz mono signed-16 WAV), /data/inmp441-raw32.bin (sign-extended S24 FIFO words)
+nsh> npu info
+A733 VIP2 ABI v4 CID=1000003b cores=1 page=4096 pool=2093056 free=1654784 buffers=16 timeout=5000 ms
+nsh> free
+      total       used       free    maxused    maxfree  nused  nfree name
+ 4239110144      63456 4239046688   11482608 4143972320     98      4 Umem
+nsh> time "aipet audio kwsmic /data/npu/voice 5000"
+npukws-input: recording=5000 ms gain=x5; local RAM only; record THEN infer; no file/upload/actions
+npukws-input: buffered frontend PCM=16000/mono/S16 frames=500 bins=80; capture already stopped; NOT live streaming
+npukws-input: EXPERIMENTAL buffered-input; unknown native outputs have NO golden accuracy proof; no Agent/cloud/physical actions
+npukws: cpu-policy=cpu6 clean=bounded validation=all-native-CRCs driver-crc=slice8 app-crc=slice8
+npukws: resident=3 cold-prepare-us=1401839; buffered features only; no cloud/ASR/Agent actions
+npukws profile[0]: validate/rebuild/map/clean/hw/check/commit/restore/total-us=1132/995036/4821/22964/1266495/119416/2325/20/2412222 clean-bytes=242319360 tables=1966080 rebuilt=242319360 app-check-us=92508
+npukws profile[1]: validate/rebuild/map/clean/hw/check/commit/restore/total-us=116/26023/634/722/11835/1036/6/6/40382 clean-bytes=6668288 tables=360448 rebuilt=6668288 app-check-us=155
+npukws profile[2]: validate/rebuild/map/clean/hw/check/commit/restore/total-us=5009/393788/28895/14520/414133/28393/255/257/885419 clean-bytes=109363200 tables=17498112 rebuilt=109363200 app-check-us=10739
+npukws timing: chunks=30 completed=30 sum-us=3479735 p50-us=97897 p95-us=159945 max-us=171378 over-160ms=1 search-us=25397 affinity-restored=1
+npukws-input: status=0 calls=575 candidates=0 known=11 unknown=564 chain=e61eb573 feature-crc=84b670a5 frames=500 unused-tail=7 elapsed-us=4975633; resident released; acoustic accuracy NOT accepted
+aipet audio: kwsmic result=0
+
+10.4552 sec
+nsh> cat /dev/a733-audio
+A733 I2S0 MAX98357A/INMP441/ICS43434 acceptance driver v162
+playback: status=0 plays=3 volume=25% rate=48000 channels=1 frames=96000 sent=96000 elapsed=2000 ms intsta=00000050
+state=ready initialized=1 pll-locked=1 last=0 last-op=icsvoice probes=32 tones=0 captures=7 timeouts=0 samples=240000
+stream-proof: tx-count=96001 rx-count=244801 capture-nonzero=239708 raw-nonzero=239984 warmup=9600 first-raw=000094b0 last-raw=ffffe430 capture-min=-32768 capture-max=32767
+capture-proof: mode=pcm16 slot=0(left) status=0 committed=0 requested=5000 ms elapsed=5100 ms target-rx=489600 consumed-rx=489600 hw-rx=244801 fifo-peak=2 intsta=00000051
+capture-config: bclk-polarity=0 lrck-polarity=0 PB8-pull=2(down) fmt0=00001f57 rxmap3=00000100 pb-pull=00160005
+capture-stats: units=S16 zero=292 sign-transitions=3923 sum-square=688984069774 raw-low55=0 raw-lowaa=0
+capture-output: RAM (no file)
+processing: voice=1 applied=1 gain=5 clipped=296 input-min=-16124 input-max=8395; capture-stats/min/max describe output
+capture-profile: mic=ICS43434 rx-channels=2 file-channels=1 chcfg=00000011 rxchsel=00110000; transport status is NOT acoustic acceptance
+counter-policy=frame-candidate expected-hw=244800 actual-hw=244801 counter-status=0 points=6 FIFO-words/HW=9600/4801,105600/52801,201600/100801,297600/148801,393600/196801,489600/244801
+capture-plan: rate=48000 slots=2 sample=24 slot=32 module=24.576MHz bclk=3.072MHz mclk=off
+ccu: pll-audio1=f9147f00 module=82000018 bus-reset=00010001
+regs: ctl=00000000 fmt0=00001f57 fifoctl=00000005 fifosta=10800080 clkdiv=00000050 chcfg=00000011 rev=00021000
+channel-map: txsel=00110003 txmap=00000000/00000010 rxsel=00110000 rxmap=00000000/00000000/00000000/00000100
+pins: PB5/BCLK=pin12 PB6/LRCK=pin35 PB7/DOUT0=pin40 PB8/DIN0=pin38; PB5/6/8 mux=3 PB7=GPIO-low idle/RX, I2S TX; cfg0=133f7777 cfg1=00000223 pull=00160005 data=00000000
+max98357a: BCLK=PB5 LRC=PB6 DIN=PB7; SD_MODE must be high; OUTP/OUTN are differential
+inmp441: SCK=PB5 WS=PB6 SD=PB8 VDD=3.3V; default-slot=right(1)
+ics43434: SCK=PB5 WS=PB6 SD=PB8; dual-slot, no LR strap assumed; bare VDD=1.65..3.63V; combined-module VCC per vendor, NOT bare VDD
+ics: icscapture=<ms> (stereo) | icsleft=<ms> | icsright=<ms> | icsraw=<ms> (stereo S24 in S32); 100..10000 ms
+voice: icsvoice=<ms>[,<gain:1..16>] (left mono S16, default x5; /data/ics43434-voice.wav; no AGC)
+speaker: play=/data/file.wav | volume=0..100 (default 25%); PCM16 WAV, max10s
+control: probe | init | tone=<hz>,<ms> (official S16 path) | tone32=<hz>,<ms> (legacy compare) | capture=<ms> (default right) | captureleft=<ms> | captureright=<ms> | capture32=<ms> | off
+matrix: capturecfg=<slot:0/1>,<bclk:0/1>,<pull:0/2>,<ms:100..10000>; each config has its own WAV; repeating it replaces that config only
+capture-files: /data/inmp441.wav (48kHz mono signed-16 WAV), /data/inmp441-raw32.bin (sign-extended S24 FIFO words)
+nsh> time "aipet audio kwsmic /data/npu/voice 5000"
+npukws-input: recording=5000 ms gain=x5; local RAM only; record THEN infer; no file/upload/actions
+npukws-input: buffered frontend PCM=16000/mono/S16 frames=500 bins=80; capture already stopped; NOT live streaming
+npukws-input: EXPERIMENTAL buffered-input; unknown native outputs have NO golden accuracy proof; no Agent/cloud/physical actions
+npukws: cpu-policy=cpu6 clean=bounded validation=all-native-CRCs driver-crc=slice8 app-crc=slice8
+npukws: resident=3 cold-prepare-us=1402460; buffered features only; no cloud/ASR/Agent actions
+npukws profile[0]: validate/rebuild/map/clean/hw/check/commit/restore/total-us=1149/999573/4819/22956/1267790/119360/2317/17/2417997 clean-bytes=242319360 tables=1966080 rebuilt=242319360 app-check-us=92600
+npukws profile[1]: validate/rebuild/map/clean/hw/check/commit/restore/total-us=115/26477/631/719/11840/1034/2/2/40828 clean-bytes=6668288 tables=360448 rebuilt=6668288 app-check-us=157
+npukws profile[2]: validate/rebuild/map/clean/hw/check/commit/restore/total-us=3003/226473/16540/8288/237336/16304/173/152/508352 clean-bytes=62668800 tables=10027008 rebuilt=62668800 app-check-us=6220
+npukws timing: chunks=30 completed=30 sum-us=3093483 p50-us=91029 p95-us=160507 max-us=165537 over-160ms=3 search-us=15860 affinity-restored=1
+npukws-input candidate: word=0 name=你好小瑞 frame=47 probability=0.171474457; diagnostic only
+npukws-input: status=0 calls=347 candidates=1 known=11 unknown=336 chain=65bdbd06 feature-crc=3904b74a frames=500 unused-tail=7 elapsed-us=4598320; resident released; acoustic accuracy NOT accepted
+aipet audio: kwsmic result=0
+
+10.0779 sec
+nsh> cat /dev/a733-audio
+A733 I2S0 MAX98357A/INMP441/ICS43434 acceptance driver v162
+playback: status=0 plays=3 volume=25% rate=48000 channels=1 frames=96000 sent=96000 elapsed=2000 ms intsta=00000050
+state=ready initialized=1 pll-locked=1 last=0 last-op=icsvoice probes=37 tones=0 captures=8 timeouts=0 samples=240000
+stream-proof: tx-count=96001 rx-count=244801 capture-nonzero=239596 raw-nonzero=239975 warmup=9600 first-raw=00005ce0 last-raw=ffffc4b0 capture-min=-32768 capture-max=32767
+capture-proof: mode=pcm16 slot=0(left) status=0 committed=0 requested=5000 ms elapsed=5100 ms target-rx=489600 consumed-rx=489600 hw-rx=244801 fifo-peak=2 intsta=00000051
+capture-config: bclk-polarity=0 lrck-polarity=0 PB8-pull=2(down) fmt0=00001f57 rxmap3=00000100 pb-pull=00160005
+capture-stats: units=S16 zero=404 sign-transitions=6239 sum-square=1694285715781 raw-low55=0 raw-lowaa=0
+capture-output: RAM (no file)
+processing: voice=1 applied=1 gain=5 clipped=619 input-min=-24087 input-max=11094; capture-stats/min/max describe output
+capture-profile: mic=ICS43434 rx-channels=2 file-channels=1 chcfg=00000011 rxchsel=00110000; transport status is NOT acoustic acceptance
+counter-policy=frame-candidate expected-hw=244800 actual-hw=244801 counter-status=0 points=6 FIFO-words/HW=9600/4801,105600/52801,201600/100801,297600/148801,393600/196801,489600/244801
+capture-plan: rate=48000 slots=2 sample=24 slot=32 module=24.576MHz bclk=3.072MHz mclk=off
+ccu: pll-audio1=f9147f00 module=82000018 bus-reset=00010001
+regs: ctl=00000000 fmt0=00001f57 fifoctl=00000005 fifosta=10800080 clkdiv=00000050 chcfg=00000011 rev=00021000
+channel-map: txsel=00110003 txmap=00000000/00000010 rxsel=00110000 rxmap=00000000/00000000/00000000/00000100
+pins: PB5/BCLK=pin12 PB6/LRCK=pin35 PB7/DOUT0=pin40 PB8/DIN0=pin38; PB5/6/8 mux=3 PB7=GPIO-low idle/RX, I2S TX; cfg0=133f7777 cfg1=00000223 pull=00160005 data=00000000
+max98357a: BCLK=PB5 LRC=PB6 DIN=PB7; SD_MODE must be high; OUTP/OUTN are differential
+inmp441: SCK=PB5 WS=PB6 SD=PB8 VDD=3.3V; default-slot=right(1)
+ics43434: SCK=PB5 WS=PB6 SD=PB8; dual-slot, no LR strap assumed; bare VDD=1.65..3.63V; combined-module VCC per vendor, NOT bare VDD
+ics: icscapture=<ms> (stereo) | icsleft=<ms> | icsright=<ms> | icsraw=<ms> (stereo S24 in S32); 100..10000 ms
+voice: icsvoice=<ms>[,<gain:1..16>] (left mono S16, default x5; /data/ics43434-voice.wav; no AGC)
+speaker: play=/data/file.wav | volume=0..100 (default 25%); PCM16 WAV, max10s
+control: probe | init | tone=<hz>,<ms> (official S16 path) | tone32=<hz>,<ms> (legacy compare) | capture=<ms> (default right) | captureleft=<ms> | captureright=<ms> | capture32=<ms> | off
+matrix: capturecfg=<slot:0/1>,<bclk:0/1>,<pull:0/2>,<ms:100..10000>; each config has its own WAV; repeating it replaces that config only
+capture-files: /data/inmp441.wav (48kHz mono signed-16 WAV), /data/inmp441-raw32.bin (sign-extended S24 FIFO words)
+nsh> npu info
+A733 VIP2 ABI v4 CID=1000003b cores=1 page=4096 pool=2093056 free=1654784 buffers=16 timeout=5000 ms
+nsh> free
+      total       used       free    maxused    maxfree  nused  nfree name
+ 4239110144      63456 4239046688   11482608 4143972320     98      4 Umem
+nsh>

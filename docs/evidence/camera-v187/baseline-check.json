@@ -1,0 +1,108 @@
+{
+  "result": "CAMERA_V186_ARM_OBJECTS_AND_SYNTHETIC_TESTS_PASSED",
+  "build": "/mnt/d/My-Program/AI-Agent-Program/GPTsprogram/Openvela/quickly-openvela/cmake_out/cubie-a7z_nsh_v185_general_voice",
+  "files": [
+    {
+      "source": "board/a733-cubie-a7z/openvela-overlay/vendor/allwinnertech/chips/a733/a733_camera_board.c",
+      "source_sha256": "16b13afa323c3e61142d4e2f1056f176be80163aeb10d3588e8702f3d4a2b4cd",
+      "object_sha256": "7663379b230843353b04e7d34e4b8d3c9822e780380f015330685e655478655e",
+      "maximum_stack_frame": 192
+    },
+    {
+      "source": "board/a733-cubie-a7z/openvela-overlay/vendor/allwinnertech/chips/a733/a733_camera_diag.c",
+      "source_sha256": "f2cb086e184acb512d02328e8d8260191d1e32c96ca3c05f642b53572475d62b",
+      "object_sha256": "677420bb22880225ed0b6373a28ad731499d58f5f491036466b6acba1ccb55dd",
+      "maximum_stack_frame": 112
+    },
+    {
+      "source": "board/a733-cubie-a7z/openvela-overlay/vendor/allwinnertech/chips/a733/a733_imx214_probe.c",
+      "source_sha256": "391f6c141afe17f74e55144d520c1d5d077a44d1967ef3430de68d0dd52a5678",
+      "object_sha256": "2e2f9f1e13f2cce015bdd1b55f0d532fcb0eceacfdb66b6180f8c80473cfab00",
+      "maximum_stack_frame": 80
+    },
+    {
+      "source": "board/a733-cubie-a7z/openvela-overlay/vendor/allwinnertech/chips/a733/a733_imx214_twi3.c",
+      "source_sha256": "d4a1fde58a40770047790e257a1b08bacf0deebd8494670f27f3cc606ea954cb",
+      "object_sha256": "289729c4f7da2cc30f7e397385b3c5019e91a25bd703d5fe0076b259dff2f9e8",
+      "maximum_stack_frame": 128
+    },
+    {
+      "source": "board/a733-cubie-a7z/openvela-overlay/vendor/allwinnertech/boards/a733/cubie-a7z/src/a7z_boardinit.c",
+      "source_sha256": "9aa5c0d9e5be521f5e2584d080965a87b9607d20d0d7ac9f2e4ed820de14adc5",
+      "object_sha256": "ef02b3eee4ced7b1c79c4c4d3dc0e713cb81b71479eece43836c67a9e98647ce",
+      "maximum_stack_frame": 64
+    },
+    {
+      "source": "board/a733-cubie-a7z/openvela-overlay/apps/system/a733camera/a733_camera_image.c",
+      "source_sha256": "cd80e7f75b9ef7f3ae3e2a9d59d3a9fae705c5c6efd318eacfdf854eac0da8a6",
+      "object_sha256": "e7a4f25aafa37ba5cb409025f7c226fa06835b0848a38b262c4d705d3447aaa3",
+      "maximum_stack_frame": 224
+    },
+    {
+      "source": "board/a733-cubie-a7z/openvela-overlay/apps/system/a733camera/a733camera_main.c",
+      "source_sha256": "b9bbe63a09616a4dc6cdfed02c4c4ac52247772677570dfe9c9e7bb9b2e584e0",
+      "object_sha256": "eac17c570ced14d5ddcca7972d11529c1e04bf0def2d710892d71d33fabe0230",
+      "maximum_stack_frame": 1840
+    }
+  ],
+  "headers": {
+    "board/a733-cubie-a7z/openvela-overlay/vendor/allwinnertech/chips/a733/a733_camera_board.h": "c759463e8e4f2bbda20223cf4f1f9c70e0227d55e71bb2b95a658451ecbaa467",
+    "board/a733-cubie-a7z/openvela-overlay/vendor/allwinnertech/chips/a733/a733_imx214_probe.h": "86536bd2c69849c70544bf1c44963ad3d923c164b8e24edd54fabc174901ddf7",
+    "board/a733-cubie-a7z/openvela-overlay/vendor/allwinnertech/chips/a733/a733_imx214_twi3.h": "3805c713b69646b0776db8397e001aaa73e0f4f2b5902924f2a96e379058ca2d",
+    "board/a733-cubie-a7z/openvela-overlay/vendor/allwinnertech/chips/a733/include/a733_peripherals.h": "b5a04c9f4ac43564184bde2f7a41436d8be2d5aa89af473db6a6c1f4f19950a2",
+    "board/a733-cubie-a7z/openvela-overlay/apps/include/system/a733_camera_image.h": "3ac8f8950a48b4bec31e37d8d3703e32e3923aee5f50e6dd6c37c6cfccaf9146"
+  },
+  "test_sources": {
+    "tools/camera-host-fixture/arm64_internal.h": "6a8d2f677204f87fd9f82837328e1e20783c299a7c83575ae7d8b3bad4d19c3b",
+    "tools/camera-host-fixture/nuttx/clock.h": "536dad1c75d4608cadba7ded572aa744de7dc743569ed2ce55375d5af464c4c6",
+    "tools/camera-host-fixture/nuttx/config.h": "604da477f5c2aa6196758e52650198faa1c877abd50a98caefa3ddd9b4a845be",
+    "tools/camera-host-fixture/nuttx/fs/fs.h": "98da867cb7e6fe1fca3de4f8befb14c3aba59fc9f521cd768cdce379dadfba9f",
+    "tools/test-a733-camera-board.c": "a26d5e0582cda7b9ecf41f347d9cb1c87ff388aa797433cdb5b4448018b9c75b",
+    "tools/test-a733-camera-board.py": "7444b9d10aeb8068e2686cd14d3ad85fc954dd60b10f4d396de570ab6d647579",
+    "tools/test-a733-camera-cli.py": "6d320a32b01c95cd8f11400f4cfe817d90ec26c7664d2ef91a8dddede2f78a92",
+    "tools/test-a733-camera-diag.c": "57ef390fef835183d1c1a883acb5aa5b1c4eccd31bdf623899922de46bdc17b1",
+    "tools/test-a733-camera-diag.py": "dddd86690cdd456e786be16cc01eba86ba34def21ee97a053c672028c637e5fa",
+    "tools/test-a733-camera-image.c": "eb76e700dc8e7f5cd12aeefe50b7873ac06c5d47cc235a9bdab9d4d9d01dbed9",
+    "tools/test-a733-camera-image.py": "15b58d5a372ef2c58da8793ee1b64dfd2818d4b06c573b878fbc48792a58cd8f",
+    "tools/test-a733-imx214-mode.c": "beb030324bc987782fb9ae91e31646e63ab32e83f21401bb0c89cd4856a33f2a",
+    "tools/test-a733-imx214-mode.py": "83e70c246ba4da8f5e9cb7d768a183b0bd2098fa0117a3eccdfe31ef3c211e05",
+    "tools/test-a733-imx214-probe.c": "77fb0bf7f6c0c231ff94546c324d76baa6cf2b988d4cc0198050a04ee8a72b94",
+    "tools/test-a733-imx214-probe.py": "06ef64bcb3263bd48e1cc802d8a74f49329ca70bebca1b86a9fc83c9a9cd713e",
+    "tools/test-a733-imx214-twi3.c": "6b65bf5188e7211e0c844cfc2bd21248dad96ac93a21e852219f54fa6174b1dd",
+    "tools/test-a733-imx214-twi3.py": "b2bfce6b2904796fa7476d0c2c305c5a8996ef4188ed4dbb9869bd6b1353fca8",
+    "tools/test-linux-imx214-script.py": "4a1dba63b9fa730989d5eca06ddb0c1afb437e844f2333d44cfbf8289d2277c0",
+    "tools/test-linux-imx214.sh": "33b949e8c6c7524e09797de4886bc69f9453460c5ad0ca452b6980c9a0d6e3b9"
+  },
+  "integration": {
+    "board/a733-cubie-a7z/openvela-overlay/vendor/allwinnertech/chips/a733/Kconfig": "e34fc1b43794158b3f2092e233c2a33fe65802b2527894842bf7ee15c6c922bd",
+    "board/a733-cubie-a7z/openvela-overlay/vendor/allwinnertech/chips/a733/CMakeLists.txt": "adb34460f84041483d5f902f17f086138beaed5887d765fd20a55ab79c0de600",
+    "tools/build-a733-wapi.sh": "e0f05b5e158a3e0d92771b8deaf5573960604f4cb518c0a3fb1a3a4f3884f1c2",
+    "board/a733-cubie-a7z/openvela-overlay/apps/system/a733camera/CMakeLists.txt": "17751fa1c3dee0b2cf8782605e8318ea1936b58d85593a84b7d9788bb4d06c50",
+    "board/a733-cubie-a7z/openvela-overlay/apps/system/a733camera/Kconfig": "3d4da6ac2679b2deb2998ac8c9711b0bb62d7b65d5393d88c138cfd80ff5db8d",
+    "board/a733-cubie-a7z/openvela-overlay/apps/system/a733camera/Make.defs": "73fe48b23ec982795cec68624f0b5008addc2cc1563b6b0c71742fb1fc577da4",
+    "board/a733-cubie-a7z/openvela-overlay/apps/system/a733camera/Makefile": "567612e3a94ff47ab21d2cbad200f49da68feb612e73d7ce5103741a4eb0dc0c"
+  },
+  "logs": {
+    "a733_camera_board.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "a733_camera_diag.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "a733_camera_image.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "a733_imx214_probe.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "a733_imx214_twi3.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "a733camera_main.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "a7z_boardinit.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "build-wrapper-syntax.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "test-a733-camera-board.py.log": "5144263ed7c775e17a65eb638cfffafbbd7aeb1612407890c172d331cf479252",
+    "test-a733-camera-cli.py.log": "572f12a3fde75cc86a68dbdb1ff4d65b83f8ae530c3d6da924011437a0c80b3b",
+    "test-a733-camera-diag.py.log": "c822e6686a9cc06741f3b14ec299ac7415605a7afba88f332f14d0faec0e51c2",
+    "test-a733-camera-image.py.log": "17fca03587e4c01b24a23faacf15a4eda1a0d28dcf386b8015ef22ad382e34dd",
+    "test-a733-imx214-probe.py.log": "daee845b604f198f99e8e12319229171543b0821a576d78aca66a09efed190ff",
+    "test-a733-imx214-twi3.py.log": "ab589b36e68cbf25b7b1012c641ee35b5ffacc3dfd36cbcab94428f71b46836f",
+    "test-linux-imx214-script.py.log": "b34ae341fb384160b75a544cdcda35b3863b55b5083990698cecc4e4f1136c2a"
+  },
+  "full_firmware_linked": false,
+  "sensor_provider": false,
+  "camera_capture": false,
+  "npu_executed": false,
+  "hardware_verified": false,
+  "sdk_modified": false
+}

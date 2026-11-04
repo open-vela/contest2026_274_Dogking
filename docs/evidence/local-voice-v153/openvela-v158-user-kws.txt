@@ -1,0 +1,176 @@
+
+B-UA---
+   BoB -  2o
+BBoo
+ o   f ofoo oBo of4toBtttrt
+mmmfEmm  L r rfmrNrt6 roooo o
+11 L17       E1ENEo EL
+E    1
+-
+L
+  X
+
+   --1-0-B
+           o
+ BBBo
+     Botoooo ooottttt  o  tt ttooCoo     CCCrC   u rrrrnuuuutninnntmtttiieiimm mmeefee  o  ffrffooo orrrOr    S OOOOSSISS   n IIIiInnnntiiiiittttaliizzzeaaizlllliiiiez
+    eee
+
+
+
+orBoot to C runt-i meBo ofot rt Oo S C Inriuntitialmei zfe
+   OS Initialize
+N8
+X1
+PR
+PR
+PR
+
+NuttShell (NSH)
+nsh> RI
+RX
+
+nsh> npu info
+A733 VIP2 ABI v4 CID=1000003b cores=1 page=4096 pool=2093056 free=1654784 buffers=16 timeout=5000 ms
+nsh> npu selftest
+selftest: passed
+nsh> aipet audio npuref joiner /data/npu/voice/joiner.a7tv /data/npu/voice/input/joiner
+nsh> aipet audio npuref encoder /data/npu/voice/encoder.a7tv /data/npu/voice/input/encoder
+nsh> aipet audio npukws /data/npu/voice /data/npu/voice/kws/features0.f32
+npukws: resident=3 cold-prepare-us=1402280; file features only; no microphone/cloud/ASR
+npukws: chunk=1/12 calls=6 hits=0 chain=8d2b14b9
+npukws: chunk=2/12 calls=18 hits=0 chain=40b83e77
+npukws: chunk=3/12 calls=47 hits=0 chain=d5c4c312
+npukws: chunk=4/12 calls=80 hits=0 chain=ab2f9643
+npukws hit: word=0 name=你好小瑞 frame=17 probability=0.264511138 relative=4.929687500
+npukws: chunk=5/12 calls=101 hits=1 chain=9017efa6
+npukws: chunk=6/12 calls=106 hits=1 chain=f8eff626
+npukws: chunk=7/12 calls=111 hits=1 chain=2c4a61d9
+npukws: chunk=8/12 calls=116 hits=1 chain=d597d104
+npukws: chunk=9/12 calls=122 hits=1 chain=c3657d94
+npukws: chunk=10/12 calls=135 hits=1 chain=62f492a3
+npukws: chunk=11/12 calls=148 hits=1 chain=13ccd89c
+npukws: chunk=12/12 calls=161 hits=1 chain=c0a6f8f2
+npukws: status=0 calls=161 hits=1 chain=c0a6f8f2 elapsed-us=4031588 run-us=1528845/82591/706017; resident released
+nsh> npu info
+A733 VIP2 ABI v4 CID=1000003b cores=1 page=4096 pool=2093056 free=1654784 buffers=16 timeout=5000 ms
+nsh> free
+      total       used       free    maxused    maxfree  nused  nfree name
+ 4239142912      63456 4239079456   10380976 4143972320     98      4 Umem
+nsh> aipet audio npukws /data/npu/voice /data/npu/voice/kws/features1.f32
+npukws: resident=3 cold-prepare-us=1401985; file features only; no microphone/cloud/ASR
+npukws: chunk=1/12 calls=6 hits=0 chain=5804adf7
+npukws: chunk=2/12 calls=18 hits=0 chain=082ff976
+npukws: chunk=3/12 calls=42 hits=0 chain=a293bce0
+npukws: chunk=4/12 calls=84 hits=0 chain=69883723
+npukws: chunk=5/12 calls=125 hits=0 chain=4cd02eb2
+npukws: chunk=6/12 calls=169 hits=0 chain=7afa760b
+npukws: chunk=7/12 calls=211 hits=0 chain=79458da1
+npukws: chunk=8/12 calls=249 hits=0 chain=421a96c2
+npukws hit: word=2 name=小瑞 frame=32 probability=0.252031147 relative=3.152343750
+npukws: chunk=9/12 calls=262 hits=1 chain=ee25dd6c
+npukws: chunk=10/12 calls=267 hits=1 chain=c63f73a5
+npukws: chunk=11/12 calls=272 hits=1 chain=97ae61b4
+npukws: chunk=12/12 calls=278 hits=1 chain=871a92c3
+npukws: status=0 calls=278 hits=1 chain=871a92c3 elapsed-us=4650909 run-us=1529311/100902/1285748; resident released
+nsh> npu info
+A733 VIP2 ABI v4 CID=1000003b cores=1 page=4096 pool=2093056 free=1654784 buffers=16 timeout=5000 ms
+nsh> free
+      total       used       free    maxused    maxfree  nused  nfree name
+ 4239142912      63456 4239079456   10380976 4143972320     98      4 Umem
+nsh> aipet audio npukws /data/npu/voice /data/npu/voice/kws/features2.f32
+npukws: resident=3 cold-prepare-us=1401975; file features only; no microphone/cloud/ASR
+npukws: chunk=1/12 calls=6 hits=0 chain=054a601f
+npukws: chunk=2/12 calls=18 hits=0 chain=f5d6136b
+npukws: chunk=3/12 calls=43 hits=0 chain=c8b1c00c
+npukws: chunk=4/12 calls=85 hits=0 chain=3a7ca4e5
+npukws: chunk=5/12 calls=129 hits=0 chain=1da773b6
+npukws: chunk=6/12 calls=173 hits=0 chain=4e43751e
+npukws: chunk=7/12 calls=212 hits=0 chain=5f94e0dc
+npukws: chunk=8/12 calls=249 hits=0 chain=29e71ab3
+npukws hit: word=1 name=小瑞小瑞 frame=35 probability=0.153877288 relative=0.156250000
+npukws: chunk=9/12 calls=283 hits=1 chain=b523c0e0
+npukws: chunk=10/12 calls=288 hits=1 chain=2d02ede7
+npukws: chunk=11/12 calls=293 hits=1 chain=b18c4767
+npukws: chunk=12/12 calls=298 hits=1 chain=66236234
+npukws: status=0 calls=298 hits=1 chain=66236234 elapsed-us=4760281 run-us=1530379/100959/1386092; resident released
+nsh> npu info
+A733 VIP2 ABI v4 CID=1000003b cores=1 page=4096 pool=2093056 free=1654784 buffers=16 timeout=5000 ms
+nsh> free
+      total       used       free    maxused    maxfree  nused  nfree name
+ 4239142912      63456 4239079456   10380976 4143972320     98      4 Umem
+nsh> aipet audio npukws /data/npu/voice /data/npu/voice/kws/features3.f32
+npukws: resident=3 cold-prepare-us=1401923; file features only; no microphone/cloud/ASR
+npukws: chunk=1/12 calls=6 hits=0 chain=c11e2593
+npukws: chunk=2/12 calls=11 hits=0 chain=2e50cff6
+npukws: chunk=3/12 calls=34 hits=0 chain=b9033356
+npukws: chunk=4/12 calls=80 hits=0 chain=679d95ab
+npukws: chunk=5/12 calls=123 hits=0 chain=1e9b97dd
+npukws: chunk=6/12 calls=164 hits=0 chain=2ba60100
+npukws: chunk=7/12 calls=205 hits=0 chain=52b0e014
+npukws: chunk=8/12 calls=245 hits=0 chain=7a9461fa
+npukws: chunk=9/12 calls=285 hits=0 chain=1ee6bef8
+npukws: chunk=10/12 calls=323 hits=0 chain=2e3f0304
+npukws: chunk=11/12 calls=358 hits=0 chain=dfdef07b
+npukws: chunk=12/12 calls=391 hits=0 chain=a1596f25
+npukws: status=0 calls=391 hits=0 chain=a1596f25 elapsed-us=5242111 run-us=1528669/101088/1854868; resident released
+nsh> npu info
+A733 VIP2 ABI v4 CID=1000003b cores=1 page=4096 pool=2093056 free=1654784 buffers=16 timeout=5000 ms
+nsh> free
+      total       used       free    maxused    maxfree  nused  nfree name
+ 4239142912      63456 4239079456   10380976 4143972320     98      4 Umem
+nsh> aipet audio npukws /data/npu/voice /data/npu/voice/kws/features4.f32
+npukws: resident=3 cold-prepare-us=1401935; file features only; no microphone/cloud/ASR
+npukws: chunk=1/19 calls=6 hits=0 chain=cfe959b6
+npukws: chunk=2/19 calls=11 hits=0 chain=4ef34b94
+npukws: chunk=3/19 calls=16 hits=0 chain=1853289c
+npukws: chunk=4/19 calls=21 hits=0 chain=643b30f4
+npukws: chunk=5/19 calls=26 hits=0 chain=eb799047
+npukws: chunk=6/19 calls=31 hits=0 chain=72d33f1c
+npukws: chunk=7/19 calls=36 hits=0 chain=24dadaaf
+npukws: chunk=8/19 calls=41 hits=0 chain=4507279d
+npukws: chunk=9/19 calls=46 hits=0 chain=2b9f342f
+npukws: chunk=10/19 calls=51 hits=0 chain=2e336df4
+npukws: chunk=11/19 calls=56 hits=0 chain=f6ba21cc
+npukws: chunk=12/19 calls=61 hits=0 chain=e0774b1a
+npukws: chunk=13/19 calls=66 hits=0 chain=6d5ccc64
+npukws: chunk=14/19 calls=71 hits=0 chain=8c0a837e
+npukws: chunk=15/19 calls=76 hits=0 chain=be50f903
+npukws: chunk=16/19 calls=81 hits=0 chain=2854808c
+npukws: chunk=17/19 calls=86 hits=0 chain=8880bdaa
+npukws: chunk=18/19 calls=91 hits=0 chain=1b162b99
+npukws: chunk=19/19 calls=96 hits=0 chain=1d4e2db1
+npukws: status=0 calls=96 hits=0 chain=1d4e2db1 elapsed-us=4674299 run-us=2421637/9287/384022; resident released
+nsh> npu info
+A733 VIP2 ABI v4 CID=1000003b cores=1 page=4096 pool=2093056 free=1654784 buffers=16 timeout=5000 ms
+nsh> free
+      total       used       free    maxused    maxfree  nused  nfree name
+ 4239142912      63456 4239079456   10420016 4143972320     98      4 Umem
+nsh> aipet audio npukws /data/npu/voice /data/npu/voice/kws/features5.f32
+npukws: resident=3 cold-prepare-us=1402050; file features only; no microphone/cloud/ASR
+npukws: chunk=1/19 calls=6 hits=0 chain=f0b006d0
+npukws: chunk=2/19 calls=11 hits=0 chain=e9778445
+npukws: chunk=3/19 calls=18 hits=0 chain=da13f814
+npukws: chunk=4/19 calls=37 hits=0 chain=033ee3cc
+npukws: chunk=5/19 calls=60 hits=0 chain=f29842fd
+npukws: chunk=6/19 calls=85 hits=0 chain=4eb1404a
+npukws: chunk=7/19 calls=108 hits=0 chain=57cd2ef2
+npukws: chunk=8/19 calls=130 hits=0 chain=beb0bf10
+npukws: chunk=9/19 calls=155 hits=0 chain=b4c1a03a
+npukws: chunk=10/19 calls=182 hits=0 chain=866cdd2d
+npukws: chunk=11/19 calls=225 hits=0 chain=acf8485f
+npukws: chunk=12/19 calls=268 hits=0 chain=31fbb34e
+npukws: chunk=13/19 calls=309 hits=0 chain=99abd39f
+npukws: chunk=14/19 calls=350 hits=0 chain=9dc4c573
+npukws: chunk=15/19 calls=391 hits=0 chain=6e242cfa
+npukws: chunk=16/19 calls=432 hits=0 chain=0ab6d7f7
+npukws: chunk=17/19 calls=467 hits=0 chain=6bfbb2ff
+npukws: chunk=18/19 calls=506 hits=0 chain=df3b2486
+npukws: chunk=19/19 calls=547 hits=0 chain=aa07f970
+npukws: status=0 calls=547 hits=0 chain=aa07f970 elapsed-us=7091459 run-us=2422096/100921/2606134; resident released
+nsh> npu info
+A733 VIP2 ABI v4 CID=1000003b cores=1 page=4096 pool=2093056 free=1654784 buffers=16 timeout=5000 ms
+nsh> free
+      total       used       free    maxused    maxfree  nused  nfree name
+ 4239142912      55248 4239087664   10420016 4143972320     97      5 Umem
+nsh>

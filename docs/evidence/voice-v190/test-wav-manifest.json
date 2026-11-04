@@ -1,0 +1,26 @@
+{
+  "result": "PRIVATE_TEST_INPUTS_NOT_BOARD_ACCEPTANCE",
+  "files": [
+    {
+      "file": "checks/cmd_open_light_16k.wav",
+      "sha256": "be2add3f8e1cdf8c328cb6464d294713832120c3e2ebbce092483f95423a4077",
+      "expected_text": "帮我打开灯",
+      "expected_result": 0
+    },
+    {
+      "file": "checks/cmd_time_16k.wav",
+      "sha256": "c9d88dcce6b6b50a5ecce836a2b88736850cebad93c5e75e39f90a0c81b404d2",
+      "expected_text": "现在几点了",
+      "expected_result": 0
+    },
+    {
+      "file": "checks/neg_silence_3s_16k.wav",
+      "sha256": "d303811b8c84619667cd0501342f84ec6cbe69f7aa3856dcf52fabda374c92b8",
+      "expected_text": "",
+      "expected_result": -61
+    }
+  ],
+  "models_included": false,
+  "personal_audio_included": false,
+  "hardware_executed": false
+}

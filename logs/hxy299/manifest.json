@@ -3,19 +3,29 @@
   "team_id": "contest2026_274_Dogking",
   "github_login": "hxy299",
   "generator": "codex-rollout-converter@1.0",
-  "updated_at": "2026-09-14T11:03:00.084Z",
+  "updated_at": "2026-11-04T10:52:01.096Z",
   "sessions": [
     {
       "session_id": "019fa154-7ab3-7f31-b3cc-df6b6a829376",
       "tool": "codex",
       "started_at": "2026-07-27T02:08:32.322Z",
-      "last_event_at": "2026-09-10T12:27:18.408Z",
-      "event_count": 20539,
-      "raw_event_count": 20539,
-      "file_path": "logs/hxy299/2026-07-27/codex__019fa154-7ab3-7f31-b3cc-df6b6a829376.jsonl",
-      "collection_mode": "cli",
-      "health": "ok",
-      "model": "gpt-5.6-sol"
+      "last_event_at": "2026-10-30T07:05:41.351Z",
+      "event_count": 21857,
+      "raw_event_count": 45124,
+      "file_path": "logs/hxy299/2026-10-16/codex__019fa154-7ab3-7f31-b3cc-df6b6a829376.jsonl",
+      "collection_mode": "vscode_extension_partial",
+      "health": "degraded",
+      "model": "gpt-5.6-sol",
+      "data_completeness_warning": "Codex desktop explicit selected-directory import; one original snapshot only, other resumptions NOT joined; selected by official-supported text count when requested; parser omits tool/reasoning/image; seq continues prior official count; NOT complete-history or auto-hook capture.",
+      "imported_seq_start": 20539,
+      "redacted_count_total": 0,
+      "source_integrity": {
+        "main_sha256": "ed05d8ddc71250f09f846a9adf32d64cdb3297b45504411daa177e0fec0850bb",
+        "main_size": 655273418,
+        "captured_at": "2026-11-04T10:52:01.085Z"
+      },
+      "prior_event_count": 20539,
+      "prior_manifest_sha256": "81c49d097cdae4e69636eafa8fb239eb84365958a7e29708e034dd77d7be84bf"
     },
     {
       "session_id": "019fa1f3-9f73-7491-82b8-bf00af7c63f6",
@@ -1288,6 +1298,25 @@
       "collection_mode": "cli",
       "health": "ok",
       "model": "codex-auto-review"
+    },
+    {
+      "session_id": "01a12aec-87a2-7053-92e4-231be2265be5",
+      "tool": "codex",
+      "started_at": "2026-10-11T12:25:23.591Z",
+      "last_event_at": "2026-10-11T13:26:47.636Z",
+      "event_count": 22,
+      "raw_event_count": 401,
+      "file_path": "logs/hxy299/2026-10-11/codex__01a12aec-87a2-7053-92e4-231be2265be5.jsonl",
+      "collection_mode": "vscode_extension_partial",
+      "health": "degraded",
+      "data_completeness_warning": "Codex desktop explicit selected-directory import; one original snapshot only, other resumptions NOT joined; selected by official-supported text count when requested; parser omits tool/reasoning/image; seq continues prior official count; NOT complete-history or auto-hook capture.",
+      "imported_seq_start": 0,
+      "redacted_count_total": 0,
+      "source_integrity": {
+        "main_sha256": "dbb9cf9571c10c6371bca8693748af2978306aa6704942059fe81bc499574912",
+        "main_size": 364606,
+        "captured_at": "2026-11-04T10:51:56.873Z"
+      }
     }
   ]
 }

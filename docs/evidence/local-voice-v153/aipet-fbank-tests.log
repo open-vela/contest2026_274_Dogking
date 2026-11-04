@@ -1,0 +1,3 @@
+PASS: real Kaldi fbank, batch/stream exact, normalized reference parity, silence floor, changed tones, short/10s bounds, errors. CPU frontend only; NOT NPU/ASR proof.
+PASS: real Kaldi fbank, batch/stream exact, normalized reference parity, silence floor, changed tones, short/10s bounds, errors. CPU frontend only; NOT NPU/ASR proof.
+PASS: real Kaldi fbank, batch/stream exact, normalized reference parity, silence floor, changed tones, short/10s bounds, errors. CPU frontend only; NOT NPU/ASR proof.

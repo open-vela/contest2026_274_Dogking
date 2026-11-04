@@ -4,6 +4,9 @@
  * SPDX-License-Identifier: Apache-2.0
  ****************************************************************************/
 
+#ifdef __NuttX__
+#include <nuttx/config.h>
+#endif
 #include <errno.h>
 #include <inttypes.h>
 #include <limits.h>
@@ -25,11 +28,13 @@
 #include "ggml-common.h"
 #include "ggml-quants.h"
 #include "quants.h"
+#include "aipetllm_q8_workspace.h"
 
 #define GGUF_MAGIC UINT32_C(0x46554747)
 
 static int g_generation_active;
 static int g_generation_stop;
+static int g_pool_fault;
 
 int aipetllm_generation_control(int stop)
 {
@@ -48,6 +53,14 @@ static int generation_stopped(void)
 {
   return __atomic_load_n(&g_generation_stop, __ATOMIC_ACQUIRE);
 }
+extern void aipetllm_swiglu(size_t,float *,const float *,const float *);
+extern double aipetllm_softmax_exp(size_t,float *,const float *,float);
+#ifdef AIPETLLM_LOGITS_TEST_API
+extern void aipetllm_test_tensor(const char *,uint32_t,uint32_t,const float *,size_t);
+#define TEST_TENSOR(name,data,n) aipetllm_test_tensor(name,layer,position,data,n)
+#else
+#define TEST_TENSOR(name,data,n) do { } while (0)
+#endif
 
 static double elapsed_seconds(const struct timespec *first,
                               const struct timespec *last)
@@ -98,13 +111,103 @@ struct qwen_layer_s
 static pthread_mutex_t g_model_lock = PTHREAD_MUTEX_INITIALIZER;
 static uint8_t *g_model_cache;
 static size_t g_model_bytes;
+static struct aipetllm_q8_workspace g_q8_workspace;
 static char g_model_path[1024];
+static struct stat g_model_stat;
+static struct
+{
+  struct tensor_info_s *tensors;
+  uint64_t count, data_start;
+  uint32_t heads, heads_kv, key_length, value_length, rotary, blocks, eos;
+  float epsilon, frequency;
+  char architecture[32];
+} g_directory;
+/* Inference owns g_model_lock. Cache validated token-prefix KV, not answers
+ * or tool state. Only evaluated tokens have reusable KV;
+ * the final prompt position is always recomputed to obtain fresh logits. */
+static struct
+{
+  float *keys, *values;
+  const uint8_t *model;
+  uint32_t count, layers, width;
+  uint32_t tokens[AIPETLLM_INPUT_LIMIT];
+} g_prefix;
+static unsigned g_prefill_width = 4;
+#ifdef CONFIG_A733_PRODUCT_V12
+/* Owned solely under g_model_lock. Matrix workers receive separate owned
+ * Q8/output buffers, NEVER this arena. Preserve calloc-equivalent zeroing;
+ * no assumption that short/error paths overwrite all activations. */
+#define AIPETLLM_PREFILL_CACHE_LIMIT (2u * 1024u * 1024u)
+static struct {
+  float *data;
+  size_t bytes;
+  uint64_t allocations, reuses;
+} g_prefill_scratch;
+static float *prefill_acquire(size_t count)
+{
+  if(!count || count>SIZE_MAX/sizeof(float))return NULL;
+  size_t bytes=count*sizeof(float);
+  if(bytes>AIPETLLM_PREFILL_CACHE_LIMIT)return calloc(count,sizeof(float));
+  if(bytes>g_prefill_scratch.bytes) {
+    float *next=calloc(count,sizeof(float));
+    if(!next)return NULL;
+    if(g_prefill_scratch.data) {
+      memset(g_prefill_scratch.data,0,g_prefill_scratch.bytes);
+      free(g_prefill_scratch.data);
+    }
+    g_prefill_scratch.data=next;g_prefill_scratch.bytes=bytes;
+    ++g_prefill_scratch.allocations;
+  } else {
+    memset(g_prefill_scratch.data,0,g_prefill_scratch.bytes);
+    ++g_prefill_scratch.reuses;
+  }
+  return g_prefill_scratch.data;
+}
+static void prefill_release(float *data)
+{
+  if(data!=g_prefill_scratch.data)free(data);
+}
+static void prefill_unload(void)
+{
+  if(g_prefill_scratch.data) {
+    memset(g_prefill_scratch.data,0,g_prefill_scratch.bytes);
+    free(g_prefill_scratch.data);
+  }
+  memset(&g_prefill_scratch,0,sizeof(g_prefill_scratch));
+}
+#endif
+int aipetllm_prefill_control(unsigned width)
+{
+  if (width != 1 && width != 4) return -EINVAL;
+  if (pthread_mutex_trylock(&g_model_lock) != 0) return -EBUSY;
+  g_prefill_width = width;
+  pthread_mutex_unlock(&g_model_lock);
+  return 0;
+}
+static void prefix_unload(void)
+{
+  free(g_prefix.keys); free(g_prefix.values);
+  memset(&g_prefix, 0, sizeof(g_prefix));
+}
+
+int aipetllm_prefix_clear(void)
+{
+  if (pthread_mutex_trylock(&g_model_lock) != 0) return 1;
+  prefix_unload();
+  pthread_mutex_unlock(&g_model_lock);
+  return 0;
+}
 extern int a733_compute_service_start(int (*entry)(int, char **));
 static int llm_pool_configure(unsigned int mask);
 static void llm_pool_info(void);
+extern void aipetllm_vocabulary_unload(void) __attribute__((weak));
 
 int aipetllm_cache_control(int unload)
 {
+  if(__atomic_load_n(&g_pool_fault,__ATOMIC_ACQUIRE)) {
+    puts("llm-pool-v212: quarantined; worker-owned RAM retained; reboot required");
+    return 1;
+  }
   if (pthread_mutex_trylock(&g_model_lock) != 0)
     {
       fputs("llm-cache: busy; inference/load in progress\n", stderr);
@@ -121,9 +224,20 @@ int aipetllm_cache_control(int unload)
         }
 
       free(g_model_cache);
+      aipetllm_q8_release(&g_q8_workspace);
+#ifdef CONFIG_A733_PRODUCT_V12
+      prefill_unload(); // only after the compute pool was joined above
+#endif
+      prefix_unload();
+      free(g_directory.tensors);
+      memset(&g_directory,0,sizeof(g_directory));
       g_model_cache = NULL;
       g_model_bytes = 0;
       g_model_path[0] = '\0';
+      if (aipetllm_vocabulary_unload != NULL)
+        {
+          aipetllm_vocabulary_unload();
+        }
       puts("llm-cache: unloaded");
     }
   else
@@ -132,6 +246,22 @@ int aipetllm_cache_control(int unload)
              g_model_cache == NULL ? "empty" : "resident",
              g_model_bytes, g_model_path);
       llm_pool_info();
+      printf("llm-scratch-v211: bytes=%zu allocations=%" PRIu64 " reuses=%" PRIu64
+             " limit=%u; RAM-only, wiped after joined pool unload\n",
+             g_q8_workspace.capacity,g_q8_workspace.allocations,
+             g_q8_workspace.reuses,AIPETLLM_Q8_CACHE_LIMIT);
+      printf("llm-prefill: width=%u (1=serial,4=bounded layer-major); decode remains serial\n",g_prefill_width);
+#ifdef CONFIG_A733_PRODUCT_V12
+      printf("llm-prefill-scratch-v220: bytes=%zu allocations=%" PRIu64 " reuses=%" PRIu64
+             " limit=%u; zeroed before reuse; release only after joined pool\n",
+             g_prefill_scratch.bytes,g_prefill_scratch.allocations,
+             g_prefill_scratch.reuses,AIPETLLM_PREFILL_CACHE_LIMIT);
+#endif
+      printf("llm-prefix: cached=%u layers=%u width=%u bytes=%zu\n",
+             g_prefix.count,g_prefix.layers,g_prefix.width,
+             (size_t)g_prefix.count*g_prefix.layers*g_prefix.width*2*sizeof(float));
+      printf("llm-directory: cached=%d tensors=%" PRIu64 "\n",
+             g_directory.tensors != NULL,g_directory.count);
     }
 
   pthread_mutex_unlock(&g_model_lock);
@@ -623,7 +753,8 @@ int aipetllm_model_checkpoint(const char *path)
         }
     }
 
-  if (strcmp(architecture, "qwen2") != 0 || block_count == 0 ||
+  if ((strcmp(architecture, "qwen2") != 0 &&
+       strcmp(architecture, "llama") != 0) || block_count == 0 ||
       !token_embedding || !output_norm)
     {
       fprintf(stderr, "aipetllm: expected qwen2 roots missing "
@@ -869,18 +1000,60 @@ struct matvec_worker_s
   uint64_t first;
   uint64_t end;
   int columns;
+  unsigned batch;
+  size_t input_stride, output_stride;
   uint32_t type;
   int cpu;
   int status;
 };
 
+#ifdef __NuttX__
+#include <system/a733_cpu_qualify.h>
+static int llm_aff_get(void *ctx,uint32_t *out)
+{(void)ctx;cpu_set_t mask;int r=sched_getaffinity(0,sizeof(mask),&mask);if(!r)*out=mask;return r<0?-errno:0;}
+static int llm_aff_set(void *ctx,uint32_t mask)
+{(void)ctx;cpu_set_t m=mask;return sched_setaffinity(0,sizeof(m),&m)<0?-errno:0;}
+static int llm_aff_id(void *ctx,uint64_t *midr,uint64_t *mpidr)
+{
+  (void)ctx;uint64_t last;
+  __asm__ volatile("mrs %0, mpidr_el1":"=r"(*mpidr)::"memory");
+  __asm__ volatile("mrs %0, midr_el1":"=r"(*midr)::"memory");
+  __asm__ volatile("mrs %0, mpidr_el1":"=r"(last)::"memory");
+  return last==*mpidr?0:-EAGAIN;
+}
+static uint64_t llm_aff_time(void *ctx)
+{(void)ctx;struct timespec t;clock_gettime(CLOCK_MONOTONIC,&t);return (uint64_t)t.tv_sec*1000000+t.tv_nsec/1000;}
+static void llm_aff_wait(void *ctx){(void)ctx;usleep(1000);}
+static int llm_aff_stop(void *ctx){(void)ctx;return generation_stopped();}
+static int llm_affinity(int cpu)
+{
+  uint32_t mask=0;uint64_t midr=0,mpidr=0;unsigned part=cpu<6?0xd05:0xd0b;
+  int r=llm_aff_get(NULL,&mask);
+  if(r)return r;
+  r=llm_aff_id(NULL,&midr,&mpidr);
+  /* Persistent pool: recheck actual identity and mask, not a guessed binding.
+   * When still qualified, don't re-set affinity/trigger scheduling for every
+   * matrix. Row partition, quantization and reduction order remain unchanged. */
+  if(!r && mask==(1u<<cpu) && ((mpidr>>8)&255)==(unsigned)cpu &&
+     ((midr>>4)&4095)==part)return 0;
+  const struct a733_cpu_ops ops={llm_aff_get,llm_aff_set,llm_aff_id,llm_aff_time,llm_aff_wait,llm_aff_stop};
+  struct a733_cpu_proof proof;
+  r=a733_cpu_qualify(&ops,NULL,cpu,part,&proof);
+  printf("llm-affinity-v210: target=%d actual=%llu mask=%08lx confirmations=%u attempts=%u result=%d restore=%d\n",
+    cpu,(unsigned long long)((proof.mpidr>>8)&255),(unsigned long)proof.readback,
+    proof.confirmations,proof.attempts,r,proof.restore_error);
+  return r;
+}
+#endif
 static void *matvec_worker(void *argument)
 {
   struct matvec_worker_s *worker = argument;
-  cpu_set_t affinity = 0;
   uint64_t row;
+#ifndef __NuttX__
+  cpu_set_t affinity;
   int wait;
 
+  CPU_ZERO(&affinity);
   CPU_SET(worker->cpu, &affinity);
   worker->status = -EIO;
   if (sched_setaffinity(0, sizeof(affinity), &affinity) < 0)
@@ -897,19 +1070,30 @@ static void *matvec_worker(void *argument)
     {
       return NULL;
     }
+#else
+  worker->status=llm_affinity(worker->cpu);
+  if(worker->status)return NULL;
+#endif
 
   for (row = worker->first; row < worker->end; row++)
     {
       const void *packed = worker->weights + row * worker->row_bytes;
+      /* Keep this immutable weight row hot while processing up to 4 inputs.
+       * Each dot uses the unchanged reference kernel and reduction order. */
+      for (unsigned b = 0; b < worker->batch; b++)
+        {
+      float *output = worker->output + b * worker->output_stride + row;
+      const block_q8_K *input = worker->input + b * worker->input_stride;
       if (worker->type == GGML_TYPE_Q4_K)
         {
-          ggml_vec_dot_q4_K_q8_K(worker->columns, &worker->output[row],
-                               0, packed, 0, worker->input, 0, 1);
+          ggml_vec_dot_q4_K_q8_K(worker->columns, output,
+                               0, packed, 0, input, 0, 1);
         }
       else
         {
-          ggml_vec_dot_q6_K_q8_K(worker->columns, &worker->output[row],
-                               0, packed, 0, worker->input, 0, 1);
+          ggml_vec_dot_q6_K_q8_K(worker->columns, output,
+                               0, packed, 0, input, 0, 1);
+        }
         }
     }
 
@@ -924,6 +1108,8 @@ struct pool_slot_s
   sem_t done;
   pthread_t thread;
   int stop;
+  unsigned phase,tid;
+  int qualified;
 };
 
 static struct pool_slot_s g_pool_slots[8];
@@ -937,26 +1123,86 @@ static unsigned int g_pool_mask;
 static unsigned int g_pool_requested_mask;
 static uint64_t g_pool_created;
 static uint64_t g_pool_jobs;
+/* Worker output never aliases caller-owned activations: a timed-out worker
+ * may still be writing. Keep this scratch, Q8 and weights until reboot on
+ * uncertainty. No asynchronous cancellation/reset/free of an in-flight job. */
+static float *g_pool_output;
+static size_t g_pool_output_bytes;
 
-static void pool_wait(sem_t *semaphore)
+static void pool_snapshot(const char *stage,int error)
 {
-  while (sem_wait(semaphore) < 0 && errno == EINTR)
-    {
-    }
+  printf("llm-pool-v212: stage=%s error=%d service=%d; owned RAM retained on uncertainty\n",
+    stage,error,g_pool_pid);
+  for(unsigned i=0;i<8;i++) {
+    unsigned phase=__atomic_load_n(&g_pool_slots[i].phase,__ATOMIC_ACQUIRE);
+    unsigned tid=__atomic_load_n(&g_pool_slots[i].tid,__ATOMIC_ACQUIRE);
+    if(tid)printf("llm-pool-v212: slot=%u tid=%u phase=%u (1=idle 2=bind 3=compute 4=done)\n",i,tid,phase);
+  }
+}
+
+static int pool_reply(const char *stage)
+{
+  struct timespec limit;
+  if(clock_gettime(CLOCK_MONOTONIC,&limit)<0)goto failed;
+  limit.tv_sec+=15;
+  for(;;) {
+    if(sem_clockwait(&g_pool_reply,CLOCK_MONOTONIC,&limit)==0)
+      return __atomic_load_n(&g_pool_fault,__ATOMIC_ACQUIRE);
+    if(errno==EINTR)continue;
+    break;
+  }
+failed:
+  {
+    int error=errno? -errno:-EIO;
+    __atomic_store_n(&g_pool_fault,error,__ATOMIC_RELEASE);
+    pool_snapshot(stage,error);
+    return error;
+  }
+}
+
+static int pool_wait(sem_t *semaphore)
+{
+  for(;;) {
+    if(sem_wait(semaphore)==0)return 0;
+    if(errno!=EINTR)return errno?-errno:-EIO;
+  }
 }
 
 static void *pool_worker(void *argument)
 {
   struct pool_slot_s *slot = argument;
+  __atomic_store_n(&slot->tid,(unsigned)pthread_self(),__ATOMIC_RELEASE);
+  __atomic_store_n(&slot->phase,1,__ATOMIC_RELEASE);
   for (;;)
     {
-      pool_wait(&slot->ready);
+      int wait_error=pool_wait(&slot->ready);
+      if(wait_error){__atomic_store_n(&g_pool_fault,wait_error,__ATOMIC_RELEASE);return NULL;}
       if (slot->stop)
         {
           return NULL;
         }
 
-      matvec_worker(&slot->work);
+      __atomic_store_n(&slot->phase,2,__ATOMIC_RELEASE);
+      if(__atomic_load_n(&g_pool_fault,__ATOMIC_ACQUIRE))slot->work.status=-EOWNERDEAD;
+      else {
+#ifdef __NuttX__
+        /* First job also proves the requested identity across a blocking
+         * yield, even when pthread attributes placed it on the right core. */
+        int r=0;
+        if(!slot->qualified) {
+          r=llm_affinity(slot->work.cpu);
+          if(!r){usleep(1000);r=llm_affinity(slot->work.cpu);}
+          if(!r)slot->qualified=1;
+        }
+        if(r)slot->work.status=r;
+        else
+#endif
+        {
+          __atomic_store_n(&slot->phase,3,__ATOMIC_RELEASE);
+          matvec_worker(&slot->work);
+        }
+      }
+      __atomic_store_n(&slot->phase,4,__ATOMIC_RELEASE);
       sem_post(&slot->done);
     }
 }
@@ -975,13 +1221,17 @@ static int llm_pool_service(int argc, char **argv)
   (void)argv;
   for (;;)
     {
-      pool_wait(&g_pool_request);
+      int wait_error=pool_wait(&g_pool_request);
+      if(wait_error){__atomic_store_n(&g_pool_fault,wait_error,__ATOMIC_RELEASE);return wait_error;}
       g_pool_result = 0;
       if (g_pool_command == 1)
         {
           pthread_attr_t attributes;
-          cpu_set_t affinity = g_pool_requested_mask == 0 ?
-                               0xff : g_pool_requested_mask;
+          cpu_set_t affinity;
+          CPU_ZERO(&affinity);
+          for (cpu = 0; cpu < 8; cpu++)
+            if (!g_pool_requested_mask || (g_pool_requested_mask & (1u << cpu)))
+              CPU_SET(cpu, &affinity);
           for (index = 0; index < g_pool_count; index++)
             {
               g_pool_slots[index].stop = 1;
@@ -1011,8 +1261,16 @@ static int llm_pool_service(int argc, char **argv)
               continue;
             }
 
-          pthread_attr_init(&attributes);
-          pthread_attr_setstacksize(&attributes, 16384);
+          int attr_error=pthread_attr_init(&attributes);
+          if(attr_error){g_pool_result=-attr_error;sem_post(&g_pool_reply);continue;}
+          attr_error=pthread_attr_setstacksize(&attributes,32768);
+#ifdef __NuttX__
+          struct sched_param params={.sched_priority=100};
+          if(!attr_error)attr_error=pthread_attr_setinheritsched(&attributes,PTHREAD_EXPLICIT_SCHED);
+          if(!attr_error)attr_error=pthread_attr_setschedpolicy(&attributes,SCHED_RR);
+          if(!attr_error)attr_error=pthread_attr_setschedparam(&attributes,&params);
+#endif
+          if(attr_error){pthread_attr_destroy(&attributes);g_pool_result=-attr_error;sem_post(&g_pool_reply);continue;}
           for (cpu = 0; cpu < 8; cpu++)
             {
               struct pool_slot_s *slot;
@@ -1024,10 +1282,13 @@ static int llm_pool_service(int argc, char **argv)
               slot = &g_pool_slots[g_pool_count];
               slot->work.cpu = cpu;
               slot->stop = 0;
-              if (pthread_create(&slot->thread, &attributes,
-                                 pool_worker, slot) != 0)
+              slot->qualified=0;
+              cpu_set_t target;CPU_ZERO(&target);CPU_SET(cpu,&target);
+              int created=pthread_attr_setaffinity_np(&attributes,sizeof(target),&target);
+              if(!created)created=pthread_create(&slot->thread,&attributes,pool_worker,slot);
+              if (created != 0)
                 {
-                  g_pool_result = -EAGAIN;
+                  g_pool_result = -created;
                   break;
                 }
 
@@ -1050,7 +1311,8 @@ static int llm_pool_service(int argc, char **argv)
 
           for (index = 0; index < g_pool_count; index++)
             {
-              pool_wait(&g_pool_slots[index].done);
+              int waited=pool_wait(&g_pool_slots[index].done);
+              if(waited){__atomic_store_n(&g_pool_fault,waited,__ATOMIC_RELEASE);g_pool_result=waited;}
               if (g_pool_slots[index].work.status != 0)
                 {
                   g_pool_result = g_pool_slots[index].work.status;
@@ -1074,6 +1336,7 @@ static int llm_pool_configure(unsigned int mask)
 {
   int index;
   int initialized = 0;
+  if(__atomic_load_n(&g_pool_fault,__ATOMIC_ACQUIRE))return -EOWNERDEAD;
   if (g_pool_pid == 0)
     {
       if (mask == 0)
@@ -1123,8 +1386,10 @@ static int llm_pool_configure(unsigned int mask)
 
   g_pool_requested_mask = mask;
   g_pool_command = 1;
+  printf("llm-pool-v212: configure mask=%02x; per-worker affinity/RR, no global scheduler change\n",mask);
   sem_post(&g_pool_request);
-  pool_wait(&g_pool_reply);
+  int waited=pool_reply("configure");if(waited)return waited;
+  if(!g_pool_result && mask==0) {free(g_pool_output);g_pool_output=NULL;g_pool_output_bytes=0;}
   return g_pool_result;
 
 initialize_failed:
@@ -1151,11 +1416,12 @@ static void llm_pool_info(void)
  * No global compute state is used, so simultaneous callers cannot mix masks.
  */
 
-static int read_parallel_matvec(FILE *stream, uint64_t absolute_offset,
+static int read_parallel_matvec_batch(FILE *stream, uint64_t absolute_offset,
                                const struct tensor_info_s *tensor,
                                const float *input, float *output,
                                unsigned int cpu_mask,
-                               const uint8_t *model_base, size_t model_bytes)
+                               const uint8_t *model_base, size_t model_bytes,
+                               unsigned batch)
 {
   uint64_t dimensions[1];
   uint64_t row_bytes;
@@ -1169,11 +1435,20 @@ static int read_parallel_matvec(FILE *stream, uint64_t absolute_offset,
   int old_cancel;
   int cpu;
   int index;
+  int input_borrowed=0;
+  if(__atomic_load_n(&g_pool_fault,__ATOMIC_ACQUIRE))return -EOWNERDEAD;
 
+  if (batch < 1 || batch > 4 || !tensor || tensor->dimension_count != 2)
+    return -EINVAL;
   if (cpu_mask == 0 || tensor->type == GGML_TYPE_F32)
     {
-      return read_quantized_matvec(stream, absolute_offset, tensor,
-                                   input, output);
+      for (unsigned b = 0; b < batch; b++)
+        {
+          result = read_quantized_matvec(stream, absolute_offset, tensor,
+              input + b * tensor->dimensions[0], output + b * tensor->dimensions[1]);
+          if (result < 0) return result;
+        }
+      return result;
     }
 
   if (tensor->dimension_count != 2 || tensor->dimensions[0] == 0 ||
@@ -1210,7 +1485,12 @@ static int read_parallel_matvec(FILE *stream, uint64_t absolute_offset,
       copied_weights = malloc((size_t)(rows * row_bytes));
       weights = copied_weights;
     }
-  input_q8 = malloc((size_t)(dimensions[0] / QK_K) * sizeof(block_q8_K));
+  size_t q8_bytes=batch * (size_t)(dimensions[0] / QK_K) * sizeof(block_q8_K);
+  if(model_base && q8_bytes<=AIPETLLM_Q8_CACHE_LIMIT) {
+    void *scratch=NULL;input_borrowed=1;
+    result=aipetllm_q8_reserve(&g_q8_workspace,q8_bytes,&scratch);
+    input_q8=scratch;
+  } else input_q8=malloc(q8_bytes);
   if (weights == NULL || input_q8 == NULL)
     {
       result = -ENOMEM;
@@ -1225,12 +1505,23 @@ static int read_parallel_matvec(FILE *stream, uint64_t absolute_offset,
       goto out;
     }
 
-  quantize_row_q8_K(input, input_q8, (int64_t)dimensions[0]);
+  /* GGML's zero-block shortcut need not write bsums. Clear the requested
+   * range before quantization, including the fresh-allocation fallback. */
+  memset(input_q8,0,q8_bytes);
+  for (unsigned b = 0; b < batch; b++)
+    quantize_row_q8_K(input + b * dimensions[0],
+                     input_q8 + b * (dimensions[0] / QK_K), (int64_t)dimensions[0]);
   result = llm_pool_configure(cpu_mask);
   if (result < 0)
     {
       goto out;
     }
+  size_t required=(size_t)rows*batch*sizeof(float);
+  if(required>g_pool_output_bytes) {
+    float *replacement=realloc(g_pool_output,required);
+    if(!replacement){result=-ENOMEM;goto out;}
+    g_pool_output=replacement;g_pool_output_bytes=required;
+  }
   for (cpu = 0; cpu < 8; cpu++)
     {
       if (cpu_mask & (1u << cpu))
@@ -1246,9 +1537,12 @@ static int read_parallel_matvec(FILE *stream, uint64_t absolute_offset,
       cpu = worker->cpu;
       worker->weights = weights;
       worker->input = input_q8;
-      worker->output = output;
+      worker->output = g_pool_output;
       worker->row_bytes = (size_t)row_bytes;
       worker->columns = (int)dimensions[0];
+      worker->batch = batch;
+      worker->input_stride = (size_t)(dimensions[0] / QK_K);
+      worker->output_stride = (size_t)rows;
       worker->type = tensor->type;
       worker->cpu = cpu;
       worker->first = rows * cumulative / total_weight;
@@ -1259,18 +1553,28 @@ static int read_parallel_matvec(FILE *stream, uint64_t absolute_offset,
 
   g_pool_command = 2;
   sem_post(&g_pool_request);
-  pool_wait(&g_pool_reply);
-  result = g_pool_result;
+  result=pool_reply("matrix");
+  if(!result)result=g_pool_result;
+  if(!result)memcpy(output,g_pool_output,required);
 
-  free(input_q8);
-  free(copied_weights);
+  if(!__atomic_load_n(&g_pool_fault,__ATOMIC_ACQUIRE)) {
+    if(!input_borrowed)free(input_q8);
+    free(copied_weights);
+  }
   pthread_setcancelstate(old_cancel, NULL);
   return result;
 
 out:
-  free(input_q8);
+  if(!input_borrowed)free(input_q8);
   free(copied_weights);
   return result;
+}
+
+static int read_parallel_matvec(FILE *stream, uint64_t offset,
+    const struct tensor_info_s *tensor, const float *input, float *output,
+    unsigned mask, const uint8_t *base, size_t bytes)
+{
+  return read_parallel_matvec_batch(stream,offset,tensor,input,output,mask,base,bytes,1);
 }
 
 static int add_f32_bias(FILE *stream, uint64_t data_start,
@@ -1328,14 +1632,15 @@ static int apply_normal_rope(float *values, uint64_t heads,
   for (head = 0; head < heads; head++)
     {
       float *head_values = values + head * head_dimension;
+      float angle = (float)position;
+      float theta_scale = powf(frequency_base,-2.0f/rotary_dimension);
 
       for (pair = 0; pair < rotary_dimension / 2; pair++)
         {
           uint32_t component = pair * 2;
-          float exponent = -(float)component / rotary_dimension;
-          float angle = (float)position * powf(frequency_base, exponent);
           float cosine = cosf(angle);
           float sine = sinf(angle);
+          angle *= theta_scale;
           float first = head_values[component];
           float second = head_values[component + 1];
 
@@ -1369,13 +1674,14 @@ static int apply_qwen2_rope(float *values, uint64_t heads,
   for (head = 0; head < heads; head++)
     {
       float *row = values + head * head_dimension;
+      float angle = (float)position;
+      float theta_scale = powf(frequency_base,-2.0f/rotary_dimension);
       for (pair = 0; pair < rotary_dimension / 2; pair++)
         {
           uint32_t other = pair + rotary_dimension / 2;
-          float angle = position *
-            powf(frequency_base, -(float)(2 * pair) / rotary_dimension);
           float cosine = cosf(angle);
           float sine = sinf(angle);
+          angle *= theta_scale;
           float first = row[pair];
           float second = row[other];
           row[pair] = first * cosine - second * sine;
@@ -1458,7 +1764,9 @@ static int rmsnorm_vector(FILE *stream, uint64_t data_start,
 
   for (index = 0; index < hidden; index++)
     {
-      square_sum += (double)input[index] * input[index];
+      /* GGML RMSNorm squares in F32, then accumulates in ggml_float.
+       * Casting BEFORE the product changes quantization-boundary decisions. */
+      square_sum += (double)(input[index] * input[index]);
     }
 
   inverse_rms = 1.0f /
@@ -1471,6 +1779,8 @@ static int rmsnorm_vector(FILE *stream, uint64_t data_start,
   return 0;
 }
 
+#include "aipetllm_prefill.inc"
+
 static int qwen2_forward1_checkpoint(FILE *stream, uint64_t data_start,
                                      struct tensor_info_s *tensors,
                                      uint64_t tensor_count,
@@ -1479,6 +1789,8 @@ static int qwen2_forward1_checkpoint(FILE *stream, uint64_t data_start,
                                      uint32_t block_count,
                                      uint32_t head_count,
                                      uint32_t head_count_kv,
+                                     uint32_t explicit_head_dimension,
+                                     int normal_rope,
                                      float epsilon, unsigned int cpu_mask,
                                      const uint8_t *model_base,
                                      size_t model_bytes,
@@ -1509,12 +1821,15 @@ static int qwen2_forward1_checkpoint(FILE *stream, uint64_t data_start,
   uint64_t hidden;
   uint64_t ffn_hidden = 0;
   uint64_t head_dimension;
+  uint64_t query_width;
   uint64_t index;
   uint32_t layer;
   uint32_t position;
   uint32_t capacity = two_tokens ? 2 : 1;
   uint32_t current_token = token_id;
   uint32_t next_token = 0;
+  uint32_t prefix = 0;
+  uint32_t evaluated = 0;
   struct timespec sequence_start;
   struct timespec first_token_time = {0, 0};
   int streaming = sequence != NULL && sequence->emit != NULL;
@@ -1525,7 +1840,7 @@ static int qwen2_forward1_checkpoint(FILE *stream, uint64_t data_start,
   if (sequence != NULL)
     {
       if (sequence->input_count == 0 || sequence->input_count > AIPETLLM_INPUT_LIMIT ||
-          sequence->generate_limit > 64)
+          sequence->generate_limit > AIPETLLM_SEQUENCE_LIMIT)
         {
           return 1;
         }
@@ -1559,8 +1874,12 @@ static int qwen2_forward1_checkpoint(FILE *stream, uint64_t data_start,
     }
 
   hidden = embedding->dimensions[0];
-  head_dimension = hidden / head_count;
-  if (hidden == 0 || hidden > 65536 || hidden % head_count != 0)
+  head_dimension = explicit_head_dimension != 0 ?
+                   explicit_head_dimension : hidden / head_count;
+  query_width = (uint64_t)head_count * head_dimension;
+  if (hidden == 0 || hidden > 65536 || head_dimension == 0 ||
+      head_dimension > 512 || head_count > 128 || query_width > 65536 ||
+      (explicit_head_dimension == 0 && hidden % head_count != 0))
     {
       fputs("aipetllm: forward1 invalid hidden/head dimensions\n", stderr);
       return 1;
@@ -1569,7 +1888,7 @@ static int qwen2_forward1_checkpoint(FILE *stream, uint64_t data_start,
   state = malloc((size_t)hidden * sizeof(float));
   normalized = malloc((size_t)hidden * sizeof(float));
   norm_weight = malloc((size_t)hidden * sizeof(float));
-  context = malloc((size_t)hidden * sizeof(float));
+  context = malloc((size_t)query_width * sizeof(float));
   projected = malloc((size_t)hidden * sizeof(float));
   if (state == NULL || normalized == NULL || norm_weight == NULL ||
       context == NULL || projected == NULL ||
@@ -1587,7 +1906,7 @@ static int qwen2_forward1_checkpoint(FILE *stream, uint64_t data_start,
   if (two_tokens)
     {
       size_t kv_width = (size_t)head_count_kv * head_dimension;
-      query = malloc((size_t)hidden * sizeof(float));
+      query = malloc((size_t)query_width * sizeof(float));
       key = malloc(kv_width * sizeof(float));
       keys = calloc((size_t)block_count * capacity * kv_width, sizeof(float));
       values = calloc((size_t)block_count * capacity * kv_width, sizeof(float));
@@ -1603,9 +1922,57 @@ static int qwen2_forward1_checkpoint(FILE *stream, uint64_t data_start,
         {
           rotary_dimension = (uint32_t)head_dimension;
         }
+      if (sequence != NULL && model_base != NULL &&
+          g_prefix.model == model_base && g_prefix.layers == block_count &&
+          g_prefix.width == kv_width)
+        {
+          while (prefix < g_prefix.count && prefix + 1 < sequence->input_count &&
+                 g_prefix.tokens[prefix] == sequence->input[prefix]) prefix++;
+          for (layer = 0; layer < block_count; layer++)
+            {
+              memcpy(keys + (size_t)layer * capacity * kv_width,
+                     g_prefix.keys + (size_t)layer * g_prefix.count * kv_width,
+                     (size_t)prefix * kv_width * sizeof(float));
+              memcpy(values + (size_t)layer * capacity * kv_width,
+                     g_prefix.values + (size_t)layer * g_prefix.count * kv_width,
+                     (size_t)prefix * kv_width * sizeof(float));
+            }
+        }
+      if (sequence != NULL)
+        printf("prefill-cache: reused=%u fresh=%u (exact token-prefix KV)\n",prefix,
+               sequence->input_count-prefix);
     }
 
-  for (position = 0; position < capacity; position++)
+#ifdef CONFIG_A733_PRODUCT_V12
+  unsigned cached_prompt=prefix;
+  struct timespec batch_start,batch_end;
+  clock_gettime(CLOCK_MONOTONIC,&batch_start);
+#endif
+  if(sequence && sequence->chat_mode && model_base && g_prefill_width==4 &&
+     prefix+2 < sequence->input_count)
+    {
+      unsigned first=prefix, batches=0;
+      while(prefix+1 < sequence->input_count)
+        {
+          unsigned n=sequence->input_count-1-prefix;if(n>4)n=4;
+          int rc=prefill_batch(stream,data_start,tensors,tensor_count,embedding,
+              sequence->input,prefix,n,capacity,block_count,head_count,head_count_kv,
+              head_dimension,rotary_dimension,normal_rope,epsilon,frequency_base,
+              cpu_mask,model_base,model_bytes,keys,values);
+          if(rc){result=rc;goto out;}
+          prefix+=n;++batches;
+        }
+      printf("prefill-batch: width=4 tokens=%u batches=%u; serial final prompt/decode\n",prefix-first,batches);
+    }
+#ifdef CONFIG_A733_PRODUCT_V12
+  if(sequence) {
+    clock_gettime(CLOCK_MONOTONIC,&batch_end);
+    printf("llm-latency-v220: prompt=%u reused=%u fresh=%u batched=%u batch-ms=%.3f; final prompt+LM-head still required; no board first-audio claim\n",
+      sequence->input_count,cached_prompt,sequence->input_count-cached_prompt,
+      prefix-cached_prompt,elapsed_seconds(&batch_start,&batch_end)*1000.0);
+  }
+#endif
+  for (position = prefix; position < capacity; position++)
     {
       current_token = sequence != NULL ?
         (position < sequence->input_count ? sequence->input[position] :
@@ -1618,7 +1985,7 @@ static int qwen2_forward1_checkpoint(FILE *stream, uint64_t data_start,
           goto out;
         }
 
-      if (two_tokens && (!streaming || position < sequence->input_count))
+      if (two_tokens && !streaming)
         {
           printf("forward2 position=%" PRIu32 " token=%" PRIu32 "\n",
                  position, current_token);
@@ -1679,7 +2046,7 @@ static int qwen2_forward1_checkpoint(FILE *stream, uint64_t data_start,
           attention_v->dimensions[0] != hidden ||
           attention_v->dimensions[1] != head_count_kv * head_dimension ||
           attention_output->dimension_count != 2 ||
-          attention_output->dimensions[0] != hidden ||
+          attention_output->dimensions[0] != query_width ||
           attention_output->dimensions[1] != hidden ||
           ffn_gate->dimension_count != 2 ||
           ffn_gate->dimensions[0] != hidden ||
@@ -1722,21 +2089,24 @@ static int qwen2_forward1_checkpoint(FILE *stream, uint64_t data_start,
           read_parallel_matvec(stream, data_start + attention_v->offset,
                                 attention_v, normalized, value, cpu_mask,
                                 model_base, model_bytes) < 0 ||
-          add_f32_bias(stream, data_start, attention_v_bias, value,
-                       value_dimensions) < 0)
+          (!(normal_rope && attention_v_bias == NULL) &&
+           add_f32_bias(stream, data_start, attention_v_bias, value,
+                        value_dimensions) < 0))
         {
           fprintf(stderr, "aipetllm: forward1 layer %" PRIu32
                           " attention input failed\n", layer);
           goto out;
         }
 
+      TEST_TENSOR("attn_norm",normalized,hidden);
+      TEST_TENSOR("Vcur",value,value_dimensions);
       if (two_tokens)
         {
           if (attention_q == NULL || attention_k == NULL ||
               attention_q->dimension_count != 2 ||
               attention_k->dimension_count != 2 ||
               attention_q->dimensions[0] != hidden ||
-              attention_q->dimensions[1] != hidden ||
+              attention_q->dimensions[1] != query_width ||
               attention_k->dimensions[0] != hidden ||
               attention_k->dimensions[1] != value_dimensions ||
               read_parallel_matvec(stream, data_start + attention_q->offset,
@@ -1745,14 +2115,18 @@ static int qwen2_forward1_checkpoint(FILE *stream, uint64_t data_start,
               read_parallel_matvec(stream, data_start + attention_k->offset,
                                    attention_k, normalized, key, cpu_mask,
                                    model_base, model_bytes) < 0 ||
-              add_f32_bias(stream, data_start, attention_q_bias, query,
-                           hidden) < 0 ||
-              add_f32_bias(stream, data_start, attention_k_bias, key,
-                           value_dimensions) < 0 ||
-              apply_qwen2_rope(query, head_count, head_dimension,
+              (!(normal_rope && attention_q_bias == NULL) &&
+               add_f32_bias(stream, data_start, attention_q_bias, query,
+                            query_width) < 0) ||
+              (!(normal_rope && attention_k_bias == NULL) &&
+               add_f32_bias(stream, data_start, attention_k_bias, key,
+                            value_dimensions) < 0) ||
+              (normal_rope ? apply_normal_rope : apply_qwen2_rope)
+                               (query, head_count, head_dimension,
                                 rotary_dimension, position,
                                 frequency_base) < 0 ||
-              apply_qwen2_rope(key, head_count_kv, head_dimension,
+              (normal_rope ? apply_normal_rope : apply_qwen2_rope)
+                               (key, head_count_kv, head_dimension,
                                 rotary_dimension, position,
                                 frequency_base) < 0)
             {
@@ -1764,6 +2138,8 @@ static int qwen2_forward1_checkpoint(FILE *stream, uint64_t data_start,
                  key, (size_t)value_dimensions * sizeof(float));
           memcpy(values + ((size_t)layer * capacity + position) * value_dimensions,
                  value, (size_t)value_dimensions * sizeof(float));
+          TEST_TENSOR("Qcur",query,query_width);
+          TEST_TENSOR("Kcur",key,value_dimensions);
         }
 
       for (head = 0; head < head_count; head++)
@@ -1780,7 +2156,7 @@ static int qwen2_forward1_checkpoint(FILE *stream, uint64_t data_start,
           else
             {
               float maximum;
-              float total;
+              double total;
               uint32_t past;
               uint64_t component;
               for (past = 0; past <= position; past++)
@@ -1790,11 +2166,13 @@ static int qwen2_forward1_checkpoint(FILE *stream, uint64_t data_start,
                   scores[past] = 0.0;
                   for (component = 0; component < head_dimension; component++)
                     {
-                      scores[past] += (double)query[destination + component] *
-                                      keys[base + component];
+                      scores[past] += (double)(query[destination + component] *
+                                               keys[base + component]);
                     }
 
-                  scores[past] *= 1.0 / sqrt((double)head_dimension);
+                  /* GGML's F32 dot result is rounded before KQ scaling. */
+                  scores[past] = (float)scores[past] *
+                                 (1.0f / sqrtf((float)head_dimension));
                 }
 
               maximum = (float)scores[0];
@@ -1803,29 +2181,36 @@ static int qwen2_forward1_checkpoint(FILE *stream, uint64_t data_start,
                   maximum = fmaxf(maximum, (float)scores[past]);
                 }
 
-              total = 0.0f;
               for (past = 0; past <= position; past++)
                 {
-                  probability[past] = expf((float)scores[past] - maximum);
-                  total += probability[past];
+                  probability[past] = (float)scores[past];
                 }
+              total = aipetllm_softmax_exp(position+1,probability,probability,maximum);
 
               if (!isfinite(total) || total <= 0.0f)
                 {
                   goto out;
                 }
+#ifdef AIPETLLM_LOGITS_TEST_API
+              if (layer == 0 && head == 0)
+                {
+                  extern void aipetllm_test_attention(uint32_t,const double *,const float *,double);
+                  aipetllm_test_attention(position,scores,probability,total);
+                }
+#endif
               for (component = 0; component < head_dimension; component++)
                 {
                   size_t base = (size_t)layer * capacity * value_dimensions +
                                 source + component;
-                  float sum = 0.0f;
+                  double sum = 0.0;
+                  float inverse = (float)(1.0 / total);
                   for (past = 0; past <= position; past++)
                     {
-                      sum += probability[past] / total *
-                             values[base + (size_t)past * value_dimensions];
+                      float p = probability[past] * inverse;
+                      sum += (double)(p * values[base + (size_t)past * value_dimensions]);
                     }
 
-                  context[destination + component] = sum;
+                  context[destination + component] = (float)sum;
                   if (position == 1)
                     {
                       /* Retain the v93 two-key expression as a compatibility
@@ -1833,9 +2218,10 @@ static int qwen2_forward1_checkpoint(FILE *stream, uint64_t data_start,
                        * selecting it. This does not prove model accuracy.
                        */
                       float baseline =
-                        probability[0] / total * values[base] +
-                        probability[1] / total * values[base + value_dimensions];
-                      if (memcmp(&sum, &baseline, sizeof(float)) != 0)
+                        (probability[0] * inverse) * values[base] +
+                        (probability[1] * inverse) * values[base + value_dimensions];
+                      float rounded_sum = (float)sum;
+                      if (memcmp(&rounded_sum, &baseline, sizeof(float)) != 0)
                         {
                           attention_changed++;
                           attention_max_error = fmaxf(attention_max_error,
@@ -1855,12 +2241,12 @@ static int qwen2_forward1_checkpoint(FILE *stream, uint64_t data_start,
                  " q=%08" PRIx32 " k=%08" PRIx32 " v=%08" PRIx32
                  " context=%08" PRIx32 "; two-key selected\n",
                  layer, attention_changed, (double)attention_max_error,
-                 tensor_crc32(0, (const uint8_t *)query, hidden * sizeof(float)),
+                 tensor_crc32(0, (const uint8_t *)query, query_width * sizeof(float)),
                  tensor_crc32(0, (const uint8_t *)key,
                               value_dimensions * sizeof(float)),
                  tensor_crc32(0, (const uint8_t *)value,
                               value_dimensions * sizeof(float)),
-                 tensor_crc32(0, (const uint8_t *)context, hidden * sizeof(float)));
+                 tensor_crc32(0, (const uint8_t *)context, query_width * sizeof(float)));
         }
 
       if (read_parallel_matvec(stream,
@@ -1872,11 +2258,13 @@ static int qwen2_forward1_checkpoint(FILE *stream, uint64_t data_start,
                           " attention output failed\n", layer);
           goto out;
         }
+      TEST_TENSOR("kqv_out",context,query_width);
 
       for (index = 0; index < hidden; index++)
         {
           state[index] += projected[index];
         }
+      TEST_TENSOR("attn_out",projected,hidden);
 
       if (rmsnorm_vector(stream, data_start, ffn_norm, state, hidden,
                          epsilon, norm_weight, normalized) < 0 ||
@@ -1892,23 +2280,11 @@ static int qwen2_forward1_checkpoint(FILE *stream, uint64_t data_start,
           goto out;
         }
 
-      for (index = 0; index < ffn_hidden; index++)
-        {
-          float exponential;
-          float silu;
-
-          if (gate[index] >= 0.0f)
-            {
-              silu = gate[index] / (1.0f + expf(-gate[index]));
-            }
-          else
-            {
-              exponential = expf(gate[index]);
-              silu = gate[index] * exponential / (1.0f + exponential);
-            }
-
-          swiglu[index] = silu * up[index];
-        }
+      TEST_TENSOR("ffn_norm",normalized,hidden);
+      TEST_TENSOR("ffn_gate",gate,ffn_hidden);
+      TEST_TENSOR("ffn_up",up,ffn_hidden);
+      aipetllm_swiglu((size_t)ffn_hidden,swiglu,gate,up);
+      TEST_TENSOR("ffn_act",swiglu,ffn_hidden);
 
       if (read_parallel_matvec(stream, data_start + ffn_down->offset,
                                 ffn_down, swiglu, down, cpu_mask,
@@ -1923,6 +2299,13 @@ static int qwen2_forward1_checkpoint(FILE *stream, uint64_t data_start,
         {
           state[index] += down[index];
         }
+      TEST_TENSOR("ffn_down",down,hidden);
+#ifdef AIPETLLM_LOGITS_TEST_API
+      {
+        extern void aipetllm_test_state(uint32_t,uint32_t,const float *,size_t);
+        aipetllm_test_state(layer,position,state,(size_t)hidden);
+      }
+#endif
 
       if (!streaming && (sequence == NULL || !sequence->chat_mode ||
           layer == 0 || layer + 1 == block_count))
@@ -1973,6 +2356,10 @@ static int qwen2_forward1_checkpoint(FILE *stream, uint64_t data_start,
     }
 
   {
+#ifdef AIPETLLM_LOGITS_TEST_API
+    extern void aipetllm_test_logits(const float *, size_t);
+    aipetllm_test_logits(logits, (size_t)output_weight->dimensions[1]);
+#endif
     uint64_t maximum_index = 0;
     float maximum_logit = logits[0];
 
@@ -2008,6 +2395,7 @@ static int qwen2_forward1_checkpoint(FILE *stream, uint64_t data_start,
       }
 
     next_token = (uint32_t)maximum_index;
+    evaluated = position + 1;
     if (sequence != NULL && sequence->generate_limit != 0 &&
         position + 1 >= sequence->input_count)
       {
@@ -2055,9 +2443,10 @@ static int qwen2_forward1_checkpoint(FILE *stream, uint64_t data_start,
   if (sequence != NULL)
     {
       if (streaming) putchar('\n');
-      printf("Qwen2 causal prefill/generation passed; prompt=%" PRIu32
-             " generated=%" PRIu32 "; KV session released on return\n",
-             sequence->input_count, sequence->output_count);
+      printf("causal prefill/generation returned; prompt=%" PRIu32
+             " generated=%" PRIu32 " finish=%s; evaluated-prefix KV retained on success\n",
+             sequence->input_count, sequence->output_count,
+             next_token == sequence->eos || (sequence->chat_mode && next_token == sequence->chat_stop) ? "eos" : "length");
     }
   else if (two_tokens)
     {
@@ -2068,6 +2457,32 @@ static int qwen2_forward1_checkpoint(FILE *stream, uint64_t data_start,
     {
   puts("Qwen2 28-layer single-token forward and LM head checkpoint passed; "
        "multi-token KV-cache generation pending.");
+    }
+  if (sequence != NULL && model_base != NULL && sequence->input_count > 1)
+    {
+      size_t width = (size_t)head_count_kv * head_dimension;
+      uint32_t count = evaluated < AIPETLLM_INPUT_LIMIT ? evaluated : AIPETLLM_INPUT_LIMIT;
+      size_t bytes = (size_t)block_count * count * width * sizeof(float);
+      float *saved_keys = malloc(bytes), *saved_values = malloc(bytes);
+      if (saved_keys != NULL && saved_values != NULL)
+        {
+          for (layer = 0; layer < block_count; layer++)
+            {
+              memcpy(saved_keys + (size_t)layer * count * width,
+                     keys + (size_t)layer * capacity * width,
+                     (size_t)count * width * sizeof(float));
+              memcpy(saved_values + (size_t)layer * count * width,
+                     values + (size_t)layer * capacity * width,
+                     (size_t)count * width * sizeof(float));
+            }
+          prefix_unload();g_prefix.keys=saved_keys;g_prefix.values=saved_values;
+          g_prefix.model=model_base;g_prefix.count=count;
+          g_prefix.layers=block_count;g_prefix.width=width;
+          for (uint32_t i=0;i<count;i++)
+            g_prefix.tokens[i] = i < sequence->input_count ? sequence->input[i] :
+                                 sequence->output[i-sequence->input_count];
+        }
+      else { free(saved_keys);free(saved_values); }
     }
   result = 0;
 
@@ -2127,14 +2542,20 @@ static int embedding_pipeline_run(const char *path,
   struct timespec load_start;
   struct timespec compute_start;
   struct timespec finished;
-  uint64_t metadata_count;
-  uint64_t tensor_count;
-  uint64_t data_start;
+  uint64_t metadata_count = 0;
+  uint64_t tensor_count = 0;
+  uint64_t data_start = 0;
+  int directory_valid = 0;
   uint32_t alignment = 32;
   uint32_t version;
   uint32_t magic;
   uint32_t head_count = 0;
   uint32_t head_count_kv = 0;
+  uint32_t attn_key_length = 0;
+  uint32_t value_length = 0;
+  char architecture[32] = "";
+  char model_name[128] = "";
+  uint32_t model_eos = UINT32_MAX;
   uint32_t rotary_dimension = 0;
   uint32_t block_count = 0;
   float epsilon = 1.0e-6f;
@@ -2181,6 +2602,10 @@ static int embedding_pipeline_run(const char *path,
 
       cache_locked = 1;
       pthread_setcancelstate(PTHREAD_CANCEL_DISABLE, &old_cancel);
+      if(__atomic_load_n(&g_pool_fault,__ATOMIC_ACQUIRE)) {
+        fputs("llm-pool-v212: previous uncertain job; reboot required\n",stderr);
+        goto out;
+      }
       if (sequence != NULL)
         {
           __atomic_store_n(&g_generation_stop, 0, __ATOMIC_RELEASE);
@@ -2188,10 +2613,18 @@ static int embedding_pipeline_run(const char *path,
         }
       if (g_model_cache != NULL)
         {
+          struct stat current;
           if (strcmp(path, g_model_path) != 0)
             {
               fputs("forwardfast: unload existing model before switching\n",
                     stderr);
+              goto out;
+            }
+          if (stat(path,&current) < 0 || current.st_size != g_model_stat.st_size ||
+              current.st_mtime != g_model_stat.st_mtime ||
+              current.st_ino != g_model_stat.st_ino || current.st_dev != g_model_stat.st_dev)
+            {
+              fputs("forwardfast: model file changed; explicit unload required\n",stderr);
               goto out;
             }
 
@@ -2232,6 +2665,7 @@ static int embedding_pipeline_run(const char *path,
         }
 
       length = (size_t)model_stat.st_size;
+      g_model_stat = model_stat;
       model_length = length;
       clock_gettime(CLOCK_MONOTONIC, &load_start);
       model_memory = malloc(length);
@@ -2242,6 +2676,7 @@ static int embedding_pipeline_run(const char *path,
         }
 
       printf("forwardfast: loading %zu bytes into RAM\n", length);
+      fflush(stdout);
       while (loaded < length)
         {
           if (sequence != NULL && generation_stopped())
@@ -2262,6 +2697,17 @@ static int embedding_pipeline_run(const char *path,
             }
 
           loaded += chunk;
+          /* Coarse loading-only markers, never per-token/per-row logging. */
+          if ((loaded % (64u * 1024u * 1024u)) == 0 || loaded == length)
+            {
+              struct timespec progress;
+              clock_gettime(CLOCK_MONOTONIC, &progress);
+              long long ms = (long long)(progress.tv_sec-load_start.tv_sec)*1000 +
+                             (progress.tv_nsec-load_start.tv_nsec)/1000000;
+              printf("llm-load-v215: bytes=%zu/%zu elapsed-ms=%lld (file-read/RAM load, not inference)\n",
+                     loaded, length, ms);
+              fflush(stdout);
+            }
         }
 
       memory_stream = fmemopen(model_memory, length, "rb");
@@ -2277,6 +2723,20 @@ static int embedding_pipeline_run(const char *path,
       printf("forwardfast: load=%.4f sec; model reads now RAM-only\n",
              (double)(compute_start.tv_sec - load_start.tv_sec) +
              (double)(compute_start.tv_nsec - load_start.tv_nsec) / 1.0e9);
+    }
+
+  if (cache_hit && g_directory.tensors != NULL)
+    {
+      tensors=g_directory.tensors;tensor_count=g_directory.count;
+      data_start=g_directory.data_start;head_count=g_directory.heads;
+      head_count_kv=g_directory.heads_kv;attn_key_length=g_directory.key_length;
+      value_length=g_directory.value_length;rotary_dimension=g_directory.rotary;
+      block_count=g_directory.blocks;model_eos=g_directory.eos;
+      epsilon=g_directory.epsilon;frequency_base=g_directory.frequency;
+      strcpy(architecture,g_directory.architecture);
+      embedding=find_tensor(tensors,tensor_count,"token_embd.weight");
+      puts("forwardfast: tensor-directory cache-hit; no GGUF metadata rescan");
+      goto directory_ready;
     }
 
   if (read_exact(stream, &magic, sizeof(magic)) < 0 ||
@@ -2300,7 +2760,8 @@ static int embedding_pipeline_run(const char *path,
           key_length >= sizeof(key) ||
           read_exact(stream, &type, sizeof(type)) < 0)
         {
-          fputs("aipetllm: embed malformed metadata\n", stderr);
+          fprintf(stderr,"aipetllm: embed malformed metadata index=%" PRIu64
+                         " offset=%ld\n",index,ftell(stream));
           goto out;
         }
 
@@ -2312,17 +2773,44 @@ static int embedding_pipeline_run(const char *path,
               goto out;
             }
         }
-      else if (sequence != NULL &&
-               strcmp(key, "tokenizer.ggml.eos_token_id") == 0 &&
+      else if (strcmp(key, "general.architecture") == 0 &&
+               type == GGUF_TYPE_STRING)
+        {
+          uint64_t length;
+          if (read_string(stream, architecture, sizeof(architecture), &length) < 0 ||
+              length >= sizeof(architecture)) goto out;
+        }
+      else if (strcmp(key, "general.name") == 0 && type == GGUF_TYPE_STRING)
+        {
+          uint64_t length;
+          if (read_string(stream, model_name, sizeof(model_name), &length) < 0 ||
+              length >= sizeof(model_name)) goto out;
+        }
+      else if (strstr(key, ".rope.scaling.") != NULL)
+        {
+          fputs("aipetllm: scaled RoPE is not implemented; model rejected\n", stderr);
+          goto out;
+        }
+      else if (strcmp(key, "llama.attention.key_length") == 0 &&
                type == GGUF_TYPE_UINT32)
         {
-          if (read_exact(stream, &sequence->eos, sizeof(sequence->eos)) < 0)
+          if (read_exact(stream, &attn_key_length, sizeof(attn_key_length)) < 0) goto out;
+        }
+      else if (strcmp(key, "llama.attention.value_length") == 0 &&
+               type == GGUF_TYPE_UINT32)
+        {
+          if (read_exact(stream, &value_length, sizeof(value_length)) < 0) goto out;
+        }
+      else if (strcmp(key, "tokenizer.ggml.eos_token_id") == 0 &&
+               type == GGUF_TYPE_UINT32)
+        {
+          if (read_exact(stream, &model_eos, sizeof(model_eos)) < 0)
             {
               goto out;
             }
         }
-      else if (strcmp(key,
-                      "qwen2.attention.layer_norm_rms_epsilon") == 0 &&
+      else if ((strcmp(key, "qwen2.attention.layer_norm_rms_epsilon") == 0 ||
+                strcmp(key, "llama.attention.layer_norm_rms_epsilon") == 0) &&
                type == GGUF_TYPE_FLOAT32)
         {
           if (read_exact(stream, &epsilon, sizeof(epsilon)) < 0)
@@ -2330,7 +2818,8 @@ static int embedding_pipeline_run(const char *path,
               goto out;
             }
         }
-      else if (strcmp(key, "qwen2.attention.head_count") == 0 &&
+      else if ((strcmp(key, "qwen2.attention.head_count") == 0 ||
+                strcmp(key, "llama.attention.head_count") == 0) &&
                type == GGUF_TYPE_UINT32)
         {
           if (read_exact(stream, &head_count, sizeof(head_count)) < 0)
@@ -2338,7 +2827,8 @@ static int embedding_pipeline_run(const char *path,
               goto out;
             }
         }
-      else if (strcmp(key, "qwen2.attention.head_count_kv") == 0 &&
+      else if ((strcmp(key, "qwen2.attention.head_count_kv") == 0 ||
+                strcmp(key, "llama.attention.head_count_kv") == 0) &&
                type == GGUF_TYPE_UINT32)
         {
           if (read_exact(stream, &head_count_kv, sizeof(head_count_kv)) < 0)
@@ -2354,7 +2844,8 @@ static int embedding_pipeline_run(const char *path,
               goto out;
             }
         }
-      else if (strcmp(key, "qwen2.rope.dimension_count") == 0 &&
+      else if ((strcmp(key, "qwen2.rope.dimension_count") == 0 ||
+                strcmp(key, "llama.rope.dimension_count") == 0) &&
                type == GGUF_TYPE_UINT32)
         {
           if (read_exact(stream, &rotary_dimension,
@@ -2363,7 +2854,8 @@ static int embedding_pipeline_run(const char *path,
               goto out;
             }
         }
-      else if (strcmp(key, "qwen2.rope.freq_base") == 0 &&
+      else if ((strcmp(key, "qwen2.rope.freq_base") == 0 ||
+                strcmp(key, "llama.rope.freq_base") == 0) &&
                type == GGUF_TYPE_FLOAT32)
         {
           if (read_exact(stream, &frequency_base,
@@ -2376,6 +2868,19 @@ static int embedding_pipeline_run(const char *path,
         {
           goto out;
         }
+    }
+
+  /* Deliberately narrow llama support to the inspected MiniCPM5 profile.
+   * Other llama variants may require scaling, biases or additional norms. */
+  if (strcmp(architecture, "qwen2") != 0 &&
+      !(strcmp(architecture, "llama") == 0 &&
+        strcmp(model_name, "MiniCPM5 1B") == 0 && block_count == 24 &&
+        head_count == 16 && head_count_kv == 2 && attn_key_length == 128 &&
+        value_length == 128 && rotary_dimension == 128 &&
+        frequency_base == 5000000.0f))
+    {
+      fputs("aipetllm: unsupported architecture/model profile\n", stderr);
+      goto out;
     }
 
   if (alignment == 0 || (alignment & (alignment - 1)) != 0 ||
@@ -2493,12 +2998,17 @@ static int embedding_pipeline_run(const char *path,
                  ~(uint64_t)(alignment - 1);
   }
 
+directory_ready:
+  directory_valid=1;
+  if (sequence != NULL) sequence->eos=model_eos;
   if (projection_mode >= 6)
     {
       ret = qwen2_forward1_checkpoint(stream, data_start, tensors,
                                       tensor_count, embedding, token_id,
                                       block_count, head_count,
-                                      head_count_kv, epsilon, cpu_mask,
+                                      head_count_kv, attn_key_length,
+                                      strcmp(architecture, "llama") == 0,
+                                      epsilon, cpu_mask,
                                       model_memory, model_length,
                                       projection_mode == 8, second_token_id,
                                       rotary_dimension, frequency_base,
@@ -3205,7 +3715,17 @@ out:
   free(normalized);
   free(weight);
   free(input);
-  free(tensors);
+  if (ret == 0 && cache_locked && directory_valid && g_directory.tensors == NULL)
+    {
+      g_directory.tensors=tensors;g_directory.count=tensor_count;
+      g_directory.data_start=data_start;g_directory.heads=head_count;
+      g_directory.heads_kv=head_count_kv;g_directory.key_length=attn_key_length;
+      g_directory.value_length=value_length;g_directory.rotary=rotary_dimension;
+      g_directory.blocks=block_count;g_directory.eos=model_eos;
+      g_directory.epsilon=epsilon;g_directory.frequency=frequency_base;
+      strcpy(g_directory.architecture,architecture);
+    }
+  if (tensors != g_directory.tensors) free(tensors);
   if (stream != NULL)
     {
       fclose(stream);
@@ -3235,7 +3755,11 @@ out:
             }
           else
             {
-              free(model_memory);
+              if(__atomic_load_n(&g_pool_fault,__ATOMIC_ACQUIRE)) {
+                g_model_cache=model_memory;g_model_bytes=model_length;
+                strcpy(g_model_path,path);
+                puts("llm-pool-v212: retaining model after uncertain worker completion; reboot required");
+              } else free(model_memory);
             }
         }
     }
@@ -3266,7 +3790,7 @@ int aipetllm_sequence_ram_checkpoint(const char *path,
                                     unsigned int mask)
 {
   if (sequence == NULL || sequence->input_count == 0 ||
-      sequence->input_count > AIPETLLM_INPUT_LIMIT || sequence->generate_limit > 64)
+      sequence->input_count > AIPETLLM_INPUT_LIMIT || sequence->generate_limit > AIPETLLM_SEQUENCE_LIMIT)
     {
       return 1;
     }

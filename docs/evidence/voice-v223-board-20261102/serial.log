@@ -1,0 +1,289 @@
+
+[boot188] CTOR enter=0x00000000404c8910
+[boot188] CTOR done index=0x0000000000000000
+[boot188] CTOR enter=0x00000000404f0020
+[boot188] CTOR done index=0x0000000000000001
+[boot188] CTOR enter=0x00000000404f1a30
+[boot188] CTOR done index=0x0000000000000002
+[boot188] CTOR enter=0x00000000402c7304
+[boot188] CTOR done index=0x0000000000000003
+[boot188] CTOR enter=0x00000000402c7bb8
+[boot188] CTOR done index=0x0000000000000004
+[boot188] CTOR enter=0x00000000402e5538
+[boot188] CTOR done index=0x0000000000000005
+[boot188] CTOR enter=0x000000004043c490
+[boot188] CTOR done index=0x0000000000000006
+[boot188] CTOR enter=0x000000004043e8c0
+[boot188] CTOR done index=0x0000000000000007
+[boot188] CTOR enter=0x0000000040457570
+[boot188] CTOR done index=0x0000000000000008
+[boot188] CTOR enter=0x00000000404579f0
+[boot188] CTOR done index=0x0000000000000009
+[boot188] CTOR enter=0x0000000040457ca0
+[boot188] CTOR done index=0x000000000000000a
+[boot188] CTOR enter=0x000000004045aa20
+[boot188] CTOR done index=0x000000000000000b
+[boot188] CTOR enter=0x0000000040497920
+[boot188] CTOR done index=0x000000000000000c
+[boot188] CTOR enter=0x000000004049da20
+[boot188] CTOR done index=0x000000000000000d
+[boot188] CTOR enter=0x00000000404efb40
+[boot188] CTOR done index=0x000000000000000e
+[boot188] CTOR enter=0x00000000404f1b90
+[boot188] CTOR done index=0x000000000000000f
+[boot188] CTOR enter=0x00000000404f5b70
+[boot188] CTOR done index=0x0000000000000010
+[boot188] CTOR enter=0x00000000404f7360
+[boot188] CTOR done index=0x0000000000000011
+[boot188] CTOR enter=0x000000004065a0a0
+[boot188] CTOR done index=0x0000000000000012
+[boot188] CTOR enter=0x000000004065f4e0
+[boot188] CTOR done index=0x0000000000000013
+[boot188] CTOR enter=0x000000004065f510
+[boot188] CTOR done index=0x0000000000000014
+[boot188] CTOR enter=0x000000004065f5a0
+[boot188] CTOR done index=0x0000000000000015
+[boot188] CTOR enter=0x0000000040683490
+[boot188] CTOR done index=0x0000000000000016
+[boot188] CTOR enter=0x00000000407fdf40
+[boot188] CTOR done index=0x0000000000000017
+AX20
+
+X1
+PR
+PR
+PR
+
+NuttShell (NSH)
+nsh> RI
+RX
+
+nsh> aipet help
+A7Z desktop pet v1.3fix CANDIDATE (v223; stable=v1.1/v219): aipet mode auto|local|cloud; aipet run|stop; aipet vision once; aipet ask TEXT
+Local history defaults OFF; persona, exact-prefix KV and resident weights remain. Optional: aipet local context 3.
+Official cloud voice needs separate aipet audio setup credentials; Wi-Fi is not API acceptance.
+Local: NPU ASR / CPU MiniCPM5 / CPU acoustic + NPU vocoder. Explicit listening, half duplex, no AEC/barge-in.
+Vision is a fresh synchronized capture+YOLO+SPI result, not guessed by LLM. Continuous camera and voice are exclusive.
+UART4=115200: aipet mcu start; aipet mcu arm session (explicit); fault/timeout/STOP always disarm; no automatic rearm.
+nsh> aipet audio service status
+voice-service-v1.3fix(v223): active=0 pid=0 stage=off stop=0 error=0 turns=0 empty=0 overlong=0 floor=400
+product-backend=none; cloud and local histories are separate RAM sessions
+product-v1: routed cloud/local; half-duplex; explicit microphone consent; deterministic vision/MCU rules; no AEC/barge-in/automatic arm; status != acoustic acceptance
+voice-load-v215: load-stage=none stage-age-ms=0 since-start-ms=0; elapsed is NOT disk throughput
+nsh> ufs status
+ufs: active=0 pid=0 phase=idle result=0 verified=0 created=0 close-error=0 stop=0 bytes=0/0 checked=0 elapsed-ms=0 no-progress-ms=0
+ufs-mount: active=0 attempted=0 ready=0 error=0 stage=not-started mount=/ufs source=/dev/ufsdata fallback=/data/models
+nsh> ufs start
+nsh> aipet mode local
+nsh> aipet audio output i2s
+audio: saved; applies next operation and survives reboot.
+aipet audio: output result=0
+nsh> aipet audio volume 50
+audio: saved; applies next operation and survives reboot.
+aipet audio: volume result=0
+nsh> ```text
+nsh: `: no matching `
+nsh> aipet audio general-voice /data/npu/general-asr /data/npu/general-tts
+voice-load-v215: BEGIN stage=general-provider-configure path=/data/npu/general-tts mono-us=81822057
+voice-load-v215: requested-ASR=/data/npu/general-asr requested-TTS=/data/npu/general-tts
+voice-load-v215: BEGIN stage=tts-tokens-lexicon path=/data/npu/general-tts mono-us=81838575
+voice-load-v215: END stage=tts-tokens-lexicon status=0 elapsed-ms=1401
+voice-load-v215: BEGIN stage=acoustic-read-crc path=/data/npu/general-tts/model-steps-3.basic.ort mono-us=83246559
+voice-load-v215: PROGRESS stage=acoustic-read-crc bytes=8388608/65033312 elapsed-ms=1391
+voice-load-v215: PROGRESS stage=acoustic-read-crc bytes=16777216/65033312 elapsed-ms=2779
+voice-load-v215: PROGRESS stage=acoustic-read-crc bytes=25165824/65033312 elapsed-ms=4163
+voice-load-v215: PROGRESS stage=acoustic-read-crc bytes=33554432/65033312 elapsed-ms=5552
+voice-load-v215: PROGRESS stage=acoustic-read-crc bytes=41943040/65033312 elapsed-ms=6940
+voice-load-v215: PROGRESS stage=acoustic-read-crc bytes=50331648/65033312 elapsed-ms=8328
+voice-load-v215: PROGRESS stage=acoustic-read-crc bytes=58720256/65033312 elapsed-ms=9713
+voice-load-v215: PROGRESS stage=acoustic-read-crc bytes=65033312/65033312 elapsed-ms=10760
+voice-load-v215: END stage=acoustic-read-crc status=0 elapsed-ms=10768
+voice-load-v215: BEGIN stage=acoustic-ORT-session path=/data/npu/general-tts/model-steps-3.basic.ort mono-us=94021448
+voice-load-v215: END stage=acoustic-ORT-session status=0 elapsed-ms=8306
+general-voice: RAM-only candidate installed; ASR=NPU acoustic=CPU vocoder=NPU; no auto capture/cloud fallback; TARGET ACCEPTANCE REQUIRED
+voice-load-v215: END stage=general-provider-configure status=0 elapsed-ms=20524
+general-voice: configure result=0
+nsh> aipet audio general-stream 5000 0
+voice-compute-v210: target=6 actual=6 part=d0b mask=00000040 confirmations=2 attempts=3 elapsed-us=3850 result=0 restore=0
+voice-load-v215: BEGIN stage=asr-tokens path=/data/npu/general-asr mono-us=106759595
+voice-load-v215: END stage=asr-tokens status=0 elapsed-ms=43
+asr-prepare-v213: tokens-us=48456 status=0
+voice-load-v215: BEGIN stage=asr-native-query path=/data/npu/general-asr/asr-encoder.a7tv mono-us=106812356
+voice-load-v215: END stage=asr-native-query status=0 elapsed-ms=13
+voice-load-v215: BEGIN stage=asr-native-prepare path=/data/npu/general-asr/asr-encoder.a7tv mono-us=106832037
+voice-load-v215: END stage=asr-native-prepare status=0 elapsed-ms=6711
+asr-prepare-v213: role=asr-encoder query-alloc-us=19681 prepare-us=6718018 status=0
+voice-load-v215: BEGIN stage=asr-native-query path=/data/npu/general-asr/asr-decoder.a7tv mono-us=113557426
+voice-load-v215: END stage=asr-native-query status=0 elapsed-ms=11
+voice-load-v215: BEGIN stage=asr-native-prepare path=/data/npu/general-asr/asr-decoder.a7tv mono-us=113574166
+voice-load-v215: END stage=asr-native-prepare status=0 elapsed-ms=1042
+asr-prepare-v213: role=asr-decoder query-alloc-us=16741 prepare-us=1048341 status=0
+voice-load-v215: BEGIN stage=asr-native-query path=/data/npu/general-asr/asr-joiner.a7tv mono-us=114629879
+voice-load-v215: END stage=asr-native-query status=0 elapsed-ms=11
+voice-load-v215: BEGIN stage=asr-native-prepare path=/data/npu/general-asr/asr-joiner.a7tv mono-us=114646793
+voice-load-v215: END stage=asr-native-prepare status=0 elapsed-ms=931
+asr-prepare-v213: role=asr-joiner query-alloc-us=16914 prepare-us=937553 status=0
+voice-load-v215: BEGIN stage=vocoder-query path=/data/npu/general-tts/vocoder.a7tv mono-us=115597897
+voice-load-v215: END stage=vocoder-query status=0 elapsed-ms=10
+voice-load-v215: BEGIN stage=vocoder-native-prepare path=/data/npu/general-tts/vocoder.a7tv mono-us=115613653
+voice-load-v215: END stage=vocoder-native-prepare status=0 elapsed-ms=1170
+voice-prepare-v213: asr-us=8852753 vocoder-us=1192469 status=0; MIC still OFF
+voice-session-v190: prepared ASR once in 10052068 us; same-command RAM reuse, per-turn states cleared
+general-asr: MIC ON; live 48k->16k FIR->NPU; capture-side energy endpoint; no actions
+general-asr: MIC OFF; capture/consumer stopped before final decode or playback
+general-asr: result=0 samples16=80000 chunks=6 queue-peak=82 ended=0; native NPU candidate, not E2E acceptance
+voice-stage: mic-stopped-mono-us=121925283 transcript-ready-mono-us=123456394; mic stop is NOT true end-of-speech (energy endpoint is diagnostic)
+asr-compute-v190: encoder=6/3667551us decoder=3/15245us joiner=144/1141264us; scoped CPU6, double MIDR/MPIDR proof; NPU unchanged
+asr-v210: accept-batches=500 accept-us=4509491 final-flush-us=813969 status=0; nested NPU times are not additive and not E2E latency
+asr-v211: received=80000 staged-bytes=0 qualified-batches=125 tail-frames=84 max-stage-ms=40; no dropped PCM
+general-asr transcript: 你好
+aipet audio: general-stream result=0
+nsh> aipet audio local-speak-stream "你好，语音测试成功。"
+voice-compute-v210: target=7 actual=7 part=d0b mask=00000080 confirmations=2 attempts=3 elapsed-us=3906 result=0 restore=0
+tts-pcm-v212: samples=67328 nonzero=62515 peak=6836; before volume/resampling, NOT acoustic acceptance
+local-tts: result=0 acoustic=CPU vocoder=NPU packets=2 samples=67328 cpu-us=1099486 npu-us=156695 first-sink-us=1788510; NOT end-of-speech/physical-audio latency
+local-tts-stream: status=0 first-pcm=1780524 us first-driver-pull=1780902 us frames=146565; audible latency NOT measured
+local-tts-buffer-v189: segments=1 rebuffers=0 rebuffer-wait-us=0; no padding/replay; actual device errors are fatal
+voice-stage: tts-start-mono-us=126700114 first-driver-pull-mono-us=128481016 status=0; driver pull is NOT physical audible onset
+aipet audio: local-speak-stream result=0
+nsh> aipet audio local-speak-stream "Hello world. English TTS test."
+tts-pcm-v212: samples=210432 nonzero=203036 peak=10928; before volume/resampling, NOT acoustic acceptance
+local-tts: result=0 acoustic=CPU vocoder=NPU packets=6 samples=210432 cpu-us=3462784 npu-us=469514 first-sink-us=2988864; NOT end-of-speech/physical-audio latency
+local-tts-stream: status=0 first-pcm=2970568 us first-driver-pull=2970907 us frames=458084; audible latency NOT measured
+local-tts-buffer-v189: segments=1 rebuffers=0 rebuffer-wait-us=0; no padding/replay; actual device errors are fatal
+voice-stage: tts-start-mono-us=133188108 first-driver-pull-mono-us=136159015 status=0; driver pull is NOT physical audible onset
+aipet audio: local-speak-stream result=0
+nsh> aipet audio local-speak-stream "今天的语音测试已经完成，请继续下一步。现在检查长句是否能够完整朗读，不要遗漏后半句，也不要在词语中间停止。"
+tts-pcm-v212: samples=293376 nonzero=277089 peak=11800; before volume/resampling, NOT acoustic acceptance
+local-tts: result=0 acoustic=CPU vocoder=NPU packets=8 samples=293376 cpu-us=4815452 npu-us=627239 first-sink-us=2453812; NOT end-of-speech/physical-audio latency
+local-tts-stream: status=0 first-pcm=2435552 us first-driver-pull=2436844 us frames=638642; audible latency NOT measured
+local-tts-buffer-v189: segments=2 rebuffers=0 rebuffer-wait-us=0; no padding/replay; actual device errors are fatal
+voice-stage: tts-start-mono-us=154160173 first-driver-pull-mono-us=156597017 status=0; driver pull is NOT physical audible onset
+aipet audio: local-speak-stream result=0
+nsh> aipet local on
+local-llm: on
+nsh> aipet local preload
+llm-preflight-v215: model='/ufs/models/MiniCPM5-1B-Q4_K_M.gguf' storage=auto-UFS-MiniCPM5 bytes=688065920 status=0; header only, no model load
+local-llm: warming configured model; dialogue history unchanged
+local-latency-v220: history=off pairs=0; persona, resident weights and exact-prefix KV retained; full replies
+aipet-local: storage=auto-UFS-MiniCPM5 model='/ufs/models/MiniCPM5-1B-Q4_K_M.gguf'
+chatml tokens=83 start=130072 stop=130073 history-pairs=0
+forwardfast: cores-mask=fc workers=6; A76:A55 row weight=3:1; system scheduling unchanged
+forwardfast: loading 688065920 bytes into RAM
+llm-load-v215: bytes=67108864/688065920 elapsed-ms=962 (file-read/RAM load, not inference)
+llm-load-v215: bytes=134217728/688065920 elapsed-ms=1928 (file-read/RAM load, not inference)
+llm-load-v215: bytes=201326592/688065920 elapsed-ms=2892 (file-read/RAM load, not inference)
+llm-load-v215: bytes=268435456/688065920 elapsed-ms=3857 (file-read/RAM load, not inference)
+llm-load-v215: bytes=335544320/688065920 elapsed-ms=4822 (file-read/RAM load, not inference)
+llm-load-v215: bytes=402653184/688065920 elapsed-ms=5788 (file-read/RAM load, not inference)
+llm-load-v215: bytes=469762048/688065920 elapsed-ms=6752 (file-read/RAM load, not inference)
+llm-load-v215: bytes=536870912/688065920 elapsed-ms=7718 (file-read/RAM load, not inference)
+llm-load-v215: bytes=603979776/688065920 elapsed-ms=8682 (file-read/RAM load, not inference)
+llm-load-v215: bytes=671088640/688065920 elapsed-ms=9649 (file-read/RAM load, not inference)
+llm-load-v215: bytes=688065920/688065920 elapsed-ms=9902 (file-read/RAM load, not inference)
+forwardfast: load=9.9092 sec; model reads now RAM-only
+forward1 token=0 layers=24 hidden=1536 heads=16/2
+prefill-cache: reused=0 fresh=83 (exact token-prefix KV)
+llm-pool-v212: configure mask=fc; per-worker affinity/RR, no global scheduler change
+prefill-batch: width=4 tokens=82 batches=21; serial final prompt/decode
+llm-latency-v220: prompt=83 reused=0 fresh=83 batched=82 batch-ms=17474.443; final prompt+LM-head still required; no board first-audio claim
+
+assistant>
+causal prefill/generation returned; prompt=83 generated=1 finish=length; evaluated-prefix KV retained on success
+forwardfast: compute=18.0155 sec; causal forward checkpoint; model resident; bounded generation finished
+forwardfast: cache retained; use aipetllm unload to free
+local-context: used=0 dropped=0 stored=0 limit=0 RAM-only shared-device-session
+aipet-local: prompt=83 generated=1 first=17.848s rest=0.000s cores=fc
+local-llm: preload ready (0)
+nsh> aipet run
+llm-preflight-v215: model='/ufs/models/MiniCPM5-1B-Q4_K_M.gguf' storage=auto-UFS-MiniCPM5 bytes=688065920 status=0; header only, no model load
+PR
+PR
+roice-service: wPRo
+ lPeRr
+e mocgus:  onr ebsoualrtd= 0s
+ Mroiatli ocno ndsioslaer;me du;s eb essetr-veifcef osrtta tSuTsO Pf rroeqmu eSsStHe;d ,s aAfCe Kt on odti sicmopnlnieedc.t
+hthmicus:  srteasrtuilntg= 0s
+ perlold
+MIvto-ivc1e:- sMeCrUv iclei-nvk1-s.t3afritx=(v02;2 3e)x:p laicctiitv aer=m1  rpeiqdu=i1r6e9 ds tAaFgTeER= prreeapdairniensgs-
+  Cd-iOsFplFa ys:t oip=n0i teirarloirz=i0n gt uSrTn7s7=350  deimrpetcyt= 08 -obveirtl opnagt=h0
+ floor=400
+product-backend=none; cloud and local histories are separate RAM sessions
+product-v1: routed cloud/local; half-duplex; explicit microphone consent; deterministic vision/MCU rules; no AEC/barge-in/automatic arm; status != acoustic acceptance
+voice-load-v215: load-stage=spawn-pending stage-age-ms=61 since-start-ms=61; elapsed is NOT disk throughput
+nsh> display: ST7735 direct path ready
+PR
+rIPETp rLoVdGuLc UtI- raocuttei-vve1;:  usteu r'nd=1i sfprloazy eenm=oltoicoanl  <rneaasmoen>='f forrocme da-lnooctahle;r  esahcehl lt.u
+ n re-evaluated, never switch after action/audio
+voice-load-v215: BEGIN stage=product-LLM-preload path=- mono-us=460070816
+llm-preflight-v215: model='/ufs/models/MiniCPM5-1B-Q4_K_M.gguf' storage=auto-UFS-MiniCPM5 bytes=688065920 status=0; header only, no model load
+llm-preflight-v215: model='/ufs/models/MiniCPM5-1B-Q4_K_M.gguf' storage=auto-UFS-MiniCPM5 bytes=688065920 status=0; header only, no model load
+local-llm: warming configured model; dialogue history unchanged
+local-latency-v220: history=off pairs=0; persona, resident weights and exact-prefix KV retained; full replies
+aipet-local: storage=auto-UFS-MiniCPM5 model='/ufs/models/MiniCPM5-1B-Q4_K_M.gguf'
+chatml tokens=83 start=130072 stop=130073 history-pairs=0
+forwardfast: cores-mask=fc workers=6; A76:A55 row weight=3:1; system scheduling unchanged
+forwardfast: cache-hit; load=0 sec; no model SD reads
+forwardfast: tensor-directory cache-hit; no GGUF metadata rescan
+forward1 token=0 layers=24 hidden=1536 heads=16/2
+prefill-cache: reused=82 fresh=1 (exact token-prefix KV)
+llm-latency-v220: prompt=83 reused=82 fresh=1 batched=0 batch-ms=0.001; final prompt+LM-head still required; no board first-audio claim
+
+assistant>
+causal prefill/generation returned; prompt=83 generated=1 finish=length; evaluated-prefix KV retained on success
+forwardfast: compute=0.4033 sec; causal forward checkpoint; model resident; bounded generation finished
+local-context: used=0 dropped=0 stored=0 limit=0 RAM-only shared-device-session
+aipet-local: prompt=83 generated=1 first=0.380s rest=0.000s cores=fc
+local-llm: preload ready (0)
+voice-load-v215: END stage=product-LLM-preload status=0 elapsed-ms=558
+voice-load-v215: BEGIN stage=product-ASR-vocoder-prepare path=- mono-us=460635429
+voice-load-v215: BEGIN stage=asr-tokens path=/data/npu/general-asr mono-us=460646003
+voice-load-v215: END stage=asr-tokens status=0 elapsed-ms=43
+asr-prepare-v213: tokens-us=48239 status=0
+voice-load-v215: BEGIN stage=asr-native-query path=/data/npu/general-asr/asr-encoder.a7tv mono-us=460698601
+voice-load-v215: END stage=asr-native-query status=0 elapsed-ms=13
+voice-load-v215: BEGIN stage=asr-native-prepare path=/data/npu/general-asr/asr-encoder.a7tv mono-us=460718051
+voice-load-v215: END stage=asr-native-prepare status=0 elapsed-ms=6712
+asr-prepare-v213: role=asr-encoder query-alloc-us=19450 prepare-us=6718519 status=0
+voice-load-v215: BEGIN stage=asr-native-query path=/data/npu/general-asr/asr-decoder.a7tv mono-us=467443940
+voice-load-v215: END stage=asr-native-query status=0 elapsed-ms=11
+voice-load-v215: BEGIN stage=asr-native-prepare path=/data/npu/general-asr/asr-decoder.a7tv mono-us=467460682
+voice-load-v215: END stage=asr-native-prepare status=0 elapsed-ms=1042
+asr-prepare-v213: role=asr-decoder query-alloc-us=16742 prepare-us=1048425 status=0
+voice-load-v215: BEGIN stage=asr-native-query path=/data/npu/general-asr/asr-joiner.a7tv mono-us=468516480
+voice-load-v215: END stage=asr-native-query status=0 elapsed-ms=11
+voice-load-v215: BEGIN stage=asr-native-prepare path=/data/npu/general-asr/asr-joiner.a7tv mono-us=468533392
+voice-load-v215: END stage=asr-native-prepare status=0 elapsed-ms=931
+asr-prepare-v213: role=asr-joiner query-alloc-us=16912 prepare-us=937595 status=0
+voice-load-v215: BEGIN stage=vocoder-query path=/data/npu/general-tts/vocoder.a7tv mono-us=469484563
+voice-load-v215: END stage=vocoder-query status=0 elapsed-ms=10
+voice-load-v215: BEGIN stage=vocoder-native-prepare path=/data/npu/general-tts/vocoder.a7tv mono-us=469500319
+voice-load-v215: END stage=vocoder-native-prepare status=0 elapsed-ms=1170
+voice-prepare-v213: asr-us=8841938 vocoder-us=1193039 status=0; MIC still OFF
+voice-session-v190: prepared ASR once in 10041824 us; same-command RAM reuse, per-turn states cleared
+voice-load-v215: END stage=product-ASR-vocoder-prepare status=0 elapsed-ms=10057
+voice-compute-v210: target=1 actual=1 part=d05 mask=00000002 confirmations=2 attempts=2 elapsed-us=1510 result=0 restore=0
+product-v1: READY MIC ON; waiting with opening pre-roll, half-duplex
+product-v1: speech detected; opening audio retained
+product-v1: MIC OFF; RX stopped, ASR finalizing
+dialogue-rx-v214: result=0 monitored=523200 accepted48=384000 speech=1 limited=1 queue=82; idle PCM not saved
+gate-end-v221fix1: noise-rms=163 last-rms=590 voiced-blocks=116 quiet-blocks=0; 10ms blocks,700ms endpoint,8s hard discard
+voice-resident-v214: asr=0 accepted16=128000 limited=1; models retained by SAME live task
+voice-stage-v214: capture-stop-mono-us=481712744 consumer-done-mono-us=482305101 asr-ready-mono-us=483142970 tail-us=1430226 status=0
+product-v1: overlong utterance discarded, no partial LLM/action
+product-route-v1: turn=1 frozen=local reason=forced-local; each turn re-evaluated, never switch after action/audio
+product-v1: READY MIC ON; waiting with opening pre-roll, half-duplex
+product-v1: speech detected; opening audio retained
+product-v1: MIC OFF; RX stopped, ASR finalizing
+dialogue-rx-v214: result=0 monitored=510720 accepted48=384000 speech=1 limited=1 queue=83; idle PCM not saved
+gate-end-v221fix1: noise-rms=145 last-rms=359 voiced-blocks=122 quiet-blocks=1; 10ms blocks,700ms endpoint,8s hard discard
+voice-resident-v214: asr=0 accepted16=128000 limited=1; models retained by SAME live task
+voice-stage-v214: capture-stop-mono-us=493921141 consumer-done-mono-us=494515101 asr-ready-mono-us=495355081 tail-us=1433941 status=0
+product-v1: overlong utterance discarded, no partial LLM/action
+product-route-v1: turn=1 frozen=local reason=forced-local; each turn re-evaluated, never switch after action/audio
+product-v1: READY MIC ON; waiting with opening pre-roll, half-duplex
+product-v1: speech detected; opening audio retained
+product-v1: MIC OFF; RX stopped, ASR finalizing
+dialogue-rx-v214: result=0 monitored=541920 accepted48=384000 speech=1 limited=1 queue=83; idle PCM not saved
+gate-end-v221fix1: noise-rms=143 last-rms=245 voiced-blocks=123 quiet-blocks=29; 10ms blocks,700ms endpoint,8s hard discard
+

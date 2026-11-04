@@ -1,0 +1,4277 @@
+[12.999]update dts
+stop sunxi USB-DRD ok...
+stop sunxi USB1-Host ok...
+[13.025]Starting kernel ...
+
+[13.028]total: 13028 ms
+
+[13.030][mmc]: MMC Device 2 not found
+[13.034][mmc]: mmc 2 not find, so not exit
+NOTICE:  [SCP] :wait arisc ready....
+NOTICE:  [SCP] :arisc version: [d463b9da43dc50320f21ba51c6c51afe2db20d83]
+NOTICE:  [SCP] :arisc startup ready
+NOTICE:  [SCP] :arisc startup notify message feedback
+NOTICE:  [SCP] :sunxi-arisc driver is starting
+NOTICE:  BL3-1: Next image address = 0x40200000
+NOTICE:  BL3-1: Next image spsr = 0x3c5
+- Ready to Boot Primary CPU
+- Boot from EL1
+- Boot to C runtime for OS Initialize
+M0 v141-layout
+M1
+A7Z0
+A7Z1
+N0
+N1
+H0
+H1
+H2
+H3
+H4
+S0
+S1
+P1
+H5
+N2
+N3
+N4
+R RR ee-5-  e - aR
+ydyyyty  y o aeayeaBd addad0d
+  ot BBBoo   Btt tt 1tBooo o o
+  ot  e   B oBooBto oo2 BoootSottot
+eccccSnoeS cSSB Soe3eee
+   nd PCCdCU Cnnn oAncdCddnd0o
+ CAPPPCUUPUU1 P
+             PU-
+
+
+
+ U
+---A
+    - o 2-
+            BBBB-o
+r t fofoo oooBoB4ttototfo  t
+o   Lo ffr mrrrfNofoo6or Emmmrm
+LEL7 LL11LEEm EE
+11L
+-1
+
+
+
+ X0
+-  o --
+ BBoB
+     Boooot oooottttt    ot tttoCooo     CCrCC  u  rrnrrutuuuninnntmtttiieiimm                                                                       mmeefee   o fffrfoooo Orrrr    S OOOOSSSSI  n  IIiIInnntniiiiittttaliiiiaaaailz                                                                      zzzeeiiiz
+    eee
+
+
+
+- Boot to - C Boruotn titome C  forrun OtiSm Ie nifotira OliS zeIn
+itialize
+N8
+X1
+PR
+PR
+PR
+
+NuttShell (NSH)
+nsh> RI
+RX
+
+nsh> ps
+  PID GROUP CPU(AFFINITY)   PRI POLICY   TYPE    NPX STATE    EVENT     SIGMASK                                                                                  STACK COMMAND
+    0     0 000(0x000000ff)   0 FIFO     Kthread   - Running            0000000                                                                      000000000 0008112 CPU0 IDLE
+    1     0 001(0x000000ff)   0 FIFO     Kthread   - Assigned           0000000                                                                      000000000 0008112 CPU1 IDLE
+    2     0 002(0x000000ff)   0 FIFO     Kthread   - Running            0000000                                                                      000000000 0008112 CPU2 IDLE
+    3     0 003(0x000000ff)   0 FIFO     Kthread   - Running            0000000                                                                      000000000 0008112 CPU3 IDLE
+    4     0 004(0x000000ff)   0 FIFO     Kthread   - Running            0000000                                                                      000000000 0008112 CPU4 IDLE
+    5     0 005(0x000000ff)   0 FIFO     Kthread   - Running            0000000                                                                      000000000 0008112 CPU5 IDLE
+    6     0 006(0x000000ff)   0 FIFO     Kthread   - Running            0000000                                                                      000000000 0008112 CPU6 IDLE
+    7     0 007(0x000000ff)   0 FIFO     Kthread   - Running            0000000                                                                      000000000 0008112 CPU7 IDLE
+    8     0 ---(0x000000ff) 224 RR       Kthread   - Waiting  Semaphore 0000000                                                                      000000000 0008048 hpwork 0x40470240 0x404702c8
+    9     9 001(0x000000ff) 100 RR       Task      - Running            0000000                                                                      000000000 0008080 nsh_main
+   10     0 ---(0x000000ff) 100 RR       Kthread   - Waiting  Signal    0000000                                                                      000000000 0008080 a733-wlan-rx
+   12     0 ---(0x000000ff) 120 RR       Kthread   - Waiting  Signal    0000000                                                                      000000000 0003984 a7z-uart-rx
+nsh> kvdbd &
+kvdbd [13:100]
+nsh> bluetoothd &
+bluetoothd [14:100]
+nsh> ps
+  PID GROUP CPU(AFFINITY)   PRI POLICY   TYPE    NPX STATE    EVENT     SIGMASK            S                                                         TACK COMMAND
+    0     0 000(0x000000ff)   0 FIFO     Kthread   - Running            0000000000000000 000                                                         8112 CPU0 IDLE
+    1     0 001(0x000000ff)   0 FIFO     Kthread   - Assigned           0000000000000000 000                                                         8112 CPU1 IDLE
+    2     0 002(0x000000ff)   0 FIFO     Kthread   - Running            0000000000000000 000                                                         8112 CPU2 IDLE
+    3     0 003(0x000000ff)   0 FIFO     Kthread   - Running            0000000000000000 000                                                         8112 CPU3 IDLE
+    4     0 004(0x000000ff)   0 FIFO     Kthread   - Running            0000000000000000 000                                                         8112 CPU4 IDLE
+    5     0 005(0x000000ff)   0 FIFO     Kthread   - Running            0000000000000000 000                                                         8112 CPU5 IDLE
+    6     0 006(0x000000ff)   0 FIFO     Kthread   - Running            0000000000000000 000                                                         8112 CPU6 IDLE
+    7     0 007(0x000000ff)   0 FIFO     Kthread   - Running            0000000000000000 000                                                         8112 CPU7 IDLE
+    8     0 ---(0x000000ff) 224 RR       Kthread   - Waiting  Semaphore 0000000000000000 000                                                         8048 hpwork 0x40470240 0x404702c8
+    9     9 001(0x000000ff) 100 RR       Task      - Running            0000000000000000 000                                                         8080 nsh_main
+   10     0 ---(0x000000ff) 100 RR       Kthread   - Waiting  Signal    0000000000000000 000                                                         8080 a733-wlan-rx
+   12     0 ---(0x000000ff) 120 RR       Kthread   - Waiting  Signal    0000000000000000 000                                                         3984 a7z-uart-rx
+   13    13 ---(0x000000ff) 100 RR       Task      - Waiting  Semaphore 0000000000000000 000                                                         8080 kvdbd
+   14    14 ---(0x000000ff) 103 RR       Task      - Waiting  Semaphore 0000000000000000 001                                                         6272 bluetoothd
+   15    14 ---(0x000000ff) 110 FIFO     pthread   - Waiting  Semaphore 0000000000000000 000                                                         8112 sysworkq 0x403e9178 0x4254a530
+   27    14 ---(0x000000ff)  10 FIFO     pthread   - Waiting  Semaphore 0000000000000000 000                                                         8112 BT LW WQ 0x403e9178 0x4254a530
+nsh> bttool
+bttool> pair auto 0
+bttool> btKtool] Auto accept pair:Disable
+[bttool] cmd#1 pair: rc=0 (accepted; async operation may still be pending)
+enable
+bttool> bKttool] enable API status=0; completion is the state callback
+[bttool] Context:0x42551650, Adapter state changed: 1
+[bttool] cmd#2 enable: rc=0 (accepted; async operation may still be pending)
+[bttool] Context:0x42551650, Adapter state changed: 2
+state
+bttool> btKtool] Adapter State: 2
+[bttool] cmd#3 state: rc=0 (accepted; async operation may still be pending)
+scan start -t 0 -p 1M -m 0 -l 1
+bttool> [[tKtool] cmd#4 scan: rc=0 (accepted; async operation may still be pending)
+[bttool] on_scan_start_status_cb, scanner:0x4255c7a0, status:0
+[bttool] ScanResult ------[2E:90:FB:96:BC:4D]------
+[bttool] AddrType:1
+[bttool] Rssi:-69
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[0F:39:92:84:DF:62]------
+[bttool] AddrType:1
+[bttool] Rssi:-63
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[54:50:00:36:7A:3A]------
+[bttool] AddrType:0
+[bttool] Rssi:-89
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[33:A4:2D:15:11:43]------
+[bttool] AddrType:1
+[bttool] Rssi:-89
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[3C:62:FD:E2:03:52]------
+[bttool] AddrType:1
+[bttool] Rssi:-61
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[3F:5B:7D:71:04:66]------
+[bttool] AddrType:0
+[bttool] Rssi:-77
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[5D:3F:A3:B7:F8:29]------
+[bttool] AddrType:1
+[bttool] Rssi:-62
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[11:55:96:CE:27:DB]------
+[bttool] AddrType:1
+[bttool] Rssi:-69
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[0F:B4:D2:EE:27:02]------
+[bttool] AddrType:1
+[bttool] Rssi:-60
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[9C:12:21:4F:5C:EF]------
+[bttool] AddrType:0
+[bttool] Rssi:-66
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[2E:90:FB:96:BC:4D]------
+[bttool] AddrType:1
+[bttool] Rssi:-73
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[D4:43:8A:F3:2C:61]------
+[bttool] AddrType:0
+[bttool] Rssi:-75
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[9C:12:21:4F:5C:EF]------
+[bttool] AddrType:0
+[bttool] Rssi:-67
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[09:5D:B2:5B:18:7E]------
+[bttool] AddrType:1
+[bttool] Rssi:-81
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[2A:BA:8B:1D:67:96]------
+[bttool] AddrType:1
+[bttool] Rssi:-59
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[15:4F:5E:86:4F:B4]------
+[bttool] AddrType:1
+[bttool] Rssi:-91
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[0F:B4:D2:EE:27:02]------
+[bttool] AddrType:1
+[bttool] Rssi:-61
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[1D:2A:7C:43:B3:7F]------
+[bttool] AddrType:1
+[bttool] Rssi:-79
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[54:B3:30:1E:BF:DE]------
+[bttool] AddrType:1
+[bttool] Rssi:-67
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[61:41:B1:85:8B:D5]------
+[bttool] AddrType:1
+[bttool] Rssi:-95
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[0F:39:92:84:DF:62]------
+[bttool] AddrType:1
+[bttool] Rssi:-60
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[0E:95:42:58:82:D3]------
+[bttool] AddrType:1
+[bttool] Rssi:-70
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[38:CE:FE:C8:A4:09]------
+[bttool] AddrType:1
+[bttool] Rssi:-36
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[3C:62:FD:E2:03:52]------
+[bttool] AddrType:1
+[bttool] Rssi:-73
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[11:55:96:CE:27:DB]------
+[bttool] AddrType:1
+[bttool] Rssi:-63
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[09:5D:B2:5B:18:7E]------
+[bttool] AddrType:1
+[bttool] Rssi:-77
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[00:BA:6A:07:68:53]------
+[bttool] AddrType:1
+[bttool] Rssi:-87
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[54:50:00:36:7A:3A]------
+[bttool] AddrType:0
+[bttool] Rssi:-79
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[F8:6F:DE:92:11:F9]------
+[bttool] AddrType:0
+[bttool] Rssi:-96
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[2E:90:FB:96:BC:4D]------
+[bttool] AddrType:1
+[bttool] Rssi:-70
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[34:B9:83:75:5D:E1]------
+[bttool] AddrType:1
+[bttool] Rssi:-97
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[0F:B4:D2:EE:27:02]------
+[bttool] AddrType:1
+[bttool] Rssi:-61
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[48:33:60:21:73:D6]------
+[bttool] AddrType:1
+[bttool] Rssi:-91
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[39:6D:C6:47:82:1F]------
+[bttool] AddrType:1
+[bttool] Rssi:-86
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[5D:3F:A3:B7:F8:29]------
+[bttool] AddrType:1
+[bttool] Rssi:-61
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[2F:80:B0:47:3A:51]------
+[bttool] AddrType:1
+[bttool] Rssi:-92
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[2A:BA:8B:1D:67:96]------
+[bttool] AddrType:1
+[bttool] Rssi:-52
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[54:50:00:36:7A:3A]------
+[bttool] AddrType:0
+[bttool] Rssi:-75
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[00:BA:6A:07:68:53]------
+[bttool] AddrType:1
+[bttool] Rssi:-76
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[0F:39:92:84:DF:62]------
+[bttool] AddrType:1
+[bttool] Rssi:-54
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[11:55:96:CE:27:DB]------
+[bttool] AddrType:1
+[bttool] Rssi:-62
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[0F:B4:D2:EE:27:02]------
+[bttool] AddrType:1
+[bttool] Rssi:-62
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[38:CE:FE:C8:A4:09]------
+[bttool] AddrType:1
+[bttool] Rssi:-34
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[34:B9:83:75:5D:E1]------
+[bttool] AddrType:1
+[bttool] Rssi:-96
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[6A:75:B7:33:5A:86]------
+[bttool] AddrType:1
+[bttool] Rssi:-78
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[7C:A8:8B:08:42:C3]------
+[bttool] AddrType:1
+[bttool] Rssi:-87
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[0F:B4:D2:EE:27:02]------
+[bttool] AddrType:1
+[bttool] Rssi:-57
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[2A:BA:8B:1D:67:96]------
+[bttool] AddrType:1
+[bttool] Rssi:-50
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[D5:8E:D4:03:A6:12]------
+[bttool] AddrType:1
+[bttool] Rssi:-89
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[00:BA:6A:07:68:53]------
+[bttool] AddrType:1
+[bttool] Rssi:-77
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[54:50:00:36:7A:3A]------
+[bttool] AddrType:0
+[bttool] Rssi:-90
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[2F:80:B0:47:3A:51]------
+[bttool] AddrType:1
+[bttool] Rssi:-93
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[11:55:96:CE:27:DB]------
+[bttool] AddrType:1
+[bttool] Rssi:-63
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[54:50:00:36:7A:3A]------
+[bttool] AddrType:0
+[bttool] Rssi:-89
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[09:5D:B2:5B:18:7E]------
+[bttool] AddrType:1
+[bttool] Rssi:-75
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[2A:BA:8B:1D:67:96]------
+[bttool] AddrType:1
+[bttool] Rssi:-54
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[9C:12:21:4F:5C:EF]------
+[bttool] AddrType:0
+[bttool] Rssi:-71
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[0F:39:92:84:DF:62]------
+[bttool] AddrType:1
+[bttool] Rssi:-58
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[0F:B4:D2:EE:27:02]------
+[bttool] AddrType:1
+[bttool] Rssi:-55
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[38:CE:FE:C8:A4:09]------
+[bttool] AddrType:1
+[bttool] Rssi:-33
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[40:99:F6:02:3B:A8]------
+[bttool] AddrType:0
+[bttool] Rssi:-93
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[2D:5C:40:53:66:E2]------
+[bttool] AddrType:1
+[bttool] Rssi:-93
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[6A:75:B7:33:5A:86]------
+[bttool] AddrType:1
+[bttool] Rssi:-81
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[0E:95:42:58:82:D3]------
+[bttool] AddrType:1
+[bttool] Rssi:-74
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[11:55:96:CE:27:DB]------
+[bttool] AddrType:1
+[bttool] Rssi:-83
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[3C:62:FD:E2:03:52]------
+[bttool] AddrType:1
+[bttool] Rssi:-60
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[10:E0:B0:49:42:89]------
+[bttool] AddrType:1
+[bttool] Rssi:-88
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[2E:90:FB:96:BC:4D]------
+[bttool] AddrType:1
+[bttool] Rssi:-85
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[54:50:00:36:7A:3A]------
+[bttool] AddrType:0
+[bttool] Rssi:-80
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[9C:12:21:4F:5C:EF]------
+[bttool] AddrType:0
+[bttool] Rssi:-70
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[9C:12:21:4F:5C:EF]------
+[bttool] AddrType:0
+[bttool] Rssi:-70
+[bttool] Type:2
+[bttool]
+
+[bttool] ScanResult ------[00:BA:6A:07:68:53]------
+[bttool] AddrType:1
+[bttool] Rssi:-74
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[08:08:09:21:9F:7A]------
+[bttool] AddrType:1
+[bttool] Rssi:-94
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[09:5D:B2:5B:18:7E]------
+[bttool] AddrType:1
+[bttool] Rssi:-78
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[38:CE:FE:C8:A4:09]------
+[bttool] AddrType:1
+[bttool] Rssi:-37
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[0F:B4:D2:EE:27:02]------
+[bttool] AddrType:1
+[bttool] Rssi:-58
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[0F:39:92:84:DF:62]------
+[bttool] AddrType:1
+[bttool] Rssi:-63
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[9C:12:21:4F:5C:EF]------
+[bttool] AddrType:0
+[bttool] Rssi:-61
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[2E:90:FB:96:BC:4D]------
+[bttool] AddrType:1
+[bttool] Rssi:-70
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[6A:75:B7:33:5A:86]------
+[bttool] AddrType:1
+[bttool] Rssi:-79
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[7F:8D:88:12:EC:F6]------
+[bttool] AddrType:1
+[bttool] Rssi:-81
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[1D:2A:7C:43:B3:7F]------
+[bttool] AddrType:1
+[bttool] Rssi:-75
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[54:50:00:36:7A:3A]------
+[bttool] AddrType:0
+[bttool] Rssi:-78
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[9C:12:21:4F:5C:EF]------
+[bttool] AddrType:0
+[bttool] Rssi:-68
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[0E:95:42:58:82:D3]------
+[bttool] AddrType:1
+[bttool] Rssi:-74
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[7C:A8:8B:08:42:C3]------
+[bttool] AddrType:1
+[bttool] Rssi:-85
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[50:66:B1:67:25:30]------
+[bttool] AddrType:1
+[bttool] Rssi:-78
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[09:5D:B2:5B:18:7E]------
+[bttool] AddrType:1
+[bttool] Rssi:-74
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[5D:3F:A3:B7:F8:29]------
+[bttool] AddrType:1
+[bttool] Rssi:-67
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[00:60:37:6F:94:0B]------
+[bttool] AddrType:0
+[bttool] Rssi:-93
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[C4:19:D2:80:28:D1]------
+[bttool] AddrType:0
+[bttool] Rssi:-99
+[bttool] Type:2
+[bttool]
+
+[bttool] ScanResult ------[9C:12:21:4F:5C:EF]------
+[bttool] AddrType:0
+[bttool] Rssi:-59
+[bttool] Type:2
+[bttool]
+
+[bttool] ScanResult ------[2A:BA:8B:1D:67:96]------
+[bttool] AddrType:1
+[bttool] Rssi:-50
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[50:66:B1:67:25:30]------
+[bttool] AddrType:1
+[bttool] Rssi:-82
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[11:55:96:CE:27:DB]------
+[bttool] AddrType:1
+[bttool] Rssi:-65
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[1D:2A:7C:43:B3:7F]------
+[bttool] AddrType:1
+[bttool] Rssi:-80
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[6A:75:B7:33:5A:86]------
+[bttool] AddrType:1
+[bttool] Rssi:-70
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[54:50:00:36:7A:3A]------
+[bttool] AddrType:0
+[bttool] Rssi:-85
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[0F:39:92:84:DF:62]------
+[bttool] AddrType:1
+[bttool] Rssi:-53
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[3C:62:FD:E2:03:52]------
+[bttool] AddrType:1
+[bttool] Rssi:-68
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[54:50:00:36:7A:3A]------
+[bttool] AddrType:0
+[bttool] Rssi:-78
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[2A:BA:8B:1D:67:96]------
+[bttool] AddrType:1
+[bttool] Rssi:-54
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[50:66:B1:67:25:30]------
+[bttool] AddrType:1
+[bttool] Rssi:-79
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[13:02:10:00:01:FA]------
+[bttool] AddrType:0
+[bttool] Rssi:-96
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[00:60:37:6F:94:0B]------
+[bttool] AddrType:0
+[bttool] Rssi:-92
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[79:C4:42:11:48:D4]------
+[bttool] AddrType:1
+[bttool] Rssi:-72
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[00:BA:6A:07:68:53]------
+[bttool] AddrType:1
+[bttool] Rssi:-84
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[60:55:56:8A:92:82]------
+[bttool] AddrType:0
+[bttool] Rssi:-68
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[48:33:60:21:73:D6]------
+[bttool] AddrType:1
+[bttool] Rssi:-94
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[2D:5C:40:53:66:E2]------
+[bttool] AddrType:1
+[bttool] Rssi:-93
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[50:66:B1:67:25:30]------
+[bttool] AddrType:1
+[bttool] Rssi:-89
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[6A:75:B7:33:5A:86]------
+[bttool] AddrType:1
+[bttool] Rssi:-73
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[54:50:00:36:7A:3A]------
+[bttool] AddrType:0
+[bttool] Rssi:-88
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[39:6D:C6:47:82:1F]------
+[bttool] AddrType:1
+[bttool] Rssi:-86
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[0E:95:42:58:82:D3]------
+[bttool] AddrType:1
+[bttool] Rssi:-68
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[61:41:B1:85:8B:D5]------
+[bttool] AddrType:1
+[bttool] Rssi:-93
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[33:A4:2D:15:11:43]------
+[bttool] AddrType:1
+[bttool] Rssi:-89
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[59:E5:61:10:08:82]------
+[bttool] AddrType:1
+[bttool] Rssi:-52
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[2A:BA:8B:1D:67:96]------
+[bttool] AddrType:1
+[bttool] Rssi:-53
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[1D:2A:7C:43:B3:7F]------
+[bttool] AddrType:1
+[bttool] Rssi:-78
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[11:55:96:CE:27:DB]------
+[bttool] AddrType:1
+[bttool] Rssi:-57
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[09:5D:B2:5B:18:7E]------
+[bttool] AddrType:1
+[bttool] Rssi:-71
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[54:50:00:36:7A:3A]------
+[bttool] AddrType:0
+[bttool] Rssi:-87
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[7F:51:38:E4:1F:4A]------
+[bttool] AddrType:1
+[bttool] Rssi:-75
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[F8:6F:DE:92:11:F9]------
+[bttool] AddrType:0
+[bttool] Rssi:-96
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[00:BA:6A:07:68:53]------
+[bttool] AddrType:1
+[bttool] Rssi:-86
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[0F:39:92:84:DF:62]------
+[bttool] AddrType:1
+[bttool] Rssi:-58
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[50:66:B1:67:25:30]------
+[bttool] AddrType:1
+[bttool] Rssi:-83
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[9C:12:21:4F:5C:EF]------
+[bttool] AddrType:0
+[bttool] Rssi:-79
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[3C:62:FD:E2:03:52]------
+[bttool] AddrType:1
+[bttool] Rssi:-70
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[0F:B4:D2:EE:27:02]------
+[bttool] AddrType:1
+[bttool] Rssi:-53
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[38:CE:FE:C8:A4:09]------
+[bttool] AddrType:1
+[bttool] Rssi:-33
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[39:6D:C6:47:82:1F]------
+[bttool] AddrType:1
+[bttool] Rssi:-86
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[1D:2A:7C:43:B3:7F]------
+[bttool] AddrType:1
+[bttool] Rssi:-83
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[33:A4:2D:15:11:43]------
+[bttool] AddrType:1
+[bttool] Rssi:-89
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[54:50:00:36:7A:3A]------
+[bttool] AddrType:0
+[bttool] Rssi:-83
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[50:66:B1:67:25:30]------
+[bttool] AddrType:1
+[bttool] Rssi:-87
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[2A:BA:8B:1D:67:96]------
+[bttool] AddrType:1
+[bttool] Rssi:-54
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[54:B3:30:1E:BF:DE]------
+[bttool] AddrType:1
+[bttool] Rssi:-70
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[0E:95:42:58:82:D3]------
+[bttool] AddrType:1
+[bttool] Rssi:-68
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[54:50:00:36:7A:3A]------
+[bttool] AddrType:0
+[bttool] Rssi:-86
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[0F:B4:D2:EE:27:02]------
+[bttool] AddrType:1
+[bttool] Rssi:-54
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[40:99:F6:02:3B:A8]------
+[bttool] AddrType:0
+[bttool] Rssi:-93
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[7C:A8:8B:08:42:C3]------
+[bttool] AddrType:1
+[bttool] Rssi:-78
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[29:20:01:44:51:93]------
+[bttool] AddrType:1
+[bttool] Rssi:-90
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[7F:8D:88:12:EC:F6]------
+[bttool] AddrType:1
+[bttool] Rssi:-89
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[1D:2A:7C:43:B3:7F]------
+[bttool] AddrType:1
+[bttool] Rssi:-84
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[50:66:B1:67:25:30]------
+[bttool] AddrType:1
+[bttool] Rssi:-83
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[11:55:96:CE:27:DB]------
+[bttool] AddrType:1
+[bttool] Rssi:-78
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[15:4F:5E:86:4F:B4]------
+[bttool] AddrType:1
+[bttool] Rssi:-94
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[50:66:B1:67:25:30]------
+[bttool] AddrType:1
+[bttool] Rssi:-80
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[00:BA:6A:07:68:53]------
+[bttool] AddrType:1
+[bttool] Rssi:-74
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[00:60:37:6F:94:0B]------
+[bttool] AddrType:0
+[bttool] Rssi:-93
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[38:CE:FE:C8:A4:09]------
+[bttool] AddrType:1
+[bttool] Rssi:-36
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[54:50:00:36:7A:3A]------
+[bttool] AddrType:0
+[bttool] Rssi:-82
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[2A:BA:8B:1D:67:96]------
+[bttool] AddrType:1
+[bttool] Rssi:-54
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[48:33:60:21:73:D6]------
+[bttool] AddrType:1
+[bttool] Rssi:-93
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[0E:95:42:58:82:D3]------
+[bttool] AddrType:1
+[bttool] Rssi:-67
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[9C:12:21:4F:5C:EF]------
+[bttool] AddrType:0
+[bttool] Rssi:-71
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[2E:90:FB:96:BC:4D]------
+[bttool] AddrType:1
+[bttool] Rssi:-74
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[50:66:B1:67:25:30]------
+[bttool] AddrType:1
+[bttool] Rssi:-76
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[50:66:B1:67:25:30]------
+[bttool] AddrType:1
+[bttool] Rssi:-73
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[15:4F:5E:86:4F:B4]------
+[bttool] AddrType:1
+[bttool] Rssi:-96
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[3C:62:FD:E2:03:52]------
+[bttool] AddrType:1
+[bttool] Rssi:-66
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[0F:B4:D2:EE:27:02]------
+[bttool] AddrType:1
+[bttool] Rssi:-58
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[D4:43:8A:F3:2C:61]------
+[bttool] AddrType:0
+[bttool] Rssi:-71
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[1D:2A:7C:43:B3:7F]------
+[bttool] AddrType:1
+[bttool] Rssi:-87
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[50:66:B1:67:25:30]------
+[bttool] AddrType:1
+[bttool] Rssi:-84
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[7F:8D:88:12:EC:F6]------
+[bttool] AddrType:1
+[bttool] Rssi:-88
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[9C:12:21:4F:5C:EF]------
+[bttool] AddrType:0
+[bttool] Rssi:-71
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[D4:43:8A:F3:2C:61]------
+[bttool] AddrType:0
+[bttool] Rssi:-71
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[0E:95:42:58:82:D3]------
+[bttool] AddrType:1
+[bttool] Rssi:-66
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[50:66:B1:67:25:30]------
+[bttool] AddrType:1
+[bttool] Rssi:-76
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[0F:39:92:84:DF:62]------
+[bttool] AddrType:1
+[bttool] Rssi:-54
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[6A:75:B7:33:5A:86]------
+[bttool] AddrType:1
+[bttool] Rssi:-74
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[59:E5:61:10:08:82]------
+[bttool] AddrType:1
+[bttool] Rssi:-52
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[79:C4:42:11:48:D4]------
+[bttool] AddrType:1
+[bttool] Rssi:-73
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[1D:2A:7C:43:B3:7F]------
+[bttool] AddrType:1
+[bttool] Rssi:-86
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[2D:5C:40:53:66:E2]------
+[bttool] AddrType:1
+[bttool] Rssi:-96
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[2A:BA:8B:1D:67:96]------
+[bttool] AddrType:1
+[bttool] Rssi:-53
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[D4:43:8A:F3:2C:61]------
+[bttool] AddrType:0
+[bttool] Rssi:-71
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[9C:12:21:4F:5C:EF]------
+[bttool] AddrType:0
+[bttool] Rssi:-76
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[2E:90:FB:96:BC:4D]------
+[bttool] AddrType:1
+[bttool] Rssi:-75
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[54:50:00:36:7A:3A]------
+[bttool] AddrType:0
+[bttool] Rssi:-74
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[7F:8D:88:12:EC:F6]------
+[bttool] AddrType:1
+[bttool] Rssi:-87
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[09:5D:B2:5B:18:7E]------
+[bttool] AddrType:1
+[bttool] Rssi:-77
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[D4:43:8A:F3:2C:61]------
+[bttool] AddrType:0
+[bttool] Rssi:-73
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[11:55:96:CE:27:DB]------
+[bttool] AddrType:1
+[bttool] Rssi:-61
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[38:CE:FE:C8:A4:09]------
+[bttool] AddrType:1
+[bttool] Rssi:-34
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[0F:B4:D2:EE:27:02]------
+[bttool] AddrType:1
+[bttool] Rssi:-57
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[1D:2A:7C:43:B3:7F]------
+[bttool] AddrType:1
+[bttool] Rssi:-72
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[50:66:B1:67:25:30]------
+[bttool] AddrType:1
+[bttool] Rssi:-81
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[9C:12:21:4F:5C:EF]------
+[bttool] AddrType:0
+[bttool] Rssi:-71
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[7C:A8:8B:08:42:C3]------
+[bttool] AddrType:1
+[bttool] Rssi:-71
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[0E:95:42:58:82:D3]------
+[bttool] AddrType:1
+[bttool] Rssi:-77
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[0F:39:92:84:DF:62]------
+[bttool] AddrType:1
+[bttool] Rssi:-59
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[33:A4:2D:15:11:43]------
+[bttool] AddrType:1
+[bttool] Rssi:-88
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[50:66:B1:67:25:30]------
+[bttool] AddrType:1
+[bttool] Rssi:-84
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[38:CE:FE:C8:A4:09]------
+[bttool] AddrType:1
+[bttool] Rssi:-33
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[39:6D:C6:47:82:1F]------
+[bttool] AddrType:1
+[bttool] Rssi:-83
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[54:50:00:36:7A:3A]------
+[bttool] AddrType:0
+[bttool] Rssi:-78
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[2A:BA:8B:1D:67:96]------
+[bttool] AddrType:1
+[bttool] Rssi:-49
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[11:55:96:CE:27:DB]------
+[bttool] AddrType:1
+[bttool] Rssi:-66
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[1D:2A:7C:43:B3:7F]------
+[bttool] AddrType:1
+[bttool] Rssi:-80
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[50:66:B1:67:25:30]------
+[bttool] AddrType:1
+[bttool] Rssi:-90
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[11:55:96:CE:27:DB]------
+[bttool] AddrType:1
+[bttool] Rssi:-65
+[bttool] Type:3
+[bttool]
+
+scan stop[bttool] ScanResult ------[54:50:00:36:7A:3A]------
+[bttool] AddrType:0
+[bttool] Rssi:-84
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[0F:B4:D2:EE:27:02]------
+[bttool] AddrType:1
+[bttool] Rssi:-54
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[1D:2A:7C:43:B3:7F]------
+[bttool] AddrType:1
+[bttool] Rssi:-86
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[38:CE:FE:C8:A4:09]------
+[bttool] AddrType:1
+[bttool] Rssi:-32
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[6A:75:B7:33:5A:86]------
+[bttool] AddrType:1
+[bttool] Rssi:-80
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[40:99:F6:02:3B:A8]------
+[bttool] AddrType:0
+[bttool] Rssi:-95
+[bttool] Type:0
+[bttool]
+
+
+bttool> bKttool] Scan stop requested; wait for on_scan_stopped_cb
+[bttool] cmd#5 scan: rc=0 (accepted; async operation may still be pending)
+[bttool] on_scan_stopped_cb, scanner:0x4255c7a0
+scan dump
+bttool> btKtool] Scan state=idle
+[bttool] cmd#6 scan: rc=0 (accepted; async operation may still be pending)
+disable
+bttool> bKttool] Scan already stopped
+[bttool] disable API status=0; wait for OFF(0)
+[bttool] Context:0x42551650, Adapter state changed: 6
+[bttool] cmd#7 disable: rc=0 (accepted; async operation may still be pending)
+[bttool] Scan already stopped
+[bttool] Context:0x42551650, Adapter state changed: 0
+state
+bttool> [[Kttool] Adapter State: 0
+[bttool] cmd#8 state: rc=0 (accepted; async operation may still be pending)
+quit
+[bttool] cmd#9 quit: rc=-2 (quit)
+nsh> bttool
+bttool> pair auto 0
+bttool> [[Kttool] Auto accept pair:Disable
+[bttool] cmd#10 pair: rc=0 (accepted; async operation may still be pending)
+enable
+bttool> btKtool] enable API status=0; completion is the state callback
+[bttool] Context:0x4254d510, Adapter state changed: 1
+[bttool] cmd#11 enable: rc=0 (accepted; async operation may still be pending)
+[bttool] Context:0x4254d510, Adapter state changed: 2
+state
+bttool> bKttool] Adapter State: 2
+[bttool] cmd#12 state: rc=0 (accepted; async operation may still be pending)
+scan start -t 0 -p 1M -m 0 -l 1
+bttool> [[tKtool] cmd#13 scan: rc=0 (accepted; async operation may still be pending)
+[bttool] on_scan_start_status_cb, scanner:0x42553fa0, status:0
+[bttool] ScanResult ------[1D:2A:7C:43:B3:7F]------
+[bttool] AddrType:1
+[bttool] Rssi:-73
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[7C:A8:8B:08:42:C3]------
+[bttool] AddrType:1
+[bttool] Rssi:-72
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[0E:95:42:58:82:D3]------
+[bttool] AddrType:1
+[bttool] Rssi:-75
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[08:08:09:21:9F:7A]------
+[bttool] AddrType:1
+[bttool] Rssi:-95
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[C0:E5:79:1E:76:35]------
+[bttool] AddrType:0
+[bttool] Rssi:-97
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[00:BA:6A:07:68:53]------
+[bttool] AddrType:1
+[bttool] Rssi:-84
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[40:99:F6:02:3B:A8]------
+[bttool] AddrType:0
+[bttool] Rssi:-95
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[10:FD:F1:88:68:2D]------
+[bttool] AddrType:1
+[bttool] Rssi:-86
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[2E:90:FB:96:BC:4D]------
+[bttool] AddrType:1
+[bttool] Rssi:-77
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[54:50:00:36:7A:3A]------
+[bttool] AddrType:0
+[bttool] Rssi:-87
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[2A:BA:8B:1D:67:96]------
+[bttool] AddrType:1
+[bttool] Rssi:-51
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[38:CE:FE:C8:A4:09]------
+[bttool] AddrType:1
+[bttool] Rssi:-34
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[00:60:37:6F:94:0B]------
+[bttool] AddrType:0
+[bttool] Rssi:-92
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[0E:95:42:58:82:D3]------
+[bttool] AddrType:1
+[bttool] Rssi:-68
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[54:50:00:36:7A:3A]------
+[bttool] AddrType:0
+[bttool] Rssi:-81
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[2D:5C:40:53:66:E2]------
+[bttool] AddrType:1
+[bttool] Rssi:-89
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[3C:62:FD:E2:03:52]------
+[bttool] AddrType:1
+[bttool] Rssi:-68
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[7F:51:38:E4:1F:4A]------
+[bttool] AddrType:1
+[bttool] Rssi:-69
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[7F:8D:88:12:EC:F6]------
+[bttool] AddrType:1
+[bttool] Rssi:-84
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[2A:BA:8B:1D:67:96]------
+[bttool] AddrType:1
+[bttool] Rssi:-54
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[09:5D:B2:5B:18:7E]------
+[bttool] AddrType:1
+[bttool] Rssi:-77
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[50:66:B1:67:25:30]------
+[bttool] AddrType:1
+[bttool] Rssi:-82
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[10:FD:F1:88:68:2D]------
+[bttool] AddrType:1
+[bttool] Rssi:-85
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[54:50:00:36:7A:3A]------
+[bttool] AddrType:0
+[bttool] Rssi:-83
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[79:C4:42:11:48:D4]------
+[bttool] AddrType:1
+[bttool] Rssi:-71
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[0F:39:92:84:DF:62]------
+[bttool] AddrType:1
+[bttool] Rssi:-63
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[0F:B4:D2:EE:27:02]------
+[bttool] AddrType:1
+[bttool] Rssi:-59
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[00:BA:6A:07:68:53]------
+[bttool] AddrType:1
+[bttool] Rssi:-75
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[2E:90:FB:96:BC:4D]------
+[bttool] AddrType:1
+[bttool] Rssi:-80
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[CD:1F:03:50:F7:0C]------
+[bttool] AddrType:1
+[bttool] Rssi:-78
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[38:CE:FE:C8:A4:09]------
+[bttool] AddrType:1
+[bttool] Rssi:-34
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[0F:B4:D2:EE:27:02]------
+[bttool] AddrType:1
+[bttool] Rssi:-57
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[09:5D:B2:5B:18:7E]------
+[bttool] AddrType:1
+[bttool] Rssi:-76
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[54:50:00:36:7A:3A]------
+[bttool] AddrType:0
+[bttool] Rssi:-82
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[0F:39:92:84:DF:62]------
+[bttool] AddrType:1
+[bttool] Rssi:-64
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[2D:5C:40:53:66:E2]------
+[bttool] AddrType:1
+[bttool] Rssi:-92
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[2A:BA:8B:1D:67:96]------
+[bttool] AddrType:1
+[bttool] Rssi:-56
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[11:55:96:CE:27:DB]------
+[bttool] AddrType:1
+[bttool] Rssi:-76
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[6C:DA:A3:52:0C:F4]------
+[bttool] AddrType:1
+[bttool] Rssi:-70
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[7F:8D:88:12:EC:F6]------
+[bttool] AddrType:1
+[bttool] Rssi:-87
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[15:4F:5E:86:4F:B4]------
+[bttool] AddrType:1
+[bttool] Rssi:-92
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[50:66:B1:67:25:30]------
+[bttool] AddrType:1
+[bttool] Rssi:-89
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[1D:2A:7C:43:B3:7F]------
+[bttool] AddrType:1
+[bttool] Rssi:-83
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[00:BA:6A:07:68:53]------
+[bttool] AddrType:1
+[bttool] Rssi:-75
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[10:E0:B0:49:42:89]------
+[bttool] AddrType:1
+[bttool] Rssi:-90
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[54:B3:30:1E:BF:DE]------
+[bttool] AddrType:1
+[bttool] Rssi:-65
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[0E:95:42:58:82:D3]------
+[bttool] AddrType:1
+[bttool] Rssi:-71
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[3C:62:FD:E2:03:52]------
+[bttool] AddrType:1
+[bttool] Rssi:-66
+[bttool] Type:3
+[bttool]
+
+scan stop[bttool] ScanResult ------[50:66:B1:67:25:30]------
+[bttool] AddrType:1
+[bttool] Rssi:-76
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[29:20:01:44:51:93]------
+[bttool] AddrType:1
+[bttool] Rssi:-86
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[59:E5:61:10:08:82]------
+[bttool] AddrType:1
+[bttool] Rssi:-53
+[bttool] Type:0
+[bttool]
+
+
+bttool> [[tKtool] Scan stop requested; wait for on_scan_stopped_cb
+[bttool] cmd#14 scan: rc=0 (accepted; async operation may still be pending)
+[bttool] on_scan_stopped_cb, scanner:0x42553fa0
+scan dump
+bttool> [[tKtool] Scan state=idle
+[bttool] cmd#15 scan: rc=0 (accepted; async operation may still be pending)
+disable
+bttool> [[tKtool] Scan already stopped
+[bttool] disable API status=0; wait for OFF(0)
+[bttool] Context:0x4254d510, Adapter state changed: 6
+[bttool] cmd#16 disable: rc=0 (accepted; async operation may still be pending)
+[bttool] Scan already stopped
+[bttool] Context:0x4254d510, Adapter state changed: 0
+state
+bttool> btKtool] Adapter State: 0
+[bttool] cmd#17 state: rc=0 (accepted; async operation may still be pending)
+quit
+[bttool] cmd#18 quit: rc=-2 (quit)
+nsh> bttool
+bttool> pair auto 0
+bttool> [[Kttool] Auto accept pair:Disable
+[bttool] cmd#19 pair: rc=0 (accepted; async operation may still be pending)
+enable
+bttool> [[Kttool] enable API status=0; completion is the state callback
+[bttool] Context:0x42558860, Adapter state changed: 1
+[bttool] cmd#20 enable: rc=0 (accepted; async operation may still be pending)
+[bttool] Context:0x42558860, Adapter state changed: 2
+state
+bttool> [[Kttool] Adapter State: 2
+[bttool] cmd#21 state: rc=0 (accepted; async operation may still be pending)
+scan start -t 0 -p 1M -m 0 -l 1
+bttool> btKtool] cmd#22 scan: rc=0 (accepted; async operation may still be pending)
+[bttool] on_scan_start_status_cb, scanner:0x42554210, status:0
+[bttool] ScanResult ------[6A:75:B7:33:5A:86]------
+[bttool] AddrType:1
+[bttool] Rssi:-77
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[9C:12:21:4F:5C:EF]------
+[bttool] AddrType:0
+[bttool] Rssi:-71
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[D4:43:8A:F3:2C:61]------
+[bttool] AddrType:0
+[bttool] Rssi:-69
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[0E:95:42:58:82:D3]------
+[bttool] AddrType:1
+[bttool] Rssi:-67
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[54:50:00:36:7A:3A]------
+[bttool] AddrType:0
+[bttool] Rssi:-80
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[C0:E5:79:1E:76:35]------
+[bttool] AddrType:0
+[bttool] Rssi:-96
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[59:E5:61:10:08:82]------
+[bttool] AddrType:1
+[bttool] Rssi:-54
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[F2:C0:91:99:B5:8F]------
+[bttool] AddrType:1
+[bttool] Rssi:-67
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[2E:90:FB:96:BC:4D]------
+[bttool] AddrType:1
+[bttool] Rssi:-75
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[04:1C:87:84:CD:60]------
+[bttool] AddrType:1
+[bttool] Rssi:-95
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[38:CE:FE:C8:A4:09]------
+[bttool] AddrType:1
+[bttool] Rssi:-42
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[54:50:00:36:7A:3A]------
+[bttool] AddrType:0
+[bttool] Rssi:-77
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[34:B9:83:75:5D:E1]------
+[bttool] AddrType:1
+[bttool] Rssi:-94
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[00:60:37:6F:94:0B]------
+[bttool] AddrType:0
+[bttool] Rssi:-91
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[0F:39:92:84:DF:62]------
+[bttool] AddrType:1
+[bttool] Rssi:-63
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[00:BA:6A:07:68:53]------
+[bttool] AddrType:1
+[bttool] Rssi:-72
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[39:6D:C6:47:82:1F]------
+[bttool] AddrType:1
+[bttool] Rssi:-89
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[7F:8D:88:12:EC:F6]------
+[bttool] AddrType:1
+[bttool] Rssi:-80
+[sbcattn oostl] Type:3
+op[bttool]
+
+[bttool] ScanResult ------[2A:BA:8B:1D:67:96]------
+[bttool] AddrType:1
+[bttool] Rssi:-54
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[0F:B4:D2:EE:27:02]------
+[bttool] AddrType:1
+[bttool] Rssi:-60
+[bttool] Type:3
+[bttool]
+
+
+bttool> [[tKtool] Scan stop requested; wait for on_scan_stopped_cb
+[bttool] cmd#23 scan: rc=0 (accepted; async operation may still be pending)
+[bttool] on_scan_stopped_cb, scanner:0x42554210
+scan dump
+bttool> btKtool] Scan state=idle
+[bttool] cmd#24 scan: rc=0 (accepted; async operation may still be pending)
+disable
+bttool> bKttool] Scan already stopped
+[bttool] disable API status=0; wait for OFF(0)
+[bttool] Context:0x42558860, Adapter state changed: 6
+[bttool] cmd#25 disable: rc=0 (accepted; async operation may still be pending)
+[bttool] Scan already stopped
+[bttool] Context:0x42558860, Adapter state changed: 0
+state
+bttool> [[Kttool] Adapter State: 0
+[bttool] cmd#26 state: rc=0 (accepted; async operation may still be pending)
+quit
+[bttool] cmd#27 quit: rc=-2 (quit)
+nsh> bttool
+bttool> pair auto 0
+bttool> btKtool] Auto accept pair:Disable
+[bttool] cmd#28 pair: rc=0 (accepted; async operation may still be pending)
+enable
+bttool> bKttool] enable API status=0; completion is the state callback
+[bttool] Context:0x4254d6d0, Adapter state changed: 1
+[bttool] cmd#29 enable: rc=0 (accepted; async operation may still be pending)
+[bttool] Context:0x4254d6d0, Adapter state changed: 2
+state
+bttool> btKtool] Adapter State: 2
+[bttool] cmd#30 state: rc=0 (accepted; async operation may still be pending)
+scan start -t 0 -p 1M -m 0 -l 1
+bttool> [[tKtool] cmd#31 scan: rc=0 (accepted; async operation may still be pending)
+[bttool] on_scan_start_status_cb, scanner:0x42554100, status:0
+[bttool] ScanResult ------[15:4F:5E:86:4F:B4]------
+[bttool] AddrType:1
+[bttool] Rssi:-92
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[04:1C:87:84:CD:60]------
+[bttool] AddrType:1
+[bttool] Rssi:-90
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[59:E5:61:10:08:82]------
+[bttool] AddrType:1
+[bttool] Rssi:-59
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[54:50:00:36:7A:3A]------
+[bttool] AddrType:0
+[bttool] Rssi:-80
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[D4:43:8A:F3:2C:61]------
+[bttool] AddrType:0
+[bttool] Rssi:-75
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[48:33:60:21:73:D6]------
+[bttool] AddrType:1
+[bttool] Rssi:-93
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[15:4F:5E:86:4F:B4]------
+[bttool] AddrType:1
+[bttool] Rssi:-94
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[54:50:00:36:7A:3A]------
+[bttool] AddrType:0
+[bttool] Rssi:-81
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[00:BA:6A:07:68:53]------
+[bttool] AddrType:1
+[bttool] Rssi:-78
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[9C:12:21:4F:5C:EF]------
+[bttool] AddrType:0
+[bttool] Rssi:-66
+[bttool] Type:2
+[bttool]
+
+[bttool] ScanResult ------[28:51:BB:F7:90:8A]------
+[bttool] AddrType:1
+[bttool] Rssi:-53
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[CD:1F:03:50:F7:0C]------
+[bttool] AddrType:1
+[bttool] Rssi:-75
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[D4:43:8A:F3:2C:61]------
+[bttool] AddrType:0
+[bttool] Rssi:-69
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[60:55:56:8A:92:82]------
+[bttool] AddrType:0
+[bttool] Rssi:-75
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[7F:8D:88:12:EC:F6]------
+[bttool] AddrType:1
+[bttool] Rssi:-84
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[50:66:B1:67:25:30]------
+[bttool] AddrType:1
+[bttool] Rssi:-90
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[11:55:96:CE:27:DB]------
+[bttool] AddrType:1
+[bttool] Rssi:-72
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[0E:95:42:58:82:D3]------
+[bttool] AddrType:1
+[bttool] Rssi:-73
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[3C:62:FD:E2:03:52]------
+[bttool] AddrType:1
+[bttool] Rssi:-73
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[F8:6F:DE:92:11:F9]------
+[bttool] AddrType:0
+[bttool] Rssi:-96
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[54:50:00:36:7A:3A]------
+[bttool] AddrType:0
+[bttool] Rssi:-84
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[1D:2A:7C:43:B3:7F]------
+[bttool] AddrType:1
+[bttool] Rssi:-82
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[38:CE:FE:C8:A4:09]------
+[bttool] AddrType:1
+[bttool] Rssi:-44
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[2E:90:FB:96:BC:4D]------
+[bttool] AddrType:1
+[bttool] Rssi:-82
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[54:50:00:36:7A:3A]------
+[bttool] AddrType:0
+[bttool] Rssi:-77
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[11:55:96:CE:27:DB]------
+[bttool] AddrType:1
+[bttool] Rssi:-66
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[28:51:BB:F7:90:8A]------
+[bttool] AddrType:1
+[bttool] Rssi:-53
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[00:BA:6A:07:68:53]------
+[bttool] AddrType:1
+[bttool] Rssi:-78
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[0F:B4:D2:EE:27:02]------
+[bttool] AddrType:1
+[bttool] Rssi:-60
+[bttool] Type:3
+[bttool]
+
+[bstcaton ols]to SpcanResult ------[09:5D:B2:5B:18:7E]------
+[bttool] AddrType:1
+[bttool] Rssi:-75
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[7F:51:38:E4:1F:4A]------
+[bttool] AddrType:1
+[bttool] Rssi:-75
+[bttool] Type:0
+[bttool]
+
+
+bttool> btKtool] Scan stop requested; wait for on_scan_stopped_cb
+[bttool] cmd#32 scan: rc=0 (accepted; async operation may still be pending)
+[bttool] on_scan_stopped_cb, scanner:0x42554100
+scan dump
+bttool> btKtool] Scan state=idle
+[bttool] cmd#33 scan: rc=0 (accepted; async operation may still be pending)
+disable
+bttool> [[Kttool] Scan already stopped
+[bttool] disable API status=0; wait for OFF(0)
+[bttool] Context:0x4254d6d0, Adapter state changed: 6
+[bttool] cmd#34 disable: rc=0 (accepted; async operation may still be pending)
+[bttool] Scan already stopped
+[bttool] Context:0x4254d6d0, Adapter state changed: 0
+state
+bttool> [[Kttool] Adapter State: 0
+[bttool] cmd#35 state: rc=0 (accepted; async operation may still be pending)
+quit
+[bttool] cmd#36 quit: rc=-2 (quit)
+nsh> bttool
+bttool> pair auto 0
+bttool> [[Kttool] Auto accept pair:Disable
+[bttool] cmd#37 pair: rc=0 (accepted; async operation may still be pending)
+enable
+bttool> btKtool] enable API status=0; completion is the state callback
+[bttool] Context:0x4255dff0, Adapter state changed: 1
+[bttool] cmd#38 enable: rc=0 (accepted; async operation may still be pending)
+[bttool] Context:0x4255dff0, Adapter state changed: 2
+state
+bttool> btKtool] Adapter State: 2
+[bttool] cmd#39 state: rc=0 (accepted; async operation may still be pending)
+scan start -t 0 -p 1M -m 0 -l 1
+bttool> [[tKtool] cmd#40 scan: rc=0 (accepted; async operation may still be pending)
+[bttool] on_scan_start_status_cb, scanner:0x42550c90, status:0
+[bttool] ScanResult ------[7C:A8:8B:08:42:C3]------
+[bttool] AddrType:1
+[bttool] Rssi:-70
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[11:55:96:CE:27:DB]------
+[bttool] AddrType:1
+[bttool] Rssi:-75
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[09:5D:B2:5B:18:7E]------
+[bttool] AddrType:1
+[bttool] Rssi:-75
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[02:44:F4:EA:6C:51]------
+[bttool] AddrType:1
+[bttool] Rssi:-87
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[1D:2A:7C:43:B3:7F]------
+[bttool] AddrType:1
+[bttool] Rssi:-91
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[29:20:01:44:51:93]------
+[bttool] AddrType:1
+[bttool] Rssi:-89
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[94:F6:F2:5B:02:5E]------
+[bttool] AddrType:0
+[bttool] Rssi:-95
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[9C:12:21:4F:5C:EF]------
+[bttool] AddrType:0
+[bttool] Rssi:-78
+[bttool] Type:2
+[bttool]
+
+[bttool] ScanResult ------[00:60:37:6F:94:0B]------
+[bttool] AddrType:0
+[bttool] Rssi:-93
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[3C:62:FD:E2:03:52]------
+[bttool] AddrType:1
+[bttool] Rssi:-72
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[56:BD:BF:41:7F:BF]------
+[bttool] AddrType:1
+[bttool] Rssi:-85
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[6A:75:B7:33:5A:86]------
+[bttool] AddrType:1
+[bttool] Rssi:-80
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[00:BA:6A:07:68:53]------
+[bttool] AddrType:1
+[bttool] Rssi:127
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[9C:12:21:4F:5C:EF]------
+[bttool] AddrType:0
+[bttool] Rssi:-62
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[28:51:BB:F7:90:8A]------
+[bttool] AddrType:1
+[bttool] Rssi:-59
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[38:B0:CB:FB:E3:0F]------
+[bttool] AddrType:1
+[bttool] Rssi:-52
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[38:CE:FE:C8:A4:09]------
+[bttool] AddrType:1
+[bttool] Rssi:-36
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[56:BD:BF:41:7F:BF]------
+[bttool] AddrType:1
+[bttool] Rssi:-93
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[54:50:00:36:7A:3A]------
+[bttool] AddrType:0
+[bttool] Rssi:-81
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[3C:62:FD:E2:03:52]------
+[bttool] AddrType:1
+[bttool] Rssi:-63
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[0E:95:42:58:82:D3]------
+[bttool] AddrType:1
+[bttool] Rssi:-67
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[7F:8D:88:12:EC:F6]------
+[bttool] AddrType:1
+[bttool] Rssi:-80
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[56:BD:BF:41:7F:BF]------
+[bttool] AddrType:1
+[bttool] Rssi:-80
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[0F:B4:D2:EE:27:02]------
+[bttool] AddrType:1
+[bttool] Rssi:-62
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[40:99:F6:02:3B:A8]------
+[bttool] AddrType:0
+[bttool] Rssi:-96
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[54:50:00:36:7A:3A]------
+[bttool] AddrType:0
+[bttool] Rssi:-80
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[6A:75:B7:33:5A:86]------
+[bttool] AddrType:1
+[bttool] Rssi:-77
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[46:69:C7:77:2B:27]------
+[bttool] AddrType:1
+[bttool] Rssi:-80
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[56:BD:BF:41:7F:BF]------
+[bttool] AddrType:1
+[bttool] Rssi:-88
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[08:08:09:21:9F:7A]------
+[bttool] AddrType:1
+[bttool] Rssi:-95
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[38:B0:CB:FB:E3:0F]------
+[bttool] AddrType:1
+[bttool] Rssi:-52
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[54:50:00:36:7A:3A]------
+[bttool] AddrType:0
+[bttool] Rssi:-80
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[10:E0:B0:49:42:89]------
+[bttool] AddrType:1
+[bttool] Rssi:-89
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[0F:B4:D2:EE:27:02]------
+[bttool] AddrType:1
+[bttool] Rssi:-58
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[7F:8D:88:12:EC:F6]------
+[bttool] AddrType:1
+[bttool] Rssi:-80
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[38:CE:FE:C8:A4:09]------
+[bttool] AddrType:1
+[bttool] Rssi:-34
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[09:5D:B2:5B:18:7E]------
+[bttool] AddrType:1
+[bttool] Rssi:-74
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[28:51:BB:F7:90:8A]------
+[bttool] AddrType:1
+[bttool] Rssi:-53
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[54:50:00:36:7A:3A]------
+[bttool] AddrType:0
+[bttool] Rssi:-82
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[02:44:F4:EA:6C:51]------
+[bttool] AddrType:1
+[bttool] Rssi:-88
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[3D:CD:BC:6E:0C:1F]------
+[bttool] AddrType:1
+[bttool] Rssi:-92
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[56:BD:BF:41:7F:BF]------
+[bttool] AddrType:1
+[bttool] Rssi:-89
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[40:99:F6:02:3B:A8]------
+[bttool] AddrType:0
+[bttool] Rssi:-94
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[0F:B4:D2:EE:27:02]------
+[bttool] AddrType:1
+[bttool] Rssi:-54
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[2E:90:FB:96:BC:4D]------
+[bttool] AddrType:1
+[bttool] Rssi:-83
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[1D:2A:7C:43:B3:7F]------
+[bttool] AddrType:1
+[bttool] Rssi:-94
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[C0:E5:79:1E:76:35]------
+[bttool] AddrType:0
+[bttool] Rssi:-91
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[02:44:F4:EA:6C:51]------
+[bttool] AddrType:1
+[bttool] Rssi:-84
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[54:50:00:36:7A:3A]------
+[bttool] AddrType:0
+[bttool] Rssi:-80
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[00:BA:6A:07:68:53]------
+[bttool] AddrType:1
+[bttool] Rssi:-79
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[11:55:96:CE:27:DB]------
+[bttool] AddrType:1
+[bttool] Rssi:-63
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[59:E5:61:10:08:82]------
+[bttool] AddrType:1
+[bttool] Rssi:-50
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[02:44:F4:EA:6C:51]------
+[bttool] AddrType:1
+[bttool] Rssi:-89
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[3D:CD:BC:6E:0C:1F]------
+[bttool] AddrType:1
+[bttool] Rssi:-93
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[2E:90:FB:96:BC:4D]------
+[bttool] AddrType:1
+[bttool] Rssi:-79
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[48:33:60:21:73:D6]------
+[bttool] AddrType:1
+[bttool] Rssi:-95
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[F8:6F:DE:92:11:F9]------
+[bttool] AddrType:0
+[bttool] Rssi:-96
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[38:B0:CB:FB:E3:0F]------
+[bttool] AddrType:1
+[bttool] Rssi:-54
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[9C:12:21:4F:5C:EF]------
+[bttool] AddrType:0
+[bttool] Rssi:-82
+[bttool] Type:2
+[bttool]
+
+[bttool] ScanResult ------[0F:B4:D2:EE:27:02]------
+[bttool] AddrType:1
+[bttool] Rssi:-56
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[56:BD:BF:41:7F:BF]------
+[bttool] AddrType:1
+[bttool] Rssi:-93
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[38:CE:FE:C8:A4:09]------
+[bttool] AddrType:1
+[bttool] Rssi:-33
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[54:50:00:36:7A:3A]------
+[bttool] AddrType:0
+[bttool] Rssi:127
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[54:B3:30:1E:BF:DE]------
+[bttool] AddrType:1
+[bttool] Rssi:-70
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[94:F6:F2:5B:02:5E]------
+[bttool] AddrType:0
+[bttool] Rssi:-91
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[10:E0:B0:49:42:89]------
+[bttool] AddrType:1
+[bttool] Rssi:-90
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[10:0A:F2:52:4A:13]------
+[bttool] AddrType:1
+[bttool] Rssi:-94
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[56:BD:BF:41:7F:BF]------
+[bttool] AddrType:1
+[bttool] Rssi:-89
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[0E:95:42:58:82:D3]------
+[bttool] AddrType:1
+[bttool] Rssi:-71
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[38:B0:CB:FB:E3:0F]------
+[bttool] AddrType:1
+[bttool] Rssi:-54
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[28:51:BB:F7:90:8A]------
+[bttool] AddrType:1
+[bttool] Rssi:-61
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[54:50:00:36:7A:3A]------
+[bttool] AddrType:0
+[bttool] Rssi:-83
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[04:1C:87:84:CD:60]------
+[bttool] AddrType:1
+[bttool] Rssi:-91
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[FE:07:DE:2B:63:47]------
+[bttool] AddrType:1
+[bttool] Rssi:-71
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[38:CE:FE:C8:A4:09]------
+[bttool] AddrType:1
+[bttool] Rssi:-32
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[3C:62:FD:E2:03:52]------
+[bttool] AddrType:1
+[bttool] Rssi:-77
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[39:6D:C6:47:82:1F]------
+[bttool] AddrType:1
+[bttool] Rssi:-87
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[00:BA:6A:07:68:53]------
+[bttool] AddrType:1
+[bttool] Rssi:-83
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[6A:75:B7:33:5A:86]------
+[bttool] AddrType:1
+[bttool] Rssi:-69
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[0D:89:A1:C2:07:F4]------
+[bttool] AddrType:1
+[bttool] Rssi:-86
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[F2:C0:91:99:B5:8F]------
+[bttool] AddrType:1
+[bttool] Rssi:-69
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[54:50:00:36:7A:3A]------
+[bttool] AddrType:0
+[bttool] Rssi:-73
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[56:BD:BF:41:7F:BF]------
+[bttool] AddrType:1
+[bttool] Rssi:-90
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[28:51:BB:F7:90:8A]------
+[bttool] AddrType:1
+[bttool] Rssi:-69
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[02:44:F4:EA:6C:51]------
+[bttool] AddrType:1
+[bttool] Rssi:-87
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[7F:8D:88:12:EC:F6]------
+[bttool] AddrType:1
+[bttool] Rssi:-90
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[54:50:00:36:7A:3A]------
+[bttool] AddrType:0
+[bttool] Rssi:-79
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[38:CE:FE:C8:A4:09]------
+[bttool] AddrType:1
+[bttool] Rssi:-33
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[F8:6F:DE:92:11:F9]------
+[bttool] AddrType:0
+[bttool] Rssi:-96
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[29:20:01:44:51:93]------
+[bttool] AddrType:1
+[bttool] Rssi:-89
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[58:3B:9F:4F:36:F9]------
+[bttool] AddrType:1
+[bttool] Rssi:-96
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[D5:8E:D4:03:A6:12]------
+[bttool] AddrType:1
+[bttool] Rssi:-96
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[94:F6:F2:5B:02:5E]------
+[bttool] AddrType:0
+[bttool] Rssi:-96
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[0F:B4:D2:EE:27:02]------
+[bttool] AddrType:1
+[bttool] Rssi:-59
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[09:5D:B2:5B:18:7E]------
+[bttool] AddrType:1
+[bttool] Rssi:-74
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[6A:75:B7:33:5A:86]------
+[bttool] AddrType:1
+[bttool] Rssi:-73
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[11:55:96:CE:27:DB]------
+[bttool] AddrType:1
+[bttool] Rssi:-67
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[2E:90:FB:96:BC:4D]------
+[bttool] AddrType:1
+[bttool] Rssi:-74
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[0E:95:42:58:82:D3]------
+[bttool] AddrType:1
+[bttool] Rssi:-66
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[28:51:BB:F7:90:8A]------
+[bttool] AddrType:1
+[bttool] Rssi:-54
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[38:B0:CB:FB:E3:0F]------
+[bttool] AddrType:1
+[bttool] Rssi:-54
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[7C:A8:8B:08:42:C3]------
+[bttool] AddrType:1
+[bttool] Rssi:127
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[0F:B4:D2:EE:27:02]------
+[bttool] AddrType:1
+[bttool] Rssi:-60
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[10:E0:B0:49:42:89]------
+[bttool] AddrType:1
+[bttool] Rssi:-94
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[02:44:F4:EA:6C:51]------
+[bttool] AddrType:1
+[bttool] Rssi:-86
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[39:6D:C6:47:82:1F]------
+[bttool] AddrType:1
+[bttool] Rssi:-85
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[9C:12:21:4F:5C:EF]------
+[bttool] AddrType:0
+[bttool] Rssi:-82
+[bttool] Type:2
+[bttool]
+
+[bttool] ScanResult ------[D5:8E:D4:03:A6:12]------
+[bttool] AddrType:1
+[bttool] Rssi:-84
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[3F:5B:7D:71:04:66]------
+[bttool] AddrType:0
+[bttool] Rssi:-83
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[1D:2A:7C:43:B3:7F]------
+[bttool] AddrType:1
+[bttool] Rssi:-80
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[3C:62:FD:E2:03:52]------
+[bttool] AddrType:1
+[bttool] Rssi:-71
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[10:E0:B0:49:42:89]------
+[bttool] AddrType:1
+[bttool] Rssi:-89
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[5E:B4:8D:D9:28:D1]------
+[bttool] AddrType:1
+[bttool] Rssi:-94
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[0E:95:42:58:82:D3]------
+[bttool] AddrType:1
+[bttool] Rssi:-67
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[38:B0:CB:FB:E3:0F]------
+[bttool] AddrType:1
+[bttool] Rssi:-53
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[11:55:96:CE:27:DB]------
+[bttool] AddrType:1
+[bttool] Rssi:-60
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[09:5D:B2:5B:18:7E]------
+[bttool] AddrType:1
+[bttool] Rssi:-75
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[48:33:60:21:73:D6]------
+[bttool] AddrType:1
+[bttool] Rssi:-89
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[1D:2A:7C:43:B3:7F]------
+[bttool] AddrType:1
+[bttool] Rssi:-96
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[9C:12:21:4F:5C:EF]------
+[bttool] AddrType:0
+[bttool] Rssi:-82
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[39:6D:C6:47:82:1F]------
+[bttool] AddrType:1
+[bttool] Rssi:-86
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[3D:CD:BC:6E:0C:1F]------
+[bttool] AddrType:1
+[bttool] Rssi:-92
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[08:08:09:21:9F:7A]------
+[bttool] AddrType:1
+[bttool] Rssi:-94
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[60:55:56:8A:92:82]------
+[bttool] AddrType:0
+[bttool] Rssi:-87
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[0F:B4:D2:EE:27:02]------
+[bttool] AddrType:1
+[bttool] Rssi:-54
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[38:B0:CB:FB:E3:0F]------
+[bttool] AddrType:1
+[bttool] Rssi:-53
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[38:CE:FE:C8:A4:09]------
+[bttool] AddrType:1
+[bttool] Rssi:-36
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[6C:DA:A3:52:0C:F4]------
+[bttool] AddrType:1
+[bttool] Rssi:-73
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[7C:A8:8B:08:42:C3]------
+[bttool] AddrType:1
+[bttool] Rssi:-72
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[60:55:56:8A:92:82]------
+[bttool] AddrType:0
+[bttool] Rssi:-75
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[59:E5:61:10:08:82]------
+[bttool] AddrType:1
+[bttool] Rssi:-47
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[54:50:00:36:7A:3A]------
+[bttool] AddrType:0
+[bttool] Rssi:-76
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[11:55:96:CE:27:DB]------
+[bttool] AddrType:1
+[bttool] Rssi:-63
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[9C:12:21:4F:5C:EF]------
+[bttool] AddrType:0
+[bttool] Rssi:-67
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[60:55:56:8A:92:82]------
+[bttool] AddrType:0
+[bttool] Rssi:-80
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[F2:C0:91:99:B5:8F]------
+[bttool] AddrType:1
+[bttool] Rssi:-60
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[0D:89:A1:C2:07:F4]------
+[bttool] AddrType:1
+[bttool] Rssi:-97
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[08:08:09:21:9F:7A]------
+[bttool] AddrType:1
+[bttool] Rssi:-95
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[6A:75:B7:33:5A:86]------
+[bttool] AddrType:1
+[bttool] Rssi:-80
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[2E:90:FB:96:BC:4D]------
+[bttool] AddrType:1
+[bttool] Rssi:-81
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[02:44:F4:EA:6C:51]------
+[bttool] AddrType:1
+[bttool] Rssi:-87
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[38:B0:CB:FB:E3:0F]------
+[bttool] AddrType:1
+[bttool] Rssi:-53
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[54:50:00:36:7A:3A]------
+[bttool] AddrType:0
+[bttool] Rssi:-80
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[0E:95:42:58:82:D3]------
+[bttool] AddrType:1
+[bttool] Rssi:-71
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[11:55:96:CE:27:DB]------
+[bttool] AddrType:1
+[bttool] Rssi:-74
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[9C:12:21:4F:5C:EF]------
+[bttool] AddrType:0
+[bttool] Rssi:-87
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[3F:5B:7D:71:04:66]------
+[bttool] AddrType:0
+[bttool] Rssi:-79
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[60:55:56:8A:92:82]------
+[bttool] AddrType:0
+[bttool] Rssi:-87
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[3C:62:FD:E2:03:52]------
+[bttool] AddrType:1
+[bttool] Rssi:-68
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[D4:43:8A:F3:2C:61]------
+[bttool] AddrType:0
+[bttool] Rssi:-78
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[39:6D:C6:47:82:1F]------
+[bttool] AddrType:1
+[bttool] Rssi:-88
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[54:50:00:36:7A:3A]------
+[bttool] AddrType:0
+[bttool] Rssi:-79
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[0F:B4:D2:EE:27:02]------
+[bttool] AddrType:1
+[bttool] Rssi:-59
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[9C:12:21:4F:5C:EF]------
+[bttool] AddrType:0
+[bttool] Rssi:-66
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[6A:75:B7:33:5A:86]------
+[bttool] AddrType:1
+[bttool] Rssi:-73
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[54:B3:30:1E:BF:DE]------
+[bttool] AddrType:1
+[bttool] Rssi:-76
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[D4:43:8A:F3:2C:61]------
+[bttool] AddrType:0
+[bttool] Rssi:-64
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[38:CE:FE:C8:A4:09]------
+[bttool] AddrType:1
+[bttool] Rssi:-35
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[54:50:00:36:7A:3A]------
+[bttool] AddrType:0
+[bttool] Rssi:-83
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[7C:A8:8B:08:42:C3]------
+[bttool] AddrType:1
+[bttool] Rssi:-69
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[59:E5:61:10:08:82]------
+[bttool] AddrType:1
+[bttool] Rssi:-43
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[38:B0:CB:FB:E3:0F]------
+[bttool] AddrType:1
+[bttool] Rssi:-53
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[D4:43:8A:F3:2C:61]------
+[bttool] AddrType:0
+[bttool] Rssi:-72
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[9C:12:21:4F:5C:EF]------
+[bttool] AddrType:0
+[bttool] Rssi:-82
+[bttool] Type:2
+[bttool]
+
+[bttool] ScanResult ------[09:5D:B2:5B:18:7E]------
+[bttool] AddrType:1
+[bttool] Rssi:-75
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[00:60:37:6F:94:0B]------
+[bttool] AddrType:0
+[bttool] Rssi:-92
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[9C:12:21:4F:5C:EF]------
+[bttool] AddrType:0
+[bttool] Rssi:-62
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[28:51:BB:F7:90:8A]------
+[bttool] AddrType:1
+[bttool] Rssi:-62
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[14:F0:CD:D2:03:33]------
+[bttool] AddrType:1
+[bttool] Rssi:-91
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[11:55:96:CE:27:DB]------
+[bttool] AddrType:1
+[bttool] Rssi:-63
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[0E:95:42:58:82:D3]------
+[bttool] AddrType:1
+[bttool] Rssi:-70
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[1D:2A:7C:43:B3:7F]------
+[bttool] AddrType:1
+[bttool] Rssi:-78
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[54:50:00:36:7A:3A]------
+[bttool] AddrType:0
+[bttool] Rssi:-78
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[D4:43:8A:F3:2C:61]------
+[bttool] AddrType:0
+[bttool] Rssi:-79
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[38:CE:FE:C8:A4:09]------
+[bttool] AddrType:1
+[bttool] Rssi:-35
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[0F:B4:D2:EE:27:02]------
+[bttool] AddrType:1
+[bttool] Rssi:-65
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[28:51:BB:F7:90:8A]------
+[bttool] AddrType:1
+[bttool] Rssi:-53
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[40:99:F6:02:3B:A8]------
+[bttool] AddrType:0
+[bttool] Rssi:-96
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[6A:75:B7:33:5A:86]------
+[bttool] AddrType:1
+[bttool] Rssi:-80
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[09:5D:B2:5B:18:7E]------
+[bttool] AddrType:1
+[bttool] Rssi:-76
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[3D:CD:BC:6E:0C:1F]------
+[bttool] AddrType:1
+[bttool] Rssi:-92
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[3C:62:FD:E2:03:52]------
+[bttool] AddrType:1
+[bttool] Rssi:-74
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[54:50:00:36:7A:3A]------
+[bttool] AddrType:0
+[bttool] Rssi:-85
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[38:CE:FE:C8:A4:09]------
+[bttool] AddrType:1
+[bttool] Rssi:-33
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[D5:8E:D4:03:A6:12]------
+[bttool] AddrType:1
+[bttool] Rssi:-88
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[0E:95:42:58:82:D3]------
+[bttool] AddrType:1
+[bttool] Rssi:-66
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[39:6D:C6:47:82:1F]------
+[bttool] AddrType:1
+[bttool] Rssi:-88
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[54:50:00:36:7A:3A]------
+[bttool] AddrType:0
+[bttool] Rssi:-76
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[38:B0:CB:FB:E3:0F]------
+[bttool] AddrType:1
+[bttool] Rssi:-52
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[00:60:37:6F:94:0B]------
+[bttool] AddrType:0
+[bttool] Rssi:-93
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[6C:DA:A3:52:0C:F4]------
+[bttool] AddrType:1
+[bttool] Rssi:-69
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[9C:12:21:4F:5C:EF]------
+[bttool] AddrType:0
+[bttool] Rssi:-68
+[bttool] Type:2
+[bttool]
+
+[bttool] ScanResult ------[2E:90:FB:96:BC:4D]------
+[bttool] AddrType:1
+[bttool] Rssi:-76
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[0F:B4:D2:EE:27:02]------
+[bttool] AddrType:1
+[bttool] Rssi:-64
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[28:51:BB:F7:90:8A]------
+[bttool] AddrType:1
+[bttool] Rssi:-53
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[48:33:60:21:73:D6]------
+[bttool] AddrType:1
+[bttool] Rssi:-92
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[F8:6F:DE:92:11:F9]------
+[bttool] AddrType:0
+[bttool] Rssi:-93
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[09:5D:B2:5B:18:7E]------
+[bttool] AddrType:1
+[bttool] Rssi:-75
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[58:3B:9F:4F:36:F9]------
+[bttool] AddrType:1
+[bttool] Rssi:-94
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[40:99:F6:02:3B:A8]------
+[bttool] AddrType:0
+[bttool] Rssi:-94
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[02:44:F4:EA:6C:51]------
+[bttool] AddrType:1
+[bttool] Rssi:-87
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[54:50:00:36:7A:3A]------
+[bttool] AddrType:0
+[bttool] Rssi:-77
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[00:BA:6A:07:68:53]------
+[bttool] AddrType:1
+[bttool] Rssi:-84
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[08:08:09:21:9F:7A]------
+[bttool] AddrType:1
+[bttool] Rssi:-95
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[11:55:96:CE:27:DB]------
+[bttool] AddrType:1
+[bttool] Rssi:-72
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[0D:89:A1:C2:07:F4]------
+[bttool] AddrType:1
+[bttool] Rssi:-87
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[10:E0:B0:49:42:89]------
+[bttool] AddrType:1
+[bttool] Rssi:-89
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[6A:75:B7:33:5A:86]------
+[bttool] AddrType:1
+[bttool] Rssi:-70
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[1D:2A:7C:43:B3:7F]------
+[bttool] AddrType:1
+[bttool] Rssi:-82
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[54:50:00:36:7A:3A]------
+[bttool] AddrType:0
+[bttool] Rssi:-82
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[38:CE:FE:C8:A4:09]------
+[bttool] AddrType:1
+[bttool] Rssi:-37
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[4E:43:C0:FD:BF:CD]------
+[bttool] AddrType:1
+[bttool] Rssi:-66
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[09:5D:B2:5B:18:7E]------
+[bttool] AddrType:1
+[bttool] Rssi:-73
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[0F:B4:D2:EE:27:02]------
+[bttool] AddrType:1
+[bttool] Rssi:-63
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[38:B0:CB:FB:E3:0F]------
+[bttool] AddrType:1
+[bttool] Rssi:-54
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[08:08:09:21:9F:7A]------
+[bttool] AddrType:1
+[bttool] Rssi:-96
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[11:55:96:CE:27:DB]------
+[bttool] AddrType:1
+[bttool] Rssi:-73
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[59:E5:61:10:08:82]------
+[bttool] AddrType:1
+[bttool] Rssi:-43
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[54:50:00:36:7A:3A]------
+[bttool] AddrType:0
+[bttool] Rssi:-82
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[04:1C:87:84:CD:60]------
+[bttool] AddrType:1
+[bttool] Rssi:-92
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[1D:2A:7C:43:B3:7F]------
+[bttool] AddrType:1
+[bttool] Rssi:-96
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[46:69:C7:77:2B:27]------
+[bttool] AddrType:1
+[bttool] Rssi:-78
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[00:BA:6A:07:68:53]------
+[bttool] AddrType:1
+[bttool] Rssi:-81
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[40:99:F6:02:3B:A8]------
+[bttool] AddrType:0
+[bttool] Rssi:-96
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[3C:62:FD:E2:03:52]------
+[bttool] AddrType:1
+[bttool] Rssi:-68
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[10:E0:B0:49:42:89]------
+[bttool] AddrType:1
+[bttool] Rssi:-87
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[54:B3:30:1E:BF:DE]------
+[bttool] AddrType:1
+[bttool] Rssi:-70
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[9C:12:21:4F:5C:EF]------
+[bttool] AddrType:0
+[bttool] Rssi:-62
+[bttool] Type:2
+[bttool]
+
+[bttool] ScanResult ------[28:51:BB:F7:90:8A]------
+[bttool] AddrType:1
+[bttool] Rssi:-62
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[02:44:F4:EA:6C:51]------
+[bttool] AddrType:1
+[bttool] Rssi:-86
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[9C:12:21:4F:5C:EF]------
+[bttool] AddrType:0
+[bttool] Rssi:-80
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[54:50:00:36:7A:3A]------
+[bttool] AddrType:0
+[bttool] Rssi:-90
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[09:5D:B2:5B:18:7E]------
+[bttool] AddrType:1
+[bttool] Rssi:-76
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[0F:B4:D2:EE:27:02]------
+[bttool] AddrType:1
+[bttool] Rssi:-55
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[6A:75:B7:33:5A:86]------
+[bttool] AddrType:1
+[bttool] Rssi:-69
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[1D:2A:7C:43:B3:7F]------
+[bttool] AddrType:1
+[bttool] Rssi:-83
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[9C:12:21:4F:5C:EF]------
+[bttool] AddrType:0
+[bttool] Rssi:-63
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[2E:90:FB:96:BC:4D]------
+[bttool] AddrType:1
+[bttool] Rssi:-86
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[38:CE:FE:C8:A4:09]------
+[bttool] AddrType:1
+[bttool] Rssi:-35
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[54:50:00:36:7A:3A]------
+[bttool] AddrType:0
+[bttool] Rssi:-76
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[3C:62:FD:E2:03:52]------
+[bttool] AddrType:1
+[bttool] Rssi:-67
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[6A:75:B7:33:5A:86]------
+[bttool] AddrType:1
+[bttool] Rssi:-76
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[9C:12:21:4F:5C:EF]------
+[bttool] AddrType:0
+[bttool] Rssi:-80
+[bttool] Type:2
+[bttool]
+
+[bttool] ScanResult ------[0E:95:42:58:82:D3]------
+[bttool] AddrType:1
+[bttool] Rssi:-71
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[38:B0:CB:FB:E3:0F]------
+[bttool] AddrType:1
+[bttool] Rssi:-53
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[6C:DA:A3:52:0C:F4]------
+[bttool] AddrType:1
+[bttool] Rssi:-77
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[9C:12:21:4F:5C:EF]------
+[bttool] AddrType:0
+[bttool] Rssi:-80
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[0F:B4:D2:EE:27:02]------
+[bttool] AddrType:1
+[bttool] Rssi:-55
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[11:55:96:CE:27:DB]------
+[bttool] AddrType:1
+[bttool] Rssi:-63
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[6A:75:B7:33:5A:86]------
+[bttool] AddrType:1
+[bttool] Rssi:-73
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[2E:90:FB:96:BC:4D]------
+[bttool] AddrType:1
+[bttool] Rssi:-81
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[5E:B4:8D:D9:28:D1]------
+[bttool] AddrType:1
+[bttool] Rssi:-93
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[29:20:01:44:51:93]------
+[bttool] AddrType:1
+[bttool] Rssi:-90
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[28:51:BB:F7:90:8A]------
+[bttool] AddrType:1
+[bttool] Rssi:-61
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[48:33:60:21:73:D6]------
+[bttool] AddrType:1
+[bttool] Rssi:-94
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[11:55:96:CE:27:DB]------
+[bttool] AddrType:1
+[bttool] Rssi:-62
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[2E:90:FB:96:BC:4D]------
+[bttool] AddrType:1
+[bttool] Rssi:-74
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[40:99:F6:02:3B:A8]------
+[bttool] AddrType:0
+[bttool] Rssi:-95
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[39:6D:C6:47:82:1F]------
+[bttool] AddrType:1
+[bttool] Rssi:-85
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[0F:B4:D2:EE:27:02]------
+[bttool] AddrType:1
+[bttool] Rssi:-56
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[4E:43:C0:FD:BF:CD]------
+[bttool] AddrType:1
+[bttool] Rssi:-69
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[7C:A8:8B:08:42:C3]------
+[bttool] AddrType:1
+[bttool] Rssi:-78
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[54:50:00:36:7A:3A]------
+[bttool] AddrType:0
+[bttool] Rssi:-86
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[3C:62:FD:E2:03:52]------
+[bttool] AddrType:1
+[bttool] Rssi:-74
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[00:60:37:6F:94:0B]------
+[bttool] AddrType:0
+[bttool] Rssi:-92
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[38:CE:FE:C8:A4:09]------
+[bttool] AddrType:1
+[bttool] Rssi:-33
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[6A:75:B7:33:5A:86]------
+[bttool] AddrType:1
+[bttool] Rssi:-70
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[0E:95:42:58:82:D3]------
+[bttool] AddrType:1
+[bttool] Rssi:-70
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[38:B0:CB:FB:E3:0F]------
+[bttool] AddrType:1
+[bttool] Rssi:-51
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[09:5D:B2:5B:18:7E]------
+[bttool] AddrType:1
+[bttool] Rssi:-73
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[54:50:00:36:7A:3A]------
+[bttool] AddrType:0
+[bttool] Rssi:-74
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[0F:B4:D2:EE:27:02]------
+[bttool] AddrType:1
+[bttool] Rssi:-59
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[9C:12:21:4F:5C:EF]------
+[bttool] AddrType:0
+[bttool] Rssi:-69
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[02:44:F4:EA:6C:51]------
+[bttool] AddrType:1
+[bttool] Rssi:-89
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[10:E0:B0:49:42:89]------
+[bttool] AddrType:1
+[bttool] Rssi:-93
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[00:60:37:6F:94:0B]------
+[bttool] AddrType:0
+[bttool] Rssi:-93
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[0D:89:A1:C2:07:F4]------
+[bttool] AddrType:1
+[bttool] Rssi:-95
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[3C:62:FD:E2:03:52]------
+[bttool] AddrType:1
+[bttool] Rssi:-73
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[94:F6:F2:5B:02:5E]------
+[bttool] AddrType:0
+[bttool] Rssi:-95
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[38:CE:FE:C8:A4:09]------
+[bttool] AddrType:1
+[bttool] Rssi:-33
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[08:08:09:21:9F:7A]------
+[bttool] AddrType:1
+[bttool] Rssi:-96
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[ED:57:10:E0:0D:E9]------
+[bttool] AddrType:1
+[bttool] Rssi:-91
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[54:B3:30:1E:BF:DE]------
+[bttool] AddrType:1
+[bttool] Rssi:-62
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[0F:B4:D2:EE:27:02]------
+[bttool] AddrType:1
+[bttool] Rssi:-61
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[54:50:00:36:7A:3A]------
+[bttool] AddrType:0
+[bttool] Rssi:-79
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[1D:2A:7C:43:B3:7F]------
+[bttool] AddrType:1
+[bttool] Rssi:-82
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[0E:95:42:58:82:D3]------
+[bttool] AddrType:1
+[bttool] Rssi:-66
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[09:5D:B2:5B:18:7E]------
+[bttool] AddrType:1
+[bttool] Rssi:-71
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[59:E5:61:10:08:82]------
+[bttool] AddrType:1
+[bttool] Rssi:-48
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[38:B0:CB:FB:E3:0F]------
+[bttool] AddrType:1
+[bttool] Rssi:-55
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[2E:90:FB:96:BC:4D]------
+[bttool] AddrType:1
+[bttool] Rssi:-77
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[54:50:00:36:7A:3A]------
+[bttool] AddrType:0
+[bttool] Rssi:-79
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[0F:B4:D2:EE:27:02]------
+[bttool] AddrType:1
+[bttool] Rssi:-61
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[4E:43:C0:FD:BF:CD]------
+[bttool] AddrType:1
+[bttool] Rssi:-65
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[08:08:09:21:9F:7A]------
+[bttool] AddrType:1
+[bttool] Rssi:-96
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[11:55:96:CE:27:DB]------
+[bttool] AddrType:1
+[bttool] Rssi:-71
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[29:20:01:44:51:93]------
+[bttool] AddrType:1
+[bttool] Rssi:-88
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[02:44:F4:EA:6C:51]------
+[bttool] AddrType:1
+[bttool] Rssi:-88
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[54:50:00:36:7A:3A]------
+[bttool] AddrType:0
+[bttool] Rssi:-88
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[7F:8D:88:12:EC:F6]------
+[bttool] AddrType:1
+[bttool] Rssi:-90
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[3D:CD:BC:6E:0C:1F]------
+[bttool] AddrType:1
+[bttool] Rssi:-95
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[0E:95:42:58:82:D3]------
+[bttool] AddrType:1
+[bttool] Rssi:-73
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[04:1C:87:84:CD:60]------
+[bttool] AddrType:1
+[bttool] Rssi:-92
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[60:55:56:8A:92:82]------
+[bttool] AddrType:0
+[bttool] Rssi:-83
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[54:50:00:36:7A:3A]------
+[bttool] AddrType:0
+[bttool] Rssi:-79
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[48:33:60:21:73:D6]------
+[bttool] AddrType:1
+[bttool] Rssi:-93
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[D5:8E:D4:03:A6:12]------
+[bttool] AddrType:1
+[bttool] Rssi:-88
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[94:F6:F2:5B:02:5E]------
+[bttool] AddrType:0
+[bttool] Rssi:-92
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[38:CE:FE:C8:A4:09]------
+[bttool] AddrType:1
+[bttool] Rssi:-37
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[3C:62:FD:E2:03:52]------
+[bttool] AddrType:1
+[bttool] Rssi:-69
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[C0:20:6B:96:CA:EC]------
+[bttool] AddrType:1
+[bttool] Rssi:-67
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[6C:DA:A3:52:0C:F4]------
+[bttool] AddrType:1
+[bttool] Rssi:-79
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[11:55:96:CE:27:DB]------
+[bttool] AddrType:1
+[bttool] Rssi:-54
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[0F:B4:D2:EE:27:02]------
+[bttool] AddrType:1
+[bttool] Rssi:-62
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[D4:43:8A:F3:2C:61]------
+[bttool] AddrType:0
+[bttool] Rssi:-64
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[7F:51:38:E4:1F:4A]------
+[bttool] AddrType:1
+[bttool] Rssi:-68
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[2E:90:FB:96:BC:4D]------
+[bttool] AddrType:1
+[bttool] Rssi:-75
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[7C:A8:8B:08:42:C3]------
+[bttool] AddrType:1
+[bttool] Rssi:-79
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[D4:43:8A:F3:2C:61]------
+[bttool] AddrType:0
+[bttool] Rssi:-73
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[54:50:00:36:7A:3A]------
+[bttool] AddrType:0
+[bttool] Rssi:-84
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[54:B3:30:1E:BF:DE]------
+[bttool] AddrType:1
+[bttool] Rssi:-62
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[09:5D:B2:5B:18:7E]------
+[bttool] AddrType:1
+[bttool] Rssi:-76
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[38:B0:CB:FB:E3:0F]------
+[bttool] AddrType:1
+[bttool] Rssi:-53
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[00:BA:6A:07:68:53]------
+[bttool] AddrType:1
+[bttool] Rssi:-83
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[08:08:09:21:9F:7A]------
+[bttool] AddrType:1
+[bttool] Rssi:-94
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[7F:8D:88:12:EC:F6]------
+[bttool] AddrType:1
+[bttool] Rssi:-93
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[10:0A:F2:52:4A:13]------
+[bttool] AddrType:1
+[bttool] Rssi:-93
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[0E:95:42:58:82:D3]------
+[bttool] AddrType:1
+[bttool] Rssi:-66
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[D4:43:8A:F3:2C:61]------
+[bttool] AddrType:0
+[bttool] Rssi:-81
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[56:BD:BF:41:7F:BF]------
+[bttool] AddrType:1
+[bttool] Rssi:-94
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[11:55:96:CE:27:DB]------
+[bttool] AddrType:1
+[bttool] Rssi:-63
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[9C:12:21:4F:5C:EF]------
+[bttool] AddrType:0
+[bttool] Rssi:-69
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[38:B0:CB:FB:E3:0F]------
+[bttool] AddrType:1
+[bttool] Rssi:-53
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[3D:CD:BC:6E:0C:1F]------
+[bttool] AddrType:1
+[bttool] Rssi:-94
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[09:5D:B2:5B:18:7E]------
+[bttool] AddrType:1
+[bttool] Rssi:-78
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[02:44:F4:EA:6C:51]------
+[bttool] AddrType:1
+[bttool] Rssi:-85
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[54:50:00:36:7A:3A]------
+[bttool] AddrType:0
+[bttool] Rssi:-89
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[D5:8E:D4:03:A6:12]------
+[bttool] AddrType:1
+[bttool] Rssi:-95
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[0D:89:A1:C2:07:F4]------
+[bttool] AddrType:1
+[bttool] Rssi:-85
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[38:CE:FE:C8:A4:09]------
+[bttool] AddrType:1
+[bttool] Rssi:-38
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[54:50:00:36:7A:3A]------
+[bttool] AddrType:0
+[bttool] Rssi:-86
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[00:BA:6A:07:68:53]------
+[bttool] AddrType:1
+[bttool] Rssi:-75
+[bttool] Type:3
+[bttool]
+
+scan stop[bttool] ScanResult ------[C0:E5:79:1E:76:35]------
+[bttool] AddrType:0
+[bttool] Rssi:-90
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[0E:95:42:58:82:D3]------
+[bttool] AddrType:1
+[bttool] Rssi:-66
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[7F:51:38:E4:1F:4A]------
+[bttool] AddrType:1
+[bttool] Rssi:-69
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[11:55:96:CE:27:DB]------
+[bttool] AddrType:1
+[bttool] Rssi:-67
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[59:E5:61:10:08:82]------
+[bttool] AddrType:1
+[bttool] Rssi:-54
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[3C:62:FD:E2:03:52]------
+[bttool] AddrType:1
+[bttool] Rssi:-66
+[bttool] Type:3
+[bttool]
+
+
+bttool> [[tKtool] Scan stop requested; wait for on_scan_stopped_cb
+[bttool] ScanResult ------[54:B3:30:1E:BF:DE]------
+[bttool] cmd#41 scan: rc=0 (accepted; async operation may still be pending)
+[bttool] AddrType:1
+[bttool] Rssi:-62
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[2E:90:FB:96:BC:4D]------
+[bttool] AddrType:1
+[bttool] Rssi:-78
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[54:50:00:36:7A:3A]------
+[bttool] AddrType:0
+[bttool] Rssi:-86
+[bttool] Type:0
+[bttool]
+
+[bttool] on_scan_stopped_cb, scanner:0x42550c90
+scan dump
+bttool> [[Kttool] Scan state=idle
+[bttool] cmd#42 scan: rc=0 (accepted; async operation may still be pending)
+disable
+bttool> [[tKtool] Scan already stopped
+[bttool] disable API status=0; wait for OFF(0)
+[bttool] Context:0x4255dff0, Adapter state changed: 6
+[bttool] cmd#43 disable: rc=0 (accepted; async operation may still be pending)
+[bttool] Scan already stopped
+[bttool] Context:0x4255dff0, Adapter state changed: 0
+state
+bttool> btKtool] Adapter State: 0
+[bttool] cmd#44 state: rc=0 (accepted; async operation may still be pending)
+quit
+[bttool] cmd#45 quit: rc=-2 (quit)
+nsh>

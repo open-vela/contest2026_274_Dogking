@@ -25,6 +25,7 @@
 
 #include <netutils/netlib.h>
 #include <wireless/wapi.h>
+#include "wifi_secret_input.h"
 #ifdef CONFIG_NETUTILS_NTPCLIENT
 #  include <netutils/ntpclient.h>
 #endif
@@ -500,14 +501,18 @@ static int wifi_password(char password[WIFI_PASSWORD_MAX])
   struct termios original;
   struct termios hidden;
   bool changed = false;
-  size_t length;
+  size_t length = 0;
+  bool invalid = false;
+  int result = 0;
 
   fputs("WPA2 passphrase: ", stdout);
   fflush(stdout);
   if (tcgetattr(STDIN_FILENO, &original) == 0)
     {
       hidden = original;
-      hidden.c_lflag &= ~ECHO;
+      hidden.c_lflag &= ~(ECHO | ECHONL | ICANON);
+      hidden.c_cc[VMIN] = 1;
+      hidden.c_cc[VTIME] = 0;
       if (tcsetattr(STDIN_FILENO, TCSANOW, &hidden) == 0)
         {
           changed = true;
@@ -515,33 +520,18 @@ static int wifi_password(char password[WIFI_PASSWORD_MAX])
     }
 
   if (!changed) return -ENOTTY;
-  if (fgets(password, WIFI_PASSWORD_MAX, stdin) == NULL)
+  while (!result && !g_cancel)
     {
-      if (changed)
-        {
-          tcsetattr(STDIN_FILENO, TCSANOW, &original);
-          putchar('\n');
-        }
-
-      return -EIO;
+      int ch = getchar();
+      if (ch == EOF) { result = g_cancel ? -EINTR : -EIO; clearerr(stdin); }
+      else result = wifi_secret_step(password, WIFI_PASSWORD_MAX,
+                                     &length, &invalid, ch);
     }
-
-  if (changed)
-    {
-      tcsetattr(STDIN_FILENO, TCSANOW, &original);
-      putchar('\n');
-    }
-
-  length = strcspn(password, "\r\n");
-  if (password[length] == 0)
-    {
-      int ch;
-      while ((ch = getchar()) != '\n' && ch != EOF && !g_cancel) {}
-      wifi_clear(password, WIFI_PASSWORD_MAX);
-      return -EINVAL;
-    }
-  password[length] = '\0';
-  return length >= 8 && length <= 63 ? 0 : -EINVAL;
+  if (g_cancel) result = -EINTR;
+  if (tcsetattr(STDIN_FILENO, TCSANOW, &original) < 0) result = -EIO;
+  putchar('\n');
+  if (result < 0) wifi_clear(password, WIFI_PASSWORD_MAX);
+  return result == 1 ? 0 : result;
 }
 
 static int wifi_scan(const char *band, char *report)
@@ -670,6 +660,17 @@ static int wifi_connect(const char *ssid, const char *band, char *report,
           goto done;
         }
 
+      /* A confirmed disconnect is not a DHCP wait. Preserve the driver's
+       * real reason and return promptly, without retrying credentials. */
+      if (strstr(report, "wpa2: checkpoint=-100 ") != NULL &&
+          strstr(report, " ind=1 ") != NULL)
+        {
+          puts("WPA2 disconnected before DHCP. See 'wifi status': M1/M2-USB "
+               "does not prove AP acceptance; check the passphrase and RSN compatibility.");
+          ret = -ENETDOWN;
+          goto done;
+        }
+
       if (strstr(report, "wpa2: checkpoint=0") != NULL &&
           strstr(report, " port=1") != NULL &&
           strstr(report, "dhcp: checkpoint=0") != NULL &&
@@ -698,9 +699,18 @@ static int wifi_connect(const char *ssid, const char *band, char *report,
     }
 
   ret = -ETIMEDOUT;
+  puts("Connection timed out: inspect 'wifi status' for WPA2 port and DHCP "
+       "stages; no automatic security downgrade or repeated password attempt.");
 done:
   wifi_clear(password, sizeof(password));
   return ret;
+}
+
+static bool wifi_recovery_healthy(const char *report)
+{
+  return report && strstr(report, "wpa2: checkpoint=0") != NULL &&
+    strstr(report, " port=1") != NULL && strstr(report, "dhcp: checkpoint=0") != NULL &&
+    strstr(report, "address=0.0.0.0") == NULL;
 }
 
 static int wifi_dns(const char *address)
@@ -729,7 +739,8 @@ int main(int argc, char *argv[])
   struct sigaction previous, action;
   bool control = argc >= 2 && (!strcmp(argv[1], "scan") ||
       !strcmp(argv[1], "connect") || !strcmp(argv[1], "disconnect") ||
-      !strcmp(argv[1], "reconnect") || !strcmp(argv[1], "--autoconnect"));
+      !strcmp(argv[1], "reconnect") || !strcmp(argv[1], "--autoconnect") ||
+      !strcmp(argv[1], "--recover"));
 
   if (argc == 2 && !strcmp(argv[1], "cancel"))
     {
@@ -805,15 +816,26 @@ int main(int argc, char *argv[])
       if (ret == 0) puts("Saved Wi-Fi profile removed; current connection unchanged.");
     }
   else if (argc == 2 && (!strcmp(argv[1], "reconnect") ||
-                         !strcmp(argv[1], "--autoconnect")))
+                         !strcmp(argv[1], "--autoconnect") ||
+                         !strcmp(argv[1], "--recover")))
     {
       struct wifi_profile profile;
       bool boot = !strcmp(argv[1], "--autoconnect");
+      bool recover = !strcmp(argv[1], "--recover");
       ret = wifi_profile_load(&profile);
       if (boot && !a733_auto_enabled("wifi")) ret = 0;
       else if (ret == 0)
-        ret = wifi_connect(profile.ssid, profile.band == 5 ? "5" :
-                           profile.band == 2 ? "2" : NULL, report, profile.password);
+        {
+          bool healthy = recover && wifi_report(report, WIFI_REPORT_SIZE) == 0 &&
+            wifi_recovery_healthy(report);
+          if (healthy) puts("wifi-recovery-v226: healthy WPA2/DHCP; no scan, disconnect or reset");
+          else
+            {
+              if (recover) puts("wifi-recovery-v226: saved-profile single attempt, no password prompt/security downgrade/USB reset");
+              ret = wifi_connect(profile.ssid, profile.band == 5 ? "5" :
+                                 profile.band == 2 ? "2" : NULL, report, profile.password);
+            }
+        }
       wifi_clear(&profile, sizeof(profile));
       syslog(ret == 0 ? LOG_INFO : LOG_WARNING,
              "A733 Wi-Fi saved connection finished (%d); no password prompt\n", ret);

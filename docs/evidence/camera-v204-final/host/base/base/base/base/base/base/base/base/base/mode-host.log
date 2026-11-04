@@ -1,0 +1,2 @@
+PRIVATE reference parsed only: ops=153 crc=62a4f936; NO execution
+PASS: actual mode parser/prepare/readback/start/stop, corrupted/hidden writes, immutable copy, receiver gates, failure retention; SYNTHETIC only

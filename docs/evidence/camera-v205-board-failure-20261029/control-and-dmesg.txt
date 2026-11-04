@@ -1,0 +1,137 @@
+
+nsh> camera live-status
+camera-live-v205: active=0 stop=0 stage=failed error=-74 cleanup=-74 frames=1 inference=1 elapsed-ms=2123 fps=0.470 input-crc32=462b365f
+live-timing-total-us: capture=229131 prepare=67808 npu=284976 display=45491; model-RAM=8017024/f5f558c5 no-per-frame-SD-files=1; cooperative stop between bounded operations; NOT MP4/ISP/30fps
+live205: optimized=1 sensor-stream=1 setup-us=1424993 loop-us=627420 warm-us=0 warm-fps-milli=0 inference-fps-milli=1593 warm-npu-runs=0
+live205 CPU-us: tone=55611 input-crc=12197 tmp-input=346 display-crc=9747 draw=356 spi-flush=35385
+live205 overhead-us: prefetch-command=8 logging=34610 successful-frames-wall=662030; sensor capture overlaps CPU only in live-stream
+live205 validation: requested=0 verified=0 run-ioctls=1; verify adds two first-frame runs, NOT displayed inference frames
+live205 NPU-us: import=73703 prepare=98190 package=73844 map=249 input=11323 sync=1811 hw-exec=17096 output=152590 decode=16722 restore=1 total=284610; prepare includes package/map/input/sync; hw-exec includes init/wait
+nsh> cat /dev/a733-camera-control
+camera-control-v203: V1.11/J5 guarded repeat RAW + read-only exposure diagnostics
+state=3 stage=experiment-failed-controls-restored error=-74 cleanup=0 command-error=-74 owned=0 consumed=1
+power: source=same-boot-U-Boot-image-handoff ready=434d5031 bytes=03/00/ff/17/c1/0d
+runtime-PMIC-access=NONE rails-retained=ASSUMED physical-voltage=NOT-MEASURED
+MCLK: configured=0 Hz measured=UNKNOWN; prepare holds reset/STBY LOW
+reads=52662 writes=1849 polls=1 elapsed-ms=251 last-address=02002e8c
+id-experiment: attempted=1 reads=1 chip-id=0214 match=1 error=0 polls=50045 bus-quarantined=0
+mode-experiment: attempted=1 blob-error=0 writes=153 reads=17 verified=14/14 last-reg=0100 error=0
+packet-experiment: attempted=1 stage=receiver-ready-NOT-a-frame receiver-error=0 cleanup=0 owned=0 ready=0
+source: on-attempted=1 on-error=0 stop-error=0; bounded RAW DMA to private frame pool
+packets: raw-headers=0 fs-observations=1 fe-observations=1 status=0000004f errors=00000000 last-header=00010001
+receiver: reads=190 writes=62 elapsed=0 last-address=02003844 phy-debug=00000000 phy-frequency=00000000 pll-ref=f8675f00 pll-peri=ff126310
+PK-before: cfg1=ffffffff cfg2=ffffffff drv1=11111111 drv2=11111111; target=PK10..19/mux2/10mA; unrelated PK fields preserved
+receiver-first: error=0 address=00000000 mask=00000000 expected=00000000 observed=00000000
+receiver-cleanup: error=0 address=00000000 mask=00000000 expected=00000000 observed=00000000
+frame: requested=1 attempted=1 stage=frame-stopped-with-data-error error=-74 cleanup=0 owned=0 completed=0 published=0 validation=0
+frame-data: address=45907040 bytes=4147200 stride=3840 format=RAW10-LE16 vendor-BGGR min=64 max=1023 fingerprint=de56f89a status=00220083 parser=00000000 xy=00000780 fifo=00000000
+frame-mapping: CPU-identity CSI-master1 version=00000016 enable=00000000 bypass=00000001 mbus=00040307; NO-IOMMU-TABLE/RESET/BYPASS-WRITES
+frame-first: error=-74 address=05830254 mask=00000000 expected=00000000 observed=00000000
+frame-cleanup: error=0 address=00000000 mask=00000000 expected=00000000 observed=00000000
+frame-final: dma=00220083 parser=00000000 mapping-enable=00000000 bypass=00000001
+frame-sizing: active-top=00000001 length=07800780 flip=04380780 restored-top=70000000 length=02800500 flip=02d00500
+strict-qualification=NONE; RAW requires published=1; NO-ISP-IMAGE-TUNING
+repeat-v203: generation=8 readers=0 ready=0 max=32768 same-boot-cached-power; any failed cycle requires reboot
+sensor-readback: frame-lines=2128 exposure-lines=2118 analog-code=0000 (read-only, NO AE/gain writes)
+control: prepare | calibrate | normal-clock | id-experiment OR mode-experiment OR link-experiment OR frame-experiment | park
+normal boot has no handoff: prepare returns ENODATA with ZERO MMIO; see camera boot-help
+stream-v205: active=0 stop=0 pending=0 working=0 frames=1 delivered=8 error=-74 paused=0; sensor-on gated-SCAP, NOT cyclic-DMA
+nsh> dmesg
+[   24.210249] [CPU0] [10] nsh_main: A733: procfs mounted; 4 GiB split RAM enabled
+[   24.210292] [CPU0] [10] nsh_main: A733: user LED ready (0)
+[   24.210318] [CPU0] [10] nsh_main: A733: watchdog ready (0)
+[   24.260375] [CPU0] [10] nsh_main: A733: THS first sample pending code=0 ints=00000000 gpadc_clk=80000000 ths_bgr=00010001; registering sensor
+[   24.260439] [CPU0] [10] nsh_main: A733: temp0 registered; conversion pending
+[   24.260471] [CPU0] [10] nsh_main: A733: merged hardware diagnostics ready (0)
+[   24.260906] [CPU0] [10] nsh_main: A733 TRNG: CE v00300201 startup/continuous test passed; /dev/random and /dev/urandom ready
+[   24.260955] [CPU0] [10] nsh_main: A733: hardware TRNG ready (0)
+[   24.260983] [CPU0] [10] nsh_main: A733: UFS manual read-only interface registration (0)
+[   24.261526] [CPU0] [10] nsh_main: A733 NPU: VIP2 power/clock/identity checkpoint passed (0), id=00009000/00009202/20230518/1000003b
+[   24.286035] [CPU0] [10] nsh_main: A733 NPU runtime: /dev/npu0 ready (0), pool=408f5000/8388608 vip=02000000 pd=00408ee1 lenet=4117d000/40905000 prepared=411d1000/67108864
+[   24.286104] [CPU0] [10] nsh_main: A733: VIP2 NPU hardware checkpoint ready (0)
+[   24.286163] [CPU0] [10] nsh_main: A733: UART4 STM32 115200 port ready at /dev/ttyS4 (0)
+[   24.286193] [CPU0] [10] nsh_main: A733: I2S0 audio checkpoint ready at /dev/a733-audio (0)
+[   24.286256] [CPU0] [10] nsh_main: A733: header I2C/SPI and fan PWM ready (0)
+[   24.286291] [CPU0] [10] nsh_main: A733: IMX214 passive board inventory (0); NOT capture-ready
+[   24.517007] [CPU0] [10] nsh_main: A733 SDMMC0: /dev/mmcsd0 requested (PIO, 400 kHz/12 MHz, 4-bit)
+[   24.517045] [CPU0] [10] nsh_main: A733: SDMMC0 ready (0)
+[   24.519719] [CPU0] [10] nsh_main: A733 GPT: entry=1 node=/dev/a7z-firmware first=32768 blocks=32768 name=primary
+[   24.519760] [CPU0] [10] nsh_main: A733 GPT: entry=2 node=/dev/a7z-efi first=65536 blocks=614400 name=primary
+[   24.519801] [CPU0] [10] nsh_main: A733 GPT: entry=3 node=/dev/a7z-openvela first=679936 blocks=237568 name=primary
+[   24.519843] [CPU0] [10] nsh_main: A733 GPT: entry=4 node=/dev/a7z-data first=917504 blocks=3276767 name=data
+[   24.520484] [CPU0] [10] nsh_main: A733 FAT: /dev/a7z-data mounted read/write at /data
+[   24.520518] [CPU0] [10] nsh_main: A733: GPT/FAT storage ready (0)
+[   24.691612] [CPU0] [10] nsh_main: A733 WIFI: FCU760K USB1 root port connected at high speed (0), version=0100 port=00001005
+[   24.705668] [CPU0] [10] nsh_main: A733 WIFI: USB device addr=1 VID:PID=a69c:8d80 class=00/00/00 bcdUSB=2.00 EP0=64
+[   24.707725] [CPU0] [10] nsh_main: A733 WIFI: interface=0 alt=0 class=ff/ff/ff endpoints=2
+[   24.707762] [CPU0] [10] nsh_main: A733 WIFI: endpoint=01 attr=02 maxpacket=512 interval=0 interface=0/0
+[   24.707805] [CPU0] [10] nsh_main: A733 WIFI: endpoint=82 attr=02 maxpacket=512 interval=0 interface=0/0
+[   24.718852] [CPU0] [10] nsh_main: A733 WIFI: USB enumeration passed config=1 interfaces=1 descriptors=1 endpoints=2 total=32
+[   24.722003] [CPU0] [10] nsh_main: A733 WIFI: AIC BootROM read32 [40500000]=fb078820 bulk=20/24 response=0401 (0)
+[   24.730004] [CPU0] [10] nsh_main: A733 WIFI: uploaded /data/aic/fw_adid_8800d80_u02.bin (1708 bytes) to 00201940
+[   24.858003] [CPU0] [10] nsh_main: A733 WIFI: uploaded /data/aic/fw_patch_8800d80_u02.bin (32700 bytes) to 001e0000
+[   24.922003] [CPU0] [10] nsh_main: A733 WIFI: uploaded /data/aic/fw_patch_8800d80_u02_ext0.bin (16136 bytes) to 0020b43c
+[   25.299003] [CPU0] [10] nsh_main: A733 BT: firmware mode=5 HCI-port=1 readback=1 (mailbox/USB)
+[   26.988003] [CPU0] [10] nsh_main: A733 WIFI: uploaded /data/aic/fmacfw_8800d80_u02.bin (358072 bytes) to 00120000
+[   27.092003] [CPU0] [10] nsh_main: A733 WIFI: D80 patch config version=06090101 cfg=00177158 struct=00177c00 pairs=0017d318
+[   27.094002] [CPU0] [10] nsh_main: A733 WIFI: D80 firmware started, waiting for runtime USB device
+[   27.480102] [CPU0] [10] nsh_main: A733 WIFI: USB device addr=1 VID:PID=a69c:8d81 class=ef/02/01 bcdUSB=2.00 EP0=64
+[   27.482158] [CPU0] [10] nsh_main: A733 WIFI: interface=0 alt=0 class=e0/01/01 endpoints=3
+[   27.482195] [CPU0] [10] nsh_main: A733 WIFI: endpoint=83 attr=03 maxpacket=64 interval=4 interface=0/0
+[   27.482236] [CPU0] [10] nsh_main: A733 WIFI: endpoint=84 attr=02 maxpacket=512 interval=0 interface=0/0
+[   27.482278] [CPU0] [10] nsh_main: A733 WIFI: endpoint=04 attr=02 maxpacket=512 interval=0 interface=0/0
+[   27.482320] [CPU0] [10] nsh_main: A733 WIFI: interface=1 alt=0 class=e0/01/01 endpoints=2
+[   27.482357] [CPU0] [10] nsh_main: A733 WIFI: endpoint=85 attr=01 maxpacket=0 interval=4 interface=1/0
+[   27.482398] [CPU0] [10] nsh_main: A733 WIFI: endpoint=05 attr=01 maxpacket=0 interval=4 interface=1/0
+[   27.482439] [CPU0] [10] nsh_main: A733 WIFI: interface=1 alt=1 class=e0/01/01 endpoints=2
+[   27.482475] [CPU0] [10] nsh_main: A733 WIFI: endpoint=85 attr=01 maxpacket=9 interval=4 interface=1/1
+[   27.482516] [CPU0] [10] nsh_main: A733 WIFI: endpoint=05 attr=01 maxpacket=9 interval=4 interface=1/1
+[   27.482557] [CPU0] [10] nsh_main: A733 WIFI: interface=1 alt=2 class=e0/01/01 endpoints=2
+[   27.482594] [CPU0] [10] nsh_main: A733 WIFI: endpoint=85 attr=01 maxpacket=17 interval=4 interface=1/2
+[   27.482635] [CPU0] [10] nsh_main: A733 WIFI: endpoint=05 attr=01 maxpacket=17 interval=4 interface=1/2
+[   27.482677] [CPU0] [10] nsh_main: A733 WIFI: interface=1 alt=3 class=e0/01/01 endpoints=2
+[   27.482713] [CPU0] [10] nsh_main: A733 WIFI: endpoint=85 attr=01 maxpacket=25 interval=4 interface=1/3
+[   27.482755] [CPU0] [10] nsh_main: A733 WIFI: endpoint=05 attr=01 maxpacket=25 interval=4 interface=1/3
+[   27.482796] [CPU0] [10] nsh_main: A733 WIFI: interface=1 alt=4 class=e0/01/01 endpoints=2
+[   27.482832] [CPU0] [10] nsh_main: A733 WIFI: endpoint=85 attr=01 maxpacket=33 interval=4 interface=1/4
+[   27.482874] [CPU0] [10] nsh_main: A733 WIFI: endpoint=05 attr=01 maxpacket=33 interval=4 interface=1/4
+[   27.482915] [CPU0] [10] nsh_main: A733 WIFI: interface=1 alt=5 class=e0/01/01 endpoints=2
+[   27.482952] [CPU0] [10] nsh_main: A733 WIFI: endpoint=85 attr=01 maxpacket=49 interval=4 interface=1/5
+[   27.482993] [CPU0] [10] nsh_main: A733 WIFI: endpoint=05 attr=01 maxpacket=49 interval=4 interface=1/5
+[   27.483036] [CPU0] [10] nsh_main: A733 WIFI: interface=2 alt=0 class=ff/ff/ff endpoints=4
+[   27.483072] [CPU0] [10] nsh_main: A733 WIFI: endpoint=01 attr=02 maxpacket=512 interval=0 interface=2/0
+[   27.483114] [CPU0] [10] nsh_main: A733 WIFI: endpoint=81 attr=02 maxpacket=512 interval=0 interface=2/0
+[   27.483156] [CPU0] [10] nsh_main: A733 WIFI: endpoint=02 attr=02 maxpacket=512 interval=0 interface=2/0
+[   27.483198] [CPU0] [10] nsh_main: A733 WIFI: endpoint=82 attr=02 maxpacket=512 interval=0 interface=2/0
+[   27.494245] [CPU0] [10] nsh_main: A733 WIFI: USB enumeration passed config=1 interfaces=3 descriptors=8 endpoints=19 total=222
+[   27.494297] [CPU0] [10] nsh_main: A733 WIFI: runtime map WLAN data=01/01 msg=02/02 BT event=03 ACL=04/04
+[   27.505004] [CPU0] [10] nsh_main: A733 WIFI: runtime MM_VERSION passed lmac=06090101 machw=0002fdfb/00014047 phy=5ee24111/01020000 features=01e877d7 sta=32 vif=4
+[   27.510003] [CPU0] [10] nsh_main: A733 WIFI: LMAC stack start passed 5g=1 vendor=00
+[   27.515004] [CPU0] [10] nsh_main: A733 WIFI: efuse MAC 9c:04:b6:84:44:8d
+[   27.515034] [CPU0] [10] nsh_main: A733 WIFI: LMAC stack checkpoint (0)
+[   28.616003] [CPU0] [10] nsh_main: A733 WIFI: RF calibration passed rx=00175a64/00175cf8 tx=0017683c/001769c4
+[   28.616047] [CPU0] [10] nsh_main: A733 WIFI: RF configuration checkpoint (0)
+[   28.626003] [CPU0] [10] nsh_main: A733 WIFI: runtime MM_VERSION passed lmac=06090101 machw=0002fdfb/00014047 phy=5ee24111/01020000 features=01e877d7 sta=32 vif=4
+[   28.631003] [CPU0] [10] nsh_main: A733 WIFI: ME configuration passed HT=1 VHT=0 HE=0 BW=40 PS=0 cfm=0
+[   28.631043] [CPU0] [10] nsh_main: A733 WIFI: ME configuration checkpoint (0)
+[   28.636003] [CPU0] [10] nsh_main: A733 WIFI: CN channel table passed 2g=14 5g=25 cfm=0
+[   28.636038] [CPU0] [10] nsh_main: A733 WIFI: regulatory channel checkpoint (0)
+[   28.640003] [CPU0] [10] nsh_main: A733 WIFI: station VIF passed index=0 MAC=9c:04:b6:84:44:8d
+[   28.640042] [CPU0] [10] nsh_main: A733 WIFI: station VIF checkpoint (0)
+[   28.645003] [CPU0] [10] nsh_main: A733 WIFI: MAC/PHY start passed UAPSD=300 ms LPCLK=20 ppm cfm=0
+[   28.645041] [CPU0] [10] nsh_main: A733 WIFI: MAC/PHY start checkpoint (0)
+[   28.645070] [CPU0] [10] nsh_main: A733 WIFI: runtime transport checkpoint (0)
+[   28.645101] [CPU0] [10] nsh_main: A733 WIFI: D80 firmware bytes=408616 runtime=a69c:8d81 (0)
+[   28.645148] [CPU0] [10] nsh_main: A733 BT: official H4 transport registration (0)
+[   28.645189] [CPU0] [10] nsh_main: A733 WIFI: wlan0 registered; serialized USB RX worker pid=11
+[   28.645229] [CPU0] [10] nsh_main: A733: onboard FCU760K USB/firmware checkpoint ready (0)
+[   28.646307] [CPU0] [10] nsh_main: A733 USB host: before reset cap=30 ver=0120 hcs=02000140 id=33313130
+[   30.110629] [CPU0] [10] nsh_main: A733 USB combo v114: ctrl=00000111/01100001/00000000/00000011 status=00000001 maps=00000000/00000000 ready=1
+[   30.130693] [CPU0] [10] nsh_main: A733 USB PHY v114: reset-free host handoff passed id=33313130 gctl=30c11404 u2=02102400 u3=01001102 iscr=0100b000 physts=00000008
+[   30.130760] [CPU0] [10] nsh_main: A733 USB host: CCU-reset halted handoff passed; HCRST suppressed cmd=00000000 sts=00000001 id=33313130
+[   30.130821] [CPU0] [10] nsh_main: A733 xHCI v114: running slots=8 scratch=2 page=00000001 rtsoff=00001000 cmd=00000001 sts=00000000
+[   31.631676] [CPU0] [10] nsh_main: A733 UVC: USB2/xHCI2 probe=-19 ports=000002a0/000002a0 DWC3=33313130 maxports=2
+[   31.631722] [CPU0] [10] nsh_main: A733 USB diagnostic node registered; host probe=-19 (not audio-ready)
+[   31.631763] [CPU0] [10] nsh_main: A733: external USB0 UVC checkpoint ready (0)
+[   31.631807] [CPU0] [10] nsh_main: A733: optional service startup dispatcher (0)
+nsh>

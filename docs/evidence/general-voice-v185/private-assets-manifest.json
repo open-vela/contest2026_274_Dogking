@@ -1,0 +1,260 @@
+{
+  "schema": 185,
+  "result": "PRIVATE_CANDIDATE_ASSETS_NOT_BOARD_ACCEPTANCE",
+  "layout": "copy general-asr and general-tts under /data/npu OR /ufs/npu",
+  "files": [
+    {
+      "path": "general-asr/asr-decoder.a7tv",
+      "bytes": 7265024,
+      "sha256": "31e0a3b163b6b58735aa634d7e6c5a25071262d8bd7cd848fe1b98f5357adeea"
+    },
+    {
+      "path": "general-asr/asr-encoder.a7tv",
+      "bytes": 47099200,
+      "sha256": "d6470e919fbe06a94a08b0bc1887cc4c9e169c3859ba83890974250f0b160951"
+    },
+    {
+      "path": "general-asr/asr-joiner.a7tv",
+      "bytes": 6467712,
+      "sha256": "f8231271d09b211bca752504f1a2d0da17456138ecf31475f3a9846c3af38044"
+    },
+    {
+      "path": "general-asr/fixture/decoder/input0.bin",
+      "bytes": 8,
+      "sha256": "e8c4da1e93b6db380bfdab5058ed32000130d211dead77b4d639483e53cdc4d2"
+    },
+    {
+      "path": "general-asr/fixture/encoder/input0.bin",
+      "bytes": 32960,
+      "sha256": "dcb73789a6cf42e11691d17de5b84f6199f9b1c462ddc3110b63ee08669b2d52"
+    },
+    {
+      "path": "general-asr/fixture/encoder/input1.bin",
+      "bytes": 8,
+      "sha256": "a8c4ca9f099bf14cb13d7ee876d04af9de92d85b500a4288e59c9315dac5c216"
+    },
+    {
+      "path": "general-asr/fixture/encoder/input10.bin",
+      "bytes": 2048,
+      "sha256": "254fd58ae0e99a22089bf661f9ea31359e3bca995a615bee57c88f37a1852084"
+    },
+    {
+      "path": "general-asr/fixture/encoder/input11.bin",
+      "bytes": 294912,
+      "sha256": "659948a0977d9566377d13f7dacecb3df5ae26dcb0a334a2a83b2a02b4860bc3"
+    },
+    {
+      "path": "general-asr/fixture/encoder/input12.bin",
+      "bytes": 147456,
+      "sha256": "2d00434a41992d5ecdfde0357b90a3cf679654c72253413cc2a93916d29135f5"
+    },
+    {
+      "path": "general-asr/fixture/encoder/input13.bin",
+      "bytes": 73728,
+      "sha256": "0d42bce46e6d33412f9e3a150ab5737929576f22ea500db105e776c97a3fb1dc"
+    },
+    {
+      "path": "general-asr/fixture/encoder/input14.bin",
+      "bytes": 36864,
+      "sha256": "1ae336febcc781c79ce4c3ed8f9c2b6fba97e5a4297437ae297f2e6b6a4f1c31"
+    },
+    {
+      "path": "general-asr/fixture/encoder/input15.bin",
+      "bytes": 147456,
+      "sha256": "b0f15b0fd80ca6c5c6fa7271b29b2e68ea54cfd9dc175fbc0750bd5e58ea880c"
+    },
+    {
+      "path": "general-asr/fixture/encoder/input16.bin",
+      "bytes": 147456,
+      "sha256": "cee776926bb4f003eec167adacc94276e73bd84d49623ea2dc1f0048e34e3a04"
+    },
+    {
+      "path": "general-asr/fixture/encoder/input17.bin",
+      "bytes": 73728,
+      "sha256": "3c32092318dc2b786a6f1f4b988ce7342fd7a91f2f488079cdf93c01ea5266ca"
+    },
+    {
+      "path": "general-asr/fixture/encoder/input18.bin",
+      "bytes": 36864,
+      "sha256": "7a7f9208b7b850a37d3e6d8d0879821a47945f2384d2c50978bce0407d20c0db"
+    },
+    {
+      "path": "general-asr/fixture/encoder/input19.bin",
+      "bytes": 18432,
+      "sha256": "117be75f5d7a20983519489cf566ba14eda1dad089099be8c67ce8731e04a58e"
+    },
+    {
+      "path": "general-asr/fixture/encoder/input2.bin",
+      "bytes": 8,
+      "sha256": "13e988ed90272ce8536347aa86ae9f86ed314e1210c457d83b4bbfc6406e9249"
+    },
+    {
+      "path": "general-asr/fixture/encoder/input20.bin",
+      "bytes": 73728,
+      "sha256": "bdd18b0b10963691f52eaa6e30c423e8ab50fef27652d8a462beee23d0e48513"
+    },
+    {
+      "path": "general-asr/fixture/encoder/input21.bin",
+      "bytes": 147456,
+      "sha256": "2de54f35bb96165ff211e93ca86cbd1dbae4c1499d2b66759ad9edd8ea4f1877"
+    },
+    {
+      "path": "general-asr/fixture/encoder/input22.bin",
+      "bytes": 73728,
+      "sha256": "f09f3b08a73ebd178378b08fd454e4e5b27949a75a75206b16ebddf54819e89b"
+    },
+    {
+      "path": "general-asr/fixture/encoder/input23.bin",
+      "bytes": 36864,
+      "sha256": "22ec3faac7a2c5cf8b52cdae45f42b7b2a449c6898e31c9b0a6bddd2c5d79a09"
+    },
+    {
+      "path": "general-asr/fixture/encoder/input24.bin",
+      "bytes": 18432,
+      "sha256": "dca90f2e4643a625f1b78549a894e3faffa49f0ffa8a8856fdb1db1c5874e41f"
+    },
+    {
+      "path": "general-asr/fixture/encoder/input25.bin",
+      "bytes": 73728,
+      "sha256": "65b7799f9fa7d10e1e44dfe993f3ae02140c0432e77069a7dfa7d18451d6ff5b"
+    },
+    {
+      "path": "general-asr/fixture/encoder/input26.bin",
+      "bytes": 61440,
+      "sha256": "70174a35dad7a670bbaa2de89d58f4d723a1e902e8d1ab32b31fc0240764b7b3"
+    },
+    {
+      "path": "general-asr/fixture/encoder/input27.bin",
+      "bytes": 61440,
+      "sha256": "382960b2a9b967204c25eb9bfe876418cad3edcdea1c564b00eb86af40b9bfed"
+    },
+    {
+      "path": "general-asr/fixture/encoder/input28.bin",
+      "bytes": 61440,
+      "sha256": "a1c868239c10a761c0f145913aaac18f8a1a2954292765fdc8de02e83ef7baec"
+    },
+    {
+      "path": "general-asr/fixture/encoder/input29.bin",
+      "bytes": 61440,
+      "sha256": "fec658b7a56c7acd5992a399bde46699ab4a15435d24a26e73d3b49d2b9516db"
+    },
+    {
+      "path": "general-asr/fixture/encoder/input3.bin",
+      "bytes": 8,
+      "sha256": "c573025535b1cea90f421ad7615d65296651dd5bc7287d7dfce7cc79c878ef4b"
+    },
+    {
+      "path": "general-asr/fixture/encoder/input30.bin",
+      "bytes": 61440,
+      "sha256": "1861b260366dae1fc21f0d1070c4a9545ac4047d7c4bea1514a1609a1d09392a"
+    },
+    {
+      "path": "general-asr/fixture/encoder/input31.bin",
+      "bytes": 61440,
+      "sha256": "ff7a26df7d9cb09939c698ee405b2e38313eace0a13ba42fbf467a7237aa6316"
+    },
+    {
+      "path": "general-asr/fixture/encoder/input32.bin",
+      "bytes": 61440,
+      "sha256": "e71c24f7325dbef1a287068dbfdf022da3e2b43c1439deda8484d6570e00a2cc"
+    },
+    {
+      "path": "general-asr/fixture/encoder/input33.bin",
+      "bytes": 61440,
+      "sha256": "749519d58f2568835c7cc05d22b849f8cedb5183a355506cd47e082e510e6ac9"
+    },
+    {
+      "path": "general-asr/fixture/encoder/input34.bin",
+      "bytes": 61440,
+      "sha256": "51609f6c41ec1f6cba55d0612535783c75c21e46055b34876218a62105886407"
+    },
+    {
+      "path": "general-asr/fixture/encoder/input35.bin",
+      "bytes": 61440,
+      "sha256": "fc4b916fe196e79b6487e8b0cb02efba2373a23bd433a0168a4a53597d5ce01e"
+    },
+    {
+      "path": "general-asr/fixture/encoder/input4.bin",
+      "bytes": 8,
+      "sha256": "1fb49b69cb8d1e6aa6176dc3ad6e61e58b93975f1b98621d4b50bd3a89a6f483"
+    },
+    {
+      "path": "general-asr/fixture/encoder/input5.bin",
+      "bytes": 8,
+      "sha256": "13e988ed90272ce8536347aa86ae9f86ed314e1210c457d83b4bbfc6406e9249"
+    },
+    {
+      "path": "general-asr/fixture/encoder/input6.bin",
+      "bytes": 2048,
+      "sha256": "fe0074127d960baa2ca0ae8d3d4823f5abdadea719ef055ad5e0af6b657d706c"
+    },
+    {
+      "path": "general-asr/fixture/encoder/input7.bin",
+      "bytes": 2048,
+      "sha256": "1441de8404c419f2be169f084775a765dda9f84098bb1fb33cc97e92731479d8"
+    },
+    {
+      "path": "general-asr/fixture/encoder/input8.bin",
+      "bytes": 2048,
+      "sha256": "87a20a08e6da11bbff4804a3b6d4ed71057c236312428677396aef03656bba97"
+    },
+    {
+      "path": "general-asr/fixture/encoder/input9.bin",
+      "bytes": 2048,
+      "sha256": "da3549eabecc4568ae09e765901c3082d4d00ce5ada679901d1ba0bfca32f224"
+    },
+    {
+      "path": "general-asr/fixture/joiner/input0.bin",
+      "bytes": 2048,
+      "sha256": "b1e231b37f63bba0a9cb322534a6620619e610091303897e4685ac6dac1d18f2"
+    },
+    {
+      "path": "general-asr/fixture/joiner/input1.bin",
+      "bytes": 2048,
+      "sha256": "629baf19dd8523ea2f0391c7f7814030f745c8a66b20a81217d4aa41a141b28b"
+    },
+    {
+      "path": "general-asr/tokens.txt",
+      "bytes": 56317,
+      "sha256": "a8e0e4ec53810e433789b54a5c0134a7eaa2ffca595a6334d54c00da858841d3"
+    },
+    {
+      "path": "general-tts/ORT-LICENSE",
+      "bytes": 1073,
+      "sha256": "2f07c72751aed99790b8a4869cf2311df85a860b22ded05fa22803587a48922c"
+    },
+    {
+      "path": "general-tts/ORT-ThirdPartyNotices.txt",
+      "bytes": 326866,
+      "sha256": "e9e90971a8e75a9a8ac0c6412e29c1202d079998389915aa485f46c816c3b4cc"
+    },
+    {
+      "path": "general-tts/lexicon.txt",
+      "bytes": 1363705,
+      "sha256": "38b886d46aefa50da6322a64d72fd595d5f4fae1051adb160d647541b1e0a4a2"
+    },
+    {
+      "path": "general-tts/model-steps-3.basic.ort",
+      "bytes": 65033312,
+      "sha256": "cc2ec17c1bcca92239ed476d059900c8dac9c6137a444ce15ff5cc903845d243"
+    },
+    {
+      "path": "general-tts/tokens.txt",
+      "bytes": 19591,
+      "sha256": "56209b2bf609d5ac1d66ede6dae7bf5254bd3f8aa24c4a6823713d5b884d87ba"
+    },
+    {
+      "path": "general-tts/vocoder.a7tv",
+      "bytes": 8069952,
+      "sha256": "0593a9d0f45ae4f637e74696b8acdda2d842b9531ade00e1bfdca58c45b9dad7"
+    }
+  ],
+  "asr": "general 6254-class Zipformer, NOT old KWS",
+  "acoustic": "CPU Matcha default noise=1 length=1",
+  "vocoder": "NPU VIP2 fixed F32 80x200 -> 51200 samples",
+  "tts_license": "Baker noncommercial; do not redistribute as unrestricted",
+  "llm_included": false,
+  "credentials_included": false,
+  "hardware_executed": false,
+  "full_voice_chain": false
+}

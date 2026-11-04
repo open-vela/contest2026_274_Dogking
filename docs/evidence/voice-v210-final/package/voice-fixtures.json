@@ -1,0 +1,25 @@
+{
+  "fixtures": [
+    {
+      "path": "/data/npu/general-asr/checks/cmd_open_light_16k.wav",
+      "bytes": 56876,
+      "sha256": "be2add3f8e1cdf8c328cb6464d294713832120c3e2ebbce092483f95423a4077",
+      "expected_transcript": "帮我打开灯"
+    },
+    {
+      "path": "/data/npu/general-asr/checks/cmd_time_16k.wav",
+      "bytes": 59180,
+      "sha256": "c9d88dcce6b6b50a5ecce836a2b88736850cebad93c5e75e39f90a0c81b404d2",
+      "expected_transcript": "现在几点了"
+    },
+    {
+      "path": "/data/npu/general-asr/checks/neg_silence_3s_16k.wav",
+      "bytes": 96044,
+      "sha256": "d303811b8c84619667cd0501342f84ec6cbe69f7aa3856dcf52fabda374c92b8",
+      "expected_transcript": ""
+    }
+  ],
+  "unchanged_private_assets": 49,
+  "model_manifest_sha256": "0b14d81b748a0604caa4c84f6fbb51bcf97eef44bcccf919a32827c62928c893",
+  "board_asr_executed": false
+}
