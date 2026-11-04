@@ -1,0 +1,9 @@
+{
+  "result": "V218_OFFLINE_PROTOCOL_PROVIDER_PASSED_NOT_CLOUD_OR_BOARD",
+  "real_crypto": true,
+  "independent_signature_oracles": true,
+  "provider_transport": "MOCK_HTTPS_WS",
+  "gateway_validation": true,
+  "cloud_api_executed": false,
+  "hardware_executed": false
+}

@@ -1,0 +1,1 @@
+PASS: 278 single-frame transaction cases including 269 callback-after-effect faults; no-data/stale/error/address/translation/drain gates; SYNTHETIC ONLY

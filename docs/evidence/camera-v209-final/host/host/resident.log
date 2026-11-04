@@ -1,0 +1,1 @@
+PASS actual resident import/raw CRC, immutable reads, warm region validation, command/input refresh, fault/foreign-owner invalidation, release; hardware runner MOCKED

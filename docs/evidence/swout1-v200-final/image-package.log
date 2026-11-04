@@ -1,0 +1,38 @@
+Pass 1: Checking inodes, blocks, and sizes
+Pass 2: Checking directory structure
+Pass 3: Checking directory connectivity
+Pass 4: Checking reference counts
+Pass 5: Checking group summary information
+openvela: 24/29696 files (8.3% non-contiguous), 4685/29696 blocks
+e2fsck 1.47.2 (1-Jan-2025)
+Pass 1: Checking inodes, blocks, and sizes
+Pass 2: Checking directory structure
+Pass 3: Checking directory connectivity
+Pass 4: Checking reference counts
+Pass 5: Checking group summary information
+openvela: 28/29696 files (7.1% non-contiguous), 4689/29696 blocks
+e2fsck 1.47.2 (1-Jan-2025)
+Pass 1: Checking inodes, blocks, and sizes
+Pass 2: Checking directory structure
+Pass 3: Checking directory connectivity
+Pass 4: Checking reference counts
+Pass 5: Checking group summary information
+openvela: 28/29696 files (7.1% non-contiguous), 4689/29696 blocks
+e2fsck 1.47.2 (1-Jan-2025)
+Pass 1: Checking inodes, blocks, and sizes
+Pass 2: Checking directory structure
+Pass 3: Checking directory connectivity
+Pass 4: Checking reference counts
+Pass 5: Checking group summary information
+openvela: 28/29696 files (7.1% non-contiguous), 4689/29696 blocks
+Embedded kernel bytes: 7062048
+Embedded kernel SHA256: 19e2e0772816a44ee9ec671c3eac92f7978b2587a8a8c502c7abd60919cf96c0
+
+Caution: Partition 4 doesn't end on a 2048-sector boundary. This may
+result in problems with some disk encryption tools.
+
+No problems found. 32734 free sectors (16.0 MiB) available in 1
+segments, the largest of which is 32734 (16.0 MiB) in size.
+Image bytes: 2147483648
+a729b7442ffc764063b191d8ac3ebb38c4a2812c18f21cc9dacf2cd02fbaaa33  /mnt/d/My-Program/AI-Agent-Program/GPTsprogram/Openvela/A733-A7Z-ALL-Files/openvela-a733-cubie-a7z-sd-v200-swout1-raw-candidate.img
+e2fsck 1.47.2 (1-Jan-2025)

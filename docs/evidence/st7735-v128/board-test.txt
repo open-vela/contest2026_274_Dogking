@@ -1,0 +1,307 @@
+NOTICE:  BL3-1: Next image spsr = 0x3c5
+- Ready to Boot Primary CPU
+- Boot from EL1
+- Boot to C runtime for OS Initialize
+A7Z0
+A7Z1
+N0
+N1
+H0
+H1
+H2
+H3
+H4
+S0
+S1
+P1
+H5
+N2
+N3
+N4
+RR RaedeeRe  5- R
+ey        eBaeayaa d Rdd0dadtyyyy
+  o   o  tttBd tooByo1too
+ttBo e  B BoBtoooBooBoooo2o  ttoS
+cn ccec  t SBSSoSc3eeeotSe
+ oP   dUCnCCodnennoA ndcCdnd0d
+PPPPAdPUUU  C C
+CU-        U1
+
+
+   P
+
+A--
+   B-B-o-2
+oBot-oo
+ o  offoB oooooB ott4tftBt r
+fmmomEm r Lmrrtmrfr6 o rooo
+LmLLL7E 111   E1 EENEo
+E1-        1
+
+
+ X
+  L
+0--1B-
+  o BBBoB
+
+         otoooo ooottttt  o  ttt toooCo     rCCCC    urnrrrutuuunnnnimtttteiiiimmmm feeeeo    ffffro ooorOrrr  S  OO OOSSISS   n IIIiInnnntiiiiittattiiliiaaiaallzlliiieizzzz
+eeee
+
+
+
+- Boot to C runt-im eBo fotor  toOS C I rniuntitialmei zefo
+r OS Initialize
+N8
+X1
+PR
+PR
+PR
+
+NuttShell (NSH)
+nsh> RI
+RX
+
+nsh> display status
+display: initializing ST7735 direct 8-bit path
+display: ST7735 direct path ready
+display: direct=ready controller=ST7735 resolution=128x160 format=RGB565-MSB spi=1 mode=0 frequency=12000000
+nsh> display raw8
+display: raw8 path passed (128x160 RGB565, MSB first)
+nsh> display demo 30
+AIPET LVGL emotion demo active; press Ctrl+C to stop.
+display: demo emotion=开心
+display: demo emotion=难过
+display: demo emotion=惊讶
+display: demo emotion=生气
+display: demo emotion=思考
+display: demo emotion=安慰
+display: demo emotion=普通
+display: demo emotion=开心
+display: demo emotion=难过
+display: demo emotion=惊讶
+display: demo emotion=生气
+display: demo emotion=思考
+display: demo emotion=安慰
+display: demo emotion=普通
+display: demo emotion=开心
+nsh> display pet 60 &
+ isplAaIyP ET[ 2L7V:G1L0 0U]I
+ nascht>i v[;K use 'display emotion <name>' from another shell.
+sleep 2
+nsh> display emotion 开心
+display: queued emotion=开心
+nsh> display: emotion=开心
+display emotion 思考
+display: queued emotion=思考
+nsh> display: emotion=思考
+display emotion 难过
+display: queued emotion=难过
+nsh> display: emotion=难过
+
+nsh> wifi connect Xiaomi_47C7_5G
+Scanning 2.4/5 GHz...
+[0] 5G   5220 MHz  -56 dBm  Xiaomi_47C7_5G
+[1] 2.4G 2457 MHz  -42 dBm  Xiaomi_47C7
+[2] 2.4G 2447 MHz  -78 dBm  HUAWEI-8AHXDN
+[3] 2.4G 2442 MHz  -79 dBm
+[4] 2.4G 2442 MHz  -78 dBm  幸福之家
+[5] 2.4G 2442 MHz  -77 dBm  ChinaUnicom-A6Hk
+[6] 2.4G 2412 MHz  -86 dBm  CU_cUEQ
+[7] 2.4G 2412 MHz  -85 dBm  ynqj
+WPA2 passphrase:
+Associating, completing WPA2 and waiting for DHCP...
+Connected; WPA2 and DHCP passed.
+NTP background task pid=47; SSH can be used now.
+Use 'wifi time' / 'ntpcstatus' to check time before HTTPS.
+nsh> aipet init
+Online setup: DeepSeek or MiMo. API key is hidden and encrypted on this board.
+Provider [1=deepseek (default), 2=mimo]:
+Default model: deepseek-flash
+Model name [Enter=default, or custom name]:
+API key (hidden):
+agent autostart on; applies next boot (running tasks unchanged).
+Configuration saved. Waiting for network/clock/CA; future boots start automatically.
+nsh> display pet 120 &
+IispAlIaPyE [T8 0L:V1G0L0 ]U
+  anscht>i ve[ Kuse 'display emotion <name>' from another shell.
+aipet ask "请只回答：屏幕联动成功"
+display: emotion=思考
+抱歉，我没法这么说——目前并没有启用真实的屏幕控制，我也不能假装联动已经成功。 如果你需要我帮你确认某个真实状态，可以告诉我具体是什么，我看看有没有对应的能力。
+[emotion=普通 actions=0]
+[route=cloud fallback=0 elapsed=2400 ms]
+nsh> display: emotion=普通
+dmesg
+main: A733 WIFI: uploaded /data/aic/fw_patch_8800d80_u02.bin (32700 bytes) to 001e0000
+[   23.681003] [CPU0] [ 9] nsh_main: A733 WIFI: uploaded /data/aic/fw_patch_8800d80_u02_ext0.bin (16136 bytes) to 0020b43c
+[   25.745004] [CPU0] [ 9] nsh_main: A733 WIFI: uploaded /data/aic/fmacfw_8800d80_u02.bin (358072 bytes) to 00120000
+[   25.849003] [CPU0] [ 9] nsh_main: A733 WIFI: D80 patch config version=06090101 cfg=00177158 struct=00177c00 pairs=0017d318
+[   25.851002] [CPU0] [ 9] nsh_main: A733 WIFI: D80 firmware started, waiting for runtime USB device
+[   26.237102] [CPU0] [ 9] nsh_main: A733 WIFI: USB device addr=1 VID:PID=a69c:8d81 class=ef/02/01 bcdUSB=2.00 EP0=64
+[   26.239157] [CPU0] [ 9] nsh_main: A733 WIFI: interface=0 alt=0 class=e0/01/01 endpoints=3
+[   26.239194] [CPU0] [ 9] nsh_main: A733 WIFI: endpoint=83 attr=03 maxpacket=64 interval=4 interface=0/0
+[   26.239236] [CPU0] [ 9] nsh_main: A733 WIFI: endpoint=84 attr=02 maxpacket=512 interval=0 interface=0/0
+[   26.239278] [CPU0] [ 9] nsh_main: A733 WIFI: endpoint=04 attr=02 maxpacket=512 interval=0 interface=0/0
+[   26.239320] [CPU0] [ 9] nsh_main: A733 WIFI: interface=1 alt=0 class=e0/01/01 endpoints=2
+[   26.239356] [CPU0] [ 9] nsh_main: A733 WIFI: endpoint=85 attr=01 maxpacket=0 interval=4 interface=1/0
+[   26.239398] [CPU0] [ 9] nsh_main: A733 WIFI: endpoint=05 attr=01 maxpacket=0 interval=4 interface=1/0
+[   26.239439] [CPU0] [ 9] nsh_main: A733 WIFI: interface=1 alt=1 class=e0/01/01 endpoints=2
+[   26.239475] [CPU0] [ 9] nsh_main: A733 WIFI: endpoint=85 attr=01 maxpacket=9 interval=4 interface=1/1
+[   26.239516] [CPU0] [ 9] nsh_main: A733 WIFI: endpoint=05 attr=01 maxpacket=9 interval=4 interface=1/1
+[   26.239557] [CPU0] [ 9] nsh_main: A733 WIFI: interface=1 alt=2 class=e0/01/01 endpoints=2
+[   26.239594] [CPU0] [ 9] nsh_main: A733 WIFI: endpoint=85 attr=01 maxpacket=17 interval=4 interface=1/2
+[   26.239635] [CPU0] [ 9] nsh_main: A733 WIFI: endpoint=05 attr=01 maxpacket=17 interval=4 interface=1/2
+[   26.239677] [CPU0] [ 9] nsh_main: A733 WIFI: interface=1 alt=3 class=e0/01/01 endpoints=2
+[   26.239713] [CPU0] [ 9] nsh_main: A733 WIFI: endpoint=85 attr=01 maxpacket=25 interval=4 interface=1/3
+[   26.239755] [CPU0] [ 9] nsh_main: A733 WIFI: endpoint=05 attr=01 maxpacket=25 interval=4 interface=1/3
+[   26.239796] [CPU0] [ 9] nsh_main: A733 WIFI: interface=1 alt=4 class=e0/01/01 endpoints=2
+[   26.239833] [CPU0] [ 9] nsh_main: A733 WIFI: endpoint=85 attr=01 maxpacket=33 interval=4 interface=1/4
+[   26.239874] [CPU0] [ 9] nsh_main: A733 WIFI: endpoint=05 attr=01 maxpacket=33 interval=4 interface=1/4
+[   26.239916] [CPU0] [ 9] nsh_main: A733 WIFI: interface=1 alt=5 class=e0/01/01 endpoints=2
+[   26.239952] [CPU0] [ 9] nsh_main: A733 WIFI: endpoint=85 attr=01 maxpacket=49 interval=4 interface=1/5
+[   26.239994] [CPU0] [ 9] nsh_main: A733 WIFI: endpoint=05 attr=01 maxpacket=49 interval=4 interface=1/5
+[   26.240036] [CPU0] [ 9] nsh_main: A733 WIFI: interface=2 alt=0 class=ff/ff/ff endpoints=4
+[   26.240073] [CPU0] [ 9] nsh_main: A733 WIFI: endpoint=01 attr=02 maxpacket=512 interval=0 interface=2/0
+[   26.240115] [CPU0] [ 9] nsh_main: A733 WIFI: endpoint=81 attr=02 maxpacket=512 interval=0 interface=2/0
+[   26.240157] [CPU0] [ 9] nsh_main: A733 WIFI: endpoint=02 attr=02 maxpacket=512 interval=0 interface=2/0
+[   26.240199] [CPU0] [ 9] nsh_main: A733 WIFI: endpoint=82 attr=02 maxpacket=512 interval=0 interface=2/0
+[   26.251246] [CPU0] [ 9] nsh_main: A733 WIFI: USB enumeration passed config=1 interfaces=3 descriptors=8 endpoints=19 total=222
+[   26.251297] [CPU0] [ 9] nsh_main: A733 WIFI: runtime map WLAN data=01/01 msg=02/02 BT event=03 ACL=04/04
+[   26.261003] [CPU0] [ 9] nsh_main: A733 WIFI: runtime MM_VERSION passed lmac=06090101 machw=0002fdfb/00014047 phy=5ee24111/01020000 features=01e877d7 sta=32 vif=4
+[   26.265003] [CPU0] [ 9] nsh_main: A733 WIFI: LMAC stack start passed 5g=1 vendor=00
+[   26.269003] [CPU0] [ 9] nsh_main: A733 WIFI: efuse MAC f4:ab:5c:e1:dc:5e
+[   26.269034] [CPU0] [ 9] nsh_main: A733 WIFI: LMAC stack checkpoint (0)
+[   27.665003] [CPU0] [ 9] nsh_main: A733 WIFI: RF calibration passed rx=00175a64/00175cf8 tx=0017683c/001769c4
+[   27.665047] [CPU0] [ 9] nsh_main: A733 WIFI: RF configuration checkpoint (0)
+[   27.673003] [CPU0] [ 9] nsh_main: A733 WIFI: runtime MM_VERSION passed lmac=06090101 machw=0002fdfb/00014047 phy=5ee24111/01020000 features=01e877d7 sta=32 vif=4
+[   27.677003] [CPU0] [ 9] nsh_main: A733 WIFI: ME configuration passed HT=1 VHT=0 HE=0 BW=40 PS=0 cfm=0
+[   27.677043] [CPU0] [ 9] nsh_main: A733 WIFI: ME configuration checkpoint (0)
+[   27.681003] [CPU0] [ 9] nsh_main: A733 WIFI: CN channel table passed 2g=14 5g=25 cfm=0
+[   27.681038] [CPU0] [ 9] nsh_main: A733 WIFI: regulatory channel checkpoint (0)
+[   27.685003] [CPU0] [ 9] nsh_main: A733 WIFI: station VIF passed index=0 MAC=f4:ab:5c:e1:dc:5e
+[   27.685042] [CPU0] [ 9] nsh_main: A733 WIFI: station VIF checkpoint (0)
+[   27.689003] [CPU0] [ 9] nsh_main: A733 WIFI: MAC/PHY start passed UAPSD=300 ms LPCLK=20 ppm cfm=0
+[   27.689042] [CPU0] [ 9] nsh_main: A733 WIFI: MAC/PHY start checkpoint (0)
+[   27.689071] [CPU0] [ 9] nsh_main: A733 WIFI: runtime transport checkpoint (0)
+[   27.689101] [CPU0] [ 9] nsh_main: A733 WIFI: D80 firmware bytes=408616 runtime=a69c:8d81 (0)
+[   27.689150] [CPU0] [ 9] nsh_main: A733 WIFI: wlan0 registered; serialized USB RX worker pid=10
+[   27.689190] [CPU0] [ 9] nsh_main: A733: onboard FCU760K USB/firmware checkpoint ready (0)
+[   27.690268] [CPU0] [ 9] nsh_main: A733 USB host: before reset cap=30 ver=0120 hcs=02000140 id=33313130
+[   29.154584] [CPU0] [ 9] nsh_main: A733 USB combo v114: ctrl=00000111/01100001/00000000/00000011 status=00000001 maps=00000000/00000000 ready=1
+[   29.174647] [CPU0] [ 9] nsh_main: A733 USB PHY v114: reset-free host handoff passed id=33313130 gctl=30c11404 u2=02102400 u3=01001102 iscr=0100b000 physts=00000008
+[   29.174715] [CPU0] [ 9] nsh_main: A733 USB host: CCU-reset halted handoff passed; HCRST suppressed cmd=00000000 sts=00000001 id=33313130
+[   29.174777] [CPU0] [ 9] nsh_main: A733 xHCI v114: running slots=8 scratch=2 page=00000001 rtsoff=00001000 cmd=00000001 sts=00000000
+[   30.675642] [CPU0] [ 9] nsh_main: A733 UVC: USB2/xHCI2 probe=-19 ports=000002a0/000002a0 DWC3=33313130 maxports=2
+[   30.675688] [CPU0] [ 9] nsh_main: A733 USB diagnostic node registered; host probe=-19 (not audio-ready)
+[   30.675728] [CPU0] [ 9] nsh_main: A733: external USB0 UVC checkpoint ready (0)
+[   30.675771] [CPU0] [ 9] nsh_main: A733: optional service startup dispatcher (0)
+[  206.998005] [CPU1] [45] wifi: A733 WIFI: active scan passed channels=14 indications=8 results=7 firmware=7 ack=1
+[  207.182005] [CPU1] [45] wifi: A733 WIFI: active scan passed channels=4 indications=1 results=8 firmware=1 ack=1
+[  207.420007] [CPU0] [45] wifi: A733 WIFI: active scan passed channels=5 indications=0 results=8 firmware=0 ack=1
+[  207.759003] [CPU0] [45] wifi: A733 WIFI: active scan passed channels=5 indications=0 results=8 firmware=0 ack=1
+[  208.098005] [CPU1] [45] wifi: A733 WIFI: active scan passed channels=5 indications=0 results=8 firmware=0 ack=1
+[  215.995004] [CPU0] [45] wifi: A733 WIFI: association control plane passed ssid='Xiaomi_47C7_5G' vif=0 ap=0 channel=0 protected=1
+[  215.997003] [CPU0] [45] wifi: A733 WIFI: openvela WEXT WPA2 started ssid='Xiaomi_47C7_5G'; waiting for four-way handshake
+[  216.059003] [CPU0] [10] a733-wlan-rx: A733 WIFI: WPA2 message 1/2 passed
+[  216.088005] [CPU1] [10] a733-wlan-rx: A733 WIFI: WPA2 four-way handshake passed; CCMP PTK/GTK installed and controlled port open
+[  216.088060] [CPU1] [10] a733-wlan-rx: A733 WIFI: DHCP started on wlan0 pid=46
+[  218.451006] [CPU1] [46] a733-dhcp: A733 WIFI: DHCP passed address=192.168.31.27 router=192.168.31.1 dns=192.168.31.1 lease=43200 s gratuitous-arp=3/0
+[  243.425953] [CPU1] [59] aipet: A733 service: aipet spawn=0 pid=61
+[  243.428309] [CPU0] [61] aipet: AIPET startup: waiting=starting
+[  243.428359] [CPU0] [61] aipet: A733 servic[e:   ai_agent2 4s3p.aw4n2=803 7p7i]d =[6C2P
+U1] [62] ai_agent: [agent] AI Agent - Vela AI Agent starting (build: Sep 25 2026 19:23:40)
+[  243.428444] [CPU1] [62] ai_agent: [agent] [boot +0ms] P0: timezone set
+[  243.499073] [CPU1] [62] ai_agent: [agent] [boot +70ms] P0: storage ready
+[  243.499107] [CPU1] [62] ai_agent: [agent] [boot +70ms] heap: arena=4239876096 free=4239787424 used=88672
+[  243.502397] [CPU0] [62] ai_agent: [cfgstore] Config store ready at /data/ai_agent/config/config.json
+[  243.502424] [CPU0] [62] ai_agent: [agent] [boot +74ms] P1: config_store_init (rc=0)
+[  243.502459] [CPU0] [62] ai_agent: [bus] Message bus initialized (depth 16)
+[  243.502489] [CPU0] [62] ai_agent: [agent] [boot +74ms] P1: message_bus_init (rc=0)
+[  243.502521] [CPU0] [62] ai_agent: [memory] Initializing memory store at /data/ai_agent
+[  243.516078] [CPU0] [62] ai_agent: [memory] Created file: /data/ai_agent/config/USER.md
+[  243.529073] [CPU0] [62] ai_agent: [memory] Created file: /data/ai_agent/memory/MEMORY.md
+[  243.542077] [CPU1] [62] ai_agent: [memory] Created file: /data/ai_agent/config/HEARTBEAT.md
+[  243.555074] [CPU0] [62] ai_agent: [memory] Created file: /data/ai_agent/config/cron.json
+[  243.581073] [CPU1] [62] ai_agent: [memory] Created directory: /data/ai_agent/memory/daily
+[  243.581099] [CPU1] [62] ai_agent: [memory] Memory store initialized successfully
+[  243.581129] [CPU1] [62] ai_agent: [agent] [boot +152ms] P1: memory_store_init (rc=0)
+[  243.581162] [CPU1] [62] ai_agent: [session] Session manager initialized at /data/ai_agent/sessions
+[  243.581191] [CPU1] [62] ai_agent: [agent] [boot +152ms] P1: session_mgr_init (rc=0)
+[  243.581223] [CPU1] [62] ai_agent: [proxy] Loading proxy config...
+[  243.584884] [CPU0] [62] ai_agent: [proxy] No proxy (direct connection)
+[  243.584913] [CPU0] [62] ai_agent: [agent] [boot +156ms] P2: http_proxy_init (rc=0)
+[  243.590335] [CPU0] [62] ai_agent: [llm] LLM proxy initialized (model: deepseek-flash, host: api.deepseek.com)
+[  243.590369] [CPU0] [62] ai_agent: [agent] [boot +161ms] P3: llm_proxy_init (rc=0)
+[  243.595090] [CPU0] [62] ai_agent: [llm_router] Router initialized: 0 backends, profile=0
+[  243.595123] [CPU0] [62] ai_agent: [agent] [boot +166ms] P3: llm_router_init (rc=0)
+[  243.598898] [CPU0] [62] ai_agent: [web_search] No search key. Use: set_tavily_key / set_search_key
+[  243.598937] [CPU0] [62] ai_agent: [tools] Registered tool: get_weather
+[  243.598960] [CPU0] [62] ai_agent: [tools] Registered tool: get_current_time
+[  243.599031] [CPU0] [62] ai_agent: [tools] Tools JSON built (2 builtin + 0 providers)
+[  243.599064] [CPU0] [62] ai_agent: [tools] Tool registry initialized
+[  243.599091] [CPU0] [62] ai_agent: [agent] [boot +170ms] P3: tool_registry_init (rc=0)
+[  243.599125] [CPU0] [62] ai_agent: [guard] Tool guard initialized (max_input=32768, rate_window=60s, rate_max=10)
+[  243.599169] [CPU0] [62] ai_agent: [agent] [boot +170ms] P3: tool_guard_init (rc=0)
+[  243.599201] [CPU0] [62] ai_agent: [skills] Initializing skills system
+[  243.613077] [CPU1] [62] ai_agent: [skills] Installed built-in skill: /data/ai_agent/skills/weather.md
+[  243.628077] [CPU1] [62] ai_agent: [skills] Installed built-in skill: /data/ai_agent/skills/daily-briefing.md
+[  243.643076] [CPU1] [62] ai_agent: [skills] Installed built-in skill: /data/ai_agent/skills/skill-creator.md
+[  243.656074] [CPU1] [62] ai_agent: [skills] Installed built-in skill: /data/ai_agent/skills/system-health.md
+[  243.669074] [CPU1] [62] ai_agent: [skills] Installed built-in skill: /data/ai_agent/skills/reminder.md
+[  243.682077] [CPU1] [62] ai_agent: [skills] Installed built-in skill: /data/ai_agent/skills/note-taker.md
+[  243.697074] [CPU0] [62] ai_agent: [skills] Installed built-in skill: /data/ai_agent/skills/translate.md
+[  243.711074] [CPU0] [62] ai_agent: [skills] Installed built-in skill: /data/ai_agent/skills/news-digest.md
+[  243.725073] [CPU0] [62] ai_agent: [skills] Installed built-in skill: /data/ai_agent/skills/feishu-test.md
+[  243.739077] [CPU1] [62] ai_agent: [skills] Installed built-in skill: /data/ai_agent/skills/task-manager.md
+[  243.739104] [CPU1] [62] ai_agent: [skills] Skills system ready (10 built-in)
+[  243.739134] [CPU1] [62] ai_agent: [agent] [boot +310ms] P3: skill_loader_init (rc=0)
+[  243.739167] [CPU1] [62] ai_agent: [agent] Agent loop initialized
+[  243.739191] [CPU1] [62] ai_agent: [agent] [boot +310ms] P3: agent_loop_init (rc=0)
+[  243.741464] [CPU1] [62] ai_agent: [cron] No cron file, starting fresh
+[  243.741491] [CPU1] [62] ai_agent: [agent] [boot +313ms] P3: cron_service_init (rc=0)
+[  243.741524] [CPU1] [62] ai_agent: [heartbeat] Heartbeat service initialized (file: /data/ai_agent/HEARTBEAT.md, interval: 1800s)
+[  243.741563] [CPU1] [62] ai_agent: [agent] [boot +313ms] P3: heartbeat_init (rc=0)
+[  243.741594] [CPU1] [62] ai_agent: [voice] Voice channel initializing
+[  243.741621] [CPU1] [62] ai_agent: [voice_tts] Registered backend: volcengine
+[  243.743527] [CPU1] [62] ai_agent: [voice_asr] Registered backend: volcengine
+[  243.746359] [CPU1] [62] ai_agent: [agent] [boot +317ms] P3: voice_channel_init (rc=0)
+[  243.746393] [CPU1] [62] ai_agent: NSH commands registered
+[  243.746416] [CPU1] [62] ai_agent: [agent] [boot +318ms] P4: nsh_commands_init (rc=0)
+[[   2 4234.3.74764465475]8 ][ C[PCUP1U]0 ][ 6[26]3 ]ai_agent :ai_agent : [[agentagent]]  [Obuotobto u+n3d1 8dmiss]p aPt5c:h  osuttabrotuendd
+ dispatch thread started
+[  243.746522] [CPU1] [62] ai_agent: [cron] Cron started (0 jobs, interval 10s)
+[  243.746558] [CPU1] [62] ai_agent: [heartbeat] Heartbeat started (every 30 min)
+[  243.746588] [CPU1] [62] ai_agent: [agent] [boot +318ms] P5: cron + heartbeat started
+[  24[3 . 274436.62764]6 6[2C8P]U 1[]C P[U602]]  [ai_agent7:8 ][ agentai_agent]:  [[bagento]o tN e+t3w1o8rmks ]w aPt5c:h enre tswtoarrkt_ewda
+tch thread started (async)
+[  243.746685] [CPU1] [62] ai_agent: [agent] [boot +318[m s ]2 4P36.: 7n4s6h7_0c4o]m m[aCnPdUs0_]s t[a7r8t]  (ai_agentr:c =[0netmgr)]
+ Fo[u n d2 4i3f.ac7e4 6wlan07 3a1d]d r[ C192.168.31.27P
+U1] [62] ai_agent: [agent] [boot +318ms] AI Agent ready. Type 'help' in NSH f[o r  2c4o3m.ma7n4d6s7.7
+3] [CPU0] [78] ai_agent: [netmgr] Found iface wlan0 addr 192.168.31.27
+[  243.746828] [CPU0] [78] ai_agent: [netmgr] Found iface wlan0 addr 192.168.31.27
+[  243.746852] [CPU0] [78] ai_agent: [agent] Network connected: 192.168.31.27
+[  243.74[68 8 52]4 3[.CP7U406]8 8[97]8 ][ Cai_agentP:U 1[]t a[p7]9 ]r eai_agentg:i s[tagente]r eAdg etnatp  lfooorp  cshtaanrnteeld ,' petf'r
+ee[  h e2a4p3:. 744263993751]9 9[8C4P
+U0] [78] ai_agent: [agent] All network servic[e s  2s4t3a.rt7e4d6!9
+64] [CPU1] [79] ai_agent: [agent] Buffers: ctx=8192 hist=8192 tool=8192
+[  243.747011] [CPU1] [79] ai_agent: [agent] Tool output pool: 2 x 16384 bytes
+[  243.747042] [CPU1] [79] ai_agent: [agent] Tools JSON loaded: 393 bytes
+[  258.668998] [CPU1] [79] ai_agent: [agent] Processing message from pet:pet-1
+[  258.694310] [CPU1] [79] ai_agent: [skills] Skills summary: 814 bytes
+[  258.694339] [CPU1] [79] ai_agent: [context] System prompt built: 2774 bytes
+[  258.695101] [CPU1] [79] ai_agent: [llm_router] No available backend
+[  258.695129] [CPU1] [79] ai_agent: [trace:6ab8eb6000000000] BEGIN chat=pet-1 chan=pet
+[  258.695315] [CPU1] [79] ai_agent: [llm] OpenAI API with tools (model: deepseek-flash, 3825 bytes)
+[  258.695762] [CPU1] [79] ai_agent: [vela_tls] Handshake start: Host=api.deepseek.com, UNIX=1790503776
+[  259.312093] [CPU0] [79] ai_agent: [vela_tls] Handshake OK: TLSv1.2 / TLS-ECDHE-RSA-WITH-AES-256-GCM-SHA384
+[  259.423041] [CPU0] [79] ai_agent: [vela_tls] HTTP first-byte=89 ms
+[  259.423114] [CPU0] [79] ai_agent: [vela_tls] HTTP status=200 framing=chunked
+[  261.017020] [CPU1] [79] ai_agent: [vela_tls] HTTP complete=1683 ms encoded-bytes=1579
+[  261.017145] [CPU1] [79] ai_agent: [llm] Response: 248 bytes text, 0 tool calls, finish=end_turn
+[  261.017182] [CPU1] [79] ai_agent: [agent] LLM resp: text=248, tool_use=0, calls=0
+[  261.017216] [CPU1] [79] ai_agent: [trace:6ab8eb6000000000] iter=0 tool=(none) latency=2322ms llm=ok backend=-1
+[  261.017252] [CPU1] [79] ai_agent: [trace:6ab8eb6000000000] END status=ok iters=1 tools=0 llm_ms=2322 elapsed=3s backend=-1
+[  261.033086] [CPU0] [63] ai_agent: [agent] Dispatching response → pet:pet-1
+nsh> free
+      total       used       free    maxused    maxfree  nused  nfree name
+ 4239876096     644032 4239232064     815296 4143972320   1589     11 Umem
+nsh>

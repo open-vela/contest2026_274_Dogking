@@ -1,0 +1,553 @@
+......
+
+
+[235]HELLO! BOOT0 is starting!
+[238]BOOT0 commit : {4721ad08}
+[241]board gpio withstand voltage auto mode
+[256]dram_para_total:0xf
+[258]vaild para:6  select dram para10
+[mmc]: mmc driver ver 2025-10-16 17:10
+[mmc]: Wrong media type 0x0
+[mmc]: ***Try SD card 0***
+[mmc]: HSSDR52/SDR25 4 bit
+[mmc]: 50000000 Hz
+[mmc]: 30436 MB
+[mmc]: ***SD/MMC 0 init OK!!!***
+[307]DRAM BOOT DRIVE INFO: V0.601
+[311]DRAM_VCC set to 1100 mv
+[314]DRAM CLK =1800 MHZ
+[316]DRAM Type =8 (8:LPDDR4,9:LPDDR5)
+[421]Training result is = 7
+[424]DRAM Pstate 1 training, frequency is 1200 Mhz
+[537]Training result is = 7
+[540]DRAM Pstate 2 training, frequency is 800 Mhz
+[750]Training result is = 7
+[753]DRAM Pstate 3 training, frequency is 400 Mhz
+[3977]Training result is = 7
+[3980]DRAM Pstate 0 training, frequency is 1800 Mhz
+[3988]Actual DRAM SIZE =4096 M
+[3991]DRAM SIZE =4096 MBytes, para1 = 310a, para2 = 10001001, dram_tpr13 = 6067
+[4005]DRAM simple test OK.
+[4011]error:bad magic.
+[4075]error: dtb not found for scp
+[4078]mmc not para
+[4080]Jump to ATF: monitor_base = 0x48000000, uboot_base = 0x4a000000, optee_base = 0x0
+NOTICE:  BL31: OP-TEE 32bit detected
+NOTICE:  BL31: U-BOOT 32bit detected
+NOTICE:  BL31: dram size is 4294967296 bytes
+NOTICE:  BL31: v2.5(debug):48e54578a
+NOTICE:  BL31: Built : 14:13:06, Jul  2 2025
+NOTICE:  BL31: No DTB found.
+ERROR:   Error initializing runtime service opteed_fast
+
+
+U-Boot 2018.07-17-boot-aw2501-g4c7078cfdf7-dirty (Apr 29 2026 - 10:03:59 +0000) Allwinner Technology
+
+[04.136]CPU:   Allwinner Family
+[04.139]Model: Radxa Cubie A7A
+I2C:   ready
+[04.203]DRAM:  4 GiB
+[04.211]Relocation Offset is: 75d89000
+[04.265]secure enable bit: 0
+[04.269]PMU: AXP8191
+[04.271]PMU: AXP8191 VER_A
+FDT ERROR:fdt_get_regulator_name:get property handle twi-supply error:FDT_ERR_INTERNAL
+[04.282]bmu_axp515_probe pmic_bus_read fail
+[04.286][AXP8191] onoff status: 0x50 = 0x1, 0x51 = 0x0
+[04.291][AXP8191] charge status: 0x4 = 0x0
+[04.295]CPU=1014 MHz,PLL6=1200 Mhz,AHB=200 Mhz, APB1=24Mhz  MBus=600Mhz
+[04.301]gic: sec monitor mode
+SPI ALL:   ready
+[04.346]flash init start
+[04.348]workmode = 0,storage type = 1
+[04.351][mmc]: mmc driver ver uboot2018:2024-10-18 9:01:00 -- uboot2018:2025-03-28 10:03:00
+[04.359][mmc]: get sdc_type fail and use default host:tm1.
+[04.367][mmc]: can't find node "mmc0",will add new node
+[04.372][mmc]: fdt err returned <no error>
+[04.376][mmc]: Using default timing para
+[04.379][mmc]: SUNXI SDMMC Controller Version:0x50530
+[04.408][mmc]: card_caps:0x3000000a
+[04.411][mmc]: host_caps:0x3000003f
+[04.416]sunxi flash init ok
+get value error
+[04.428]Loading Environment from SUNXI_FLASH... OK
+No ethernet found.
+[04.465]NOT support bridge yet
+[04.468]Warn: no find panel or bridge
+[04.472]hdmi0@5520000 disconnected
+[04.475]drm hdmi get mode: 1920x1080@60Hz
+hdmi0@5520000: use force output detailed mode clock 148500 kHz, flags[5]
+    H: 1920 2008 2052 2200
+    V: 1080 1084 1089 1125
+bus_format: 0
+partno erro : can't find partition bootloader
+[04.504]bootloader is not found!
+partno erro : can't find partition boot-resource
+[04.513]boot-resource is not found!
+[04.516]Can not load logo.bmp file!
+[04.519]load logo fail
+[04.529]the secure storage item0 copy0 magic is bad
+[04.540]the secure storage item0 copy1 magic is bad
+[04.545]usb burn from boot
+delay time 0
+[04.551]usb prepare ok
+[04.854]overtime
+[04.858]do_burn_from_boot usb : no usb exist
+skip update boot_param
+cann't get the boot_base from the env
+[04.869]update part info
+[04.874]battery temp is -1
+[04.879]update bootcmd
+[04.887](not enough data: expected >= 8 cells, got 4 cells)
+Link up timeout
+Speed change timeout
+PCIe speed of Gen1
+Override default fdtfile to allwinner/sun60i-a733-cubie-a7z.dtb
+[07.329]libfdt fdt_check_header(): FDT_ERR_BADMAGIC
+[07.335]libfdt fdt_path_offset() returned FDT_ERR_BADMAGIC
+[07.340][mmc]: get sunxi-mmc0 string failed
+[07.345]The storage not support sample function
+[07.351]## error: update_fdt_dram_para_from_bootpara : FDT_ERR_NOTFOUND
+[07.358]chip id : 0x00005100 0x00004900 0x0000c418 0x00002354
+[07.363]mac addr => 08:51:49:dc:77:ed
+[07.366]chip id : 0x00005100 0x00004900 0x0000c418 0x00002354
+[07.372]mac addr => 08:51:49:dc:77:ec
+[07.376]/chosen/rng-seed node not exit
+[07.379]no battery, disabled battery functons
+[07.384]Could not find nodeoffset for bat_supply
+[07.388]update dts
+curr_device:0
+Device: SUNXI SD/MMC
+Manufacturer ID: 3
+OEM: 5344
+Name: SD32G
+Bus Speed: 50000000
+Mode : SD High Speed (50MHz)
+Rd Block Len: 512
+SD version 3.0
+High Capacity: Yes
+Capacity: 29.7 GiB
+Bus Width: 4-bit
+Erase Group Size: 512 Bytes
+[ufs]info:Driver version 0.0.24 2024.12.30 16:00
+[ufs]info:Cal words 0x60:val 0x98620000, 0x64:val 0x4d1d9753
+[ufs]info:[RX, TX]: gear=[4, 4], lane[2, 2], pwr[FAST MODE, FAST MODE], rate = 2
+[ufs]err:Warning wExceptionEventStatus 20 !!!!!!!
+[ufs]err:Warning wExceptionEventStatus 20 !!!!!!!
+[ufs]err:Warning wExceptionEventStatus 20 !!!!!!!
+[ufs]err:Warning wExceptionEventStatus 20 !!!!!!!
+[ufs]err:Warning wExceptionEventStatus 20 !!!!!!!
+[ufs]err:Warning wExceptionEventStatus 20 !!!!!!!
+[ufs]err:Warning wExceptionEventStatus 20 !!!!!!!
+[ufs]err:Warning wExceptionEventStatus 20 !!!!!!!
+[ufs]err:Warning wExceptionEventStatus 20 !!!!!!!
+[ufs]err:Warning wExceptionEventStatus 20 !!!!!!!
+[ufs]info:Eol info 1
+[ufs]info:life time a 1
+[ufs]info:life time b 1
+[ufs]info:qTotalRawDeviceCapacity 0xEE78000, max_num_alloc_units 0x773c
+[ufs]info:dNumAllocUnits:0x773c
+ [ufs]err:sc st 2
+[ufs]err:scsi status:Check conditon
+[ufs]err:dump:bfeb6f60: 70 00 06 00 00 00 00 0a 00 00 00 00 29 00 00 00    p...........)...
+[ufs]info:blk size 4096,capacity 31256576 block
+Hit any key to stop autoboot:  0
+starting USB...
+USB0:   start sunxi  USB-DRD...
+config usb clk ok
+sunxi USB-DRD init ok...
+USB EHCI 1.00
+scanning bus 0 for devices... 1 USB Device(s) found
+USB1:   start sunxi  USB1-Host...
+config usb clk ok
+sunxi USB1-Host init ok...
+USB EHCI 1.00
+scanning bus 1 for devices... 1 USB Device(s) found
+       scanning usb for storage devices... 0 Storage Device(s) found
+
+Device 0: device type unknown
+... is now current device
+** Bad device usb 0 **
+** Bad device usb 0 **
+mmc0 is current device
+Scanning mmc 0:2...
+Scanning mmc 0:3...
+Found /boot/extlinux/extlinux.conf
+Retrieving file: /boot/extlinux/extlinux.conf
+196 bytes read in 15 ms (12.7 KiB/s)
+1:      openvela A733 (minimal SD image)
+Retrieving file: /boot/openvela/a733/Image
+2747552 bytes read in 134 ms (19.6 MiB/s)
+Retrieving file: /boot/dtb/sun60i-a733-cubie-a7z.dtb
+193692 bytes read in 25 ms (7.4 MiB/s)
+[12.086]libfdt fdt_path_offset() returned FDT_ERR_BADMAGIC
+[12.095]The storage not support sample function
+[12.181]mac addr => 08:51:49:dc:77:ed
+[12.185]mac addr => 08:51:49:dc:77:ec
+[12.190]no battery, disabled battery functons
+[12.197]update dts
+stop sunxi USB-DRD ok...
+stop sunxi USB1-Host ok...
+[12.222]Starting kernel ...
+
+[12.225]total: 12225 ms
+
+[12.227][mmc]: MMC Device 2 not found
+[12.231][mmc]: mmc 2 not find, so not exit
+NOTICE:  [SCP] :wait arisc ready....
+NOTICE:  [SCP] :arisc version: [d463b9da43dc50320f21ba51c6c51afe2db20d83]
+NOTICE:  [SCP] :arisc startup ready
+NOTICE:  [SCP] :arisc startup notify message feedback
+NOTICE:  [SCP] :sunxi-arisc driver is starting
+NOTICE:  BL3-1: Next image address = 0x40200000
+NOTICE:  BL3-1: Next image spsr = 0x3c5
+- Ready to Boot Primary CPU
+- Boot from EL1
+- Boot to C runtime for OS Initialize
+M0 v141-layout
+M1
+A7Z0
+A7Z1
+N0
+N1
+H0
+H1
+H2
+H3
+H4
+S0
+S1
+P1
+H5
+N2
+N3
+N4
+ RRRReR-5- e-   a
+dat   d oye eyBaaaaRed0ddad yyyy
+oo   o oBBtttytB  o ootB1o t
+ttoSt     BBoo tooBBB o2ooooot
+oe      eot SSS cBtSeoeSe3 enSccecc
+ Pddodonco AnnndCodd0dnn
+PPC PCU CCPA
+U    U1CUUPU-
+U
+
+
+
+-B
+  -A-2-
+B BoBB- ot o
+ro  t     oooBB ooooBo4ttftoot
+  o   fftff or rrfNmrof oro6oEormmmm
+LLLE7L111E1ENE
+LE1
+X-
+
+ 1
+
+-
+--- o
+ o
+  BBBBotoooo ooottttt  o  ttt toooCo     CCCrC   u rrrrntuuuuinnnnttttmieiiim mmmefeee  o  ffrffoo oorrOrr   S OOO OSSSIS    niIIIItnnnniiiiitatttilizzeeaaalzlllieiiizz
+    ee
+
+
+
+niBoot to- C  Boruotn titom e C frorun OtSi meIn fitoria OlSiz Ie
+  tialize
+N8
+X1
+PR
+PR
+PR
+
+NuttShell (NSH)
+nsh> RI
+RX
+
+nsh> ufs autostart on
+ufs autostart on; applies next boot (running tasks unchanged).
+nsh> ufs autostart status
+ufs autostart: on
+nsh> ufs start
+nsh> ufs status
+ufs: active=0 pid=0 phase=idle result=0 verified=0 created=0 close-error=0 stop=0 bytes=0/0 checked=0 elapsed-ms=0 no-progress-ms=0
+ufs-mount: active=0 attempted=1 ready=1 error=0 stage=mounted-existing-FAT mount=/ufs source=/dev/ufsdata fallback=/data/models
+nsh> poweroff
+......
+
+
+[242]HELLO! BOOT0 is starting!
+[245]BOOT0 commit : {4721ad08}
+[248]board gpio withstand voltage auto mode
+[263]dram_para_total:0xf
+[265]vaild para:6  select dram para10
+[mmc]: mmc driver ver 2025-10-16 17:10
+[mmc]: Wrong media type 0x0
+[mmc]: ***Try SD card 0***
+[mmc]: HSSDR52/SDR25 4 bit
+[mmc]: 50000000 Hz
+[mmc]: 30436 MB
+[mmc]: ***SD/MMC 0 init OK!!!***
+[313]DRAM BOOT DRIVE INFO: V0.601
+[317]DRAM_VCC set to 1100 mv
+[320]DRAM CLK =1800 MHZ
+[323]DRAM Type =8 (8:LPDDR4,9:LPDDR5)
+[428]Training result is = 7
+[430]DRAM Pstate 1 training, frequency is 1200 Mhz
+[544]Training result is = 7
+[546]DRAM Pstate 2 training, frequency is 800 Mhz
+[756]Training result is = 7
+[759]DRAM Pstate 3 training, frequency is 400 Mhz
+[3986]Training result is = 7
+[3989]DRAM Pstate 0 training, frequency is 1800 Mhz
+[3997]Actual DRAM SIZE =4096 M
+[4000]DRAM SIZE =4096 MBytes, para1 = 310a, para2 = 10001001, dram_tpr13 = 6067
+[4015]DRAM simple test OK.
+[4020]error:bad magic.
+[4084]error: dtb not found for scp
+[4088]mmc not para
+[4090]Jump to ATF: monitor_base = 0x48000000, uboot_base = 0x4a000000, optee_base = 0x0
+NOTICE:  BL31: OP-TEE 32bit detected
+NOTICE:  BL31: U-BOOT 32bit detected
+NOTICE:  BL31: dram size is 4294967296 bytes
+NOTICE:  BL31: v2.5(debug):48e54578a
+NOTICE:  BL31: Built : 14:13:06, Jul  2 2025
+NOTICE:  BL31: No DTB found.
+ERROR:   Error initializing runtime service opteed_fast
+
+
+U-Boot 2018.07-17-boot-aw2501-g4c7078cfdf7-dirty (Apr 29 2026 - 10:03:59 +0000) Allwinner Technology
+
+[04.146]CPU:   Allwinner Family
+[04.149]Model: Radxa Cubie A7A
+I2C:   ready
+[04.212]DRAM:  4 GiB
+[04.221]Relocation Offset is: 75d89000
+[04.275]secure enable bit: 0
+[04.278]PMU: AXP8191
+[04.280]PMU: AXP8191 VER_A
+FDT ERROR:fdt_get_regulator_name:get property handle twi-supply error:FDT_ERR_INTERNAL
+[04.292]bmu_axp515_probe pmic_bus_read fail
+[04.296][AXP8191] onoff status: 0x50 = 0x1, 0x51 = 0x0
+[04.301][AXP8191] charge status: 0x4 = 0x0
+[04.305]CPU=1014 MHz,PLL6=1200 Mhz,AHB=200 Mhz, APB1=24Mhz  MBus=600Mhz
+[04.311]gic: sec monitor mode
+SPI ALL:   ready
+[04.355]flash init start
+[04.357]workmode = 0,storage type = 1
+[04.360][mmc]: mmc driver ver uboot2018:2024-10-18 9:01:00 -- uboot2018:2025-03-28 10:03:00
+[04.369][mmc]: get sdc_type fail and use default host:tm1.
+[04.377][mmc]: can't find node "mmc0",will add new node
+[04.381][mmc]: fdt err returned <no error>
+[04.385][mmc]: Using default timing para
+[04.389][mmc]: SUNXI SDMMC Controller Version:0x50530
+[04.417][mmc]: card_caps:0x3000000a
+[04.420][mmc]: host_caps:0x3000003f
+[04.426]sunxi flash init ok
+get value error
+[04.437]Loading Environment from SUNXI_FLASH... OK
+No ethernet found.
+[04.475]NOT support bridge yet
+[04.477]Warn: no find panel or bridge
+[04.482]hdmi0@5520000 disconnected
+[04.484]drm hdmi get mode: 1920x1080@60Hz
+hdmi0@5520000: use force output detailed mode clock 148500 kHz, flags[5]
+    H: 1920 2008 2052 2200
+    V: 1080 1084 1089 1125
+bus_format: 0
+partno erro : can't find partition bootloader
+[04.514]bootloader is not found!
+partno erro : can't find partition boot-resource
+[04.522]boot-resource is not found!
+[04.526]Can not load logo.bmp file!
+[04.529]load logo fail
+[04.538]the secure storage item0 copy0 magic is bad
+[04.550]the secure storage item0 copy1 magic is bad
+[04.555]usb burn from boot
+delay time 0
+[04.561]usb prepare ok
+[04.864]overtime
+[04.868]do_burn_from_boot usb : no usb exist
+skip update boot_param
+cann't get the boot_base from the env
+[04.879]update part info
+[04.884]battery temp is -1
+[04.889]update bootcmd
+[04.897](not enough data: expected >= 8 cells, got 4 cells)
+Link up timeout
+Speed change timeout
+PCIe speed of Gen1
+Override default fdtfile to allwinner/sun60i-a733-cubie-a7z.dtb
+[07.339]libfdt fdt_check_header(): FDT_ERR_BADMAGIC
+[07.345]libfdt fdt_path_offset() returned FDT_ERR_BADMAGIC
+[07.350][mmc]: get sunxi-mmc0 string failed
+[07.355]The storage not support sample function
+[07.361]## error: update_fdt_dram_para_from_bootpara : FDT_ERR_NOTFOUND
+[07.368]chip id : 0x00005100 0x00004900 0x0000c418 0x00002354
+[07.373]mac addr => 08:51:49:dc:77:ed
+[07.376]chip id : 0x00005100 0x00004900 0x0000c418 0x00002354
+[07.382]mac addr => 08:51:49:dc:77:ec
+[07.386]/chosen/rng-seed node not exit
+[07.389]no battery, disabled battery functons
+[07.394]Could not find nodeoffset for bat_supply
+[07.398]update dts
+curr_device:0
+Device: SUNXI SD/MMC
+Manufacturer ID: 3
+OEM: 5344
+Name: SD32G
+Bus Speed: 50000000
+Mode : SD High Speed (50MHz)
+Rd Block Len: 512
+SD version 3.0
+High Capacity: Yes
+Capacity: 29.7 GiB
+Bus Width: 4-bit
+Erase Group Size: 512 Bytes
+[ufs]info:Driver version 0.0.24 2024.12.30 16:00
+[ufs]info:Cal words 0x60:val 0x98620000, 0x64:val 0x4d1d9753
+[ufs]info:[RX, TX]: gear=[4, 4], lane[2, 2], pwr[FAST MODE, FAST MODE], rate = 2
+[ufs]err:Warning wExceptionEventStatus 20 !!!!!!!
+[ufs]err:Warning wExceptionEventStatus 20 !!!!!!!
+[ufs]err:Warning wExceptionEventStatus 20 !!!!!!!
+[ufs]err:Warning wExceptionEventStatus 20 !!!!!!!
+[ufs]err:Warning wExceptionEventStatus 20 !!!!!!!
+[ufs]err:Warning wExceptionEventStatus 20 !!!!!!!
+[ufs]err:Warning wExceptionEventStatus 20 !!!!!!!
+[ufs]err:Warning wExceptionEventStatus 20 !!!!!!!
+[ufs]err:Warning wExceptionEventStatus 20 !!!!!!!
+[ufs]err:Warning wExceptionEventStatus 20 !!!!!!!
+[ufs]info:Eol info 1
+[ufs]info:life time a 1
+[ufs]info:life time b 1
+[ufs]info:qTotalRawDeviceCapacity 0xEE78000, max_num_alloc_units 0x773c
+[ufs]info:dNumAllocUnits:0x773c
+ [ufs]err:sc st 2
+[ufs]err:scsi status:Check conditon
+[ufs]err:dump:bfeb6f60: 70 00 06 00 00 00 00 0a 00 00 00 00 29 00 00 00    p...........)...
+[ufs]info:blk size 4096,capacity 31256576 block
+Hit any key to stop autoboot:  0
+starting USB...
+USB0:   start sunxi  USB-DRD...
+config usb clk ok
+sunxi USB-DRD init ok...
+USB EHCI 1.00
+scanning bus 0 for devices... 1 USB Device(s) found
+USB1:   start sunxi  USB1-Host...
+config usb clk ok
+sunxi USB1-Host init ok...
+USB EHCI 1.00
+scanning bus 1 for devices... 1 USB Device(s) found
+       scanning usb for storage devices... 0 Storage Device(s) found
+
+Device 0: device type unknown
+... is now current device
+** Bad device usb 0 **
+** Bad device usb 0 **
+mmc0 is current device
+Scanning mmc 0:2...
+Scanning mmc 0:3...
+Found /boot/extlinux/extlinux.conf
+Retrieving file: /boot/extlinux/extlinux.conf
+196 bytes read in 15 ms (12.7 KiB/s)
+1:      openvela A733 (minimal SD image)
+Retrieving file: /boot/openvela/a733/Image
+2747552 bytes read in 134 ms (19.6 MiB/s)
+Retrieving file: /boot/dtb/sun60i-a733-cubie-a7z.dtb
+193692 bytes read in 25 ms (7.4 MiB/s)
+[12.096]libfdt fdt_path_offset() returned FDT_ERR_BADMAGIC
+[12.105]The storage not support sample function
+[12.191]mac addr => 08:51:49:dc:77:ed
+[12.195]mac addr => 08:51:49:dc:77:ec
+[12.200]no battery, disabled battery functons
+[12.207]update dts
+stop sunxi USB-DRD ok...
+stop sunxi USB1-Host ok...
+[12.232]Starting kernel ...
+
+[12.235]total: 12235 ms
+
+[12.237][mmc]: MMC Device 2 not found
+[12.241][mmc]: mmc 2 not find, so not exit
+NOTICE:  [SCP] :wait arisc ready....
+NOTICE:  [SCP] :arisc version: [d463b9da43dc50320f21ba51c6c51afe2db20d83]
+NOTICE:  [SCP] :arisc startup ready
+NOTICE:  [SCP] :arisc startup notify message feedback
+NOTICE:  [SCP] :sunxi-arisc driver is starting
+NOTICE:  BL3-1: Next image address = 0x40200000
+NOTICE:  BL3-1: Next image spsr = 0x3c5
+- Ready to Boot Primary CPU
+- Boot from EL1
+- Boot to C runtime for OS Initialize
+M0 v141-layout
+M1
+A7Z0
+A7Z1
+N0
+N1
+H0
+H1
+H2
+H3
+H4
+S0
+S1
+P1
+H5
+N2
+N3
+N4
+RR RdReeeeRe   5R a
+dyydyyo y  yBaaeyaedd0 addat
+   o BBB     tt  B tttootBoo1ooo
+Sottoe t BtBoBooBo2oooo oott
+encccccd t  SB SS cS3eSSeoeeec
+ Pd  dCUCC o onnnnoA0ndddCnd
+PCPPCPAUUPUUP
+ U-          1
+
+
+
+
+
+
+B otoooBo 2 -oB BB
+rt  t  ff  ffoo oottofto4t
+Lm            frrfrNmrrro o6oomomEmmo
+E7LE1m EEEN 1E LLL
+1L11 L
+1   -1
+X
+
+
+
+ B-
+  ooBBBB
+        otoooo ooottttt  o  ttt toooCo     CCCCru    rrrnruuutunnnnimtttteiiiimmmm efeee o   frfffoo oorrOrr  S  OO OOSSISS  n  IIiIInnntniiiiittttaizzzeaaaailzlllieiiiz
+    eee
+
+
+
+- -B Boooott t oto C C r uruntntimimee f foor r OSOS I Innitiitialaliizeze
+
+N8
+X1
+PR
+PR
+PR
+
+NuttShell (NSH)
+nsh> RI
+RX
+
+nsh> ufs autostart status
+ufs autostart: on
+nsh> ufs status
+ufs: active=0 pid=0 phase=idle result=0 verified=0 created=0 close-error=0 stop=0 bytes=0/0 checked=0 elapsed-ms=0 no-progress-ms=0
+ufs-mount: active=0 attempted=1 ready=1 error=0 stage=mounted-existing-FAT mount=/ufs source=/dev/ufsdata fallback=/data/models
+nsh> ls -l /ufs/models
+/ufs/models:
+ -rw-rw-rw-           0 qwen2.5-1.5b-instruct-q4_k_m.gguf
+ -rw-rw-rw-  1117320736 qwen2.5-1.5b-instruct-q4_k_m.v174.gguf
+nsh>

@@ -1,0 +1,3 @@
+PASS v203 tone: gamma monotonic/endpoints; exact180 geometry incl odd padding; invalid options no output mutation
+PASS v203: 32 changing frames; cached SHA; reader leases; no failed/owned DMA rearm; no PMIC retry; SIMULATED ONLY
+PASS v203: four Bayer enhanced exports, padding/CRC, manual tone bounds, legacy originals retained

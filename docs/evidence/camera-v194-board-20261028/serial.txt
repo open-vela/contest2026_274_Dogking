@@ -1,0 +1,208 @@
+ [ufs]err:sc st 2
+[ufs]err:scsi status:Check conditon
+[ufs]err:dump:bfeb6f60: 70 00 06 00 00 00 00 0a 00 00 00 00 29 00 00 00    p...........)...
+[ufs]info:blk size 4096,capacity 31256576 block
+Hit any key to stop autoboot:  0
+=> sunxi_card0_probe
+card0 has inited
+=> mmc dev 0
+mmc0 is current device
+=> mmc rescan
+[39.226][mmc]: card_caps:0x3000000a
+[39.229][mmc]: host_caps:0x3000003f
+=> mmc part
+
+Partition Map for MMC device 0  --   Partition Type: EFI
+
+Part    Start LBA       End LBA         Name
+        Attributes
+        Type GUID
+        Partition GUID
+  1     0x00008000      0x0000ffff      "primary"
+        attrs:  0x0000000000000000
+        type:   0fc63daf-8483-4772-8e79-3d69d8477de4
+        guid:   339cd585-256a-450a-b439-49bb82fb4c88
+  2     0x00010000      0x000a5fff      "primary"
+        attrs:  0x0000000000000000
+        type:   c12a7328-f81f-11d2-ba4b-00a0c93ec93b
+        guid:   4f5c3ac2-49cd-4cfc-b89d-6273cba3df8a
+  3     0x000a6000      0x000dffff      "primary"
+        attrs:  0x0000000000000004
+        type:   0fc63daf-8483-4772-8e79-3d69d8477de4
+        guid:   7995836f-022c-422c-85e8-66bdb7863b58
+  4     0x000e0000      0x003fffde      "data"
+        attrs:  0x0000000000000000
+        type:   ebd0a0a2-b9e5-4433-87c0-68b6b72699c7
+        guid:   5e88005f-8b6a-497e-96ab-5fcaed221ea1
+=> ext4load mmc 0:3 0x4fc00000 /boot/openvela/a733/camera-v194.scr && source 0x4fc00000
+1357 bytes read in 23 ms (57.6 KiB/s)
+## Executing script at 4fc00000
+camera-handoff-v194: loading exact Image and reading PMIC
+7041568 bytes read in 312 ms (21.5 MiB/s)
+CRC32 for 40080000 ... 4073721f ==> 4de89c0c
+660 bytes read in 30 ms (21.5 KiB/s)
+Setting bus to 0
+193692 bytes read in 25 ms (7.4 MiB/s)
+4072cf50: 03 00 ff 17 c1 0d                                  ......
+camera-handoff-v194: snapshot committed; rails retention is ASSUMED
+[53.640]libfdt fdt_path_offset() returned FDT_ERR_BADMAGIC
+[53.649]The storage not support sample function
+[53.737]no battery, disabled battery functons
+[53.745]update dts
+[53.765]Starting kernel ...
+
+[53.767]total: 53767 ms
+
+[53.770][mmc]: MMC Device 2 not found
+[53.773][mmc]: mmc 2 not find, so not exit
+NOTICE:  [SCP] :wait arisc ready....
+NOTICE:  [SCP] :arisc version: [d463b9da43dc50320f21ba51c6c51afe2db20d83]
+NOTICE:  [SCP] :arisc startup ready
+NOTICE:  [SCP] :arisc startup notify message feedback
+NOTICE:  [SCP] :sunxi-arisc driver is starting
+NOTICE:  BL3-1: Next image address = 0x40200000
+NOTICE:  BL3-1: Next image spsr = 0x3c5
+- Ready to Boot Primary CPU
+- Boot from EL1
+- Boot to C runtime for OS Initialize
+M0 v188-boot-candidate
+M1
+A7Z0
+A7Z1
+N0
+N1
+H0
+H1
+H2
+H3
+H4
+S0
+S1
+P1
+H5
+N2
+N3
+N4
+[boot188] SMP flush begin=0x0000000000000008
+[boot188] SMP flush done=0x0000000000000000
+[boot188] SMP request cpu=0x0000000000000001
+[boot188] SMP return=0x0000000000000000
+[boot188] SMP request cpu=0x0000000000000002
+[boot188] SMP return=0x0000000000000000
+[boot188] SMP request cpu=0x0000000000000003
+[boot188] SMP return=0x0000000000000000
+[boot188] SMP request cpu=0x0000000000000004
+[boot188] SMP return=0x0000000000000000
+[boot188] SMP request cpu=0x0000000000000005
+[boot188] SMP return=0x0000000000000000
+[boot188] SMP request cpu=0x0000000000000006
+[boot188] SMP return=0x0000000000000000
+[boot188] SMP request cpu=0x0000000000000007
+[boot188] SMP return=0x0000000000000000
+N5
+B0
+B1
+B2
+B3
+B4
+N6
+AN70
+
+AN18
+
+[boot188] CTOR enter=0x00000000404a54a0
+[boot188] CTOR done index=0x0000000000000000
+[boot188] CTOR enter=0x00000000404ccc50
+[boot188] CTOR done index=0x0000000000000001
+[boot188] CTOR enter=0x00000000404ce650
+[boot188] CTOR done index=0x0000000000000002
+[boot188] CTOR enter=0x00000000402a6958
+[boot188] CTOR done index=0x0000000000000003
+[boot188] CTOR enter=0x00000000402a7138
+[boot188] CTOR done index=0x0000000000000004
+[boot188] CTOR enter=0x00000000402c2e2c
+[boot188] CTOR done index=0x0000000000000005
+[boot188] CTOR enter=0x0000000040419020
+[boot188] CTOR done index=0x0000000000000006
+[boot188] CTOR enter=0x000000004041b450
+[boot188] CTOR done index=0x0000000000000007
+[boot188] CTOR enter=0x0000000040434100
+[boot188] CTOR done index=0x0000000000000008
+[boot188] CTOR enter=0x0000000040434580
+[boot188] CTOR done index=0x0000000000000009
+[boot188] CTOR enter=0x0000000040434830
+[boot188] CTOR done index=0x000000000000000a
+[boot188] CTOR enter=0x00000000404375b0
+[boot188] CTOR done index=0x000000000000000b
+[boot188] CTOR enter=0x00000000404744b0
+[boot188] CTOR done index=0x000000000000000c
+[boot188] CTOR enter=0x000000004047a5b0
+[boot188] CTOR done index=0x000000000000000d
+[boot188] CTOR enter=0x00000000404cc770
+[boot188] CTOR done index=0x000000000000000e
+[boot188] CTOR enter=0x00000000404ce7b0
+[boot188] CTOR done index=0x000000000000000f
+[boot188] CTOR enter=0x00000000404d2790
+[boot188] CTOR done index=0x0000000000000010
+[boot188] CTOR enter=0x00000000404d3f80
+[boot188] CTOR done index=0x0000000000000011
+[boot188] CTOR enter=0x0000000040636cc0
+[boot188] CTOR done index=0x0000000000000012
+[boot188] CTOR enter=0x000000004063c100
+[boot188] CTOR done index=0x0000000000000013
+[boot188] CTOR enter=0x000000004063c130
+[boot188] CTOR done index=0x0000000000000014
+[boot188] CTOR enter=0x000000004063c1c0
+[boot188] CTOR done index=0x0000000000000015
+[boot188] CTOR enter=0x00000000406600b0
+[boot188] CTOR done index=0x0000000000000016
+[boot188] CTOR enter=0x00000000407dab60
+[boot188] CTOR done index=0x0000000000000017
+XA02
+
+X1
+PR
+PR
+PR
+
+NuttShell (NSH)
+nsh> RI
+RX
+
+nsh> camera control prepare
+camera-control-v194: V1.11/J5 standby mode experiment, NOT capture
+state=1 stage=controls-prepared-reset-held-MCLK-NOT-measured error=0 cleanup=0 command-error=0 owned=1 consumed=1
+power: source=same-boot-U-Boot-image-handoff ready=434d5031 bytes=03/00/ff/17/c1/0d
+runtime-PMIC-access=NONE rails-retained=ASSUMED physical-voltage=NOT-MEASURED
+MCLK: configured=24000000 Hz measured=UNKNOWN; prepare holds reset/STBY LOW
+reads=21 writes=9 polls=1 elapsed-ms=13 last-address=02003804
+id-experiment: attempted=0 reads=0 chip-id=0000 match=0 error=0 polls=0 bus-quarantined=0
+mode-experiment: attempted=0 blob-error=0 writes=0 reads=0 verified=0/14 last-reg=0000 error=0
+strict-qualification=NONE CSI/DPHY/ISP/DMA=NOT-ACCESSED
+control: prepare | calibrate | normal-clock | id-experiment OR mode-experiment (one-shot, then park) | park
+normal boot has no handoff: prepare returns ENODATA with ZERO MMIO
+nsh> camera control mode-experiment
+camera-control-v194: V1.11/J5 standby mode experiment, NOT capture
+state=2 stage=mode-readback-passed-controls-restored-NOT-capture error=0 cleanup=0 command-error=0 owned=0 consumed=1
+power: source=same-boot-U-Boot-image-handoff ready=434d5031 bytes=03/00/ff/17/c1/0d
+runtime-PMIC-access=NONE rails-retained=ASSUMED physical-voltage=NOT-MEASURED
+MCLK: configured=0 Hz measured=UNKNOWN; prepare holds reset/STBY LOW
+reads=75968 writes=1766 polls=1 elapsed-ms=102 last-address=02002e8c
+id-experiment: attempted=1 reads=1 chip-id=0214 match=1 error=0 polls=73470 bus-quarantined=0
+mode-experiment: attempted=1 blob-error=0 writes=153 reads=17 verified=14/14 last-reg=0100 error=0
+strict-qualification=NONE CSI/DPHY/ISP/DMA=NOT-ACCESSED
+control: prepare | calibrate | normal-clock | id-experiment OR mode-experiment (one-shot, then park) | park
+normal boot has no handoff: prepare returns ENODATA with ZERO MMIO
+nsh> camera control status
+camera-control-v194: V1.11/J5 standby mode experiment, NOT capture
+state=2 stage=mode-readback-passed-controls-restored-NOT-capture error=0 cleanup=0 command-error=0 owned=0 consumed=1
+power: source=same-boot-U-Boot-image-handoff ready=434d5031 bytes=03/00/ff/17/c1/0d
+runtime-PMIC-access=NONE rails-retained=ASSUMED physical-voltage=NOT-MEASURED
+MCLK: configured=0 Hz measured=UNKNOWN; prepare holds reset/STBY LOW
+reads=75968 writes=1766 polls=1 elapsed-ms=102 last-address=02002e8c
+id-experiment: attempted=1 reads=1 chip-id=0214 match=1 error=0 polls=73470 bus-quarantined=0
+mode-experiment: attempted=1 blob-error=0 writes=153 reads=17 verified=14/14 last-reg=0100 error=0
+strict-qualification=NONE CSI/DPHY/ISP/DMA=NOT-ACCESSED
+control: prepare | calibrate | normal-clock | id-experiment OR mode-experiment (one-shot, then park) | park
+normal boot has no handoff: prepare returns ENODATA with ZERO MMIO
+nsh>

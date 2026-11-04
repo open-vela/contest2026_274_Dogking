@@ -1,0 +1,21 @@
+{
+  "result": "V218_ACTUAL_LOCALHOST_TLS_WEBSOCKET_PASSED",
+  "tests": [
+    "valid-certified-TLS",
+    "coalesced-masked-client-frame",
+    "fragmented-JSON",
+    "ping-pong",
+    "bad-upgrade-accept",
+    "masked-server-rejected",
+    "oversize-rejected",
+    "untrusted-cert-rejected",
+    "cancel-within-1s",
+    "EOF-not-generic-EIO",
+    "idle-budget",
+    "hard-budget-survives-ping-progress",
+    "delayed-first-packet",
+    "100k-response"
+  ],
+  "cloud_api_executed": false,
+  "hardware_executed": false
+}

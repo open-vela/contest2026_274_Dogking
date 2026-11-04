@@ -1,0 +1,40 @@
+** WARNING: connection is not using a post-quantum key exchange algorithm.
+** This session may be vulnerable to "store now, decrypt later" attacks.
+** The server may need to be upgraded. See https://openssh.com/pq.html
+openvela@10.195.194.22's password: 
+nsh> [Khome info
+openvela official GATT client v145; no physical output
+service=a7330001-6b42-4f65-8d37-9b184b771001
+command=a7330002-6b42-4f65-8d37-9b184b771001
+status=a7330003-6b42-4f65-8d37-9b184b771001
+needs-recovery=0
+nsh> [Kuname -a
+NuttX  0.0.0  Oct 15 2026 13:19:35 arm64 cubie-a7z
+nsh> [Khome frame ping 1
+01 01 01 00 01 00 64 a4nsh> [Khome frame state 2
+01 01 02 00 02 00 eb 6ansh> [Khome frame ack-ping 1
+01 02 01 00 01 01 00 bf 6cnsh> [Khome frame ack-state 2
+01 02 02 00 02 01 00 3d dbnsh> [Khome frame event-state 1
+01 03 01 00 02 01 00 4f 70nsh> [Kfree
+      total       used       free    maxused    maxfree  nused  nfree name
+ 4239212544     171552 4239040992     206416 4143972320    318      6 Umem
+nsh> [Kps
+  PID GROUP CPU(AFFINITY)   PRI POLICY   TYPE    NPX STATE    EVENT     SIGMASK            STACK COMMAND
+    0     0 000(0x000000ff)   0 FIFO     Kthread   - Running            0000000000000000 0008112 CPU0 IDLE
+    1     0 001(0x000000ff)   0 FIFO     Kthread   - Assigned           0000000000000000 0008112 CPU1 IDLE
+    2     0 002(0x000000ff)   0 FIFO     Kthread   - Running            0000000000000000 0008112 CPU2 IDLE
+    3     0 003(0x000000ff)   0 FIFO     Kthread   - Running            0000000000000000 0008112 CPU3 IDLE
+    4     0 004(0x000000ff)   0 FIFO     Kthread   - Running            0000000000000000 0008112 CPU4 IDLE
+    5     0 005(0x000000ff)   0 FIFO     Kthread   - Running            0000000000000000 0008112 CPU5 IDLE
+    6     0 006(0x000000ff)   0 FIFO     Kthread   - Running            0000000000000000 0008112 CPU6 IDLE
+    7     0 007(0x000000ff)   0 FIFO     Kthread   - Running            0000000000000000 0008112 CPU7 IDLE
+    8     0 ---(0x000000ff) 224 RR       Kthread   - Waiting  Semaphore 0000000000000000 0008048 hpwork 0x40472240 0x404722c8
+    9     9 ---(0x000000ff) 100 RR       Task      - Waiting  Semaphore 0000000000000000 0008080 nsh_main
+   10     0 ---(0x000000ff) 100 RR       Kthread   - Waiting  Signal    0000000000000000 0008080 a733-wlan-rx
+   12     0 ---(0x000000ff) 120 RR       Kthread   - Waiting  Signal    0000000000000000 0003984 a7z-uart-rx
+   45    45 ---(0x000000ff) 100 RR       Task      - Waiting  Semaphore 0000000000000000 0032656 sshd
+   94    45 000(0x000000ff) 100 RR       pthread   - Running            0000000000000000 0032688 sshd 0x402b4134 0x42539b00
+   95    95 001(0x000000ff) 100 RR       Task      - Running            0000000000000000 0008080 sh
+nsh> [Ktime "sleep 5"
+Bad packet length 1058820993.
+ssh_dispatch_run_fatal: Connection to 10.195.194.22 port 22: Connection corrupted

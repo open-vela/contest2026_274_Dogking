@@ -1,0 +1,20 @@
+{
+  "result": "V229_REAL_TLS_SAME_PROCESS_ROUNDS_PASSED",
+  "rounds": 50,
+  "connections_in_single_process": 150,
+  "FD_growth": 0,
+  "ASan_UBSan": true,
+  "tests": [
+    "socket-EMFILE-no-invalid-handle",
+    "SO_ERROR-ECONNREFUSED-preserved",
+    "cancel-before-DNS",
+    "50-ASR-like-plus-2-TTS-like-rounds",
+    "WS-TLS-close",
+    "peer-initiated-close-response",
+    "500ms-silent-peer-close-bound",
+    "TLS-failure-next-DNS-address"
+  ],
+  "synthetic_service": true,
+  "cloud_api_executed": false,
+  "hardware_executed": false
+}

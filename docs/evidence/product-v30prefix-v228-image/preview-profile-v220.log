@@ -1,0 +1,257 @@
+local-llm: model saved; unload before switching a resident model
+local-llm: model save failed
+llm-preflight-v215: model='/tmp/preview-v220-cf4aisz8/stable/mock-model.gguf' storage=custom bytes=64 status=0; header only, no model load
+local-llm: model saved; unload before switching a resident model
+llm-preflight-v215: model='/tmp/preview-v220-cf4aisz8/stable/missing.gguf' storage=custom bytes=0 status=-2; header only, no model load
+llm-preflight-v215: selected file is missing; inspect /data/models and /ufs/models, then 'aipet local model <actual.gguf>' (no download/copy performed)
+local-llm: model saved; unload before switching a resident model
+llm-preflight-v215: model='/tmp/preview-v220-cf4aisz8/stable/mock-model.gguf' storage=custom bytes=64 status=0; header only, no model load
+local-llm: warming configured model; dialogue history unchanged
+aipet-local: storage=custom model='/tmp/preview-v220-cf4aisz8/stable/mock-model.gguf'
+local-context: used=0 dropped=0 stored=0 limit=3 RAM-only shared-device-session
+aipet-local: prompt=1 generated=1 first=0.000s rest=0.000s cores=fc
+local-llm: preload ready (0)
+local-llm: legacy token cap 24 -> 128 for complete replies
+aipet-local: storage=custom model='/tmp/preview-v220-cf4aisz8/stable/mock-model.gguf'
+local-context: used=0 dropped=0 stored=1 limit=3 RAM-only shared-device-session
+aipet-local: prompt=1 generated=1 first=0.000s rest=0.000s cores=fc
+local-llm: legacy token cap 24 -> 128 for complete replies
+aipet-local: storage=custom model='/tmp/preview-v220-cf4aisz8/stable/mock-model.gguf'
+local-context: used=1 dropped=0 stored=2 limit=3 RAM-only shared-device-session
+aipet-local: prompt=1 generated=1 first=0.000s rest=0.000s cores=fc
+local-llm: legacy token cap 24 -> 128 for complete replies
+aipet-local: storage=custom model='/tmp/preview-v220-cf4aisz8/stable/mock-model.gguf'
+local-llm: legacy token cap 24 -> 128 for complete replies
+aipet-local: storage=custom model='/tmp/preview-v220-cf4aisz8/stable/mock-model.gguf'
+local-context: used=2 dropped=0 stored=3 limit=3 RAM-only shared-device-session
+aipet-local: prompt=1 generated=1 first=0.000s rest=0.000s cores=fc
+llm-preflight-v215: model='/tmp/preview-v220-cf4aisz8/stable/mock-model.gguf' storage=custom bytes=64 status=0; header only, no model load
+local-llm: warming configured model; dialogue history unchanged
+aipet-local: storage=custom model='/tmp/preview-v220-cf4aisz8/stable/mock-model.gguf'
+local-context: used=0 dropped=0 stored=3 limit=3 RAM-only shared-device-session
+aipet-local: prompt=1 generated=1 first=0.000s rest=0.000s cores=fc
+local-llm: preload ready (0)
+local-llm: legacy token cap 24 -> 128 for complete replies
+aipet-local: storage=custom model='/tmp/preview-v220-cf4aisz8/stable/mock-model.gguf'
+local-llm: busy
+local-context: used=3 dropped=0 stored=3 limit=3 RAM-only shared-device-session
+aipet-local: prompt=1 generated=1 first=0.000s rest=0.000s cores=fc
+local-context: cleared; resident weights retained
+local-llm: legacy token cap 24 -> 128 for complete replies
+aipet-local: storage=custom model='/tmp/preview-v220-cf4aisz8/stable/mock-model.gguf'
+local-context: used=0 dropped=0 stored=1 limit=3 RAM-only shared-device-session
+aipet-local: prompt=1 generated=1 first=0.000s rest=0.000s cores=fc
+usage: aipet local status|on|off|preload|unload|stop|clear
+       aipet local model auto|sd|/absolute/model.gguf
+       aipet local tokens 1..256 (dialogue floor 128) | cores fc | context 0..4 | batch 1|4 (RAM-only)
+usage: aipet local status|on|off|preload|unload|stop|clear
+       aipet local model auto|sd|/absolute/model.gguf
+       aipet local tokens 1..256 (dialogue floor 128) | cores fc | context 0..4 | batch 1|4 (RAM-only)
+local-context: limit=0 pairs; history cleared, weights retained
+local-llm: legacy token cap 24 -> 128 for complete replies
+aipet-local: storage=custom model='/tmp/preview-v220-cf4aisz8/stable/mock-model.gguf'
+local-context: used=0 dropped=0 stored=0 limit=0 RAM-only shared-device-session
+aipet-local: prompt=1 generated=1 first=0.000s rest=0.000s cores=fc
+local-llm: legacy token cap 24 -> 128 for complete replies
+aipet-local: storage=custom model='/tmp/preview-v220-cf4aisz8/stable/mock-model.gguf'
+local-context: used=0 dropped=0 stored=0 limit=0 RAM-only shared-device-session
+aipet-local: prompt=1 generated=1 first=0.000s rest=0.000s cores=fc
+local-context: limit=2 pairs; history cleared, weights retained
+local-llm: legacy token cap 24 -> 128 for complete replies
+aipet-local: storage=custom model='/tmp/preview-v220-cf4aisz8/stable/mock-model.gguf'
+local-context: used=0 dropped=0 stored=1 limit=2 RAM-only shared-device-session
+aipet-local: prompt=1 generated=1 first=0.000s rest=0.000s cores=fc
+local-llm: legacy token cap 24 -> 128 for complete replies
+aipet-local: storage=custom model='/tmp/preview-v220-cf4aisz8/stable/mock-model.gguf'
+local-context: used=1 dropped=0 stored=2 limit=2 RAM-only shared-device-session
+aipet-local: prompt=1 generated=1 first=0.000s rest=0.000s cores=fc
+local-llm: legacy token cap 24 -> 128 for complete replies
+aipet-local: storage=custom model='/tmp/preview-v220-cf4aisz8/stable/mock-model.gguf'
+local-context: used=2 dropped=0 stored=2 limit=2 RAM-only shared-device-session
+aipet-local: prompt=1 generated=1 first=0.000s rest=0.000s cores=fc
+local-llm: legacy token cap 24 -> 128 for complete replies
+aipet-local: storage=custom model='/tmp/preview-v220-cf4aisz8/stable/mock-model.gguf'
+local-context: used=2 dropped=0 stored=2 limit=2 RAM-only shared-device-session
+aipet-local: prompt=1 generated=1 first=0.000s rest=0.000s cores=fc
+local-llm: model saved; unload before switching a resident model
+local-llm: legacy token cap 24 -> 128 for complete replies
+aipet-local: storage=custom model='/tmp/preview-v220-cf4aisz8/stable/mock-model.gguf'
+local-context: used=0 dropped=0 stored=1 limit=2 RAM-only shared-device-session
+aipet-local: prompt=1 generated=1 first=0.000s rest=0.000s cores=fc
+local-llm: off
+local-llm: on
+local-llm: legacy token cap 24 -> 128 for complete replies
+aipet-local: storage=custom model='/tmp/preview-v220-cf4aisz8/stable/mock-model.gguf'
+local-context: used=0 dropped=0 stored=1 limit=2 RAM-only shared-device-session
+aipet-local: prompt=1 generated=1 first=0.000s rest=0.000s cores=fc
+local-llm: legacy token cap 24 -> 128 for complete replies
+aipet-local: storage=custom model='/tmp/preview-v220-cf4aisz8/stable/mock-model.gguf'
+local-context: used=0 dropped=0 stored=1 limit=2 RAM-only shared-device-session
+aipet-local: prompt=1 generated=1 first=0.000s rest=0.000s cores=fc
+local-context: cleared; resident weights retained
+local-llm: legacy token cap 24 -> 128 for complete replies
+aipet-local: storage=custom model='/tmp/preview-v220-cf4aisz8/stable/mock-model.gguf'
+local-context: used=0 dropped=0 stored=1 limit=2 RAM-only shared-device-session
+aipet-local: prompt=1 generated=1 first=0.000s rest=0.000s cores=fc
+local-llm: legacy token cap 24 -> 128 for complete replies
+aipet-local: storage=custom model='/tmp/preview-v220-cf4aisz8/stable/mock-model.gguf'
+local-llm: repeated-answer guard; regenerate once without stale dialogue (weights retained)
+local-context: used=0 dropped=1 stored=1 limit=2 RAM-only shared-device-session
+aipet-local: prompt=1 generated=1 first=0.000s rest=0.000s cores=fc
+local-llm: legacy token cap 24 -> 128 for complete replies
+aipet-local: storage=custom model='/tmp/preview-v220-cf4aisz8/stable/mock-model.gguf'
+local-llm: finish=length, reply INCOMPLETE; no history commit; pending speech discarded
+local-llm: legacy token cap 24 -> 128 for complete replies
+aipet-local: storage=custom model='/tmp/preview-v220-cf4aisz8/stable/mock-model.gguf'
+local-context: used=1 dropped=0 stored=2 limit=2 RAM-only shared-device-session
+aipet-local: prompt=1 generated=1 first=0.000s rest=0.000s cores=fc
+local-llm: legacy token cap 24 -> 128 for complete replies
+aipet-local: storage=custom model='/tmp/preview-v220-cf4aisz8/stable/mock-model.gguf'
+local-persona: application identity response; no LLM inference or claimed token latency
+PASS: atomic config, bounded RAM dialogue, stateless preload, clear retaining weights, cancellation/reentry, model/off/unload isolation
+local-llm: model saved; unload before switching a resident model
+local-latency-v220: history=off pairs=0; persona, resident weights and exact-prefix KV retained; full replies
+aipet-local: storage=custom model='/tmp/preview-v220-cf4aisz8/preview/mock.gguf'
+local-context: used=0 dropped=0 stored=0 limit=0 RAM-only shared-device-session
+aipet-local: prompt=1 generated=1 first=0.000s rest=0.000s cores=fc
+local-latency-v220: history=off pairs=0; persona, resident weights and exact-prefix KV retained; full replies
+aipet-local: storage=custom model='/tmp/preview-v220-cf4aisz8/preview/mock.gguf'
+local-context: used=0 dropped=0 stored=0 limit=0 RAM-only shared-device-session
+aipet-local: prompt=1 generated=1 first=0.000s rest=0.000s cores=fc
+local-latency-v220: history=off pairs=0; persona, resident weights and exact-prefix KV retained; full replies
+aipet-local: storage=custom model='/tmp/preview-v220-cf4aisz8/preview/mock.gguf'
+local-context: used=0 dropped=0 stored=0 limit=0 RAM-only shared-device-session
+aipet-local: prompt=1 generated=1 first=0.000s rest=0.000s cores=fc
+local-latency-v220: history=off pairs=0; persona, resident weights and exact-prefix KV retained; full replies
+aipet-local: storage=custom model='/tmp/preview-v220-cf4aisz8/preview/mock.gguf'
+local-context: used=0 dropped=0 stored=0 limit=0 RAM-only shared-device-session
+aipet-local: prompt=1 generated=1 first=0.000s rest=0.000s cores=fc
+local-latency-v220: history=off pairs=0; persona, resident weights and exact-prefix KV retained; full replies
+aipet-local: storage=custom model='/tmp/preview-v220-cf4aisz8/preview/mock.gguf'
+local-context: used=0 dropped=0 stored=0 limit=0 RAM-only shared-device-session
+aipet-local: prompt=1 generated=1 first=0.000s rest=0.000s cores=fc
+local-latency-v220: history=off pairs=0; persona, resident weights and exact-prefix KV retained; full replies
+aipet-local: storage=custom model='/tmp/preview-v220-cf4aisz8/preview/mock.gguf'
+local-context: used=0 dropped=0 stored=0 limit=0 RAM-only shared-device-session
+aipet-local: prompt=1 generated=1 first=0.000s rest=0.000s cores=fc
+local-latency-v220: history=off pairs=0; persona, resident weights and exact-prefix KV retained; full replies
+aipet-local: storage=custom model='/tmp/preview-v220-cf4aisz8/preview/mock.gguf'
+local-context: used=0 dropped=0 stored=0 limit=0 RAM-only shared-device-session
+aipet-local: prompt=1 generated=1 first=0.000s rest=0.000s cores=fc
+local-latency-v220: history=off pairs=0; persona, resident weights and exact-prefix KV retained; full replies
+aipet-local: storage=custom model='/tmp/preview-v220-cf4aisz8/preview/mock.gguf'
+local-context: used=0 dropped=0 stored=0 limit=0 RAM-only shared-device-session
+aipet-local: prompt=1 generated=1 first=0.000s rest=0.000s cores=fc
+local-latency-v220: history=off pairs=0; persona, resident weights and exact-prefix KV retained; full replies
+aipet-local: storage=custom model='/tmp/preview-v220-cf4aisz8/preview/mock.gguf'
+local-context: used=0 dropped=0 stored=0 limit=0 RAM-only shared-device-session
+aipet-local: prompt=1 generated=1 first=0.000s rest=0.000s cores=fc
+local-latency-v220: history=off pairs=0; persona, resident weights and exact-prefix KV retained; full replies
+aipet-local: storage=custom model='/tmp/preview-v220-cf4aisz8/preview/mock.gguf'
+local-context: used=0 dropped=0 stored=0 limit=0 RAM-only shared-device-session
+aipet-local: prompt=1 generated=1 first=0.000s rest=0.000s cores=fc
+local-latency-v220: history=off pairs=0; persona, resident weights and exact-prefix KV retained; full replies
+aipet-local: storage=custom model='/tmp/preview-v220-cf4aisz8/preview/mock.gguf'
+local-context: used=0 dropped=0 stored=0 limit=0 RAM-only shared-device-session
+aipet-local: prompt=1 generated=1 first=0.000s rest=0.000s cores=fc
+local-latency-v220: history=off pairs=0; persona, resident weights and exact-prefix KV retained; full replies
+aipet-local: storage=custom model='/tmp/preview-v220-cf4aisz8/preview/mock.gguf'
+local-context: used=0 dropped=0 stored=0 limit=0 RAM-only shared-device-session
+aipet-local: prompt=1 generated=1 first=0.000s rest=0.000s cores=fc
+local-latency-v220: history=off pairs=0; persona, resident weights and exact-prefix KV retained; full replies
+aipet-local: storage=custom model='/tmp/preview-v220-cf4aisz8/preview/mock.gguf'
+local-context: used=0 dropped=0 stored=0 limit=0 RAM-only shared-device-session
+aipet-local: prompt=1 generated=1 first=0.000s rest=0.000s cores=fc
+local-latency-v220: history=off pairs=0; persona, resident weights and exact-prefix KV retained; full replies
+aipet-local: storage=custom model='/tmp/preview-v220-cf4aisz8/preview/mock.gguf'
+local-context: used=0 dropped=0 stored=0 limit=0 RAM-only shared-device-session
+aipet-local: prompt=1 generated=1 first=0.000s rest=0.000s cores=fc
+local-latency-v220: history=off pairs=0; persona, resident weights and exact-prefix KV retained; full replies
+aipet-local: storage=custom model='/tmp/preview-v220-cf4aisz8/preview/mock.gguf'
+local-context: used=0 dropped=0 stored=0 limit=0 RAM-only shared-device-session
+aipet-local: prompt=1 generated=1 first=0.000s rest=0.000s cores=fc
+local-latency-v220: history=off pairs=0; persona, resident weights and exact-prefix KV retained; full replies
+aipet-local: storage=custom model='/tmp/preview-v220-cf4aisz8/preview/mock.gguf'
+local-context: used=0 dropped=0 stored=0 limit=0 RAM-only shared-device-session
+aipet-local: prompt=1 generated=1 first=0.000s rest=0.000s cores=fc
+local-latency-v220: history=off pairs=0; persona, resident weights and exact-prefix KV retained; full replies
+aipet-local: storage=custom model='/tmp/preview-v220-cf4aisz8/preview/mock.gguf'
+local-context: used=0 dropped=0 stored=0 limit=0 RAM-only shared-device-session
+aipet-local: prompt=1 generated=1 first=0.000s rest=0.000s cores=fc
+local-latency-v220: history=off pairs=0; persona, resident weights and exact-prefix KV retained; full replies
+aipet-local: storage=custom model='/tmp/preview-v220-cf4aisz8/preview/mock.gguf'
+local-context: used=0 dropped=0 stored=0 limit=0 RAM-only shared-device-session
+aipet-local: prompt=1 generated=1 first=0.000s rest=0.000s cores=fc
+local-latency-v220: history=off pairs=0; persona, resident weights and exact-prefix KV retained; full replies
+aipet-local: storage=custom model='/tmp/preview-v220-cf4aisz8/preview/mock.gguf'
+local-context: used=0 dropped=0 stored=0 limit=0 RAM-only shared-device-session
+aipet-local: prompt=1 generated=1 first=0.000s rest=0.000s cores=fc
+local-latency-v220: history=off pairs=0; persona, resident weights and exact-prefix KV retained; full replies
+aipet-local: storage=custom model='/tmp/preview-v220-cf4aisz8/preview/mock.gguf'
+local-context: used=0 dropped=0 stored=0 limit=0 RAM-only shared-device-session
+aipet-local: prompt=1 generated=1 first=0.000s rest=0.000s cores=fc
+local-latency-v220: history=off pairs=0; persona, resident weights and exact-prefix KV retained; full replies
+aipet-local: storage=custom model='/tmp/preview-v220-cf4aisz8/preview/mock.gguf'
+local-context: used=0 dropped=0 stored=0 limit=0 RAM-only shared-device-session
+aipet-local: prompt=1 generated=1 first=0.000s rest=0.000s cores=fc
+local-latency-v220: history=off pairs=0; persona, resident weights and exact-prefix KV retained; full replies
+aipet-local: storage=custom model='/tmp/preview-v220-cf4aisz8/preview/mock.gguf'
+local-context: used=0 dropped=0 stored=0 limit=0 RAM-only shared-device-session
+aipet-local: prompt=1 generated=1 first=0.000s rest=0.000s cores=fc
+local-latency-v220: history=off pairs=0; persona, resident weights and exact-prefix KV retained; full replies
+aipet-local: storage=custom model='/tmp/preview-v220-cf4aisz8/preview/mock.gguf'
+local-context: used=0 dropped=0 stored=0 limit=0 RAM-only shared-device-session
+aipet-local: prompt=1 generated=1 first=0.000s rest=0.000s cores=fc
+local-latency-v220: history=off pairs=0; persona, resident weights and exact-prefix KV retained; full replies
+aipet-local: storage=custom model='/tmp/preview-v220-cf4aisz8/preview/mock.gguf'
+local-context: used=0 dropped=0 stored=0 limit=0 RAM-only shared-device-session
+aipet-local: prompt=1 generated=1 first=0.000s rest=0.000s cores=fc
+local-context: limit=3 pairs; history cleared, weights retained
+local-latency-v220: exact-prefix KV retained; use 'aipet local clear' only for an explicit cold-prefix reset
+local-latency-v220: history=opt-in pairs=3; persona, resident weights and exact-prefix KV retained; full replies
+aipet-local: storage=custom model='/tmp/preview-v220-cf4aisz8/preview/mock.gguf'
+local-context: used=0 dropped=0 stored=1 limit=3 RAM-only shared-device-session
+aipet-local: prompt=1 generated=1 first=0.000s rest=0.000s cores=fc
+local-latency-v220: history=opt-in pairs=3; persona, resident weights and exact-prefix KV retained; full replies
+aipet-local: storage=custom model='/tmp/preview-v220-cf4aisz8/preview/mock.gguf'
+local-context: used=1 dropped=0 stored=2 limit=3 RAM-only shared-device-session
+aipet-local: prompt=1 generated=1 first=0.000s rest=0.000s cores=fc
+local-latency-v220: history=opt-in pairs=3; persona, resident weights and exact-prefix KV retained; full replies
+aipet-local: storage=custom model='/tmp/preview-v220-cf4aisz8/preview/mock.gguf'
+local-context: used=2 dropped=0 stored=3 limit=3 RAM-only shared-device-session
+aipet-local: prompt=1 generated=1 first=0.000s rest=0.000s cores=fc
+local-latency-v220: history=opt-in pairs=3; persona, resident weights and exact-prefix KV retained; full replies
+aipet-local: storage=custom model='/tmp/preview-v220-cf4aisz8/preview/mock.gguf'
+local-context: used=3 dropped=0 stored=3 limit=3 RAM-only shared-device-session
+aipet-local: prompt=1 generated=1 first=0.000s rest=0.000s cores=fc
+local-latency-v220: history=opt-in pairs=3; persona, resident weights and exact-prefix KV retained; full replies
+aipet-local: storage=custom model='/tmp/preview-v220-cf4aisz8/preview/mock.gguf'
+local-context: used=3 dropped=0 stored=3 limit=3 RAM-only shared-device-session
+aipet-local: prompt=1 generated=1 first=0.000s rest=0.000s cores=fc
+local-context: limit=0 pairs; history cleared, weights retained
+local-latency-v220: exact-prefix KV retained; use 'aipet local clear' only for an explicit cold-prefix reset
+local-latency-v220: history=off pairs=0; persona, resident weights and exact-prefix KV retained; full replies
+aipet-local: storage=custom model='/tmp/preview-v220-cf4aisz8/preview/mock.gguf'
+local-context: used=0 dropped=0 stored=0 limit=0 RAM-only shared-device-session
+aipet-local: prompt=1 generated=1 first=0.000s rest=0.000s cores=fc
+local-latency-v220: history=off pairs=0; persona, resident weights and exact-prefix KV retained; full replies
+aipet-local: storage=custom model='/tmp/preview-v220-cf4aisz8/preview/mock.gguf'
+local-context: used=0 dropped=0 stored=0 limit=0 RAM-only shared-device-session
+aipet-local: prompt=1 generated=1 first=0.000s rest=0.000s cores=fc
+local-context: limit=0 pairs; history cleared, weights retained
+local-latency-v220: exact-prefix KV retained; use 'aipet local clear' only for an explicit cold-prefix reset
+usage: aipet local status|on|off|preload|unload|stop|clear
+       aipet local model auto|sd|/absolute/model.gguf
+       aipet local tokens 1..256 (dialogue floor 128) | cores fc | context 0..4 | batch 1|4 (RAM-only)
+local-context: cleared; resident weights retained
+local-latency-v220: history=off pairs=0; persona, resident weights and exact-prefix KV retained; full replies
+aipet-local: storage=custom model='/tmp/preview-v220-cf4aisz8/preview/mock.gguf'
+local-llm: finish=length, reply INCOMPLETE; no history commit; pending speech discarded
+local-llm: off
+local-llm: on
+local-latency-v220: history=off pairs=0; persona, resident weights and exact-prefix KV retained; full replies
+aipet-local: storage=custom model='/tmp/preview-v220-cf4aisz8/preview/mock.gguf'
+local-context: used=0 dropped=0 stored=0 limit=0 RAM-only shared-device-session
+aipet-local: prompt=1 generated=1 first=0.000s rest=0.000s cores=fc
+PASS: v220 default/history migration isolation, 24 independent turns, opt-in history, warm-prefix policy, full-reply/cancel/off/unload contracts; MOCK engine, NOT board speed
+V220_PREVIEW_PROFILE_AND_REAL_ALLOCATOR_PASSED_NOT_BOARD

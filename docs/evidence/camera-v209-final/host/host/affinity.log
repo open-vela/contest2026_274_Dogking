@@ -1,0 +1,1 @@
+PASS actual migration protocol: deferred switch, stable double proof, bounded timeout, stop, API/identity failure and exact restore; MOCK CPU ONLY

@@ -10,7 +10,7 @@
 +#include "agent_secret.h"
 @@ -114,1 +115,5 @@
 -        strncpy(buf, item->valuestring, buf_size - 1);
-+        if (!strcmp(key, "api_key")) {
++        if (!strcmp(key, "api_key") || !strcmp(key, "volc_token") || !strcmp(key, "volc_api_key")) {
 +            ret = aipet_secret_open(item->valuestring, buf, buf_size) ? ERROR : OK;
 +            goto read_done;
 +        }
@@ -21,8 +21,8 @@
 @@ -125,3 +131,8 @@
  int claw_config_set(const char *key, const char *value)
  {
-+    char sealed[316];
-+    if (!strcmp(key, "api_key") && value[0]) {
++    char sealed[572];
++    if ((!strcmp(key, "api_key") || !strcmp(key, "volc_token") || !strcmp(key, "volc_api_key")) && value[0]) {
 +        if (aipet_secret_seal(value, sealed, sizeof(sealed))) return ERROR;
 +        value = sealed;
 +    }

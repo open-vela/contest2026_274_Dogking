@@ -1,0 +1,32 @@
+{
+  "voice_asr_decode.c": {
+    "source_sha256": "c4be4986276badba2f8c8a4323a69817ed8d4f969c46426dc3745e8e6a75ff24",
+    "object_sha256": "6c2d98cfdf82a3dfc6b214d46801dcba6c232c2f462828e7b4103c576adeff4e",
+    "real_nuttx_flags": true,
+    "max_static_frame": 80
+  },
+  "voice_tts_frontend.cxx": {
+    "source_sha256": "94f362c63779c2fa841aefea07a7e80fc71d56da8a995fdff53894fc5d225e4c",
+    "object_sha256": "6c892034e9970a2034be73cd8b82869d5fed52eb82b6f686f65723ca7171b403",
+    "real_nuttx_flags": true,
+    "max_static_frame": 2384
+  },
+  "voice_local.cxx": {
+    "source_sha256": "e8cce6d0f8482a640fa66f44add727552a743e77e8d397a24553f4b844bce2da",
+    "object_sha256": "3b5a68f3b323a3565212449b4dab60d6c5c63084d4213b043fdb837157f8ee0c",
+    "real_nuttx_flags": true,
+    "max_static_frame": 144
+  },
+  "audio_app.cxx": {
+    "source_sha256": "4c4953bbb53e72cfec4633c7178ad7a6e5c1ca4baebe7197c94263c2f9c1126a",
+    "object_sha256": "f26b5325d358ee27bad440d092c4907cb9b34ddf46bfc1a301140670686e5f46",
+    "real_nuttx_flags": true,
+    "max_static_frame": 688
+  },
+  "pet_routes.cxx": {
+    "source_sha256": "2a79ae753525975f0087655ebd884f622acc739a9498a42fd74aa6390670b3ed",
+    "object_sha256": "23e36beb7514083336fb1b0b4c062b0d85f97ee6dcef9252cbf227b86abfb79b",
+    "real_nuttx_flags": true,
+    "max_static_frame": 624
+  }
+}

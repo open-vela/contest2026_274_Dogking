@@ -1,0 +1,34 @@
+# Preserve the exact bytes of user-supplied logic analyzer evidence.
+logs/**/*.jsonl -text whitespace=cr-at-eol
+logs/**/manifest.json -text whitespace=cr-at-eol
+docs/evidence/i2s-v147/I2S-1.pvs -text
+docs/evidence/i2s-v147/I2S-1.sr -text
+docs/evidence/i2s-v150/runtime-20261016.log -text
+# v181 raw oracle logs/JSON must keep their original LF/CRLF bytes so hashes
+# survive archives and recovery on both Windows and Linux.
+docs/evidence/voice-latency-v181/* -text
+docs/evidence/live-voice-v182/* -text
+docs/evidence/general-asr-v183/* -text
+tools/board-tests/*.nsh text eol=lf
+docs/evidence/general-asr-v184/** -text
+docs/evidence/general-voice-v185/** -text
+docs/evidence/voice-v189/** -text
+docs/evidence/voice-v190/** -text
+# Keep host checker transcripts/hashes byte-exact across Windows/WSL restores.
+docs/evidence/camera-vision-v201-*/* -text
+docs/evidence/camera-report-v202-*/** -text
+docs/evidence/camera-v207-board-20261029/serial.txt -text
+docs/evidence/camera-v208-final/** -text
+docs/evidence/camera-v208-board-20261029/serial.txt -text
+docs/evidence/camera-v209-final/** -text
+docs/evidence/voice-v190-board-20261029/serial.txt -text
+docs/evidence/voice-v210-final/** -text
+docs/evidence/voice-v211-final/** -text
+docs/evidence/cloud-voice-v218/** -text
+docs/evidence/product-v11-v219/** -text
+docs/evidence/product-v12-v220/** -text
+docs/presentations/font-compatibility-r7/** -text
+docs/evidence/voice-v223-board-20261102/serial.log -text
+docs/evidence/product-v13fix2-v224-image/** -text
+docs/evidence/voice-v225-cloud-board-20261103/board.txt -text
+docs/evidence/product-v21pre-v226-image/** -text

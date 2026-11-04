@@ -1,0 +1,339 @@
+--- a/frameworks/connectivity/bluetooth/tools/bt_tools.c
++++ b/frameworks/connectivity/bluetooth/tools/bt_tools.c
+@@ -20,1 +20,2 @@
+-#include <stdlib.h>
++#include <stdlib.h>
++#include <pthread.h>
+@@ -90,1 +90,17 @@
+-static bool g_cmd_had_inited = false;
++static bool g_cmd_had_inited = false;
++static bool g_tool_exiting;
++static pthread_mutex_t g_tool_lock = PTHREAD_MUTEX_INITIALIZER;
++#ifdef CONFIG_BLUETOOTH_BLE_SCAN
++int scan_command_wait_stopped(unsigned int timeout_ms);
++#endif
++
++static bool bttool_adapter_ready(bt_adapter_state_t state)
++{
++    if (state == BT_ADAPTER_STATE_ON)
++        return true;
++#ifndef CONFIG_BLUETOOTH_BREDR_SUPPORT
++    return state == BT_ADAPTER_STATE_BLE_ON;
++#else
++    return false;
++#endif
++}
+@@ -306,2 +306,7 @@
+-static void bt_tool_init(void* handle)
+-{
++static void bt_tool_init(void* handle)
++{
++    pthread_mutex_lock(&g_tool_lock);
++    if (g_cmd_had_inited || g_tool_exiting) {
++        pthread_mutex_unlock(&g_tool_lock);
++        return;
++    }
+@@ -371,2 +371,3 @@
+-    g_cmd_had_inited = true;
+-}
++    g_cmd_had_inited = true;
++    pthread_mutex_unlock(&g_tool_lock);
++}
+@@ -376,2 +376,5 @@
+-    if (!g_cmd_had_inited)
+-        return;
++    pthread_mutex_lock(&g_tool_lock);
++    if (!g_cmd_had_inited) {
++        pthread_mutex_unlock(&g_tool_lock);
++        return;
++    }
+@@ -439,2 +439,3 @@
+-    g_cmd_had_inited = false;
+-}
++    g_cmd_had_inited = false;
++    pthread_mutex_unlock(&g_tool_lock);
++}
+@@ -452,11 +452,41 @@
+-static int enable_cmd(void* handle, int argc, char** argv)
+-{
+-    bt_adapter_enable(handle);
+-    return CMD_OK;
+-}
+-
+-static int disable_cmd(void* handle, int argc, char** argv)
+-{
+-    bt_adapter_disable_safe(handle);
+-    return CMD_OK;
+-}
++static int enable_cmd(void* handle, int argc, char** argv)
++{
++    bt_adapter_state_t state = bt_adapter_get_state(handle);
++    bt_status_t status;
++    if (bttool_adapter_ready(state)) {
++        bt_tool_init(handle);
++        PRINT("Adapter already enabled: state=%d", state);
++        return CMD_OK;
++    }
++    if (state != BT_ADAPTER_STATE_OFF && state != BT_ADAPTER_STATE_BLE_ON) {
++        PRINT("Enable blocked: transition pending, state=%d", state);
++        return CMD_ERROR;
++    }
++    status = bt_adapter_enable(handle);
++    PRINT("enable API status=%d; completion is the state callback", status);
++    return status == BT_STATUS_SUCCESS || status == BT_STATUS_DONE ? CMD_OK : CMD_ERROR;
++}
++
++static int disable_cmd(void* handle, int argc, char** argv)
++{
++    bt_adapter_state_t state = bt_adapter_get_state(handle);
++    bt_status_t status;
++    if (state == BT_ADAPTER_STATE_OFF) {
++        PRINT("Adapter already disabled");
++        return CMD_OK;
++    }
++    if (state == BT_ADAPTER_STATE_BLE_TURNING_OFF || state == BT_ADAPTER_STATE_TURNING_OFF) {
++        PRINT("Disable already pending: state=%d", state);
++        return CMD_OK;
++    }
++    if (state != BT_ADAPTER_STATE_BLE_ON && state != BT_ADAPTER_STATE_ON) {
++        PRINT("Disable blocked: transition pending, state=%d", state);
++        return CMD_ERROR;
++    }
++#ifdef CONFIG_BLUETOOTH_BLE_SCAN
++    scan_command_uninit(handle);
++#endif
++    status = bt_adapter_disable_safe(handle);
++    PRINT("disable API status=%d; wait for OFF(0)", status);
++    return status == BT_STATUS_SUCCESS || status == BT_STATUS_DONE ? CMD_OK : CMD_ERROR;
++}
+@@ -1725,1 +1725,3 @@
+-    if (state == BT_ADAPTER_STATE_ON) {
++    if (bttool_adapter_ready(state))
++        bt_tool_init(g_bttool_ins);
++    if (state == BT_ADAPTER_STATE_ON) {
+@@ -1728,1 +1728,1 @@
+-        bt_tool_init(g_bttool_ins);
++        /* BLE-only initialization is handled above; do not reset twice. */
+@@ -1741,1 +1741,3 @@
+-    } else if (state == BT_ADAPTER_STATE_TURNING_OFF) {
++    } else if (state == BT_ADAPTER_STATE_TURNING_OFF
++        || state == BT_ADAPTER_STATE_BLE_TURNING_OFF
++        || state == BT_ADAPTER_STATE_OFF) {
+@@ -1932,2 +1932,5 @@
+-    adapter_callback = bt_adapter_register_callback(g_bttool_ins, &g_adapter_cbs);
+-    if (bt_adapter_get_state(g_bttool_ins) == BT_ADAPTER_STATE_ON)
++    pthread_mutex_lock(&g_tool_lock);
++    g_tool_exiting = false;
++    pthread_mutex_unlock(&g_tool_lock);
++    adapter_callback = bt_adapter_register_callback(g_bttool_ins, &g_adapter_cbs);
++    if (bttool_adapter_ready(bt_adapter_get_state(g_bttool_ins)))
+@@ -1941,2 +1941,11 @@
+-    bt_tool_uninit(g_bttool_ins);
+-    bt_adapter_unregister_callback(g_bttool_ins, adapter_callback);
++    pthread_mutex_lock(&g_tool_lock);
++    g_tool_exiting = true;
++    pthread_mutex_unlock(&g_tool_lock);
++    bt_tool_uninit(g_bttool_ins);
++#ifdef CONFIG_BLUETOOTH_BLE_SCAN
++    /* Only the command thread waits. The callback thread must remain free
++     * to deliver STOPPED and release the framework-owned scanner wrapper. */
++    if (scan_command_wait_stopped(2000) != CMD_OK)
++        PRINT("Scan cleanup timed out; save diagnostics and reboot before retry");
++#endif
++    bt_adapter_unregister_callback(g_bttool_ins, adapter_callback);
+--- a/frameworks/connectivity/bluetooth/tools/scan.c
++++ b/frameworks/connectivity/bluetooth/tools/scan.c
+@@ -20,1 +20,4 @@
+-#include <stdlib.h>
++#include <stdlib.h>
++#include <errno.h>
++#include <pthread.h>
++#include <time.h>
+@@ -29,1 +29,4 @@
+-static bt_scanner_t* g_scanner = NULL;
++static bt_scanner_t* g_scanner = NULL;
++static bool g_scan_stopping;
++static pthread_mutex_t g_scan_lock = PTHREAD_MUTEX_INITIALIZER;
++static pthread_cond_t g_scan_stopped = PTHREAD_COND_INITIALIZER;
+@@ -73,1 +73,8 @@
+-    PRINT("%s, scanner:%p, status:%d", __func__, scanner, status);
++    pthread_mutex_lock(&g_scan_lock);
++    if (status != 0 && g_scanner == scanner) {
++        g_scanner = NULL;
++        g_scan_stopping = false;
++        pthread_cond_broadcast(&g_scan_stopped);
++    }
++    pthread_mutex_unlock(&g_scan_lock);
++    PRINT("%s, scanner:%p, status:%d", __func__, scanner, status);
+@@ -80,1 +80,9 @@
+-    PRINT("%s, scanner:%p", __func__, scanner);
++    pthread_mutex_lock(&g_scan_lock);
++    if (g_scanner == scanner) {
++        g_scanner = NULL;
++        g_scan_stopping = false;
++        pthread_cond_broadcast(&g_scan_stopped);
++    }
++    pthread_mutex_unlock(&g_scan_lock);
++    /* The official IPC dispatcher frees scanner after this callback. */
++    PRINT("%s, scanner:%p", __func__, scanner);
+@@ -111,4 +111,7 @@
+-    if (g_scanner) {
+-        PRINT("Scan already active; stop it before restarting");
+-        return CMD_ERROR;
+-    }
++    pthread_mutex_lock(&g_scan_lock);
++    if (g_scanner) {
++        PRINT("Scan already active/stopping; wait for on_scan_stopped_cb");
++        pthread_mutex_unlock(&g_scan_lock);
++        return CMD_ERROR;
++    }
++    pthread_mutex_unlock(&g_scan_lock);
+@@ -183,1 +183,7 @@
+-    if (optind >= 1) {
++    /* Serialize the API return/publication with early status callbacks. */
++    pthread_mutex_lock(&g_scan_lock);
++    if (g_scanner) {
++        pthread_mutex_unlock(&g_scan_lock);
++        return CMD_ERROR;
++    }
++    if (optind >= 1) {
+@@ -198,5 +198,8 @@
+-    if (!g_scanner) {
+-        PRINT("Scan start rejected by service");
+-        return CMD_ERROR;
+-    }
+-    return CMD_OK;
++    g_scan_stopping = false;
++    bool started = g_scanner != NULL;
++    pthread_mutex_unlock(&g_scan_lock);
++    if (!started) {
++        PRINT("Scan start rejected by service");
++        return CMD_ERROR;
++    }
++    return CMD_OK;
+@@ -204,9 +204,20 @@
+-static int stop_scan_cmd(void* handle, int argc, char* argv[])
+-{
+-    if (!g_scanner)
+-        return CMD_ERROR;
+-
+-    bt_le_stop_scan(handle, g_scanner);
+-    g_scanner = NULL;
+-    return CMD_OK;
+-}
++static int stop_scan_cmd(void* handle, int argc, char* argv[])
++{
++    pthread_mutex_lock(&g_scan_lock);
++    if (!g_scanner) {
++        pthread_mutex_unlock(&g_scan_lock);
++        PRINT("Scan already stopped");
++        return CMD_OK;
++    }
++    if (!g_scan_stopping) {
++        g_scan_stopping = true;
++        /* API is void: acceptance alone is not completion. Keep the pointer
++         * until STOPPED, and never free the framework-owned wrapper here. */
++        bt_le_stop_scan(handle, g_scanner);
++        PRINT("Scan stop requested; wait for on_scan_stopped_cb");
++    } else {
++        PRINT("Scan stop already pending");
++    }
++    pthread_mutex_unlock(&g_scan_lock);
++    return CMD_OK;
++}
+@@ -214,15 +214,37 @@
+-static int dump_scan_cmd(void* handle, int argc, char* argv[])
+-{
+-    return CMD_OK;
+-}
+-
+-int scan_command_init(void* handle)
+-{
+-    g_scanner = NULL;
+-    return 0;
+-}
+-
+-void scan_command_uninit(void* handle)
+-{
+-    g_scanner = NULL;
+-}
++static int dump_scan_cmd(void* handle, int argc, char* argv[])
++{
++    pthread_mutex_lock(&g_scan_lock);
++    PRINT("Scan state=%s", !g_scanner ? "idle" : (g_scan_stopping ? "stopping" : "active"));
++    pthread_mutex_unlock(&g_scan_lock);
++    return CMD_OK;
++}
++
++int scan_command_init(void* handle)
++{
++    /* Do not erase an outstanding scanner from a previous failed cleanup. */
++    return 0;
++}
++
++void scan_command_uninit(void* handle)
++{
++    stop_scan_cmd(handle, 0, NULL);
++}
++
++int scan_command_wait_stopped(unsigned int timeout_ms)
++{
++    struct timespec deadline;
++    int ret = 0;
++    clock_gettime(CLOCK_REALTIME, &deadline);
++    deadline.tv_sec += timeout_ms / 1000;
++    deadline.tv_nsec += (long)(timeout_ms % 1000) * 1000000;
++    if (deadline.tv_nsec >= 1000000000) {
++        deadline.tv_sec++;
++        deadline.tv_nsec -= 1000000000;
++    }
++    pthread_mutex_lock(&g_scan_lock);
++    while (g_scanner && ret == 0)
++        ret = pthread_cond_timedwait(&g_scan_stopped, &g_scan_lock, &deadline);
++    bool stopped = g_scanner == NULL;
++    pthread_mutex_unlock(&g_scan_lock);
++    return stopped ? CMD_OK : CMD_ERROR;
++}
+--- a/frameworks/connectivity/bluetooth/service/src/adapter_state.c
++++ b/frameworks/connectivity/bluetooth/service/src/adapter_state.c
+@@ -336,4 +336,10 @@
+-    case SYS_TURN_ON:
+-        hsm_transition_to(sm, &turning_on_state);
+-        break;
+-    case SYS_TURN_OFF:
++    case SYS_TURN_ON:
++        /* BLE-only boards are already fully enabled in BleOn. */
++        if (adapter_is_support_bredr())
++            hsm_transition_to(sm, &turning_on_state);
++        break;
++    case TURN_ON_BLE:
++        break;
++    case SYS_TURN_OFF_SAFE:
++        /* Use the normal LE profile/scanner/connection shutdown sequence. */
++    case SYS_TURN_OFF:
+--- a/frameworks/connectivity/bluetooth/service/stacks/zephyr/sal_adapter_le_interface.c
++++ b/frameworks/connectivity/bluetooth/service/stacks/zephyr/sal_adapter_le_interface.c
+@@ -1008,5 +1008,12 @@
+-static void STACK_CALL(le_disable)(void* args)
+-{
+-    zblue_unregister_callback();
+-    bt_disable();
+-}
++static void STACK_CALL(le_disable)(void* args)
++{
++    int err;
++    zblue_unregister_callback();
++    err = bt_disable();
++    if (err) {
++        BT_LOGE("zblue disable failed (err %d); reboot before retry", err);
++        return;
++    }
++    /* OFF must follow real HCI close, not merely queuing this work. */
++    adapter_on_adapter_state_changed(BLE_STACK_STATE_OFF);
++}
+@@ -1027,4 +1027,1 @@
+-    sal_send_req(req);
+-    adapter_on_adapter_state_changed(BLE_STACK_STATE_OFF);
+-
+-    return BT_STATUS_SUCCESS;
++    return sal_send_req(req);

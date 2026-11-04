@@ -1,0 +1,4 @@
+Archived v205 CSI SHA256: e0d8fbc87c40065488fa54f1d2097329f2735667713ef42f6139351de021acdb
+PASS archived v205 reproduces second-frame 00220083 with a consumed address latch; HOST HYPOTHESIS ONLY
+PASS v206:64 re-submitted frames, 26 callback-after-effect rearm failures, exact board status preserved; HOST ONLY
+PASS: software regression only; physical address-latch diagnosis still needs v206 board test

@@ -1,0 +1,17 @@
+e2fsck 1.47.2 (1-Jan-2025)
+Pass 1: Checking inodes, blocks, and sizes
+Pass 2: Checking directory structure
+Pass 3: Checking directory connectivity
+Pass 4: Checking reference counts
+Pass 5: Checking group summary information
+openvela: 19/29696 files (10.5% non-contiguous), 3581/29696 blocks
+Embedded kernel bytes: 2577816
+Embedded kernel SHA256: 0fa1cbc1b4bbe259f74febf7ce3da5f1b061f5e0653f063b800acd5d8daf659e
+
+Caution: Partition 4 doesn't end on a 2048-sector boundary. This may
+result in problems with some disk encryption tools.
+
+No problems found. 32734 free sectors (16.0 MiB) available in 1
+segments, the largest of which is 32734 (16.0 MiB) in size.
+Image bytes: 2147483648
+a81e1005c4ba33b107b502b347dd7ec5e8e74908c17dde0f0eeaf1e1ee5caf6b  ../openvela-a733-cubie-a7z-sd-ble-v141-boot-layout-candidate.img

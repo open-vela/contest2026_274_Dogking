@@ -1,0 +1,25 @@
+{
+  "result": "PROJECT_LOCAL_QEMU_HOST_LIBRARIES_ONLY",
+  "qemu": "QEMU emulator version 10.0.0\nCopyright (c) 2003-2025 Fabrice Bellard and the QEMU Project developers",
+  "packages": {
+    "libasound2t64_1.2.15.3-1ubuntu1.1_amd64.deb": "96e20cf5c9095ef54ba46fccffea5c01cf2de17a1012c5683a67e43504a6d726",
+    "libasyncns0_0.8-7_amd64.deb": "952ea8a8d01a4fe98ff8379553a7a3764492897464c2684105f76ebb6b19939a",
+    "libbsd0_0.12.2-2build2_amd64.deb": "62019928a6baeaba8d12d2d4cb7c1e4c9a9550a1eb4541b8de0cacfeae1d09e3",
+    "libdbus-1-3_1.16.2-2ubuntu4_amd64.deb": "af7be2be588d15a16c696ab43ba3e92bd5f9a6850e8780234059b02a67716e58",
+    "libflac14_1.5.0+ds-5_amd64.deb": "ea6cbd9399a646b073d36d8d33444f39f9f1dd63f5fa8cd18906573f51cc305b",
+    "libmd0_1.1.0-2build4_amd64.deb": "da684bb562e167721ae38366586aaee0b4cc580b9ee6d0220128b15ef9c5be75",
+    "libmp3lame0_3.101~svn6525+dfsg-2ubuntu0.1_amd64.deb": "bc765461943344b160f208572c296360011a9aa14ca886fac5865dac4ba8730c",
+    "libmpg123-0t64_1.33.3-2_amd64.deb": "5bb06d8890eecd357da520a21e592a93267bb4b48a4f8946d6d67c366f511bbd",
+    "libogg0_1.3.6-2_amd64.deb": "9d62d5e64a55ecfc17a7aeb00a5ca5fdf095bd68c1c397146c81867bec35c31f",
+    "libopus0_1.6.1-1_amd64.deb": "395f9e1bf29b804e42471e225976d69355c220bbfe469cb4ed387d36184b9bcc",
+    "libpulse0_1%3a17.0+dfsg1-2ubuntu4_amd64.deb": "d2998fcca587cb21447302a551bfaa6caa7052e7f00a1b041adf4237dd65e4a3",
+    "libsndfile1_1.2.2-4_amd64.deb": "678c7e95dea924d1ebe6c59879009dc3e7b61491bc32bd63bea200487d60a454",
+    "libvorbis0a_1.3.7-3build2_amd64.deb": "e8577fd985c3a2bc61212be338207cc2a95e7d6892acaeccb3d455da13e4a480",
+    "libvorbisenc2_1.3.7-3build2_amd64.deb": "b4230d0064eee971727b204e3d0644a4deb4a3d882eaac2304d379e7a5439f2a",
+    "libxau6_1%3a1.0.11-1build2_amd64.deb": "6c0b2dd4654db30449754e6e1adf84a34d8a8d7dddeb75f8c9c463ad86645274",
+    "libxcb1_1.17.0-2ubuntu1_amd64.deb": "069e64705e4a5721a223b4d22643bbaeaa63a6efbb56ebd3d7c4a31c4a26fa1c",
+    "libxdmcp6_1%3a1.1.5-2_amd64.deb": "d5d51e67063ff11e81698d8ee90bab5af763dc0a793929f33712bb74e7633768"
+  },
+  "system_packages_installed": false,
+  "hardware_verified": false
+}

@@ -1,0 +1,2 @@
+PASS: v187 identity-gated write8, BE16 register/value/STOP, forbidden reset/OTP, write failure invalidates identity; SYNTHETIC only
+PASS: actual TWI3 transaction core, BE16/repeated START/ACK/NACK/STOP, zero-write gates, timeout/quarantine/arbitration; SYNTHETIC only

@@ -1,0 +1,64 @@
+{
+  "date": "2026-10-23",
+  "purpose": "Resolve physical camera connector/layout from user photos without changing hardware or sealed images",
+  "user_camera_model": "Radxa Camera 13M214 / Sony IMX214",
+  "user_board_revision_confirmation": {
+    "revision": "1.11",
+    "source": "User explicitly confirmed the physical board is marked 1.11 in the same conversation",
+    "is_electrical_measurement": false
+  },
+  "photos": {
+    "out/imx214-board-photos-20261023/board-top.jpg": "1329a0baa4ce3da7cecbc1d0a30da025bb5c93889f9e605b72f9a50fe507ee05",
+    "out/imx214-board-photos-20261023/board-bottom.jpg": "d997a4d2c5910717ef3eef600b121d5a36ab7133574e3cdc0ea06c6eee23cb06",
+    "out/imx214-board-photos-20261023/board-csi-closeup.jpg": "2c76a8908248ae02f82e1c07015cc78a08181123af8e76de8876211fa4a516d9"
+  },
+  "primary_references": {
+    "../radxa_cubie_a7z_schematic_v1.11.pdf": {
+      "sha256": "eae921f432cef107e9c3229c113b0267e62669c035c467ada982fbf968c14a4d",
+      "pages_reviewed": [7, 10, 14]
+    },
+    "../radxa_cubie_a7z_components_placement_map_v1.11.pdf": {
+      "sha256": "28118a2d25dd6dae5c1091095a6edb5c4a49e6bb2bf3091589fa56efe53f6731",
+      "pages_reviewed": [1, 2]
+    }
+  },
+  "photo_observations": [
+    "Bottom end FPC next to Kingston UFS and mounting holes matches J5 camera position on V1.11 placement map",
+    "Bottom side button and smaller adjacent FPC match SW1 and J3 on V1.11 placement map",
+    "J3 is a 16-contact PCIe connector in schematic page 14, not a second CSI port",
+    "No unambiguous PCB revision string visible; central crossed-bin marking is not a revision number",
+    "Camera module and FPC mating orientation are not shown in these photos"
+  ],
+  "assessment": {
+    "development_layout": "A7Z V1.11 single CSI / J5",
+    "exact_PCB_revision_visible_in_photos": false,
+    "exact_PCB_revision_user_confirmed": "1.11",
+    "board_revision_information_blocker_resolved": true,
+    "CAM2_overlay_applicable_from_these_photos": false,
+    "photos_sufficient_to_continue_single_connector_board_description": true
+  },
+  "schematic_candidate_route_NOT_measurement": {
+    "connector": "J5 / 31-contact camera FPC",
+    "twi": 3,
+    "scl": "PE3, mux2",
+    "sda": "PE4, mux2",
+    "mclk": "MCLK1 / PE5, mux2 / target 24 MHz",
+    "reset": "PE9",
+    "standby": "PE8",
+    "CSI_MIPI_candidate": "CSI1 / MIPI1, MCSIB four data lanes",
+    "reset_standby_polarity_for_actual_module_verified": false
+  },
+  "unproven": [
+    "Actual camera/module power rails and IO voltage",
+    "Actual MCLK frequency and sensor reset/standby sequence",
+    "Strict chip ID 0x0214 from sensor register 0x0016",
+    "CSI lane/settle, IOMMU and single-frame DMA",
+    "ISP/color pipeline and standard video capture"
+  ],
+  "runtime_driver_changed": false,
+  "v175_image_changed": false,
+  "v176_capsule_changed": false,
+  "physical_board_or_storage_written": false,
+  "hardware_passed": false,
+  "next_gate": "Implement and validate bounded single-connector power/MCLK/CCI provider; do not infer electrical acceptance from photos"
+}

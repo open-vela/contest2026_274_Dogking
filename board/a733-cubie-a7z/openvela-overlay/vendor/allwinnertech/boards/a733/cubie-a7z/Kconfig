@@ -45,19 +45,4 @@ config BOARD_A7Z_ST7735
 		display on SPI1.  D/C is PL5 (pin 22), reset is PB0 (pin 7),
 		and the backlight is connected directly to 3.3 V.
 
-config BOARD_A7Z_EARLY_ST7735
-	bool "Bring the ST7735 panel up during board bring-up"
-	default n
-	depends on BOARD_A7Z_ST7735
-	---help---
-		Initialize and register /dev/lcd0 from board_lcd_initialize() during
-		early boot.  This runs the full panel init plus a 128x160 clear before
-		the C runtime finishes and before NSH starts, so any SPI or panel
-		anomaly stalls the boot with no console.
-
-		Leave this disabled (default).  /dev/lcd0 is then registered on first
-		use via a7z_lcd_ensure_registered(), which the display app calls, so
-		the board still reaches NSH with no panel attached.  Enable only for
-		board bring-up debugging of the panel itself.
-
 endif

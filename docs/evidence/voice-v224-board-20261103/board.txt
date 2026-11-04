@@ -1,0 +1,867 @@
+
+stop sunxi USB-DRD ok...
+stop sunxi USB1-Host ok...
+[13.745]Starting kernel ...
+
+[13.748]total: 13748 ms
+
+[13.750][mmc]: MMC Device 2 not found
+[13.754][mmc]: mmc 2 not find, so not exit
+NOTICE:  [SCP] :wait arisc ready....
+NOTICE:  [SCP] :arisc version: [d463b9da43dc50320f21ba51c6c51afe2db20d83]
+NOTICE:  [SCP] :arisc startup ready
+NOTICE:  [SCP] :arisc startup notify message feedback
+NOTICE:  [SCP] :sunxi-arisc driver is starting
+NOTICE:  BL3-1: Next image address = 0x40200000
+NOTICE:  BL3-1: Next image spsr = 0x3c5
+- Ready to Boot Primary CPU
+- Boot from EL1
+- Boot to C runtime for OS Initialize
+M0 v188-boot-candidate
+M1
+A7Z0
+A7Z1
+N0
+N1
+H0
+H1
+H2
+H3
+H4
+S0
+S1
+P1
+H5
+N2
+N3
+N4
+[boot188] SMP flush begin=0x0000000000000008
+[boot188] SMP flush done=0x0000000000000000
+[boot188] SMP request cpu=0x0000000000000001
+[boot188] SMP return=0x0000000000000000
+[boot188] SMP request cpu=0x0000000000000002
+[boot188] SMP return=0x0000000000000000
+[boot188] SMP request cpu=0x0000000000000003
+[boot188] SMP return=0x0000000000000000
+[boot188] SMP request cpu=0x0000000000000004
+[boot188] SMP return=0x0000000000000000
+[boot188] SMP request cpu=0x0000000000000005
+[boot188] SMP return=0x0000000000000000
+[boot188] SMP request cpu=0x0000000000000006
+[boot188] SMP return=0x0000000000000000
+[boot188] SMP request cpu=0x0000000000000007
+[boot188] SMP return=0x0000000000000000
+N5
+B0
+B1
+B2
+B3
+B4
+N6
+AN07
+
+NA81
+
+[boot188] CTOR enter=0x00000000404c8ae0
+[boot188] CTOR done index=0x0000000000000000
+[boot188] CTOR enter=0x00000000404f01f0
+[boot188] CTOR done index=0x0000000000000001
+[boot188] CTOR enter=0x00000000404f1bf0
+[boot188] CTOR done index=0x0000000000000002
+[boot188] CTOR enter=0x00000000402c7454
+[boot188] CTOR done index=0x0000000000000003
+[boot188] CTOR enter=0x00000000402c7d08
+[boot188] CTOR done index=0x0000000000000004
+[boot188] CTOR enter=0x00000000402e5708
+[boot188] CTOR done index=0x0000000000000005
+[boot188] CTOR enter=0x000000004043c660
+[boot188] CTOR done index=0x0000000000000006
+[boot188] CTOR enter=0x000000004043ea90
+[boot188] CTOR done index=0x0000000000000007
+[boot188] CTOR enter=0x0000000040457740
+[boot188] CTOR done index=0x0000000000000008
+[boot188] CTOR enter=0x0000000040457bc0
+[boot188] CTOR done index=0x0000000000000009
+[boot188] CTOR enter=0x0000000040457e70
+[boot188] CTOR done index=0x000000000000000a
+[boot188] CTOR enter=0x000000004045abf0
+[boot188] CTOR done index=0x000000000000000b
+[boot188] CTOR enter=0x0000000040497af0
+[boot188] CTOR done index=0x000000000000000c
+[boot188] CTOR enter=0x000000004049dbf0
+[boot188] CTOR done index=0x000000000000000d
+[boot188] CTOR enter=0x00000000404efd10
+[boot188] CTOR done index=0x000000000000000e
+[boot188] CTOR enter=0x00000000404f1d50
+[boot188] CTOR done index=0x000000000000000f
+[boot188] CTOR enter=0x00000000404f5d30
+[boot188] CTOR done index=0x0000000000000010
+[boot188] CTOR enter=0x00000000404f7520
+[boot188] CTOR done index=0x0000000000000011
+[boot188] CTOR enter=0x000000004065a260
+[boot188] CTOR done index=0x0000000000000012
+[boot188] CTOR enter=0x000000004065f6a0
+[boot188] CTOR done index=0x0000000000000013
+[boot188] CTOR enter=0x000000004065f6d0
+[boot188] CTOR done index=0x0000000000000014
+[boot188] CTOR enter=0x000000004065f760
+[boot188] CTOR done index=0x0000000000000015
+[boot188] CTOR enter=0x0000000040683650
+[boot188] CTOR done index=0x0000000000000016
+[boot188] CTOR enter=0x00000000407fe100
+[boot188] CTOR done index=0x0000000000000017
+AX20
+
+X1
+PR
+PR
+PR
+
+NuttShell (NSH)
+nsh> RI
+RX
+
+nsh> aipet audio general-voice /data/npu/general-asr /data/npu/general-tts
+voice-load-v215: BEGIN stage=general-provider-configure path=/data/npu/general-tts mono-us=29469076
+voice-load-v215: requested-ASR=/data/npu/general-asr requested-TTS=/data/npu/general-tts
+voice-load-v215: BEGIN stage=tts-tokens-lexicon path=/data/npu/general-tts mono-us=29485576
+voice-load-v215: END stage=tts-tokens-lexicon status=0 elapsed-ms=1388
+voice-load-v215: BEGIN stage=acoustic-read-crc path=/data/npu/general-tts/model-steps-3.basic.ort mono-us=30880352
+voice-load-v215: PROGRESS stage=acoustic-read-crc bytes=8388608/65033312 elapsed-ms=1387
+voice-load-v215: PROGRESS stage=acoustic-read-crc bytes=16777216/65033312 elapsed-ms=2773
+voice-load-v215: PROGRESS stage=acoustic-read-crc bytes=25165824/65033312 elapsed-ms=4160
+voice-load-v215: PROGRESS stage=acoustic-read-crc bytes=33554432/65033312 elapsed-ms=5547
+voice-load-v215: PROGRESS stage=acoustic-read-crc bytes=41943040/65033312 elapsed-ms=6934
+voice-load-v215: PROGRESS stage=acoustic-read-crc bytes=50331648/65033312 elapsed-ms=8318
+voice-load-v215: PROGRESS stage=acoustic-read-crc bytes=58720256/65033312 elapsed-ms=9704
+voice-load-v215: PROGRESS stage=acoustic-read-crc bytes=65033312/65033312 elapsed-ms=10751
+voice-load-v215: END stage=acoustic-read-crc status=0 elapsed-ms=10758
+voice-load-v215: BEGIN stage=acoustic-ORT-session path=/data/npu/general-tts/model-steps-3.basic.ort mono-us=41645552
+voice-load-v215: END stage=acoustic-ORT-session status=0 elapsed-ms=8300
+general-voice: RAM-only candidate installed; ASR=NPU acoustic=CPU vocoder=NPU; no auto capture/cloud fallback; TARGET ACCEPTANCE REQUIRED
+voice-load-v215: END stage=general-provider-configure status=0 elapsed-ms=20495
+general-voice: configure result=0
+nsh> aipet audio general-stream 5000 0
+voice-compute-v210: target=6 actual=6 part=d0b mask=00000040 confirmations=2 attempts=3 elapsed-us=3701 result=0 restore=0
+voice-load-v215: BEGIN stage=asr-tokens path=/data/npu/general-asr mono-us=59788595
+voice-load-v215: END stage=asr-tokens status=0 elapsed-ms=42
+asr-prepare-v213: tokens-us=47509 status=0
+voice-load-v215: BEGIN stage=asr-native-query path=/data/npu/general-asr/asr-encoder.a7tv mono-us=59840439
+voice-load-v215: END stage=asr-native-query status=0 elapsed-ms=13
+voice-load-v215: BEGIN stage=asr-native-prepare path=/data/npu/general-asr/asr-encoder.a7tv mono-us=59859952
+voice-load-v215: END stage=asr-native-prepare status=0 elapsed-ms=6708
+asr-prepare-v213: role=asr-encoder query-alloc-us=19514 prepare-us=6714833 status=0
+voice-load-v215: BEGIN stage=asr-native-query path=/data/npu/general-asr/asr-decoder.a7tv mono-us=66582156
+voice-load-v215: END stage=asr-native-query status=0 elapsed-ms=10
+voice-load-v215: BEGIN stage=asr-native-prepare path=/data/npu/general-asr/asr-decoder.a7tv mono-us=66598806
+voice-load-v215: END stage=asr-native-prepare status=0 elapsed-ms=1041
+asr-prepare-v213: role=asr-decoder query-alloc-us=16649 prepare-us=1047954 status=0
+voice-load-v215: BEGIN stage=asr-native-query path=/data/npu/general-asr/asr-joiner.a7tv mono-us=67654131
+voice-load-v215: END stage=asr-native-query status=0 elapsed-ms=11
+voice-load-v215: BEGIN stage=asr-native-prepare path=/data/npu/general-asr/asr-joiner.a7tv mono-us=67670983
+voice-load-v215: END stage=asr-native-prepare status=0 elapsed-ms=931
+asr-prepare-v213: role=asr-joiner query-alloc-us=16852 prepare-us=937005 status=0
+voice-load-v215: BEGIN stage=vocoder-query path=/data/npu/general-tts/vocoder.a7tv mono-us=68621500
+voice-load-v215: END stage=vocoder-query status=0 elapsed-ms=10
+voice-load-v215: BEGIN stage=vocoder-native-prepare path=/data/npu/general-tts/vocoder.a7tv mono-us=68637165
+voice-load-v215: END stage=vocoder-native-prepare status=0 elapsed-ms=1169
+voice-prepare-v213: asr-us=8847209 vocoder-us=1191927 status=0; MIC still OFF
+voice-session-v190: prepared ASR once in 10045982 us; same-command RAM reuse, per-turn states cleared
+general-asr: MIC ON; live 48k->16k FIR->NPU; capture-side energy endpoint; no actions
+general-asr: MIC OFF; capture/consumer stopped before final decode or playback
+general-asr: result=0 samples16=80000 chunks=6 queue-peak=82 ended=0; native NPU candidate, not E2E acceptance
+voice-stage: mic-stopped-mono-us=74948349 transcript-ready-mono-us=76468425; mic stop is NOT true end-of-speech (energy endpoint is diagnostic)
+asr-compute-v190: encoder=6/3666391us decoder=3/15139us joiner=144/1141971us; scoped CPU6, double MIDR/MPIDR proof; NPU unchanged
+asr-v210: accept-batches=500 accept-us=4518227 final-flush-us=808235 status=0; nested NPU times are not additive and not E2E latency
+asr-v211: received=80000 staged-bytes=0 qualified-batches=125 tail-frames=84 max-stage-ms=40; no dropped PCM
+general-asr transcript: 你好
+aipet audio: general-stream result=0
+nsh> aipet help
+A7Z desktop pet v1.3fix2 CANDIDATE (v224; stable=v1.1/v219): aipet mode auto|local|cloud; aipet run|stop; aipet vision once; aipet ask TEXT
+Local history defaults OFF; persona, exact-prefix KV and resident weights remain. Optional: aipet local context 3.
+Official cloud voice needs separate aipet audio setup credentials; Wi-Fi is not API acceptance.
+Local: NPU ASR / CPU MiniCPM5 / CPU acoustic + NPU vocoder. Explicit listening, half duplex, no AEC/barge-in.
+Vision is a fresh synchronized capture+YOLO+SPI result, not guessed by LLM. Continuous camera and voice are exclusive.
+UART4=115200: aipet mcu start; aipet mcu arm session (explicit); fault/timeout/STOP always disarm; no automatic rearm.
+nsh> ufs start
+nsh> aipet mode local
+nsh> aipet audio output i2s
+audio: saved; applies next operation and survives reboot.
+aipet audio: output result=0
+nsh> aipet audio volume 50
+audio: saved; applies next operation and survives reboot.
+aipet audio: volume result=0
+nsh> aipet run
+llm-preflight-v215: model='/ufs/models/MiniCPM5-1B-Q4_K_M.gguf' storage=auto-UFS-MiniCPM5 bytes=688065920 status=0; header only, no model load
+PR
+PR
+koice-service: wPoRr
+ PeRr
+slomgcsu :o nr esbuolatr=d0
+ trMioatlio nc odnissoalrem;e du;se  bseesrtv-iecfef osrtt aStTuOsP  frreoqmu eSsStHe;d ,sa fAeC Kt ono td iismcpolnineedc.t
+h mhcius:  srteasrutlintg= 0s
+uperlold
+Mcvtoi-cve1-:s eMrCvUi clein-kv-1s.t3afritx=20(;v 22e4x)p:l iacictt iavre=m1  rpeiqdui=r6e0d  sAtaFgTeE=Rp rreepaadriinensgs-
+=IdC-iOsFpFl asy:t oipn=i0t eirarloirzi=n0g  tSuTr7n7s3=50  demiprteyc=t0  8o-vbeirt plaotnhg
+ 0 floor=400
+product-backend=none; cloud and local histories are separate RAM sessions
+product-v1: routed cloud/local; half-duplex; explicit microphone consent; deterministic vision/MCU rules; no AEC/barge-in/automatic arm; status != acoustic acceptance
+voice-load-v215: load-stage=spawn-pending stage-age-ms=61 since-start-ms=61; elapsed is NOT disk throughput
+nsh> display: ST7735 direct path ready
+PR
+rIPET pLrVodGuLc tU-Ir aocuttiev-ev1;:  utsuer 'nd=i1s pfrloazye ne=moltoicoanl  r<enaasmoen>='f ofrrcome da-nlootcahle;r  sehacehl lt.u
+ n re-evaluated, never switch after action/audio
+voice-load-v215: BEGIN stage=product-LLM-preload path=- mono-us=121889310
+llm-preflight-v215: model='/ufs/models/MiniCPM5-1B-Q4_K_M.gguf' storage=auto-UFS-MiniCPM5 bytes=688065920 status=0; header only, no model load
+llm-preflight-v215: model='/ufs/models/MiniCPM5-1B-Q4_K_M.gguf' storage=auto-UFS-MiniCPM5 bytes=688065920 status=0; header only, no model load
+local-llm: warming configured model; dialogue history unchanged
+local-latency-v220: history=off pairs=0; persona, resident weights and exact-prefix KV retained; full replies
+aipet-local: storage=auto-UFS-MiniCPM5 model='/ufs/models/MiniCPM5-1B-Q4_K_M.gguf'
+chatml tokens=83 start=130072 stop=130073 history-pairs=0
+forwardfast: cores-mask=fc workers=6; A76:A55 row weight=3:1; system scheduling unchanged
+forwardfast: loading 688065920 bytes into RAM
+llm-load-v215: bytes=67108864/688065920 elapsed-ms=962 (file-read/RAM load, not inference)
+llm-load-v215: bytes=134217728/688065920 elapsed-ms=1927 (file-read/RAM load, not inference)
+llm-load-v215: bytes=201326592/688065920 elapsed-ms=2891 (file-read/RAM load, not inference)
+llm-load-v215: bytes=268435456/688065920 elapsed-ms=3858 (file-read/RAM load, not inference)
+llm-load-v215: bytes=335544320/688065920 elapsed-ms=4822 (file-read/RAM load, not inference)
+llm-load-v215: bytes=402653184/688065920 elapsed-ms=5788 (file-read/RAM load, not inference)
+llm-load-v215: bytes=469762048/688065920 elapsed-ms=6752 (file-read/RAM load, not inference)
+llm-load-v215: bytes=536870912/688065920 elapsed-ms=7717 (file-read/RAM load, not inference)
+llm-load-v215: bytes=603979776/688065920 elapsed-ms=8681 (file-read/RAM load, not inference)
+llm-load-v215: bytes=671088640/688065920 elapsed-ms=9647 (file-read/RAM load, not inference)
+llm-load-v215: bytes=688065920/688065920 elapsed-ms=9899 (file-read/RAM load, not inference)
+forwardfast: load=9.9064 sec; model reads now RAM-only
+forward1 token=0 layers=24 hidden=1536 heads=16/2
+prefill-cache: reused=0 fresh=83 (exact token-prefix KV)
+llm-pool-v212: configure mask=fc; per-worker affinity/RR, no global scheduler change
+prefill-batch: width=4 tokens=82 batches=21; serial final prompt/decode
+llm-latency-v220: prompt=83 reused=0 fresh=83 batched=82 batch-ms=17476.648; final prompt+LM-head still required; no board first-audio claim
+
+assistant>
+causal prefill/generation returned; prompt=83 generated=1 finish=length; evaluated-prefix KV retained on success
+forwardfast: compute=18.0210 sec; causal forward checkpoint; model resident; bounded generation finished
+forwardfast: cache retained; use aipetllm unload to free
+local-context: used=0 dropped=0 stored=0 limit=0 RAM-only shared-device-session
+aipet-local: prompt=83 generated=1 first=17.855s rest=0.000s cores=fc
+local-llm: preload ready (0)
+voice-load-v215: END stage=product-LLM-preload status=0 elapsed-ms=29791
+voice-load-v215: BEGIN stage=product-ASR-vocoder-prepare path=- mono-us=151686914
+voice-load-v215: BEGIN stage=asr-tokens path=/data/npu/general-asr mono-us=151698003
+voice-load-v215: END stage=asr-tokens status=0 elapsed-ms=42
+asr-prepare-v213: tokens-us=47732 status=0
+voice-load-v215: BEGIN stage=asr-native-query path=/data/npu/general-asr/asr-encoder.a7tv mono-us=151750099
+voice-load-v215: END stage=asr-native-query status=0 elapsed-ms=13
+voice-load-v215: BEGIN stage=asr-native-prepare path=/data/npu/general-asr/asr-encoder.a7tv mono-us=151769601
+voice-load-v215: END stage=asr-native-prepare status=0 elapsed-ms=6710
+asr-prepare-v213: role=asr-encoder query-alloc-us=19501 prepare-us=6716104 status=0
+voice-load-v215: BEGIN stage=asr-native-query path=/data/npu/general-asr/asr-decoder.a7tv mono-us=158493074
+voice-load-v215: END stage=asr-native-query status=0 elapsed-ms=11
+voice-load-v215: BEGIN stage=asr-native-prepare path=/data/npu/general-asr/asr-decoder.a7tv mono-us=158509811
+voice-load-v215: END stage=asr-native-prepare status=0 elapsed-ms=1042
+asr-prepare-v213: role=asr-decoder query-alloc-us=16737 prepare-us=1048514 status=0
+voice-load-v215: BEGIN stage=asr-native-query path=/data/npu/general-asr/asr-joiner.a7tv mono-us=159565698
+voice-load-v215: END stage=asr-native-query status=0 elapsed-ms=11
+voice-load-v215: BEGIN stage=asr-native-prepare path=/data/npu/general-asr/asr-joiner.a7tv mono-us=159582636
+voice-load-v215: END stage=asr-native-prepare status=0 elapsed-ms=931
+asr-prepare-v213: role=asr-joiner query-alloc-us=16938 prepare-us=937102 status=0
+voice-load-v215: BEGIN stage=vocoder-query path=/data/npu/general-tts/vocoder.a7tv mono-us=160533378
+voice-load-v215: END stage=vocoder-query status=0 elapsed-ms=10
+voice-load-v215: BEGIN stage=vocoder-native-prepare path=/data/npu/general-tts/vocoder.a7tv mono-us=160549133
+voice-load-v215: END stage=vocoder-native-prepare status=0 elapsed-ms=1170
+voice-prepare-v213: asr-us=8839267 vocoder-us=1192220 status=0; MIC still OFF
+voice-session-v190: prepared ASR once in 10038333 us; same-command RAM reuse, per-turn states cleared
+voice-load-v215: END stage=product-ASR-vocoder-prepare status=0 elapsed-ms=10054
+voice-compute-v210: target=1 actual=1 part=d05 mask=00000002 confirmations=2 attempts=2 elapsed-us=1514 result=0 restore=0
+product-v1: READY MIC ON; waiting with opening pre-roll, half-duplex
+product-v1: speech detected; opening audio retained
+product-v1: MIC OFF; RX stopped, ASR finalizing
+dialogue-rx-v214: result=0 monitored=188160 accepted48=63360 speech=1 limited=0 queue=40; idle PCM not saved
+gate-end-v221fix1: noise-rms=132 last-rms=216 voiced-blocks=38 quiet-blocks=70; 10ms blocks,700ms endpoint,8s hard discard
+gate-end-v224: continuation-confirm=80ms peak-blocks=8 rejected-short-bursts=4 quiet-peak=70 resets=0 limited=0; energy-only, NOT trained VAD
+voice-load-v215: BEGIN stage=resident-ASR-finalize path=- mono-us=166382277
+voice-load-v215: END stage=resident-ASR-finalize status=0 elapsed-ms=819
+voice-resident-v214: asr=0 accepted16=21120 limited=0; models retained by SAME live task
+voice-stage-v214: capture-stop-mono-us=165780742 consumer-done-mono-us=166348102 asr-ready-mono-us=167215714 tail-us=1434972 status=0
+product-v1: [asr backend=local] 你好
+product-route-v1: intent=direct-rule
+product-reply-v1: backend=local text=你好呀！今天想聊什么？
+product-tts-v219: BEGIN backend=local; microphone OFF
+ayice-compute-v210: target=7 actual=7 part=d0b mask=00000080 confirmations=2 attempts=3 elapsed-us=3889 result=0 restodries=p0l
+  : emotion=普通
+tts-pcm-v212: samples=71168 nonzero=65328 peak=7772; before volume/resampling, NOT acoustic acceptance
+local-tts: result=0 acoustic=CPU vocoder=NPU packets=2 samples=71168 cpu-us=1210921 npu-us=157515 first-sink-us=605747; NOT end-of-speech/physical-audio latency
+local-tts-stream: status=0 first-pcm=591949 us first-driver-pull=593093 us frames=154924; audible latency NOT measured
+local-tts-buffer-v189: segments=1 rebuffers=0 rebuffer-wait-us=0; no padding/replay; actual device errors are fatal
+voice-stage: tts-start-mono-us=167246923 first-driver-pull-mono-us=167840016 status=0; driver pull is NOT physical audible onset
+product-tts-v219: END status=0 elapsed-ms=3858; actual sound requires listening
+product-route-v1: turn=2 frozen=local reason=forced-local; each turn re-evaluated, never switch after action/audio
+product-v1: READY MIC ON; waiting with opening pre-roll, half-duplex
+mic-monitor-v219: idle-ms=5000 blocks=489 rms=151 raw-peak=600 noise-rms=114 trigger-rms=400; waiting for speech, no PCM saved
+product-v1: speech detected; opening audio retained
+product-v1: MIC OFF; RX stopped, ASR finalizing
+dialogue-rx-v214: result=0 monitored=449280 accepted48=119040 speech=1 limited=0 queue=85; idle PCM not saved
+gate-end-v221fix1: noise-rms=136 last-rms=298 voiced-blocks=121 quiet-blocks=70; 10ms blocks,700ms endpoint,8s hard discard
+gate-end-v224: continuation-confirm=80ms peak-blocks=8 rejected-short-bursts=10 quiet-peak=70 resets=2 limited=0; energy-only, NOT trained VAD
+voice-load-v215: BEGIN stage=resident-ASR-finalize path=- mono-us=181002679
+voice-load-v215: END stage=resident-ASR-finalize status=0 elapsed-ms=817
+voice-resident-v214: asr=0 accepted16=39680 limited=0; models retained by SAME live task
+voice-stage-v214: capture-stop-mono-us=180589139 consumer-done-mono-us=180969100 asr-ready-mono-us=181833831 tail-us=1244692 status=0
+product-v1: [asr backend=local] 前面有个什么物体
+display: emotion=思考
+local-latency-v220: history=off pairs=0; persona, resident weights and exact-prefix KV retained; full replies
+aipet-local: storage=auto-UFS-MiniCPM5 model='/ufs/models/MiniCPM5-1B-Q4_K_M.gguf'
+chatml tokens=83 start=130072 stop=130073 history-pairs=0
+forwardfast: cores-mask=fc workers=6; A76:A55 row weight=3:1; system scheduling unchanged
+forwardfast: cache-hit; load=0 sec; no model SD reads
+forwardfast: tensor-directory cache-hit; no GGUF metadata rescan
+forward1 token=0 layers=24 hidden=1536 heads=16/2
+prefill-cache: reused=70 fresh=13 (exact token-prefix KV)
+prefill-batch: width=4 tokens=12 batches=3; serial final prompt/decode
+llm-latency-v220: prompt=83 reused=70 fresh=13 batched=12 batch-ms=3427.271; final prompt+LM-head still required; no board first-audio claim
+
+assistant> [local-stream first-visible=3877 ms; provisional text, no actions]
+你好！tts-pcm-v212: samples=25344 nonzero=22664 peak=5424; before volume/resampling, NOT acoustic acceptance
+local-tts: result=0 acoustic=CPU vocoder=NPU packets=1 samples=25344 cpu-us=433517 npu-us=78410 first-sink-us=525638; NOT end-of-speech/physical-audio latency
+有什么问题或者需要帮助的地方吗？tts-pcm-v212: samples=75264 nonzero=71869 peak=12472; before volume/resampling, NOT acoustic acceptance
+local-tts: result=0 acoustic=CPU vocoder=NPU packets=2 samples=75264 cpu-us=1259842 npu-us=156098 first-sink-us=1364102; NOT end-of-speech/physical-audio latency
+😊
+causal prefill/generation returned; prompt=83 generated=12 finish=eos; evaluated-prefix KV retained on success
+forwardfast: compute=10.2260 sec; causal forward checkpoint; model resident; bounded generation finished
+local-context: used=0 dropped=0 stored=0 limit=0 RAM-only shared-device-session
+aipet-local: prompt=83 generated=12 first=3.809s rest=6.394s cores=fc
+
+[local-stream complete]
+tts-pcm-v212: samples=5376 nonzero=4378 peak=79; before volume/resampling, NOT acoustic acceptance
+local-tts: result=0 acoustic=CPU vocoder=NPU packets=1 samples=5376 cpu-us=135124 npu-us=78856 first-sink-us=217265; NOT end-of-speech/physical-audio latency
+local-tts-buffer-v189: segments=2 rebuffers=1 rebuffer-wait-us=3153239; no padding/replay; actual device errors are fatal
+voice-stage: tts-start-mono-us=181855541 first-driver-pull-mono-us=186612020 status=0; driver pull is NOT physical audible onset
+local-voice-pipeline: status=0 phrases=3/3 first-phrase=4243092 us first-synthesis-start=4244787 us; PCM/device timing separate
+[emotion=普通 actions=0]
+[route=local_llm speech=local fallback=0 actions=disabled]
+▒roduct-route-v1: turn=3 frozen=local reason=forced-local; each turn re-evaluated, never switch afdtiesrp laacyt:i oenm/oatuidoino=
+ ▒▒通
+product-v1: READY MIC ON; waiting with opening pre-roll, half-duplex
+mic-monitor-v219: idle-ms=5000 blocks=489 rms=254 raw-peak=840 noise-rms=129 trigger-rms=400; waiting for speech, no PCM saved
+product-v1: speech detected; opening audio retained
+product-v1: MIC OFF; RX stopped, ASR finalizing
+dialogue-rx-v214: result=0 monitored=432480 accepted48=108000 speech=1 limited=0 queue=83; idle PCM not saved
+gate-end-v221fix1: noise-rms=135 last-rms=339 voiced-blocks=130 quiet-blocks=70; 10ms blocks,700ms endpoint,8s hard discard
+gate-end-v224: continuation-confirm=80ms peak-blocks=8 rejected-short-bursts=13 quiet-peak=70 resets=1 limited=0; energy-only, NOT trained VAD
+voice-load-v215: BEGIN stage=resident-ASR-finalize path=- mono-us=204386741
+voice-load-v215: END stage=resident-ASR-finalize status=0 elapsed-ms=817
+voice-resident-v214: asr=0 accepted16=36000 limited=0; models retained by SAME live task
+voice-stage-v214: capture-stop-mono-us=203748143 consumer-done-mono-us=204353162 asr-ready-mono-us=205218690 tail-us=1470547 status=0
+product-v1: [asr backend=local] 识别前面物体
+display: emotion=思考
+local-latency-v220: history=off pairs=0; persona, resident weights and exact-prefix KV retained; full replies
+aipet-local: storage=auto-UFS-MiniCPM5 model='/ufs/models/MiniCPM5-1B-Q4_K_M.gguf'
+chatml tokens=82 start=130072 stop=130073 history-pairs=0
+forwardfast: cores-mask=fc workers=6; A76:A55 row weight=3:1; system scheduling unchanged
+forwardfast: cache-hit; load=0 sec; no model SD reads
+forwardfast: tensor-directory cache-hit; no GGUF metadata rescan
+forward1 token=0 layers=24 hidden=1536 heads=16/2
+prefill-cache: reused=70 fresh=12 (exact token-prefix KV)
+prefill-batch: width=4 tokens=11 batches=3; serial final prompt/decode
+llm-latency-v220: prompt=82 reused=70 fresh=12 batched=11 batch-ms=3133.812; final prompt+LM-head still required; no board first-audio claim
+
+assistant> [local-stream first-visible=3579 ms; provisional text, no actions]
+好的！tts-pcm-v212: samples=25600 nonzero=21997 peak=8000; before volume/resampling, NOT acoustic acceptance
+local-tts: result=0 acoustic=CPU vocoder=NPU packets=1 samples=25600 cpu-us=428413 npu-us=78402 first-sink-us=520750; NOT end-of-speech/physical-audio latency
+请告诉我你想要识别什么物体或场景，我会尽力帮助tts-pcm-v212: samples=88064 nonzero=84331 peak=9080; before volume/resampling, NOT acoustic acceptance
+local-tts: result=0 acoustic=CPU vocoder=NPU packets=2 samples=88064 cpu-us=1457820 npu-us=155527 first-sink-us=1562284; NOT end-of-speech/physical-audio latency
+你！tts-pcm-v212: samples=46848 nonzero=43437 peak=11424; before volume/resampling, NOT acoustic acceptance
+local-tts: result=0 acoustic=CPU vocoder=NPU packets=1 samples=46848 cpu-us=778533 npu-us=77312 first-sink-us=1497210; NOT end-of-speech/physical-audio latency
+ 😊
+causal prefill/generation returned; prompt=82 generated=18 finish=eos; evaluated-prefix KV retained on success
+forwardfast: compute=13.6207 sec; causal forward checkpoint; model resident; bounded generation finished
+local-context: used=0 dropped=0 stored=0 limit=0 RAM-only shared-device-session
+aipet-local: prompt=82 generated=18 first=3.512s rest=10.085s cores=fc
+
+[local-stream complete]
+tts-pcm-v212: samples=5376 nonzero=4420 peak=76; before volume/resampling, NOT acoustic acceptance
+local-tts: result=0 acoustic=CPU vocoder=NPU packets=1 samples=5376 cpu-us=130817 npu-us=78048 first-sink-us=212182; NOT end-of-speech/physical-audio latency
+local-tts-buffer-v189: segments=2 rebuffers=1 rebuffer-wait-us=4071240; no padding/replay; actual device errors are fatal
+voice-stage: tts-start-mono-us=205239871 first-driver-pull-mono-us=209690022 status=0; driver pull is NOT physical audible onset
+local-voice-pipeline: status=0 phrases=4/4 first-phrase=3942963 us first-synthesis-start=3944459 us; PCM/device timing separate
+[emotion=普通 actions=0]
+[route=local_llm speech=local fallback=0 actions=disabled]
+ roduct-route-v1: turn=4 frozen=local reason=forced-local; each tudrins prlea-ye:v aelmuoattieodn,= ▒n▒e▒v▒e▒r▒
+ switch after action/audio
+product-v1: READY MIC ON; waiting with opening pre-roll, half-duplex
+product-v1: speech detected; opening audio retained
+product-v1: MIC OFF; RX stopped, ASR finalizing
+dialogue-rx-v214: result=0 monitored=331200 accepted48=124800 speech=1 limited=0 queue=83; idle PCM not saved
+gate-end-v221fix1: noise-rms=143 last-rms=357 voiced-blocks=124 quiet-blocks=70; 10ms blocks,700ms endpoint,8s hard discard
+gate-end-v224: continuation-confirm=80ms peak-blocks=8 rejected-short-bursts=13 quiet-peak=70 resets=2 limited=0; energy-only, NOT trained VAD
+voice-load-v215: BEGIN stage=resident-ASR-finalize path=- mono-us=228652680
+voice-load-v215: END stage=resident-ASR-finalize status=0 elapsed-ms=817
+voice-resident-v214: asr=0 accepted16=41600 limited=0; models retained by SAME live task
+voice-stage-v214: capture-stop-mono-us=228351143 consumer-done-mono-us=228619100 asr-ready-mono-us=229484434 tail-us=1133291 status=0
+product-v1: [asr backend=local] 前进十五部
+product-route-v1: intent=mcu ack-status=-22; never retry motor
+product-reply-v1: backend=local text=动作不明确，未发送。请一次只说前进、后退、左转、右转、停止或向左看。
+product-tts-v219: BEGIN backend=local; microphone OFF
+display: emotion=普通
+tts-pcm-v212: samples=228608 nonzero=209260 peak=11632; before volume/resampling, NOT acoustic acceptance
+local-tts: result=0 acoustic=CPU vocoder=NPU packets=7 samples=228608 cpu-us=3805658 npu-us=550086 first-sink-us=727919; NOT end-of-speech/physical-audio latency
+local-tts-stream: status=0 first-pcm=709608 us first-driver-pull=710779 us frames=497651; audible latency NOT measured
+local-tts-buffer-v189: segments=2 rebuffers=0 rebuffer-wait-us=0; no padding/replay; actual device errors are fatal
+voice-stage: tts-start-mono-us=229524241 first-driver-pull-mono-us=230235020 status=0; driver pull is NOT physical audible onset
+product-tts-v219: END status=0 elapsed-ms=11117; actual sound requires listening
+product-route-v1: turn=5 frozen=local reason=forced-local; each turn re-evaluated, never switch after action/audio
+product-v1: READY MIC ON; waiting with opening pre-roll, half-duplex
+product-v1: speech detected; opening audio retained
+product-v1: MIC OFF; RX stopped, ASR finalizing
+dialogue-rx-v214: result=0 monitored=246240 accepted48=192480 speech=1 limited=0 queue=83; idle PCM not saved
+gate-end-v221fix1: noise-rms=135 last-rms=327 voiced-blocks=143 quiet-blocks=70; 10ms blocks,700ms endpoint,8s hard discard
+gate-end-v224: continuation-confirm=80ms peak-blocks=8 rejected-short-bursts=33 quiet-peak=70 resets=3 limited=0; energy-only, NOT trained VAD
+voice-load-v215: BEGIN stage=resident-ASR-finalize path=- mono-us=246665743
+voice-load-v215: END stage=resident-ASR-finalize status=0 elapsed-ms=818
+voice-resident-v214: asr=0 accepted16=64160 limited=0; models retained by SAME live task
+voice-stage-v214: capture-stop-mono-us=245895144 consumer-done-mono-us=246632162 asr-ready-mono-us=247498301 tail-us=1603157 status=0
+product-v1: [asr backend=local] 前进
+product-route-v1: intent=mcu ack-status=-13; never retry motor
+product-reply-v1: backend=local text=动作未发送：请检查故障并在控制台手动解锁运动。
+product-tts-v219: BEGIN backend=local; microphone OFF
+display: emotion=普通
+tts-pcm-v212: samples=131840 nonzero=122850 peak=7548; before volume/resampling, NOT acoustic acceptance
+local-tts: result=0 acoustic=CPU vocoder=NPU packets=4 samples=131840 cpu-us=2198075 npu-us=312861 first-sink-us=743827; NOT end-of-speech/physical-audio latency
+local-tts-stream: status=0 first-pcm=704531 us first-driver-pull=706815 us frames=286999; audible latency NOT measured
+local-tts-buffer-v189: segments=2 rebuffers=1 rebuffer-wait-us=5245; no padding/replay; actual device errors are fatal
+voice-stage: tts-start-mono-us=247534200 first-driver-pull-mono-us=248241015 status=0; driver pull is NOT physical audible onset
+product-tts-v219: END status=0 elapsed-ms=6728; actual sound requires listening
+product-route-v1: turn=6 frozen=local reason=forced-local; each turn re-evaluated, never switch after action/audio
+product-v1: READY MIC ON; waiting with opening pre-roll, half-duplex
+mic-monitor-v219: idle-ms=5000 blocks=489 rms=487 raw-peak=1025 noise-rms=126 trigger-rms=400; waiting for speech, no PCM saved
+mic-monitor-v219: idle-ms=10001 blocks=989 rms=497 raw-peak=1165 noise-rms=127 trigger-rms=400; waiting for speech, no PCM saved
+mic-monitor-v219: idle-ms=15002 blocks=1490 rms=396 raw-peak=850 noise-rms=130 trigger-rms=400; waiting for speech, no PCM saved
+product-v1: speech detected; opening audio retained
+product-v1: MIC OFF; RX stopped, ASR finalizing
+dialogue-rx-v214: result=0 monitored=995040 accepted48=131040 speech=1 limited=0 queue=83; idle PCM not saved
+gate-end-v221fix1: noise-rms=134 last-rms=397 voiced-blocks=122 quiet-blocks=70; 10ms blocks,700ms endpoint,8s hard discard
+gate-end-v224: continuation-confirm=80ms peak-blocks=8 rejected-short-bursts=20 quiet-peak=70 resets=2 limited=0; energy-only, NOT trained VAD
+voice-load-v215: BEGIN stage=resident-ASR-finalize path=- mono-us=275288740
+voice-load-v215: END stage=resident-ASR-finalize status=0 elapsed-ms=817
+voice-resident-v214: asr=0 accepted16=43680 limited=0; models retained by SAME live task
+voice-stage-v214: capture-stop-mono-us=275116139 consumer-done-mono-us=275255161 asr-ready-mono-us=276119909 tail-us=1003770 status=0
+product-v1: [asr backend=local] 前进二十步
+product-route-v1: intent=mcu ack-status=-13; never retry motor
+product-reply-v1: backend=local text=动作未发送：请检查故障并在控制台手动解锁运动。
+Oroduct-tts-v219: BEGIN badciksepnlda=yl:o ceamlo;t imoinc=r▒o▒p▒h▒o▒n▒e
+ FF
+tts-pcm-v212: samples=131840 nonzero=122849 peak=7964; before volume/resampling, NOT acoustic acceptance
+local-tts: result=0 acoustic=CPU vocoder=NPU packets=4 samples=131840 cpu-us=2197155 npu-us=312480 first-sink-us=722200; NOT end-of-speech/physical-audio latency
+local-tts-stream: status=0 first-pcm=703997 us first-driver-pull=706264 us frames=286999; audible latency NOT measured
+local-tts-buffer-v189: segments=1 rebuffers=0 rebuffer-wait-us=0; no padding/replay; actual device errors are fatal
+voice-stage: tts-start-mono-us=276158752 first-driver-pull-mono-us=276865016 status=0; driver pull is NOT physical audible onset
+product-tts-v219: END status=0 elapsed-ms=6726; actual sound requires listening
+product-route-v1: turn=7 frozen=local reason=forced-local; each turn re-evaluated, never switch after action/audio
+product-v1: READY MIC ON; waiting with opening pre-roll, half-duplex
+product-v1: speech detected; opening audio retained
+product-v1: MIC OFF; RX stopped, ASR finalizing
+dialogue-rx-v214: result=0 monitored=340800 accepted48=125760 speech=1 limited=0 queue=85; idle PCM not saved
+gate-end-v221fix1: noise-rms=160 last-rms=454 voiced-blocks=162 quiet-blocks=70; 10ms blocks,700ms endpoint,8s hard discard
+gate-end-v224: continuation-confirm=80ms peak-blocks=8 rejected-short-bursts=7 quiet-peak=70 resets=2 limited=0; energy-only, NOT trained VAD
+voice-load-v215: BEGIN stage=resident-ASR-finalize path=- mono-us=290413716
+voice-load-v215: END stage=resident-ASR-finalize status=0 elapsed-ms=817
+voice-resident-v214: asr=0 accepted16=41920 limited=0; models retained by SAME live task
+voice-stage-v214: capture-stop-mono-us=290106139 consumer-done-mono-us=290380223 asr-ready-mono-us=291245096 tail-us=1138957 status=0
+product-v1: [asr backend=local] 我今天有点难过能安倍一下我吗
+display: emotion=思考
+local-latency-v220: history=off pairs=0; persona, resident weights and exact-prefix KV retained; full replies
+aipet-local: storage=auto-UFS-MiniCPM5 model='/ufs/models/MiniCPM5-1B-Q4_K_M.gguf'
+chatml tokens=88 start=130072 stop=130073 history-pairs=0
+forwardfast: cores-mask=fc workers=6; A76:A55 row weight=3:1; system scheduling unchanged
+forwardfast: cache-hit; load=0 sec; no model SD reads
+forwardfast: tensor-directory cache-hit; no GGUF metadata rescan
+forward1 token=0 layers=24 hidden=1536 heads=16/2
+prefill-cache: reused=70 fresh=18 (exact token-prefix KV)
+prefill-batch: width=4 tokens=17 batches=5; serial final prompt/decode
+llm-latency-v220: prompt=88 reused=70 fresh=18 batched=17 batch-ms=4949.972; final prompt+LM-head still required; no board first-audio claim
+
+assistant> [local-stream first-visible=5408 ms; provisional text, no actions]
+哎呀，听到你今天有点难过，我tts-pcm-v212: samples=81920 nonzero=75040 peak=11312; before volume/resampling, NOT acoustic acceptance
+local-tts: result=0 acoustic=CPU vocoder=NPU packets=3 samples=81920 cpu-us=1377662 npu-us=232245 first-sink-us=480640; NOT end-of-speech/physical-audio latency
+都想给你好好安慰一下呢！tts-pcm-v212: samples=62208 nonzero=58437 peak=15480; before volume/resampling, NOT acoustic acceptance
+local-tts: result=0 acoustic=CPU vocoder=NPU packets=2 samples=62208 cpu-us=1049501 npu-us=155632 first-sink-us=1159243; NOT end-of-speech/physical-audio latency
+😊 有什么我可以帮助你的吗？tts-pcm-v212: samples=63488 nonzero=58847 peak=9056; before volume/resampling, NOT acoustic acceptance
+local-tts: result=0 acoustic=CPU vocoder=NPU packets=3 samples=63488 cpu-us=1109435 npu-us=233817 first-sink-us=213330; NOT end-of-speech/physical-audio latency
+
+causal prefill/generation returned; prompt=88 generated=23 finish=eos; evaluated-prefix KV retained on success
+forwardfast: compute=18.5719 sec; causal forward checkpoint; model resident; bounded generation finished
+local-context: used=0 dropped=0 stored=0 limit=0 RAM-only shared-device-session
+aipet-local: prompt=88 generated=23 first=5.341s rest=13.208s cores=fc
+
+[local-stream complete]
+local-tts-buffer-v189: segments=5 rebuffers=4 rebuffer-wait-us=3232967; no padding/replay; actual device errors are fatal
+voice-stage: tts-start-mono-us=291268370 first-driver-pull-mono-us=299393022 status=0; driver pull is NOT physical audible onset
+local-voice-pipeline: status=0 phrases=3/3 first-phrase=7655434 us first-synthesis-start=7656967 us; PCM/device timing separate
+[emotion=安慰 actions=0]
+[route=local_llm speech=local fallback=0 actions=disabled]
+orodduicstp-lraoyu:t ee-movt1i:o nt=ur▒n▒=▒8▒ ▒f▒r
+ zen=local reason=forced-local; each turn re-evaluated, never switch after action/audio
+product-v1: READY MIC ON; waiting with opening pre-roll, half-duplex
+mic-monitor-v219: idle-ms=5000 blocks=486 rms=461 raw-peak=1265 noise-rms=146 trigger-rms=438; waiting for speech, no PCM saved
+mic-monitor-v219: idle-ms=10001 blocks=986 rms=360 raw-peak=795 noise-rms=136 trigger-rms=408; waiting for speech, no PCM saved
+mic-monitor-v219: idle-ms=15001 blocks=1486 rms=352 raw-peak=990 noise-rms=136 trigger-rms=408; waiting for speech, no PCM saved
+product-v1: speech detected; opening audio retained
+product-v1: MIC OFF; RX stopped, ASR finalizing
+dialogue-rx-v214: result=0 monitored=991200 accepted48=105600 speech=1 limited=0 queue=82; idle PCM not saved
+gate-end-v221fix1: noise-rms=142 last-rms=350 voiced-blocks=69 quiet-blocks=70; 10ms blocks,700ms endpoint,8s hard discard
+gate-end-v224: continuation-confirm=80ms peak-blocks=8 rejected-short-bursts=24 quiet-peak=70 resets=1 limited=0; energy-only, NOT trained VAD
+voice-load-v215: BEGIN stage=resident-ASR-finalize path=- mono-us=333555592
+voice-load-v215: END stage=resident-ASR-finalize status=0 elapsed-ms=818
+voice-resident-v214: asr=0 accepted16=35200 limited=0; models retained by SAME live task
+voice-stage-v214: capture-stop-mono-us=332888286 consumer-done-mono-us=333522100 asr-ready-mono-us=334387911 tail-us=1499626 status=0
+product-route-v1: turn=8 frozen=local reason=forced-local; each turn re-evaluated, never switch after action/audio
+product-v1: READY MIC ON; waiting with opening pre-roll, half-duplex
+mic-monitor-v219: idle-ms=5000 blocks=489 rms=476 raw-peak=945 noise-rms=136 trigger-rms=409; waiting for speech, no PCM saved
+mic-monitor-v219: idle-ms=10000 blocks=989 rms=345 raw-peak=830 noise-rms=142 trigger-rms=428; waiting for speech, no PCM saved
+aipet mcu start
+mcu: result=0
+nsh> mic-monitor-v219: idle-ms=15001 blocks=1489 rms=183 raw-peak=500 noise-rms=138 trigger-rms=415; waiting for speech, no PCM saved
+aipet mcu ping
+下位机已响应，故障码=0，能力=0x3f，运动解锁=0。
+mcu: result=0
+nsh> mic-monitor-v219: idle-ms=20002 blocks=1989 rms=229 raw-peak=535 noise-rms=141 trigger-rms=424; waiting for speech, no PCM saved
+aipet mcu config-get
+下位机配置=0x0000004e；读取不写 Flash。
+mcu: result=0
+nsh> mic-monitor-v219: idle-ms=25003 blocks=2489 rms=282 raw-peak=765 noise-rms=143 trigger-rms=431; waiting for speech, no PCM saved
+aipet mcu stepper-stat
+电机脉冲状态：左位置=0 剩余=0 频率=0 标志=00；右位置=0 剩余=0 频率=0 标志=00；热跳闸=0 故障=0。不是编码器实测。
+mcu: result=0
+nsh> mic-monitor-v219: idle-ms=30004 blocks=2990 rms=276 raw-peak=700 noise-rms=141 trigger-rms=425; waiting for speech, no PCM saved
+aipet mcu link-stat
+链路状态：好帧=991 坏帧=0 字节=7928 溢出=0 帧龄=0 ms 故障=0 失联=0 owner=0 A7Z=1 蓝牙=0 蓝牙初始化=1。
+mcu: result=0
+nsh> mic-monitor-v219: idle-ms=35005 blocks=3490 rms=297 raw-peak=595 noise-rms=134 trigger-rms=403; waiting for speech, no PCM saved
+product-v1: speech detected; opening audio retained
+product-v1: MIC OFF; RX stopped, ASR finalizing
+dialogue-rx-v214: result=0 monitored=1837920 accepted48=96480 speech=1 limited=0 queue=83; idle PCM not saved
+gate-end-v221fix1: noise-rms=155 last-rms=252 voiced-blocks=98 quiet-blocks=70; 10ms blocks,700ms endpoint,8s hard discard
+gate-end-v224: continuation-confirm=80ms peak-blocks=8 rejected-short-bursts=9 quiet-peak=70 resets=2 limited=0; energy-only, NOT trained VAD
+voice-load-v215: BEGIN stage=resident-ASR-finalize path=- mono-us=373669539
+voice-load-v215: END stage=resident-ASR-finalize status=0 elapsed-ms=819
+voice-resident-v214: asr=0 accepted16=32160 limited=0; models retained by SAME live task
+voice-stage-v214: capture-stop-mono-us=372812140 consumer-done-mono-us=373636134 asr-ready-mono-us=374502942 tail-us=1690802 status=0
+product-v1: [asr backend=local] 千金二十步
+display: emotion=思考
+local-latency-v220: history=off pairs=0; persona, resident weights and exact-prefix KV retained; full replies
+aipet-local: storage=auto-UFS-MiniCPM5 model='/ufs/models/MiniCPM5-1B-Q4_K_M.gguf'
+chatml tokens=82 start=130072 stop=130073 history-pairs=0
+forwardfast: cores-mask=fc workers=6; A76:A55 row weight=3:1; system scheduling unchanged
+forwardfast: cache-hit; load=0 sec; no model SD reads
+forwardfast: tensor-directory cache-hit; no GGUF metadata rescan
+forward1 token=0 layers=24 hidden=1536 heads=16/2
+prefill-cache: reused=70 fresh=12 (exact token-prefix KV)
+prefill-batch: width=4 tokens=11 batches=3; serial final prompt/decode
+llm-latency-v220: prompt=82 reused=70 fresh=12 batched=11 batch-ms=3131.518; final prompt+LM-head still required; no board first-audio claim
+
+assistant> [local-stream first-visible=3579 ms; provisional text, no actions]
+好的！tts-pcm-v212: samples=25600 nonzero=22109 peak=7456; before volume/resampling, NOT acoustic acceptance
+local-tts: result=0 acoustic=CPU vocoder=NPU packets=1 samples=25600 cpu-us=429148 npu-us=78660 first-sink-us=521668; NOT end-of-speech/physical-audio latency
+请问您需要我帮忙做什么呢？tts-pcm-v212: samples=67840 nonzero=64275 peak=6440; before volume/resampling, NOT acoustic acceptance
+local-tts: result=0 acoustic=CPU vocoder=NPU packets=2 samples=67840 cpu-us=1131435 npu-us=156267 first-sink-us=1235022; NOT end-of-speech/physical-audio latency
+
+causal prefill/generation returned; prompt=82 generated=10 finish=eos; evaluated-prefix KV retained on success
+forwardfast: compute=9.0354 sec; causal forward checkpoint; model resident; bounded generation finished
+local-context: used=0 dropped=0 stored=0 limit=0 RAM-only shared-device-session
+aipet-local: prompt=82 generated=10 first=3.511s rest=5.502s cores=fc
+
+[local-stream complete]
+local-tts-buffer-v189: segments=2 rebuffers=1 rebuffer-wait-us=2987241; no padding/replay; actual device errors are fatal
+voice-stage: tts-start-mono-us=374523864 first-driver-pull-mono-us=378974019 status=0; driver pull is NOT physical audible onset
+local-voice-pipeline: status=0 phrases=2/2 first-phrase=3942014 us first-synthesis-start=3942469 us; PCM/device timing separate
+[emotion=普通 actions=0]
+oroute=local_llm speech=local fallback=0 actionsd=idsipslaabyl:e de]m
+ption=普通
+ roduct-route-v1: turn=9 frozen=local reason=forced-local; each turn re-evaluated, never switch after action/audio
+product-v1: READY MIC ON; waiting with opening pre-roll, half-duplex
+product-v1: speech detected; opening audio retained
+product-v1: MIC OFF; RX stopped, ASR finalizing
+dialogue-rx-v214: result=0 monitored=276000 accepted48=127680 speech=1 limited=0 queue=82; idle PCM not saved
+gate-end-v221fix1: noise-rms=144 last-rms=311 voiced-blocks=149 quiet-blocks=70; 10ms blocks,700ms endpoint,8s hard discard
+gate-end-v224: continuation-confirm=80ms peak-blocks=8 rejected-short-bursts=9 quiet-peak=70 resets=3 limited=0; energy-only, NOT trained VAD
+voice-load-v215: BEGIN stage=resident-ASR-finalize path=- mono-us=392364719
+voice-load-v215: END stage=resident-ASR-finalize status=0 elapsed-ms=817
+voice-resident-v214: asr=0 accepted16=42560 limited=0; models retained by SAME live task
+voice-stage-v214: capture-stop-mono-us=392115145 consumer-done-mono-us=392331227 asr-ready-mono-us=393196164 tail-us=1081019 status=0
+product-v1: [asr backend=local] 前进二十步
+product-route-v1: intent=mcu ack-status=-13; never retry motor
+product-reply-v1: backend=local text=动作未发送：请检查故障并在控制台手动解锁运动。
+:roduct-tts-v219: BEGIN backend=local; microphdoinsep lOaFFy
+  emotion=普通
+tts-pcm-v212: samples=131840 nonzero=122943 peak=6680; before volume/resampling, NOT acoustic acceptance
+local-tts: result=0 acoustic=CPU vocoder=NPU packets=4 samples=131840 cpu-us=2197027 npu-us=312470 first-sink-us=722146; NOT end-of-speech/physical-audio latency
+local-tts-stream: status=0 first-pcm=703952 us first-driver-pull=706216 us frames=286999; audible latency NOT measured
+local-tts-buffer-v189: segments=1 rebuffers=0 rebuffer-wait-us=0; no padding/replay; actual device errors are fatal
+voice-stage: tts-start-mono-us=393233799 first-driver-pull-mono-us=393940015 status=0; driver pull is NOT physical audible onset
+product-tts-v219: END status=0 elapsed-ms=6724; actual sound requires listening
+product-route-v1: turn=10 frozen=local reason=forced-local; each turn re-evaluated, never switch after action/audio
+product-v1: READY MIC ON; waiting with opening pre-roll, half-duplex
+mic-monitor-v219: idle-ms=5000 blocks=489 rms=282 raw-peak=860 noise-rms=137 trigger-rms=412; waiting for speech, no PCM saved
+
+nsh> aipet smic-monitor-v219: idle-ms=10000 blocks=989 rms=311 raw-peak=1025 noise-rms=125 trigger-rms=400; waiting for speech, no PCM saved
+top
+Motion disarmed; best-effort STOP requested, ACK not implied.
+mcu: result=0
+noice-service: cooperative stop requesptreodd;u wcati-tv 1f: oMrI Ca cOtFiFv;e =R0X;  nsetvoeppre dt,a sAk_SdRe lfeitnael/ikziilnl ga
+  NPU owner
+voiced-isaelrovguiec-er-xv-1v.231f4i:x 2(rve2s2u4l)t:= -a1c2t5 imvoen=i1t poirde=d6=05 3s4t7a2g0 ea=cacserp-ftienda4l8i=z0i nsgp-eMeIcCh-=O0F Fli msiotoep=d1= 0e rqrueoure==00 ;tu rindsl=e9  PeCmMp tnoyt= 1s aovveerdl
+inggat=e0- efnldo-ovr2=24100f
+ x1p:r odnuocits-eb-ramcsk=e1n0d=6l olcaaslt-;r mcsl=o2u0d5  avnod ilcoecda-lbl ohciksst=or0i eqsui aerte- bsleocpkasr=a0t;e  1R0AMm ss belsoscikosn,07
+l0pmrso deuncdtp-vo1i:n tr,o8su theadr dcl oduids/claorcda
+ ;ga thea-lefn-ddu-pvl2e2x4:;  ceoxnpltiicniuta tmiiocnr-ocponhfoinre mc=o8n0smesn tp;e adke-tbleorcmkisn=is0t irce jvecitseido-n/shMoCrUt -rbuulressV;s =n0o  qAuEiC/ebta-rpgeeak-=i0n /rauetsoemtas=ti0c  lairmmi;t esdt=a0t; uesn e!r= gayc-oounslyt,i cN OaTcc etprtaainnecde
+ivAoD
+ ce-load-v215: load-vsotiacgee-=ernegsiindeesn-tp-rve21p4a:r eads rs=t-a1g2e5-a gaec-cmesp=t1e1d3126=50  sliinmciet-esdt=a0rt;- mmso=d2el9s0 4r3e3t; reilnaepd sbeyd  SiAs MNEO Tl idvies kt atshk
+sovuogihpcuet-
+ tangseh->v 2[K4: capture-stop-mono-us=411221132 consumer-done-mono-us=411231019 asr-ready-mono-us=411312333 tail-us=91201 status=-125
+asr-compute-v190: encoder=0/0us decoder=1/5104us joiner=0/0us; scoped CPU6, double MIDR/MPIDR proof; NPU unchanged
+asr-v210: accept-batches=0 accept-us=0 final-flush-us=0 status=0; nested NPU times are not additive and not E2E latency
+asr-v211: received=0 staged-bytes=0 qualified-batches=0 tail-frames=0 max-stage-ms=40; no dropped PCM
+Motion disarmed; best-effort STOP requested, ACK not implied.
+mcu: result=0
+product-v1: stopped=-125; microphone OFF; engines released, weights may remain resident
+
+nsh> aipet audio service status
+voice-service-v1.3fix2(v224): active=0 pid=60 stage=off stop=1 error=0 turns=9 empty=1 overlong=0 floor=400
+product-backend=none; cloud and local histories are separate RAM sessions
+product-v1: routed cloud/local; half-duplex; explicit microphone consent; deterministic vision/MCU rules; no AEC/barge-in/automatic arm; status != acoustic acceptance
+voice-load-v215: load-stage=engines-prepared stage-age-ms=32408 since-start-ms=311516; elapsed is NOT disk throughput
+nsh> aipet vision once
+product-v1: frozen=local reason=forced-local; no backend mixing/replay
+:iPvRe
+  accepted seconds=30 detect-every=1 (l0i=vper20e9v icepwu),  rRoAlMe =ipnifpeerl-idnies;p lusaey  craemqeureas tleid=v6e -ascttautauls= 6/  lmiivder0=s0t0o0p0
+ 000414fd0b1 affinity-error=0 crc=arm-crc32-selftest-passed timer-hz=24000000 cpu-hz=UNKNOWN-not-measured no-clock-writes
+live209 migration: role=infer-display before=000000ff requested=00000040 readback=00000040 confirmations=2 attempts=3 elapsed-us=3041 restored=00000000 restore-error=0
+live209 clock: pll-B=f8802700 cpu-B=03000000 rtc=183fb0f7 stable=1 register-estimate-hz=1014000000 physical-hz=NOT-MEASURED
+display: live owner ready; exact model-input background; no MQ pointer transfer
+live frame=1 input=d63ada68 boxes=5 inferred=1 capture=210588 prepare=7619 npu=30711 display=35489 us
+live npu seq=1 outputs=58fee1c0/22f2a3fc/ca4a5815/ed45d9d6/e335721a/8cfd520a fallback=0
+live205 npu seq=1 hit=0 retained=0 prep=5201 package=2656 map=150 input=514 sync=1405 hw=17097 output=6035 decode=2184 restore=0 total=30521 us
+live det seq=1 class=0 score=899 box=292,141,640,481
+live det seq=1 class=39 score=754 box=83,200,143,336
+live det seq=1 class=56 score=467 box=197,275,245,383
+live det seq=1 class=56 score=275 box=234,269,307,378
+live det seq=1 class=56 score=254 box=235,268,274,346
+camera-live-v209: active=0 stop=0 stage=complete error=0 cleanup=0 frames=1 inference=1 elapsed-ms=1573 fps=0.635 input-crc32=d63ada68
+live-timing-total-us: capture=210588 prepare=7619 npu=30711 display=35489; model-RAM=8017024/f5f558c5 no-per-frame-SD-files=1; cooperative stop between bounded operations; NOT MP4/ISP/30fps
+live205: optimized=1 sensor-stream=0 setup-us=1200967 loop-us=284410 warm-us=0 warm-fps-milli=0 inference-fps-milli=3516 warm-npu-runs=0
+live205 CPU-us: tone=7163 input-crc=455 tmp-input=181 display-crc=413 draw=264 spi-flush=34811
+live205 overhead-us: prefetch-command=0 logging=52712 successful-frames-wall=337120; sensor capture overlaps CPU only in live-stream
+live205 validation: requested=0 verified=0 run-ioctls=1; verify adds two first-frame runs, NOT displayed inference frames
+live209: rgb-pipeline=0 input-template=exact-full-region-dynamic-only ISA=runtime-qualified CRC=fallback-preserved no-DVFS-writes
+live205 NPU-us: import=3021 prepare=5201 package=2656 map=150 input=514 sync=1405 hw-exec=17097 output=6035 decode=2184 restore=0 total=30521; prepare includes package/map/input/sync; hw-exec includes init/wait
+product-vision-v1: token=1 frame=1 input-crc=d63ada68 boxes=5 npu-us=30527 status=0; physical capture+six-output validation+same-frame SPI
+product-reply-v1: backend=local text=这一帧，模型检测到1个人、1个瓶子。这是模型判断，可能有误。
+product-tts-v219: BEGIN backend=local; microphone OFF
+tts-pcm-v212: samples=181248 nonzero=164921 peak=10328; before volume/resampling, NOT acoustic acceptance
+local-tts: result=0 acoustic=CPU vocoder=NPU packets=5 samples=181248 cpu-us=3009251 npu-us=390902 first-sink-us=1786725; NOT end-of-speech/physical-audio latency
+local-tts-stream: status=0 first-pcm=1777289 us first-driver-pull=1778731 us frames=394554; audible latency NOT measured
+local-tts-buffer-v189: segments=1 rebuffers=0 rebuffer-wait-us=0; no padding/replay; actual device errors are fatal
+voice-stage: tts-start-mono-us=440872283 first-driver-pull-mono-us=442651014 status=0; driver pull is NOT physical audible onset
+product-tts-v219: END status=0 elapsed-ms=10037; actual sound requires listening
+nsh> aipet vision start 30
+ePiRv
+ : accepted seconds=30 detect-every=1 (0l=ipvree2v0i9e wc)p,u  RrAoMl ep=iipnefleir-ned;i supsleay  craemqeurae sltievde=-6s taacttuusa l/= 6l imvied0rs=t00o0p0
+ n00s0h4>1 [fdK0b1 affinity-error=0 crc=arm-crc32-selftest-passed timer-hz=24000000 cpu-hz=UNKNOWN-not-measured no-clock-writes
+live209 migration: role=infer-display before=000000ff requested=00000040 readback=00000040 confirmations=2 attempts=3 elapsed-us=3280 restored=00000000 restore-error=0
+live209 clock: pll-B=f8802700 cpu-B=03000000 rtc=183fb0f7 stable=1 register-estimate-hz=1014000000 physical-hz=NOT-MEASURED
+live209 cpu role=display requested=5 actual=5 midr=00000000412fd050 affinity-error=0 crc=arm-crc32-selftest-passed timer-hz=24000000 cpu-hz=UNKNOWN-not-measured no-clock-writes
+live209 migration: role=display before=00000040 requested=00000020 readback=00000020 confirmations=2 attempts=3 elapsed-us=3886 restored=00000000 restore-error=0
+display: live owner ready; exact model-input background; no MQ pointer transfer
+live209 cpu role=prepare requested=7 actual=7 midr=00000000414fd0b1 affinity-error=0 crc=arm-crc32-selftest-passed timer-hz=24000000 cpu-hz=UNKNOWN-not-measured no-clock-writes
+live209 migration: role=prepare before=00000040 requested=00000080 readback=00000080 confirmations=2 attempts=3 elapsed-us=3995 restored=00000000 restore-error=0
+live209 clock: pll-B=f8802700 cpu-B=03000000 rtc=183fb0f7 stable=1 register-estimate-hz=1014000000 physical-hz=NOT-MEASURED
+live frame=1 input=6c12d01c boxes=5 inferred=1 capture=144383 prepare=7673 npu=30725 display=38064 us
+live npu seq=1 outputs=da0c4a96/80494c82/aaa948b3/bb329ef4/b618ddca/785b52eb fallback=0
+live205 npu seq=1 hit=0 retained=0 prep=5254 package=2701 map=149 input=522 sync=1406 hw=17096 output=6036 decode=2134 restore=1 total=30526 us
+live det seq=1 class=0 score=920 box=252,145,638,493
+live det seq=1 class=39 score=763 box=82,201,142,336
+live det seq=1 class=56 score=441 box=200,276,244,384
+live det seq=1 class=56 score=407 box=234,269,276,386
+live det seq=1 class=60 score=315 box=2,322,377,495
+live frame=2 input=14084c3d boxes=2 inferred=1 capture=90309 prepare=7660 npu=29426 display=34740 us
+live npu seq=2 outputs=d2e98215/9813e864/ca55934b/23cf9dce/e5178125/dcce1320 fallback=0
+live205 npu seq=2 hit=1 retained=4 prep=4030 package=1664 map=146 input=527 sync=1219 hw=17096 output=6034 decode=2053 restore=1 total=29218 us
+live det seq=2 class=0 score=869 box=239,143,637,491
+live det seq=2 class=39 score=716 box=67,201,129,338
+live frame=10 input=6cea176d boxes=2 inferred=1 capture=96350 prepare=7651 npu=29289 display=34348 us
+live npu seq=10 outputs=ebfb4b37/098e8070/444f27dc/e8635f32/e99d7249/61b4699c fallback=0
+live205 npu seq=10 hit=1 retained=4 prep=4029 package=1665 map=150 input=530 sync=1217 hw=17094 output=6035 decode=1919 restore=1 total=29083 us
+live det seq=10 class=0 score=452 box=319,144,640,488
+live det seq=10 class=6 score=316 box=0,142,342,388
+live frame=20 input=b4e05187 boxes=0 inferred=1 capture=90349 prepare=7657 npu=29433 display=33492 us
+live npu seq=20 outputs=71ba8aa6/ed3e7614/f27dd8dc/e49b69bf/af8e20dd/6a327737 fallback=0
+live205 npu seq=20 hit=1 retained=4 prep=4075 package=1714 map=145 input=520 sync=1217 hw=17095 output=6033 decode=1977 restore=1 total=29186 us
+live frame=30 input=235609c9 boxes=4 inferred=1 capture=96335 prepare=7660 npu=29556 display=35332 us
+live npu seq=30 outputs=7e18d4d8/fbb8436d/967a4b22/fb3a8e21/2015fbeb/8ac6e7de fallback=0
+live205 npu seq=30 hit=1 retained=4 prep=4028 package=1684 map=147 input=500 sync=1219 hw=17095 output=6034 decode=2138 restore=2 total=29302 us
+live det seq=30 class=0 score=771 box=136,141,639,490
+live det seq=30 class=39 score=744 box=0,198,47,339
+live det seq=30 class=60 score=317 box=1,332,270,495
+live det seq=30 class=56 score=305 box=45,254,91,359
+live frame=40 input=88d87e24 boxes=3 inferred=1 capture=90306 prepare=7657 npu=29458 display=34601 us
+live npu seq=40 outputs=5e32db18/f9a88ba3/ea6bbc65/40ead035/a4ac9a39/a1ae550e fallback=0
+live205 npu seq=40 hit=1 retained=4 prep=4024 package=1670 map=147 input=512 sync=1217 hw=17095 output=6037 decode=2043 restore=1 total=29203 us
+live det seq=40 class=39 score=795 box=29,202,91,338
+live det seq=40 class=0 score=709 box=164,142,638,490
+live det seq=40 class=39 score=314 box=0,228,26,324
+live frame=50 input=ea971c25 boxes=2 inferred=1 capture=90334 prepare=7662 npu=29505 display=34161 us
+live npu seq=50 outputs=e6c445df/e42e9c52/0ee47173/1889d380/cfec62e0/a004450a fallback=0
+live205 npu seq=50 hit=1 retained=4 prep=4022 package=1667 map=148 input=515 sync=1216 hw=17095 output=6035 decode=2096 restore=1 total=29254 us
+live det seq=50 class=0 score=876 box=231,142,639,491
+live det seq=50 class=39 score=807 box=78,203,136,336
+live frame=60 input=79030880 boxes=3 inferred=1 capture=90338 prepare=7664 npu=29442 display=34697 us
+live npu seq=60 outputs=908a3bc5/3c118b98/425077dc/5e47472b/1775357b/22117be5 fallback=0
+live205 npu seq=60 hit=1 retained=4 prep=4032 package=1674 map=151 input=517 sync=1217 hw=17094 output=6034 decode=2026 restore=1 total=29192 us
+live det seq=60 class=0 score=611 box=460,142,639,489
+live det seq=60 class=39 score=566 box=307,211,363,342
+live det seq=60 class=0 score=267 box=116,195,201,281
+live frame=70 input=963081a1 boxes=4 inferred=1 capture=90333 prepare=7663 npu=29558 display=35403 us
+live npu seq=70 outputs=f4bb7089/edb9b780/79e8ca86/0c9369f0/df926aee/68f447e8 fallback=0
+live205 npu seq=70 hit=1 retained=4 prep=4027 package=1672 map=147 input=516 sync=1217 hw=17095 output=6036 decode=2143 restore=0 total=29305 us
+live det seq=70 class=66 score=873 box=180,328,603,494
+live det seq=70 class=39 score=794 box=518,202,584,339
+live det seq=70 class=63 score=633 box=2,140,392,422
+live det seq=70 class=66 score=314 box=229,332,517,425
+live frame=80 input=19cb5943 boxes=0 inferred=1 capture=90323 prepare=7656 npu=29365 display=33503 us
+live npu seq=80 outputs=b82b5331/79f601e6/07614945/c4e8189e/fd71e8e2/30bb9638 fallback=0
+live205 npu seq=80 hit=1 retained=4 prep=4077 package=1719 map=147 input=520 sync=1217 hw=17095 output=6034 decode=1898 restore=1 total=29109 us
+live frame=90 input=8a279801 boxes=1 inferred=1 capture=90326 prepare=7659 npu=29465 display=33786 us
+live npu seq=90 outputs=c432fd93/a27ef6f5/1a0e5d11/957fdd08/e1939054/47a1410b fallback=0
+live205 npu seq=90 hit=1 retained=4 prep=4025 package=1669 map=145 input=519 sync=1216 hw=17096 output=6033 decode=2048 restore=1 total=29208 us
+live det seq=90 class=59 score=549 box=1,161,586,491
+live frame=100 input=4746c645 boxes=4 inferred=1 capture=96349 prepare=7671 npu=29535 display=35649 us
+live npu seq=100 outputs=d47f4221/1f7bad02/4be5c8b7/6f073427/8e147b92/0e9707a3 fallback=0
+live205 npu seq=100 hit=1 retained=4 prep=4045 package=1686 map=148 input=519 sync=1216 hw=17095 output=6034 decode=2101 restore=0 total=29281 us
+live det seq=100 class=0 score=925 box=178,139,638,490
+live det seq=100 class=56 score=608 box=106,273,168,390
+live det seq=100 class=39 score=392 box=0,192,41,340
+live det seq=100 class=56 score=305 box=151,268,209,382
+live frame=110 input=676d5e65 boxes=2 inferred=1 capture=90311 prepare=7656 npu=29564 display=34202 us
+live npu seq=110 outputs=3211f2b6/936f2c78/a25c2612/58b03eed/1b017302/b99d12d4 fallback=0
+live205 npu seq=110 hit=1 retained=4 prep=4091 package=1730 map=149 input=521 sync=1218 hw=17094 output=6034 decode=2083 restore=1 total=29308 us
+live det seq=110 class=39 score=710 box=400,205,460,341
+live det seq=110 class=0 score=270 box=205,195,294,281
+live frame=120 input=919ffe2e boxes=2 inferred=1 capture=96330 prepare=7668 npu=29528 display=34338 us
+live npu seq=120 outputs=8266a22d/d2544e8a/bd74ac1e/41357515/6da248c7/20e604a9 fallback=0
+live205 npu seq=120 hit=1 retained=4 prep=4044 package=1690 map=146 input=517 sync=1216 hw=17095 output=6037 decode=2091 restore=1 total=29273 us
+live det seq=120 class=63 score=768 box=49,140,628,483
+live det seq=120 class=66 score=305 box=356,346,640,494
+live frame=130 input=8bd2cc74 boxes=0 inferred=1 capture=90339 prepare=7658 npu=29308 display=33453 us
+live npu seq=130 outputs=0cde428b/ec38e481/5f290d02/66604d1c/44478c23/ddd4a4f2 fallback=0
+live205 npu seq=130 hit=1 retained=4 prep=4021 package=1668 map=151 input=512 sync=1217 hw=17095 output=6035 decode=1898 restore=1 total=29054 us
+live frame=140 input=f31f79e7 boxes=1 inferred=1 capture=96342 prepare=7665 npu=29488 display=34405 us
+live npu seq=140 outputs=738dc56b/b65f51ae/31a83f33/51d48ef0/6cd9cadc/dd6b3684 fallback=0
+live205 npu seq=140 hit=1 retained=4 prep=4033 package=1669 map=151 input=522 sync=1217 hw=17095 output=6034 decode=2065 restore=1 total=29232 us
+live det seq=140 class=0 score=905 box=138,141,638,489
+live frame=150 input=313146fc boxes=3 inferred=1 capture=90323 prepare=7664 npu=29380 display=34647 us
+live npu seq=150 outputs=8be02963/ed8b2ef8/aa310b17/72884902/87236233/265b931a fallback=0
+live205 npu seq=150 hit=1 retained=4 prep=4026 package=1670 map=148 input=518 sync=1216 hw=17095 output=6034 decode=1964 restore=1 total=29124 us
+live det seq=150 class=0 score=639 box=407,142,640,491
+live det seq=150 class=6 score=456 box=1,142,501,467
+live det seq=150 class=0 score=251 box=5,186,99,281
+live frame=160 input=431796f1 boxes=2 inferred=1 capture=96352 prepare=7669 npu=29531 display=34245 us
+live npu seq=160 outputs=c38cd94a/6e6bb301/9d97b495/ba723a8d/3edd1368/ce3f834e fallback=0
+live205 npu seq=160 hit=1 retained=4 prep=4016 package=1660 map=149 input=517 sync=1217 hw=17095 output=6035 decode=2121 restore=1 total=29272 us
+live det seq=160 class=66 score=872 box=90,321,639,495
+live det seq=160 class=39 score=821 box=467,203,532,344
+live frame=170 input=e151b462 boxes=0 inferred=1 capture=90342 prepare=7648 npu=29339 display=33517 us
+live npu seq=170 outputs=f629c0a0/630556c1/1a3d4beb/4bb5ca00/862cadea/e9f82083 fallback=0
+live205 npu seq=170 hit=1 retained=4 prep=4044 package=1689 map=150 input=516 sync=1216 hw=17094 output=6034 decode=1898 restore=1 total=29076 us
+live frame=180 input=a977c9cd boxes=1 inferred=1 capture=96326 prepare=7644 npu=29331 display=33902 us
+live npu seq=180 outputs=4c0bd832/d709ce9d/b99765f6/7b8c1d7d/54dcffa7/6f0922e4 fallback=0
+live205 npu seq=180 hit=1 retained=4 prep=4024 package=1667 map=151 input=516 sync=1217 hw=17095 output=6035 decode=1915 restore=1 total=29075 us
+live det seq=180 class=0 score=331 box=176,141,632,491
+live frame=190 input=99b2a4c5 boxes=1 inferred=1 capture=90327 prepare=7653 npu=29314 display=33869 us
+live npu seq=190 outputs=54846f63/3e404476/2fdb1902/0896743b/fe8ab2b0/6e124535 fallback=0
+live205 npu seq=190 hit=1 retained=4 prep=4023 package=1671 map=148 input=514 sync=1216 hw=17094 output=6034 decode=1903 restore=1 total=29060 us
+live det seq=190 class=0 score=761 box=349,158,639,496
+live frame=200 input=536ac049 boxes=3 inferred=1 capture=90327 prepare=7668 npu=29577 display=34881 us
+live npu seq=200 outputs=b806e50d/1521ecd9/51f6bced/ebe1e82f/82e9efcb/373e02c6 fallback=0
+live205 npu seq=200 hit=1 retained=4 prep=4071 package=1712 map=149 input=517 sync=1217 hw=17095 output=6033 decode=2115 restore=1 total=29320 us
+live det seq=200 class=0 score=883 box=275,142,639,489
+live det seq=200 class=39 score=797 box=56,199,119,339
+live det seq=200 class=56 score=398 box=183,275,232,388
+live frame=210 input=dfd509b5 boxes=2 inferred=1 capture=96333 prepare=7670 npu=29442 display=34770 us
+live npu seq=210 outputs=3358eb57/e299c4b8/402c3e18/b3b149ad/67e59efa/18855bed fallback=0
+live205 npu seq=210 hit=1 retained=4 prep=4043 package=1686 map=149 input=518 sync=1217 hw=17095 output=6034 decode=2014 restore=1 total=29192 us
+live det seq=210 class=0 score=391 box=80,179,176,362
+live det seq=210 class=0 score=330 box=194,138,639,497
+live frame=220 input=3a9b72b5 boxes=7 inferred=1 capture=96335 prepare=7662 npu=29522 display=38139 us
+live npu seq=220 outputs=4fdb28f2/c420d386/967dab6a/635f698a/493df308/de42cf9d fallback=0
+live205 npu seq=220 hit=1 retained=4 prep=4018 package=1664 map=150 input=521 sync=1216 hw=17094 output=6033 decode=2114 restore=1 total=29266 us
+live det seq=220 class=0 score=677 box=380,140,640,491
+live det seq=220 class=56 score=453 box=182,277,230,387
+live det seq=220 class=56 score=298 box=123,261,189,376
+live det seq=220 class=39 score=280 box=39,228,51,255
+live det seq=220 class=39 score=255 box=371,266,388,306
+live det seq=220 class=56 score=255 box=0,368,128,497
+live det seq=220 class=56 score=251 box=54,259,110,336
+live frame=230 input=81351f98 boxes=2 inferred=1 capture=96319 prepare=7657 npu=29520 display=34806 us
+live npu seq=230 outputs=fc7db84a/833eb013/78e08749/bcd8aa1d/8ee2eb0f/a46424b9 fallback=0
+live205 npu seq=230 hit=1 retained=4 prep=4082 package=1721 map=149 input=520 sync=1215 hw=17094 output=6033 decode=2051 restore=1 total=29266 us
+live det seq=230 class=0 score=426 box=353,139,640,493
+live det seq=230 class=56 score=302 box=183,276,231,389
+live frame=240 input=af802c1a boxes=5 inferred=1 capture=90348 prepare=7665 npu=29499 display=35713 us
+live npu seq=240 outputs=e62061e8/9a1d3474/bd03a55b/19e8c978/6773ad62/83c0150d fallback=0
+live205 npu seq=240 hit=1 retained=4 prep=4026 package=1669 map=149 input=516 sync=1216 hw=17095 output=6035 decode=2083 restore=1 total=29244 us
+live det seq=240 class=0 score=853 box=246,143,640,487
+live det seq=240 class=56 score=443 box=181,277,230,388
+live det seq=240 class=56 score=330 box=222,270,262,386
+live det seq=240 class=56 score=312 box=4,373,128,497
+live det seq=240 class=56 score=311 box=57,258,110,335
+live frame=250 input=d12bc1d8 boxes=4 inferred=1 capture=96336 prepare=7656 npu=29572 display=35098 us
+live npu seq=250 outputs=ef843bdf/4024a520/4345f505/e9c05b2b/0b097d01/5c3b9a03 fallback=0
+live205 npu seq=250 hit=1 retained=4 prep=4029 package=1673 map=147 input=519 sync=1216 hw=17095 output=6033 decode=2150 restore=1 total=29313 us
+live det seq=250 class=56 score=585 box=222,270,291,379
+live det seq=250 class=0 score=511 box=244,144,564,489
+live det seq=250 class=56 score=479 box=181,277,232,388
+live det seq=250 class=56 score=376 box=124,269,189,378
+live frame=260 input=d2638d64 boxes=2 inferred=1 capture=90319 prepare=7662 npu=29522 display=34317 us
+live npu seq=260 outputs=f62aa1a4/e50caf38/8eac786a/a97ee736/7d37ee3a/0ec959f3 fallback=0
+live205 npu seq=260 hit=1 retained=4 prep=4046 package=1691 map=146 input=516 sync=1216 hw=17095 output=6035 decode=2090 restore=1 total=29271 us
+live det seq=260 class=0 score=923 box=278,145,639,492
+live det seq=260 class=56 score=360 box=181,276,231,388
+live frame=270 input=e3ff6085 boxes=1 inferred=1 capture=96325 prepare=7658 npu=29508 display=33955 us
+live npu seq=270 outputs=e3ccee47/c9d60336/c4770293/ee166d4b/20cff000/1924518e fallback=0
+live205 npu seq=270 hit=1 retained=4 prep=4021 package=1670 map=148 input=513 sync=1216 hw=17095 output=6034 decode=2104 restore=1 total=29258 us
+live det seq=270 class=0 score=368 box=113,139,619,487
+live frame=280 input=55011016 boxes=0 inferred=1 capture=96331 prepare=7671 npu=29516 display=33521 us
+live npu seq=280 outputs=aea66feb/89c7556d/bb1f4865/229d8793/c602b8c4/87306992 fallback=0
+live205 npu seq=280 hit=1 retained=4 prep=4074 package=1718 map=150 input=516 sync=1217 hw=17095 output=6035 decode=2052 restore=1 total=29261 us
+live frame=290 input=68e1556d boxes=2 inferred=1 capture=72339 prepare=7680 npu=29494 display=33996 us
+live npu seq=290 outputs=1fd20b70/ba841376/5f6e39f0/5cc0bb65/a1bfb7c5/8c852adb fallback=0
+live205 npu seq=290 hit=1 retained=4 prep=4018 package=1668 map=149 input=511 sync=1215 hw=17095 output=6034 decode=2080 restore=1 total=29234 us
+live det seq=290 class=0 score=844 box=282,143,640,492
+live det seq=290 class=56 score=480 box=181,278,231,388
+live208 pipe: slots=2 produced=299 consumed=299 discarded-at-stop=1 high-water=2 producer-us=29521374 producer-wait-us=296534 consumer-wait-us=20584262 error=0 same-frame-binding=1
+live209 async: submitted=299 rendered=299 display-wait-us=18343005 npu-stage/display-overlap-us=0 drain=1 error=0 cleanup=0 sole-LVGL-owner=1 count-after-flush=1
+camera-live-v209: active=0 stop=0 stage=complete error=0 cleanup=0 frames=299 inference=299 elapsed-ms=31314 fps=9.548 input-crc32=e3d1bffc
+live-timing-total-us: capture=27229271 prepare=2290890 npu=8810514 display=10335845; model-RAM=8017024/f5f558c5 no-per-frame-SD-files=1; cooperative stop between bounded operations; NOT MP4/ISP/30fps
+live205: optimized=1 sensor-stream=1 setup-us=1206924 loop-us=29970677 warm-us=29661629 warm-fps-milli=10046 inference-fps-milli=9976 warm-npu-runs=298
+live205 CPU-us: tone=2154336 input-crc=136267 tmp-input=70498 display-crc=231551 draw=136577 spi-flush=9966933
+live205 overhead-us: prefetch-command=999 logging=1248211 successful-frames-wall=41293199; sensor capture overlaps CPU only in live-stream
+live205 validation: requested=0 verified=0 run-ioctls=299; verify adds two first-frame runs, NOT displayed inference frames
+live209: rgb-pipeline=1 input-template=exact-full-region-dynamic-only ISA=runtime-qualified CRC=fallback-preserved no-DVFS-writes
+live205 NPU-us: import=2874 prepare=1207974 package=503111 map=44381 input=154598 sync=363912 hw-exec=5111382 output=1804374 decode=613077 restore=240 total=8738523; prepare includes package/map/input/sync; hw-exec includes init/wait
+
+nsh> aipet vision status
+camera-live-v209: active=0 stop=0 stage=complete error=0 cleanup=0 frames=299 inference=299 elapsed-ms=31314 fps=9.548 input-crc32=e3d1bffc
+live-timing-total-us: capture=27229271 prepare=2290890 npu=8810514 display=10335845; model-RAM=8017024/f5f558c5 no-per-frame-SD-files=1; cooperative stop between bounded operations; NOT MP4/ISP/30fps
+live205: optimized=1 sensor-stream=1 setup-us=1206924 loop-us=29970677 warm-us=29661629 warm-fps-milli=10046 inference-fps-milli=9976 warm-npu-runs=298
+live205 CPU-us: tone=2154336 input-crc=136267 tmp-input=70498 display-crc=231551 draw=136577 spi-flush=9966933
+live205 overhead-us: prefetch-command=999 logging=1248211 successful-frames-wall=41293199; sensor capture overlaps CPU only in live-stream
+live205 validation: requested=0 verified=0 run-ioctls=299; verify adds two first-frame runs, NOT displayed inference frames
+live209: rgb-pipeline=1 input-template=exact-full-region-dynamic-only ISA=runtime-qualified CRC=fallback-preserved no-DVFS-writes
+live205 NPU-us: import=2874 prepare=1207974 package=503111 map=44381 input=154598 sync=363912 hw-exec=5111382 output=1804374 decode=613077 restore=240 total=8738523; prepare includes package/map/input/sync; hw-exec includes init/wait
+nsh> aipet vision stop
+live: stop requested; wait for active=0 and cleanup=0, no forced DMA/NPU reset
+nsh> aipet mcu stop
+下位机已确认停止命令；运动权限已关闭。
+mcu: result=0
+nsh> poweroff
+

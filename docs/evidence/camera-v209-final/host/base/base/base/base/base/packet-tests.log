@@ -1,0 +1,2 @@
+PASS: actual control/SHA/mode/TWI/receiver packet composition with moving calibration/counter fields, ON/OFF/readback/restore, one-shot and default deny; FAKE HARDWARE
+PASS: 2249 receiver cases, 135 prepare callbacks, 2237 callback-after-effect failures; bounded/no-data/stale/CRC/cleanup; SYNTHETIC ONLY

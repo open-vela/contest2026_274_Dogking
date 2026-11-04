@@ -1,0 +1,1 @@
+PASS: actual diagnostic fops passive registration, partial reads, per-open/dup lifetime, OOM, close; HOST mocks only

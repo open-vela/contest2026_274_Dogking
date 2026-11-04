@@ -1,0 +1,7 @@
+a733-layout: private NOP arena=1167048704 bytes=77824; outside heap/stacks/BL31
+a733-layout: separate readcheck arena=1166970880 bytes=77824; no overlap with NOP/heap/stacks/BL31
+a733-layout: CPU-only benchmark buffer=1167126592 bytes=65536; disjoint BSS
+a733-layout: CPU-only scratch backup=1167192384 bytes=73936; disjoint BSS, volatile
+a733-layout: CPU-only data state=1167192192 bytes=144; reuses qualified DMA arena
+a733-layout: file=6979280 runtime=91979776 bytes
+a733-layout: page alignment/segments/stack/Image footprint passed

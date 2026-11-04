@@ -1,0 +1,9 @@
+{
+  "date": "2026-11-02",
+  "method": "PowerShell Get-FileHash -Algorithm SHA256 -LiteralPath",
+  "image": "openvela-a733-cubie-a7z-sd-v1.3fix2-v224-candidate.img",
+  "bytes": 2147483648,
+  "sha256": "30ca81ce9d0aeb846207b0f816603bfcafb389804763a393c4a18186cb0be25b",
+  "matches_linux_seal_and_sidecar": true,
+  "physical_disk_written": false
+}

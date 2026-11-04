@@ -1,0 +1,225 @@
+[ufs]err:dump:bfeb6f60: 70 00 06 00 00 00 00 0a 00 00 00 00 29 00 00 00    p...........)...
+[ufs]info:blk size 4096,capacity 31256576 block
+Hit any key to stop autoboot:  0
+=> sunxi_card0_probe
+card0 has inited
+=> mmc dev 0
+mmc0 is current device
+=> mmc rescan
+[33.493][mmc]: card_caps:0x3000000a
+[33.496][mmc]: host_caps:0x3000003f
+=> ext4load mmc 0:3 0x4fc00000 /boot/openvela/a733/camera-v197.scr && source 0x4fc00000
+** No partition table - mmc 0 **
+=> mmc part
+
+Partition Map for MMC device 0  --   Partition Type: EFI
+
+Part    Start LBA       End LBA         Name
+        Attributes
+        Type GUID
+        Partition GUID
+  1     0x00008000      0x0000ffff      "primary"
+        attrs:  0x0000000000000000
+        type:   0fc63daf-8483-4772-8e79-3d69d8477de4
+        guid:   339cd585-256a-450a-b439-49bb82fb4c88
+  2     0x00010000      0x000a5fff      "primary"
+        attrs:  0x0000000000000000
+        type:   c12a7328-f81f-11d2-ba4b-00a0c93ec93b
+        guid:   4f5c3ac2-49cd-4cfc-b89d-6273cba3df8a
+  3     0x000a6000      0x000dffff      "primary"
+        attrs:  0x0000000000000004
+        type:   0fc63daf-8483-4772-8e79-3d69d8477de4
+        guid:   7995836f-022c-422c-85e8-66bdb7863b58
+  4     0x000e0000      0x003fffde      "data"
+        attrs:  0x0000000000000000
+        type:   ebd0a0a2-b9e5-4433-87c0-68b6b72699c7
+        guid:   5e88005f-8b6a-497e-96ab-5fcaed221ea1
+=> ext4load mmc 0:3 0x4fc00000 /boot/openvela/a733/camera-v197.scr && source 0x4fc00000
+1358 bytes read in 22 ms (59.6 KiB/s)
+## Executing script at 4fc00000
+camera-handoff-v197: loading exact Image and reading PMIC
+7057952 bytes read in 312 ms (21.6 MiB/s)
+CRC32 for 40080000 ... 4073b21f ==> 2eb71c48
+660 bytes read in 30 ms (21.5 KiB/s)
+Setting bus to 0
+193692 bytes read in 25 ms (7.4 MiB/s)
+40730f50: 03 00 ff 17 c1 0d                                  ......
+camera-handoff-v197: snapshot committed; rails retention is ASSUMED
+[62.876]libfdt fdt_path_offset() returned FDT_ERR_BADMAGIC
+[62.885]The storage not support sample function
+[62.973]no battery, disabled battery functons
+[62.980]update dts
+[63.001]Starting kernel ...
+
+[63.003]total: 63003 ms
+
+[63.006][mmc]: MMC Device 2 not found
+[63.009][mmc]: mmc 2 not find, so not exit
+NOTICE:  [SCP] :wait arisc ready....
+NOTICE:  [SCP] :arisc version: [d463b9da43dc50320f21ba51c6c51afe2db20d83]
+NOTICE:  [SCP] :arisc startup ready
+NOTICE:  [SCP] :arisc startup notify message feedback
+NOTICE:  [SCP] :sunxi-arisc driver is starting
+NOTICE:  BL3-1: Next image address = 0x40200000
+NOTICE:  BL3-1: Next image spsr = 0x3c5
+- Ready to Boot Primary CPU
+- Boot from EL1
+- Boot to C runtime for OS Initialize
+M0 v188-boot-candidate
+M1
+A7Z0
+A7Z1
+N0
+N1
+H0
+H1
+H2
+H3
+H4
+S0
+S1
+P1
+H5
+N2
+N3
+N4
+[boot188] SMP flush begin=0x0000000000000008
+[boot188] SMP flush done=0x0000000000000000
+[boot188] SMP request cpu=0x0000000000000001
+[boot188] SMP return=0x0000000000000000
+[boot188] SMP request cpu=0x0000000000000002
+[boot188] SMP return=0x0000000000000000
+[boot188] SMP request cpu=0x0000000000000003
+[boot188] SMP return=0x0000000000000000
+[boot188] SMP request cpu=0x0000000000000004
+[boot188] SMP return=0x0000000000000000
+[boot188] SMP request cpu=0x0000000000000005
+[boot188] SMP return=0x0000000000000000
+[boot188] SMP request cpu=0x0000000000000006
+[boot188] SMP return=0x0000000000000000
+[boot188] SMP request cpu=0x0000000000000007
+[boot188] SMP return=0x0000000000000000
+N5
+B0
+B1
+B2
+B3
+B4
+N6
+AN07
+
+AN18
+
+[boot188] CTOR enter=0x00000000404a8760
+[boot188] CTOR done index=0x0000000000000000
+[boot188] CTOR enter=0x00000000404cff10
+[boot188] CTOR done index=0x0000000000000001
+[boot188] CTOR enter=0x00000000404d1910
+[boot188] CTOR done index=0x0000000000000002
+[boot188] CTOR enter=0x00000000402a9c1c
+[boot188] CTOR done index=0x0000000000000003
+[boot188] CTOR enter=0x00000000402aa3fc
+[boot188] CTOR done index=0x0000000000000004
+[boot188] CTOR enter=0x00000000402c60f0
+[boot188] CTOR done index=0x0000000000000005
+[boot188] CTOR enter=0x000000004041c2e0
+[boot188] CTOR done index=0x0000000000000006
+[boot188] CTOR enter=0x000000004041e710
+[boot188] CTOR done index=0x0000000000000007
+[boot188] CTOR enter=0x00000000404373c0
+[boot188] CTOR done index=0x0000000000000008
+[boot188] CTOR enter=0x0000000040437840
+[boot188] CTOR done index=0x0000000000000009
+[boot188] CTOR enter=0x0000000040437af0
+[boot188] CTOR done index=0x000000000000000a
+[boot188] CTOR enter=0x000000004043a870
+[boot188] CTOR done index=0x000000000000000b
+[boot188] CTOR enter=0x0000000040477770
+[boot188] CTOR done index=0x000000000000000c
+[boot188] CTOR enter=0x000000004047d870
+[boot188] CTOR done index=0x000000000000000d
+[boot188] CTOR enter=0x00000000404cfa30
+[boot188] CTOR done index=0x000000000000000e
+[boot188] CTOR enter=0x00000000404d1a70
+[boot188] CTOR done index=0x000000000000000f
+[boot188] CTOR enter=0x00000000404d5a50
+[boot188] CTOR done index=0x0000000000000010
+[boot188] CTOR enter=0x00000000404d7240
+[boot188] CTOR done index=0x0000000000000011
+[boot188] CTOR enter=0x0000000040639f80
+[boot188] CTOR done index=0x0000000000000012
+[boot188] CTOR enter=0x000000004063f3c0
+[boot188] CTOR done index=0x0000000000000013
+[boot188] CTOR enter=0x000000004063f3f0
+[boot188] CTOR done index=0x0000000000000014
+[boot188] CTOR enter=0x000000004063f480
+[boot188] CTOR done index=0x0000000000000015
+[boot188] CTOR enter=0x0000000040663370
+[boot188] CTOR done index=0x0000000000000016
+[boot188] CTOR enter=0x00000000407dde20
+[boot188] CTOR done index=0x0000000000000017
+XA20
+
+X1
+PR
+PR
+PR
+
+NuttShell (NSH)
+nsh> RI
+RX
+
+nsh> camera capture /data/camera197
+camera-control-v197: V1.11/J5 packet baseline + guarded RAW single-frame candidate
+state=3 stage=experiment-failed-controls-restored error=-5 cleanup=0 command-error=-5 owned=0 consumed=1
+power: source=same-boot-U-Boot-image-handoff ready=434d5031 bytes=03/00/ff/17/c1/0d
+runtime-PMIC-access=NONE rails-retained=ASSUMED physical-voltage=NOT-MEASURED
+MCLK: configured=0 Hz measured=UNKNOWN; prepare holds reset/STBY LOW
+reads=50127 writes=1766 polls=1 elapsed-ms=111 last-address=02002e8c
+id-experiment: attempted=1 reads=1 chip-id=0214 match=1 error=0 polls=47629 bus-quarantined=0
+mode-experiment: attempted=1 blob-error=0 writes=153 reads=17 verified=14/14 last-reg=0100 error=0
+packet-experiment: attempted=1 stage=receiver-ready-NOT-a-frame receiver-error=0 cleanup=0 owned=1 ready=1
+source: on-attempted=0 on-error=0 stop-error=0; collect=500ms NO-DDR-WRITES
+packets: raw-headers=0 fs-observations=0 fe-observations=0 status=00000000 errors=00000000 last-header=00000000
+receiver: reads=100 writes=33 elapsed=4 last-address=05811400 phy-debug=00000000 phy-frequency=00000000 pll-ref=f8675f00 pll-peri=ff126310
+PK-before: cfg1=ffffffff cfg2=ffffffff drv1=11111111 drv2=11111111; target=PK10..19/mux2/10mA; unrelated PK fields preserved
+receiver-first: error=0 address=00000000 mask=00000000 expected=00000000 observed=00000000
+receiver-cleanup: error=0 address=00000000 mask=00000000 expected=00000000 observed=00000000
+frame: requested=1 attempted=1 stage=frame-stop-restore-failed-reboot-required error=-5 cleanup=-5 owned=1 completed=0 published=0 validation=0
+frame-data: address=458fa040 bytes=4147200 stride=3840 format=RAW10-LE16 vendor-BGGR min=0 max=0 fingerprint=00000000 status=00000000 parser=00000000 xy=00000000 fifo=00000000
+frame-mapping: CPU-identity CSI-master1 version=00000016 enable=00000000 bypass=00000001 mbus=00040307; NO-IOMMU-TABLE/RESET/BYPASS-WRITES
+frame-first: error=-5 address=05830238 mask=3fff3fff expected=0f000f00 observed=07800780
+frame-cleanup: error=-5 address=05830238 mask=3fff3fff expected=02800500 observed=07800780
+strict-qualification=NONE; RAW requires published=1; NO-ISP-IMAGE-TUNING
+control: prepare | calibrate | normal-clock | id-experiment OR mode-experiment OR link-experiment OR frame-experiment (one-shot, then park) | park
+normal boot has no handoff: prepare returns ENODATA with ZERO MMIO
+camera: error=-5
+nsh> camera control status
+camera-control-v197: V1.11/J5 packet baseline + guarded RAW single-frame candidate
+state=3 stage=experiment-failed-controls-restored error=-5 cleanup=0 command-error=-5 owned=0 consumed=1
+power: source=same-boot-U-Boot-image-handoff ready=434d5031 bytes=03/00/ff/17/c1/0d
+runtime-PMIC-access=NONE rails-retained=ASSUMED physical-voltage=NOT-MEASURED
+MCLK: configured=0 Hz measured=UNKNOWN; prepare holds reset/STBY LOW
+reads=50127 writes=1766 polls=1 elapsed-ms=111 last-address=02002e8c
+id-experiment: attempted=1 reads=1 chip-id=0214 match=1 error=0 polls=47629 bus-quarantined=0
+mode-experiment: attempted=1 blob-error=0 writes=153 reads=17 verified=14/14 last-reg=0100 error=0
+packet-experiment: attempted=1 stage=receiver-ready-NOT-a-frame receiver-error=0 cleanup=0 owned=1 ready=1
+source: on-attempted=0 on-error=0 stop-error=0; collect=500ms NO-DDR-WRITES
+packets: raw-headers=0 fs-observations=0 fe-observations=0 status=00000000 errors=00000000 last-header=00000000
+receiver: reads=100 writes=33 elapsed=4 last-address=05811400 phy-debug=00000000 phy-frequency=00000000 pll-ref=f8675f00 pll-peri=ff126310
+PK-before: cfg1=ffffffff cfg2=ffffffff drv1=11111111 drv2=11111111; target=PK10..19/mux2/10mA; unrelated PK fields preserved
+receiver-first: error=0 address=00000000 mask=00000000 expected=00000000 observed=00000000
+receiver-cleanup: error=0 address=00000000 mask=00000000 expected=00000000 observed=00000000
+frame: requested=1 attempted=1 stage=frame-stop-restore-failed-reboot-required error=-5 cleanup=-5 owned=1 completed=0 published=0 validation=0
+frame-data: address=458fa040 bytes=4147200 stride=3840 format=RAW10-LE16 vendor-BGGR min=0 max=0 fingerprint=00000000 status=00000000 parser=00000000 xy=00000000 fifo=00000000
+frame-mapping: CPU-identity CSI-master1 version=00000016 enable=00000000 bypass=00000001 mbus=00040307; NO-IOMMU-TABLE/RESET/BYPASS-WRITES
+frame-first: error=-5 address=05830238 mask=3fff3fff expected=0f000f00 observed=07800780
+frame-cleanup: error=-5 address=05830238 mask=3fff3fff expected=02800500 observed=07800780
+strict-qualification=NONE; RAW requires published=1; NO-ISP-IMAGE-TUNING
+control: prepare | calibrate | normal-clock | id-experiment OR mode-experiment OR link-experiment OR frame-experiment (one-shot, then park) | park
+normal boot has no handoff: prepare returns ENODATA with ZERO MMIO
+nsh> ls -l /data/camera197
+nsh: ls: stat failed: 2
+nsh> display image /data/camera197/preview.rgb
+display: image failed=-20
+nsh>

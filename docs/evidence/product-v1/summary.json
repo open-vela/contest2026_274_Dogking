@@ -1,0 +1,31 @@
+{
+  "result": "PRODUCT_V1_SOFTWARE_IMAGE_VERIFIED_NOT_BOARD_ACCEPTED",
+  "firmware_commit": "77c5c6fe91cdcc1f5a021063b2b0c7788e736e94",
+  "sealed_directory": "out/v217-product-release-20261031-r2",
+  "package_directory": "out/product-v1-package-r2",
+  "image": "openvela-a733-cubie-a7z-sd-v1.0-v217-product-candidate.img",
+  "bytes": 2147483648,
+  "sha256": "ffe8078be4a41be6b336b062ea4ff49e28f9a4ea452f3335fcb520c232ddc4b4",
+  "kernel_sha256": "f73e9104c2435ff5b5a9879e02485c40857882d28d3e8330237013448ba1d350",
+  "software_gates": 23,
+  "product_arm_units": 9,
+  "inherited_voice_arm_units": 18,
+  "inherited_real_GGUF_proof": "out/llm-quality-v216-r4/summary.json",
+  "real_GGUF_sources_unchanged": {
+    "board/a733-cubie-a7z/openvela-overlay/apps/system/aipet/local_llm.cxx": "fe39818021a3c65744b55ace0858836b12ca2d7ea144a00ca44179ab912ba882",
+    "board/a733-cubie-a7z/openvela-overlay/apps/system/aipetllm/aipetllm_api.cxx": "9a5db1ea2192af86f77807d694bfd0276c50fbb5455a6b90f82ae5aff5f63e50",
+    "board/a733-cubie-a7z/openvela-overlay/apps/system/aipetllm/aipetllm_sequence.h": "90fcb3365499fedb44609ec93def5548a68c5bb54ad54dc5f799182014d74a33"
+  },
+  "local_voice_hardware_accepted": false,
+  "cloud_api_executed": false,
+  "camera_hardware_accepted": false,
+  "mcu_hardware_accepted": false,
+  "physical_audio_onset_measured": false,
+  "latency_3_to_5_seconds_accepted": false,
+  "automatic_motion_arming": false,
+  "full_duplex": false,
+  "boot_recording": false,
+  "physical_disks_written": false,
+  "ufs_written": false,
+  "recovery_directory": "out/checkpoints/a733-v1-product-recovery-20261031"
+}

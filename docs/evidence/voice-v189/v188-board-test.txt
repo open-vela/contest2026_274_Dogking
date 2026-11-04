@@ -1,0 +1,215 @@
+[22.372][mmc]: mmc 2 not find, so not exit
+NOTICE:  [SCP] :wait arisc ready....
+NOTICE:  [SCP] :arisc version: [d463b9da43dc50320f21ba51c6c51afe2db20d83]
+NOTICE:  [SCP] :arisc startup ready
+NOTICE:  [SCP] :arisc startup notify message feedback
+NOTICE:  [SCP] :sunxi-arisc driver is starting
+NOTICE:  BL3-1: Next image address = 0x40200000
+NOTICE:  BL3-1: Next image spsr = 0x3c5
+- Ready to Boot Primary CPU
+- Boot from EL1
+- Boot to C runtime for OS Initialize
+M0 v188-boot-candidate
+M1
+A7Z0
+A7Z1
+N0
+N1
+H0
+H1
+H2
+H3
+H4
+S0
+S1
+P1
+H5
+N2
+N3
+N4
+[boot188] SMP flush begin=0x0000000000000008
+[boot188] SMP flush done=0x0000000000000000
+[boot188] SMP request cpu=0x0000000000000001
+[boot188] SMP return=0x0000000000000000
+[boot188] SMP request cpu=0x0000000000000002
+[boot188] SMP return=0x0000000000000000
+[boot188] SMP request cpu=0x0000000000000003
+[boot188] SMP return=0x0000000000000000
+[boot188] SMP request cpu=0x0000000000000004
+[boot188] SMP return=0x0000000000000000
+[boot188] SMP request cpu=0x0000000000000005
+[boot188] SMP return=0x0000000000000000
+[boot188] SMP request cpu=0x0000000000000006
+[boot188] SMP return=0x0000000000000000
+[boot188] SMP request cpu=0x0000000000000007
+[boot188] SMP return=0x0000000000000000
+N5
+B0
+B1
+B2
+B3
+B4
+N6
+AN07
+
+AN18
+
+[boot188] CTOR enter=0x000000004049f720
+[boot188] CTOR done index=0x0000000000000000
+[boot188] CTOR enter=0x00000000404c6ed0
+[boot188] CTOR done index=0x0000000000000001
+[boot188] CTOR enter=0x00000000404c88d0
+[boot188] CTOR done index=0x0000000000000002
+[boot188] CTOR enter=0x00000000402a0f38
+[boot188] CTOR done index=0x0000000000000003
+[boot188] CTOR enter=0x00000000402a1718
+[boot188] CTOR done index=0x0000000000000004
+[boot188] CTOR enter=0x00000000402bd0b0
+[boot188] CTOR done index=0x0000000000000005
+[boot188] CTOR enter=0x00000000404132a0
+[boot188] CTOR done index=0x0000000000000006
+[boot188] CTOR enter=0x00000000404156d0
+[boot188] CTOR done index=0x0000000000000007
+[boot188] CTOR enter=0x000000004042e380
+[boot188] CTOR done index=0x0000000000000008
+[boot188] CTOR enter=0x000000004042e800
+[boot188] CTOR done index=0x0000000000000009
+[boot188] CTOR enter=0x000000004042eab0
+[boot188] CTOR done index=0x000000000000000a
+[boot188] CTOR enter=0x0000000040431830
+[boot188] CTOR done index=0x000000000000000b
+[boot188] CTOR enter=0x000000004046e730
+[boot188] CTOR done index=0x000000000000000c
+[boot188] CTOR enter=0x0000000040474830
+[boot188] CTOR done index=0x000000000000000d
+[boot188] CTOR enter=0x00000000404c69f0
+[boot188] CTOR done index=0x000000000000000e
+[boot188] CTOR enter=0x00000000404c8a30
+[boot188] CTOR done index=0x000000000000000f
+[boot188] CTOR enter=0x00000000404cca10
+[boot188] CTOR done index=0x0000000000000010
+[boot188] CTOR enter=0x00000000404ce200
+[boot188] CTOR done index=0x0000000000000011
+[boot188] CTOR enter=0x0000000040630f40
+[boot188] CTOR done index=0x0000000000000012
+[boot188] CTOR enter=0x0000000040636380
+[boot188] CTOR done index=0x0000000000000013
+[boot188] CTOR enter=0x00000000406363b0
+[boot188] CTOR done index=0x0000000000000014
+[boot188] CTOR enter=0x0000000040636440
+[boot188] CTOR done index=0x0000000000000015
+[boot188] CTOR enter=0x000000004065a330
+[boot188] CTOR done index=0x0000000000000016
+[boot188] CTOR enter=0x00000000407d4de0
+[boot188] CTOR done index=0x0000000000000017
+AX20
+
+X1
+PR
+PR
+PR
+
+NuttShell (NSH)
+nsh> RI
+RX
+
+nsh> npu info
+A733 VIP2 ABI v4 CID=1000003b cores=1 page=4096 pool=8384512 free=7946240 buffers=16 timeout=5000 ms
+nsh> npu selftest
+selftest: passed
+nsh> free
+      total       used       free    maxused    maxfree  nused  nfree name
+ 4184088576     326304 4183762272     336528 4143972320    104      5 Umem
+nsh> aipet audio output i2s
+audio: saved; applies next operation and survives reboot.
+aipet audio: output result=0
+nsh> aipet audio volume 50
+audio: saved; applies next operation and survives reboot.
+aipet audio: volume result=0
+nsh> aipet audio gain 5
+audio: saved; applies next operation and survives reboot.
+aipet audio: gain result=0
+nsh> aipet audio npuref asr-joiner /data/npu/general-asr/asr-joiner.a7tv /data/npu/general-asr/fixture/joiner
+npuref: model=asr-joiner backend=VIP2 inputs=2 outputs=1 mode=captured-golden elapsed-us=1081874
+npuref output[0] bytes=25016 raw-crc32=14f5c3c8
+npuref: native tensors returned; not ASR/transcription or end-to-end speech acceptance
+nsh> aipet audio npuref asr-decoder /data/npu/general-asr/asr-decoder.a7tv /data/npu/general-asr/fixture/decoder
+npuref: model=asr-decoder backend=VIP2 inputs=1 outputs=1 mode=captured-golden elapsed-us=1209934
+npuref output[0] bytes=2048 raw-crc32=8feacb08
+npuref: native tensors returned; not ASR/transcription or end-to-end speech acceptance
+nsh> aipet audio npuref asr-encoder /data/npu/general-asr/asr-encoder.a7tv /data/npu/general-asr/fixture/encoder
+npuref: model=asr-encoder backend=VIP2 inputs=36 outputs=36 mode=captured-golden elapsed-us=8447900
+npuref output[0] bytes=49152 raw-crc32=0982c87b
+npuref output[1] bytes=8 raw-crc32=60f3e26f
+npuref output[2] bytes=8 raw-crc32=45c06efc
+npuref output[3] bytes=8 raw-crc32=be5ac905
+npuref output[4] bytes=8 raw-crc32=9b694596
+npuref output[5] bytes=8 raw-crc32=45c06efc
+npuref output[6] bytes=2048 raw-crc32=48210a3d
+npuref output[7] bytes=2048 raw-crc32=e59b1891
+npuref output[8] bytes=2048 raw-crc32=83e5700c
+npuref output[9] bytes=2048 raw-crc32=441d574c
+npuref output[10] bytes=2048 raw-crc32=993b006b
+npuref output[11] bytes=294912 raw-crc32=819965e4
+npuref output[12] bytes=147456 raw-crc32=2cb17de4
+npuref output[13] bytes=73728 raw-crc32=2a81da3f
+npuref output[14] bytes=36864 raw-crc32=0ae668b5
+npuref output[15] bytes=147456 raw-crc32=d3348aff
+npuref output[16] bytes=147456 raw-crc32=bbe5c3cd
+npuref output[17] bytes=73728 raw-crc32=2459e09f
+npuref output[18] bytes=36864 raw-crc32=b6f5cf15
+npuref output[19] bytes=18432 raw-crc32=790fef72
+npuref output[20] bytes=73728 raw-crc32=c4167070
+npuref output[21] bytes=147456 raw-crc32=16e4b107
+npuref output[22] bytes=73728 raw-crc32=7fea30b6
+npuref output[23] bytes=36864 raw-crc32=a2be4566
+npuref output[24] bytes=18432 raw-crc32=d71777dd
+npuref output[25] bytes=73728 raw-crc32=7fd2b2bf
+npuref output[26] bytes=61440 raw-crc32=0b460321
+npuref output[27] bytes=61440 raw-crc32=78bf2615
+npuref output[28] bytes=61440 raw-crc32=4f725f1f
+npuref output[29] bytes=61440 raw-crc32=df51b2bd
+npuref output[30] bytes=61440 raw-crc32=4be7f0a1
+npuref output[31] bytes=61440 raw-crc32=f09c2622
+npuref output[32] bytes=61440 raw-crc32=24c46af4
+npuref output[33] bytes=61440 raw-crc32=9da93f95
+npuref output[34] bytes=61440 raw-crc32=9249b127
+npuref output[35] bytes=61440 raw-crc32=782371db
+npuref: native tensors returned; not ASR/transcription or end-to-end speech acceptance
+nsh> aipet audio general-asr /data/npu/general-asr
+general-asr: candidate configured (RAM only); TTS unavailable; target acceptance required
+general-asr: configure result=0
+nsh> aipet audio general-stream 5000 0
+general-asr: MIC ON; live 48k->16k FIR->NPU; provisional tokens never execute actions
+general-asr: MIC OFF; capture/consumer stopped before final decode or playback
+general-asr: result=0 samples16=80000 chunks=6 queue-peak=228 ended=0; native NPU candidate, not E2E acceptance
+voice-stage: mic-stopped-mono-us=309516804 transcript-ready-mono-us=315332270; mic stop is NOT true end-of-speech (energy endpoint is diagnostic)
+general-asr transcript:
+aipet audio: general-stream result=0
+nsh> aipet audio general-voice /data/npu/general-asr /data/npu/general-tts
+general-voice: RAM-only candidate installed; ASR=NPU acoustic=CPU vocoder=NPU; no auto capture/cloud fallback; TARGET ACCEPTANCE REQUIRED
+general-voice: configure result=0
+nsh> aipet audio local-status
+local-voice: provider=general-voice-v185-candidate asr=NPU acoustic=CPU vocoder=NPU ready=1; cloud-fallback=disabled
+nsh> aipet audio local-speak-stream "你好，语音测试成功。"
+local-tts: result=-32 acoustic=CPU vocoder=NPU packets=1 samples=24576 cpu-us=3701672 npu-us=106720 first-sink-us=2851749; NOT end-of-speech/physical-audio latency
+local-tts-stream: status=-32 first-pcm=2826563 us first-driver-pull=2829842 us frames=53280; audible latency NOT measured
+voice-stage: tts-start-mono-us=376516165 first-driver-pull-mono-us=379346007 status=-32; driver pull is NOT physical audible onset
+aipet audio: local-speak-stream result=-32
+nsh> aipet local context 3
+local-context: limit=3 pairs; history cleared, weights retained
+nsh> aipet local batch 4
+local-llm: prefill width=4 (RAM-only; weights/context retained)
+nsh> aipet local ask "你好"
+aipet: local LLM failed -2
+nsh> aipet audio local-dialog-stream "请只用一句简短中文打招呼"
+local-voice-pipeline: status=-2 phrases=0/0 first-phrase=0 us first-synthesis-start=0 us; PCM/device timing separate
+aipet audio: local-dialog-stream result=-2
+nsh> aipet audio general-listen 5000 0
+general-asr: MIC ON; live 48k->16k FIR->NPU; provisional tokens never execute actions
+general-asr: MIC OFF; capture/consumer stopped before final decode or playback
+general-asr: result=0 samples16=80000 chunks=6 queue-peak=228 ended=0; native NPU candidate, not E2E acceptance
+voice-stage: mic-stopped-mono-us=425959036 transcript-ready-mono-us=431775975; mic stop is NOT true end-of-speech (energy endpoint is diagnostic)
+general-asr transcript:
+aipet audio: general-listen result=-61
+nsh>

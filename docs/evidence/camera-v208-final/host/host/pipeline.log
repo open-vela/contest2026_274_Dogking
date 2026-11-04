@@ -1,0 +1,25 @@
+PASS v204:128 simulated changing RAW frames; budget boundary injection; reader and fault gates unchanged; NOT hardware soak
+pass: PASS actual live coordinator: RAM-model/input, frame binding, cooperative/fault exit, resources; MOCK DEVICES ONLY
+stop-before: PASS actual live coordinator: RAM-model/input, frame binding, cooperative/fault exit, resources; MOCK DEVICES ONLY
+bad-crc: PASS actual live coordinator: RAM-model/input, frame binding, cooperative/fault exit, resources; MOCK DEVICES ONLY
+capture-error: PASS actual live coordinator: RAM-model/input, frame binding, cooperative/fault exit, resources; MOCK DEVICES ONLY
+mount-error: PASS actual live coordinator: RAM-model/input, frame binding, cooperative/fault exit, resources; MOCK DEVICES ONLY
+bad-irq: PASS actual live coordinator: RAM-model/input, frame binding, cooperative/fault exit, resources; MOCK DEVICES ONLY
+lcd-busy: PASS actual live coordinator: RAM-model/input, frame binding, cooperative/fault exit, resources; MOCK DEVICES ONLY
+task-error: launch refused with no hardware
+model-missing: PASS actual live coordinator: RAM-model/input, frame binding, cooperative/fault exit, resources; MOCK DEVICES ONLY
+model-wrong: PASS actual live coordinator: RAM-model/input, frame binding, cooperative/fault exit, resources; MOCK DEVICES ONLY
+fstype-error: PASS actual live coordinator: RAM-model/input, frame binding, cooperative/fault exit, resources; MOCK DEVICES ONLY
+cleanup-error: PASS actual live coordinator: RAM-model/input, frame binding, cooperative/fault exit, resources; MOCK DEVICES ONLY
+PIPE PASS pass {}
+PIPE PASS stop-before {}
+PIPE PASS bad-crc {'FAIL_CRC': '1'}
+PIPE PASS bad-irq {'FAIL_IRQ': '1'}
+PIPE PASS capture-error {'FAIL_CAPTURE': '1'}
+PIPE PASS second-capture-error {'FAIL_SECOND_CAPTURE': '1'}
+PIPE PASS second-capture-error {'FAIL_SECOND_CAPTURE': '1', 'FAIL_STREAM_STOP': '1'}
+PIPE PASS pass {'STOP_AFTER_FRAME': '1'}
+PIPE PASS pass {'SLOW_DISPLAY': '1'}
+PIPE PASS thread-error {'FAIL_PTHREAD': '1'}
+PIPE PASS stop-capture {'STOP_DURING_CAPTURE': '1'}
+PASS actual v204 coordinator and broker host tests; NOT hardware/video/NPU inference acceptance

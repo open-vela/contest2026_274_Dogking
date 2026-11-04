@@ -1,0 +1,1 @@
+PASS actual TLS: 50 same-process mock dialogue rounds /150 connections, FD growth=0, TLS failover, precise errors, bounded shutdown; NOT board acceptance.

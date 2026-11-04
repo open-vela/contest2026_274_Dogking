@@ -1,0 +1,2 @@
+PASS CSI v205: 64 pause/rearm cycles; drain, late-error and translation gates retain/quarantine safely; HOST MOCK ONLY
+PASS v206 actual stream broker: 64 gated frames, restart, leases, exact 00220083 rejection, clean-error STOP vs uncertain drain retention; HOST MOCK ONLY

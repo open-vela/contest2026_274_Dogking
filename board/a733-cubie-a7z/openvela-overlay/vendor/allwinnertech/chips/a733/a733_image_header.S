@@ -16,7 +16,11 @@ _image_start:
     b       __start
     nop
     .quad   0x00200000                /* DRAM base + 2 MiB = 0x40200000 */
-    .quad   _image_file_end - _image_start /* bytes present in Image */
+    /* Effective runtime footprint, including BSS and per-CPU stacks.
+     * File length is smaller; advertising only that length lets booti
+     * treat live kernel memory as available for boot-time allocations.
+     */
+    .quad   _image_end - _image_start
     .quad   0                         /* U-Boot relocates relative to DRAM */
     .quad   0
     .quad   0

@@ -1,0 +1,1 @@
+PASS actual live display frame: exact pixels/CRC/sequence, stale/duplicate/malformed no mutation, zero clears labels;100000 metadata checks; MOCK LVGL ONLY

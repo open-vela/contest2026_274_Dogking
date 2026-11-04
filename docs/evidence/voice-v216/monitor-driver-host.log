@@ -1,0 +1,1 @@
+PASS v214 actual monitor loop: complete stereo frame, left slot x5, RX-only/quiet output, callback protocol/cancel, FIFO fault, counter lag/lead/wrap, 250ms warmup bound, rolling rate proof, cleanup; MOCK MMIO

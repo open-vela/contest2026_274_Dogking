@@ -1,0 +1,41 @@
+{
+  "result": "HOST_CHECKS_PASSED_NOT_BOARD_TESTED",
+  "version": 201,
+  "created_utc": "2026-10-28T16:15:12.332339+00:00",
+  "source_head": "c5f4466b3cf4a6affb33134df3ac59569e7d6d43",
+  "preserved_baseline": "c5f4466b3cf4a6affb33134df3ac59569e7d6d43",
+  "firmware_diff_empty": true,
+  "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "tests": [
+    {
+      "script": "test-a733-camera-vision-v201.py",
+      "exit": 0,
+      "log": "test-a733-camera-vision-v201.log",
+      "log_sha256": "3787b388b74fc29d27f08d54f7355b760dbebc030b1f68d6b6370a1d55b0e898"
+    }
+  ],
+  "source_sha256": {
+    "tools/a733-camera-vision-v201.py": "70641b5972461bd94d61a462b8f2d12e3d66d2e0171640324d164687f4c98465",
+    "tools/test-a733-camera-vision-v201.py": "d151f204b19b396c18d54e86f75a77c14bde4b87a01cab2319a3e442dd161541",
+    "tools/check-a733-camera-vision-v201.py": "4ac56e1915ae2ced4823b23cae426dada521f2cea15cdb4268b56f4f94cda2c4",
+    "board/a733-cubie-a7z/openvela-overlay/apps/system/a733camera/a733camera_main.c": "f14496cc3babfe3c1ccead50dac9d125c43ff690e2473c24c0f9afcd942b4b77",
+    "board/a733-cubie-a7z/openvela-overlay/apps/system/a733camera/a733_camera_image.c": "cd80e7f75b9ef7f3ae3e2a9d59d3a9fae705c5c6efd318eacfdf854eac0da8a6",
+    "board/a733-cubie-a7z/openvela-overlay/apps/system/a733display/a733display_main.c": "d19dc503f122253a24bc5fc5fe8c115508e5112b422312ed4e42737581e3ebf0",
+    "board/a733-cubie-a7z/openvela-overlay/apps/system/a733npu/a733npu_main.c": "16a1cf8429cc3e45eec013e9db9f6ae6ec1077e6ad31fca391d06f4d2dabf125",
+    "board/a733-cubie-a7z/openvela-overlay/apps/include/system/a733_vision.h": "8e27ea48b9fda1622abe7e62f88325c7e9cdaa98e2c8e956cce0d8b641c5a142"
+  },
+  "kernel_sha256": "19e2e0772816a44ee9ec671c3eac92f7978b2587a8a8c502c7abd60919cf96c0",
+  "v200_image_expected_sha256": "a729b7442ffc764063b191d8ac3ebb38c4a2812c18f21cc9dacf2cd02fbaaa33",
+  "v200_image_rehashed": true,
+  "linux_only_tests_run": false,
+  "ssh_board_connected": false,
+  "hardware_verified": false,
+  "new_firmware_or_image": false,
+  "limitations": [
+    "v200 auto-power and real RAW pending",
+    "No continuous capture/FPS",
+    "No ISP/accuracy acceptance",
+    "No live SSH protocol acceptance yet"
+  ]
+}

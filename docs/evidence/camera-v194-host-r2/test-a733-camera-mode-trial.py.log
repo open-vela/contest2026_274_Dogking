@@ -1,0 +1,1 @@
+PASS: 5971 v194 composed mode cases (all 5298 callback failures, every artifact byte, real SHA256/TWI/153 writes/14 readbacks); SYNTHETIC ONLY, NO CSI/DMA

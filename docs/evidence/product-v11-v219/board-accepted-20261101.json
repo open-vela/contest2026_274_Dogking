@@ -1,0 +1,81 @@
+{
+  "result": "V11_V219_USER_BOARD_ACCEPTED_LATEST_STABLE",
+  "date": "2026-11-01",
+  "tag": "a733-v1.1-v219-stable-20261101",
+  "image": "openvela-a733-cubie-a7z-sd-v1.1-v219-candidate.img",
+  "bytes": 2147483648,
+  "sha256": "fe7a28ce9996e3344a1866610c7cdb9137a1088965b0207161df6ffab4c3359f",
+  "firmware_commit": "f6531dbc0db75590ef76904afe4c786ec4bd8503",
+  "source_baseline_commit": "c7becd8eafdb21f7f54af407fb7eb7019316f26b",
+  "source_serial_sha256": "daf95a62c35a62c66ba3b0e377c98a025af3c17e82f45f28c72c9c1f0c1910c0",
+  "raw_serial_published": false,
+  "user_reported_all_tested_functions_normal": true,
+  "observed": {
+    "wifi_WPA2_DHCP": true,
+    "local_ASR_LLM_TTS": true,
+    "multi_turn": true,
+    "camera_YOLO_spoken_result": true,
+    "cooperative_stop_restart": true,
+    "llm": [
+      {
+        "prompt": 83,
+        "generated": 1,
+        "first_s": 17.79,
+        "rest_s": 0.0
+      },
+      {
+        "prompt": 83,
+        "generated": 18,
+        "first_s": 3.797,
+        "rest_s": 9.92
+      },
+      {
+        "prompt": 111,
+        "generated": 18,
+        "first_s": 10.48,
+        "rest_s": 11.162
+      },
+      {
+        "prompt": 142,
+        "generated": 25,
+        "first_s": 13.851,
+        "rest_s": 18.097
+      },
+      {
+        "prompt": 185,
+        "generated": 13,
+        "first_s": 24.672,
+        "rest_s": 9.416
+      },
+      {
+        "prompt": 83,
+        "generated": 1,
+        "first_s": 17.798,
+        "rest_s": 0.0
+      },
+      {
+        "prompt": 85,
+        "generated": 29,
+        "first_s": 4.406,
+        "rest_s": 16.815
+      }
+    ],
+    "asr_tail_us": [
+      1376855,
+      1066927,
+      1512724,
+      950097,
+      1284591,
+      1023210,
+      1125246,
+      1225263
+    ]
+  },
+  "image_rebuilt": false,
+  "image_modified": false,
+  "cloud_API_new_acceptance": false,
+  "physical_MCU_motion_new_acceptance": false,
+  "physical_audio_onset_instrumented": false,
+  "latency_3_to_5_s_accepted": false,
+  "note": "Promotion uses user confirmation and attached serial evidence; optional untested cloud accounts are not implied accepted."
+}

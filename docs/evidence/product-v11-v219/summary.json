@@ -1,0 +1,50 @@
+{
+  "result": "PRODUCT_V11_V219_SOFTWARE_IMAGE_VERIFIED_NOT_BOARD_ACCEPTED",
+  "firmware_commit": "f6531dbc0db75590ef76904afe4c786ec4bd8503",
+  "image": "openvela-a733-cubie-a7z-sd-v1.1-v219-candidate.img",
+  "bytes": 2147483648,
+  "sha256": "fe7a28ce9996e3344a1866610c7cdb9137a1088965b0207161df6ffab4c3359f",
+  "kernel_sha256": "feaae52072d6912bb8d3e107a781724f3885ec9955db01271618a366f029c040",
+  "sealed_directory": "out/v219-product-v11-release-r1",
+  "package_directory": "out/product-v11-v219-package-r1",
+  "build_report_directory": "out/product-v11-v219-build-r1",
+  "voice_gate_directory": "out/product-v11-v219-gates-r1",
+  "full_gate_directory": "out/product-v11-v219-full-r1",
+  "recovery_directory": "out/checkpoints/a733-v11-v219-recovery-20261031",
+  "base_preserved": {
+    "tag": "a733-v1.0-v217-audited-20261031",
+    "image": "openvela-a733-cubie-a7z-sd-v1.0-v217-product-audited.img",
+    "sha256": "98daee1f3b4653d3d65a14a3e92c2713560aac2fd6183946d2b06b7a3c79bc21"
+  },
+  "software_gates": 26,
+  "sdk_restored_byte_exact_paths": 316,
+  "proof_log_sha256": {
+    "resident-lease-v219": "82dadcfe4a1e843ba6de1ece2126c1d64cf0650ada039e3e72a889019109b690",
+    "runtime-lease-v219": "2bd95434b537834d38c2849c5980f680487751c866bb0462138c485d419fd080",
+    "wifi-v219": "3162a1fae971324735aa5b5d04d0aee9ce7def21d7b23dcdc9d39976988d15a9",
+    "product-service": "f9b179840bd6d6c3983de1515b345d05d1d2aee32108cd3130d369e4b4059c1a"
+  },
+  "LLM_sources_unchanged": {
+    "board/a733-cubie-a7z/openvela-overlay/apps/system/aipet/local_llm.cxx": "fe39818021a3c65744b55ace0858836b12ca2d7ea144a00ca44179ab912ba882",
+    "board/a733-cubie-a7z/openvela-overlay/apps/system/aipetllm/aipetllm_api.cxx": "9a5db1ea2192af86f77807d694bfd0276c50fbb5455a6b90f82ae5aff5f63e50",
+    "board/a733-cubie-a7z/openvela-overlay/apps/system/aipetllm/aipetllm_sequence.h": "90fcb3365499fedb44609ec93def5548a68c5bb54ad54dc5f799182014d74a33"
+  },
+  "source_feedback_sha256": "cdd010dd448ab95d3013b344ae252d13b37bbe1198d96a57bfcbc1842c1bcc31",
+  "source_feedback_contains_private_network_names": true,
+  "raw_feedback_published": false,
+  "resident_lease_baseline_reproduced": true,
+  "real_RuntimePorts_regression": true,
+  "wifi_real_AP_tested": false,
+  "voice_hardware_accepted": false,
+  "camera_new_image_board_tested": false,
+  "cloud_API_executed": false,
+  "physical_audio_onset_measured": false,
+  "latency_3_to_5_seconds_accepted": false,
+  "system_scheduling_changed": false,
+  "automatic_motion_arming": false,
+  "boot_recording": false,
+  "physical_disks_written": false,
+  "ufs_written": false,
+  "PR_created": false,
+  "git_pushed": false
+}

@@ -1,0 +1,228 @@
+wavinfo: rate=16000 channels=1 bits=16 samples=33536 duration-ms=2096 pcm-crc=f90dfd5f
+wavinfo: min=-16878 max=13375 rms=2822.78669 dc=-0.118350429 peak-dBFS=-5.76258 rms-dBFS=-21.2954 rails=0 rail-run=0 zeros=17160
+wavinfo: saved PCM only; rails indicate saturation risk, not its cause; no gain/AGC changes
+wavinfo: rate=16000 channels=1 bits=16 samples=33536 duration-ms=2096 pcm-crc=f90dfd5f
+wavinfo: min=-16878 max=13375 rms=2822.78669 dc=-0.118350429 peak-dBFS=-5.76258 rms-dBFS=-21.2954 rails=0 rail-run=0 zeros=17160
+wavinfo: saved PCM only; rails indicate saturation risk, not its cause; no gain/AGC changes
+frontend-audit: v163 rate=16000 norm=S16/32768 frames=210 bins=80 feature-crc=6a969644 compiler=15.2.0
+frontend-audit: production frontend, unchanged math flags; CPU/file only; no mic/NPU/cloud/Agent/playback
+fbankcheck: exact=1 differing=0/16800 first-frame=0 first-bin=0 maxabs=0 rmse=0 reference-crc=6a969644
+wavinfo: rate=16000 channels=1 bits=16 samples=33536 duration-ms=2096 pcm-crc=f90dfd5f
+wavinfo: min=-16878 max=13375 rms=2822.78669 dc=-0.118350429 peak-dBFS=-5.76258 rms-dBFS=-21.2954 rails=0 rail-run=0 zeros=17160
+wavinfo: saved PCM only; rails indicate saturation risk, not its cause; no gain/AGC changes
+frontend-audit: v163 rate=16000 norm=S16/32768 frames=210 bins=80 feature-crc=6a969644 compiler=15.2.0
+frontend-audit: production frontend, unchanged math flags; CPU/file only; no mic/NPU/cloud/Agent/playback
+fbankexport: saved=/data/export0.f32 bytes=67200; local diagnostic features, not an accuracy certificate
+wavinfo: rate=16000 channels=1 bits=16 samples=33536 duration-ms=2096 pcm-crc=f90dfd5f
+wavinfo: min=-16878 max=13375 rms=2822.78669 dc=-0.118350429 peak-dBFS=-5.76258 rms-dBFS=-21.2954 rails=0 rail-run=0 zeros=17160
+wavinfo: saved PCM only; rails indicate saturation risk, not its cause; no gain/AGC changes
+frontend-audit: v163 rate=16000 norm=S16/32768 frames=210 bins=80 feature-crc=6a969644 compiler=15.2.0
+frontend-audit: production frontend, unchanged math flags; CPU/file only; no mic/NPU/cloud/Agent/playback
+fbankcheck: exact=0 differing=1/16800 first-frame=0 first-bin=7 maxabs=0.0100002288818 rmse=7.71534408427e-05 reference-crc=3115dfc9
+wavinfo: rate=16000 channels=1 bits=16 samples=33536 duration-ms=2096 pcm-crc=f90dfd5f
+wavinfo: min=-16878 max=13375 rms=2822.78669 dc=-0.118350429 peak-dBFS=-5.76258 rms-dBFS=-21.2954 rails=0 rail-run=0 zeros=17160
+wavinfo: saved PCM only; rails indicate saturation risk, not its cause; no gain/AGC changes
+frontend-audit: v163 rate=16000 norm=S16/32768 frames=210 bins=80 feature-crc=6a969644 compiler=15.2.0
+frontend-audit: production frontend, unchanged math flags; CPU/file only; no mic/NPU/cloud/Agent/playback
+wavinfo: rate=16000 channels=1 bits=16 samples=33536 duration-ms=2096 pcm-crc=f90dfd5f
+wavinfo: min=-16878 max=13375 rms=2822.78669 dc=-0.118350429 peak-dBFS=-5.76258 rms-dBFS=-21.2954 rails=0 rail-run=0 zeros=17160
+wavinfo: saved PCM only; rails indicate saturation risk, not its cause; no gain/AGC changes
+frontend-audit: v163 rate=16000 norm=S16/32768 frames=210 bins=80 feature-crc=6a969644 compiler=15.2.0
+frontend-audit: production frontend, unchanged math flags; CPU/file only; no mic/NPU/cloud/Agent/playback
+wavinfo: rate=16000 channels=1 bits=16 samples=33536 duration-ms=2096 pcm-crc=f90dfd5f
+wavinfo: min=-16878 max=13375 rms=2822.78669 dc=-0.118350429 peak-dBFS=-5.76258 rms-dBFS=-21.2954 rails=0 rail-run=0 zeros=17160
+wavinfo: saved PCM only; rails indicate saturation risk, not its cause; no gain/AGC changes
+frontend-audit: v163 rate=16000 norm=S16/32768 frames=210 bins=80 feature-crc=6a969644 compiler=15.2.0
+frontend-audit: production frontend, unchanged math flags; CPU/file only; no mic/NPU/cloud/Agent/playback
+wavinfo: rate=16000 channels=1 bits=16 samples=33536 duration-ms=2096 pcm-crc=4c781a4b
+wavinfo: min=-19722 max=11650 rms=2149.45581 dc=-0.455003578 peak-dBFS=-4.40998 rms-dBFS=-23.6624 rails=0 rail-run=0 zeros=21108
+wavinfo: saved PCM only; rails indicate saturation risk, not its cause; no gain/AGC changes
+wavinfo: rate=16000 channels=1 bits=16 samples=33536 duration-ms=2096 pcm-crc=4c781a4b
+wavinfo: min=-19722 max=11650 rms=2149.45581 dc=-0.455003578 peak-dBFS=-4.40998 rms-dBFS=-23.6624 rails=0 rail-run=0 zeros=21108
+wavinfo: saved PCM only; rails indicate saturation risk, not its cause; no gain/AGC changes
+frontend-audit: v163 rate=16000 norm=S16/32768 frames=210 bins=80 feature-crc=b9197206 compiler=15.2.0
+frontend-audit: production frontend, unchanged math flags; CPU/file only; no mic/NPU/cloud/Agent/playback
+fbankcheck: exact=1 differing=0/16800 first-frame=0 first-bin=0 maxabs=0 rmse=0 reference-crc=b9197206
+wavinfo: rate=16000 channels=1 bits=16 samples=33536 duration-ms=2096 pcm-crc=4c781a4b
+wavinfo: min=-19722 max=11650 rms=2149.45581 dc=-0.455003578 peak-dBFS=-4.40998 rms-dBFS=-23.6624 rails=0 rail-run=0 zeros=21108
+wavinfo: saved PCM only; rails indicate saturation risk, not its cause; no gain/AGC changes
+frontend-audit: v163 rate=16000 norm=S16/32768 frames=210 bins=80 feature-crc=b9197206 compiler=15.2.0
+frontend-audit: production frontend, unchanged math flags; CPU/file only; no mic/NPU/cloud/Agent/playback
+fbankexport: saved=/data/export1.f32 bytes=67200; local diagnostic features, not an accuracy certificate
+wavinfo: rate=16000 channels=1 bits=16 samples=33536 duration-ms=2096 pcm-crc=4c781a4b
+wavinfo: min=-19722 max=11650 rms=2149.45581 dc=-0.455003578 peak-dBFS=-4.40998 rms-dBFS=-23.6624 rails=0 rail-run=0 zeros=21108
+wavinfo: saved PCM only; rails indicate saturation risk, not its cause; no gain/AGC changes
+frontend-audit: v163 rate=16000 norm=S16/32768 frames=210 bins=80 feature-crc=b9197206 compiler=15.2.0
+frontend-audit: production frontend, unchanged math flags; CPU/file only; no mic/NPU/cloud/Agent/playback
+fbankcheck: exact=0 differing=1/16800 first-frame=0 first-bin=7 maxabs=0.0100002288818 rmse=7.71534408427e-05 reference-crc=e29a3b8b
+wavinfo: rate=16000 channels=1 bits=16 samples=33536 duration-ms=2096 pcm-crc=4c781a4b
+wavinfo: min=-19722 max=11650 rms=2149.45581 dc=-0.455003578 peak-dBFS=-4.40998 rms-dBFS=-23.6624 rails=0 rail-run=0 zeros=21108
+wavinfo: saved PCM only; rails indicate saturation risk, not its cause; no gain/AGC changes
+frontend-audit: v163 rate=16000 norm=S16/32768 frames=210 bins=80 feature-crc=b9197206 compiler=15.2.0
+frontend-audit: production frontend, unchanged math flags; CPU/file only; no mic/NPU/cloud/Agent/playback
+wavinfo: rate=16000 channels=1 bits=16 samples=33536 duration-ms=2096 pcm-crc=4c781a4b
+wavinfo: min=-19722 max=11650 rms=2149.45581 dc=-0.455003578 peak-dBFS=-4.40998 rms-dBFS=-23.6624 rails=0 rail-run=0 zeros=21108
+wavinfo: saved PCM only; rails indicate saturation risk, not its cause; no gain/AGC changes
+frontend-audit: v163 rate=16000 norm=S16/32768 frames=210 bins=80 feature-crc=b9197206 compiler=15.2.0
+frontend-audit: production frontend, unchanged math flags; CPU/file only; no mic/NPU/cloud/Agent/playback
+wavinfo: rate=16000 channels=1 bits=16 samples=33536 duration-ms=2096 pcm-crc=4c781a4b
+wavinfo: min=-19722 max=11650 rms=2149.45581 dc=-0.455003578 peak-dBFS=-4.40998 rms-dBFS=-23.6624 rails=0 rail-run=0 zeros=21108
+wavinfo: saved PCM only; rails indicate saturation risk, not its cause; no gain/AGC changes
+frontend-audit: v163 rate=16000 norm=S16/32768 frames=210 bins=80 feature-crc=b9197206 compiler=15.2.0
+frontend-audit: production frontend, unchanged math flags; CPU/file only; no mic/NPU/cloud/Agent/playback
+wavinfo: rate=16000 channels=1 bits=16 samples=33536 duration-ms=2096 pcm-crc=68d38861
+wavinfo: min=-21333 max=13853 rms=2747.42265 dc=-0.114056536 peak-dBFS=-3.72796 rms-dBFS=-21.5305 rails=0 rail-run=0 zeros=15010
+wavinfo: saved PCM only; rails indicate saturation risk, not its cause; no gain/AGC changes
+wavinfo: rate=16000 channels=1 bits=16 samples=33536 duration-ms=2096 pcm-crc=68d38861
+wavinfo: min=-21333 max=13853 rms=2747.42265 dc=-0.114056536 peak-dBFS=-3.72796 rms-dBFS=-21.5305 rails=0 rail-run=0 zeros=15010
+wavinfo: saved PCM only; rails indicate saturation risk, not its cause; no gain/AGC changes
+frontend-audit: v163 rate=16000 norm=S16/32768 frames=210 bins=80 feature-crc=ea0f1594 compiler=15.2.0
+frontend-audit: production frontend, unchanged math flags; CPU/file only; no mic/NPU/cloud/Agent/playback
+fbankcheck: exact=1 differing=0/16800 first-frame=0 first-bin=0 maxabs=0 rmse=0 reference-crc=ea0f1594
+wavinfo: rate=16000 channels=1 bits=16 samples=33536 duration-ms=2096 pcm-crc=68d38861
+wavinfo: min=-21333 max=13853 rms=2747.42265 dc=-0.114056536 peak-dBFS=-3.72796 rms-dBFS=-21.5305 rails=0 rail-run=0 zeros=15010
+wavinfo: saved PCM only; rails indicate saturation risk, not its cause; no gain/AGC changes
+frontend-audit: v163 rate=16000 norm=S16/32768 frames=210 bins=80 feature-crc=ea0f1594 compiler=15.2.0
+frontend-audit: production frontend, unchanged math flags; CPU/file only; no mic/NPU/cloud/Agent/playback
+fbankexport: saved=/data/export2.f32 bytes=67200; local diagnostic features, not an accuracy certificate
+wavinfo: rate=16000 channels=1 bits=16 samples=33536 duration-ms=2096 pcm-crc=68d38861
+wavinfo: min=-21333 max=13853 rms=2747.42265 dc=-0.114056536 peak-dBFS=-3.72796 rms-dBFS=-21.5305 rails=0 rail-run=0 zeros=15010
+wavinfo: saved PCM only; rails indicate saturation risk, not its cause; no gain/AGC changes
+frontend-audit: v163 rate=16000 norm=S16/32768 frames=210 bins=80 feature-crc=ea0f1594 compiler=15.2.0
+frontend-audit: production frontend, unchanged math flags; CPU/file only; no mic/NPU/cloud/Agent/playback
+fbankcheck: exact=0 differing=1/16800 first-frame=0 first-bin=7 maxabs=0.0100002288818 rmse=7.71534408427e-05 reference-crc=b18c5c19
+wavinfo: rate=16000 channels=1 bits=16 samples=33536 duration-ms=2096 pcm-crc=68d38861
+wavinfo: min=-21333 max=13853 rms=2747.42265 dc=-0.114056536 peak-dBFS=-3.72796 rms-dBFS=-21.5305 rails=0 rail-run=0 zeros=15010
+wavinfo: saved PCM only; rails indicate saturation risk, not its cause; no gain/AGC changes
+frontend-audit: v163 rate=16000 norm=S16/32768 frames=210 bins=80 feature-crc=ea0f1594 compiler=15.2.0
+frontend-audit: production frontend, unchanged math flags; CPU/file only; no mic/NPU/cloud/Agent/playback
+wavinfo: rate=16000 channels=1 bits=16 samples=33536 duration-ms=2096 pcm-crc=68d38861
+wavinfo: min=-21333 max=13853 rms=2747.42265 dc=-0.114056536 peak-dBFS=-3.72796 rms-dBFS=-21.5305 rails=0 rail-run=0 zeros=15010
+wavinfo: saved PCM only; rails indicate saturation risk, not its cause; no gain/AGC changes
+frontend-audit: v163 rate=16000 norm=S16/32768 frames=210 bins=80 feature-crc=ea0f1594 compiler=15.2.0
+frontend-audit: production frontend, unchanged math flags; CPU/file only; no mic/NPU/cloud/Agent/playback
+wavinfo: rate=16000 channels=1 bits=16 samples=33536 duration-ms=2096 pcm-crc=68d38861
+wavinfo: min=-21333 max=13853 rms=2747.42265 dc=-0.114056536 peak-dBFS=-3.72796 rms-dBFS=-21.5305 rails=0 rail-run=0 zeros=15010
+wavinfo: saved PCM only; rails indicate saturation risk, not its cause; no gain/AGC changes
+frontend-audit: v163 rate=16000 norm=S16/32768 frames=210 bins=80 feature-crc=ea0f1594 compiler=15.2.0
+frontend-audit: production frontend, unchanged math flags; CPU/file only; no mic/NPU/cloud/Agent/playback
+wavinfo: rate=16000 channels=1 bits=16 samples=33536 duration-ms=2096 pcm-crc=0f035cbb
+wavinfo: min=-15708 max=16187 rms=2588.51871 dc=-1.65738311 peak-dBFS=-6.12567 rms-dBFS=-22.048 rails=0 rail-run=0 zeros=15586
+wavinfo: saved PCM only; rails indicate saturation risk, not its cause; no gain/AGC changes
+wavinfo: rate=16000 channels=1 bits=16 samples=33536 duration-ms=2096 pcm-crc=0f035cbb
+wavinfo: min=-15708 max=16187 rms=2588.51871 dc=-1.65738311 peak-dBFS=-6.12567 rms-dBFS=-22.048 rails=0 rail-run=0 zeros=15586
+wavinfo: saved PCM only; rails indicate saturation risk, not its cause; no gain/AGC changes
+frontend-audit: v163 rate=16000 norm=S16/32768 frames=210 bins=80 feature-crc=d6d3798e compiler=15.2.0
+frontend-audit: production frontend, unchanged math flags; CPU/file only; no mic/NPU/cloud/Agent/playback
+fbankcheck: exact=1 differing=0/16800 first-frame=0 first-bin=0 maxabs=0 rmse=0 reference-crc=d6d3798e
+wavinfo: rate=16000 channels=1 bits=16 samples=33536 duration-ms=2096 pcm-crc=0f035cbb
+wavinfo: min=-15708 max=16187 rms=2588.51871 dc=-1.65738311 peak-dBFS=-6.12567 rms-dBFS=-22.048 rails=0 rail-run=0 zeros=15586
+wavinfo: saved PCM only; rails indicate saturation risk, not its cause; no gain/AGC changes
+frontend-audit: v163 rate=16000 norm=S16/32768 frames=210 bins=80 feature-crc=d6d3798e compiler=15.2.0
+frontend-audit: production frontend, unchanged math flags; CPU/file only; no mic/NPU/cloud/Agent/playback
+fbankexport: saved=/data/export3.f32 bytes=67200; local diagnostic features, not an accuracy certificate
+wavinfo: rate=16000 channels=1 bits=16 samples=33536 duration-ms=2096 pcm-crc=0f035cbb
+wavinfo: min=-15708 max=16187 rms=2588.51871 dc=-1.65738311 peak-dBFS=-6.12567 rms-dBFS=-22.048 rails=0 rail-run=0 zeros=15586
+wavinfo: saved PCM only; rails indicate saturation risk, not its cause; no gain/AGC changes
+frontend-audit: v163 rate=16000 norm=S16/32768 frames=210 bins=80 feature-crc=d6d3798e compiler=15.2.0
+frontend-audit: production frontend, unchanged math flags; CPU/file only; no mic/NPU/cloud/Agent/playback
+fbankcheck: exact=0 differing=1/16800 first-frame=0 first-bin=7 maxabs=0.0100002288818 rmse=7.71534408427e-05 reference-crc=8d503003
+wavinfo: rate=16000 channels=1 bits=16 samples=33536 duration-ms=2096 pcm-crc=0f035cbb
+wavinfo: min=-15708 max=16187 rms=2588.51871 dc=-1.65738311 peak-dBFS=-6.12567 rms-dBFS=-22.048 rails=0 rail-run=0 zeros=15586
+wavinfo: saved PCM only; rails indicate saturation risk, not its cause; no gain/AGC changes
+frontend-audit: v163 rate=16000 norm=S16/32768 frames=210 bins=80 feature-crc=d6d3798e compiler=15.2.0
+frontend-audit: production frontend, unchanged math flags; CPU/file only; no mic/NPU/cloud/Agent/playback
+wavinfo: rate=16000 channels=1 bits=16 samples=33536 duration-ms=2096 pcm-crc=0f035cbb
+wavinfo: min=-15708 max=16187 rms=2588.51871 dc=-1.65738311 peak-dBFS=-6.12567 rms-dBFS=-22.048 rails=0 rail-run=0 zeros=15586
+wavinfo: saved PCM only; rails indicate saturation risk, not its cause; no gain/AGC changes
+frontend-audit: v163 rate=16000 norm=S16/32768 frames=210 bins=80 feature-crc=d6d3798e compiler=15.2.0
+frontend-audit: production frontend, unchanged math flags; CPU/file only; no mic/NPU/cloud/Agent/playback
+wavinfo: rate=16000 channels=1 bits=16 samples=33536 duration-ms=2096 pcm-crc=0f035cbb
+wavinfo: min=-15708 max=16187 rms=2588.51871 dc=-1.65738311 peak-dBFS=-6.12567 rms-dBFS=-22.048 rails=0 rail-run=0 zeros=15586
+wavinfo: saved PCM only; rails indicate saturation risk, not its cause; no gain/AGC changes
+frontend-audit: v163 rate=16000 norm=S16/32768 frames=210 bins=80 feature-crc=d6d3798e compiler=15.2.0
+frontend-audit: production frontend, unchanged math flags; CPU/file only; no mic/NPU/cloud/Agent/playback
+wavinfo: rate=16000 channels=1 bits=16 samples=53120 duration-ms=3320 pcm-crc=1437fae1
+wavinfo: min=-898 max=946 rms=189.887977 dc=-0.00598644578 peak-dBFS=-30.7912 rms-dBFS=-44.739 rails=0 rail-run=0 zeros=5301
+wavinfo: saved PCM only; rails indicate saturation risk, not its cause; no gain/AGC changes
+wavinfo: rate=16000 channels=1 bits=16 samples=53120 duration-ms=3320 pcm-crc=1437fae1
+wavinfo: min=-898 max=946 rms=189.887977 dc=-0.00598644578 peak-dBFS=-30.7912 rms-dBFS=-44.739 rails=0 rail-run=0 zeros=5301
+wavinfo: saved PCM only; rails indicate saturation risk, not its cause; no gain/AGC changes
+frontend-audit: v163 rate=16000 norm=S16/32768 frames=332 bins=80 feature-crc=f7b2359f compiler=15.2.0
+frontend-audit: production frontend, unchanged math flags; CPU/file only; no mic/NPU/cloud/Agent/playback
+fbankcheck: exact=1 differing=0/26560 first-frame=0 first-bin=0 maxabs=0 rmse=0 reference-crc=f7b2359f
+wavinfo: rate=16000 channels=1 bits=16 samples=53120 duration-ms=3320 pcm-crc=1437fae1
+wavinfo: min=-898 max=946 rms=189.887977 dc=-0.00598644578 peak-dBFS=-30.7912 rms-dBFS=-44.739 rails=0 rail-run=0 zeros=5301
+wavinfo: saved PCM only; rails indicate saturation risk, not its cause; no gain/AGC changes
+frontend-audit: v163 rate=16000 norm=S16/32768 frames=332 bins=80 feature-crc=f7b2359f compiler=15.2.0
+frontend-audit: production frontend, unchanged math flags; CPU/file only; no mic/NPU/cloud/Agent/playback
+fbankexport: saved=/data/export4.f32 bytes=106240; local diagnostic features, not an accuracy certificate
+wavinfo: rate=16000 channels=1 bits=16 samples=53120 duration-ms=3320 pcm-crc=1437fae1
+wavinfo: min=-898 max=946 rms=189.887977 dc=-0.00598644578 peak-dBFS=-30.7912 rms-dBFS=-44.739 rails=0 rail-run=0 zeros=5301
+wavinfo: saved PCM only; rails indicate saturation risk, not its cause; no gain/AGC changes
+frontend-audit: v163 rate=16000 norm=S16/32768 frames=332 bins=80 feature-crc=f7b2359f compiler=15.2.0
+frontend-audit: production frontend, unchanged math flags; CPU/file only; no mic/NPU/cloud/Agent/playback
+fbankcheck: exact=0 differing=1/26560 first-frame=0 first-bin=7 maxabs=0.0100002288818 rmse=6.13614911302e-05 reference-crc=ed47ca25
+wavinfo: rate=16000 channels=1 bits=16 samples=53120 duration-ms=3320 pcm-crc=1437fae1
+wavinfo: min=-898 max=946 rms=189.887977 dc=-0.00598644578 peak-dBFS=-30.7912 rms-dBFS=-44.739 rails=0 rail-run=0 zeros=5301
+wavinfo: saved PCM only; rails indicate saturation risk, not its cause; no gain/AGC changes
+frontend-audit: v163 rate=16000 norm=S16/32768 frames=332 bins=80 feature-crc=f7b2359f compiler=15.2.0
+frontend-audit: production frontend, unchanged math flags; CPU/file only; no mic/NPU/cloud/Agent/playback
+wavinfo: rate=16000 channels=1 bits=16 samples=53120 duration-ms=3320 pcm-crc=1437fae1
+wavinfo: min=-898 max=946 rms=189.887977 dc=-0.00598644578 peak-dBFS=-30.7912 rms-dBFS=-44.739 rails=0 rail-run=0 zeros=5301
+wavinfo: saved PCM only; rails indicate saturation risk, not its cause; no gain/AGC changes
+frontend-audit: v163 rate=16000 norm=S16/32768 frames=332 bins=80 feature-crc=f7b2359f compiler=15.2.0
+frontend-audit: production frontend, unchanged math flags; CPU/file only; no mic/NPU/cloud/Agent/playback
+wavinfo: rate=16000 channels=1 bits=16 samples=53120 duration-ms=3320 pcm-crc=1437fae1
+wavinfo: min=-898 max=946 rms=189.887977 dc=-0.00598644578 peak-dBFS=-30.7912 rms-dBFS=-44.739 rails=0 rail-run=0 zeros=5301
+wavinfo: saved PCM only; rails indicate saturation risk, not its cause; no gain/AGC changes
+frontend-audit: v163 rate=16000 norm=S16/32768 frames=332 bins=80 feature-crc=f7b2359f compiler=15.2.0
+frontend-audit: production frontend, unchanged math flags; CPU/file only; no mic/NPU/cloud/Agent/playback
+wavinfo: rate=16000 channels=1 bits=16 samples=53120 duration-ms=3320 pcm-crc=00000000
+wavinfo: min=0 max=0 rms=0 dc=0 peak-dBFS=-200 rms-dBFS=-200 rails=0 rail-run=0 zeros=53120
+wavinfo: saved PCM only; rails indicate saturation risk, not its cause; no gain/AGC changes
+wavinfo: rate=16000 channels=1 bits=16 samples=53120 duration-ms=3320 pcm-crc=00000000
+wavinfo: min=0 max=0 rms=0 dc=0 peak-dBFS=-200 rms-dBFS=-200 rails=0 rail-run=0 zeros=53120
+wavinfo: saved PCM only; rails indicate saturation risk, not its cause; no gain/AGC changes
+frontend-audit: v163 rate=16000 norm=S16/32768 frames=332 bins=80 feature-crc=27184580 compiler=15.2.0
+frontend-audit: production frontend, unchanged math flags; CPU/file only; no mic/NPU/cloud/Agent/playback
+fbankcheck: exact=1 differing=0/26560 first-frame=0 first-bin=0 maxabs=0 rmse=0 reference-crc=27184580
+wavinfo: rate=16000 channels=1 bits=16 samples=53120 duration-ms=3320 pcm-crc=00000000
+wavinfo: min=0 max=0 rms=0 dc=0 peak-dBFS=-200 rms-dBFS=-200 rails=0 rail-run=0 zeros=53120
+wavinfo: saved PCM only; rails indicate saturation risk, not its cause; no gain/AGC changes
+frontend-audit: v163 rate=16000 norm=S16/32768 frames=332 bins=80 feature-crc=27184580 compiler=15.2.0
+frontend-audit: production frontend, unchanged math flags; CPU/file only; no mic/NPU/cloud/Agent/playback
+fbankexport: saved=/data/export5.f32 bytes=106240; local diagnostic features, not an accuracy certificate
+wavinfo: rate=16000 channels=1 bits=16 samples=53120 duration-ms=3320 pcm-crc=00000000
+wavinfo: min=0 max=0 rms=0 dc=0 peak-dBFS=-200 rms-dBFS=-200 rails=0 rail-run=0 zeros=53120
+wavinfo: saved PCM only; rails indicate saturation risk, not its cause; no gain/AGC changes
+frontend-audit: v163 rate=16000 norm=S16/32768 frames=332 bins=80 feature-crc=27184580 compiler=15.2.0
+frontend-audit: production frontend, unchanged math flags; CPU/file only; no mic/NPU/cloud/Agent/playback
+fbankcheck: exact=0 differing=1/26560 first-frame=0 first-bin=7 maxabs=0.0100002288818 rmse=6.13614911302e-05 reference-crc=09925a6f
+wavinfo: rate=16000 channels=1 bits=16 samples=53120 duration-ms=3320 pcm-crc=00000000
+wavinfo: min=0 max=0 rms=0 dc=0 peak-dBFS=-200 rms-dBFS=-200 rails=0 rail-run=0 zeros=53120
+wavinfo: saved PCM only; rails indicate saturation risk, not its cause; no gain/AGC changes
+frontend-audit: v163 rate=16000 norm=S16/32768 frames=332 bins=80 feature-crc=27184580 compiler=15.2.0
+frontend-audit: production frontend, unchanged math flags; CPU/file only; no mic/NPU/cloud/Agent/playback
+wavinfo: rate=16000 channels=1 bits=16 samples=53120 duration-ms=3320 pcm-crc=00000000
+wavinfo: min=0 max=0 rms=0 dc=0 peak-dBFS=-200 rms-dBFS=-200 rails=0 rail-run=0 zeros=53120
+wavinfo: saved PCM only; rails indicate saturation risk, not its cause; no gain/AGC changes
+frontend-audit: v163 rate=16000 norm=S16/32768 frames=332 bins=80 feature-crc=27184580 compiler=15.2.0
+frontend-audit: production frontend, unchanged math flags; CPU/file only; no mic/NPU/cloud/Agent/playback
+wavinfo: rate=16000 channels=1 bits=16 samples=53120 duration-ms=3320 pcm-crc=00000000
+wavinfo: min=0 max=0 rms=0 dc=0 peak-dBFS=-200 rms-dBFS=-200 rails=0 rail-run=0 zeros=53120
+wavinfo: saved PCM only; rails indicate saturation risk, not its cause; no gain/AGC changes
+frontend-audit: v163 rate=16000 norm=S16/32768 frames=332 bins=80 feature-crc=27184580 compiler=15.2.0
+frontend-audit: production frontend, unchanged math flags; CPU/file only; no mic/NPU/cloud/Agent/playback
+fbankexport: saved=/data/maximum.f32 bytes=320000; local diagnostic features, not an accuracy certificate
+wavinfo: rate=16000 channels=1 bits=16 samples=53120 duration-ms=3320 pcm-crc=00000000
+wavinfo: min=0 max=0 rms=0 dc=0 peak-dBFS=-200 rms-dBFS=-200 rails=0 rail-run=0 zeros=53120
+wavinfo: saved PCM only; rails indicate saturation risk, not its cause; no gain/AGC changes
+frontend-audit: v163 rate=16000 norm=S16/32768 frames=332 bins=80 feature-crc=27184580 compiler=15.2.0
+frontend-audit: production frontend, unchanged math flags; CPU/file only; no mic/NPU/cloud/Agent/playback
+fbankexport: saved=/data/ok.f32 bytes=16000; local diagnostic features, not an accuracy certificate
+fbankexport: saved=/data/short.f32 bytes=16000; local diagnostic features, not an accuracy certificate
+wavinfo: rate=16000 channels=1 bits=16 samples=53120 duration-ms=3320 pcm-crc=00000000
+wavinfo: min=0 max=0 rms=0 dc=0 peak-dBFS=-200 rms-dBFS=-200 rails=0 rail-run=0 zeros=53120
+wavinfo: saved PCM only; rails indicate saturation risk, not its cause; no gain/AGC changes
+PASS: six actual frontend exports byte-exact; strict deltas/NaN/size fail; level/rails/CRC; containment/final symlink/existing output; short/EINTR/write/fsync/close/cancel cleanup; NO mic/NPU

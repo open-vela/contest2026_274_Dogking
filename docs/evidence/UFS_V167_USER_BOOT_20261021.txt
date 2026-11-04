@@ -1,0 +1,308 @@
+......
+
+
+[246]HELLO! BOOT0 is starting!
+[249]BOOT0 commit : {4721ad08}
+[252]board gpio withstand voltage auto mode
+[267]dram_para_total:0xf
+[269]vaild para:6  select dram para10
+[mmc]: mmc driver ver 2025-10-16 17:10
+[mmc]: Wrong media type 0x0
+[mmc]: ***Try SD card 0***
+[mmc]: HSSDR52/SDR25 4 bit
+[mmc]: 50000000 Hz
+[mmc]: 30436 MB
+[mmc]: ***SD/MMC 0 init OK!!!***
+[316]boot param - magic error
+[319]DRAM BOOT DRIVE INFO: V0.601
+[323]DRAM_VCC set to 1100 mv
+[3573]Training result is = 7
+[3576]DRAM Pstate 0 training, frequency is 1800 Mhz
+[3584][AUTO DEBUG]16 bit,2 ranks training success!
+[6836]Training result is = 7
+[6839]DRAM Pstate 0 training, frequency is 1800 Mhz
+[10091]Training result is = 7
+[10094]DRAM Pstate 0 training, frequency is 1800 Mhz
+[10102]DRAM CLK =1800 MHZ
+[10104]DRAM Type =8 (8:LPDDR4,9:LPDDR5)
+[10209]Training result is = 7
+[10212]DRAM Pstate 1 training, frequency is 1200 Mhz
+[10326]Training result is = 7
+[10329]DRAM Pstate 2 training, frequency is 800 Mhz
+[10539]Training result is = 7
+[10542]DRAM Pstate 3 training, frequency is 400 Mhz
+[13774]Training result is = 7
+[13776]DRAM Pstate 0 training, frequency is 1800 Mhz
+[13785]Actual DRAM SIZE =4096 M
+[13788]DRAM SIZE =4096 MBytes, para1 = 310a, para2 = 10001001, dram_tpr13 = 6067
+[13802]DRAM simple test OK.
+[13808]error:bad magic.
+[13872]error: dtb not found for scp
+[13876]mmc not para
+[13878]Jump to ATF: monitor_base = 0x48000000, uboot_base = 0x4a000000, optee_base = 0x0
+NOTICE:  BL31: OP-TEE 32bit detected
+NOTICE:  BL31: U-BOOT 32bit detected
+NOTICE:  BL31: dram size is 4294967296 bytes
+NOTICE:  BL31: v2.5(debug):48e54578a
+NOTICE:  BL31: Built : 14:13:06, Jul  2 2025
+NOTICE:  BL31: No DTB found.
+ERROR:   Error initializing runtime service opteed_fast
+
+
+U-Boot 2018.07-17-boot-aw2501-g4c7078cfdf7-dirty (Apr 29 2026 - 10:03:59 +0000) Allwinner Technology
+
+[13.934]CPU:   Allwinner Family
+[13.937]Model: Radxa Cubie A7A
+I2C:   ready
+[14.000]DRAM:  4 GiB
+[14.009]Relocation Offset is: 75d89000
+[14.063]secure enable bit: 0
+[14.066]PMU: AXP8191
+[14.068]PMU: AXP8191 VER_A
+FDT ERROR:fdt_get_regulator_name:get property handle twi-supply error:FDT_ERR_INTERNAL
+[14.080]bmu_axp515_probe pmic_bus_read fail
+[14.084][AXP8191] onoff status: 0x50 = 0x1, 0x51 = 0x0
+[14.089][AXP8191] charge status: 0x4 = 0x0
+[14.092]CPU=1014 MHz,PLL6=1200 Mhz,AHB=200 Mhz, APB1=24Mhz  MBus=600Mhz
+[14.099]gic: sec monitor mode
+SPI ALL:   ready
+[14.143]flash init start
+[14.145]workmode = 0,storage type = 1
+[14.148][mmc]: mmc driver ver uboot2018:2024-10-18 9:01:00 -- uboot2018:2025-03-28 10:03:00
+[14.157][mmc]: get sdc_type fail and use default host:tm1.
+[14.165][mmc]: can't find node "mmc0",will add new node
+[14.169][mmc]: fdt err returned <no error>
+[14.173][mmc]: Using default timing para
+[14.177][mmc]: SUNXI SDMMC Controller Version:0x50530
+[14.205][mmc]: card_caps:0x3000000a
+[14.208][mmc]: host_caps:0x3000003f
+[14.214]sunxi flash init ok
+get value error
+[14.225]Loading Environment from SUNXI_FLASH... OK
+No ethernet found.
+[14.263]NOT support bridge yet
+[14.265]Warn: no find panel or bridge
+[14.269]hdmi0@5520000 disconnected
+[14.272]drm hdmi get mode: 1920x1080@60Hz
+hdmi0@5520000: use force output detailed mode clock 148500 kHz, flags[5]
+    H: 1920 2008 2052 2200
+    V: 1080 1084 1089 1125
+bus_format: 0
+partno erro : can't find partition bootloader
+[14.302]bootloader is not found!
+partno erro : can't find partition boot-resource
+[14.310]boot-resource is not found!
+[14.314]Can not load logo.bmp file!
+[14.317]load logo fail
+[14.326]the secure storage item0 copy0 magic is bad
+[14.338]the secure storage item0 copy1 magic is bad
+[14.342]usb burn from boot
+delay time 0
+[14.349]usb prepare ok
+[14.652]overtime
+[14.656]do_burn_from_boot usb : no usb exist
+cann't get the boot_base from the env
+[14.680]update part info
+[14.684]battery temp is -1
+[14.689]update bootcmd
+[14.697](not enough data: expected >= 8 cells, got 4 cells)
+Link up timeout
+Speed change timeout
+PCIe speed of Gen1
+Override default fdtfile to allwinner/sun60i-a733-cubie-a7z.dtb
+[17.139]libfdt fdt_check_header(): FDT_ERR_BADMAGIC
+[17.145]libfdt fdt_path_offset() returned FDT_ERR_BADMAGIC
+[17.151][mmc]: get sunxi-mmc0 string failed
+[17.155]The storage not support sample function
+[17.161]## error: update_fdt_dram_para_from_bootpara : FDT_ERR_NOTFOUND
+[17.168]chip id : 0x00005100 0x00004900 0x0000c418 0x00002354
+[17.174]mac addr => 08:51:49:dc:77:ed
+[17.177]chip id : 0x00005100 0x00004900 0x0000c418 0x00002354
+[17.183]mac addr => 08:51:49:dc:77:ec
+[17.187]/chosen/rng-seed node not exit
+[17.190]no battery, disabled battery functons
+[17.194]Could not find nodeoffset for bat_supply
+[17.199]update dts
+curr_device:0
+Device: SUNXI SD/MMC
+Manufacturer ID: 3
+OEM: 5344
+Name: SD32G
+Bus Speed: 50000000
+Mode : SD High Speed (50MHz)
+Rd Block Len: 512
+SD version 3.0
+High Capacity: Yes
+Capacity: 29.7 GiB
+Bus Width: 4-bit
+Erase Group Size: 512 Bytes
+[ufs]info:Driver version 0.0.24 2024.12.30 16:00
+[ufs]info:Cal words 0x60:val 0x98620000, 0x64:val 0x4d1d9753
+[ufs]info:[RX, TX]: gear=[4, 4], lane[2, 2], pwr[FAST MODE, FAST MODE], rate = 2
+[ufs]err:Warning wExceptionEventStatus 20 !!!!!!!
+[ufs]err:Warning wExceptionEventStatus 20 !!!!!!!
+[ufs]err:Warning wExceptionEventStatus 20 !!!!!!!
+[ufs]err:Warning wExceptionEventStatus 20 !!!!!!!
+[ufs]err:Warning wExceptionEventStatus 20 !!!!!!!
+[ufs]err:Warning wExceptionEventStatus 20 !!!!!!!
+[ufs]err:Warning wExceptionEventStatus 20 !!!!!!!
+[ufs]err:Warning wExceptionEventStatus 20 !!!!!!!
+[ufs]err:Warning wExceptionEventStatus 20 !!!!!!!
+[ufs]err:Warning wExceptionEventStatus 20 !!!!!!!
+[ufs]info:Eol info 1
+[ufs]info:life time a 1
+[ufs]info:life time b 1
+[ufs]info:qTotalRawDeviceCapacity 0xEE78000, max_num_alloc_units 0x773c
+[ufs]info:dNumAllocUnits:0x773c
+ [ufs]err:sc st 2
+[ufs]err:scsi status:Check conditon
+[ufs]err:dump:bfeb6f60: 70 00 06 00 00 00 00 0a 00 00 00 00 29 00 00 00    p...........)...
+[ufs]info:blk size 4096,capacity 31256576 block
+Hit any key to stop autoboot:  0
+starting USB...
+USB0:   start sunxi  USB-DRD...
+config usb clk ok
+sunxi USB-DRD init ok...
+USB EHCI 1.00
+scanning bus 0 for devices... 1 USB Device(s) found
+USB1:   start sunxi  USB1-Host...
+config usb clk ok
+sunxi USB1-Host init ok...
+USB EHCI 1.00
+scanning bus 1 for devices... 1 USB Device(s) found
+       scanning usb for storage devices... 0 Storage Device(s) found
+
+Device 0: device type unknown
+... is now current device
+** Bad device usb 0 **
+** Bad device usb 0 **
+mmc0 is current device
+Scanning mmc 0:2...
+Scanning mmc 0:3...
+Found /boot/extlinux/extlinux.conf
+Retrieving file: /boot/extlinux/extlinux.conf
+196 bytes read in 15 ms (12.7 KiB/s)
+1:      openvela A733 (minimal SD image)
+Retrieving file: /boot/openvela/a733/Image
+2701272 bytes read in 132 ms (19.5 MiB/s)
+Retrieving file: /boot/dtb/sun60i-a733-cubie-a7z.dtb
+193692 bytes read in 25 ms (7.4 MiB/s)
+[21.894]libfdt fdt_path_offset() returned FDT_ERR_BADMAGIC
+[21.903]The storage not support sample function
+[21.990]mac addr => 08:51:49:dc:77:ed
+[21.994]mac addr => 08:51:49:dc:77:ec
+[21.998]no battery, disabled battery functons
+[22.005]update dts
+stop sunxi USB-DRD ok...
+stop sunxi USB1-Host ok...
+[22.031]Starting kernel ...
+
+[22.034]total: 22034 ms
+
+[22.036][mmc]: MMC Device 2 not found
+[22.040][mmc]: mmc 2 not find, so not exit
+NOTICE:  [SCP] :wait arisc ready....
+NOTICE:  [SCP] :arisc version: [d463b9da43dc50320f21ba51c6c51afe2db20d83]
+NOTICE:  [SCP] :arisc startup ready
+NOTICE:  [SCP] :arisc startup notify message feedback
+NOTICE:  [SCP] :sunxi-arisc driver is starting
+NOTICE:  BL3-1: Next image address = 0x40200000
+NOTICE:  BL3-1: Next image spsr = 0x3c5
+- Ready to Boot Primary CPU
+- Boot from EL1
+- Boot to C runtime for OS Initialize
+M0 v141-layout
+M1
+A7Z0
+A7Z1
+N0
+N1
+H0
+H1
+H2
+H3
+H4
+S0
+S1
+P1
+H5
+N2
+N3
+N4
+R RdeeRe- 5 e-  RRa
+ oy     ReBeaayaeada da0ddtyyydy
+ o o  BoBBttBt  oooBo1tt
+totSt toe  oBoto oBBo oooBoo2to
+cnccceeoo   cStSBSS ee e3oeSS
+ Pdn     ocodnnnAnoc 0ddndCod
+PUUPU   CCdCCUPC PPA
+P    U1C
+U
+
+
+
+
+A-  2o
+oot B  - BBB-Bo
+   off fBooooBotootft4t rt
+mmmrom  fot rrrNmrfr6o ofooE
+1LE111  oL m N1Em EEEL LLE7L
+-
+ L
+
+
+
+X1
+o   0--B
+ BBB
+    Boootoooo oottttt   o tttt ooCoo     CCCrC   u rrrrntuuuunnnnimtttteiiiimmmm feeee    ofrfff oooorrrrO S   O OOOSISSS  n  IIIiInnnntiiiiittttaliizeeeaaillzlliieiizzz
+    e
+
+
+
+- Boot to - C Boruotnt itome C  forrun OtiSm Ie nfitoir alOSiz Ien
+itialize
+N8
+X1
+PR
+PR
+PR
+
+NuttShell (NSH)
+nsh> RI
+RX
+
+nsh> echo board > /dev/a733-ufs
+nsh> time "echo handoff > /dev/a733-ufs"
+
+0.0000 sec
+nsh> cat /dev/a733-ufs
+A733 UFS v167 firmware-handoff observation (NOT usable UFS storage)
+last=0 stage=handoff-observed-not-dma-authorized registered=0 quarantine=0 owns=0 lun=0
+ccu: axi=81000000 cfg=80000018 bgr=000f0001
+last-snapshot: version=00000000 cap=00000000 hcs=00000000 is=00000000 ocs=0 response=00000000 elapsed-ms=0
+media: model='' blocks=0 block-bytes=0 capacity-bytes=0 commands=0 read-bytes=0
+dma: resident=0 bytes=69632 retained-until-reboot=1
+control: board | handoff | probe | attach-ro=<lun:0..7>
+board: read-only CCU/RTC collection; no HCI/PMIC/DMA/clock writes
+probe/attach-ro: blocked until real board power provider is qualified
+handoff: explicit experimental firmware-powered HCI snapshot; no writes
+probe snapshots registers only; does NOT prove device/link presence
+attach-ro REQUIRES firmware-initialized active idle link and device
+cold-PMIC/PHY-init=not-implemented writes=disabled auto-mount=disabled
+SD boot and /data unchanged; no reset, retry, format, migration or erase
+board-v166: sampled=1 stable=1 last=0 stage=snapshot-collected-not-power-qualified attempts=2 reads=26 last-address=0709016c
+pll: ref=f8675f00 peri0=ff126310 pat0=00000000 pat1=30000000
+fabric: store-ahb=110103ff store-mbus=f1055803 msi-lite1=00030001
+ufs-ccu: axi=81000000 cfg=80000018 bgr=000f0001 ref=00000000
+rtc: xo=183fb0f7 xo1=00000511 dcxo-selected-hz=26000000 (selector only, NOT measured)
+decode: axi-mux=1 div=1 cfg-mux=0 div=25 reset-release-mask=f gate-mask=7f
+clock rates are NOT inferred from PLL names; raw values retained
+qualification: rails=unknown domain=unknown ownership=unknown dma-map=unknown hci-access=blocked
+PMIC-SMC=not-called PMIC-I2C=not-touched cold-start=blocked
+handoff-v167: stage=handoff-observed-not-dma-authorized last=0 stable=1 reads=32 last-offset=80 link-ready=1 pending=0 needs-quiesce=1
+hci: cap=11870f1f ver=00000300 ahit=00000000 is=00000000 ie=00030e15 hcs=0000010f hce=00000001 iac=00000000
+utrl: base=bfeb4c00/00000000 doorbell=00000000 runstop=00000001
+utmr: base=00000000/00000000 doorbell=00000000 runstop=00000001
+handoff-policy: firmware-powered assumption; no PMIC qualification; register-writes=0 dma=0 media-commands=0 attach-blocked=1
+nsh>

@@ -1,0 +1,25 @@
+asr-prepare-v213: tokens-us=2644 status=0
+asr-prepare-v213: role=asr-encoder query-alloc-us=114 prepare-us=0 status=0
+asr-prepare-v213: role=asr-decoder query-alloc-us=3 prepare-us=0 status=0
+asr-prepare-v213: role=asr-joiner query-alloc-us=3 prepare-us=0 status=0
+cmd_open_light_16k: 帮我打开灯 chunks=2 same-three-clients
+cmd_time_16k: 现在几点了 chunks=2 same-three-clients
+neg_silence_3s_16k:  chunks=4 same-three-clients
+cmd_open_light_16k: 帮我打开灯 chunks=2 same-three-clients
+cmd_time_16k: 现在几点了 chunks=2 same-three-clients
+neg_silence_3s_16k:  chunks=4 same-three-clients
+asr-compute-v190: encoder=4/1604us decoder=1/1us joiner=96/941us; HOST; no target affinity/inference qualification
+asr-v210: accept-batches=300 accept-us=10389 final-flush-us=3687 status=0; nested NPU times are not additive and not E2E latency
+asr-v211: received=48000 staged-bytes=0 qualified-batches=75 tail-frames=92 max-stage-ms=40; no dropped PCM
+asr-prepare-v213: tokens-us=3357 status=0
+asr-compute-v190: encoder=0/0us decoder=0/0us joiner=0/0us; HOST; no target affinity/inference qualification
+asr-v210: accept-batches=0 accept-us=0 final-flush-us=0 status=-125; nested NPU times are not additive and not E2E latency
+asr-v211: received=0 staged-bytes=0 qualified-batches=0 tail-frames=0 max-stage-ms=40; no dropped PCM
+asr-prepare-v213: tokens-us=2393 status=0
+asr-prepare-v213: role=asr-encoder query-alloc-us=15 prepare-us=0 status=0
+asr-prepare-v213: role=asr-decoder query-alloc-us=2 prepare-us=0 status=0
+asr-prepare-v213: role=asr-joiner query-alloc-us=3 prepare-us=0 status=0
+asr-compute-v190: encoder=1/467us decoder=1/2us joiner=0/0us; HOST; no target affinity/inference qualification
+asr-v210: accept-batches=1 accept-us=2869 final-flush-us=0 status=-84; nested NPU times are not additive and not E2E latency
+asr-v211: received=28416 staged-bytes=0 qualified-batches=1 tail-frames=0 max-stage-ms=40; no dropped PCM
+PASS: native capture replay + 35-state feedback, cancellation, finite/output gates; mock calls=428, NPU=NOT_EXECUTED

@@ -1,0 +1,335 @@
+diff --git a/external/zblue/zblue/subsys/bluetooth/host/hci_core.c b/external/zblue/zblue/subsys/bluetooth/host/hci_core.c
+index ab23d63..c7c639d 100644
+--- a/external/zblue/zblue/subsys/bluetooth/host/hci_core.c
++++ b/external/zblue/zblue/subsys/bluetooth/host/hci_core.c
+@@ -70,6 +70,11 @@
+ #include <zephyr/logging/log.h>
+ LOG_MODULE_REGISTER(bt_hci_core);
+ 
++/* Candidate-only lifecycle checkpoints without enabling verbose Zblue logs.
++ * Port LOG_INF/LOG_ERR compile out when CONFIG_BT_DEBUG_LOG is disabled.
++ */
++#define BLE_LIFE_LOG(fmt, ...) syslog(6, "BLE-LIFE " fmt "\n", ##__VA_ARGS__)
++
+ #define BT_HCI_NODE(index)	DT_CAT(zephyr_bt_hci, index)
+ #define BT_HCI_DEV(index)  DT_CHOSEN(BT_HCI_NODE(index))
+ #define BT_HCI_BUS  BT_DT_HCI_BUS_GET(BT_HCI_DEV(0))
+@@ -382,10 +387,10 @@ struct net_buf *bt_hci_cmd_create(uint16_t opcode, uint8_t param_len)
+ 
+ 	LOG_DBG("opcode 0x%04x %s param_len %u", opcode, bt_hci_opcode_to_str(opcode), param_len);
+ 
+-	/* net_buf_alloc(K_FOREVER) can fail when run from the syswq */
+-	buf = net_buf_alloc(&hci_cmd_pool, K_FOREVER);
++	/* A leaked command must not block the sole SAL worker indefinitely. */
++	buf = net_buf_alloc(&hci_cmd_pool, K_MSEC(2000));
+ 	if (!buf) {
+-		LOG_DBG("Unable to allocate a command buffer");
++		BLE_LIFE_LOG("command-pool timeout opcode=%04x", opcode);
+ 		return NULL;
+ 	}
+ 
+@@ -501,7 +506,9 @@ int bt_hci_cmd_send_sync(struct bt_dev *hdev, uint16_t opcode, struct net_buf *b
+ 	}
+ 
+ 	/* Now that we have sent the command, suspend until the LL replies */
++	BLE_LIFE_LOG("sync-wait opcode=%04x", opcode);
+ 	err = k_sem_take(&sync_sem, HCI_CMD_TIMEOUT);
++	BLE_LIFE_LOG("sync-done opcode=%04x rc=%d", opcode, err);
+ 	BT_ASSERT_MSG(err == 0,
+ 		      "Controller unresponsive, command opcode 0x%04x %s timeout with err %d",
+ 		      opcode, bt_hci_opcode_to_str(opcode), err);
+@@ -4555,6 +4562,46 @@ int bt_enable_mc(uint8_t dev_id, bt_ready_cb_t cb)
+ 	return 0;
+ }
+ 
++/* Only call after the H4 receive poll has been removed. Never erase a work
++ * object's intrusive queue node while a worker still owns it.
++ */
++static int bt_dev_quiesce(struct bt_dev *hdev)
++{
++	struct net_buf *buf;
++	unsigned int attempts;
++
++	for (attempts = 0; attempts < 1000; attempts++) {
++		k_work_cancel(&hdev->init);
++		k_work_cancel(&hdev->tx_work);
++		k_work_cancel(&hdev->rx_work);
++		if (!k_work_busy_get(&hdev->init) &&
++		    !k_work_busy_get(&hdev->tx_work) &&
++		    !k_work_busy_get(&hdev->rx_work)) {
++			break;
++		}
++		k_sleep(K_MSEC(2));
++	}
++	if (attempts == 1000) {
++		BLE_LIFE_LOG("quiesce timeout init=%d tx=%d rx=%d; reboot required",
++			k_work_busy_get(&hdev->init), k_work_busy_get(&hdev->tx_work),
++			k_work_busy_get(&hdev->rx_work));
++		return -ETIMEDOUT;
++	}
++
++	while ((buf = k_fifo_get(&hdev->cmd_tx_queue, K_NO_WAIT))) {
++		net_buf_unref(buf);
++	}
++	while ((buf = net_buf_slist_get(&hdev->rx_queue))) {
++		net_buf_unref(buf);
++	}
++	if (hdev->sent_cmd) {
++		net_buf_unref(hdev->sent_cmd);
++		hdev->sent_cmd = NULL;
++	}
++	BLE_LIFE_LOG("quiesce complete");
++	return 0;
++}
++
+ int bt_disable_mc(uint8_t dev_id)
+ {
+ 	int err;
+@@ -4579,7 +4626,7 @@ int bt_disable_mc(uint8_t dev_id)
+ #endif
+ 
+ 	if (atomic_test_and_set_bit(hdev->flags, BT_DEV_DISABLE)) {
+-		bt_dev_free(hdev);
++		/* A repeated disable must not erase the first caller's live state. */
+ 		return -EALREADY;
+ 	}
+ 
+@@ -4607,6 +4654,7 @@ int bt_disable_mc(uint8_t dev_id)
+ #endif /* CONFIG_BT_CONN */
+ 
+ 	/* Reset the Controller */
++	BLE_LIFE_LOG("disable controller-reset");
+ 	if (!drv_quirk_no_reset(hdev)) {
+ 
+ 		err = bt_hci_cmd_send_sync(hdev, BT_HCI_OP_RESET, NULL, NULL);
+@@ -4619,11 +4667,11 @@ int bt_disable_mc(uint8_t dev_id)
+ 	}
+ 
+ #if DT_HAS_CHOSEN(zephyr_bt_hci)
++	BLE_LIFE_LOG("disable transport-close");
+ 	err = bt_hci_close(hdev->hci);
+ 	if (err == -ENOSYS) {
+ 		atomic_clear_bit(hdev->flags, BT_DEV_DISABLE);
+ 		atomic_set_bit(hdev->flags, BT_DEV_READY);
+-		bt_dev_free(hdev);
+ 		return -ENOTSUP;
+ 	}
+ #else
+@@ -4634,8 +4682,14 @@ int bt_disable_mc(uint8_t dev_id)
+ 
+ 		/* Re-enable BT_DEV_READY to avoid inconsistent stack state */
+ 		atomic_set_bit(hdev->flags, BT_DEV_READY);
+-		bt_dev_free(hdev);
++		return err;
++	}
+ 
++	err = bt_dev_quiesce(hdev);
++	if (err) {
++		/* Retain the object and its flags: reopening this controller would
++		 * overwrite live work. Do not falsely publish OFF after failure.
++		 */
+ 		return err;
+ 	}
+ 
+diff --git a/external/zblue/zblue/subsys/bluetooth/host/scan.c b/external/zblue/zblue/subsys/bluetooth/host/scan.c
+index 8d6ff66..5a7e3d4 100644
+--- a/external/zblue/zblue/subsys/bluetooth/host/scan.c
++++ b/external/zblue/zblue/subsys/bluetooth/host/scan.c
+@@ -44,6 +44,7 @@ enum scan_action {
+ 
+ struct bt_dev_scan_ctx {
+ 	struct bt_dev *hdev;
++	bool mutexes_initialized;
+ 	bt_le_scan_cb_t *scan_dev_found_cb;
+ 	sys_slist_t scan_cbs;
+ 	struct scanner_state {
+@@ -126,9 +127,19 @@ void bt_scan_reset(struct bt_dev *hdev)
+ 	sys_slist_init(&ctx->pa_sync_cbs);
+ #endif /* defined(CONFIG_BT_PER_ADV_SYNC) */
+ 
+-	memset(&ctx->scan_state, 0x0, sizeof(ctx->scan_state));
+-	k_mutex_init(&ctx->scan_state.scan_update_mutex);
+-	k_mutex_init(&ctx->scan_state.scan_explicit_params_mutex);
++	/* POSIX-backed mutexes must not be memset/reinitialized on HCI Reset.
++	 * Reset only scanner data; controller lifecycle calls are serialized.
++	 */
++	memset(ctx->scan_state.scan_flags, 0, sizeof(ctx->scan_state.scan_flags));
++	memset(&ctx->scan_state.explicit_scan_param, 0,
++	       sizeof(ctx->scan_state.explicit_scan_param));
++	memset(&ctx->scan_state.used_scan_param, 0,
++	       sizeof(ctx->scan_state.used_scan_param));
++	if (!ctx->mutexes_initialized) {
++		k_mutex_init(&ctx->scan_state.scan_update_mutex);
++		k_mutex_init(&ctx->scan_state.scan_explicit_params_mutex);
++		ctx->mutexes_initialized = true;
++	}
+ 	bt_scan_softreset(hdev);
+ }
+ 
+diff --git a/frameworks/connectivity/bluetooth/service/stacks/zephyr/hci_h4.c b/frameworks/connectivity/bluetooth/service/stacks/zephyr/hci_h4.c
+index 580de33..f5096de 100644
+--- a/frameworks/connectivity/bluetooth/service/stacks/zephyr/hci_h4.c
++++ b/frameworks/connectivity/bluetooth/service/stacks/zephyr/hci_h4.c
+@@ -71,6 +71,8 @@ struct h4_data {
+ 
+ static const struct device* bt_dev;
+ static service_poll_t* hci_handle;
++static uint8_t frame[1026];
++static ssize_t frame_size;
+ 
+ static void hci_remove_recv(void* data);
+ 
+@@ -91,17 +93,24 @@ static void h4_data_dump(const char* tag, uint8_t type, uint8_t* data, uint32_t
+ static int h4_send_data(int fd, uint8_t* buf, int count)
+ {
+     int ret, nwritten = 0;
++    unsigned int stalled = 0;
+ 
+     while (nwritten != count) {
+         ret = write(fd, buf + nwritten, count - nwritten);
+         if (ret < 0) {
+             if (errno == EAGAIN) {
++                if (++stalled >= 2000) {
++                    BT_LOGE("BLE-LIFE H4 write stalled; reconnect/reboot required");
++                    return -ETIMEDOUT;
++                }
+                 usleep(1000);
+                 continue;
+             } else
+                 return ret;
+         }
+ 
++        if (ret == 0)
++            return -EIO;
+         nwritten += ret;
+     }
+ 
+@@ -221,13 +230,11 @@ static int32_t hci_packet_complete(const uint8_t* buf, uint16_t buf_len)
+ static void bt_sal_hci_transport_recv(void)
+ {
+     struct h4_data* h4 = bt_dev->data;
+-    static uint8_t frame[1026];
+     struct net_buf* buf;
+     size_t buf_tailroom;
+     size_t buf_add_len;
+     ssize_t len;
+     const uint8_t* frame_start = frame;
+-    static ssize_t frame_size = 0;
+ 
+     len = read(h4->fd, frame + frame_size, sizeof(frame) - frame_size);
+     if (len < 0) {
+@@ -309,6 +316,8 @@ static void hci_remove_recv(void* data)
+     BT_LOGD("%s", __func__);
+     service_loop_remove_poll(hci_handle);
+     hci_handle = NULL;
++    /* Executed on the receive event loop; no callback owns the partial frame. */
++    frame_size = 0;
+ }
+ 
+ static void hci_poll_recv(service_poll_t* poll, int revent, void* userdata)
+@@ -348,6 +357,7 @@ static int h4_open(const struct device* dev, bt_hci_recv_t recv, void* hci_data)
+     }
+ 
+     h4 = dev->data;
++    frame_size = 0;
+     h4->fd = fd;
+     h4->recv = recv;
+     h4->hci_data = hci_data;
+@@ -358,6 +368,8 @@ static int h4_open(const struct device* dev, bt_hci_recv_t recv, void* hci_data)
+     hci_handle = service_loop_poll_fd(h4->fd, POLL_READABLE, hci_poll_recv, NULL);
+     if (!hci_handle) {
+         BT_LOGD("hci fd:%d add poll failed", h4->fd);
++        close(h4->fd);
++        h4->fd = -1;
+         return -1;
+     }
+ 
+@@ -380,7 +392,7 @@ static int h4_send(const struct device* dev, struct net_buf* buf)
+ {
+     int len;
+     int ret;
+-    struct h4_data* h4 = bt_dev->data;
++    struct h4_data* h4 = dev->data;
+ 
+     switch (bt_buf_get_type(buf)) {
+     case BT_BUF_ACL_OUT:
+@@ -394,6 +406,7 @@ static int h4_send(const struct device* dev, struct net_buf* buf)
+             net_buf_push_u8(buf, BT_HCI_H4_ISO);
+             break;
+         }
++        return -ENOTSUP;
+     default:
+         BT_LOGE("Unknown buffer type");
+         return -EINVAL;
+@@ -405,12 +418,14 @@ static int h4_send(const struct device* dev, struct net_buf* buf)
+     ret = h4_send_data(h4->fd, buf->data, buf->len);
+     if (ret != len) {
+         BT_LOGE("H4: Failed to send %u bytes: %d", len, ret);
+-        ret = -EINVAL;
++        /* Host error paths still own buf and release it themselves. */
++        net_buf_pull_u8(buf);
++        return ret < 0 ? ret : -EIO;
+     }
+ 
+     net_buf_unref(buf);
+ 
+-    return ret < 0 ? ret : 0;
++    return 0;
+ }
+ 
+ const struct bt_hci_driver_api h4_drv_api = {
+diff --git a/frameworks/connectivity/bluetooth/service/stacks/zephyr/sal_le_scan_interface.c b/frameworks/connectivity/bluetooth/service/stacks/zephyr/sal_le_scan_interface.c
+index 24d8275..92fdec3 100644
+--- a/frameworks/connectivity/bluetooth/service/stacks/zephyr/sal_le_scan_interface.c
++++ b/frameworks/connectivity/bluetooth/service/stacks/zephyr/sal_le_scan_interface.c
+@@ -36,6 +36,7 @@ typedef void (*sal_func_t)(void* args);
+ typedef struct {
+     bt_controller_id_t id;
+     sal_func_t func;
++    struct bt_le_scan_param params;
+ } sal_scan_req_t;
+ 
+ typedef struct {
+@@ -115,12 +116,21 @@ static void zblue_on_device_found(const bt_addr_le_t* addr, int8_t rssi, uint8_t
+ 
+ static void STACK_CALL(start_scan)(void* args)
+ {
+-    SAL_CHECK(bt_le_scan_start(&scan_param, zblue_on_device_found), 0);
++    sal_scan_req_t* req = args;
++    int rc;
++    BT_LOGI("BLE-LIFE scan-start worker-begin");
++    rc = bt_le_scan_start(&req->params, zblue_on_device_found);
++    BT_LOGI("BLE-LIFE scan-start worker-end rc=%d", rc);
++    SAL_CHECK(rc, 0);
+ }
+ 
+ static void STACK_CALL(stop_scan)(void* args)
+ {
+-    SAL_CHECK(bt_le_scan_stop(), 0);
++    int rc;
++    BT_LOGI("BLE-LIFE scan-stop worker-begin");
++    rc = bt_le_scan_stop();
++    BT_LOGI("BLE-LIFE scan-stop worker-end rc=%d", rc);
++    SAL_CHECK(rc, 0);
+ }
+ 
+ bt_status_t bt_sal_le_set_scan_parameters(bt_controller_id_t id, ble_scan_params_t* params)
+@@ -143,6 +153,8 @@ bt_status_t bt_sal_le_start_scan(bt_controller_id_t id)
+         return BT_STATUS_NOMEM;
+     }
+ 
++    req->params = scan_param;
++    BT_LOGI("BLE-LIFE scan-start enqueue (not controller completion)");
+     return sal_send_req(req);
+ }
+ 
+@@ -156,6 +168,7 @@ bt_status_t bt_sal_le_stop_scan(bt_controller_id_t id)
+         return BT_STATUS_NOMEM;
+     }
+ 
++    BT_LOGI("BLE-LIFE scan-stop enqueue (not controller completion)");
+     return sal_send_req(req);
+ }
+-#endif /* CONFIG_BLUETOOTH_BLE_SCAN */
+\ No newline at end of file
++#endif /* CONFIG_BLUETOOTH_BLE_SCAN */

@@ -1,0 +1,240 @@
+
+    ooo oooottttto     ttttooCoo     CCrCC   u rrrnruuutunnnnitmtttieiiim mmmeefee  o  ffrffooo orrrOr    S OOOOISSSS    nIiIIIntnnniiiiittattiiliiaaaialllzliiieizzzz
+eeee
+
+
+
+n Boot to C runtime for - OBS ooInt ittio alCi rzeu
+ time for OS Initialize
+N8
+X1
+PR
+PR
+PR
+
+NuttShell (NSH)
+nsh> RI
+RX
+
+nsh> npu info
+A733 VIP2 ABI v4 CID=1000003b cores=1 page=4096 pool=2093056 free=1654784 buffers=16 timeout=5000 ms
+nsh> npu selftest
+selftest: passed
+nsh> free
+      total       used       free    maxused    maxfree  nused  nfree name
+ 4239114240      63456 4239050784      73680 4143972320     98      5 Umem
+nsh> ls -l /data/npu/voice/kws/wav
+/data/npu/voice/kws/wav:
+ -rw-rw-rw-       67116 wave0.wav
+ -rw-rw-rw-       67116 wave1.wav
+ -rw-rw-rw-       67116 wave2.wav
+ -rw-rw-rw-       67116 wave3.wav
+ -rw-rw-rw-      106284 wave4.wav
+ -rw-rw-rw-      106284 wave5.wav
+nsh> aipet audio npukws /data/npu/voice /data/npu/voice/kws/features0.f32 cpu6 quiet
+npukws: cpu-policy=cpu6 clean=bounded validation=all-native-CRCs driver-crc=slice8 app-crc=slice8
+npukws: resident=3 cold-prepare-us=1401013; buffered features only; no cloud/ASR/Agent actions
+npukws hit: word=0 name=你好小瑞 frame=17 probability=0.264511138 relative=4.929687500
+npukws profile[0]: validate/rebuild/map/clean/hw/check/commit/restore/total-us=454/400202/1926/9190/507778/47673/924/7/968161 clean-bytes=96927744 tables=786432 rebuilt=96927744 app-check-us=37011
+npukws profile[1]: validate/rebuild/map/clean/hw/check/commit/restore/total-us=97/21767/518/589/9684/850/5/5/33518 clean-bytes=5455872 tables=294912 rebuilt=5455872 app-check-us=123
+npukws profile[2]: validate/rebuild/map/clean/hw/check/commit/restore/total-us=1337/103406/7546/3810/108597/7458/77/61/232340 clean-bytes=28672000 tables=4587520 rebuilt=28672000 app-check-us=2898
+npukws timing: chunks=12 completed=12 sum-us=1293250 p50-us=104948 p95-us=142571 max-us=142571 over-160ms=0 search-us=6612 affinity-restored=1
+npukws: status=0 calls=161 hits=1 chain=c0a6f8f2 elapsed-us=2774525 run-us=970643/33558/232876; resident released
+nsh> npu info
+A733 VIP2 ABI v4 CID=1000003b cores=1 page=4096 pool=2093056 free=1654784 buffers=16 timeout=5000 ms
+nsh> free
+      total       used       free    maxused    maxfree  nused  nfree name
+ 4239114240      63456 4239050784   10398752 4143972320     98      5 Umem
+nsh> aipet audio kwsinput /data/npu/voice /data/npu/voice/kws/features0.f32 cpu6 quiet
+npukws-input: EXPERIMENTAL buffered-input; unknown native outputs have NO golden accuracy proof; no Agent/cloud/physical actions
+npukws: cpu-policy=cpu6 clean=bounded validation=all-native-CRCs driver-crc=slice8 app-crc=slice8
+npukws: resident=3 cold-prepare-us=1400865; buffered features only; no cloud/ASR/Agent actions
+npukws profile[0]: validate/rebuild/map/clean/hw/check/commit/restore/total-us=463/400280/1913/9184/507876/47650/931/8/968312 clean-bytes=96927744 tables=786432 rebuilt=96927744 app-check-us=36986
+npukws profile[1]: validate/rebuild/map/clean/hw/check/commit/restore/total-us=99/21599/517/590/9682/847/8/4/33348 clean-bytes=5455872 tables=294912 rebuilt=5455872 app-check-us=125
+npukws profile[2]: validate/rebuild/map/clean/hw/check/commit/restore/total-us=1337/103334/7547/3804/108594/7466/78/58/232265 clean-bytes=28672000 tables=4587520 rebuilt=28672000 app-check-us=2870
+npukws timing: chunks=12 completed=12 sum-us=1285366 p50-us=104790 p95-us=142638 max-us=142638 over-160ms=0 search-us=6606 affinity-restored=1
+npukws-input candidate: word=0 name=你好小瑞 frame=17 probability=0.264511138; diagnostic only
+npukws-input: status=0 calls=161 candidates=1 known=161 unknown=0 chain=c0a6f8f2 feature-crc=6a969644 frames=210 unused-tail=5 elapsed-us=2786684; resident released; acoustic accuracy NOT accepted
+nsh> npu info
+A733 VIP2 ABI v4 CID=1000003b cores=1 page=4096 pool=2093056 free=1654784 buffers=16 timeout=5000 ms
+nsh> free
+      total       used       free    maxused    maxfree  nused  nfree name
+ 4239114240      63456 4239050784   10398752 4143972320     98      5 Umem
+nsh> aipet audio kwswav /data/npu/voice /data/npu/voice/kws/wav/wave0.wav
+npukws-input: buffered frontend PCM=16000/mono/S16 frames=210 bins=80; capture already stopped; NOT live streaming
+npukws-input: EXPERIMENTAL buffered-input; unknown native outputs have NO golden accuracy proof; no Agent/cloud/physical actions
+npukws: cpu-policy=cpu6 clean=bounded validation=all-native-CRCs driver-crc=slice8 app-crc=slice8
+npukws: resident=3 cold-prepare-us=1401001; buffered features only; no cloud/ASR/Agent actions
+npukws profile[0]: validate/rebuild/map/clean/hw/check/commit/restore/total-us=457/399104/1928/9182/507276/47724/926/8/966610 clean-bytes=96927744 tables=786432 rebuilt=96927744 app-check-us=37027
+npukws profile[1]: validate/rebuild/map/clean/hw/check/commit/restore/total-us=91/21376/516/589/9685/848/7/5/33121 clean-bytes=5455872 tables=294912 rebuilt=5455872 app-check-us=125
+npukws profile[2]: validate/rebuild/map/clean/hw/check/commit/restore/total-us=1281/103948/7566/3794/108586/7464/71/56/232816 clean-bytes=28672000 tables=4587520 rebuilt=28672000 app-check-us=2848
+npukws timing: chunks=12 completed=12 sum-us=1283997 p50-us=104743 p95-us=142133 max-us=142133 over-160ms=0 search-us=6605 affinity-restored=1
+npukws-input candidate: word=0 name=你好小瑞 frame=17 probability=0.264495194; diagnostic only
+npukws-input: status=0 calls=161 candidates=1 known=9 unknown=152 chain=44dce402 feature-crc=0c2f1306 frames=210 unused-tail=5 elapsed-us=2785451; resident released; acoustic accuracy NOT accepted
+aipet audio: kwswav result=0
+nsh> npu info
+A733 VIP2 ABI v4 CID=1000003b cores=1 page=4096 pool=2093056 free=1654784 buffers=16 timeout=5000 ms
+nsh> free
+      total       used       free    maxused    maxfree  nused  nfree name
+ 4239114240      63456 4239050784   10622288 4143972320     98      5 Umem
+nsh> aipet audio kwswav /data/npu/voice /data/npu/voice/kws/wav/wave1.wav
+npukws-input: buffered frontend PCM=16000/mono/S16 frames=210 bins=80; capture already stopped; NOT live streaming
+npukws-input: EXPERIMENTAL buffered-input; unknown native outputs have NO golden accuracy proof; no Agent/cloud/physical actions
+npukws: cpu-policy=cpu6 clean=bounded validation=all-native-CRCs driver-crc=slice8 app-crc=slice8
+npukws: resident=3 cold-prepare-us=1400963; buffered features only; no cloud/ASR/Agent actions
+npukws profile[0]: validate/rebuild/map/clean/hw/check/commit/restore/total-us=440/399178/1927/9183/506979/47686/924/6/966333 clean-bytes=96927744 tables=786432 rebuilt=96927744 app-check-us=36910
+npukws profile[1]: validate/rebuild/map/clean/hw/check/commit/restore/total-us=108/26107/633/724/11836/1034/6/5/40458 clean-bytes=6668288 tables=360448 rebuilt=6668288 app-check-us=145
+npukws profile[2]: validate/rebuild/map/clean/hw/check/commit/restore/total-us=2294/188712/13764/6961/197776/13571/114/121/423387 clean-bytes=52224000 tables=8355840 rebuilt=52224000 app-check-us=5151
+npukws timing: chunks=12 completed=12 sum-us=1490543 p50-us=107106 p95-us=160960 max-us=160960 over-160ms=2 search-us=12521 affinity-restored=1
+npukws-input candidate: word=2 name=小瑞 frame=32 probability=0.251999438; diagnostic only
+npukws-input: status=0 calls=278 candidates=1 known=15 unknown=263 chain=0585356b feature-crc=0d3e08bb frames=210 unused-tail=5 elapsed-us=2992131; resident released; acoustic accuracy NOT accepted
+aipet audio: kwswav result=0
+nsh> npu info
+A733 VIP2 ABI v4 CID=1000003b cores=1 page=4096 pool=2093056 free=1654784 buffers=16 timeout=5000 ms
+nsh> free
+      total       used       free    maxused    maxfree  nused  nfree name
+ 4239114240      63456 4239050784   10622288 4143972320     98      5 Umem
+nsh> aipet audio kwswav /data/npu/voice /data/npu/voice/kws/wav/wave2.wav
+npukws-input: buffered frontend PCM=16000/mono/S16 frames=210 bins=80; capture already stopped; NOT live streaming
+npukws-input: EXPERIMENTAL buffered-input; unknown native outputs have NO golden accuracy proof; no Agent/cloud/physical actions
+npukws: cpu-policy=cpu6 clean=bounded validation=all-native-CRCs driver-crc=slice8 app-crc=slice8
+npukws: resident=3 cold-prepare-us=1400822; buffered features only; no cloud/ASR/Agent actions
+npukws profile[0]: validate/rebuild/map/clean/hw/check/commit/restore/total-us=455/398768/1924/9187/507574/47693/925/5/966538 clean-bytes=96927744 tables=786432 rebuilt=96927744 app-check-us=36916
+npukws profile[1]: validate/rebuild/map/clean/hw/check/commit/restore/total-us=111/26263/628/721/11839/1039/9/6/40620 clean-bytes=6668288 tables=360448 rebuilt=6668288 app-check-us=152
+npukws profile[2]: validate/rebuild/map/clean/hw/check/commit/restore/total-us=2441/203386/14859/7488/213285/14594/136/121/456408 clean-bytes=56320000 tables=9011200 rebuilt=56320000 app-check-us=5525
+npukws timing: chunks=12 completed=12 sum-us=1525165 p50-us=133630 p95-us=160701 max-us=160701 over-160ms=2 search-us=13175 affinity-restored=1
+npukws-input candidate: word=1 name=小瑞小瑞 frame=35 probability=0.155339703; diagnostic only
+npukws-input: status=0 calls=298 candidates=1 known=24 unknown=274 chain=fdb3e50c feature-crc=ef63d058 frames=210 unused-tail=5 elapsed-us=3027132; resident released; acoustic accuracy NOT accepted
+aipet audio: kwswav result=0
+nsh> npu info
+A733 VIP2 ABI v4 CID=1000003b cores=1 page=4096 pool=2093056 free=1654784 buffers=16 timeout=5000 ms
+nsh> free
+      total       used       free    maxused    maxfree  nused  nfree name
+ 4239114240      63456 4239050784   10622288 4143972320     98      5 Umem
+nsh> aipet audio kwswav /data/npu/voice /data/npu/voice/kws/wav/wave3.wav
+npukws-input: buffered frontend PCM=16000/mono/S16 frames=210 bins=80; capture already stopped; NOT live streaming
+npukws-input: EXPERIMENTAL buffered-input; unknown native outputs have NO golden accuracy proof; no Agent/cloud/physical actions
+npukws: cpu-policy=cpu6 clean=bounded validation=all-native-CRCs driver-crc=slice8 app-crc=slice8
+npukws: resident=3 cold-prepare-us=1401047; buffered features only; no cloud/ASR/Agent actions
+npukws profile[0]: validate/rebuild/map/clean/hw/check/commit/restore/total-us=452/398955/1928/9190/506469/47758/923/6/965689 clean-bytes=96927744 tables=786432 rebuilt=96927744 app-check-us=36895
+npukws profile[1]: validate/rebuild/map/clean/hw/check/commit/restore/total-us=109/26145/632/719/11833/1038/9/3/40494 clean-bytes=6668288 tables=360448 rebuilt=6668288 app-check-us=157
+npukws profile[2]: validate/rebuild/map/clean/hw/check/commit/restore/total-us=3270/272186/19874/10027/285411/19545/174/170/610771 clean-bytes=75366400 tables=12058624 rebuilt=75366400 app-check-us=7383
+npukws timing: chunks=12 completed=12 sum-us=1685693 p50-us=147705 p95-us=169885 max-us=169885 over-160ms=1 search-us=17727 affinity-restored=1
+npukws-input: status=0 calls=391 candidates=0 known=15 unknown=376 chain=c69d63c1 feature-crc=eb0a4c1b frames=210 unused-tail=5 elapsed-us=3179393; resident released; acoustic accuracy NOT accepted
+aipet audio: kwswav result=0
+nsh> npu info
+A733 VIP2 ABI v4 CID=1000003b cores=1 page=4096 pool=2093056 free=1654784 buffers=16 timeout=5000 ms
+nsh> free
+      total       used       free    maxused    maxfree  nused  nfree name
+ 4239114240      63456 4239050784   10622288 4143972320     98      5 Umem
+nsh> aipet audio kwswav /data/npu/voice /data/npu/voice/kws/wav/wave4.wav
+npukws-input: buffered frontend PCM=16000/mono/S16 frames=332 bins=80; capture already stopped; NOT live streaming
+npukws-input: EXPERIMENTAL buffered-input; unknown native outputs have NO golden accuracy proof; no Agent/cloud/physical actions
+npukws: cpu-policy=cpu6 clean=bounded validation=all-native-CRCs driver-crc=slice8 app-crc=slice8
+npukws: resident=3 cold-prepare-us=1401007; buffered features only; no cloud/ASR/Agent actions
+npukws profile[0]: validate/rebuild/map/clean/hw/check/commit/restore/total-us=722/631859/3046/14542/802330/75562/1469/13/1529550 clean-bytes=153468928 tables=1245184 rebuilt=153468928 app-check-us=58609
+npukws profile[1]: validate/rebuild/map/clean/hw/check/commit/restore/total-us=14/2419/58/66/1077/97/1/0/3733 clean-bytes=606208 tables=32768 rebuilt=606208 app-check-us=22
+npukws profile[2]: validate/rebuild/map/clean/hw/check/commit/restore/total-us=792/56857/4120/2048/58956/4106/39/37/126980 clean-bytes=15564800 tables=2490368 rebuilt=15564800 app-check-us=1642
+npukws timing: chunks=19 completed=19 sum-us=1730981 p50-us=90906 p95-us=94437 max-us=94437 over-160ms=0 search-us=4057 affinity-restored=1
+npukws-input: status=0 calls=96 candidates=0 known=1 unknown=95 chain=cfd5a348 feature-crc=2bd6aa42 frames=332 unused-tail=15 elapsed-us=3223232; resident released; acoustic accuracy NOT accepted
+aipet audio: kwswav result=0
+nsh> npu info
+A733 VIP2 ABI v4 CID=1000003b cores=1 page=4096 pool=2093056 free=1654784 buffers=16 timeout=5000 ms
+nsh> free
+      total       used       free    maxused    maxfree  nused  nfree name
+ 4239114240      63456 4239050784   10780784 4143972320     98      5 Umem
+nsh> aipet audio kwswav /data/npu/voice /data/npu/voice/kws/wav/wave5.wav
+npukws-input: buffered frontend PCM=16000/mono/S16 frames=332 bins=80; capture already stopped; NOT live streaming
+npukws-input: EXPERIMENTAL buffered-input; unknown native outputs have NO golden accuracy proof; no Agent/cloud/physical actions
+npukws: cpu-policy=cpu6 clean=bounded validation=all-native-CRCs driver-crc=slice8 app-crc=slice8
+npukws: resident=3 cold-prepare-us=1400816; buffered features only; no cloud/ASR/Agent actions
+npukws profile[0]: validate/rebuild/map/clean/hw/check/commit/restore/total-us=734/632314/3053/14538/801144/75589/1471/13/1528865 clean-bytes=153468928 tables=1245184 rebuilt=153468928 app-check-us=58495
+npukws profile[1]: validate/rebuild/map/clean/hw/check/commit/restore/total-us=115/26748/635/726/11837/1036/7/3/41113 clean-bytes=6668288 tables=360448 rebuilt=6668288 app-check-us=143
+npukws profile[2]: validate/rebuild/map/clean/hw/check/commit/restore/total-us=4649/380839/27929/14037/400948/27485/250/226/856537 clean-bytes=105881600 tables=16941056 rebuilt=105881600 app-check-us=10541
+npukws timing: chunks=19 completed=19 sum-us=2534844 p50-us=131350 p95-us=164843 max-us=164843 over-160ms=1 search-us=29222 affinity-restored=1
+npukws-input: status=0 calls=547 candidates=0 known=547 unknown=0 chain=aa07f970 feature-crc=27184580 frames=332 unused-tail=15 elapsed-us=4029327; resident released; acoustic accuracy NOT accepted
+aipet audio: kwswav result=0
+nsh> npu info
+A733 VIP2 ABI v4 CID=1000003b cores=1 page=4096 pool=2093056 free=1654784 buffers=16 timeout=5000 ms
+nsh> free
+      total       used       free    maxused    maxfree  nused  nfree name
+ 4239114240      63456 4239050784   10780784 4143972320     98      5 Umem
+nsh> aipet audio status
+audio: output=uart volume=50% mic-gain=x5 node=present config=/data/ai_agent/config/audio.conf
+official: ASR=not-ready TTS=not-ready; local ASR/LLM unchanged; no background recording
+nsh> aipet audio gain 5
+audio: saved; applies next operation and survives reboot.
+aipet audio: gain result=0
+nsh> time "aipet audio kwsmic /data/npu/voice 5000"
+npukws-input: recording=5000 ms gain=x5; local RAM only; record THEN infer; no file/upload/actions
+npukws-input: buffered frontend PCM=16000/mono/S16 frames=500 bins=80; capture already stopped; NOT live streaming
+npukws-input: EXPERIMENTAL buffered-input; unknown native outputs have NO golden accuracy proof; no Agent/cloud/physical actions
+npukws: cpu-policy=cpu6 clean=bounded validation=all-native-CRCs driver-crc=slice8 app-crc=slice8
+npukws: resident=3 cold-prepare-us=1401583; buffered features only; no cloud/ASR/Agent actions
+npukws profile[0]: validate/rebuild/map/clean/hw/check/commit/restore/total-us=1141/1019044/4832/22963/1266699/119426/2337/22/2436476 clean-bytes=242319360 tables=1966080 rebuilt=242319360 app-check-us=92726
+npukws profile[1]: validate/rebuild/map/clean/hw/check/commit/restore/total-us=115/26539/637/719/11841/1032/8/7/40900 clean-bytes=6668288 tables=360448 rebuilt=6668288 app-check-us=153
+npukws profile[2]: validate/rebuild/map/clean/hw/check/commit/restore/total-us=4966/386314/28233/14224/405644/27857/253/234/867891 clean-bytes=107110400 tables=17137664 rebuilt=107110400 app-check-us=10647
+npukws timing: chunks=30 completed=30 sum-us=3489383 p50-us=117397 p95-us=155914 max-us=163765 over-160ms=1 search-us=27535 affinity-restored=1
+npukws-input: status=0 calls=564 candidates=0 known=11 unknown=553 chain=97537d3e feature-crc=49c7388e frames=500 unused-tail=7 elapsed-us=4985189; resident released; acoustic accuracy NOT accepted
+aipet audio: kwsmic result=0
+
+10.4649 sec
+nsh> npu info
+A733 VIP2 ABI v4 CID=1000003b cores=1 page=4096 pool=2093056 free=1654784 buffers=16 timeout=5000 ms
+nsh> free
+      total       used       free    maxused    maxfree  nused  nfree name
+ 4239114240      63456 4239050784   11482608 4143972320     98      4 Umem
+nsh> time "aipet audio kwsmic /data/npu/voice 5000"
+npukws-input: recording=5000 ms gain=x5; local RAM only; record THEN infer; no file/upload/actions
+npukws-input: buffered frontend PCM=16000/mono/S16 frames=500 bins=80; capture already stopped; NOT live streaming
+npukws-input: EXPERIMENTAL buffered-input; unknown native outputs have NO golden accuracy proof; no Agent/cloud/physical actions
+npukws: cpu-policy=cpu6 clean=bounded validation=all-native-CRCs driver-crc=slice8 app-crc=slice8
+npukws: resident=3 cold-prepare-us=1401788; buffered features only; no cloud/ASR/Agent actions
+npukws profile[0]: validate/rebuild/map/clean/hw/check/commit/restore/total-us=1138/1019249/4809/22974/1266395/119427/2329/16/2436351 clean-bytes=242319360 tables=1966080 rebuilt=242319360 app-check-us=92536
+npukws profile[1]: validate/rebuild/map/clean/hw/check/commit/restore/total-us=119/26466/634/723/11836/1040/5/6/40833 clean-bytes=6668288 tables=360448 rebuilt=6668288 app-check-us=158
+npukws profile[2]: validate/rebuild/map/clean/hw/check/commit/restore/total-us=6417/507243/37128/18725/533643/36580/338/313/1140606 clean-bytes=140902400 tables=22544384 rebuilt=140902400 app-check-us=13889
+npukws timing: chunks=30 completed=30 sum-us=3774421 p50-us=119309 p95-us=154211 max-us=163220 over-160ms=1 search-us=35849 affinity-restored=1
+npukws-input: status=0 calls=729 candidates=0 known=11 unknown=718 chain=b3ef4651 feature-crc=2ad62ce3 frames=500 unused-tail=7 elapsed-us=5270524; resident released; acoustic accuracy NOT accepted
+aipet audio: kwsmic result=0
+
+10.7505 sec
+nsh> npu info
+A733 VIP2 ABI v4 CID=1000003b cores=1 page=4096 pool=2093056 free=1654784 buffers=16 timeout=5000 ms
+nsh> free
+      total       used       free    maxused    maxfree  nused  nfree name
+ 4239114240      63456 4239050784   11482608 4143972320     98      4 Umem
+nsh> time "aipet audio kwsmic /data/npu/voice 5000"
+npukws-input: recording=5000 ms gain=x5; local RAM only; record THEN infer; no file/upload/actions
+npukws-input: buffered frontend PCM=16000/mono/S16 frames=500 bins=80; capture already stopped; NOT live streaming
+npukws-input: EXPERIMENTAL buffered-input; unknown native outputs have NO golden accuracy proof; no Agent/cloud/physical actions
+npukws: cpu-policy=cpu6 clean=bounded validation=all-native-CRCs driver-crc=slice8 app-crc=slice8
+npukws: resident=3 cold-prepare-us=1401835; buffered features only; no cloud/ASR/Agent actions
+npukws profile[0]: validate/rebuild/map/clean/hw/check/commit/restore/total-us=1125/1019305/4815/22971/1265092/119431/2322/16/2435093 clean-bytes=242319360 tables=1966080 rebuilt=242319360 app-check-us=92592
+npukws profile[1]: validate/rebuild/map/clean/hw/check/commit/restore/total-us=114/26516/635/723/11835/1035/8/5/40874 clean-bytes=6668288 tables=360448 rebuilt=6668288 app-check-us=160
+npukws profile[2]: validate/rebuild/map/clean/hw/check/commit/restore/total-us=4251/328794/24069/12103/345165/23682/235/181/738633 clean-bytes=91136000 tables=14581760 rebuilt=91136000 app-check-us=8987
+npukws timing: chunks=30 completed=30 sum-us=3353069 p50-us=93460 p95-us=159641 max-us=166958 over-160ms=1 search-us=24449 affinity-restored=1
+npukws-input candidate: word=0 name=你好小瑞 frame=59 probability=0.163514093; diagnostic only
+npukws-input: status=0 calls=486 candidates=1 known=11 unknown=475 chain=2386723c feature-crc=83b6bb3f frames=500 unused-tail=7 elapsed-us=4857449; resident released; acoustic accuracy NOT accepted
+aipet audio: kwsmic result=0
+
+10.3374 sec
+nsh> npu info
+A733 VIP2 ABI v4 CID=1000003b cores=1 page=4096 pool=2093056 free=1654784 buffers=16 timeout=5000 ms
+nsh> free
+      total       used       free    maxused    maxfree  nused  nfree name
+ 4239114240      63456 4239050784   11482608 4143972320     98      4 Umem
+nsh> time "aipet audio kwsmic /data/npu/voice 5000"
+npukws-input: recording=5000 ms gain=x5; local RAM only; record THEN infer; no file/upload/actions
+npukws-input: buffered frontend PCM=16000/mono/S16 frames=500 bins=80; capture already stopped; NOT live streaming
+npukws-input: EXPERIMENTAL buffered-input; unknown native outputs have NO golden accuracy proof; no Agent/cloud/physical actions
+npukws: cpu-policy=cpu6 clean=bounded validation=all-native-CRCs driver-crc=slice8 app-crc=slice8
+npukws: resident=3 cold-prepare-us=1401903; buffered features only; no cloud/ASR/Agent actions
+npukws profile[0]: validate/rebuild/map/clean/hw/check/commit/restore/total-us=1137/1019099/4808/22979/1267594/119447/2317/16/2437415 clean-bytes=242319360 tables=1966080 rebuilt=242319360 app-check-us=92588
+npukws profile[1]: validate/rebuild/map/clean/hw/check/commit/restore/total-us=113/26682/633/723/11837/1036/3/3/41037 clean-bytes=6668288 tables=360448 rebuilt=6668288 app-check-us=156
+npukws profile[2]: validate/rebuild/map/clean/hw/check/commit/restore/total-us=7970/637824/46738/23583/671702/45967/414/393/1434877 clean-bytes=177356800 tables=28377088 rebuilt=177356800 app-check-us=17377
+npukws timing: chunks=30 completed=30 sum-us=4086240 p50-us=148582 p95-us=154397 max-us=170735 over-160ms=1 search-us=47042 affinity-restored=1
+npukws-input: status=0 calls=907 candidates=0 known=11 unknown=896 chain=1801b5a7 feature-crc=4c8c3d10 frames=500 unused-tail=7 elapsed-us=5582444; resident released; acoustic accuracy NOT accepted
+aipet audio: kwsmic result=0
+
+11.0641 sec
+nsh>

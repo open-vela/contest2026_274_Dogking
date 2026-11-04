@@ -12,10 +12,14 @@
 #include <cstdio>
 #include <cstdlib>
 #include <cstring>
+#include <memory>
+#include <pthread.h>
+#include <sys/stat.h>
 #include <string>
 #include <unordered_map>
 #include <utility>
 #include <vector>
+#include "aipetllm_api.h"
 
 namespace
 {
@@ -25,6 +29,7 @@ constexpr std::uint32_t GGUF_STRING = 8;
 constexpr std::uint32_t GGUF_ARRAY = 9;
 constexpr std::size_t KEY_LIMIT = 256;
 constexpr std::size_t ENTRY_LIMIT = 1024 * 1024;
+#include "aipetllm_unicode.inc"
 
 bool read_exact(FILE *stream, void *data, std::size_t size)
 {
@@ -142,7 +147,7 @@ bool read_string_array(FILE *stream, std::vector<std::string> &values)
 
   if (!read_exact(stream, &element, sizeof(element)) ||
       !read_exact(stream, &count, sizeof(count)) ||
-      element != GGUF_STRING || count > UINT32_MAX)
+      element != GGUF_STRING || count > ENTRY_LIMIT)
     {
       return false;
     }
@@ -165,6 +170,8 @@ bool read_string_array(FILE *stream, std::vector<std::string> &values)
 
 struct vocabulary
 {
+  bool llama_bpe = false;
+  std::string architecture, model, pre, name;
   std::vector<std::string> tokens;
   std::unordered_map<std::string, std::uint32_t> token_ids;
   std::unordered_map<std::string, std::uint32_t> merge_ranks;
@@ -190,7 +197,8 @@ struct vocabulary
         !read_exact(stream, &version, sizeof(version)) ||
         !read_exact(stream, &tensor_count, sizeof(tensor_count)) ||
         !read_exact(stream, &metadata_count, sizeof(metadata_count)) ||
-        magic != GGUF_MAGIC || version < 2 || version > 3)
+        magic != GGUF_MAGIC || version < 2 || version > 3 ||
+        metadata_count > 4096 || tensor_count > 4096)
       {
         std::fputs("aipetllm: encode invalid GGUF header\n", stderr);
         std::fclose(stream);
@@ -210,7 +218,18 @@ struct vocabulary
             goto out;
           }
 
-        if (key == "tokenizer.ggml.tokens" && type == GGUF_ARRAY)
+        if ((key == "general.architecture" || key == "general.name" ||
+             key == "tokenizer.ggml.model" || key == "tokenizer.ggml.pre") &&
+            type == GGUF_STRING)
+          {
+            std::string value;
+            if (!read_string(stream,value) || value.size()>128) goto out;
+            if(key=="general.architecture")architecture=value;
+            else if(key=="general.name")name=value;
+            else if(key=="tokenizer.ggml.model")model=value;
+            else pre=value;
+          }
+        else if (key == "tokenizer.ggml.tokens" && type == GGUF_ARRAY)
           {
             if (!read_string_array(stream, tokens))
               {
@@ -236,6 +255,15 @@ struct vocabulary
         goto out;
       }
 
+    llama_bpe = architecture == "llama" && name == "MiniCPM5 1B" &&
+                pre == "llama-bpe";
+    if (model != "gpt2" ||
+        !(llama_bpe || (architecture == "qwen2" && pre == "qwen2")))
+      {
+        std::fputs("aipetllm: unsupported tokenizer/profile\n",stderr);
+        goto out;
+      }
+
     token_ids.reserve(tokens.size() * 2);
     for (std::size_t index = 0; index < tokens.size(); index++)
       {
@@ -256,6 +284,38 @@ out:
     return okay;
   }
 };
+
+// Immutable shared vocabulary: chat encode and UTF-8 streaming use one parse.
+// File replacement invalidates the cache; existing streams retain their owner.
+static pthread_mutex_t vocabulary_mutex = PTHREAD_MUTEX_INITIALIZER;
+static std::shared_ptr<const vocabulary> vocabulary_cache;
+static std::string vocabulary_path;
+static struct stat vocabulary_stat{};
+static std::shared_ptr<const vocabulary> cached_vocabulary(const char *path)
+{
+  if (!path) return {};
+  struct stat before{},after{};
+  if (stat(path,&before) || !S_ISREG(before.st_mode)) return {};
+  pthread_mutex_lock(&vocabulary_mutex);
+  std::shared_ptr<const vocabulary> result;
+  if (vocabulary_cache && vocabulary_path==path &&
+      vocabulary_stat.st_size==before.st_size &&
+      vocabulary_stat.st_mtime==before.st_mtime &&
+      vocabulary_stat.st_ino==before.st_ino &&
+      vocabulary_stat.st_dev==before.st_dev)
+    result=vocabulary_cache;
+  else
+    {
+      auto fresh=std::make_shared<vocabulary>();
+      if (fresh->load(path) && !stat(path,&after) &&
+          before.st_size==after.st_size && before.st_mtime==after.st_mtime &&
+          before.st_ino==after.st_ino && before.st_dev==after.st_dev)
+        { vocabulary_cache=fresh; vocabulary_path=path;
+          vocabulary_stat=after; result=fresh; }
+    }
+  pthread_mutex_unlock(&vocabulary_mutex);
+  return result;
+}
 
 std::size_t utf8_length(unsigned char first)
 {
@@ -385,7 +445,10 @@ bool decode_codepoint(const std::string &text, std::size_t offset,
       codepoint = (codepoint << 6) | (byte & 0x3f);
     }
 
-  return true;
+  return codepoint <= 0x10ffff && !(codepoint >= 0xd800 && codepoint <= 0xdfff) &&
+         (length != 2 || codepoint >= 0x80) &&
+         (length != 3 || codepoint >= 0x800) &&
+         (length != 4 || codepoint >= 0x10000);
 }
 
 bool is_space(std::uint32_t codepoint)
@@ -406,46 +469,12 @@ bool is_newline(std::uint32_t codepoint)
 
 bool is_number(std::uint32_t codepoint)
 {
-  return (codepoint >= '0' && codepoint <= '9') ||
-         (codepoint >= 0xff10 && codepoint <= 0xff19);
-}
-
-bool is_nonletter_range(std::uint32_t codepoint)
-{
-  return (codepoint >= 0x2000 && codepoint <= 0x206f) ||
-         (codepoint >= 0x2190 && codepoint <= 0x2bff) ||
-         (codepoint >= 0x3000 && codepoint <= 0x303f) ||
-         (codepoint >= 0xfe10 && codepoint <= 0xfe1f) ||
-         (codepoint >= 0xfe30 && codepoint <= 0xfe6f) ||
-         (codepoint >= 0xff01 && codepoint <= 0xff0f) ||
-         (codepoint >= 0xff1a && codepoint <= 0xff20) ||
-         (codepoint >= 0xff3b && codepoint <= 0xff40) ||
-         (codepoint >= 0xff5b && codepoint <= 0xff65) ||
-         (codepoint >= 0x1f000 && codepoint <= 0x1faff);
+  return (bpe_category(codepoint)&2)!=0;
 }
 
 bool is_letter(std::uint32_t codepoint)
 {
-  if ((codepoint >= 'A' && codepoint <= 'Z') ||
-      (codepoint >= 'a' && codepoint <= 'z'))
-    {
-      return true;
-    }
-
-  if (codepoint < 0x80 || is_space(codepoint) || is_number(codepoint) ||
-      is_nonletter_range(codepoint))
-    {
-      return false;
-    }
-
-  /*
-   * Qwen2's target languages are covered by treating remaining assigned
-   * non-ASCII code points as letters.  Stage 8 golden tests include CJK.
-   * A generated Unicode category table will replace this conservative rule
-   * before the public tokenizer API is declared complete.
-   */
-
-  return true;
+  return (bpe_category(codepoint)&4)!=0;
 }
 
 bool next_unit(const std::string &text, std::size_t offset,
@@ -506,7 +535,7 @@ std::size_t contraction_length(const std::string &text, std::size_t offset)
   return 0;
 }
 
-std::vector<std::string> qwen2_pretokenize(const std::string &text)
+std::vector<std::string> qwen2_pretokenize(const std::string &text, bool llama_bpe)
 {
   std::vector<std::string> spans;
   std::size_t offset = 0;
@@ -562,6 +591,9 @@ std::vector<std::string> qwen2_pretokenize(const std::string &text)
       else if (is_number(codepoint))
         {
           offset += length;
+          for(unsigned n=1;llama_bpe && n<3 &&
+              next_unit(text,offset,codepoint,length) && is_number(codepoint);++n)
+            offset+=length;
         }
       else if (prefix_punctuation)
         {
@@ -581,17 +613,16 @@ std::vector<std::string> qwen2_pretokenize(const std::string &text)
         }
       else if (is_space(codepoint))
         {
-          bool saw_newline = false;
+          std::size_t last_newline=0,last_length=length,units=0;
           while (next_unit(text, offset, codepoint, length) &&
                  is_space(codepoint))
             {
-              saw_newline = saw_newline || is_newline(codepoint);
               offset += length;
-              if (saw_newline && !is_newline(codepoint))
-                {
-                  break;
-                }
+              last_length=length; ++units;
+              if(is_newline(codepoint))last_newline=offset;
             }
+          if(last_newline)offset=last_newline;
+          else if(offset<text.size() && units>1)offset-=last_length;
         }
       else
         {
@@ -619,8 +650,12 @@ std::vector<std::string> qwen2_pretokenize(const std::string &text)
 bool bpe_word(const vocabulary &vocab, const std::string &raw,
               std::vector<std::uint32_t> &output)
 {
-  std::vector<std::string> symbols = split_symbols(
-    byte_encode(raw.data(), raw.size()));
+  std::string encoded=byte_encode(raw.data(),raw.size());
+  if(vocab.llama_bpe) {
+    auto found=vocab.token_ids.find(encoded);
+    if(found!=vocab.token_ids.end()){output.push_back(found->second);return true;}
+  }
+  std::vector<std::string> symbols = split_symbols(encoded);
 
   if (symbols.empty() && !raw.empty())
     {
@@ -672,7 +707,7 @@ bool bpe_word(const vocabulary &vocab, const std::string &raw,
 
 }
 
-static int encode_with_vocab(vocabulary &vocab,
+static int encode_with_vocab(const vocabulary &vocab,
                           const char *path, const char *prompt,
                           std::uint32_t *output, std::uint32_t capacity,
                           std::uint32_t *count)
@@ -686,7 +721,7 @@ static int encode_with_vocab(vocabulary &vocab,
       return 1;
     }
 
-  spans = qwen2_pretokenize(prompt);
+  spans = qwen2_pretokenize(prompt,vocab.llama_bpe);
   if (spans.empty())
     {
       std::fputs("aipetllm: Qwen2 pre-tokenizer rejected prompt\n", stderr);
@@ -703,7 +738,7 @@ static int encode_with_vocab(vocabulary &vocab,
       if (output != nullptr && tokens.size() > capacity)
         {
           std::fputs("aipetllm: prompt exceeds token capacity\n", stderr);
-          return 1;
+          return -ENOSPC;
         }
     }
 
@@ -714,6 +749,7 @@ static int encode_with_vocab(vocabulary &vocab,
         {
           output[index] = tokens[index];
         }
+      return 0;
     }
 
   std::printf("qwen2-bpe path=%s vocab=%lu merges=%lu prompt-bytes=%lu "
@@ -738,16 +774,16 @@ static int encode_tokens(const char *path, const char *prompt,
                           std::uint32_t *output, std::uint32_t capacity,
                           std::uint32_t *count)
 {
-  vocabulary vocab;
-  if (!vocab.load(path))
+  auto owner=cached_vocabulary(path);
+  if (!owner)
     {
       return 1;
     }
 
-  return encode_with_vocab(vocab, path, prompt, output, capacity, count);
+  return encode_with_vocab(*owner, path, prompt, output, capacity, count);
 }
 
-/* Single-turn ChatML: special tokens are looked up and appended as IDs,
+/* ChatML: special tokens are looked up and appended as IDs,
  * never passed through ordinary byte-level BPE. User text remains ordinary
  * text; control-token spellings are rejected instead of being interpreted.
  */
@@ -758,16 +794,37 @@ extern "C" int aipetllm_chat_system_tokens(const char *path, const char *system,
                                     std::uint32_t *count,
                                     std::uint32_t *stop_token)
 {
-  vocabulary vocab;
+  return aipetllm_chat_history_tokens(path, system, prompt, nullptr, 0,
+                                      output, capacity, count, stop_token);
+}
+
+static bool chat_text(const char *s)
+{
+  return s && *s && std::strlen(s) <= 4096 && !std::strstr(s,"<|") &&
+    !std::strstr(s,"<s>") && !std::strstr(s,"</s>") &&
+    !std::strstr(s,"<think>") && !std::strstr(s,"</think>");
+}
+
+extern "C" int aipetllm_chat_history_tokens(const char *path, const char *system,
+    const char *prompt, const aipetllm_turn *history, unsigned turns,
+    unsigned *output, unsigned capacity, unsigned *count, unsigned *stop_token)
+{
+  if (count) *count = 0;
+  if (!chat_text(system) || !chat_text(prompt) ||
+      turns > AIPETLLM_HISTORY_LIMIT || (turns && !history)) return -EINVAL;
+  for (unsigned i=0;i<turns;++i)
+    if (!chat_text(history[i].user) || !chat_text(history[i].assistant)) return -EINVAL;
+  auto owner=cached_vocabulary(path);
   if (system == nullptr || system[0] == '\0' ||
       std::strlen(system) > 4096 || std::strstr(system, "<|") != nullptr ||
       prompt == nullptr || prompt[0] == '\0' ||
       std::strlen(prompt) > 4096 || std::strstr(prompt, "<|") != nullptr ||
       output == nullptr || count == nullptr || stop_token == nullptr ||
-      capacity == 0 || !vocab.load(path))
+      capacity == 0 || !owner)
     {
       return 1;
     }
+  const auto &vocab=*owner;
 
   auto start = vocab.token_ids.find("<|im_start|>");
   auto end = vocab.token_ids.find("<|im_end|>");
@@ -779,6 +836,7 @@ extern "C" int aipetllm_chat_system_tokens(const char *path, const char *system,
 
   *count = 0;
   *stop_token = end->second;
+  int error = -ENOSPC;
   auto special = [&](std::uint32_t id) -> bool
     {
       if (*count >= capacity) return false;
@@ -788,28 +846,52 @@ extern "C" int aipetllm_chat_system_tokens(const char *path, const char *system,
   auto ordinary = [&](const char *text) -> bool
     {
       std::uint32_t written = 0;
-      if (*count >= capacity ||
-          encode_with_vocab(vocab, path, text, output + *count,
-                            capacity - *count, &written) != 0) return false;
+      if (*count >= capacity) { error=-ENOSPC; return false; }
+      int rc=encode_with_vocab(vocab, path, text, output + *count,
+                              capacity - *count, &written);
+      if (rc) { error=rc; return false; }
       *count += written;
       return true;
     };
 
-  if (!special(start->second) ||
-      !ordinary((std::string("system\n") + system).c_str()) ||
-      !special(end->second) || !ordinary("\n") ||
-      !special(start->second) || !ordinary("user\n") ||
-      !ordinary(prompt) || !special(end->second) || !ordinary("\n") ||
+  // The saved MiniCPM5 Jinja template explicitly emits bos_token even though
+  // tokenizer.ggml.add_bos_token is false for ordinary text tokenization.
+  if(vocab.llama_bpe) {
+    auto bos=vocab.token_ids.find("<s>");
+    if(bos==vocab.token_ids.end())return -EINVAL;
+    if(!special(bos->second))return -ENOSPC;
+  }
+  auto message = [&](const char *role, const char *text) -> bool {
+    return special(start->second) && ordinary((std::string(role)+text).c_str()) &&
+           special(end->second) && ordinary("\n");
+  };
+  if (!message("system\n",system)) { *count=0;return error; }
+  // The official MiniCPM5 template strips reasoning/NoThink markers from
+  // past assistant messages. Do not retain them merely to get more KV hits.
+  for (unsigned i=0;i<turns;++i)
+    if (!message("user\n",history[i].user) || !message("assistant\n",history[i].assistant))
+      { *count=0;return error; }
+  if (!message("user\n",prompt) ||
       !special(start->second) || !ordinary("assistant\n"))
     {
       std::fputs("aipetllm: ChatML prompt exceeds token capacity\n", stderr);
       *count = 0;
-      return 1;
+      return error;
     }
 
+  // Official enable_thinking=false template: do not emit reasoning tokens.
+  if(vocab.llama_bpe) {
+    auto think=vocab.token_ids.find("<think>");
+    auto endthink=vocab.token_ids.find("</think>");
+    if(think==vocab.token_ids.end() || endthink==vocab.token_ids.end())return -EINVAL;
+    if(!special(think->second) || !ordinary("\n\n") ||
+       !special(endthink->second) || !ordinary("\n\n"))
+      { *count=0;return error; }
+  }
+
   std::printf("chatml tokens=%" PRIu32 " start=%" PRIu32
-              " stop=%" PRIu32 " single-turn=1\n", *count,
-              start->second, end->second);
+              " stop=%" PRIu32 " history-pairs=%u\n", *count,
+              start->second, end->second, turns);
   return 0;
 }
 
@@ -838,7 +920,7 @@ extern "C" int aipetllm_chat_tokens(const char *path, const char *prompt,
 
 struct token_stream
 {
-  std::vector<std::string> pieces;
+  std::shared_ptr<const vocabulary> owner;
   std::string pending;
   int inverse[512];
   int (*sink)(void *, const char *, std::size_t) = nullptr;
@@ -847,10 +929,10 @@ struct token_stream
 
 extern "C" void *aipetllm_stream_open(const char *path)
 {
-  vocabulary vocab;
-  if (!vocab.load(path)) return nullptr;
+  auto owner=cached_vocabulary(path);
+  if (!owner) return nullptr;
   auto *stream = new token_stream;
-  stream->pieces.swap(vocab.tokens);
+  stream->owner=owner;
   for (unsigned index = 0; index < 512; index++) stream->inverse[index] = -1;
   for (unsigned byte = 0; byte < 256; byte++)
     stream->inverse[byte_codepoint(byte)] = static_cast<int>(byte);
@@ -860,8 +942,8 @@ extern "C" void *aipetllm_stream_open(const char *path)
 extern "C" int aipetllm_stream_emit(void *context, std::uint32_t token)
 {
   auto *stream = static_cast<token_stream *>(context);
-  if (stream == nullptr || token >= stream->pieces.size()) return 1;
-  const auto &piece = stream->pieces[token];
+  if (stream == nullptr || token >= stream->owner->tokens.size()) return 1;
+  const auto &piece = stream->owner->tokens[token];
   for (std::size_t offset = 0; offset < piece.size();)
     {
       std::uint32_t codepoint;
@@ -931,8 +1013,9 @@ extern "C" int aipetllm_stream_sink_finish(void *context)
 #ifdef AIPETLLM_BPE_TEST_API
 extern "C" int aipetllm_stream_split_test(const char *path)
 {
-  vocabulary vocab;
-  if (!vocab.load(path)) return 1;
+  auto owner=cached_vocabulary(path);
+  if (!owner) return 1;
+  const auto &vocab=*owner;
   auto *stream = static_cast<token_stream *>(aipetllm_stream_open(path));
   if (stream == nullptr) return 1;
   const unsigned char bytes[] = {0xe4, 0xbd, 0xa0};
@@ -959,12 +1042,13 @@ extern "C" int aipetllm_chat_continue_tokens(const char *path,
  std::uint32_t *output, std::uint32_t capacity, std::uint32_t *count,
  std::uint32_t *stop_token)
 {
-  vocabulary vocab;
+  auto owner=cached_vocabulary(path);
   if (prompt == nullptr || prompt[0] == '\0' ||
       std::strlen(prompt) > 4096 || std::strstr(prompt, "<|") != nullptr ||
       history == nullptr || output == nullptr || count == nullptr ||
       stop_token == nullptr || history_count == 0 || history_count >= capacity ||
-      !vocab.load(path)) return 1;
+      !owner) return 1;
+  const auto &vocab=*owner;
   auto start = vocab.token_ids.find("<|im_start|>");
   auto end = vocab.token_ids.find("<|im_end|>");
   if (start == vocab.token_ids.end() || end == vocab.token_ids.end() ||
@@ -998,6 +1082,14 @@ extern "C" int aipetllm_chat_continue_tokens(const char *path,
       std::fputs("aipetllm: history full; use newchat\n", stderr);
       return 1;
     }
+  if(vocab.llama_bpe) {
+    auto think=vocab.token_ids.find("<think>");
+    auto endthink=vocab.token_ids.find("</think>");
+    if(think==vocab.token_ids.end() || endthink==vocab.token_ids.end() ||
+       !special(think->second) || !ordinary("\n\n") ||
+       !special(endthink->second) || !ordinary("\n\n"))
+      { *count=0;return 1; }
+  }
   std::printf("chatml tokens=%" PRIu32 " history=%" PRIu32 "\n",
               *count, history_count);
   return 0;
@@ -1006,6 +1098,13 @@ extern "C" int aipetllm_chat_continue_tokens(const char *path,
 extern "C" int aipetllm_bpe_checkpoint(const char *path, const char *prompt)
 {
   return encode_tokens(path, prompt, nullptr, 0, nullptr);
+}
+
+extern "C" void aipetllm_vocabulary_unload(void)
+{
+  pthread_mutex_lock(&vocabulary_mutex);
+  vocabulary_cache.reset();vocabulary_path.clear();
+  pthread_mutex_unlock(&vocabulary_mutex);
 }
 
 #ifdef AIPETLLM_BPE_STANDALONE

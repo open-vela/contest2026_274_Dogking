@@ -1,0 +1,458 @@
+SDK staging backup: /mnt/d/My-Program/AI-Agent-Program/GPTsprogram/Openvela/A733-A7Z-ALL-Files/contest2026_274_Dogking-dev-ai-contest-2026/out/sdk-staging/a733-build-staging.kWjtqS
+openvela-boundary: passed (official public APIs above vendor BSP)
+patching file nuttx/arch/arm64/include/arch.h
+Hunk #1 succeeded at 219 (offset 1 line).
+patching file nuttx/arch/arm64/src/common/arm64_head.S
+patching file nuttx/arch/arm64/src/common/arm64_cpustart.c
+patching file nuttx/sched/init/nx_smpstart.c
+patching file nuttx/libs/libc/misc/lib_cxx_initialize.c
+patching file nuttx/drivers/lcd/st7735.c
+Hunk #1 succeeded at 204 with fuzz 1.
+Hunk #3 succeeded at 511 with fuzz 1.
+patching file apps/nshlib/nsh_ddcmd.c
+v178: forced local LLM/app staged timestamps; source bytes unchanged
+patching file packages/ai_agent/src/agent_main.c
+Hunk #1 succeeded at 30 with fuzz 1.
+Hunk #2 succeeded at 148 (offset -5 lines).
+Hunk #3 succeeded at 168 with fuzz 2 (offset -10 lines).
+Hunk #4 succeeded at 391 (offset 1 line).
+Hunk #5 succeeded at 530 (offset 8 lines).
+patching file packages/ai_agent/CMakeLists.txt
+Hunk #2 succeeded at 151 (offset -29 lines).
+patching file packages/ai_agent/src/infra/vela_tls.c
+Hunk #1 succeeded at 48 with fuzz 1.
+Hunk #2 succeeded at 118 with fuzz 1.
+Hunk #3 succeeded at 133 with fuzz 1.
+Hunk #4 succeeded at 238 with fuzz 1.
+patching file packages/ai_agent/src/tools/tool_registry.c
+Hunk #1 succeeded at 89 with fuzz 1.
+patching file packages/ai_agent/src/core/agent_loop.c
+Hunk #1 succeeded at 662 (offset 1 line).
+Hunk #3 succeeded at 892 with fuzz 2 (offset -1 lines).
+Hunk #4 succeeded at 1494 (offset -8 lines).
+Hunk #5 succeeded at 1510 (offset -5 lines).
+patching file packages/ai_agent/src/core/session_mgr.c
+patching file packages/ai_agent/src/tools/skill_loader.c
+Hunk #2 succeeded at 372 (offset -2 lines).
+patching file packages/ai_agent/src/agent_main.c
+Hunk #1 succeeded at 381 (offset 7 lines).
+patching file packages/ai_agent/src/infra/vela_tls.c
+patching file packages/ai_agent/src/agent_main.c
+Hunk #1 succeeded at 349 (offset 6 lines).
+Hunk #2 succeeded at 588 (offset 8 lines).
+patching file packages/ai_agent/CMakeLists.txt
+Hunk #1 succeeded at 18 with fuzz 1.
+patching file packages/ai_agent/src/infra/config_store.c
+Hunk #1 succeeded at 24 with fuzz 1.
+Hunk #2 succeeded at 119 (offset 4 lines).
+Hunk #3 succeeded at 127 (offset 4 lines).
+Hunk #4 succeeded at 133 with fuzz 1 (offset 2 lines).
+Hunk #5 succeeded at 144 with fuzz 1.
+patching file packages/ai_agent/src/voice/volc_tts.c
+patching file packages/ai_agent/src/voice/volc_asr.c
+patching file apps/system/readline/readline_common.c
+Hunk #1 succeeded at 639 with fuzz 1 (offset 1 line).
+patching file frameworks/connectivity/bluetooth/CMakeLists.txt
+Hunk #1 succeeded at 20 (offset -5 lines).
+patching file nuttx/drivers/serial/uart_bth4.c
+patching file frameworks/connectivity/bluetooth/service/stacks/zephyr/sal_adapter_interface.c
+Hunk #2 succeeded at 1623 (offset -1 lines).
+patching file frameworks/connectivity/bluetooth/service/stacks/zephyr/sal_connection_manager.c
+patching file frameworks/connectivity/bluetooth/service/src/connection_manager.c
+patching file frameworks/connectivity/bluetooth/service/utils/btsnoop_writer.c
+patching file external/zblue/zblue/subsys/bluetooth/host/hci_core.h
+patching file external/zblue/zblue/subsys/bluetooth/host/id.c
+Hunk #2 succeeded at 1619 with fuzz 1 (offset -1 lines).
+patching file external/zblue/zblue/port/kernel/thread.c
+Hunk #2 succeeded at 110 (offset 2 lines).
+patching file external/zblue/zblue/port/kernel/poll.c
+Hunk #3 succeeded at 262 (offset -1 lines).
+Hunk #4 succeeded at 276 (offset -3 lines).
+Hunk #5 succeeded at 291 (offset -5 lines).
+patching file external/zblue/CMakeLists.default.txt
+patching file frameworks/connectivity/bluetooth/tools/bt_tools.c
+Hunk #1 succeeded at 1948 (offset 2 lines).
+Hunk #4 succeeded at 2023 (offset -1 lines).
+Hunk #13 succeeded at 2273 (offset -2 lines).
+patching file frameworks/connectivity/bluetooth/tools/scan.c
+Hunk #2 succeeded at 97 (offset -9 lines).
+Hunk #3 succeeded at 190 (offset -16 lines).
+patching file frameworks/connectivity/bluetooth/service/stacks/zephyr/sal_adapter_le_interface.c
+patching file frameworks/connectivity/bluetooth/service/src/adapter_state.c
+patching file frameworks/connectivity/bluetooth/tools/bt_tools.c
+Hunk #1 succeeded at 19 (offset -1 lines).
+patching file frameworks/connectivity/bluetooth/tools/scan.c
+Hunk #1 succeeded at 18 (offset -2 lines).
+Hunk #2 succeeded at 33 (offset 1 line).
+Hunk #3 succeeded at 82 (offset 3 lines).
+Hunk #4 succeeded at 94 (offset 1 line).
+Hunk #5 succeeded at 123 (offset -9 lines).
+Hunk #6 succeeded at 205 (offset -2 lines).
+Hunk #7 succeeded at 220 (offset -8 lines).
+Hunk #8 succeeded at 230 (offset -7 lines).
+Hunk #9 succeeded at 251 (offset -7 lines).
+patching file frameworks/connectivity/bluetooth/service/src/adapter_state.c
+Hunk #1 succeeded at 340 (offset 4 lines).
+patching file frameworks/connectivity/bluetooth/service/stacks/zephyr/sal_adapter_le_interface.c
+Hunk #1 succeeded at 1009 (offset 1 line).
+Hunk #2 succeeded at 1035 (offset 1 line).
+patching file external/zblue/zblue/subsys/bluetooth/host/hci_core.c
+patching file external/zblue/zblue/subsys/bluetooth/host/scan.c
+patching file frameworks/connectivity/bluetooth/service/stacks/zephyr/hci_h4.c
+patching file frameworks/connectivity/bluetooth/service/stacks/zephyr/sal_le_scan_interface.c
+patching file nuttx/fs/fat/fs_fat32.h
+patching file nuttx/fs/fat/fs_fat32.c
+Hunk #1 succeeded at 34 (offset 1 line).
+Hunk #2 succeeded at 337 (offset -1 lines).
+Hunk #6 succeeded at 1382 (offset -9 lines).
+Hunk #7 succeeded at 1598 (offset 2 lines).
+Hunk #8 succeeded at 1607 (offset 1 line).
+LIBCLANG_PATH set to: /mnt/d/My-Program/AI-Agent-Program/GPTsprogram/Openvela/quickly-openvela/prebuilts/rust/linux/extra_libs
+including vendor/infineon/boards/aurix/build/vendorsetup.sh
+including vendor/infineon/boards/aurix_tc3/build/vendorsetup.sh
+including vendor/openvela/boards/build/vendorsetup.sh
+custom CMake binary dir: /mnt/d/My-Program/AI-Agent-Program/GPTsprogram/Openvela/quickly-openvela/cmake_out/cubie-a7z_nsh_v205_camera_perf
+grep: dor/allwinnertech/boards/a733/cubie-a7z/configs/nsh/defconfig: No such file or directory
+ lunch vendor/allwinnertech/boards/a733/cubie-a7z/configs/nsh /mnt/d/My-Program/AI-Agent-Program/GPTsprogram/Openvela/quickly-openvela/cmake_out/cubie-a7z_nsh_v205_camera_perf 
+The current build configuration lunched with: [32m[allwinnertech]-[cubie-a7z]-[nsh]![0m
+
+[32m#### BINARY directory is set: /mnt/d/My-Program/AI-Agent-Program/GPTsprogram/Openvela/quickly-openvela/cmake_out/cubie-a7z_nsh_v205_camera_perf[0m
+
+Build CMake configuration:
+  cmake -B /mnt/d/My-Program/AI-Agent-Program/GPTsprogram/Openvela/quickly-openvela/cmake_out/cubie-a7z_nsh_v205_camera_perf -S /mnt/d/My-Program/AI-Agent-Program/GPTsprogram/Openvela/quickly-openvela/nuttx -DBOARD_CONFIG=../vendor/allwinnertech/boards/a733/cubie-a7z/configs/nsh -DCUSTOM_MODULE_PATH=/mnt/d/My-Program/AI-Agent-Program/GPTsprogram/Openvela/quickly-openvela/build/cmake -DEXTRA_FLAGS="-Wno-cpp -Wno-deprecated-declarations" -GNinja
+-- Found Python3: /usr/bin/python3 (found version "3.14.4") found components: Interpreter 
+-- Initializing NuttX
+Loaded configuration '/mnt/d/My-Program/AI-Agent-Program/GPTsprogram/Openvela/quickly-openvela/cmake_out/cubie-a7z_nsh_v205_camera_perf/.config.compressed'
+Minimal configuration saved to '/mnt/d/My-Program/AI-Agent-Program/GPTsprogram/Openvela/quickly-openvela/cmake_out/cubie-a7z_nsh_v205_camera_perf/defconfig.tmp'
+  Select HOST_LINUX=y
+--   CMake:  3.23.0
+--   Ninja:  1.12.1
+--   Board:  cubie-a7z
+--   Config: nsh
+--   Appdir: /mnt/d/My-Program/AI-Agent-Program/GPTsprogram/Openvela/quickly-openvela/apps
+fatal: invalid gitfile format: /mnt/d/My-Program/AI-Agent-Program/GPTsprogram/Openvela/quickly-openvela/nuttx/.git
+fatal: invalid gitfile format: /mnt/d/My-Program/AI-Agent-Program/GPTsprogram/Openvela/quickly-openvela/nuttx/.git
+-- The C compiler identification is unknown
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - failed
+-- Check for working C compiler: /mnt/d/My-Program/AI-Agent-Program/GPTsprogram/Openvela/quickly-openvela/prebuilts/tools/linux/x86_64/cc
+-- Check for working C compiler: /mnt/d/My-Program/AI-Agent-Program/GPTsprogram/Openvela/quickly-openvela/prebuilts/tools/linux/x86_64/cc - works
+-- NuttX Host Tools
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /mnt/d/My-Program/AI-Agent-Program/GPTsprogram/Openvela/quickly-openvela/cmake_out/cubie-a7z_nsh_v205_camera_perf/bin_host
+-- ╭─────────────────────────────────────────────────╮
+-- │  Vela build custom modules base on NuttX build  |
+-- ╰─────────────────────────────────────────────────╯
+-- The C compiler identification is GNU 13.4.0
+-- The CXX compiler identification is GNU 13.4.0
+-- The ASM compiler identification is GNU
+-- Found assembler: /mnt/d/My-Program/AI-Agent-Program/GPTsprogram/Openvela/quickly-openvela/prebuilts/gcc/linux-x86_64/aarch64-none-elf/bin/aarch64-none-elf-gcc
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /mnt/d/My-Program/AI-Agent-Program/GPTsprogram/Openvela/quickly-openvela/prebuilts/gcc/linux-x86_64/aarch64-none-elf/bin/aarch64-none-elf-gcc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /mnt/d/My-Program/AI-Agent-Program/GPTsprogram/Openvela/quickly-openvela/prebuilts/gcc/linux-x86_64/aarch64-none-elf/bin/aarch64-none-elf-g++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+CMake Warning at /mnt/d/My-Program/AI-Agent-Program/GPTsprogram/Openvela/quickly-openvela/apps/cmake/nuttx_add_rust.cmake:28 (message):
+  Missing required LLVM parameters for Rust support.  Skipping Rust build
+  logic.  Required: LLVM_ARCHTYPE='aarch64', LLVM_ABITYPE='aapcs64',
+  LLVM_CPUTYPE=''
+Call Stack (most recent call first):
+  /mnt/d/My-Program/AI-Agent-Program/GPTsprogram/Openvela/quickly-openvela/apps/cmake/nuttx_add_jidl.cmake:22 (include)
+  /mnt/d/My-Program/AI-Agent-Program/GPTsprogram/Openvela/quickly-openvela/apps/CMakeLists.txt:34 (include)
+
+
+CMake Warning at /mnt/d/My-Program/AI-Agent-Program/GPTsprogram/Openvela/quickly-openvela/apps/cmake/nuttx_add_rust.cmake:28 (message):
+  Missing required LLVM parameters for Rust support.  Skipping Rust build
+  logic.  Required: LLVM_ARCHTYPE='aarch64', LLVM_ABITYPE='aapcs64',
+  LLVM_CPUTYPE=''
+Call Stack (most recent call first):
+  /mnt/d/My-Program/AI-Agent-Program/GPTsprogram/Openvela/quickly-openvela/apps/CMakeLists.txt:39 (include)
+
+
+CONFIG_ZEPHYR_REPO_DEFAULT
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /mnt/d/My-Program/AI-Agent-Program/GPTsprogram/Openvela/quickly-openvela/cmake_out/cubie-a7z_nsh_v205_camera_perf
+  cmake --build /mnt/d/My-Program/AI-Agent-Program/GPTsprogram/Openvela/quickly-openvela/cmake_out/cubie-a7z_nsh_v205_camera_perf -j6  --
+[1/3024] cd /mnt/d/My-Program/AI-Agent-Program/GPTsprogram/Openvela/quickly-openvela/cmake_out/cubie-a7z_nsh_v205_camera_perf/libs/libc/misc && /mnt/d/My-Program/AI-Agent-Program/GPTsprogram/Openvela/quickly-openvela/prebuilts/tools/cmake/bin/cmake -E touch /mnt/d/My-Program/AI-Agent-Program/GPTsprogram/Openvela/quickly-openvela/nuttx/libs/libc/misc/lib_utsname.c
+[2/3024] Generating bin output directories
+[3/3024] Refreshing AI Agent build timestamp
+[4/3024] cd /mnt/d/My-Program/AI-Agent-Program/GPTsprogram/Openvela/quickly-openvela/nuttx && /mnt/d/My-Program/AI-Agent-Program/GPTsprogram/Openvela/quickly-openvela/prebuilts/tools/cmake/bin/cmake -DKCONFIG_CONFIG=/mnt/d/My-Program/AI-Agent-Program/GPTsprogram/Openvela/quickly-openvela/vendor/allwinnertech/boards/a733/cubie-a7z/configs/nsh/defconfig -DNUTTX_DIR=/mnt/d/My-Program/AI-Agent-Program/GPTsprogram/Openvela/quickly-openvela/nuttx -DCMAKE_BINARY_DIR=/mnt/d/My-Program/AI-Agent-Program/GPTsprogram/Openvela/quickly-openvela/cmake_out/cubie-a7z_nsh_v205_camera_perf -P /mnt/d/My-Program/AI-Agent-Program/GPTsprogram/Openvela/quickly-openvela/nuttx/cmake/nuttx_generate_dts.cmake
+[5/3024] Generating dramboot.ld.tmp
+[6/3024] Generating help.c from .d files
+[7/3024] Building C object apps/system/libuv/CMakeFiles/libuv.dir/libuv/src/thread-common.c.o
+[8/3024] Building C object apps/system/libuv/CMakeFiles/libuv.dir/libuv/src/unix/loop.c.o
+[9/3024] Building C object apps/system/libuv/CMakeFiles/libuv.dir/libuv/src/unix/thread.c.o
+[10/3024] Building C object apps/system/libuv/CMakeFiles/libuv.dir/libuv/src/unix/poll.c.o
+[11/3024] Building C object apps/system/libuv/CMakeFiles/libuv.dir/libuv/src/unix/core.c.o
+[12/3024] Building C object apps/system/libuv/CMakeFiles/libuv.dir/libuv/src/uv-data-getter-setters.c.o
+[13/3024] Building C object apps/system/libuv/CMakeFiles/libuv.dir/libuv/src/version.c.o
+[14/3024] Building C object apps/system/libuv/CMakeFiles/libuv.dir/libuv/src/unix/posix-hrtime.c.o
+[15/3024] Building C object apps/system/libuv/CMakeFiles/libuv.dir/libuv/src/idna.c.o
+[16/3024] Building C object apps/system/libuv/CMakeFiles/libuv.dir/libuv/src/strscpy.c.o
+[17/3024] Building C object apps/system/libuv/CMakeFiles/libuv.dir/libuv/src/strtok.c.o
+[18/3024] Building C object apps/system/libuv/CMakeFiles/libuv.dir/libuv/src/unix/linux.c.o
+[19/3024] Building C object apps/system/libuv/CMakeFiles/libuv.dir/libuv/src/uv-common.c.o
+[20/3024] Building C object apps/system/libuv/CMakeFiles/libuv.dir/libuv/src/unix/random-devurandom.c.o
+[21/3024] Building C object apps/system/libuv/CMakeFiles/libuv.dir/libuv/src/random.c.o
+[22/3024] Building C object apps/system/libuv/CMakeFiles/libuv.dir/libuv/src/unix/loop-watcher.c.o
+[23/3024] Building C object apps/system/libuv/CMakeFiles/libuv.dir/libuv/src/unix/tty.c.o
+[24/3024] Building C object apps/system/libuv/CMakeFiles/libuv.dir/libuv/src/unix/nuttx.c.o
+[25/3024] Building C object apps/system/libuv/CMakeFiles/libuv.dir/libuv/src/unix/signal.c.o
+[26/3024] Building C object apps/system/libuv/CMakeFiles/libuv.dir/libuv/src/unix/stream.c.o
+[27/3024] Building C object apps/system/libuv/CMakeFiles/libuv.dir/libuv/src/threadpool.c.o
+[28/3024] Building C object apps/system/libuv/CMakeFiles/libuv.dir/libuv/src/unix/async.c.o
+[29/3024] Building C object apps/system/libuv/CMakeFiles/libuv.dir/libuv/src/unix/pipe.c.o
+[30/3024] Building C object apps/system/libuv/CMakeFiles/libuv.dir/libuv/src/unix/fs.c.o
+[31/3024] Building C object apps/system/libuv/CMakeFiles/libuv.dir/libuv/src/fs-poll.c.o
+[32/3024] Building C object apps/system/libuv/CMakeFiles/libuv.dir/libuv/src/timer.c.o
+[33/3024] Building C object apps/system/libuv/CMakeFiles/libuv.dir/libuv/src/unix/sysinfo-loadavg.c.o
+[34/3024] Building C object apps/system/libuv/CMakeFiles/libuv.dir/libuv/src/unix/sysinfo-memory.c.o
+[35/3024] Building C object apps/system/libuv/CMakeFiles/libuv.dir/libuv/src/unix/process-spawn.c.o
+[36/3024] Building C object apps/system/libuv/CMakeFiles/libuv.dir/libuv/src/unix/getaddrinfo.c.o
+[37/3024] Building C object apps/system/libuv/CMakeFiles/libuv.dir/libuv/src/inet.c.o
+[38/3024] Building C object apps/system/libuv/CMakeFiles/libuv.dir/libuv/src/unix/getnameinfo.c.o
+[39/3024] Building C object apps/system/libuv/CMakeFiles/libuv.dir/libuv/src/unix/tcp.c.o
+[40/3024] Building C object apps/system/libuv/CMakeFiles/libuv.dir/libuv/src/unix/udp.c.o
+[41/3024] Building C object apps/system/libuv/CMakeFiles/libuv.dir/mnt/d/My-Program/AI-Agent-Program/GPTsprogram/Openvela/quickly-openvela/apps/frameworks/system/utils/uv/src/uv_async_queue.c.o
+[42/3024] Building C object apps/system/libuv/CMakeFiles/libuv.dir/mnt/d/My-Program/AI-Agent-Program/GPTsprogram/Openvela/quickly-openvela/apps/frameworks/system/utils/uv/src/uv_mqueue.c.o
+[43/3024] Building C object apps/system/libuv/CMakeFiles/libuv.dir/mnt/d/My-Program/AI-Agent-Program/GPTsprogram/Openvela/quickly-openvela/apps/frameworks/system/utils/uv/src/uv_brightness.c.o
+[44/3024] Building C object apps/system/libuv/CMakeFiles/libuv.dir/mnt/d/My-Program/AI-Agent-Program/GPTsprogram/Openvela/quickly-openvela/apps/frameworks/system/utils/uv/src/uv_devinfo.c.o
+[45/3024] Building C object apps/system/libuv/CMakeFiles/libuv.dir/mnt/d/My-Program/AI-Agent-Program/GPTsprogram/Openvela/quickly-openvela/apps/frameworks/system/utils/uv/src/uv_locale.c.o
+[46/3024] Building C object apps/system/libuv/CMakeFiles/libuv.dir/mnt/d/My-Program/AI-Agent-Program/GPTsprogram/Openvela/quickly-openvela/apps/frameworks/system/utils/uv/src/uv_property.c.o
+[47/3024] Building C object apps/system/libuv/CMakeFiles/libuv.dir/mnt/d/My-Program/AI-Agent-Program/GPTsprogram/Openvela/quickly-openvela/apps/frameworks/system/utils/uv/src/uv_aes.c.o
+[48/3024] Building C object apps/system/libuv/CMakeFiles/libuv.dir/mnt/d/My-Program/AI-Agent-Program/GPTsprogram/Openvela/quickly-openvela/apps/frameworks/system/utils/uv/src/uv_crypto.c.o
+[49/3024] Building C object apps/system/libuv/CMakeFiles/libuv.dir/mnt/d/My-Program/AI-Agent-Program/GPTsprogram/Openvela/quickly-openvela/apps/frameworks/system/utils/uv/src/uv_hkdf.c.o
+[50/3024] Building C object apps/system/libuv/CMakeFiles/libuv.dir/mnt/d/My-Program/AI-Agent-Program/GPTsprogram/Openvela/quickly-openvela/apps/frameworks/system/utils/uv/src/uv_db.c.o
+[51/3024] Building C object apps/system/libuv/CMakeFiles/libuv.dir/mnt/d/My-Program/AI-Agent-Program/GPTsprogram/Openvela/quickly-openvela/apps/frameworks/system/utils/uv/src/uv_ecdh.c.o
+[52/3024] Building C object apps/system/libuv/CMakeFiles/libuv.dir/mnt/d/My-Program/AI-Agent-Program/GPTsprogram/Openvela/quickly-openvela/apps/frameworks/system/utils/uv/src/uv_request.c.o
+[53/3024] Building C object apps/system/libuv/CMakeFiles/libuv.dir/mnt/d/My-Program/AI-Agent-Program/GPTsprogram/Openvela/quickly-openvela/apps/frameworks/system/utils/uv/src/uv_networkcache.c.o
+[54/3024] Building C object apps/netutils/mqttc/CMakeFiles/mqttc.dir/MQTT-C/src/mqtt.c.o
+[55/3024] Building C object apps/netutils/mqttc/CMakeFiles/mqttc.dir/MQTT-C/src/mqtt_pal.c.o
+[56/3024] Building C object apps/system/libuv/CMakeFiles/libuv.dir/mnt/d/My-Program/AI-Agent-Program/GPTsprogram/Openvela/quickly-openvela/apps/frameworks/system/utils/uv/src/uv_networkstatus.c.o
+[57/3024] Building C object apps/system/libuv/CMakeFiles/libuv.dir/mnt/d/My-Program/AI-Agent-Program/GPTsprogram/Openvela/quickly-openvela/apps/frameworks/system/utils/uv/src/app_verify.c.o
+[58/3024] Linking C static library apps/system/libuv/liblibuv.a
+[59/3024] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/amigaos.c.o
+[60/3024] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/asyn-ares.c.o
+[61/3024] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/asyn-thread.c.o
+[62/3024] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/base64.c.o
+[63/3024] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/altsvc.c.o
+[64/3024] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/bufq.c.o
+[65/3024] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/c-hyper.c.o
+[66/3024] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/cf-h2-proxy.c.o
+[67/3024] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/bufref.c.o
+[68/3024] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/cf-h1-proxy.c.o
+[69/3024] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/cf-haproxy.c.o
+[70/3024] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/cf-https-connect.c.o
+[71/3024] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/cf-socket.c.o
+[72/3024] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/cfilters.c.o
+[73/3024] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/conncache.c.o
+[74/3024] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/content_encoding.c.o
+[75/3024] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/connect.c.o
+[76/3024] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/curl_des.c.o
+[77/3024] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/curl_addrinfo.c.o
+[78/3024] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/cookie.c.o
+[79/3024] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/curl_endian.c.o
+[80/3024] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/curl_get_line.c.o
+[81/3024] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/curl_fnmatch.c.o
+[82/3024] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/curl_gethostname.c.o
+[83/3024] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/curl_gssapi.c.o
+[84/3024] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/curl_memrchr.c.o
+[85/3024] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/curl_multibyte.c.o
+[86/3024] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/curl_ntlm_wb.c.o
+[87/3024] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/curl_path.c.o
+[88/3024] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/curl_rtmp.c.o
+[89/3024] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/curl_sasl.c.o
+[90/3024] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/curl_ntlm_core.c.o
+[91/3024] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/curl_range.c.o
+[92/3024] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/curl_sspi.c.o
+[93/3024] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/curl_threads.c.o
+[94/3024] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/dynbuf.c.o
+[95/3024] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/curl_trc.c.o
+[96/3024] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/dict.c.o
+[97/3024] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/doh.c.o
+[98/3024] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/dynhds.c.o
+[99/3024] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/easygetopt.c.o
+[100/3024] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/easyoptions.c.o
+[101/3024] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/easy.c.o
+[102/3024] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/fileinfo.c.o
+[103/3024] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/escape.c.o
+[104/3024] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/file.c.o
+[105/3024] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/fopen.c.o
+[106/3024] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/getenv.c.o
+[107/3024] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/formdata.c.o
+[108/3024] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/ftplistparser.c.o
+[109/3024] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/ftp.c.o
+[110/3024] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/getinfo.c.o
+[111/3024] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/gopher.c.o
+[112/3024] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/hash.c.o
+[113/3024] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/hmac.c.o
+[114/3024] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/hostasyn.c.o
+[115/3024] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/headers.c.o
+[116/3024] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/hostip6.c.o
+[117/3024] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/hostip.c.o
+[118/3024] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/hostip4.c.o
+[119/3024] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/hostsyn.c.o
+[120/3024] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/hsts.c.o
+[121/3024] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/http2.c.o
+[122/3024] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/http.c.o
+[123/3024] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/http1.c.o
+[124/3024] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/http_aws_sigv4.c.o
+[125/3024] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/http_chunks.c.o
+[126/3024] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/http_digest.c.o
+[127/3024] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/http_negotiate.c.o
+[128/3024] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/http_ntlm.c.o
+[129/3024] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/imap.c.o
+[130/3024] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/http_proxy.c.o
+[131/3024] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/if2ip.c.o
+[132/3024] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/idn.c.o
+[133/3024] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/inet_ntop.c.o
+[134/3024] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/inet_pton.c.o
+[135/3024] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/krb5.c.o
+[136/3024] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/ldap.c.o
+[137/3024] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/llist.c.o
+[138/3024] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/macos.c.o
+[139/3024] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/md4.c.o
+[140/3024] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/memdebug.c.o
+[141/3024] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/md5.c.o
+[142/3024] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/mprintf.c.o
+[143/3024] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/mime.c.o
+[144/3024] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/mqtt.c.o
+[145/3024] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/netrc.c.o
+[146/3024] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/nonblock.c.o
+[147/3024] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/multi.c.o
+[148/3024] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/noproxy.c.o
+[149/3024] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/openldap.c.o
+[150/3024] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/parsedate.c.o
+[151/3024] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/pop3.c.o
+[152/3024] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/psl.c.o
+[153/3024] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/pingpong.c.o
+[154/3024] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/progress.c.o
+[155/3024] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/rename.c.o
+[156/3024] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/rtsp.c.o
+[157/3024] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/rand.c.o
+[158/3024] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/select.c.o
+[159/3024] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/sendf.c.o
+[160/3024] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/sha256.c.o
+[161/3024] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/setopt.c.o
+[162/3024] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/slist.c.o
+[163/3024] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/share.c.o
+[164/3024] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/smb.c.o
+[165/3024] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/smtp.c.o
+[166/3024] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/socks_gssapi.c.o
+[167/3024] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/socketpair.c.o
+[168/3024] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/socks.c.o
+[169/3024] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/socks_sspi.c.o
+[170/3024] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/splay.c.o
+[171/3024] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/strcase.c.o
+[172/3024] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/speedcheck.c.o
+[173/3024] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/strdup.c.o
+[174/3024] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/strtok.c.o
+[175/3024] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/strerror.c.o
+[176/3024] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/strtoofft.c.o
+[177/3024] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/system_win32.c.o
+[178/3024] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/telnet.c.o
+[179/3024] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/tftp.c.o
+[180/3024] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/timediff.c.o
+[181/3024] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/timeval.c.o
+[182/3024] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/vauth/cleartext.c.o
+[183/3024] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/transfer.c.o
+[184/3024] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/urlapi.c.o
+[185/3024] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/url.c.o
+[186/3024] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/vauth/cram.c.o
+[187/3024] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/vauth/digest_sspi.c.o
+[188/3024] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/vauth/digest.c.o
+[189/3024] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/vauth/gsasl.c.o
+[190/3024] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/vauth/krb5_gssapi.c.o
+[191/3024] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/vauth/krb5_sspi.c.o
+[192/3024] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/vauth/ntlm_sspi.c.o
+[193/3024] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/vauth/oauth2.c.o
+[194/3024] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/vauth/spnego_gssapi.c.o
+[195/3024] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/vauth/spnego_sspi.c.o
+[196/3024] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/vauth/ntlm.c.o
+[197/3024] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/vauth/vauth.c.o
+[198/3024] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/version_win32.c.o
+[199/3024] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/vquic/curl_ngtcp2.c.o
+[200/3024] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/vquic/curl_msh3.c.o
+[201/3024] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/version.c.o
+[202/3024] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/vquic/curl_quiche.c.o
+[203/3024] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/vtls/bearssl.c.o
+[204/3024] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/vtls/gtls.c.o
+[205/3024] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/vtls/hostcheck.c.o
+[206/3024] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/vtls/keylog.c.o
+[207/3024] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/vquic/vquic.c.o
+[208/3024] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/vtls/mbedtls_threadlock.c.o
+[209/3024] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/vtls/openssl.c.o
+[210/3024] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/vtls/rustls.c.o
+[211/3024] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/vtls/schannel.c.o
+[212/3024] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/vtls/schannel_verify.c.o
+[213/3024] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/vtls/mbedtls.c.o
+[214/3024] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/vtls/wolfssl.c.o
+[215/3024] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/vtls/sectransp.c.o
+[216/3024] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/vtls/x509asn1.c.o
+[217/3024] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/vtls/vtls.c.o
+[218/3024] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/warnless.c.o
+[219/3024] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/lib/ws.c.o
+[220/3024] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/tool_listhelp.c.o
+[221/3024] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/src/slist_wc.c.o
+[222/3024] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/src/tool_binmode.c.o
+[223/3024] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/src/tool_bname.c.o
+[224/3024] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/src/tool_cb_dbg.c.o
+[225/3024] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/src/tool_cb_hdr.c.o
+[226/3024] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/src/tool_cb_prg.c.o
+[227/3024] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/src/tool_cb_rea.c.o
+[228/3024] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/src/tool_cb_see.c.o
+[229/3024] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/src/tool_cb_wrt.c.o
+[230/3024] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/src/tool_cfgable.c.o
+[231/3024] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/src/tool_doswin.c.o
+[232/3024] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/src/tool_dirhie.c.o
+[233/3024] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/src/tool_easysrc.c.o
+[234/3024] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/src/tool_filetime.c.o
+[235/3024] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/src/tool_findfile.c.o
+[236/3024] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/src/tool_formparse.c.o
+[237/3024] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/src/tool_getpass.c.o
+[238/3024] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/src/tool_getparam.c.o
+[239/3024] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/src/tool_help.c.o
+[240/3024] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/src/tool_helpers.c.o
+[241/3024] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/src/tool_libinfo.c.o
+[242/3024] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/src/tool_msgs.c.o
+[243/3024] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/src/tool_operhlp.c.o
+[244/3024] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/src/tool_operate.c.o
+[245/3024] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/src/tool_paramhlp.c.o
+[246/3024] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/src/tool_parsecfg.c.o
+[247/3024] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/src/tool_progress.c.o
+[248/3024] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/src/tool_setopt.c.o
+[249/3024] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/src/tool_sleep.c.o
+[250/3024] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/src/tool_stderr.c.o
+[251/3024] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/src/tool_strdup.c.o
+[252/3024] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/src/tool_urlglob.c.o
+[253/3024] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/src/tool_util.c.o
+[254/3024] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/src/tool_vms.c.o
+[255/3024] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/src/tool_writeout.c.o
+[256/3024] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/src/tool_writeout_json.c.o
+[257/3024] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/src/tool_xattr.c.o
+[258/3024] Building C object apps/external/curl/CMakeFiles/curl.dir/curl/src/var.c.o
+[259/3024] Building C object apps/frameworks/connectivity/bluetooth/CMakeFiles/libbluetooth.dir/framework/common/bt_list.c.o
+[260/3024] Building C object apps/frameworks/connectivity/bluetooth/CMakeFiles/libbluetooth.dir/framework/common/bt_time.c.o
+[261/3024] Building C object apps/frameworks/connectivity/bluetooth/CMakeFiles/libbluetooth.dir/framework/common/bt_hash.c.o
+[262/3024] Building C object apps/frameworks/connectivity/bluetooth/CMakeFiles/libbluetooth.dir/framework/common/bt_addr.c.o
+[263/3024] Building C object apps/frameworks/connectivity/bluetooth/CMakeFiles/libbluetooth.dir/framework/common/advertiser_data_helper.c.o
+[264/3024] Building C object apps/frameworks/connectivity/bluetooth/CMakeFiles/libbluetooth.dir/framework/common/advertiser_data.c.o
+[265/3024] Building C object apps/frameworks/connectivity/bluetooth/CMakeFiles/libbluetooth.dir/framework/common/state_machine.c.o
+[266/3024] Building C object apps/frameworks/connectivity/bluetooth/CMakeFiles/libbluetooth.dir/framework/common/bt_uuid.c.o
+[267/3024] Building C object apps/frameworks/connectivity/bluetooth/CMakeFiles/libbluetooth.dir/framework/common/callbacks_list.c.o
+[268/3024] Building C object apps/frameworks/connectivity/bluetooth/CMakeFiles/libbluetooth.dir/framework/common/euv_pty.c.o
+[269/3024] Building C object apps/frameworks/connectivity/bluetooth/CMakeFiles/libbluetooth.dir/framework/common/uv_thread_loop.c.o
+[270/3024] Building C object apps/frameworks/connectivity/bluetooth/CMakeFiles/libbluetooth.dir/framework/common/euv_pipe.c.o
+[271/3024] Building C object apps/frameworks/connectivity/bluetooth/CMakeFiles/libbluetooth.dir/framework/api/bluetooth.c.o
+[272/3024] Building C object apps/frameworks/connectivity/bluetooth/CMakeFiles/libbluetooth.dir/framework/api/bt_adapter.c.o
+[273/3024] Building C object apps/frameworks/connectivity/bluetooth/CMakeFiles/libbluetooth.dir/framework/api/bt_device.c.o
+ninja: build stopped: interrupted by user.
+Error: ############# build -j6 fail ##############
+Error: ############# build vendor/allwinnertech/boards/a733/cubie-a7z/configs/nsh fail ##############

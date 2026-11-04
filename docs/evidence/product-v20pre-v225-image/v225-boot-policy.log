@@ -1,0 +1,4 @@
+pet autostart on; applies next boot (running tasks unchanged).
+pet autostart off; applies next boot (running tasks unchanged).
+pet autostart on; applies next boot (running tasks unchanged).
+PASS v225 BOOT POLICY: real persisted CRC opt-in/off/corrupt-off, existing Wi-Fi record preserved; real dispatcher starts pet only with opt-in, console output and /dev/null input. Spawn is mocked, NOT reboot acceptance.

@@ -1,0 +1,30 @@
+{
+  "result": "V200_BOOT_IMAGE_AND_REUSED_FIRMWARE_LINEAGE_PASSED_NOT_BOARD_TESTED",
+  "packaging_commit": "d8eefd500ac325ccaebdb2bc99ca56578c418cf8",
+  "firmware_source_commit": "6d1ece1c1a385db8f1f6163b172fbbf51a99a002",
+  "image_sha256": "a729b7442ffc764063b191d8ac3ebb38c4a2812c18f21cc9dacf2cd02fbaaa33",
+  "image_bytes": 2147483648,
+  "check_sha256": "963ce581b829a721e23d656a390ca02435254246fd0d9ba43a53660deafd0095",
+  "package_sha256": "032b30fb28f68ffaa25f6cc47eaee8259dd2bbcb87d16d371bf8f650340e9a6c",
+  "audit_source_sha256": "f71c3da2d6fbceaf3924a38c8d93ced0a1922f4262f8995ae6691358034eb109",
+  "kernel_sha256": "19e2e0772816a44ee9ec671c3eac92f7978b2587a8a8c502c7abd60919cf96c0",
+  "elf_sha256": "a0b3c9021c08139e9bd715bf09e1398a04822fb9271c7fe46a8fa4f3c4b0d243",
+  "kernel_unchanged": true,
+  "new_firmware_build": false,
+  "frame_reservation": {
+    "address": "0x458fb000",
+    "bytes": 4194304,
+    "identity_map": "DRAM_STAGE1",
+    "retained_until_reboot": true
+  },
+  "runtime_image_bytes": 96260096,
+  "prior_sdk_restoration": {
+    "result": "SDK_RESTORED_BYTE_EXACT",
+    "paths": 289
+  },
+  "script_sha256": "41094803268aad1165ec0f97afa8d61d3afac74163b0843aa7ffc8963425b04c",
+  "auto_script_installed": true,
+  "auto_script_execution_hardware_verified": false,
+  "camera_raw_hardware_verified": false,
+  "hardware_verified": false
+}

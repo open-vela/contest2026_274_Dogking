@@ -1,0 +1,2 @@
+display: RGB24 file shown; image origin depends on the supplied file
+PASS: exact production RGB24-to-RGB565 renderer, full-frame transfer and strict short/long/missing rejection before LCD access; MOCK LCD ONLY

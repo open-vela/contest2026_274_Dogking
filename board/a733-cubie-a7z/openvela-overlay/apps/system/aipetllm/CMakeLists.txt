@@ -22,6 +22,7 @@ if(CONFIG_SYSTEM_AIPETLLM)
     aipetllm_bpe.cxx
     aipetllm_api.cxx
     aipetllm_ggml_quant.c
+    aipetllm_activation.c
     aipetllm_modelcheck.c
     aipetllm_tokencheck.c
     ${AIPETLLM_GGML_SOURCES}

@@ -1,0 +1,5 @@
+patching file external/zblue/zblue/subsys/bluetooth/host/hci_core.c
+patching file external/zblue/zblue/subsys/bluetooth/host/scan.c
+patching file frameworks/connectivity/bluetooth/service/stacks/zephyr/hci_h4.c
+patching file frameworks/connectivity/bluetooth/service/stacks/zephyr/sal_le_scan_interface.c
+Zblue reopen: 100 quiesce/mutex resets, bounded timeout/write, H4 error ownership, queued parameter snapshot: PASS

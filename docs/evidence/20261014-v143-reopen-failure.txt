@@ -1,0 +1,1353 @@
+
+[bttool] on_scan_stopped_cb, scanner:0x42560b80
+
+bttool> scan dump
+bttool> bKttool] Scan state=idle
+[bttool] cmd#8 scan: rc=0 (accepted; async operation may still be pending)
+
+bttool> disable
+bttool> btKtool] Scan already stopped
+[bttool] disable API status=0; wait for OFF(0)
+[bttool] Context:0x42550650, Adapter state changed: 6
+[bttool] cmd#9 disable: rc=0 (accepted; async operation may still be pending)
+[bttool] Scan already stopped
+[bttool] Context:0x42550650, Adapter state changed: 0
+
+bttool> state
+bttool> btKtool] Adapter State: 0
+[bttool] cmd#10 state: rc=0 (accepted; async operation may still be pending)
+quit
+[bttool] cmd#11 quit: rc=-2 (quit)
+nsh> ps
+  PID GROUP CPU(AFFINITY)   PRI POLICY   TYPE    NPX STATE    EVENT     SIGMASK            STACK COMMAND
+    0     0 000(0x000000ff)   0 FIFO     Kthread   - Running            0000000000000000 0008112 CPU0 IDLE
+    1     0 001(0x000000ff)   0 FIFO     Kthread   - Assigned           0000000000000000 0008112 CPU1 IDLE
+    2     0 002(0x000000ff)   0 FIFO     Kthread   - Running            0000000000000000 0008112 CPU2 IDLE
+    3     0 003(0x000000ff)   0 FIFO     Kthread   - Running            0000000000000000 0008112 CPU3 IDLE
+    4     0 004(0x000000ff)   0 FIFO     Kthread   - Running            0000000000000000 0008112 CPU4 IDLE
+    5     0 005(0x000000ff)   0 FIFO     Kthread   - Running            0000000000000000 0008112 CPU5 IDLE
+    6     0 006(0x000000ff)   0 FIFO     Kthread   - Running            0000000000000000 0008112 CPU6 IDLE
+    7     0 007(0x000000ff)   0 FIFO     Kthread   - Running            0000000000000000 0008112 CPU7 IDLE
+    8     0 ---(0x000000ff) 224 RR       Kthread   - Waiting  Semaphore 0000000000000000 0008048 hpwork 0x4046f240 0x4046f2c8
+    9     9 001(0x000000ff) 100 RR       Task      - Running            0000000000000000 0008080 nsh_main
+   10     0 ---(0x000000ff) 100 RR       Kthread   - Waiting  Signal    0000000000000000 0008080 a733-wlan-rx
+   12     0 ---(0x000000ff) 120 RR       Kthread   - Waiting  Signal    0000000000000000 0003984 a7z-uart-rx
+   13    13 ---(0x000000ff) 100 RR       Task      - Waiting  Semaphore 0000000000000000 0008080 kvdbd
+   14    14 ---(0x000000ff) 103 RR       Task      - Waiting  Semaphore 0000000000000000 0016272 bluetoothd
+   15    14 ---(0x000000ff) 110 FIFO     pthread   - Waiting  Semaphore 0000000000000000 0008112 sysworkq 0x403e8db4 0x42549530
+   27    14 ---(0x000000ff)  10 FIFO     pthread   - Waiting  Semaphore 0000000000000000 0008112 BT LW WQ 0x403e8db4 0x42549700
+   31     0 ---(0x000000ff) 100 RR       Kthread   - Waiting  Signal    0000000000000000 0008080 a733-bt-rx
+   48    14 ---(0x000000ff) 100 RR       pthread   - Waiting  Semaphore 0000000000000000 0008112 sysworkq 0x402faa00 0x4250ff40
+nsh> bttool
+bttool> pair auto 0
+bttool> bKttool] Auto accept pair:Disable
+[bttool] cmd#12 pair: rc=0 (accepted; async operation may still be pending)
+enable
+bttool> [[Kttool] enable API status=0; completion is the state callback
+[bttool] Context:0x42550790, Adapter state changed: 1
+[bttool] cmd#13 enable: rc=0 (accepted; async operation may still be pending)
+[bttool] Context:0x42550790, Adapter state changed: 2
+state
+bttool> [[Kttool] Adapter State: 2
+[bttool] cmd#14 state: rc=0 (accepted; async operation may still be pending)
+enable
+bttool> [[tKtool] Adapter already enabled: state=2
+[bttool] cmd#15 enable: rc=0 (accepted; async operation may still be pending)
+state
+bttool> [[tKtool] Adapter State: 2
+[bttool] cmd#16 state: rc=0 (accepted; async operation may still be pending)
+scan start -t 0 -p 1M -m 0 -l 1
+bttool> btKtool] cmd#17 scan: rc=0 (accepted; async operation may still be pending)
+[bttool] on_scan_start_status_cb, scanner:0x425530f0, status:0
+[bttool] ScanResult ------[21:7A:C6:BF:30:97]------
+[bttool] AddrType:1
+[bttool] Rssi:-59
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[50:F9:58:47:98:AA]------
+[bttool] AddrType:0
+[bttool] Rssi:-74
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[7E:50:AC:9E:89:CC]------
+[bttool] AddrType:1
+[bttool] Rssi:-68
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[4E:93:A6:F0:D7:09]------
+[bttool] AddrType:1
+[bttool] Rssi:-74
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[11:DA:BA:CC:91:B8]------
+[bttool] AddrType:1
+[bttool] Rssi:-57
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[9C:12:21:4F:5C:EF]------
+[bttool] AddrType:0
+[bttool] Rssi:-70
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[51:62:71:A0:C8:4F]------
+[bttool] AddrType:1
+[bttool] Rssi:-70
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[48:64:29:59:8B:E9]------
+[bttool] AddrType:1
+[bttool] Rssi:-66
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[7E:50:AC:9E:89:CC]------
+[bttool] AddrType:1
+[bttool] Rssi:-63
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[33:D3:32:FD:74:22]------
+[bttool] AddrType:1
+[bttool] Rssi:-57
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[31:10:A4:3D:DB:38]------
+[bttool] AddrType:1
+[bttool] Rssi:-85
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[01:AD:7A:22:2F:E7]------
+[bttool] AddrType:1
+[bttool] Rssi:-69
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[7C:E9:13:AE:1C:D8]------
+[bttool] AddrType:0
+[bttool] Rssi:-76
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[7E:50:AC:9E:89:CC]------
+[bttool] AddrType:1
+[bttool] Rssi:-74
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[F1:00:DD:48:AD:87]------
+[bttool] AddrType:1
+[bttool] Rssi:-94
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[1C:CE:89:AE:6B:FD]------
+[bttool] AddrType:1
+[bttool] Rssi:-34
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[4E:93:A6:F0:D7:09]------
+[bttool] AddrType:1
+[bttool] Rssi:-77
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[79:8F:27:3C:AC:AA]------
+[bttool] AddrType:1
+[bttool] Rssi:-92
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[21:7A:C6:BF:30:97]------
+[bttool] AddrType:1
+[bttool] Rssi:-60
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[09:90:DF:DE:49:26]------
+[bttool] AddrType:1
+[bttool] Rssi:-66
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[9C:12:21:4F:5C:EF]------
+[bttool] AddrType:0
+[bttool] Rssi:-74
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[17:25:4B:45:D3:5D]------
+[bttool] AddrType:1
+[bttool] Rssi:-67
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[7E:50:AC:9E:89:CC]------
+[bttool] AddrType:1
+[bttool] Rssi:-71
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[70:E9:42:00:96:F5]------
+[bttool] AddrType:1
+[bttool] Rssi:-67
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[01:AD:7A:22:2F:E7]------
+[bttool] AddrType:1
+[bttool] Rssi:-66
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[33:D3:32:FD:74:22]------
+[bttool] AddrType:1
+[bttool] Rssi:-57
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[9C:12:21:4F:5C:EF]------
+[bttool] AddrType:0
+[bttool] Rssi:-71
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[70:E9:42:00:96:F5]------
+[bttool] AddrType:1
+[bttool] Rssi:-76
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[7E:50:AC:9E:89:CC]------
+[bttool] AddrType:1
+[bttool] Rssi:-70
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[6A:E4:6E:DE:49:F3]------
+[bttool] AddrType:1
+[bttool] Rssi:-77
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[23:30:4D:46:66:89]------
+[bttool] AddrType:1
+[bttool] Rssi:-85
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[28:3E:BA:20:FE:96]------
+[bttool] AddrType:1
+[bttool] Rssi:-72
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[32:B8:CA:57:DA:99]------
+[bttool] AddrType:1
+[bttool] Rssi:-83
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[4E:93:A6:F0:D7:09]------
+[bttool] AddrType:1
+[bttool] Rssi:-77
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[40:C9:78:3E:B8:0F]------
+[bttool] AddrType:1
+[bttool] Rssi:-94
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[0D:C2:64:D3:07:8A]------
+[bttool] AddrType:1
+[bttool] Rssi:-89
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[24:A8:F1:FC:EC:15]------
+[bttool] AddrType:1
+[bttool] Rssi:-83
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[7E:50:AC:9E:89:CC]------
+[bttool] AddrType:1
+[bttool] Rssi:-72
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[21:7A:C6:BF:30:97]------
+[bttool] AddrType:1
+[bttool] Rssi:-60
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[32:B8:CA:57:DA:99]------
+[bttool] AddrType:1
+[bttool] Rssi:-82
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[10:B4:1D:F4:91:D6]------
+[bttool] AddrType:0
+[bttool] Rssi:-68
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[45:D5:AC:2C:97:90]------
+[bttool] AddrType:1
+[bttool] Rssi:-68
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[33:D3:32:FD:74:22]------
+[bttool] AddrType:1
+[bttool] Rssi:-70
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[7C:E9:13:AE:1C:D8]------
+[bttool] AddrType:0
+[bttool] Rssi:-66
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[7E:50:AC:9E:89:CC]------
+[bttool] AddrType:1
+[bttool] Rssi:-74
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[1C:CE:89:AE:6B:FD]------
+[bttool] AddrType:1
+[bttool] Rssi:-35
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[51:62:71:A0:C8:4F]------
+[bttool] AddrType:1
+[bttool] Rssi:-61
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[70:E9:42:00:96:F5]------
+[bttool] AddrType:1
+[bttool] Rssi:-68
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[03:FD:7B:3F:7C:D7]------
+[bttool] AddrType:1
+[bttool] Rssi:-72
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[7E:50:AC:9E:89:CC]------
+[bttool] AddrType:1
+[bttool] Rssi:-70
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[6B:3C:2D:C6:9D:FA]------
+[bttool] AddrType:1
+[bttool] Rssi:-93
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[15:0E:7D:50:41:73]------
+[bttool] AddrType:1
+[bttool] Rssi:127
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[24:A8:F1:FC:EC:15]------
+[bttool] AddrType:1
+[bttool] Rssi:-84
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[45:06:14:36:58:4E]------
+[bttool] AddrType:1
+[bttool] Rssi:-87
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[9C:12:21:4F:5C:EF]------
+[bttool] AddrType:0
+[bttool] Rssi:-75
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[00:7F:1D:8D:6D:B2]------
+[bttool] AddrType:0
+[bttool] Rssi:-75
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[44:8D:78:57:38:4B]------
+[bttool] AddrType:1
+[bttool] Rssi:-90
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[23:30:4D:46:66:89]------
+[bttool] AddrType:1
+[bttool] Rssi:-80
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[7E:50:AC:9E:89:CC]------
+[bttool] AddrType:1
+[bttool] Rssi:-69
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[17:0C:DA:DC:3C:6D]------
+[bttool] AddrType:1
+[bttool] Rssi:-78
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[28:3E:BA:20:FE:96]------
+[bttool] AddrType:1
+[bttool] Rssi:-69
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[6F:B9:8F:49:C5:6C]------
+[bttool] AddrType:1
+[bttool] Rssi:-80
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[9C:12:21:4F:5C:EF]------
+[bttool] AddrType:0
+[bttool] Rssi:-74
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[33:D3:32:FD:74:22]------
+[bttool] AddrType:1
+[bttool] Rssi:-74
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[10:B4:1D:F4:91:D6]------
+[bttool] AddrType:0
+[bttool] Rssi:-66
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[6B:3C:2D:C6:9D:FA]------
+[bttool] AddrType:1
+[bttool] Rssi:-96
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[7C:E9:13:AE:1C:D8]------
+[bttool] AddrType:0
+[bttool] Rssi:-68
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[7E:50:AC:9E:89:CC]------
+[bttool] AddrType:1
+[bttool] Rssi:-69
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[01:AD:7A:22:2F:E7]------
+[bttool] AddrType:1
+[bttool] Rssi:-66
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[9C:12:21:4F:5C:EF]------
+[bttool] AddrType:0
+[bttool] Rssi:-70
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[6B:3C:2D:C6:9D:FA]------
+[bttool] AddrType:1
+[bttool] Rssi:-93
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[6A:E4:6E:DE:49:F3]------
+[bttool] AddrType:1
+[bttool] Rssi:-84
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[32:B8:CA:57:DA:99]------
+[bttool] AddrType:1
+[bttool] Rssi:-85
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[31:10:A4:3D:DB:38]------
+[bttool] AddrType:1
+[bttool] Rssi:-84
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[7E:50:AC:9E:89:CC]------
+[bttool] AddrType:1
+[bttool] Rssi:-70
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[40:C9:78:3E:B8:0F]------
+[bttool] AddrType:1
+[bttool] Rssi:-85
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[1C:CE:89:AE:6B:FD]------
+[bttool] AddrType:1
+[bttool] Rssi:-35
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[21:7A:C6:BF:30:97]------
+[bttool] AddrType:1
+[bttool] Rssi:-77
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[4E:93:A6:F0:D7:09]------
+[bttool] AddrType:1
+[bttool] Rssi:-75
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[10:B4:1D:F4:91:D6]------
+[bttool] AddrType:0
+[bttool] Rssi:-68
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[28:3E:BA:20:FE:96]------
+[bttool] AddrType:1
+[bttool] Rssi:-71
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[17:0C:DA:DC:3C:6D]------
+[bttool] AddrType:1
+[bttool] Rssi:-80
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[05:7C:15:22:D0:12]------
+[bttool] AddrType:1
+[bttool] Rssi:-84
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[7E:50:AC:9E:89:CC]------
+[bttool] AddrType:1
+[bttool] Rssi:-74
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[32:B8:CA:57:DA:99]------
+[bttool] AddrType:1
+[bttool] Rssi:-80
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[48:64:29:59:8B:E9]------
+[bttool] AddrType:1
+[bttool] Rssi:-83
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[10:B4:1D:F4:91:D6]------
+[bttool] AddrType:0
+[bttool] Rssi:-66
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[01:AD:7A:22:2F:E7]------
+[bttool] AddrType:1
+[bttool] Rssi:-66
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[7E:50:AC:9E:89:CC]------
+[bttool] AddrType:1
+[bttool] Rssi:-68
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[44:8D:78:57:38:4B]------
+[bttool] AddrType:1
+[bttool] Rssi:-80
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[33:D3:32:FD:74:22]------
+[bttool] AddrType:1
+[bttool] Rssi:-72
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[70:E9:42:00:96:F5]------
+[bttool] AddrType:1
+[bttool] Rssi:-67
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[28:3E:BA:20:FE:96]------
+[bttool] AddrType:1
+[bttool] Rssi:-70
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[7C:E9:13:AE:1C:D8]------
+[bttool] AddrType:0
+[bttool] Rssi:-67
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[3F:5B:7D:71:04:66]------
+[bttool] AddrType:0
+[bttool] Rssi:-88
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[F0:CD:50:EA:DF:54]------
+[bttool] AddrType:0
+[bttool] Rssi:-70
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[6B:3C:2D:C6:9D:FA]------
+[bttool] AddrType:1
+[bttool] Rssi:-95
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[7E:50:AC:9E:89:CC]------
+[bttool] AddrType:1
+[bttool] Rssi:-74
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[24:A8:F1:FC:EC:15]------
+[bttool] AddrType:1
+[bttool] Rssi:-74
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[21:7A:C6:BF:30:97]------
+[bttool] AddrType:1
+[bttool] Rssi:-76
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[79:56:0D:F5:DF:54]------
+[bttool] AddrType:1
+[bttool] Rssi:-95
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[17:25:4B:45:D3:5D]------
+[bttool] AddrType:1
+[bttool] Rssi:-65
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[17:0C:DA:DC:3C:6D]------
+[bttool] AddrType:1
+[bttool] Rssi:-82
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[10:B4:1D:F4:91:D6]------
+[bttool] AddrType:0
+[bttool] Rssi:-67
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[9C:12:21:4F:5C:EF]------
+[bttool] AddrType:0
+[bttool] Rssi:-73
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[7E:50:AC:9E:89:CC]------
+[bttool] AddrType:1
+[bttool] Rssi:-73
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[1C:CE:89:AE:6B:FD]------
+[bttool] AddrType:1
+[bttool] Rssi:-35
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[33:D3:32:FD:74:22]------
+[bttool] AddrType:1
+[bttool] Rssi:-52
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[73:76:5C:9D:92:AD]------
+[bttool] AddrType:1
+[bttool] Rssi:-73
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[F1:00:DD:48:AD:87]------
+[bttool] AddrType:1
+[bttool] Rssi:-92
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[70:E9:42:00:96:F5]------
+[bttool] AddrType:1
+[bttool] Rssi:-63
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[6A:E4:6E:DE:49:F3]------
+[bttool] AddrType:1
+[bttool] Rssi:-77
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[7E:50:AC:9E:89:CC]------
+[bttool] AddrType:1
+[bttool] Rssi:-69
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[7E:50:AC:9E:89:CC]------
+[bttool] AddrType:1
+[bttool] Rssi:-73
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[9C:12:21:4F:5C:EF]------
+[bttool] AddrType:0
+[bttool] Rssi:-71
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[33:D3:32:FD:74:22]------
+[bttool] AddrType:1
+[bttool] Rssi:-61
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[7E:50:AC:9E:89:CC]------
+[bttool] AddrType:1
+[bttool] Rssi:-76
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[23:30:4D:46:66:89]------
+[bttool] AddrType:1
+[bttool] Rssi:-79
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[05:7C:15:22:D0:12]------
+[bttool] AddrType:1
+[bttool] Rssi:-86
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[17:25:4B:45:D3:5D]------
+[bttool] AddrType:1
+[bttool] Rssi:-65
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[11:DA:BA:CC:91:B8]------
+[bttool] AddrType:1
+[bttool] Rssi:-72
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[32:B8:CA:57:DA:99]------
+[bttool] AddrType:1
+[bttool] Rssi:-79
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[7C:E9:13:AE:1C:D8]------
+[bttool] AddrType:0
+[bttool] Rssi:-72
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[7E:50:AC:9E:89:CC]------
+[bttool] AddrType:1
+[bttool] Rssi:-67
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[70:E9:42:00:96:F5]------
+[bttool] AddrType:1
+[bttool] Rssi:-67
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[03:FD:7B:3F:7C:D7]------
+[bttool] AddrType:1
+[bttool] Rssi:-68
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[3F:5B:7D:71:04:66]------
+[bttool] AddrType:0
+[bttool] Rssi:-71
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[6F:B9:8F:49:C5:6C]------
+[bttool] AddrType:1
+[bttool] Rssi:-74
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[9C:12:21:4F:5C:EF]------
+[bttool] AddrType:0
+[bttool] Rssi:-68
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[7E:50:AC:9E:89:CC]------
+[bttool] AddrType:1
+[bttool] Rssi:-74
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[28:3E:BA:20:FE:96]------
+[bttool] AddrType:1
+[bttool] Rssi:-68
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[0D:C2:64:D3:07:8A]------
+[bttool] AddrType:1
+[bttool] Rssi:-89
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[44:8D:78:57:38:4B]------
+[bttool] AddrType:1
+[bttool] Rssi:-86
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[01:AD:7A:22:2F:E7]------
+[bttool] AddrType:1
+[bttool] Rssi:-73
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[75:F7:9E:F3:F4:CA]------
+[bttool] AddrType:1
+[bttool] Rssi:-96
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[21:7A:C6:BF:30:97]------
+[bttool] AddrType:1
+[bttool] Rssi:-66
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[9C:12:21:4F:5C:EF]------
+[bttool] AddrType:0
+[bttool] Rssi:-74
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[F1:00:DD:48:AD:87]------
+[bttool] AddrType:1
+[bttool] Rssi:-93
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[23:30:4D:46:66:89]------
+[bttool] AddrType:1
+[bttool] Rssi:-74
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[7E:50:AC:9E:89:CC]------
+[bttool] AddrType:1
+[bttool] Rssi:-70
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[4E:93:A6:F0:D7:09]------
+[bttool] AddrType:1
+[bttool] Rssi:-76
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[0D:C2:64:D3:07:8A]------
+[bttool] AddrType:1
+[bttool] Rssi:-91
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[20:A3:66:6F:62:EE]------
+[bttool] AddrType:0
+[bttool] Rssi:-86
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[6A:E4:6E:DE:49:F3]------
+[bttool] AddrType:1
+[bttool] Rssi:-72
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[03:FD:7B:3F:7C:D7]------
+[bttool] AddrType:1
+[bttool] Rssi:-68
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[1C:CE:89:AE:6B:FD]------
+[bttool] AddrType:1
+[bttool] Rssi:-35
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[7E:50:AC:9E:89:CC]------
+[bttool] AddrType:1
+[bttool] Rssi:-68
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[17:0C:DA:DC:3C:6D]------
+[bttool] AddrType:1
+[bttool] Rssi:-77
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[21:7A:C6:BF:30:97]------
+[bttool] AddrType:1
+[bttool] Rssi:-63
+[bttool] Type:3
+[bttool]
+
+scan stop[bttool] ScanResult ------[44:8D:78:57:38:4B]------
+[bttool] AddrType:1
+[bttool] Rssi:-85
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[05:7C:15:22:D0:12]------
+[bttool] AddrType:1
+[bttool] Rssi:-87
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[45:06:14:36:58:4E]------
+[bttool] AddrType:1
+[bttool] Rssi:-88
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[7E:50:AC:9E:89:CC]------
+[bttool] AddrType:1
+[bttool] Rssi:-73
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[28:3E:BA:20:FE:96]------
+[bttool] AddrType:1
+[bttool] Rssi:-68
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[D4:43:8A:F3:2C:61]------
+[bttool] AddrType:0
+[bttool] Rssi:-74
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[1C:CE:89:AE:6B:FD]------
+[bttool] AddrType:1
+[bttool] Rssi:-35
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[17:25:4B:45:D3:5D]------
+[bttool] AddrType:1
+[bttool] Rssi:-72
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[7C:E9:13:AE:1C:D8]------
+[bttool] AddrType:0
+[bttool] Rssi:-79
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[6F:47:20:C2:E6:F7]------
+[bttool] AddrType:1
+[bttool] Rssi:-92
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[21:7A:C6:BF:30:97]------
+[bttool] AddrType:1
+[bttool] Rssi:-72
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[70:E9:42:00:96:F5]------
+[bttool] AddrType:1
+[bttool] Rssi:-75
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[7E:50:AC:9E:89:CC]------
+[bttool] AddrType:1
+[bttool] Rssi:-69
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[48:64:29:59:8B:E9]------
+[bttool] AddrType:1
+[bttool] Rssi:-62
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[D4:43:8A:F3:2C:61]------
+[bttool] AddrType:0
+[bttool] Rssi:-72
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[6F:47:20:C2:E6:F7]------
+[bttool] AddrType:1
+[bttool] Rssi:-94
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[9C:12:21:4F:5C:EF]------
+[bttool] AddrType:0
+[bttool] Rssi:-72
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[F0:CD:50:EA:DF:54]------
+[bttool] AddrType:0
+[bttool] Rssi:-59
+[bttool] Type:0
+[bttool]
+
+
+bttool> bKttool] Scan stop requested; wait for on_scan_stopped_cb
+[bttool] cmd#18 scan: rc=0 (accepted; async operation may still be pending)
+[bttool] on_scan_stopped_cb, scanner:0x425530f0
+scan dump
+bttool> [[tKtool] Scan state=idle
+[bttool] cmd#19 scan: rc=0 (accepted; async operation may still be pending)
+disable
+bttool> [[Kttool] Scan already stopped
+[bttool] disable API status=0; wait for OFF(0)
+[bttool] Context:0x42550790, Adapter state changed: 6
+[bttool] cmd#20 disable: rc=0 (accepted; async operation may still be pending)
+[bttool] Scan already stopped
+[bttool] Context:0x42550790, Adapter state changed: 0
+state
+bttool> [[Kttool] Adapter State: 0
+[bttool] cmd#21 state: rc=0 (accepted; async operation may still be pending)
+quit
+[bttool] cmd#22 quit: rc=-2 (quit)
+nsh> bttool
+bttool> pair auto 0
+bttool> [[Kttool] Auto accept pair:Disable
+[bttool] cmd#23 pair: rc=0 (accepted; async operation may still be pending)
+enable
+bttool> btKtool] enable API status=0; completion is the state callback
+[bttool] Context:0x4254c630, Adapter state changed: 1
+[bttool] cmd#24 enable: rc=0 (accepted; async operation may still be pending)
+[bttool] Context:0x4254c630, Adapter state changed: 2
+state
+bttool> bKttool] Adapter State: 2
+[bttool] cmd#25 state: rc=0 (accepted; async operation may still be pending)
+enable
+bttool> [[Kttool] Adapter already enabled: state=2
+[bttool] cmd#26 enable: rc=0 (accepted; async operation may still be pending)
+state
+bttool> [[Kttool] Adapter State: 2
+[bttool] cmd#27 state: rc=0 (accepted; async operation may still be pending)
+scan start -t 0 -p 1M -m 0 -l 1
+bttool> btKtool] cmd#28 scan: rc=0 (accepted; async operation may still be pending)
+[bttool] on_scan_start_status_cb, scanner:0x425530e0, status:0
+
+bttool> scan start -t 0 -p 1M -m 0 -l 1
+bttool> [[tKtool] Scan already active/stopping; wait for on_scan_stopped_cb
+Usage:
+Commands:
+        start   start scan
+          -t or --type, le scan type (0: passive, 1: active)
+          -p or --phy, le scan phy (1M/2M/Coded)
+          -m or --mode, scan mode (0:low power mode, 1:balance mode, 2:low latency mode)
+          -l or --legacy, is legacy scan (1: true, 0: false)
+          -f or --filter, filter advertiser :<uuid>
+          -y or --policy, scan filter policy (0: Accept All, 1: White List Only,
+            2: Accept All + RPA, 3: White List + RPA)
+
+        stop    stop scan
+        dump    dump scan state
+[bttool] cmd#29 scan: rc=-9 (API Return Error)
+[bttool] cmd execute error: [API Return Error]
+quit
+[bttool] cmd#30 quit: rc=-2 (quit)
+[bttool] Scan stop requested; wait for on_scan_stopped_cb
+[bttool] on_scan_stopped_cb, scanner:0x425530e0
+nsh> cat /dev/a733-bt
+A733 FCU760K USB HCI / official openvela host transport
+last=-11 stage=not-probed probes=0 events=0 hci-status=ff unsafe=0
+runtime=a69c:8d81 event=03 ACL=04/04
+firmware: mode=5 HCI-port=1 readback=1 expected-port=1(USB)
+transport: phase=idle command=-11/0 event=-110/0 polls=15990
+periodic: cmd=00080b11 sts=00004000 qtd=80408d80 frame=256f->258f
+version=00 revision=0000 manufacturer=0000
+address=00:00:00:00:00:00
+le-features=0000000000000000
+control: echo probe > /dev/a733-bt (read-only HCI queries; no reset)
+target: openvela BLE GATT central -> ESP32-S3 peripheral
+host: registered=0 open=1 worker=31 error=0 needs-reboot=0 failures=0 tx-command=68 tx-acl=0 rx-event=526 rx-acl=0
+hci-proof: tx-op=2005 rx-op=2005 status=00 failed-op=0000 failed-status=00
+host-control: bluetoothd & then bttool; no probe while host open
+nsh> dmesg
+st of 16­bit Service Class UUIDs)
+[  496.608465] [CPU1] [52] bt_client_49: AdvType:(Peripheral Connection Interval Range)
+[  496.619068] [CPU1] [52] bt_client_49: AdvType:(Manufacturer Specific Data)
+[  496.629728] [CPU1] [52] bt_client_49: AdvType:(Manufacturer Specific Data)
+[  496.640388] [CPU1] [52] bt_client_49: AdvType:(Manufacturer Specific Data)
+[  496.651048] [CPU1] [52] bt_client_49: AdvType:(Flags)
+[  496.651066] [CPU1] [52] bt_client_49: AdvType:(Tx Power Level)
+[  496.651085] [CPU1] [52] bt_client_49: AdvType:(Manufacturer Specific Data)
+[  497.259409] [CPU2] [52] bt_client_49: AdvType:(Manufacturer Specific Data)
+[  497.270068] [CPU2] [52] bt_client_49: AdvType:(Flags)
+[  497.270087] [CPU2] [52] bt_client_49: AdvType:(Manufacturer Specific Data)
+[  497.270105] [CPU2] [52] bt_client_49: AdvType:(Tx Power Level)
+[  497.280728] [CPU2] [52] bt_client_49: AdvType:(Flags)
+[  497.280747] [CPU2] [52] bt_client_49: AdvType:(Complete Local Name)
+[  497.280765] [CPU2] [52] bt_client_49: AdvType:(Complete List of 16­bit Service Class UUIDs)
+[  497.280783] [CPU2] [52] bt_client_49: AdvType:(Peripheral Connection Interval Range)
+[  497.291388] [CPU2] [52] bt_client_49: AdvType:(Manufacturer Specific Data)
+[  497.302048] [CPU2] [52] bt_client_49: AdvType:(Flags)
+[  497.302067] [CPU2] [52] bt_client_49: AdvType:(Tx Power Level)
+[  497.302085] [CPU2] [52] bt_client_49: AdvType:(Manufacturer Specific Data)
+[  497.312708] [CPU2] [52] bt_client_49: AdvType:(Manufacturer Specific Data)
+[  497.323368] [CPU2] [52] bt_client_49: AdvType:(Manufacturer Specific Data)
+[  497.334028] [CPU2] [52] bt_client_49: AdvType:(Flags)
+[  497.334047] [CPU2] [52] bt_client_49: AdvType:(Complete List of 16­bit Service Class UUIDs)
+[  497.334065] [CPU2] [52] bt_client_49: AdvType:(Complete List of 128­bit Service Class UUIDs)
+[  497.344688] [CPU2] [52] bt_client_49: AdvType:(Manufacturer Specific Data)
+[  497.355348] [CPU2] [52] bt_client_49: AdvType:(Flags)
+[  497.355367] [CPU2] [52] bt_client_49: AdvType:(Complete List of 16­bit Service Class UUIDs)
+[  497.355385] [CPU2] [52] bt_client_49: AdvType:(Manufacturer Specific Data)
+[  497.833408] [CPU1] [52] bt_client_49: AdvType:(Flags)
+[  497.833428] [CPU1] [52] bt_client_49: AdvType:(Incomplete List of 16­bit Service Class UUIDs)
+[  497.833446] [CPU1] [52] bt_client_49: AdvType:(Service Data ­ 16­bit UUID)
+[  497.844068] [CPU1] [52] bt_client_49: AdvType:(Service Data ­ 16­bit UUID)
+[  497.854727] [CPU1] [52] bt_client_49: AdvType:(Service Data ­ 16­bit UUID)
+[  497.865387] [CPU1] [52] bt_client_49: AdvType:(Flags)
+[  497.865406] [CPU1] [52] bt_client_49: AdvType:(Tx Power Level)
+[  497.865425] [CPU1] [52] bt_client_49: AdvType:(Manufacturer Specific Data)
+[  497.876048] [CPU1] [52] bt_client_49: AdvType:(Manufacturer Specific Data)
+[  497.886708] [CPU1] [52] bt_client_49: AdvType:(Manufacturer Specific Data)
+[  497.897367] [CPU1] [52] bt_client_49: AdvType:(Flags)
+[  497.897386] [CPU1] [52] bt_client_49: AdvType:(Complete List of 16­bit Service Class UUIDs)
+[  497.897404] [CPU1] [52] bt_client_49: AdvType:(Complete List of 128­bit Service Class UUIDs)
+[  498.465410] [CPU1] [52] bt_client_49: AdvType:(Manufacturer Specific Data)
+[  498.476070] [CPU1] [52] bt_client_49: AdvType:(Manufacturer Specific Data)
+[  498.486730] [CPU1] [52] bt_client_49: AdvType:(Flags)
+[  498.486749] [CPU1] [52] bt_client_49: AdvType:(Complete Local Name)
+[  498.486767] [CPU1] [52] bt_client_49: AdvType:(Complete List of 16­bit Service Class UUIDs)
+[  498.486786] [CPU1] [52] bt_client_49: AdvType:(Peripheral Connection Interval Range)
+[  498.497390] [CPU1] [52] bt_client_49: AdvType:(Flags)
+[  498.497409] [CPU1] [52] bt_client_49: AdvType:(Service Data ­ 16­bit UUID)
+[  498.508050] [CPU1] [52] bt_client_49: AdvType:(Flags)
+[  498.508069] [CPU1] [52] bt_client_49: AdvType:(Tx Power Level)
+[  498.508087] [CPU1] [52] bt_client_49: AdvType:(Manufacturer Specific Data)
+[  498.518710] [CPU1] [52] bt_client_49: AdvType:(Manufacturer Specific Data)
+[  498.529370] [CPU1] [52] bt_client_49: AdvType:(Manufacturer Specific Data)
+[  498.540030] [CPU1] [52] bt_client_49: AdvType:(Flags)
+[  498.540049] [CPU1] [52] bt_client_49: AdvType:(Tx Power Level)
+[  498.540067] [CPU1] [52] bt_client_49: AdvType:(Manufacturer Specific Data)
+[  498.550690] [CPU1] [52] bt_client_49: AdvType:(Manufacturer Specific Data)
+[  498.999406] [CPU1] [52] bt_client_49: AdvType:(Flags)
+[  498.999426] [CPU1] [52] bt_client_49: AdvType:(Complete List of 16­bit Service Class UUIDs)
+[  498.999444] [CPU1] [52] bt_client_49: AdvType:(Complete List of 128­bit Service Class UUIDs)
+[  499.010066] [CPU1] [52] bt_client_49: AdvType:(Flags)
+[  499.010085] [CPU1] [52] bt_client_49: AdvType:(Tx Power Level)
+[  499.010103] [CPU1] [52] bt_client_49: AdvType:(Manufacturer Specific Data)
+[  499.020726] [CPU1] [52] bt_client_49: AdvType:(Flags)
+[  499.020745] [CPU1] [52] bt_client_49: AdvType:(Tx Power Level)
+[  499.020763] [CPU1] [52] bt_client_49: AdvType:(Manufacturer Specific Data)
+[  499.611407] [CPU1] [52] bt_client_49: AdvType:(Flags)
+[  499.611427] [CPU1] [52] bt_client_49: AdvType:(Tx Power Level)
+[  499.611446] [CPU1] [52] bt_client_49: AdvType:(Manufacturer Specific Data)
+[  499.622067] [CPU1] [52] bt_client_49: AdvType:(Flags)
+[  499.622086] [CPU1] [52] bt_client_49: AdvType:(Service Data ­ 16­bit UUID)
+[  499.632727] [CPU1] [52] bt_client_49: AdvType:(Manufacturer Specific Data)
+[  500.202405] [CPU1] [52] bt_client_49: AdvType:(Flags)
+[  500.202425] [CPU1] [52] bt_client_49: AdvType:(Tx Power Level)
+[  500.202444] [CPU1] [52] bt_client_49: AdvType:(Manufacturer Specific Data)
+[  500.213066] [CPU1] [52] bt_client_49: AdvType:(Manufacturer Specific Data)
+[  500.844408] [CPU1] [52] bt_client_49: AdvType:(Manufacturer Specific Data)
+[  500.855067] [CPU1] [52] bt_client_49: AdvType:(Manufacturer Specific Data)
+[  500.865728] [CPU1] [52] bt_client_49: AdvType:(Manufacturer Specific Data)
+[  500.876388] [CPU1] [52] bt_client_49: AdvType:(Manufacturer Specific Data)
+[  500.887047] [CPU1] [52] bt_client_49: AdvType:(Flags)
+[  500.887066] [CPU1] [52] bt_client_49: AdvType:(Complete List of 16­bit Service Class UUIDs)
+[  500.887085] [CPU1] [52] bt_client_49: AdvType:(Manufacturer Specific Data)
+[  500.897707] [CPU1] [52] bt_client_49: AdvType:(Flags)
+[  500.897726] [CPU1] [52] bt_client_49: AdvType:(Tx Power Level)
+[  500.897744] [CPU1] [52] bt_client_49: AdvType:(Manufacturer Specific Data)
+[  500.908367] [CPU1] [52] bt_client_49: AdvType:(Flags)
+[  500.908386] [CPU1] [52] bt_client_49: AdvType:(Complete List of 16­bit Service Class UUIDs)
+[  500.908404] [CPU1] [52] bt_client_49: AdvType:(Complete List of 128­bit Service Class UUIDs)
+[  500.919027] [CPU1] [52] bt_client_49: AdvType:(Manufacturer Specific Data)
+[  500.929687] [CPU1] [52] bt_client_49: AdvType:(Flags)
+[  500.929706] [CPU1] [52] bt_client_49: AdvType:(Incomplete List of 16­bit Service Class UUIDs)
+[  500.929725] [CPU1] [52] bt_client_49: AdvType:(Service Data ­ 16­bit UUID)
+[  501.444403] [CPU2] [52] bt_client_49: AdvType:(Flags)
+[  501.444422] [CPU2] [52] bt_client_49: AdvType:(Tx Power Level)
+[  501.444441] [CPU2] [52] bt_client_49: AdvType:(Manufacturer Specific Data)
+[  501.455063] [CPU2] [52] bt_client_49: AdvType:(Flags)
+[  501.455082] [CPU2] [52] bt_client_49: AdvType:(Manufacturer Specific Data)
+[  501.455100] [CPU2] [52] bt_client_49: AdvType:(Complete List of 16­bit Service Class UUIDs)
+[  501.465723] [CPU2] [52] bt_client_49: AdvType:(Flags)
+[  501.465741] [CPU2] [52] bt_client_49: AdvType:(Tx Power Level)
+[  501.465760] [CPU2] [52] bt_client_49: AdvType:(Manufacturer Specific Data)
+[  501.476383] [CPU2] [52] bt_client_49: AdvType:(Manufacturer Specific Data)
+[  501.487043] [CPU2] [52] bt_client_49: AdvType:(Manufacturer Specific Data)
+[  501.497703] [CPU2] [52] bt_client_49: AdvType:(Manufacturer Specific Data)
+[  501.508363] [CPU2] [52] bt_client_49: AdvType:(Manufacturer Specific Data)
+[  501.519023] [CPU2] [52] bt_client_49: AdvType:(Flags)
+[  501.519041] [CPU2] [52] bt_client_49: AdvType:(Service Data ­ 16­bit UUID)
+[  502.053409] [CPU1] [52] bt_client_49: AdvType:(Manufacturer Specific Data)
+[  502.064068] [CPU1] [52] bt_client_49: AdvType:(Flags)
+[  502.064087] [CPU1] [52] bt_client_49: AdvType:(Manufacturer Specific Data)
+[  502.064106] [CPU1] [52] bt_client_49: AdvType:(Complete List of 16­bit Service Class UUIDs)
+[  502.074729] [CPU1] [52] bt_client_49: AdvType:(Manufacturer Specific Data)
+[  502.085389] [CPU1] [52] bt_client_49: AdvType:(Manufacturer Specific Data)
+[  502.096048] [CPU1] [52] bt_client_49: AdvType:(Flags)
+[  502.096067] [CPU1] [52] bt_client_49: AdvType:(Tx Power Level)
+[  502.096086] [CPU1] [52] bt_client_49: AdvType:(Manufacturer Specific Data)
+[  502.106708] [CPU1] [52] bt_client_49: AdvType:(Manufacturer Specific Data)
+[  502.117369] [CPU1] [52] bt_client_49: AdvType:(Manufacturer Specific Data)
+[  502.128028] [CPU1] [52] bt_client_49: AdvType:(Flags)
+[  502.128047] [CPU1] [52] bt_client_49: AdvType:(Manufacturer Specific Data)
+[  502.138688] [CPU1] [52] bt_client_49: AdvType:(Flags)
+[  502.138707] [CPU1] [52] bt_client_49: AdvType:(Tx Power Level)
+[  502.138725] [CPU1] [52] bt_client_49: AdvType:(Manufacturer Specific Data)
+[  502.617403] [CPU2] [52] bt_client_49: AdvType:(Manufacturer Specific Data)
+[  502.628063] [CPU2] [52] bt_client_49: AdvType:(Manufacturer Specific Data)
+[  502.638722] [CPU2] [52] bt_client_49: AdvType:(Flags)
+[  502.638741] [CPU2] [52] bt_client_49: AdvType:(Tx Power Level)
+[  502.638760] [CPU2] [52] bt_client_49: AdvType:(Manufacturer Specific Data)
+[  502.649383] [CPU2] [52] bt_client_49: AdvType:(Manufacturer Specific Data)
+[  502.660043] [CPU2] [52] bt_client_49: AdvType:(Manufacturer Specific Data)
+[  503.253406] [CPU1] [52] bt_client_49: AdvType:(Manufacturer Specific Data)
+[  503.264066] [CPU1] [52] bt_client_49: AdvType:(Manufacturer Specific Data)
+[  503.274725] [CPU1] [52] bt_client_49: AdvType:(Flags)
+[  503.274744] [CPU1] [52] bt_client_49: AdvType:(Manufacturer Specific Data)
+[  503.285385] [CPU1] [52] bt_client_49: AdvType:(Flags)
+[  503.285404] [CPU1] [52] bt_client_49: AdvType:(Tx Power Level)
+[  503.285423] [CPU1] [52] bt_client_49: AdvType:(Manufacturer Specific Data)
+[  503.296045] [CPU1] [52] bt_client_49: AdvType:(Manufacturer Specific Data)
+[  503.306705] [CPU1] [52] bt_client_49: AdvType:(Flags)
+[  503.306724] [CPU1] [52] bt_client_49: AdvType:(Service Data ­ 16­bit UUID)
+[  503.317366] [CPU1] [52] bt_client_49: AdvType:(Manufacturer Specific Data)
+[  503.328026] [CPU1] [52] bt_client_49: AdvType:(Manufacturer Specific Data)
+[  503.338685] [CPU1] [52] bt_client_49: AdvType:(Flags)
+[  503.338704] [CPU1] [52] bt_client_49: AdvType:(Complete List of 16­bit Service Class UUIDs)
+[  503.338722] [CPU1] [52] bt_client_49: AdvType:(Manufacturer Specific Data)
+[  503.844403] [CPU2] [52] bt_client_49: AdvType:(Service Data ­ 16­bit UUID)
+[  503.855063] [CPU2] [52] bt_client_49: AdvType:(Manufacturer Specific Data)
+[  503.865723] [CPU2] [52] bt_client_49: AdvType:(Flags)
+[  503.865741] [CPU2] [52] bt_client_49: AdvType:(Complete List of 16­bit Service Class UUIDs)
+[  503.865759] [CPU2] [52] bt_client_49: AdvType:(Complete List of 128­bit Service Class UUIDs)
+[  503.876383] [CPU2] [52] bt_client_49: AdvType:(Flags)
+[  503.876401] [CPU2] [52] bt_client_49: AdvType:(Tx Power Level)
+[  503.876420] [CPU2] [52] bt_client_49: AdvType:(Manufacturer Specific Data)
+[  503.887043] [CPU2] [52] bt_client_49: AdvType:(Flags)
+[  503.887062] [CPU2] [52] bt_client_49: AdvType:(Manufacturer Specific Data)
+[  503.887080] [CPU2] [52] bt_client_49: AdvType:(Tx Power Level)
+[  503.897702] [CPU2] [52] bt_client_49: AdvType:(Flags)
+[  503.897721] [CPU2] [52] bt_client_49: AdvType:(Service Data ­ 16­bit UUID)
+[  503.908363] [CPU2] [52] bt_client_49: AdvType:(Service Data ­ 16­bit UUID)
+[  503.919023] [CPU2] [52] bt_client_49: AdvType:(Flags)
+[  503.919042] [CPU2] [52] bt_client_49: AdvType:(Manufacturer Specific Data)
+[  503.919060] [CPU2] [52] bt_client_49: AdvType:(Complete List of 16­bit Service Class UUIDs)
+[  503.929683] [CPU2] [52] bt_client_49: AdvType:(Service Data ­ 16­bit UUID)
+[  515.449693] [CPU0] [14] bluetoothd: [337][adapter-stm]: Process, State=BleOn, Event=SYS_TURN_OFF_SAFE
+[  515.449727] [CPU0] [14] bluetoothd: [332][adapter-stm]: Exit, State=BleOn
+[  515.449754] [CPU0] [14] bluetoothd: [497][adapter-stm]: Enter, PrevState=BleOn ---> NewState=BleTurningOff
+[  515.449792] [CPU0] [14] bluetoothd: [109][service_manager]: service_on_shutdown {GATTC} shutdown ret:1
+[  515.449824] [CPU0] [14] bluetoothd: [119][service_manager]: service_on_shutdown all profile is shutdown
+[  515.449856] [CPU0] [14] bluetoothd: [2073][adapter-svc]: BLE transport all profiles is shutdown
+[  515.449895] [CPU0] [14] bluetoothd: [1563][adapter-svc]: adapter_on_le_disabled
+[  515.449919] [CPU0] [14] bluetoothd: [1435][adapter-svc]: adapter_notify_state_change, prev:2--->current:6
+[  515.449961] [CPU1] [14] bluetoothd: [520][adapter-stm]: Process, State=BleTurningOff, Event=BLE_PROFILE_DISABLED
+[  515.464036] [CPU1] [14] bluetoothd: [309][h4]: hci_remove_recv
+[  515.466030] [CPU1] [14] bluetoothd: [520][adapter-stm]: Process, State=BleTurningOff, Event=BLE_DISABLED
+[  515.466062] [CPU1] [14] bluetoothd: [513][adapter-stm]: Exit, State=BleTurningOff
+[  515.466089] [CPU1] [14] bluetoothd: [213][adapter-stm]: Enter, PrevState=BleTurningOff ---> NewState=Off
+[  515.466125] [CPU1] [14] bluetoothd: [1435][adapter-svc]: adapter_notify_state_change, prev:6--->current:0
+[  523.895202] [CPU1] [14] bluetoothd: [329][bt_socket_server]:[  bt_socket_server_handle_event ,5 2r3e.ve8n9t5 2=4 35]
+ [CPU2] [51] bt_client_49: set_stopped
+[  523.895322] [CPU1] [51] bt_client_49: bt_client_49 thread_schedule_loop quit
+[  523.895347] [CPU0] [50] bttool-cmd-exec: [async_queue:138]uv_async_queue_close
+[  530.382160] [CPU0] [55] bt_client_53: thread_schedule_loop:0x4255c8d0, async:0x4255cce0
+[  5[30 . 533802.20368]2 2[0C8P]U 0[]C P[U515]]  [bt_client_535:4 ]s ebttool-cmd-exect:_ rbt_client_53e aldoyo
+p running now !!!
+[  530.382305] [CPU1] [54] bttool-cmd-exec: [async_queue:91]uv_async_queue_init
+[  544.422071] [CPU1] [14] bluetoothd: [252][adapter-stm]: Process, State=Off, Event=SYS_TURN_ON
+[  544.422104] [CPU1] [14] bluetoothd: [229][adapter-stm]: Exit, State=Off
+[  544.422131] [CPU1] [14] bluetoothd: [275][adapter-stm]: Enter, PrevState=Off ---> NewState=BleTurningOn
+[  544.422173] [CPU1] [14] bluetoothd: A733 BT: official /dev/ttyHCI0 opened, worker=31
+[  544.422207] [CPU1] [14] bluetoothd: [356][h4]: H4: /dev/ttyHCI0 opened as fd:13
+[  [54 4 .54442.2244222]2 4[3C]P U[1C]P U[21]5 ][ 1sysworkq4:]  dbluetoothde:v :[01:4 3S5e]n[daidnagp tHeCrI-_sRvEcS]E:T
+adapter_notify_state_change, prev:0--->current:1
+[  544.604046] [CPU1] [14] bluetoothd: [294][adapter-stm]: Process, State=BleTurningOn, Event=BLE_ENABLED
+[  544.604082] [CPU1] [14] bluetoothd: [89][service_manager]: service_on_startup {GATTC} start ret:1
+[  544.604113] [CPU1] [14] bluetoothd: [99][service_manager]: service_on_startup all profiles is startup
+[  544.604145] [CPU1] [14] bluetoothd: [2061][adapter-svc]: BLE transport all profiles is startup
+[  544.604185] [CPU1] [14] bluetoothd: [294][adapter-stm]: Process, State=BleTurningOn, Event=BLE_PROFILE_ENABLED
+[  544.604217] [CPU1] [14] bluetoothd: [289][adapter-stm]: Exit, State=BleTurningOn
+[  544.604244] [CPU1] [14] bluetoothd: [321][adapter-stm]: Enter, PrevState=BleTurningOn ---> NewState=BleOn
+[  544.604279] [CPU1] [14] bluetoothd: [1435][adapter-svc]: adapter_notify_state_change, prev:1--->current:2
+[  544.604319] [CPU2] [14] bluetoothd: [1503][adapter-svc]: adapter_on_le_enabled, enablebt:0
+[  544.604354] [CPU2] [14] bluetoothd: [1513][adapter-svc]: adapter_on_le_enabled, le_addr:F4:AB:5C:E1:C8:62
+[  544.604403] [CPU2] [14] bluetoothd: [603][adapter-svc]: ble bonded device cnt: 0
+[  544.604435] [CPU2] [14] bluetoothd: [549][adapter-svc]: ble whitelist device cnt: 0
+[  587.018319] [CPU2] [14] bluetoothd: [329][bt_socket_server]: bt_socket_server_handle_event, revent = 5
+[  587.022524] [CPU1] [55] bt_client_53: set_stopped
+[  587.022558] [CPU1] [55] bt_client_53: bt_client_53 thread_schedule_loop quit
+[  587.022581] [CPU0] [54] bttool-cmd-exec: [async_queue:138]uv_async_queue_close
+nsh>

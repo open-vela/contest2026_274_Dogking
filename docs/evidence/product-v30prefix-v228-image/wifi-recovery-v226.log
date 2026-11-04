@@ -1,0 +1,2 @@
+PASS v226 actual Wi-Fi health predicate: carrier+IPv4 at product boundary, WPA2/port/DHCP before skip; serialized saved-profile recovery, no healthy reconnect or reset. HOST, not RF/AP acceptance.
+PASS actual production spawn attributes: child receives SIGINT despite blocked parent; own child only, no hardware reset.

@@ -1,0 +1,4 @@
+home-protocol: CRC/roundtrip/bounds/negative/fuzz passed
+home-client: 100 sessions, API errors, deadlines, CRC, stale/duplicate/early ACK, reconnect and no-actuation tests: PASS
+openvela-boundary: passed (official public APIs above vendor BSP)
+home-client sources match staged build: PASS

@@ -7,13 +7,19 @@ extern "C" {
 #include <cstring>
 #include <stdexcept>
 #include <iostream>
-static int closes, mode;
+#include <cerrno>
+static int closes, mode, seen_turns, token_calls;
 static int (*callback)(void *, const char *, size_t);
 static void *cookie;
-extern "C" int aipetllm_chat_system_tokens(const char *, const char *system,
-  const char *, uint32_t *tokens, uint32_t capacity, uint32_t *count, uint32_t *stop)
+extern "C" int aipetllm_chat_history_tokens(const char *, const char *system,
+  const char *,const aipetllm_turn *h,unsigned turns,
+  uint32_t *tokens, uint32_t capacity, uint32_t *count, uint32_t *stop)
 {
+  ++token_calls;seen_turns=turns;
   assert(std::strcmp(system,"桌宠提示词") == 0 && capacity == 512);
+  if(turns)assert(h && !std::strcmp(h[turns-1].assistant,"答"));
+  if(mode==3 && turns>1)return -ENOSPC;
+  if(mode==4)return -EINVAL;
   tokens[0] = 9707; *count = 1; *stop = 151645; return 0;
 }
 extern "C" void *aipetllm_stream_sink_open(const char *,
@@ -43,5 +49,17 @@ int main()
   mode = 1; assert(aipetllm_infer(&request,nullptr) == 1 && closes == 2);
   mode = 2; assert(aipetllm_infer(&request,nullptr) == 1 && closes == 3);
   request.cores = 0; assert(aipetllm_infer(&request,nullptr) == 1 && closes == 3);
+  request.cores=0xfc;mode=3;unsigned used=99;
+  aipetllm_turn history[3]={{"A","答"},{"B","答"},{"C","答"}};
+  token_calls=0;
+  assert(!aipetllm_infer_chat(&request,history,3,&used,&metrics));
+  assert(used==1 && seen_turns==1 && token_calls==3 && closes==4);
+  mode=4;token_calls=0;
+  assert(aipetllm_infer_chat(&request,history,3,&used,&metrics)==-EINVAL);
+  assert(used==0 && token_calls==1 && closes==4); // Invalid input is never pruned/retried.
+  assert(aipetllm_infer_chat(&request,nullptr,1,&used,&metrics));
+  mode=0;request.max_tokens=256;
+  assert(!aipetllm_infer(&request,&metrics));
+  request.max_tokens=257;assert(aipetllm_infer(&request,&metrics));
   std::cout << "LLM API validation and cleanup tests passed (mock backend)\n";
 }

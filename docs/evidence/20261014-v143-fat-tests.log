@@ -1,0 +1,8 @@
+patching file nuttx/fs/fat/fs_fat32.h
+patching file nuttx/fs/fat/fs_fat32.c
+Hunk #1 succeeded at 34 (offset 1 line).
+Hunk #2 succeeded at 337 (offset -1 lines).
+Hunk #6 succeeded at 1382 (offset -9 lines).
+Hunk #7 succeeded at 1598 (offset 2 lines).
+Hunk #8 succeeded at 1607 (offset 1 line).
+FAT descriptor path/null/limit/mount/lock tests: PASS

@@ -1,0 +1,68 @@
+--- a/external/zblue/zblue/subsys/bluetooth/host/hci_core.h
++++ b/external/zblue/zblue/subsys/bluetooth/host/hci_core.h
+@@ -616,1 +616,1 @@
+-void bt_hci_host_num_completed_packets(struct bt_dev *hdev, struct net_buf *buf);
++void bt_hci_host_num_completed_packets(struct net_buf *buf);
+--- a/external/zblue/zblue/subsys/bluetooth/host/id.c
++++ b/external/zblue/zblue/subsys/bluetooth/host/id.c
+@@ -1609,1 +1609,2 @@
++#if defined(CONFIG_BT_PRIVACY)
+ static bool irk_is_empty(const uint8_t* irk)
+@@ -1619,3 +1620,4 @@
+ }
+ 
++#endif
+ int bt_setup_public_id_addr(struct bt_dev *hdev)
+@@ -1631,3 +1633,5 @@
++#if defined(CONFIG_BT_PRIVACY)
+ 	if (!irk_is_empty(hdev->irk[BT_ID_DEFAULT])) {
+ 		irk = hdev->irk[BT_ID_DEFAULT];
+ 	}
++#endif
+--- a/external/zblue/zblue/port/kernel/thread.c
++++ b/external/zblue/zblue/port/kernel/thread.c
+@@ -37,1 +37,1 @@
+-	void *pid = (void *)gettid();
++	void *pid = (void *)(intptr_t)gettid();
+@@ -108,1 +108,1 @@
+-	if (ret < 0) {
++	if (ret != 0) {
+@@ -122,1 +122,1 @@
+-	new_thread->init_data = (void *)pid;
++	new_thread->init_data = (void *)(intptr_t)pid;
+@@ -130,1 +130,1 @@
+-    return prctl(PR_SET_NAME_EXT, str, (int)thread->init_data);
++    return prctl(PR_SET_NAME_EXT, str, (int)(intptr_t)thread->init_data);
+@@ -147,1 +147,1 @@
+-	pthread_t pid = (pthread_t)thread->init_data;
++	pthread_t pid = (pthread_t)(intptr_t)thread->init_data;
+--- a/external/zblue/zblue/port/kernel/poll.c
++++ b/external/zblue/zblue/port/kernel/poll.c
+@@ -242,1 +242,0 @@
+-	int events_registered;
+@@ -252,1 +251,1 @@
+-	events_registered = register_events(events, num_events, &poller,
++	(void)register_events(events, num_events, &poller,
+@@ -264,1 +263,1 @@
+-		clear_event_registrations(events, events_registered, key);
++		clear_event_registrations(events, num_events, key);
+@@ -280,1 +279,4 @@
+-	int ret = k_sem_take(&poller.sem, timeout);
++	/* Never block with the poll spinlock/IRQ critical section held. */
++	k_spin_unlock(&lock, key);
++
++	int ret = k_sem_take(&poller.sem, timeout);
+@@ -294,1 +296,1 @@
+-	clear_event_registrations(events, events_registered, key);
++	clear_event_registrations(events, num_events, key);
+--- a/external/zblue/CMakeLists.default.txt
++++ b/external/zblue/CMakeLists.default.txt
+@@ -42,2 +42,6 @@
+-    -Wno-incompatible-pointer-types
+-    -Wno-pointer-sign)
++    -Wno-incompatible-pointer-types
++    -Wno-pointer-sign
++    # k_poll registers its live poller then removes registrations before
++    # returning. GCC 13's inlining reports this pattern as dangling;
++    # retain the warning for review, without disabling global Werror.
++    -Wno-error=dangling-pointer)

@@ -1,0 +1,47 @@
+{
+  "result": "V221_NUTTX_ARM_COMPILE_PASSED_NOT_FULL_LINK_OR_BOARD",
+  "units": {
+    "apps/system/aipet/product_core.cxx": {
+      "sha256": "689ce6850d72c2b8fd35b8ce1b6358a407fcf6064b66665d1dbb5752e43ed48b",
+      "max_frame": 256
+    },
+    "apps/system/aipet/product_runtime.cxx": {
+      "sha256": "25daf67ed65cd0fe16ed8f275010a3b6044cd71a6b379cbababe5e4e6755f593",
+      "max_frame": 400
+    },
+    "apps/system/aipet/audio_app.cxx": {
+      "sha256": "8a446a24758c1afae112496c5e6e1389f8dfa57b07ab4e9da81372b8a0c39bca",
+      "max_frame": 2352
+    },
+    "apps/system/aipet/aipet_main.cxx": {
+      "sha256": "53b4529932fef0e5f12db9f4d4c3e07c8e4d6a956dbd8d758127e685e7c46e4c",
+      "max_frame": 32
+    },
+    "apps/system/aipet/mcu_protocol.cxx": {
+      "sha256": "1f8ee186477a8ef4d06d48481f24f8b8aa2aba942f75f662efd61128c94cd874",
+      "max_frame": 368
+    },
+    "apps/system/aipet/mcu_link.cxx": {
+      "sha256": "0b15e9b9720b7082a5e229464abd5e9737b4d9802d3225ceb834b23e9d9e69cd",
+      "max_frame": 704
+    },
+    "apps/system/aipet/mcu_agent_tool.cxx": {
+      "sha256": "4a08b30844285210f28d7c678144b7a73f8f94a7fc31d7505f60c43a4cdd7d33",
+      "max_frame": 224
+    },
+    "apps/system/a733camera/a733_camera_live.c": {
+      "sha256": "7eb7f536dd922d8b43891b9c1b3fd74e9aad6b1a90f79b4eddf5b86cc165e4d6",
+      "max_frame": 1296
+    },
+    "apps/system/aipet/product_cloud_config.c": {
+      "sha256": "3dbc4f0ac2c9655c63d7cc61c40102e89cf1ccc1dc6370fe37febb5320d3a285",
+      "max_frame": 1072
+    },
+    "apps/system/a733display/a733display_main.c": {
+      "sha256": "a0cf3822d9ccb4e2ff7c697cf157da6f809f4ed1701652385d2fe5961a204647",
+      "max_frame": 2096
+    }
+  },
+  "preview_config": true,
+  "SDK_sources_modified": false
+}

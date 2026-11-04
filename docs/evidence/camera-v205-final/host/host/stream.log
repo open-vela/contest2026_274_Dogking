@@ -1,0 +1,2 @@
+PASS CSI v205: 64 pause/rearm cycles; drain, late-error and translation gates retain/quarantine safely; HOST MOCK ONLY
+PASS v205 actual stream broker: 64 gated frames, changing pixels, leases, deduplication, idle timeout, guard failure, cooperative stop/restore; HOST MOCK ONLY

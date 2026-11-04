@@ -1,0 +1,92 @@
+{
+  "schema": 1,
+  "source_archive": "1789038584543_awnpu_model_zoo-v1.1.0-20260910-675a8dcb.tar.gz",
+  "archive_sha256": "7023c82789956db0ee7cab31c6c0a2c4bcdcc274a7f6c5a7d3fd4260186aa0be",
+  "subdirectory": "examples/zipformer/kaldi-native-fbank",
+  "original_files": [
+    {
+      "path": "LICENSE",
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+    },
+    {
+      "path": "csrc/include/feature-fbank.h",
+      "sha256": "d402efc938165a68af04d7cce1fae3fb4e45a03eeb9b24277d0d22eee10b9600"
+    },
+    {
+      "path": "csrc/include/feature-functions.h",
+      "sha256": "b3730eb6c4134f87a4b237773634cfd57482702114262362acd33656055f310b"
+    },
+    {
+      "path": "csrc/include/feature-window.h",
+      "sha256": "c28f899c5d651a4aa74156845640bd19daa42300da6a016c5162442b9a2537a1"
+    },
+    {
+      "path": "csrc/include/kaldi-math.h",
+      "sha256": "f4aed12e9e1932b97e47a2b8c33d75b6ab96e31c8d4687ebb61c6ab1783011a8"
+    },
+    {
+      "path": "csrc/include/log.h",
+      "sha256": "7c0d903d24a2e82c04082379f6b3c86dcc48898d6cceec94f81597790cb97260"
+    },
+    {
+      "path": "csrc/include/mel-computations.h",
+      "sha256": "9a734f25e094782d00cae2450847241e21bae4db750bef544f258bdd5bd94f27"
+    },
+    {
+      "path": "csrc/include/online-feature.h",
+      "sha256": "4abbb1af4e9ac1413591abc454c0d93bd52cb1514457f4ab644bbbef7e25efe8"
+    },
+    {
+      "path": "csrc/include/rfft.h",
+      "sha256": "17c1c60df087deb84d65065cc0dbf6a364c0d86313b62b3af80aee0e8cc64c59"
+    },
+    {
+      "path": "csrc/src/feature-fbank.cc",
+      "sha256": "ee2f7aa4dd113893acb9cc14927fdd4f0f6183707998acf1e12b256fb44e5a89"
+    },
+    {
+      "path": "csrc/src/feature-functions.cc",
+      "sha256": "6c7dcf3ba73e86df820d59a83c189e400fade231faf0cf23914b09f8120b9fc7"
+    },
+    {
+      "path": "csrc/src/feature-window.cc",
+      "sha256": "cf76b4d237e20ed59d8e37d321a2715f62add0e1ab5b3f5caa99e2023dd686bd"
+    },
+    {
+      "path": "csrc/src/kaldi-math.cc",
+      "sha256": "a6d188f55cc82ee4e81f35ac54936efab6335d278a48856d8f00bccebde6e15d"
+    },
+    {
+      "path": "csrc/src/log.cc",
+      "sha256": "60273bb618a2e2a757b77bbd307eb525be17131e38d5ea292de1ad67e63c171b"
+    },
+    {
+      "path": "csrc/src/mel-computations.cc",
+      "sha256": "882a7285439a1304d590277f9489be7704a5e708559de97bbe019458860cff69"
+    },
+    {
+      "path": "csrc/src/online-feature.cc",
+      "sha256": "825b507c7f2da9dfda8bd6ad163d0be5359e7807ece86590b5a1ca710bfc7158"
+    },
+    {
+      "path": "csrc/src/rfft.cc",
+      "sha256": "ee508ab0cfd2c6109ee1046b8482d9620aece7b5209bd98634a789159e5c32bf"
+    },
+    {
+      "path": "csrc/src/fftsg.cc",
+      "sha256": "2ee5cafec0a1771769739ef067bccbcb6ebff10f2fda0c6bc3d76d847aaa858e"
+    }
+  ],
+  "changes": [
+    "NuttX selects a stdio-only logger via knf-port.h/rtos-log.h; omit iostream option dumps and mel debug dumps only on that build; numerical code remains shared.",
+    "log.h: default KNF_ENABLE_CHECK=1 so fixed-profile invariants are not silently disabled.",
+    "Omit MFCC/Whisper sources, includes, aliases and template instantiations; OnlineFbank math unchanged.",
+    "log.h: no-exceptions builds abort on fatal check instead of an unsupported throw; silence unused error string.",
+    "log.cc: guard unused symbol-demangle helper with KNF_HAVE_EXECINFO_H."
+  ],
+  "licenses": [
+    "Apache-2.0: supplied LICENSE and per-file notices retained.",
+    "fftsg.cc: Takuya OOURA 1996-2001 permissive notice retained."
+  ],
+  "validation": "CPU frontend only. No Linux vendor NPU golden, ASR or TTS proof."
+}

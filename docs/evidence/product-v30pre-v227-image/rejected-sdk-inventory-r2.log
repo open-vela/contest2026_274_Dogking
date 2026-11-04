@@ -1,0 +1,8 @@
+PASS v227 actual whitelist/negative intent, independent LE16 x20 bytes, two-slot overlapping TTS, failed tail not replayed, cancellation joins. HOST, no hardware/API.
+Traceback (most recent call last):
+  File "/mnt/d/My-Program/AI-Agent-Program/GPTsprogram/Openvela/A733-A7Z-ALL-Files/contest2026_274_Dogking-dev-ai-contest-2026/tools/test-product-v227.py", line 13, in <module>
+    transformed=policy['transform'](src)
+  File "/mnt/d/My-Program/AI-Agent-Program/GPTsprogram/Openvela/A733-A7Z-ALL-Files/contest2026_274_Dogking-dev-ai-contest-2026/tools/apply-cloud-latency-v227.py", line 24, in transform
+    assert 'cloud-latency-v227:' not in source
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError

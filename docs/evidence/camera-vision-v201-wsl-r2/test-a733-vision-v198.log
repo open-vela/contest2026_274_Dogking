@@ -1,0 +1,20 @@
+npu: vision sequence=1 boxes=3 queued=3
+display: vision frame=1 boxes=3 npu=1234 us
+display: vision det=0 class=16 score=0.910
+display: vision det=1 class=16 score=0.910
+display: vision det=2 class=16 score=0.910
+display: complete vision batch=1 boxes=3 input-bound=1
+npu: vision sequence=2 boxes=3 queued=3
+display: input CRC mismatch; NO boxes published over this image
+npu: vision detection 1 dropped (11)
+npu: vision sequence=3 boxes=3 queued=1
+display: vision frame=3 boxes=3 npu=1 us
+npu: vision sequence=4 boxes=3 queued=3
+display: vision frame=4 boxes=3 npu=1 us
+display: invalid vision batch ignored
+npu: vision sequence=5 boxes=0 queued=0
+display: vision frame=5 boxes=0 npu=1 us
+display: complete vision batch=5 boxes=0 input-bound=1
+npu: vision sequence=1 boxes=0 queued=0
+PASS: actual producer/MQ consumer, partial/complete/zero/mismatched CRC/cross-input batch, stale/version/wrap, square geometry; MOCK LVGL/NPU ONLY
+PASS: exact production streaming model-image loader, RGB565 centre sampling and independent raw-NuttX CRC; short/long/missing rejection before LCD

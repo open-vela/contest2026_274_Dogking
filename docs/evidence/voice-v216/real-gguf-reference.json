@@ -1,0 +1,121 @@
+{
+  "result": "V216_REAL_GGUF_REFERENCE_PASSED_NOT_BOARD",
+  "firmware_commit": "1b8a7fc7cce886b752dcb0e236d35e3f318095a3",
+  "log_sha256": "739b321685549950861f6931347378e1bd73f452630e4b3f3459d9002f3a4271",
+  "model_bytes": 688065920,
+  "model_sha256": "81b64d05a23b17b34c475f42b3e72fbde62d4b92cc34541f7a8031d0752deafa",
+  "executable_sha256": "896a0f2dbefb946f1ce5faf872effe9857189a77f08d7acfd41b44fee3edb51c",
+  "source_sha256": {
+    "board/a733-cubie-a7z/openvela-overlay/apps/system/aipet/pet_persona.hxx": "15af43bd372e53bc0684efc6f8b2aa17854b91de55c7169f1cce3cc3b12122a1",
+    "board/a733-cubie-a7z/openvela-overlay/apps/system/aipetllm/aipetllm_modelcheck.c": "dc328a601d6c9f20e8f6a3ac8454d866224406e2c7bb706f43401fd426a533b9",
+    "board/a733-cubie-a7z/openvela-overlay/apps/system/aipetllm/aipetllm_prefill.inc": "4be434c6f901ce0c8720b5279a1535f97bcef0270f6414b89b8467e321c112a4",
+    "board/a733-cubie-a7z/openvela-overlay/apps/system/aipetllm/aipetllm_api.cxx": "9a5db1ea2192af86f77807d694bfd0276c50fbb5455a6b90f82ae5aff5f63e50",
+    "board/a733-cubie-a7z/openvela-overlay/apps/system/aipetllm/aipetllm_api.h": "cffb8a7715c49b3681684b68646ee35a8c61e5ef2f4764568c73dd49eee249b2",
+    "board/a733-cubie-a7z/openvela-overlay/apps/system/aipetllm/aipetllm_sequence.h": "90fcb3365499fedb44609ec93def5548a68c5bb54ad54dc5f799182014d74a33",
+    "board/a733-cubie-a7z/openvela-overlay/apps/system/aipetllm/aipetllm_bpe.cxx": "b05f7b454dbe2e0fd174e990c41d327407695bf6775ae2b924910fcd4dfb7c60",
+    "tools/test-llm-quality-v216.cxx": "60704a52b9e7a5ec5126aeb361f747d1ef2fe973f5eb0b2641f88bdeb6acb4d3"
+  },
+  "oracle_rows": [
+    [
+      "一加一等于几？只回答结果",
+      "0",
+      "156",
+      "38",
+      "38",
+      "0",
+      "0"
+    ],
+    [
+      "一加一等于几？只回答结果",
+      "1",
+      "156",
+      "38",
+      "38",
+      "0",
+      "0"
+    ],
+    [
+      "一加一等于几？只回答结果",
+      "2",
+      "156",
+      "38",
+      "38",
+      "0",
+      "0"
+    ],
+    [
+      "我叫什么名字？",
+      "0",
+      "151",
+      "1303",
+      "1303",
+      "0",
+      "0"
+    ],
+    [
+      "我叫什么名字？",
+      "1",
+      "151",
+      "1303",
+      "1303",
+      "0",
+      "0"
+    ],
+    [
+      "我叫什么名字？",
+      "2",
+      "151",
+      "1303",
+      "1303",
+      "0",
+      "0"
+    ]
+  ],
+  "samples": [
+    [
+      "你好，你是谁？",
+      "你好！我是MiniCPM系列模型，由面壁智能（ModelBest）和OpenBMB开源社区开发的AI助手！😊 有什么我可以帮助你的吗？",
+      "34",
+      "eos"
+    ],
+    [
+      "我今天很难过，能陪我聊聊吗？",
+      "哎呀，听到你今天很难过，我真的很想和你聊聊！有什么想说的吗？",
+      "17",
+      "eos"
+    ],
+    [
+      "一加一等于几？只回答结果",
+      "一加一等于2。",
+      "6",
+      "eos"
+    ],
+    [
+      "讲一个三句话、有结尾的小故事。",
+      "小明在公园里追逐蝴蝶，阳光洒在他的脸上，温暖而明亮。突然，一只小鸟飞过，翅膀轻轻扇动，带来一阵清新的花香。故事结束在这一刻，心中充满了快乐和希望。",
+      "46",
+      "eos"
+    ]
+  ],
+  "context_samples": [
+    [
+      "一加一等于几？只回答结果",
+      "1+1=2",
+      "3",
+      "5"
+    ],
+    [
+      "我叫什么名字？",
+      "小明！很高兴认识你！",
+      "3",
+      "7"
+    ]
+  ],
+  "history_pairs": 3,
+  "cold_warm_batch_reference": true,
+  "hardware_executed": false,
+  "physical_audio": false,
+  "board_latency": false,
+  "semantic_accuracy_score": false,
+  "raw_model_identity_still_requires_application_persona": true
+}

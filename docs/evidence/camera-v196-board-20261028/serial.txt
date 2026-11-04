@@ -1,0 +1,71 @@
+
+[boot188] CTOR done index=0x0000000000000017
+XA02
+
+X1
+PR
+PR
+PR
+
+NuttShell (NSH)
+nsh> RI
+RX
+
+nsh> camera control prepare
+camera-control-v196: V1.11/J5 MIPI packet experiment, NOT RAW capture
+state=1 stage=controls-prepared-reset-held-MCLK-NOT-measured error=0 cleanup=0 command-error=0 owned=1 consumed=1
+power: source=same-boot-U-Boot-image-handoff ready=434d5031 bytes=03/00/ff/17/c1/0d
+runtime-PMIC-access=NONE rails-retained=ASSUMED physical-voltage=NOT-MEASURED
+MCLK: configured=24000000 Hz measured=UNKNOWN; prepare holds reset/STBY LOW
+reads=21 writes=9 polls=1 elapsed-ms=13 last-address=02003804
+id-experiment: attempted=0 reads=0 chip-id=0000 match=0 error=0 polls=0 bus-quarantined=0
+mode-experiment: attempted=0 blob-error=0 writes=0 reads=0 verified=0/14 last-reg=0000 error=0
+packet-experiment: attempted=0 stage=idle receiver-error=0 cleanup=0 owned=0 ready=0
+source: on-attempted=0 on-error=0 stop-error=0; collect=500ms NO-DDR-WRITES
+packets: raw-headers=0 fs-observations=0 fe-observations=0 status=00000000 errors=00000000 last-header=00000000
+receiver: reads=0 writes=0 elapsed=0 last-address=00000000 phy-debug=00000000 phy-frequency=00000000 pll-ref=00000000 pll-peri=00000000
+PK-before: cfg1=00000000 cfg2=00000000 drv1=00000000 drv2=00000000; target=PK10..19/mux2/10mA; unrelated PK fields preserved
+receiver-first: error=0 address=00000000 mask=00000000 expected=00000000 observed=00000000
+receiver-cleanup: error=0 address=00000000 mask=00000000 expected=00000000 observed=00000000
+strict-qualification=NONE parser/ISP/DMA/IOMMU=NOT-ACCESSED; frames=NONE
+control: prepare | calibrate | normal-clock | id-experiment OR mode-experiment OR link-experiment (one-shot, then park) | park
+normal boot has no handoff: prepare returns ENODATA with ZERO MMIO
+nsh> camera control link-experiment
+camera-control-v196: V1.11/J5 MIPI packet experiment, NOT RAW capture
+state=2 stage=packet-trial-controls-restored-NOT-RAW-capture error=0 cleanup=0 command-error=0 owned=0 consumed=1
+power: source=same-boot-U-Boot-image-handoff ready=434d5031 bytes=03/00/ff/17/c1/0d
+runtime-PMIC-access=NONE rails-retained=ASSUMED physical-voltage=NOT-MEASURED
+MCLK: configured=0 Hz measured=UNKNOWN; prepare holds reset/STBY LOW
+reads=61205 writes=1810 polls=1 elapsed-ms=608 last-address=02002e8c
+id-experiment: attempted=1 reads=1 chip-id=0214 match=1 error=0 polls=58645 bus-quarantined=0
+mode-experiment: attempted=1 blob-error=0 writes=153 reads=17 verified=14/14 last-reg=0100 error=0
+packet-experiment: attempted=1 stage=MIPI-packets-observed-NOT-RAW-frame receiver-error=0 cleanup=0 owned=0 ready=0
+source: on-attempted=1 on-error=0 stop-error=0; collect=500ms NO-DDR-WRITES
+packets: raw-headers=119 fs-observations=14 fe-observations=14 status=0000004f errors=00000000 last-header=000e0001
+receiver: reads=690 writes=195 elapsed=504 last-address=02003844 phy-debug=00033333 phy-frequency=095f0001 pll-ref=f8675f00 pll-peri=ff126310
+PK-before: cfg1=ffffffff cfg2=ffffffff drv1=11111111 drv2=11111111; target=PK10..19/mux2/10mA; unrelated PK fields preserved
+receiver-first: error=0 address=00000000 mask=00000000 expected=00000000 observed=00000000
+receiver-cleanup: error=0 address=00000000 mask=00000000 expected=00000000 observed=00000000
+strict-qualification=NONE parser/ISP/DMA/IOMMU=NOT-ACCESSED; frames=NONE
+control: prepare | calibrate | normal-clock | id-experiment OR mode-experiment OR link-experiment (one-shot, then park) | park
+normal boot has no handoff: prepare returns ENODATA with ZERO MMIO
+nsh> camera control status
+camera-control-v196: V1.11/J5 MIPI packet experiment, NOT RAW capture
+state=2 stage=packet-trial-controls-restored-NOT-RAW-capture error=0 cleanup=0 command-error=0 owned=0 consumed=1
+power: source=same-boot-U-Boot-image-handoff ready=434d5031 bytes=03/00/ff/17/c1/0d
+runtime-PMIC-access=NONE rails-retained=ASSUMED physical-voltage=NOT-MEASURED
+MCLK: configured=0 Hz measured=UNKNOWN; prepare holds reset/STBY LOW
+reads=61205 writes=1810 polls=1 elapsed-ms=608 last-address=02002e8c
+id-experiment: attempted=1 reads=1 chip-id=0214 match=1 error=0 polls=58645 bus-quarantined=0
+mode-experiment: attempted=1 blob-error=0 writes=153 reads=17 verified=14/14 last-reg=0100 error=0
+packet-experiment: attempted=1 stage=MIPI-packets-observed-NOT-RAW-frame receiver-error=0 cleanup=0 owned=0 ready=0
+source: on-attempted=1 on-error=0 stop-error=0; collect=500ms NO-DDR-WRITES
+packets: raw-headers=119 fs-observations=14 fe-observations=14 status=0000004f errors=00000000 last-header=000e0001
+receiver: reads=690 writes=195 elapsed=504 last-address=02003844 phy-debug=00033333 phy-frequency=095f0001 pll-ref=f8675f00 pll-peri=ff126310
+PK-before: cfg1=ffffffff cfg2=ffffffff drv1=11111111 drv2=11111111; target=PK10..19/mux2/10mA; unrelated PK fields preserved
+receiver-first: error=0 address=00000000 mask=00000000 expected=00000000 observed=00000000
+receiver-cleanup: error=0 address=00000000 mask=00000000 expected=00000000 observed=00000000
+strict-qualification=NONE parser/ISP/DMA/IOMMU=NOT-ACCESSED; frames=NONE
+control: prepare | calibrate | normal-clock | id-experiment OR mode-experiment OR link-experiment (one-shot, then park) | park
+normal boot has no handoff: prepare returns ENODATA with ZERO MMIO
+nsh>

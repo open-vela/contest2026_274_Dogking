@@ -1,0 +1,13 @@
+--- a/onnxruntime/core/common/logging/logging.cc
++++ b/onnxruntime/core/common/logging/logging.cc
+@@ -233,4 +233,6 @@
+ #elif defined(__wasm__) || defined(_AIX)
+   return static_cast<unsigned int>(pthread_self());
++#elif defined(__NuttX__)
++  return static_cast<unsigned int>(gettid());
+ #else
+   return static_cast<unsigned int>(syscall(SYS_gettid));
+@@ -246,2 +248,2 @@
+-#elif defined(__MACH__) || defined(__wasm__) || defined(_AIX)
++#elif defined(__MACH__) || defined(__wasm__) || defined(_AIX) || defined(__NuttX__)
+   return static_cast<unsigned int>(getpid());

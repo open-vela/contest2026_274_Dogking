@@ -1,0 +1,30 @@
+config SYSTEM_A733CAMERA
+	tristate "A733 camera board inventory and CPU frame preparation"
+	default n
+	depends on ARCH_CHIP_A733
+	help
+	  'camera board' reads /dev/a733-camera if the passive checkpoint is
+	  enabled. 'camera prepare' converts one explicit RGB24/NV12/RAW10
+	  FILE frame to a new directory with 640x640 RGB24 and a ready marker.
+	  No live sensor/video/CSI/ISP/DMA/NPU access or camera acceptance.
+
+config A733_CAMERA_LIVE_TEST
+	bool "Experimental bounded camera/YOLO/LVGL RAM live coordinator"
+	default n
+	depends on SYSTEM_A733CAMERA && A733_CAMERA_CONTROL_TEST
+	depends on SYSTEM_A733DISPLAY && FS_TMPFS && BUILD_FLAT
+	help
+	  Flat-build only. Background task owns the camera and LVGL display.
+	  Retains checked stop/cleanup on every frame; extends same-boot clean
+	  capture budget to32768. Max3600seconds/session, cooperative stop.
+	  Models and inference input use private pseudofs-root tmpfs; NOT an
+	  MP4 recorder, continuous hardware stream or hardware soak acceptance.
+
+config A733_CAMERA_PERF_TEST
+	bool "v205 camera fast pixels, resident YOLO and gated sensor stream"
+	default n
+	depends on A733_CAMERA_LIVE_TEST && A733_NPU_TENSOR_IO
+	help
+	  Independent candidate. Preserves v4 ABI and legacy capture. Optional
+	  per-fd immutable known-model snapshot; checked region retention and
+	  phase timings; separate experimental sensor-on/gated-frame producer.

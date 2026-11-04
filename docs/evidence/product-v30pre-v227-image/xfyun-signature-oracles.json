@@ -1,0 +1,9 @@
+{
+  "result": "PASS_INDEPENDENT_HASHLIB_HMAC",
+  "tc3_signature": "c2e202a4389e99345d866e56c52a2bb50659e3a0b51c81b9205f5cb401439d85",
+  "xfyun_date": "Wed, 10 Jul 2019 07:35:43 GMT",
+  "xfyun_services": [
+    "ASR",
+    "TTS"
+  ]
+}

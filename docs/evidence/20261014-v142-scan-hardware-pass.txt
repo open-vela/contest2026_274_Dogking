@@ -1,0 +1,1422 @@
+
+193692 bytes read in 25 ms (7.4 MiB/s)
+[22.728]libfdt fdt_path_offset() returned FDT_ERR_BADMAGIC
+[22.737]The storage not support sample function
+[22.823]mac addr => 08:51:49:dc:75:eb
+[22.827]mac addr => 08:51:49:dc:75:ea
+[22.832]no battery, disabled battery functons
+[22.839]update dts
+stop sunxi USB-DRD ok...
+stop sunxi USB1-Host ok...
+[22.864]Starting kernel ...
+
+[22.867]total: 22867 ms
+
+[22.869][mmc]: MMC Device 2 not found
+[22.873][mmc]: mmc 2 not find, so not exit
+NOTICE:  [SCP] :wait arisc ready....
+NOTICE:  [SCP] :arisc version: [d463b9da43dc50320f21ba51c6c51afe2db20d83]
+NOTICE:  [SCP] :arisc startup ready
+NOTICE:  [SCP] :arisc startup notify message feedback
+NOTICE:  [SCP] :sunxi-arisc driver is starting
+NOTICE:  BL3-1: Next image address = 0x40200000
+NOTICE:  BL3-1: Next image spsr = 0x3c5
+- Ready to Boot Primary CPU
+- Boot from EL1
+- Boot to C runtime for OS Initialize
+M0 v141-layout
+M1
+A7Z0
+A7Z1
+N0
+N1
+H0
+H1
+H2
+H3
+H4
+S0
+S1
+P1
+H5
+N2
+N3
+N4
+ReRRdee- -e -  5R RR a
+ytdyy  eayeaBaaead0ddd ady
+oo    o  y Bttytt oBo o1o t  o
+tStoBtte o  o oooooB2
+cnoSooo       SStoScSB eot3eeeS ccc
+ o  nUCCCndCnn cnd0dCoddc P
+P PA1       PPd
+UP   C UUUUC
+
+
+
+
+o2  UA--B
+o    BBBB-
+ otoo-o
+ tffof  oooo B BttB4fott roo
+mmrE  fo tNrrmrro 6 oofomfm
+7LL mLL11E11 E1mEEo
+LE
+-LX
+   1
+
+
+-0---B
+oB
+  BB
+    Boootoooo oottttt   o tttt Coooo     CCCCr u   rrnrruutuunninnttmttiiieimmm meeefe    orffff oooorrrrOS    OOO OSSSIS   n IIIiInnnntiiiiiattttiiizzeeaaalzlllieiiizz
+    ee
+
+
+
+- Boot to- C  Boruont titome  C forur ntOSim eIn fitoir aOlSiz Ien
+itialize
+N8
+X1
+PR
+PR
+PR
+
+NuttShell (NSH)
+nsh> RI
+RX
+
+nsh> kvdbd &
+kvdbd [13:100]
+nsh> sleep 1
+nsh> setprop persist.a733.ble.acceptance v142
+nsh> getprop persist.a733.ble.acceptance
+v142
+nsh> bluetoothd &
+bluetoothd [27:100]
+nsh> sleep 1
+nsh> bttool
+bttool> pair auto 0
+bttool> [[Kttool] Auto accept pair:Disable
+[bttool] cmd#1 pair: rc=0 (accepted; async operation may still be pending)
+
+bttool> enable
+bttool> bKttool] cmd#2 enable: rc=0 (accepted; async operation may still be pending)
+[bttool] Context:0x42550670, Adapter state changed: 1
+[bttool] Context:0x42550670, Adapter state changed: 2
+
+bttool> state
+bttool> [[Kttool] Adapter State: 2
+[bttool] cmd#3 state: rc=0 (accepted; async operation may still be pending)
+
+bttool> scan start -t 0 -p 1M -m 0 -l 1
+bttool> [[Kttool] cmd#4 scan: rc=0 (accepted; async operation may still be pending)
+[bttool] on_scan_start_status_cb, scanner:0x42560b50, status:0
+[bttool] ScanResult ------[41:02:59:42:FB:CE]------
+[bttool] AddrType:1
+[bttool] Rssi:-71
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[74:E0:A4:7B:36:0D]------
+[bttool] AddrType:1
+[bttool] Rssi:-83
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[45:AA:E5:E1:90:E0]------
+[bttool] AddrType:1
+[bttool] Rssi:-68
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[40:3D:D2:96:CB:DE]------
+[bttool] AddrType:1
+[bttool] Rssi:-68
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[D4:43:8A:F3:2C:61]------
+[bttool] AddrType:0
+[bttool] Rssi:-71
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[3B:9C:9C:D9:61:F2]------
+[bttool] AddrType:1
+[bttool] Rssi:-91
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[9C:12:21:4F:5C:EF]------
+[bttool] AddrType:0
+[bttool] Rssi:-68
+[bttool] Type:2
+[bttool]
+
+[bttool] ScanResult ------[1C:C4:65:03:87:A2]------
+[bttool] AddrType:1
+[bttool] Rssi:-60
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[63:5F:2A:70:E4:E7]------
+[bttool] AddrType:1
+[bttool] Rssi:-67
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[4A:E8:BA:C9:33:D1]------
+[bttool] AddrType:1
+[bttool] Rssi:-71
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[40:3D:D2:96:CB:DE]------
+[bttool] AddrType:1
+[bttool] Rssi:-77
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[06:65:F7:C6:32:1E]------
+[bttool] AddrType:1
+[bttool] Rssi:-66
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[72:71:AF:E0:A1:26]------
+[bttool] AddrType:1
+[bttool] Rssi:-75
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[04:C4:D9:DF:A5:E6]------
+[bttool] AddrType:1
+[bttool] Rssi:-37
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[10:B4:1D:F4:91:D6]------
+[bttool] AddrType:0
+[bttool] Rssi:-77
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[DA:99:37:66:F1:E0]------
+[bttool] AddrType:1
+[bttool] Rssi:-63
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[07:3F:CE:D4:65:49]------
+[bttool] AddrType:1
+[bttool] Rssi:-83
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[40:3D:D2:96:CB:DE]------
+[bttool] AddrType:1
+[bttool] Rssi:-78
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[48:3D:05:52:DF:07]------
+[bttool] AddrType:1
+[bttool] Rssi:-78
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[21:2B:54:D4:C9:BA]------
+[bttool] AddrType:1
+[bttool] Rssi:-68
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[0C:D0:A1:A8:FA:62]------
+[bttool] AddrType:1
+[bttool] Rssi:-63
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[15:D8:BA:F9:66:21]------
+[bttool] AddrType:1
+[bttool] Rssi:-66
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[68:33:9F:1A:B8:A5]------
+[bttool] AddrType:1
+[bttool] Rssi:-82
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[3F:D8:98:20:38:C9]------
+[bttool] AddrType:1
+[bttool] Rssi:-88
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[5B:90:C2:18:DB:64]------
+[bttool] AddrType:1
+[bttool] Rssi:-57
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[68:33:9F:1A:B8:A5]------
+[bttool] AddrType:1
+[bttool] Rssi:-83
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[10:E0:B8:B7:2E:8D]------
+[bttool] AddrType:1
+[bttool] Rssi:-54
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[7C:E9:13:AE:1C:D8]------
+[bttool] AddrType:0
+[bttool] Rssi:-55
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[1C:C4:65:03:87:A2]------
+[bttool] AddrType:1
+[bttool] Rssi:-60
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[51:76:46:CB:AD:66]------
+[bttool] AddrType:1
+[bttool] Rssi:-68
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[60:E3:91:D4:2C:49]------
+[bttool] AddrType:1
+[bttool] Rssi:-83
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[10:B4:1D:F4:91:D6]------
+[bttool] AddrType:0
+[bttool] Rssi:-70
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[51:5E:CF:F7:BB:63]------
+[bttool] AddrType:1
+[bttool] Rssi:-77
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[40:3D:D2:96:CB:DE]------
+[bttool] AddrType:1
+[bttool] Rssi:-72
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[73:CF:BB:99:7D:9E]------
+[bttool] AddrType:1
+[bttool] Rssi:-82
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[3B:FC:13:9E:15:1B]------
+[bttool] AddrType:1
+[bttool] Rssi:-67
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[02:1D:60:A8:04:47]------
+[bttool] AddrType:1
+[bttool] Rssi:-82
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[40:57:34:4B:45:9A]------
+[bttool] AddrType:1
+[bttool] Rssi:-87
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[9C:12:21:4F:5C:EF]------
+[bttool] AddrType:0
+[bttool] Rssi:-63
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[63:AD:DC:DC:E8:64]------
+[bttool] AddrType:1
+[bttool] Rssi:-80
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[1C:C4:65:03:87:A2]------
+[bttool] AddrType:1
+[bttool] Rssi:-57
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[40:3D:D2:96:CB:DE]------
+[bttool] AddrType:1
+[bttool] Rssi:-67
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[2C:2E:D2:13:D9:F6]------
+[bttool] AddrType:1
+[bttool] Rssi:-64
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[04:79:89:FE:49:37]------
+[bttool] AddrType:1
+[bttool] Rssi:-76
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[41:CB:C4:28:C0:55]------
+[bttool] AddrType:1
+[bttool] Rssi:-96
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[10:E0:B8:B7:2E:8D]------
+[bttool] AddrType:1
+[bttool] Rssi:-55
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[16:DC:CA:CA:03:5D]------
+[bttool] AddrType:1
+[bttool] Rssi:-76
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[04:C4:D9:DF:A5:E6]------
+[bttool] AddrType:1
+[bttool] Rssi:-33
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[10:B4:1D:F4:91:D6]------
+[bttool] AddrType:0
+[bttool] Rssi:-66
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[16:26:8E:AC:65:31]------
+[bttool] AddrType:1
+[bttool] Rssi:-82
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[45:AA:E5:E1:90:E0]------
+[bttool] AddrType:1
+[bttool] Rssi:-55
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[41:02:59:42:FB:CE]------
+[bttool] AddrType:1
+[bttool] Rssi:-74
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[29:A2:91:74:97:ED]------
+[bttool] AddrType:1
+[bttool] Rssi:-75
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[60:E3:91:D4:2C:49]------
+[bttool] AddrType:1
+[bttool] Rssi:-84
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[17:D6:27:D1:BE:59]------
+[bttool] AddrType:1
+[bttool] Rssi:-86
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[21:2B:54:D4:C9:BA]------
+[bttool] AddrType:1
+[bttool] Rssi:-77
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[9C:12:21:4F:5C:EF]------
+[bttool] AddrType:0
+[bttool] Rssi:-66
+[bttool] Type:2
+[bttool]
+
+[bttool] ScanResult ------[1C:C4:65:03:87:A2]------
+[bttool] AddrType:1
+[bttool] Rssi:-59
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[3F:D8:98:20:38:C9]------
+[bttool] AddrType:1
+[bttool] Rssi:-76
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[0D:8E:47:29:AB:DB]------
+[bttool] AddrType:1
+[bttool] Rssi:-71
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[49:97:8D:F8:99:37]------
+[bttool] AddrType:1
+[bttool] Rssi:-73
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[16:26:8E:AC:65:31]------
+[bttool] AddrType:1
+[bttool] Rssi:-76
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[0C:D0:A1:A8:FA:62]------
+[bttool] AddrType:1
+[bttool] Rssi:-62
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[76:7B:73:C5:41:E1]------
+[bttool] AddrType:1
+[bttool] Rssi:-67
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[D6:0B:0C:0A:48:9F]------
+[bttool] AddrType:1
+[bttool] Rssi:-96
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[10:E0:B8:B7:2E:8D]------
+[bttool] AddrType:1
+[bttool] Rssi:-80
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[72:71:AF:E0:A1:26]------
+[bttool] AddrType:1
+[bttool] Rssi:-75
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[10:B4:1D:F4:91:D6]------
+[bttool] AddrType:0
+[bttool] Rssi:-72
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[21:2B:54:D4:C9:BA]------
+[bttool] AddrType:1
+[bttool] Rssi:-72
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[3B:FC:13:9E:15:1B]------
+[bttool] AddrType:1
+[bttool] Rssi:-63
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[17:D6:27:D1:BE:59]------
+[bttool] AddrType:1
+[bttool] Rssi:-88
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[40:3D:D2:96:CB:DE]------
+[bttool] AddrType:1
+[bttool] Rssi:-72
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[29:A2:91:74:97:ED]------
+[bttool] AddrType:1
+[bttool] Rssi:-74
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[3B:9C:9C:D9:61:F2]------
+[bttool] AddrType:1
+[bttool] Rssi:-87
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[04:79:89:FE:49:37]------
+[bttool] AddrType:1
+[bttool] Rssi:-72
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[0C:D0:A1:A8:FA:62]------
+[bttool] AddrType:1
+[bttool] Rssi:-68
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[3F:D8:98:20:38:C9]------
+[bttool] AddrType:1
+[bttool] Rssi:-81
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[73:CF:BB:99:7D:9E]------
+[bttool] AddrType:1
+[bttool] Rssi:-84
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[40:3D:D2:96:CB:DE]------
+[bttool] AddrType:1
+[bttool] Rssi:-72
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[40:3D:D2:96:CB:DE]------
+[bttool] AddrType:1
+[bttool] Rssi:-69
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[1C:C4:65:03:87:A2]------
+[bttool] AddrType:1
+[bttool] Rssi:-61
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[04:C4:D9:DF:A5:E6]------
+[bttool] AddrType:1
+[bttool] Rssi:-37
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[16:26:8E:AC:65:31]------
+[bttool] AddrType:1
+[bttool] Rssi:-77
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[16:DC:CA:CA:03:5D]------
+[bttool] AddrType:1
+[bttool] Rssi:-71
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[63:AD:DC:DC:E8:64]------
+[bttool] AddrType:1
+[bttool] Rssi:-80
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[29:A2:91:74:97:ED]------
+[bttool] AddrType:1
+[bttool] Rssi:-90
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[40:3D:D2:96:CB:DE]------
+[bttool] AddrType:1
+[bttool] Rssi:-66
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[5F:09:A6:EF:02:23]------
+[bttool] AddrType:1
+[bttool] Rssi:-92
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[7C:E9:13:AE:1C:D8]------
+[bttool] AddrType:0
+[bttool] Rssi:-64
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[10:E0:B8:B7:2E:8D]------
+[bttool] AddrType:1
+[bttool] Rssi:-71
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[15:D8:BA:F9:66:21]------
+[bttool] AddrType:1
+[bttool] Rssi:-81
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[3B:FC:13:9E:15:1B]------
+[bttool] AddrType:1
+[bttool] Rssi:-68
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[5C:95:7F:5A:F3:F1]------
+[bttool] AddrType:1
+[bttool] Rssi:-92
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[3F:D8:98:20:38:C9]------
+[bttool] AddrType:1
+[bttool] Rssi:-81
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[60:E3:91:D4:2C:49]------
+[bttool] AddrType:1
+[bttool] Rssi:-88
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[40:3D:D2:96:CB:DE]------
+[bttool] AddrType:1
+[bttool] Rssi:-65
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[0D:8E:47:29:AB:DB]------
+[bttool] AddrType:1
+[bttool] Rssi:-73
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[10:B4:1D:F4:91:D6]------
+[bttool] AddrType:0
+[bttool] Rssi:-64
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[F1:00:DD:48:AD:87]------
+[bttool] AddrType:1
+[bttool] Rssi:-89
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[10:E0:B8:B7:2E:8D]------
+[bttool] AddrType:1
+[bttool] Rssi:-73
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[40:3D:D2:96:CB:DE]------
+[bttool] AddrType:1
+[bttool] Rssi:-69
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[4A:E8:BA:C9:33:D1]------
+[bttool] AddrType:1
+[bttool] Rssi:-69
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[07:3F:CE:D4:65:49]------
+[bttool] AddrType:1
+[bttool] Rssi:-84
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[76:7B:73:C5:41:E1]------
+[bttool] AddrType:1
+[bttool] Rssi:-80
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[40:3D:D2:96:CB:DE]------
+[bttool] AddrType:1
+[bttool] Rssi:-69
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[68:33:9F:1A:B8:A5]------
+[bttool] AddrType:1
+[bttool] Rssi:-88
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[1C:C4:65:03:87:A2]------
+[bttool] AddrType:1
+[bttool] Rssi:-59
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[06:65:F7:C6:32:1E]------
+[bttool] AddrType:1
+[bttool] Rssi:-72
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[10:E0:B8:B7:2E:8D]------
+[bttool] AddrType:1
+[bttool] Rssi:-72
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[17:D6:27:D1:BE:59]------
+[bttool] AddrType:1
+[bttool] Rssi:-80
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[15:D8:BA:F9:66:21]------
+[bttool] AddrType:1
+[bttool] Rssi:-62
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[51:76:46:CB:AD:66]------
+[bttool] AddrType:1
+[bttool] Rssi:-60
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[40:00:04:E2:2F:F7]------
+[bttool] AddrType:1
+[bttool] Rssi:-67
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[51:5E:CF:F7:BB:63]------
+[bttool] AddrType:1
+[bttool] Rssi:-57
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[04:C4:D9:DF:A5:E6]------
+[bttool] AddrType:1
+[bttool] Rssi:-31
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[40:3D:D2:96:CB:DE]------
+[bttool] AddrType:1
+[bttool] Rssi:-73
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[68:EE:11:07:92:19]------
+[bttool] AddrType:1
+[bttool] Rssi:-93
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[9C:12:21:4F:5C:EF]------
+[bttool] AddrType:0
+[bttool] Rssi:-71
+[bttool] Type:2
+[bttool]
+
+[bttool] ScanResult ------[3B:FC:13:9E:15:1B]------
+[bttool] AddrType:1
+[bttool] Rssi:-67
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[02:1D:60:A8:04:47]------
+[bttool] AddrType:1
+[bttool] Rssi:-71
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[76:7B:73:C5:41:E1]------
+[bttool] AddrType:1
+[bttool] Rssi:-73
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[21:2B:54:D4:C9:BA]------
+[bttool] AddrType:1
+[bttool] Rssi:-73
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[05:C0:8F:2C:18:03]------
+[bttool] AddrType:1
+[bttool] Rssi:-72
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[40:57:34:4B:45:9A]------
+[bttool] AddrType:1
+[bttool] Rssi:-68
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[40:3D:D2:96:CB:DE]------
+[bttool] AddrType:1
+[bttool] Rssi:-74
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[17:D6:27:D1:BE:59]------
+[bttool] AddrType:1
+[bttool] Rssi:-85
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[10:E0:B8:B7:2E:8D]------
+[bttool] AddrType:1
+[bttool] Rssi:-51
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[29:A2:91:74:97:ED]------
+[bttool] AddrType:1
+[bttool] Rssi:-84
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[06:65:F7:C6:32:1E]------
+[bttool] AddrType:1
+[bttool] Rssi:-63
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[4A:E8:BA:C9:33:D1]------
+[bttool] AddrType:1
+[bttool] Rssi:-76
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[40:3D:D2:96:CB:DE]------
+[bttool] AddrType:1
+[bttool] Rssi:-68
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[41:02:59:42:FB:CE]------
+[bttool] AddrType:1
+[bttool] Rssi:-77
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[58:AE:9D:53:EA:9D]------
+[bttool] AddrType:1
+[bttool] Rssi:-63
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[04:79:89:FE:49:37]------
+[bttool] AddrType:1
+[bttool] Rssi:-82
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[16:26:8E:AC:65:31]------
+[bttool] AddrType:1
+[bttool] Rssi:-74
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[3F:D8:98:20:38:C9]------
+[bttool] AddrType:1
+[bttool] Rssi:-83
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[76:7B:73:C5:41:E1]------
+[bttool] AddrType:1
+[bttool] Rssi:-74
+[bttool] Type:0
+[bttool]
+
+
+bttool> [bttool] ScanResult ------[7C:E9:13:AE:1C:D8]------
+[bttool] AddrType:0
+[bttool] Rssi:-52
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[15:D8:BA:F9:66:21]------
+[bttool] AddrType:1
+[bttool] Rssi:-62
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[0C:D0:A1:A8:FA:62]------
+[bttool] AddrType:1
+[bttool] Rssi:-70
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[C2:26:41:AF:BA:9F]------
+[bttool] AddrType:0
+[bttool] Rssi:-68
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[24:09:1B:1B:E9:C4]------
+[bttool] AddrType:1
+[bttool] Rssi:-89
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[04:C4:D9:DF:A5:E6]------
+[bttool] AddrType:1
+[bttool] Rssi:-42
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[63:5F:2A:70:E4:E7]------
+[bttool] AddrType:1
+[bttool] Rssi:-72
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[40:3D:D2:96:CB:DE]------
+[bttool] AddrType:1
+[bttool] Rssi:-67
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[40:3D:D2:96:CB:DE]------
+[bttool] AddrType:1
+[bttool] Rssi:-70
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[44:6C:B7:99:EE:54]------
+[bttool] AddrType:1
+[bttool] Rssi:-71
+[bttool] Type:2
+[bttool]
+
+[bttool] ScanResult ------[1C:C4:65:03:87:A2]------
+[bttool] AddrType:1
+[bttool] Rssi:-60
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[10:E0:B8:B7:2E:8D]------
+[bttool] AddrType:1
+[bttool] Rssi:-53
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[F1:B6:15:51:19:19]------
+[bttool] AddrType:1
+[bttool] Rssi:-72
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[C2:06:F5:F7:24:1F]------
+[bttool] AddrType:1
+[bttool] Rssi:-66
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[40:3D:D2:96:CB:DE]------
+[bttool] AddrType:1
+[bttool] Rssi:-70
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[02:1D:60:A8:04:47]------
+[bttool] AddrType:1
+[bttool] Rssi:-83
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[04:79:89:FE:49:37]------
+[bttool] AddrType:1
+[bttool] Rssi:-80
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[4A:E8:BA:C9:33:D1]------
+[bttool] AddrType:1
+[bttool] Rssi:-73
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[F1:00:DD:48:AD:87]------
+[bttool] AddrType:1
+[bttool] Rssi:-91
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[16:26:8E:AC:65:31]------
+[bttool] AddrType:1
+[bttool] Rssi:-77
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[72:71:AF:E0:A1:26]------
+[bttool] AddrType:1
+[bttool] Rssi:-74
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[21:2B:54:D4:C9:BA]------
+[bttool] AddrType:1
+[bttool] Rssi:-70
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[48:3D:05:52:DF:07]------
+[bttool] AddrType:1
+[bttool] Rssi:-72
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[40:3D:D2:96:CB:DE]------
+[bttool] AddrType:1
+[bttool] Rssi:-66
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[06:65:F7:C6:32:1E]------
+[bttool] AddrType:1
+[bttool] Rssi:-61
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[40:3D:D2:96:CB:DE]------
+[bttool] AddrType:1
+[bttool] Rssi:-74
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[10:B4:1D:F4:91:D6]------
+[bttool] AddrType:0
+[bttool] Rssi:-69
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[3F:D8:98:20:38:C9]------
+[bttool] AddrType:1
+[bttool] Rssi:-77
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[10:B4:1D:F4:91:D6]------
+[bttool] AddrType:0
+[bttool] Rssi:-69
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[3B:9C:9C:D9:61:F2]------
+[bttool] AddrType:1
+[bttool] Rssi:-93
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[7C:E9:13:AE:1C:D8]------
+[bttool] AddrType:0
+[bttool] Rssi:-70
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[45:AA:E5:E1:90:E0]------
+[bttool] AddrType:1
+[bttool] Rssi:-62
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[10:E0q:B8:B7:2E:8D]------
+[bttool] AddrType:1
+[bttool] Rssi:-53
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[5A:35:FE:EC:DD:85]------
+[bttool] AddrType:1
+[bttool] Rssi:-74
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[72:71:AF:E0:A1:26]------
+[bttool] AddrType:1
+[bttool] Rssi:-86
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[06:65:F7:C6:32:1E]------
+[bttool] AddrType:1
+[bttool] Rssi:-73
+[bttool] Type:3
+[bttool]
+
+ui[bttool] ScanResult ------[10:B4:1D:F4:91:D6]------
+[bttool] AddrType:0
+[bttool] Rssi:-70
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[5A:35:FE:EC:DD:85]------
+[bttool] AddrType:1
+[bttool] Rssi:-83
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[1C:C4:65:03:87:A2]------
+[bttool] AddrType:1
+[bttool] Rssi:-60
+[bttool] Type:3
+[bttool]
+
+[bttool] ScanResult ------[40:3D:D2:96:CB:DE]------
+[bttool] AddrType:1
+[bttool] Rssi:-70
+[bttool] Type:0
+[bttool]
+
+[bttool] ScanResult ------[76:7B:73:C5:41:E1]------
+[bttool] AddrType:1
+[bttool] Rssi:-82
+[bttool] Type:0
+[bttool]
+
+t
+[bttool] cmd#5 quit: rc=-2 (quit)
+nsh> cat /dev/a733-bt
+A733 FCU760K USB HCI / official openvela host transport
+last=-11 stage=not-probed probes=0 events=0 hci-status=ff unsafe=0
+runtime=a69c:8d81 event=03 ACL=04/04
+firmware: mode=5 HCI-port=1 readback=1 expected-port=1(USB)
+transport: phase=idle command=-11/0 event=-110/0 polls=8629
+periodic: cmd=00080b11 sts=00004000 qtd=80408d80 frame=218f->21af
+version=00 revision=0000 manufacturer=0000
+address=00:00:00:00:00:00
+le-features=0000000000000000
+control: echo probe > /dev/a733-bt (read-only HCI queries; no reset)
+target: openvela BLE GATT central -> ESP32-S3 peripheral
+host: registered=0 open=1 worker=48 error=0 needs-reboot=0 failures=0 tx-command=22 tx-acl=0 rx-event=410 rx-acl=0
+hci-proof: tx-op=200c rx-op=200c status=00 failed-op=0000 failed-status=00
+host-control: bluetoothd & then bttool; no probe while host open
+nsh> dmesg
+t_client_43: AdvType:(Manufacturer Specific Data)
+[  185.319366] [CPU1] [49] bt_client_43: AdvType:(Manufacturer Specific Data)
+[  185.886409] [CPU1] [49] bt_client_43: AdvType:(Manufacturer Specific Data)
+[  185.897069] [CPU1] [49] bt_client_43: AdvType:(Manufacturer Specific Data)
+[  185.907729] [CPU1] [49] bt_client_43: AdvType:(Manufacturer Specific Data)
+[  185.918389] [CPU1] [49] bt_client_43: AdvType:(Manufacturer Specific Data)
+[  185.918407] [CPU1] [49] bt_client_43: AdvType:(Complete List of 16­bit Service Class UUIDs)
+[  185.929049] [CPU1] [49] bt_client_43: AdvType:(Manufacturer Specific Data)
+[  185.939709] [CPU1] [49] bt_client_43: AdvType:(Manufacturer Specific Data)
+[  185.950369] [CPU1] [49] bt_client_43: AdvType:(Manufacturer Specific Data)
+[  185.961028] [CPU1] [49] bt_client_43: AdvType:(Flags)
+[  185.961047] [CPU1] [49] bt_client_43: AdvType:(Tx Power Level)
+[  185.961066] [CPU1] [49] bt_client_43: AdvType:(Manufacturer Specific Data)
+[  185.971689] [CPU1] [49] bt_client_43: AdvType:(Manufacturer Specific Data)
+[  185.982349] [CPU1] [49] bt_client_43: AdvType:(Manufacturer Specific Data)
+[  186.468408] [CPU1] [49] bt_client_43: AdvType:(Flags)
+[  186.468428] [CPU1] [49] bt_client_43: AdvType:(Tx Power Level)
+[  186.468446] [CPU1] [49] bt_client_43: AdvType:(Manufacturer Specific Data)
+[  186.479068] [CPU1] [49] bt_client_43: AdvType:(Manufacturer Specific Data)
+[  186.489728] [CPU1] [49] bt_client_43: AdvType:(Manufacturer Specific Data)
+[  186.500388] [CPU1] [49] bt_client_43: AdvType:(Flags)
+[  186.500407] [CPU1] [49] bt_client_43: AdvType:(Complete List of 16­bit Service Class UUIDs)
+[  186.500425] [CPU1] [49] bt_client_43: AdvType:(Complete List of 128­bit Service Class UUIDs)
+[  186.511048] [CPU1] [49] bt_client_43: AdvType:(Flags)
+[  186.511067] [CPU1] [49] bt_client_43: AdvType:(Complete Local Name)
+[  186.511085] [CPU1] [49] bt_client_43: AdvType:(Complete List of 16­bit Service Class UUIDs)
+[  186.511103] [CPU1] [49] bt_client_43: AdvType:(Peripheral Connection Interval Range)
+[  186.521708] [CPU1] [49] bt_client_43: AdvType:(Manufacturer Specific Data)
+[  186.532368] [CPU1] [49] bt_client_43: AdvType:(Manufacturer Specific Data)
+[  186.543028] [CPU1] [49] bt_client_43: AdvType:(Manufacturer Specific Data)
+[  187.066408] [CPU1] [49] bt_client_43: AdvType:(Flags)
+[  187.066428] [CPU1] [49] bt_client_43: AdvType:(Manufacturer Specific Data)
+[  187.077068] [CPU1] [49] bt_client_43: AdvType:(Manufacturer Specific Data)
+[  187.087728] [CPU1] [49] bt_client_43: AdvType:(Manufacturer Specific Data)
+[  187.098388] [CPU1] [49] bt_client_43: AdvType:(Manufacturer Specific Data)
+[  187.109048] [CPU1] [49] bt_client_43: AdvType:(Manufacturer Specific Data)
+[  187.119708] [CPU1] [49] bt_client_43: AdvType:(Manufacturer Specific Data)
+[  187.130367] [CPU1] [49] bt_client_43: AdvType:(Flags)
+[  187.130387] [CPU1] [49] bt_client_43: AdvType:(Manufacturer Specific Data)
+[  187.130405] [CPU1] [49] bt_client_43: AdvType:(Complete List of 16­bit Service Class UUIDs)
+[  187.141027] [CPU1] [49] bt_client_43: AdvType:(Flags)
+[  187.141046] [CPU1] [49] bt_client_43: AdvType:(Manufacturer Specific Data)
+[  187.678406] [CPU1] [49] bt_client_43: AdvType:(Flags)
+[  187.678426] [CPU1] [49] bt_client_43: AdvType:(Manufacturer Specific Data)
+[  187.689066] [CPU1] [49] bt_client_43: AdvType:(Manufacturer Specific Data)
+[  187.699726] [CPU1] [49] bt_client_43: AdvType:(Manufacturer Specific Data)
+[  187.710386] [CPU1] [49] bt_client_43: AdvType:(Manufacturer Specific Data)
+[  187.721046] [CPU1] [49] bt_client_43: AdvType:(Manufacturer Specific Data)
+[  187.731706] [CPU1] [49] bt_client_43: AdvType:(Flags)
+[  187.731725] [CPU1] [49] bt_client_43: AdvType:(Manufacturer Specific Data)
+[  187.731743] [CPU1] [49] bt_client_43: AdvType:(Tx Power Level)
+[  187.742366] [CPU1] [49] bt_client_43: AdvType:(Manufacturer Specific Data)
+[  187.753026] [CPU1] [49] bt_client_43: AdvType:(Flags)
+[  187.753045] [CPU1] [49] bt_client_43: AdvType:(Manufacturer Specific Data)
+[  187.763686] [CPU1] [49] bt_client_43: AdvType:(Flags)
+[  187.763705] [CPU1] [49] bt_client_43: AdvType:(Tx Power Level)
+[  187.763723] [CPU1] [49] bt_client_43: AdvType:(Manufacturer Specific Data)
+[  188.265402] [CPU2] [49] bt_client_43: AdvType:(Flags)
+[  188.265422] [CPU2] [49] bt_client_43: AdvType:(Complete List of 16­bit Service Class UUIDs)
+[  188.265440] [CPU2] [49] bt_client_43: AdvType:(Manufacturer Specific Data)
+[  188.276062] [CPU2] [49] bt_client_43: AdvType:(Manufacturer Specific Data)
+[  188.286722] [CPU2] [49] bt_client_43: AdvType:(Manufacturer Specific Data)
+[  188.297382] [CPU2] [49] bt_client_43: AdvType:(Manufacturer Specific Data)
+[  188.308042] [CPU2] [49] bt_client_43: AdvType:(Flags)
+[  188.308061] [CPU2] [49] bt_client_43: AdvType:(Manufacturer Specific Data)
+[  188.318702] [CPU2] [49] bt_client_43: AdvType:(Manufacturer Specific Data)
+[  188.329362] [CPU2] [49] bt_client_43: AdvType:(Manufacturer Specific Data)
+[  188.340022] [CPU2] [49] bt_client_43: AdvType:(Flags)
+[  188.340041] [CPU2] [49] bt_client_43: AdvType:(Manufacturer Specific Data)
+[  188.350682] [CPU2] [49] bt_client_43: AdvType:(Manufacturer Specific Data)
+[  188.818409] [CPU1] [49] bt_client_43: AdvType:(Flags)
+[  188.818429] [CPU1] [49] bt_client_43: AdvType:(Complete Local Name)
+[  188.818448] [CPU1] [49] bt_client_43: AdvType:(Complete List of 16­bit Service Class UUIDs)
+[  188.818466] [CPU1] [49] bt_client_43: AdvType:(Peripheral Connection Interval Range)
+[  188.829069] [CPU1] [49] bt_client_43: AdvType:(Manufacturer Specific Data)
+[  188.839729] [CPU1] [49] bt_client_43: AdvType:(Manufacturer Specific Data)
+[  189.436407] [CPU1] [49] bt_client_43: AdvType:(Flags)
+[  189.436427] [CPU1] [49] bt_client_43: AdvType:(Manufacturer Specific Data)
+[  189.447067] [CPU1] [49] bt_client_43: AdvType:(Flags)
+[  189.447086] [CPU1] [49] bt_client_43: AdvType:(Complete List of 16­bit Service Class UUIDs)
+[  189.447104] [CPU1] [49] bt_client_43: AdvType:(Complete List of 128­bit Service Class UUIDs)
+[  189.457727] [CPU1] [49] bt_client_43: AdvType:(Manufacturer Specific Data)
+[  189.468387] [CPU1] [49] bt_client_43: AdvType:(Flags)
+[  189.468406] [CPU1] [49] bt_client_43: AdvType:(Tx Power Level)
+[  189.468425] [CPU1] [49] bt_client_43: AdvType:(Manufacturer Specific Data)
+[  189.479047] [CPU1] [49] bt_client_43: AdvType:(Flags)
+[  189.479066] [CPU1] [49] bt_client_43: AdvType:(Manufacturer Specific Data)
+[  190.017401] [CPU2] [49] bt_client_43: AdvType:(Flags)
+[  190.017421] [CPU2] [49] bt_client_43: AdvType:(Manufacturer Specific Data)
+[  190.028061] [CPU2] [49] bt_client_43: AdvType:(Manufacturer Specific Data)
+[  190.038721] [CPU2] [49] bt_client_43: AdvType:(Manufacturer Specific Data)
+[  190.654404] [CPU1] [49] bt_client_43: AdvType:(Manufacturer Specific Data)
+[  190.665064] [CPU1] [49] bt_client_43: AdvType:(Manufacturer Specific Data)
+[  190.675724] [CPU1] [49] bt_client_43: AdvType:(Manufacturer Specific Data)
+[  190.686384] [CPU1] [49] bt_client_43: AdvType:(Flags)
+[  190.686402] [CPU1] [49] bt_client_43: AdvType:(Tx Power Level)
+[  190.686421] [CPU1] [49] bt_client_43: AdvType:(Manufacturer Specific Data)
+[  190.697044] [CPU1] [49] bt_client_43: AdvType:(Flags)
+[  190.697063] [CPU1] [49] bt_client_43: AdvType:(Service Data ­ 16­bit UUID)
+[  190.707704] [CPU1] [49] bt_client_43: AdvType:(Flags)
+[  190.707723] [CPU1] [49] bt_client_43: AdvType:(Tx Power Level)
+[  190.707741] [CPU1] [49] bt_client_43: AdvType:(Manufacturer Specific Data)
+[  190.718364] [CPU1] [49] bt_client_43: AdvType:(Manufacturer Specific Data)
+[  191.306408] [CPU1] [49] bt_client_43: AdvType:(Flags)
+[  191.306428] [CPU1] [49] bt_client_43: AdvType:(Manufacturer Specific Data)
+[  191.317068] [CPU1] [49] bt_client_43: AdvType:(Flags)
+[  191.317087] [CPU1] [49] bt_client_43: AdvType:(Complete List of 16­bit Service Class UUIDs)
+[  191.317105] [CPU1] [49] bt_client_43: AdvType:(Complete List of 128­bit Service Class UUIDs)
+[  191.327728] [CPU1] [49] bt_client_43: AdvType:(Manufacturer Specific Data)
+[  191.327747] [CPU1] [49] bt_client_43: AdvType:(Complete List of 16­bit Service Class UUIDs)
+[  191.338388] [CPU1] [49] bt_client_43: AdvType:(Manufacturer Specific Data)
+[  191.349048] [CPU1] [49] bt_client_43: AdvType:(Manufacturer Specific Data)
+[  191.359708] [CPU1] [49] bt_client_43: AdvType:(Flags)
+[  191.359727] [CPU1] [49] bt_client_43: AdvType:(Tx Power Level)
+[  191.359745] [CPU1] [49] bt_client_43: AdvType:(Manufacturer Specific Data)
+[  191.370368] [CPU1] [49] bt_client_43: AdvType:(Manufacturer Specific Data)
+[  191.381028] [CPU1] [49] bt_client_43: AdvType:(Manufacturer Specific Data)
+[  191.391688] [CPU1] [49] bt_client_43: AdvType:(Flags)
+[  191.391707] [CPU1] [49] bt_client_43: AdvType:(Manufacturer Specific Data)
+[  191.391725] [CPU1] [49] bt_client_43: AdvType:(Tx Power Level)
+[  191.402348] [CPU1] [49] bt_client_43: AdvType:(Flags)
+[  191.402367] [CPU1] [49] bt_client_43: AdvType:(Manufacturer Specific Data)
+[  191.413008] [CPU1] [49] bt_client_43: AdvType:(Manufacturer Specific Data)
+[  191.423668] [CPU1] [49] bt_client_43: AdvType:(Manufacturer Specific Data)
+[  191.882409] [CPU1] [49] bt_client_43: AdvType:(Manufacturer Specific Data)
+[  191.893069] [CPU1] [49] bt_client_43: AdvType:(Manufacturer Specific Data)
+[  191.903729] [CPU1] [49] bt_client_43: AdvType:(Flags)
+[  191.903748] [CPU1] [49] bt_client_43: AdvType:(Complete List of 16­bit Service Class UUIDs)
+[  191.903766] [CPU1] [49] bt_client_43: AdvType:(Complete List of 128­bit Service Class UUIDs)
+[  191.914389] [CPU1] [49] bt_client_43: AdvType:(Flags)
+[  191.914408] [CPU1] [49] bt_client_43: AdvType:(Manufacturer Specific Data)
+[  191.925049] [CPU1] [49] bt_client_43: AdvType:(Flags)
+[  191.925068] [CPU1] [49] bt_client_43: AdvType:(Tx Power Level)
+[  191.925086] [CPU1] [49] bt_client_43: AdvType:(Manufacturer Specific Data)
+[  191.935709] [CPU1] [49] bt_client_43: AdvType:(Flags)
+[  191.935727] [CPU1] [49] bt_client_43: AdvType:(Tx Power Level)
+[  191.935746] [CPU1] [49] bt_client_43: AdvType:(Manufacturer Specific Data)
+[  191.946369] [CPU1] [49] bt_client_43: AdvType:(Manufacturer Specific Data)
+[  191.957029] [CPU1] [49] bt_client_43: AdvType:(Manufacturer Specific Data)
+[  191.967689] [CPU1] [49] bt_client_43: AdvType:(Manufacturer Specific Data)
+[  191.978349] [CPU1] [49] bt_client_43: AdvType:(Flags)
+[  191.978367] [CPU1] [49] bt_client_43: AdvType:(Tx Power Level)
+[  191.978386] [CPU1] [49] bt_client_43: AdvType:(Manufacturer Specific Data)
+[  192.462408] [CPU1] [49] bt_client_43: AdvType:(Flags)
+[  192.462427] [CPU1] [49] bt_client_43: AdvType:(Complete List of 16­bit Service Class UUIDs)
+[  192.462446] [CPU1] [49] bt_client_43: AdvType:(Manufacturer Specific Data)
+[  192.473068] [CPU1] [49] bt_client_43: AdvType:(Manufacturer Specific Data)
+[  192.483728] [CPU1] [49] bt_client_43: AdvType:(Manufacturer Specific Data)
+[  192.494388] [CPU1] [49] bt_client_43: AdvType:(Service Data ­ 16­bit UUID)
+[  192.505048] [CPU1] [49] bt_client_43: AdvType:(Manufacturer Specific Data)
+[  192.515708] [CPU1] [49] bt_client_43: AdvType:(Manufacturer Specific Data)
+[  192.526368] [CPU1] [49] bt_client_43: AdvType:(Flags)
+[  192.526387] [CPU1] [49] bt_client_43: AdvType:(Manufacturer Specific Data)
+[  192.526405] [CPU1] [49] bt_client_43: AdvType:(Tx Power Level)
+[  192.537027] [CPU1] [49] bt_client_43: AdvType:(Flags)
+[  192.537047] [CPU1] [49] bt_client_43: AdvType:(Manufacturer Specific Data)
+[  193.054406] [CPU1] [49] bt_client_43: AdvType:(Flags)
+[  193.054426] [CPU1] [49] bt_client_43: AdvType:(Manufacturer Specific Data)
+[  193.065066] [CPU1] [49] bt_client_43: AdvType:(Manufacturer Specific Data)
+[  193.075726] [CPU1] [49] bt_client_43: AdvType:(Manufacturer Specific Data)
+[  193.086386] [CPU1] [49] bt_client_43: AdvType:(Manufacturer Specific Data)
+[  193.097046] [CPU1] [49] bt_client_43: AdvType:(Service Data ­ 16­bit UUID)
+[  193.107706] [CPU1] [49] bt_client_43: AdvType:(Manufacturer Specific Data)
+[  193.118366] [CPU1] [49] bt_client_43: AdvType:(Flags)
+[  193.118385] [CPU1] [49] bt_client_43: AdvType:(Manufacturer Specific Data)
+[  193.675407] [CPU1] [49] bt_client_43: AdvType:(Manufacturer Specific Data)
+[  193.686067] [CPU1] [49] bt_client_43: AdvType:(Manufacturer Specific Data)
+[  193.696727] [CPU1] [49] bt_client_43: AdvType:(Flags)
+[  193.696746] [CPU1] [49] bt_client_43: AdvType:(Complete List of 16­bit Service Class UUIDs)
+[  193.696764] [CPU1] [49] bt_client_43: AdvType:(Complete List of 128­bit Service Class UUIDs)
+[  193.707387] [CPU1] [49] bt_client_43: AdvType:(Manufacturer Specific Data)
+[  193.718047] [CPU1] [49] bt_client_43: AdvType:(Manufacturer Specific Data)
+[  193.728707] [CPU1] [49] bt_client_43: AdvType:(Manufacturer Specific Data)
+[  193.739367] [CPU1] [49] bt_client_43: AdvType:(Manufacturer Specific Data)
+[  193.750027] [CPU1] [49] bt_client_43: AdvType:(Flags)
+[  193.750045] [CPU1] [49] bt_client_43: AdvType:(Tx Power Level)
+[  193.750064] [CPU1] [49] bt_client_43: AdvType:(Manufacturer Specific Data)
+[  193.760687] [CPU1] [49] bt_client_43: AdvType:(Flags)
+[  193.760706] [CPU1] [49] bt_client_43: AdvType:(Manufacturer Specific Data)
+[  194.222406] [CPU1] [49] bt_client_43: AdvType:(Manufacturer Specific Data)
+[  194.233065] [CPU1] [49] bt_client_43: AdvType:(Flags)
+[  194.233084] [CPU1] [49] bt_client_43: AdvType:(Manufacturer Specific Data)
+[  194.243725] [CPU1] [49] bt_client_43: AdvType:(Flags)
+[  194.243744] [CPU1] [49] bt_client_43: AdvType:(Complete Local Name)
+[  194.243763] [CPU1] [49] bt_client_43: AdvType:(Complete List of 16­bit Service Class UUIDs)
+[  194.243781] [CPU1] [49] bt_client_43: AdvType:(Peripheral Connection Interval Range)
+[  194.876409] [CPU1] [49] bt_client_43: AdvType:(Manufacturer Specific Data)
+[  194.887068] [CPU1] [49] bt_client_43: AdvType:(Flags)
+[  194.887087] [CPU1] [49] bt_client_43: AdvType:(Complete Local Name)
+[  194.887106] [CPU1] [49] bt_client_43: AdvType:(Complete List of 16­bit Service Class UUIDs)
+[  194.887124] [CPU1] [49] bt_client_43: AdvType:(Peripheral Connection Interval Range)
+[  194.897728] [CPU1] [49] bt_client_43: AdvType:(Manufacturer Specific Data)
+[  194.908388] [CPU1] [49] bt_client_43: AdvType:(Flags)
+[  194.908407] [CPU1] [49] bt_client_43: AdvType:(Complete List of 16­bit Service Class UUIDs)
+[  194.908426] [CPU1] [49] bt_client_43: AdvType:(Manufacturer Specific Data)
+[  194.919048] [CPU1] [49] bt_client_43: AdvType:(Flags)
+[  194.919067] [CPU1] [49] bt_client_43: AdvType:(Tx Power Level)
+[  194.919085] [CPU1] [49] bt_client_43: AdvType:(Manufacturer Specific Data)
+[  194.929795] [CPU1] [49] bt_client_43: AdvType:(Manufacturer Specific Data)
+[  194.940455] [CPU1] [49] bt_client_43: AdvType:(Flags)
+[  194.940474] [CPU1] [49] bt_client_43: AdvType:(Manufacturer Specific Data)
+[  194.951115] [CPU1] [49] bt_client_43: AdvType:(Flags)
+[  194.951134] [CPU1] [49] bt_client_43: AdvType:(Complete List of 16­bit Service Class UUIDs)
+[  194.951152] [CPU1] [49] bt_client_43: AdvType:(Complete List of 128­bit Service Class UUIDs)
+[  194.961775] [CPU1] [49] bt_client_43: AdvType:(Manufacturer Specific Data)
+[  195.438406] [CPU1] [49] bt_client_43: AdvType:(Flags)
+[  195.438425] [CPU1] [49] bt_client_43: AdvType:(Complete Local Name)
+[  195.438444] [CPU1] [49] bt_client_43: AdvType:(Complete List of 16­bit Service Class UUIDs)
+[  195.438462] [CPU1] [49] bt_client_43: AdvType:(Peripheral Connection Interval Range)
+[  195.449066] [CPU1] [49] bt_client_43: AdvType:(Flags)
+[  195.449085] [CPU1] [49] bt_client_43: AdvType:(Manufacturer Specific Data)
+[  195.459726] [CPU1] [49] bt_client_43: AdvType:(Manufacturer Specific Data)
+[  195.470386] [CPU1] [49] bt_client_43: AdvType:(Flags)
+[  195.470405] [CPU1] [49] bt_client_43: AdvType:(Manufacturer Specific Data)
+[  195.481046] [CPU1] [49] bt_client_43: AdvType:(Flags)
+[  195.481065] [CPU1] [49] bt_client_43: AdvType:(Tx Power Level)
+[  195.481083] [CPU1] [49] bt_client_43: AdvType:(Manufacturer Specific Data)
+[  195.718112] [CPU1] [27] bluetoothd: [329][bt_socket_server]: [bt_socket_server_handle_event ,  1r9e5v.en7t1 8=1 555
+] [CPU2] [47] bt_client_43: set_stopped
+[  195.718228] [CPU0] [47] bt_client_43: bt_client_43 thread_schedule_loop quit
+[  195.718253] [CPU1] [46] bttool-cmd-exec: [async_queue:138]uv_async_queue_close
+nsh>

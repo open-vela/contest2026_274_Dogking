@@ -1,0 +1,2 @@
+PASS v221fix1: buffered10s retained, streaming11s accepted,60s hard bound enforced
+Local provider qualification/owner/cancel/failure/publication tests PASS (mocks only)

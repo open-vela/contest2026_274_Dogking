@@ -1,0 +1,14 @@
+PASS v204:128 simulated changing RAW frames; budget boundary injection; reader and fault gates unchanged; NOT hardware soak
+pass: PASS actual live coordinator: RAM-model/input, frame binding, cooperative/fault exit, resources; MOCK DEVICES ONLY
+stop-before: PASS actual live coordinator: RAM-model/input, frame binding, cooperative/fault exit, resources; MOCK DEVICES ONLY
+bad-crc: PASS actual live coordinator: RAM-model/input, frame binding, cooperative/fault exit, resources; MOCK DEVICES ONLY
+capture-error: PASS actual live coordinator: RAM-model/input, frame binding, cooperative/fault exit, resources; MOCK DEVICES ONLY
+mount-error: PASS actual live coordinator: RAM-model/input, frame binding, cooperative/fault exit, resources; MOCK DEVICES ONLY
+bad-irq: PASS actual live coordinator: RAM-model/input, frame binding, cooperative/fault exit, resources; MOCK DEVICES ONLY
+lcd-busy: PASS actual live coordinator: RAM-model/input, frame binding, cooperative/fault exit, resources; MOCK DEVICES ONLY
+task-error: launch refused with no hardware
+model-missing: PASS actual live coordinator: RAM-model/input, frame binding, cooperative/fault exit, resources; MOCK DEVICES ONLY
+model-wrong: PASS actual live coordinator: RAM-model/input, frame binding, cooperative/fault exit, resources; MOCK DEVICES ONLY
+fstype-error: PASS actual live coordinator: RAM-model/input, frame binding, cooperative/fault exit, resources; MOCK DEVICES ONLY
+cleanup-error: PASS actual live coordinator: RAM-model/input, frame binding, cooperative/fault exit, resources; MOCK DEVICES ONLY
+PASS actual v204 coordinator and broker host tests; NOT hardware/video/NPU inference acceptance

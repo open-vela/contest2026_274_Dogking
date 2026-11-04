@@ -1,0 +1,2 @@
+PASS: 17 generated Hush command-model paths, 9 rejected layouts, deterministic legacy script header/CRCs; NOT actual U-Boot execution
+PASS: v193 equivalent 17 script command-model paths, fixed release/name and two unsupported-release rejections; NOT actual U-Boot

@@ -1,0 +1,43 @@
+{
+  "result": "HOST_CAPTURE_REPLAY_PASS",
+  "hardware_executed": false,
+  "openvela_provider_qualified": false,
+  "full_voice_chain": false,
+  "source_sha256": {
+    "voice_general_asr.cxx": "0e55864674f9a8b4425f8ff4f45f172883fb60d1b13705625c8070d9752b5990",
+    "voice_general_contract.hxx": "3fc7c29ed2f704c6a7b05c7eecdeadb2d44bff2f228ada19d293c2e93ee95c8a"
+  },
+  "compile_command": [
+    "g++",
+    "-std=c++17",
+    "-O1",
+    "-g",
+    "-fsanitize=address,undefined",
+    "-fno-omit-frame-pointer",
+    "-Wall",
+    "-Wextra",
+    "-Werror",
+    "-Wno-sign-compare",
+    "-Wno-unused-parameter",
+    "-I/mnt/d/My-Program/AI-Agent-Program/GPTsprogram/Openvela/A733-A7Z-ALL-Files/contest2026_274_Dogking-dev-ai-contest-2026/board/a733-cubie-a7z/openvela-overlay/apps/system/aipet",
+    "-I/mnt/d/My-Program/AI-Agent-Program/GPTsprogram/Openvela/A733-A7Z-ALL-Files/contest2026_274_Dogking-dev-ai-contest-2026/board/a733-cubie-a7z/openvela-overlay/apps/include",
+    "-I/mnt/d/My-Program/AI-Agent-Program/GPTsprogram/Openvela/A733-A7Z-ALL-Files/contest2026_274_Dogking-dev-ai-contest-2026/board/a733-cubie-a7z/openvela-overlay/apps/system/aipet/third_party/kaldi-native-fbank/csrc/include",
+    "/mnt/d/My-Program/AI-Agent-Program/GPTsprogram/Openvela/A733-A7Z-ALL-Files/contest2026_274_Dogking-dev-ai-contest-2026/tools/test-general-asr-native-v184.cxx",
+    "/mnt/d/My-Program/AI-Agent-Program/GPTsprogram/Openvela/A733-A7Z-ALL-Files/contest2026_274_Dogking-dev-ai-contest-2026/board/a733-cubie-a7z/openvela-overlay/apps/system/aipet/voice_general_asr.cxx",
+    "/mnt/d/My-Program/AI-Agent-Program/GPTsprogram/Openvela/A733-A7Z-ALL-Files/contest2026_274_Dogking-dev-ai-contest-2026/board/a733-cubie-a7z/openvela-overlay/apps/system/aipet/voice_asr_stream.cxx",
+    "/mnt/d/My-Program/AI-Agent-Program/GPTsprogram/Openvela/A733-A7Z-ALL-Files/contest2026_274_Dogking-dev-ai-contest-2026/board/a733-cubie-a7z/openvela-overlay/apps/system/aipet/voice_fbank.cxx",
+    "/mnt/d/My-Program/AI-Agent-Program/GPTsprogram/Openvela/A733-A7Z-ALL-Files/contest2026_274_Dogking-dev-ai-contest-2026/board/a733-cubie-a7z/openvela-overlay/apps/system/aipet/third_party/kaldi-native-fbank/csrc/src/feature-fbank.cc",
+    "/mnt/d/My-Program/AI-Agent-Program/GPTsprogram/Openvela/A733-A7Z-ALL-Files/contest2026_274_Dogking-dev-ai-contest-2026/board/a733-cubie-a7z/openvela-overlay/apps/system/aipet/third_party/kaldi-native-fbank/csrc/src/feature-functions.cc",
+    "/mnt/d/My-Program/AI-Agent-Program/GPTsprogram/Openvela/A733-A7Z-ALL-Files/contest2026_274_Dogking-dev-ai-contest-2026/board/a733-cubie-a7z/openvela-overlay/apps/system/aipet/third_party/kaldi-native-fbank/csrc/src/feature-window.cc",
+    "/mnt/d/My-Program/AI-Agent-Program/GPTsprogram/Openvela/A733-A7Z-ALL-Files/contest2026_274_Dogking-dev-ai-contest-2026/board/a733-cubie-a7z/openvela-overlay/apps/system/aipet/third_party/kaldi-native-fbank/csrc/src/fftsg.cc",
+    "/mnt/d/My-Program/AI-Agent-Program/GPTsprogram/Openvela/A733-A7Z-ALL-Files/contest2026_274_Dogking-dev-ai-contest-2026/board/a733-cubie-a7z/openvela-overlay/apps/system/aipet/third_party/kaldi-native-fbank/csrc/src/kaldi-math.cc",
+    "/mnt/d/My-Program/AI-Agent-Program/GPTsprogram/Openvela/A733-A7Z-ALL-Files/contest2026_274_Dogking-dev-ai-contest-2026/board/a733-cubie-a7z/openvela-overlay/apps/system/aipet/third_party/kaldi-native-fbank/csrc/src/log.cc",
+    "/mnt/d/My-Program/AI-Agent-Program/GPTsprogram/Openvela/A733-A7Z-ALL-Files/contest2026_274_Dogking-dev-ai-contest-2026/board/a733-cubie-a7z/openvela-overlay/apps/system/aipet/third_party/kaldi-native-fbank/csrc/src/mel-computations.cc",
+    "/mnt/d/My-Program/AI-Agent-Program/GPTsprogram/Openvela/A733-A7Z-ALL-Files/contest2026_274_Dogking-dev-ai-contest-2026/board/a733-cubie-a7z/openvela-overlay/apps/system/aipet/third_party/kaldi-native-fbank/csrc/src/online-feature.cc",
+    "/mnt/d/My-Program/AI-Agent-Program/GPTsprogram/Openvela/A733-A7Z-ALL-Files/contest2026_274_Dogking-dev-ai-contest-2026/board/a733-cubie-a7z/openvela-overlay/apps/system/aipet/third_party/kaldi-native-fbank/csrc/src/rfft.cc",
+    "/mnt/d/My-Program/AI-Agent-Program/GPTsprogram/Openvela/A733-A7Z-ALL-Files/contest2026_274_Dogking-dev-ai-contest-2026/out/voice-regression-v213-r1/asr/decode.o",
+    "-lm",
+    "-o",
+    "/mnt/d/My-Program/AI-Agent-Program/GPTsprogram/Openvela/A733-A7Z-ALL-Files/contest2026_274_Dogking-dev-ai-contest-2026/out/voice-regression-v213-r1/asr/test"
+  ]
+}

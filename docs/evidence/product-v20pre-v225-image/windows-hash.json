@@ -1,0 +1,10 @@
+{
+  "result": "WINDOWS_POWERSHELL_SHA256_MATCHES_LINUX",
+  "file": "openvela-a733-cubie-a7z-sd-v2.0pre-v225-candidate.img",
+  "bytes": 2147483648,
+  "sha256": "cd4cd64097720b7da15abef1ee7f1e8291c258888a8683590a8c537998ddc51c",
+  "kernel_sha256": "c95c1b47a98feaafd45bcc40eca20645d2d2fc8e1bd3dd964e814145235d86aa",
+  "tool": "Get-FileHash -Algorithm SHA256",
+  "date": "2026-11-03",
+  "board_tested": false
+}

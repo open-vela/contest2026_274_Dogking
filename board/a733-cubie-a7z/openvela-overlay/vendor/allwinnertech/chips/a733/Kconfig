@@ -21,6 +21,24 @@ config ARCH_CHIP_A733
 		0..5 are Cortex-A55 and 6..7 are Cortex-A76.  The port uses the
 		standard ARMv8 virtual timer, PSCI and GICv3 support.
 
+# The openvela Zblue port uses Zephyr's 64BIT symbol, whose architecture
+# Kconfig is not sourced by the NuttX integration. Match the A733 ABI so
+# stack alignment and pointer-bearing buffer defaults are not 32-bit.
+config 64BIT
+	bool
+	default y if ARCH_CHIP_A733
+
+config A733_BOOT_DIAGNOSTICS
+	bool "A733 early boot and constructor progress diagnostics"
+	default n
+	depends on ARCH_CHIP_A733
+	---help---
+		Diagnostic candidate only. Print CPU0 SMP launch/return and C++
+		constructor addresses without stdio/allocation. Suppress only the
+		concurrent secondary assembly banners, not exception diagnostics.
+		The v188 voice build additionally uses BOARD_LATE_INITIALIZE and
+		a 256 KiB AppBringUp stack so constructors need not run on idle.
+
 config A733_WATCHDOG
 	bool "A733 watchdog"
 	default y
@@ -57,6 +75,63 @@ config A733_TRNG
 		/dev/random plus /dev/urandom.  Startup and continuous-output tests
 		must pass before either node is registered; TLS and SSH use this as
 		their cryptographically secure entropy source.
+
+config A733_NPU_TENSOR_IO
+	bool "Experimental A733 checked multi-tensor NPU transport"
+	default n
+	depends on A733_NPU_CHECKPOINT
+	---help---
+		Add separately versioned A7TV query/run ioctls with up to 64 native
+		input/output slices, full RAM buffer transfer and bounded execution.
+		Uses existing MMU/pools, no boot inference, no generic NBG loader.
+		Weights reload per call; not a realtime performance implementation.
+		Hardware faults quarantine the backend until reboot. Keep disabled
+		in the passed baseline until new prepared artifacts are board-tested.
+
+config A733_NPU_GENERAL_ASR
+	bool "Experimental general ASR larger bounded memory profile"
+	default n
+	depends on A733_NPU_TENSOR_IO
+	---help---
+		Reserve an 80 MiB low32 guarded DMA arena instead of 32 MiB, with
+		8 MiB tensor I/O and a 64 MiB shared prepared workspace. This is
+		for the separately qualified 6254-class general streaming ASR,
+		not the old keyword encoder. Full image linking must still satisfy
+		the existing 0x48000000 stage-1 boundary. No inference at boot.
+		CPU-only immutable resident snapshots are bounded to 96 MiB.
+		Keep disabled in the passed baseline until new image board tests.
+
+config A733_CPU_ACOUSTIC
+	bool "Experimental real CPU Matcha and NPU vocoder voice candidate"
+	default n
+	depends on A733_NPU_GENERAL_ASR && BUILD_FLAT
+	depends on LIBCXX && CXX_MINI_LOCALIZATION && CXX_WCHAR
+	depends on !CXX_EXCEPTION && !CXX_RTTI
+	---help---
+		Requires separately built, hash-verified NuttX/AArch64 static ORT
+		libraries via A733_ORT_STATIC_PREFIX. Never use Linux .so files.
+		Provides explicit RAM-only installation, not boot-time recording,
+		hardware acceptance or a 3-4 second latency guarantee. Retain the
+		passed image; Baker models carry separate noncommercial terms.
+
+config A733_PRODUCT_V1
+	bool "Integrated desktop pet v1.0 candidate"
+	default n
+	depends on A733_CPU_ACOUSTIC && A733_CAMERA_LIVE_TEST
+	depends on EXAMPLES_AI_AGENT_VELA && SYSTEM_A733CAMERA && SYSTEM_A733DISPLAY
+	---help---
+		Explicitly started cloud/local voice routing, fresh YOLO descriptions
+		and guarded UART4 STM32 control. Not a board acceptance claim.
+		No boot-time recording, automatic motion authorization or NPU reset.
+
+config A733_PRODUCT_V12
+	bool "Desktop pet v1.2 low-latency PREVIEW (not stable v1.1)"
+	default n
+	depends on A733_PRODUCT_V1
+	---help---
+		Separate, default-off history settings and reusable CPU prefill
+		workspace. Keeps persona, exact-prefix KV, complete replies and
+		all NPU ownership/validation rules. No board latency guarantee.
 
 config A733_NPU_CHECKPOINT
 	bool "A733 VIP2 NPU hardware checkpoint"
@@ -107,6 +182,136 @@ config A733_SDMMC0
 		SDIO/MMCSD stack.  The first implementation is conservative 4-bit
 		PIO at 400 kHz identification and 12 MHz transfer clocks.
 
+config A733_UFS_READONLY
+	bool "Experimental A733 UFS read-only inherited-link transport"
+	default n
+	depends on ARCH_CHIP_A733 && !DISABLE_MOUNTPOINT
+	---help---
+		Register /dev/a733-ufs without any boot-time hardware access.
+		Manual board collects only fixed CCU/RTC register snapshots. HCI
+		probe/attach-ro are blocked until a real board power/domain provider
+		is qualified; clock bits alone cannot authorize HCI MMIO. attach-ro=N
+		requires an already powered, active, initialized, idle firmware link;
+		cold-start board power/clock/reset adapter is not implemented. The
+		separate M-PHY/UIC link core has no shell entry and is not connected
+		to attach-ro. It cannot bypass the unverified board prerequisites.
+		Publishes /dev/ufs0
+		only after real NOP, INQUIRY and READ CAPACITY(16) complete. Read-only,
+		bounded 64 KiB DMA, no reset/retry/format/erase/write or automount.
+		Timeouts quarantine the engine and retain DMA memory until reboot.
+		Keep disabled in the passed baseline until hardware validated.
+
+config A733_UFS_HANDOFF_PROBE
+	bool "Experimental manual UFS firmware-handoff HCI observation"
+	default n
+	depends on A733_UFS_READONLY
+	---help---
+		Allow only the explicit handoff command on the empirically observed
+		A7Z CCU/RTC profile. This assumes successful UFS enumeration by the
+		current boot firmware and retained power until manual execution.
+		It reads HCI registers only; no writes, DMA, SCSI, PMIC or reset.
+		Not a generic power provider and never authorizes attach-ro. A bus
+		read itself cannot be rescued by a software timeout. Keep disabled
+		outside the controlled board-test candidate.
+
+config A733_UFS_QUIESCE
+	bool "Experimental manual stop of empty inherited UFS queues"
+	default n
+	depends on A733_UFS_HANDOFF_PROBE
+	---help---
+		Explicit quiesce command only; never executed during boot. Requires
+		the v167 observed active firmware/controller profile and no pending
+		requests. Only writes zero to IE, UTRLRSR and UTMRLRSR, with readback,
+		deadlines and a poll bound. Keeps firmware bases, never clears IS or
+		doorbells and never resets/restarts. One attempt per boot; a failure
+		after a write quarantines it. Does NOT qualify DMA or unlock attach.
+		Retained firmware power and no other producer remain assumptions.
+
+config A733_UFS_DMA_NOP
+	bool "Experimental one-shot private-buffer UFS NOP DMA trial"
+	default n
+	depends on A733_UFS_QUIESCE
+	---help---
+		Manual dma-nop requires successful quiesce in this boot and a fresh
+		stopped-controller snapshot. Uses dedicated static low32 guarded RAM,
+		checks EL1 R/W translations, cleans/invalidates caches, submits one
+		NOP OUT (not SCSI), and stops its private queue after valid completion.
+		Does not unlock attach or media access. DMA direct-AXI routing follows
+		the reviewed vendor topology and is tested only by actual response.
+		No reset, retry, doorbell clear or free. Failure quarantines until reboot.
+
+config A733_UFS_SCRATCH
+	bool "DANGEROUS: fixed disposable Kingston Linux scratch experiment"
+	default n
+	depends on A733_UFS_BLOCK_RO
+	help
+	  Manual prepare and explicit ERASE-TEST-LINUX acknowledgement only.
+	  Pins LUN0, model/capacity/GPT and one 64KiB window in partition3.
+	  Two WRITE16/flush/read tests then original restore/flush/read.
+	  RAM backup is LOST on reboot. Power loss/failure may destroy Linux.
+	  No failure retry/reset, arbitrary LBA, block writes, format or mount.
+
+config A733_UFS_DATA
+	bool "DANGEROUS: pinned Kingston partition3 data volume"
+	default n
+	depends on A733_UFS_SCRATCH
+	help
+	  Manual data-rw=ERASE-TEST-LINUX after this boot's full scratch pass.
+	  Exposes /dev/ufsdata only; /dev/ufs0 remains read-only. Reserves the
+	  final 128 partition3 blocks for scratch, never includes GPT/boot/SD.
+	  Every write is read-back verified and CACHE10 flushed. No reset/retry.
+	  Formatting/mounting require separate explicit NSH commands, not boot.
+
+config A733_UFS_BLOCK_RO
+	bool "Experimental guarded UFS read-only block device"
+	default n
+	depends on A733_UFS_READCHECK
+	help
+	  Manual block-ro publication only after this boot's readcheck passes.
+	  Uses the qualified static arena, 64KiB commands, 1MiB bounded reads.
+	  No media writes, reset, retries, format, mount or cold-start support.
+
+config A733_UFS_READCHECK
+	bool "Experimental bounded UFS identity/GPT/repeated media reads"
+	default n
+	depends on A733_UFS_DMA_NOP
+	---help---
+		Explicit readcheck requires a successful NOP in this boot. Uses a
+		second static guarded arena. Reads INQUIRY/CAPACITY and repeats
+		16KiB head/middle/tail samples; optionally checks bounded GPT CRCs.
+		Only acknowledges our previous transfer completion bit0. One initial
+		completed UNIT ATTENTION may be reissued before data reads; never
+		retries transport failures. No block registration, mount, reset,
+		media writes or formatting. Not a cold-start power/PHY driver.
+
+config A733_IMX214_CHECKPOINT
+	bool "Experimental V1.11/J5 IMX214 read-only board checkpoint"
+	default n
+	depends on ARCH_CHIP_A733
+	help
+	  Register /dev/a733-camera for a fixed read-only CCU/PIO inventory.
+	  No sensor, CSI, DPHY, ISP, DMA or PMIC access, no writes and no
+	  /dev/video0. Reading it is not electrical/capture qualification.
+	  The separate strict sensor-ID core has no live bus provider yet.
+
+config A733_CAMERA_CONTROL_TEST
+	bool "Experimental V1.11 camera controls, standby and MIPI packets"
+	default n
+	depends on A733_IMX214_CHECKPOINT && CRYPTO
+	help
+	  Explicit command only, requires this Image's fresh U-Boot PMIC handoff.
+	  Firmware retains rails; no runtime PMIC access or voltage writes.
+	  Prepare/clock tests hold reset. An explicit id-experiment command may
+	  briefly release the module and read chip ID0016 at address0x10.
+	  mode-experiment additionally writes one SHA256-pinned external 1080p
+	  artifact and verifies standby/14 mode registers, without STREAM_ON,
+	  then restores controls or quarantines until reboot. Firmware-retained
+	  rails and nominal sys24M are assumptions, NOT electrical measurements
+	  or strict qualification. v195 link-experiment additionally configures
+	  MCSIB and briefly streams to collect packet status, then stops/restores.
+	  No parser capture, DDR DMA, IOMMU, ISP or video node. Normal boot has
+	  no handoff. This option never probes at boot.
+
 config A733_HEADER_I2C
 	bool "Cubie A7Z expansion-header TWI2 and TWI7"
 	default y
@@ -139,21 +344,22 @@ config A733_FAN_PWM
 		PWMIOC_START are issued.
 
 config A733_UART4
-	bool "Cubie A7Z header UART4 for TW-TTS"
+	bool "Cubie A7Z header UART4 for STM32 control"
 	default y
 	depends on ARCH_CHIP_A733
 	---help---
 		Expose the official A733 UART4 PJ24/PJ25 header mapping as
-		/dev/ttyS4 at 9600 8N1.  The initial driver uses bounded polling,
-		which is sufficient for the low-rate TW-TTS command protocol.
+		/dev/ttyS4 at 115200 8N1, with exclusive ownership and bounded
+		polling. Legacy UART TTS is retired; speech uses I2S output.
 
 config A733_I2S0_AUDIO
-	bool "Cubie A7Z I2S0 MAX98357A/INMP441 checkpoint"
+	bool "Cubie A7Z I2S0 MAX98357A/INMP441/ICS43434 checkpoint"
 	default y
 	depends on ARCH_CHIP_A733
 	---help---
-		Register /dev/a733-audio with a non-destructive I2S0 register and
-		wiring checkpoint.  Active PCM playback/capture remains disabled
-		until the A733 audio PLL rate is validated on the board.
+		Register a passive /dev/a733-audio acceptance node. Explicit commands
+		can play a tone or capture PCM using bounded polling. ICS43434 uses
+		two receive slots with separate stereo/mono files. No automatic
+		stream starts at boot; this is not yet a standard audio upper-half.
 
 endif

@@ -1,0 +1,50 @@
+{
+  "apps/system/aipet/audio_app.cxx": {
+    "sha256": "7abb9277413008ed2f4b7c7e601c8e55b7854cfd95f038b0e4176440274fccd7",
+    "actual_nuttx_flags": true,
+    "max_static_frame": 2368,
+    "passed": true
+  },
+  "apps/system/aipet/audio_capture_live.cxx": {
+    "sha256": "71c4d8e488e11be047e63c012444433dcb7b98e45f3b94a2f13b8202691d524c",
+    "actual_nuttx_flags": true,
+    "max_static_frame": 224,
+    "passed": true
+  },
+  "apps/system/aipet/voice_local.cxx": {
+    "sha256": "8753f8b908911f398a37e96c3c88c56eb1d458c2602ea8e9ad2d2c4d660200b6",
+    "actual_nuttx_flags": true,
+    "max_static_frame": 144,
+    "passed": true
+  },
+  "apps/system/aipet/voice_tts_frontend.cxx": {
+    "sha256": "32a0e350f7eff9456593ece8d33b48bd38f2f219ecc6b2797810d7bf0bde02be",
+    "actual_nuttx_flags": true,
+    "max_static_frame": 2384,
+    "passed": true
+  },
+  "apps/system/aipet/voice_tts_engine.cxx": {
+    "sha256": "c85351b0491262e3f84434437c68a494d10420f8de41f49f2fb804e31fe48a46",
+    "actual_nuttx_flags": true,
+    "max_static_frame": 848,
+    "passed": true
+  },
+  "apps/system/aipet/voice_play_stream.cxx": {
+    "sha256": "c0017bb9a80ee85d1823f65f44fc87fda6c9bf71939a1929ebc6579efa09b538",
+    "actual_nuttx_flags": true,
+    "max_static_frame": 960,
+    "passed": true
+  },
+  "apps/system/aipet/voice_general_asr.cxx": {
+    "sha256": "480e645e219d8b03b07e16d8bb04bc1e621ec9200153f055fde8f8a90c216a85",
+    "actual_nuttx_flags": true,
+    "max_static_frame": 848,
+    "passed": true
+  },
+  "apps/system/aipet/voice_general_provider.cxx": {
+    "sha256": "9b847edc2b460234e0379f860815027108bc290fdc3843a1bafd9cb1ade91c03",
+    "actual_nuttx_flags": true,
+    "max_static_frame": 224,
+    "passed": true
+  }
+}

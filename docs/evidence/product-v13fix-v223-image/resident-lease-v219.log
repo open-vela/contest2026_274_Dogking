@@ -1,0 +1,67 @@
+baseline-v217 86
+voice-load-v215: BEGIN stage=general-provider-configure path=/data/npu/tts mono-us=886363791
+voice-load-v215: requested-ASR=/data/npu/asr requested-TTS=/data/npu/tts
+general-voice: RAM-only candidate installed; ASR=NPU acoustic=CPU vocoder=NPU; no auto capture/cloud fallback; TARGET ACCEPTANCE REQUIRED
+voice-load-v215: END stage=general-provider-configure status=0 elapsed-ms=0
+voice-prepare-v213: asr-us=2 vocoder-us=0 status=0; MIC still OFF
+voice-session-v190: prepared ASR once in 3 us; same-command RAM reuse, per-turn states cleared
+REPRO v1.0 resident -> production prepare = -16
+general-asr: uninstalled; no capture/inference running
+candidate-v219 0
+voice-load-v215: BEGIN stage=general-provider-configure path=/data/npu/tts mono-us=887499397
+voice-load-v215: requested-ASR=/data/npu/asr requested-TTS=/data/npu/tts
+general-voice: RAM-only candidate installed; ASR=NPU acoustic=CPU vocoder=NPU; no auto capture/cloud fallback; TARGET ACCEPTANCE REQUIRED
+voice-load-v215: END stage=general-provider-configure status=0 elapsed-ms=0
+voice-prepare-v213: asr-us=3 vocoder-us=0 status=0; MIC still OFF
+voice-session-v190: prepared ASR once in 3 us; same-command RAM reuse, per-turn states cleared
+general-asr: MIC ON; live 48k->16k FIR->NPU; capture-side energy endpoint; no actions
+general-asr: MIC OFF; capture/consumer stopped before final decode or playback
+general-asr: result=0 samples16=0 chunks=1 queue-peak=0 ended=0; native NPU candidate, not E2E acceptance
+voice-stage: mic-stopped-mono-us=0 transcript-ready-mono-us=887500170; mic stop is NOT true end-of-speech (energy endpoint is diagnostic)
+general-asr: MIC ON; live 48k->16k FIR->NPU; capture-side energy endpoint; no actions
+general-asr: MIC OFF; capture/consumer stopped before final decode or playback
+general-asr: result=0 samples16=0 chunks=1 queue-peak=0 ended=0; native NPU candidate, not E2E acceptance
+voice-stage: mic-stopped-mono-us=0 transcript-ready-mono-us=887500181; mic stop is NOT true end-of-speech (energy endpoint is diagnostic)
+general-asr: MIC ON; live 48k->16k FIR->NPU; capture-side energy endpoint; no actions
+general-asr: MIC OFF; capture/consumer stopped before final decode or playback
+general-asr: result=0 samples16=0 chunks=1 queue-peak=0 ended=0; native NPU candidate, not E2E acceptance
+voice-stage: mic-stopped-mono-us=0 transcript-ready-mono-us=887500182; mic stop is NOT true end-of-speech (energy endpoint is diagnostic)
+voice-prepare-v213: asr-us=0 vocoder-us=0 status=-12; MIC still OFF
+voice-prepare-v213: asr-us=0 vocoder-us=0 status=-5; MIC still OFF
+voice-prepare-v213: asr-us=0 vocoder-us=0 status=0; MIC still OFF
+voice-session-v190: prepared ASR once in 0 us; same-command RAM reuse, per-turn states cleared
+general-asr: MIC ON; live 48k->16k FIR->NPU; capture-side energy endpoint; no actions
+general-asr: MIC OFF; capture/consumer stopped before final decode or playback
+general-asr: result=-75 samples16=0 chunks=1 queue-peak=0 ended=0; native NPU candidate, not E2E acceptance
+voice-stage: mic-stopped-mono-us=0 transcript-ready-mono-us=0; mic stop is NOT true end-of-speech (energy endpoint is diagnostic)
+voice-prepare-v213: asr-us=0 vocoder-us=0 status=0; MIC still OFF
+voice-session-v190: prepared ASR once in 1 us; same-command RAM reuse, per-turn states cleared
+general-asr: MIC ON; live 48k->16k FIR->NPU; capture-side energy endpoint; no actions
+general-asr: MIC OFF; capture/consumer stopped before final decode or playback
+general-asr: result=0 samples16=0 chunks=1 queue-peak=0 ended=0; native NPU candidate, not E2E acceptance
+voice-stage: mic-stopped-mono-us=0 transcript-ready-mono-us=887500244; mic stop is NOT true end-of-speech (energy endpoint is diagnostic)
+general-asr: MIC ON; live 48k->16k FIR->NPU; capture-side energy endpoint; no actions
+general-asr: MIC OFF; capture/consumer stopped before final decode or playback
+general-asr: result=0 samples16=0 chunks=1 queue-peak=0 ended=0; native NPU candidate, not E2E acceptance
+voice-stage: mic-stopped-mono-us=0 transcript-ready-mono-us=887500260; mic stop is NOT true end-of-speech (energy endpoint is diagnostic)
+voice-prepare-v213: asr-us=0 vocoder-us=1 status=0; MIC still OFF
+voice-session-v190: prepared ASR once in 1 us; same-command RAM reuse, per-turn states cleared
+voice-resident-v214: asr=0 accepted16=0 limited=0; models retained by SAME live task
+voice-stage-v214: capture-stop-mono-us=0 consumer-done-mono-us=0 asr-ready-mono-us=887500278 tail-us=0 status=0
+voice-resident-v214: asr=0 accepted16=0 limited=1; models retained by SAME live task
+voice-stage-v214: capture-stop-mono-us=0 consumer-done-mono-us=0 asr-ready-mono-us=887500283 tail-us=0 status=0
+voice-resident-v214: asr=0 accepted16=0 limited=0; models retained by SAME live task
+voice-stage-v214: capture-stop-mono-us=0 consumer-done-mono-us=0 asr-ready-mono-us=887500285 tail-us=0 status=0
+voice-resident-v214: asr=0 accepted16=0 limited=0; models retained by SAME live task
+voice-stage-v214: capture-stop-mono-us=0 consumer-done-mono-us=0 asr-ready-mono-us=887500296 tail-us=0 status=0
+PASS v214 actual session wait: one engine group, once-per-turn deadline refresh after arbitrary idle, no partial overlong turn, empty turn then resume
+general-asr: uninstalled; no capture/inference running
+PASS: same-command ASR/vocoder reuse, per-turn reset, replacement exclusion, open/prepare/capture failure cleanup and empty transcript (host mocks)
+voice-load-v215: BEGIN stage=general-provider-configure path=/data/npu/tts mono-us=887500312
+voice-load-v215: requested-ASR=/data/npu/asr requested-TTS=/data/npu/tts
+general-voice: RAM-only candidate installed; ASR=NPU acoustic=CPU vocoder=NPU; no auto capture/cloud fallback; TARGET ACCEPTANCE REQUIRED
+voice-load-v215: END stage=general-provider-configure status=0 elapsed-ms=0
+voice-prepare-v213: asr-us=0 vocoder-us=0 status=0; MIC still OFF
+voice-session-v190: prepared ASR once in 0 us; same-command RAM reuse, per-turn states cleared
+PASS: downstream retained worker pins ASR/TTS/config owner until reboot (intentional quarantine, not leak-free recovery)
+PASS v219: reproduced board EBUSY against frozen source; owner prepares/replies repeatedly, foreign access blocked, stop/close/reopen and quarantine tested. MOCK engines, NOT hardware.

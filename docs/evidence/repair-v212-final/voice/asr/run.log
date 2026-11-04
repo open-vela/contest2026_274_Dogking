@@ -1,0 +1,16 @@
+cmd_open_light_16k: 帮我打开灯 chunks=2 same-three-clients
+cmd_time_16k: 现在几点了 chunks=2 same-three-clients
+neg_silence_3s_16k:  chunks=4 same-three-clients
+cmd_open_light_16k: 帮我打开灯 chunks=2 same-three-clients
+cmd_time_16k: 现在几点了 chunks=2 same-three-clients
+neg_silence_3s_16k:  chunks=4 same-three-clients
+asr-compute-v190: encoder=4/1779us decoder=1/2us joiner=96/906us; HOST; no target affinity/inference qualification
+asr-v210: accept-batches=300 accept-us=11720 final-flush-us=4159 status=0; nested NPU times are not additive and not E2E latency
+asr-v211: received=48000 staged-bytes=0 qualified-batches=75 tail-frames=92 max-stage-ms=40; no dropped PCM
+asr-compute-v190: encoder=0/0us decoder=0/0us joiner=0/0us; HOST; no target affinity/inference qualification
+asr-v210: accept-batches=0 accept-us=0 final-flush-us=0 status=-125; nested NPU times are not additive and not E2E latency
+asr-v211: received=0 staged-bytes=0 qualified-batches=0 tail-frames=0 max-stage-ms=40; no dropped PCM
+asr-compute-v190: encoder=1/493us decoder=1/3us joiner=0/0us; HOST; no target affinity/inference qualification
+asr-v210: accept-batches=1 accept-us=3052 final-flush-us=0 status=-84; nested NPU times are not additive and not E2E latency
+asr-v211: received=28416 staged-bytes=0 qualified-batches=1 tail-frames=0 max-stage-ms=40; no dropped PCM
+PASS: native capture replay + 35-state feedback, cancellation, finite/output gates; mock calls=428, NPU=NOT_EXECUTED

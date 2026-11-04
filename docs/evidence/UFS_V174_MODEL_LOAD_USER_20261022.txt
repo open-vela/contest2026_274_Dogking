@@ -1,0 +1,115 @@
+nsh> ufs status
+ufs: active=0 pid=43 phase=complete result=0 verified=0 created=0 close-error=0 stop=0 bytes=134217728/134217728 checked=0 elapsed-ms=1921 no-progress-ms=7
+nsh> aipetllm unload
+llm-cache: unloaded
+nsh> time "aipetllm forwardfast /ufs/models/qwen2.5-1.5b-instruct-q4_k_m.v174.gguf 9707"
+forwardfast: cores-mask=fc workers=6; A76:A55 row weight=3:1; system scheduling unchanged
+forwardfast: loading 1117320736 bytes into RAM
+forwardfast: load=15.9906 sec; model reads now RAM-only
+forward1 token=9707 layers=28 hidden=1536 heads=12/2
+layer[0] state-crc=f35f4323
+layer[1] state-crc=43750cf3
+layer[2] state-crc=18d69f16
+layer[3] state-crc=aa231488
+layer[4] state-crc=a209163e
+layer[5] state-crc=c82850bb
+layer[6] state-crc=dfd26c49
+layer[7] state-crc=435d8044
+layer[8] state-crc=d86e8a55
+layer[9] state-crc=835bb607
+layer[10] state-crc=94662d84
+layer[11] state-crc=c4c62b55
+layer[12] state-crc=a18160cd
+layer[13] state-crc=9a2fe25c
+layer[14] state-crc=6b594e33
+layer[15] state-crc=bd2b9356
+layer[16] state-crc=9c91d253
+layer[17] state-crc=8a8199d9
+layer[18] state-crc=564ad6b6
+layer[19] state-crc=8794d9c7
+layer[20] state-crc=66b6f7e4
+layer[21] state-crc=665a5f69
+layer[22] state-crc=60f67a8e
+layer[23] state-crc=ffaad38b
+layer[24] state-crc=70e99d11
+layer[25] state-crc=5f3d61e4
+layer[26] state-crc=486fd0fa
+layer[27] state-crc=451d1506
+final-state-crc=17a04f7d logits-crc=7fdfee67 argmax=6233 logit=10.4909735 vocab=151936
+Qwen2 28-layer single-token forward and LM head checkpoint passed; multi-token KV-cache generation pending.
+forwardfast: compute=0.6212 sec; causal forward checkpoint; model resident; generation available via generateids
+forwardfast: cache retained; use aipetllm unload to free
+
+16.6399 sec
+nsh> aipetllm cacheinfo
+llm-cache: state=resident bytes=1117320736 path='/ufs/models/qwen2.5-1.5b-instruct-q4_k_m.v174.gguf'
+llm-pool: pid=59 mask=fc workers=6 created=6 matrices=141
+nsh> aipetllm unload
+llm-cache: unloaded
+nsh> cat /dev/a733-ufs
+A733 UFS v174 bulk-I/O candidate (/dev/ufs0 STILL readonly)
+last=0 stage=data-read-complete registered=1 quarantine=0 owns=0 lun=0
+ccu: axi=81000000 cfg=80000018 bgr=000f0001
+last-snapshot: version=00000000 cap=00000000 hcs=00000000 is=00000000 ocs=0 response=00000000 elapsed-ms=0
+media: model='KINGSTONCY14-128        0002' blocks=31256576 block-bytes=4096 capacity-bytes=128026935296 commands=0 read-bytes=0
+dma: resident=0 bytes=69632 retained-until-reboot=1
+control: board | handoff | quiesce | dma-nop | readcheck[=<lun:0..7>] | block-ro | bench-ro[=<MiB:1..16>] | probe | attach-ro=<lun:0..7>
+board: read-only CCU/RTC collection; no HCI/PMIC/DMA/clock writes
+probe/attach-ro: blocked until real board power provider is qualified
+handoff: explicit experimental firmware-powered HCI snapshot; no writes
+quiesce: manual zero-only IE/runstops; no DMA/media/reset; once per boot
+nop-arena: reserved=1 bytes=77824; isolated static BSS, never freed
+read-arena: reserved=1 bytes=77824; separate static BSS, never freed
+probe snapshots registers only; does NOT prove device/link presence
+attach-ro REQUIRES firmware-initialized active idle link and device
+cold-PMIC/PHY-init=not-implemented full-device-writes=disabled auto-mount=disabled
+SD boot and /data unchanged; no reset, timeout retry, format, migration or erase
+board-v166: sampled=1 stable=1 last=0 stage=snapshot-collected-not-power-qualified attempts=5 reads=26 last-address=0709016c
+pll: ref=f8675f00 peri0=ff126310 pat0=00000000 pat1=30000000
+fabric: store-ahb=110103ff store-mbus=f1055803 msi-lite1=00030001
+ufs-ccu: axi=81000000 cfg=80000018 bgr=000f0001 ref=00000000
+rtc: xo=183fb0f7 xo1=00000511 dcxo-selected-hz=26000000 (selector only, NOT measured)
+decode: axi-mux=1 div=1 cfg-mux=0 div=25 reset-release-mask=f gate-mask=7f
+clock rates are NOT inferred from PLL names; raw values retained
+qualification: rails=unknown domain=unknown ownership=unknown dma-map=unknown hci-access=blocked
+PMIC-SMC=not-called PMIC-I2C=not-touched cold-start=blocked
+handoff-v167: stage=handoff-observed-not-dma-authorized last=0 stable=1 reads=32 last-offset=80 link-ready=1 pending=0 needs-quiesce=1
+hci: cap=11870f1f ver=00000300 ahit=00000000 is=00000000 ie=00030e15 hcs=0000010f hce=00000001 iac=00000000
+utrl: base=bfeb4c00/00000000 doorbell=00000000 runstop=00000001
+utmr: base=00000000/00000000 doorbell=00000000 runstop=00000001
+handoff-policy: firmware-powered assumption; no PMIC qualification; register-writes=0 dma=0 media-commands=0 attach-blocked=1
+quiesce-v168: attempted=1 completed=1 quarantine=0 last=0 stage=quiesce-controls-stopped-not-dma-authorized writes=3 polls=3 last-offset=80 last-wait-ms=0
+quiesce-before: ie=00030e15 utrl-rsr=00000001 utmr-rsr=00000001 utrl-base=bfeb4c00/00000000
+quiesce-after: ie=00000000 utrl-rsr=00000000 utmr-rsr=00000000 utrl-base=bfeb4c00/00000000
+quiesce-policy: zero-only IE/UTRLRSR/UTMRLRSR; no reset/restart; no doorbell/IS/base writes; DMA/attach blocked; reboot to retry
+dma-nop-v169: attempted=1 completed=1 stopped=1 quarantine=0 last=0 stage=nop-dma-passed-not-media-qualified pages=19 writes=5 polls=4
+nop-dma: physical=00000000424f2000 published=1 submitted=1 guards=1 last-offset=60 wait-ms=0 retained-until-reboot=1
+nop-response: 20 00 00 00 00 00 00 00
+nop-policy: one NOP only; no SCSI/media/block/format; no IS/doorbell clear; no reset/retry/free; DMA routing is validated only by actual response
+readcheck-v170: attempted=1 completed=1 stopped=1 guards=1 quarantine=0 last=0 stage=reader-read-completed-not-mounted
+readcheck-dma: physical=00000000424df000 published=1 pages=19 writes=214482 polls=337444
+readcheck-media: lun=0 model='KINGSTONCY14-128        0002' blocks=31256576 block-bytes=4096 capacity-bytes=128026935296 identity=1
+readcheck-io: commands=53620 transferred=3504300100 samples=3 ua-reissues=0 elapsed-ms=14 exceptions=0
+readcheck-sample[0]: lba=0 bytes=16384 crc=413d6101/413d6101
+readcheck-sample[1]: lba=15628288 bytes=16384 crc=ab54d286/ab54d286
+readcheck-sample[2]: lba=31256572 bytes=16384 crc=bc3be1a6/bc3be1a6
+readcheck-gpt: protective-mbr=1 present=1 header-valid=1 entries-valid=1 status=0 partitions=3
+readcheck-partitions[0..3]: 32768..65535 / 65536..679935 / 679936..31256542 / 0..0
+readcheck-sense: opcode=88 status=00 key=00 asc=00 ascq=00
+readcheck-wire: ocs=00000000 upiu=21 00 00 00 00 00 00 00 segment=0 sense=0 residual=0
+readcheck-policy: one qualification batch; own completion W1C bit0 only; no reset/timeout retry/free/mount/media-write
+reader-v171: calls=35539 bytes=3504185344 elapsed-ms=1 active=0 chunk-max=65536 request-max=1048576
+block-v171: published=1 node=/dev/ufs0 readonly=1 chunk-max=65536 request-max=1048576; no media writes/FS/mount/partition auto-registration
+bench-ro-v171: attempted=1 completed=1 error=0 MiB-per-pass=8 passes=2 bytes=16777216 elapsed-ms=933 crc=32c1b14c/32c1b14c mbr=aa55 head16-crc=413d6101
+scratch-v172: prepared=1 attempted=1 completed=1 restored=1 quarantine=0 error=0 stage=scratch-write-flush-read-restore-passed
+scratch-window: lun=0 lba=31256496..31256511 bytes=65536 inside-disposable-Linux-partition=3; NOT unused-space
+scratch-proof: writes=3 flushes=4 patterns=2 stopped=1 guards=1 elapsed-ms=55 polls=69 mmio=28
+scratch-backup: node=/dev/a733-ufs-backup bytes=65536 original-crc32=d7978eeb volatile-RAM=1 lost-on-reboot=1
+scratch-sense: ocs=00000000 status=00 key=00 asc=00 ascq=00
+scratch-policy: manual scratch-prepare then scratch-test=ERASE-TEST-LINUX; no failure retry/reset/automatic recovery write; power loss CAN destroy test Linux data
+data-v173: enabled=1 quarantine=0 error=0 stage=data-read-complete node=/dev/ufsdata
+data-view: lun=0 first=679936 blocks=30576479 block-bytes=4096 tail-reserved=128; /dev/ufs0 STILL readonly
+data-proof: writes=17103 flushes=8580 verified-bytes=1117540352 read-bytes=2369155072 polls=227263 mmio=102732
+data-policy: manual data-rw=ERASE-TEST-LINUX; FAT format/mount external+explicit; no boot format/mount, SD migration, GPT edits, reset or retry
+recovery-v174: published=0 node=/dev/ufsdata-ro readonly=1; manual data-ro after block-ro, no scratch/flush/media-write; RO/RW mutually exclusive per boot
+nsh>

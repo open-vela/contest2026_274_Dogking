@@ -1,0 +1,58 @@
+voice-load-v215: BEGIN stage=general-provider-configure path=/data/npu/tts mono-us=930858415
+voice-load-v215: requested-ASR=/data/npu/asr requested-TTS=/data/npu/tts
+general-voice: RAM-only candidate installed; ASR=NPU acoustic=CPU vocoder=NPU; no auto capture/cloud fallback; TARGET ACCEPTANCE REQUIRED
+voice-load-v215: END stage=general-provider-configure status=0 elapsed-ms=1
+voice-prepare-v213: asr-us=3 vocoder-us=0 status=0; MIC still OFF
+voice-session-v190: prepared ASR once in 4 us; same-command RAM reuse, per-turn states cleared
+general-asr: MIC ON; live 48k->16k FIR->NPU; capture-side energy endpoint; no actions
+general-asr: MIC OFF; capture/consumer stopped before final decode or playback
+general-asr: result=0 samples16=0 chunks=1 queue-peak=0 ended=0; native NPU candidate, not E2E acceptance
+voice-stage: mic-stopped-mono-us=0 transcript-ready-mono-us=930861017; mic stop is NOT true end-of-speech (energy endpoint is diagnostic)
+product-route-v1: intent=direct-rule
+product-reply-v1: backend=local text=你好呀！今天想聊什么？
+product-tts-v219: BEGIN backend=local; microphone OFF
+product-tts-v219: END status=0 elapsed-ms=0; actual sound requires listening
+general-asr: MIC ON; live 48k->16k FIR->NPU; capture-side energy endpoint; no actions
+general-asr: MIC OFF; capture/consumer stopped before final decode or playback
+general-asr: result=0 samples16=0 chunks=1 queue-peak=0 ended=0; native NPU candidate, not E2E acceptance
+voice-stage: mic-stopped-mono-us=0 transcript-ready-mono-us=930862090; mic stop is NOT true end-of-speech (energy endpoint is diagnostic)
+general-asr: MIC ON; live 48k->16k FIR->NPU; capture-side energy endpoint; no actions
+general-asr: MIC OFF; capture/consumer stopped before final decode or playback
+general-asr: result=0 samples16=0 chunks=1 queue-peak=0 ended=0; native NPU candidate, not E2E acceptance
+voice-stage: mic-stopped-mono-us=0 transcript-ready-mono-us=930862136; mic stop is NOT true end-of-speech (energy endpoint is diagnostic)
+product-route-v1: intent=direct-rule
+product-reply-v1: backend=local text=你好呀！今天想聊什么？
+product-tts-v219: BEGIN backend=local; microphone OFF
+product-tts-v219: END status=0 elapsed-ms=0; actual sound requires listening
+product-route-v1: intent=direct-rule
+product-reply-v1: backend=local text=你好呀！今天想聊什么？
+product-tts-v219: BEGIN backend=local; microphone OFF
+product-tts-v219: END status=-16 elapsed-ms=0; actual sound requires listening
+voice-prepare-v213: asr-us=1 vocoder-us=0 status=0; MIC still OFF
+voice-session-v190: prepared ASR once in 2 us; same-command RAM reuse, per-turn states cleared
+general-asr: MIC ON; live 48k->16k FIR->NPU; capture-side energy endpoint; no actions
+general-asr: MIC OFF; capture/consumer stopped before final decode or playback
+general-asr: result=0 samples16=0 chunks=1 queue-peak=0 ended=0; native NPU candidate, not E2E acceptance
+voice-stage: mic-stopped-mono-us=0 transcript-ready-mono-us=930863778; mic stop is NOT true end-of-speech (energy endpoint is diagnostic)
+product-route-v1: intent=direct-rule
+product-reply-v1: backend=local text=你好呀！今天想聊什么？
+product-tts-v219: BEGIN backend=local; microphone OFF
+product-tts-v219: END status=0 elapsed-ms=1; actual sound requires listening
+general-asr: MIC ON; live 48k->16k FIR->NPU; capture-side energy endpoint; no actions
+general-asr: MIC OFF; capture/consumer stopped before final decode or playback
+general-asr: result=0 samples16=0 chunks=1 queue-peak=0 ended=0; native NPU candidate, not E2E acceptance
+voice-stage: mic-stopped-mono-us=0 transcript-ready-mono-us=930864794; mic stop is NOT true end-of-speech (energy endpoint is diagnostic)
+general-asr: MIC ON; live 48k->16k FIR->NPU; capture-side energy endpoint; no actions
+general-asr: MIC OFF; capture/consumer stopped before final decode or playback
+general-asr: result=0 samples16=0 chunks=1 queue-peak=0 ended=0; native NPU candidate, not E2E acceptance
+voice-stage: mic-stopped-mono-us=0 transcript-ready-mono-us=930864821; mic stop is NOT true end-of-speech (energy endpoint is diagnostic)
+product-route-v1: intent=direct-rule
+product-reply-v1: backend=local text=你好呀！今天想聊什么？
+product-tts-v219: BEGIN backend=local; microphone OFF
+product-tts-v219: END status=0 elapsed-ms=1; actual sound requires listening
+product-route-v1: intent=direct-rule
+product-reply-v1: backend=local text=你好呀！今天想聊什么？
+product-tts-v219: BEGIN backend=local; microphone OFF
+product-tts-v219: END status=-16 elapsed-ms=1; actual sound requires listening
+general-asr: uninstalled; no capture/inference running
+PASS actual RuntimePorts: rule reply + local chat -> production prepare -> leased provider -> mocked PCM, 6 turns, 2 sessions; foreign/cancel cannot speak. MOCK inference/PCM, NOT board.

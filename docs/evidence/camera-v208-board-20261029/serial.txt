@@ -1,0 +1,304 @@
+[boot188] CTOR enter=0x0000000040671b90
+[boot188] CTOR done index=0x0000000000000016
+[boot188] CTOR enter=0x00000000407ec640
+[boot188] CTOR done index=0x0000000000000017
+XA02
+
+X1
+PR
+PR
+PR
+
+NuttShell (NSH)
+nsh> RI
+RX
+
+nsh> display raw8
+display: initializing ST7735 direct 8-bit path
+display: ST7735 direct path ready
+display: raw8 path passed (128x160 RGB565, MSB first)
+nsh> camera live-verify 5 1
+lliivvee2:0 a8c ccepput erdo lsee=icnofnedrs-=5d idseptleayc tr-eeqvuereys=t1e d=(60 =apcrtevuiaelw=)1, m iRdArM= 0pi0p0e0l0i00ne0;4 1u2sfed 0c5a0m ebrfaf ilniivtey--setrarotru=s1 9/  lcirvce=-psotrotpa
+ lens ht>i me[K-hz=24000000 cpu-hz=UNKNOWN-not-measured no-clock-writes
+display: live owner ready; exact model-input background; no MQ pointer transfer
+live205 verify phase=cold input=6066188e outputs=7c36d15d/87ed60b5/98a7ebba/1421b076/a5c5074a/a0e297d3 hit=0 retained=0 equal-legacy=1
+live205 verify phase=warm input=6066188e outputs=7c36d15d/87ed60b5/98a7ebba/1421b076/a5c5074a/a0e297d3 hit=1 retained=4 equal-legacy=1
+live205 verify: PASS same-input legacy/cold/warm all-six-output-CRC and detections; no fallback
+live frame=1 input=6066188e boxes=0 inferred=1 capture=239765 prepare=25345 npu=290528 display=40133 us
+live npu seq=1 outputs=7c36d15d/87ed60b5/98a7ebba/1421b076/a5c5074a/a0e297d3 fallback=0
+live205 npu seq=1 hit=1 retained=4 prep=24086 package=14585 map=210 input=3623 sync=1529 hw=17095 output=35401 decode=8131 restore=3 total=84726 us
+live frame=2 input=6ad7cd46 boxes=3 inferred=1 capture=240193 prepare=25382 npu=85348 display=39308 us
+live npu seq=2 outputs=9f3c77a6/9efb8550/a26b5ab2/8672413e/a16ba455/4434eb4f fallback=0
+live205 npu seq=2 hit=1 retained=4 prep=24125 package=14588 map=206 input=3642 sync=1530 hw=17096 output=35455 decode=8302 restore=1 total=84990 us
+live det seq=2 class=0 score=795 box=276,144,640,494
+live det seq=2 class=39 score=416 box=75,379,140,465
+live det seq=2 class=39 score=314 box=26,378,77,434
+live frame=10 input=0e19db71 boxes=0 inferred=1 capture=240187 prepare=25286 npu=85272 display=37516 us
+live npu seq=10 outputs=91d191d4/da24375f/7ee177ed/ef8f7e81/48389819/1aa57e51 fallback=0
+live205 npu seq=10 hit=1 retained=4 prep=24232 package=14707 map=204 input=3643 sync=1530 hw=17096 output=35420 decode=8131 restore=1 total=84890 us
+camera-live-v208: active=0 stop=0 stage=complete error=0 cleanup=0 frames=13 inference=13 elapsed-ms=6760 fps=1.922 input-crc32=ef993155
+live-timing-total-us: capture=3122016 prepare=329418 npu=1313815 display=494646; model-RAM=8017024/f5f558c5 no-per-frame-SD-files=1; cooperative stop between bounded operations; NOT MP4/ISP/30fps
+live205: optimized=1 sensor-stream=0 setup-us=1342371 loop-us=5381863 warm-us=4786085 warm-fps-milli=2507 inference-fps-milli=2415 warm-npu-runs=13
+live205 CPU-us: tone=266520 input-crc=62891 tmp-input=4422 display-crc=62836 draw=4408 spi-flush=427375
+live205 overhead-us: prefetch-command=0 logging=102796 successful-frames-wall=5362771; sensor capture overlaps CPU only in live-stream
+live205 validation: requested=1 verified=1 run-ioctls=15; verify adds two first-frame runs, NOT displayed inference frames
+live208: rgb-pipeline=0 input-template=exact-full-region-dynamic-only ISA=runtime-qualified CRC=fallback-preserved no-DVFS-writes
+live205 NPU-us: import=22838 prepare=314356 package=190641 map=2697 input=47257 sync=19888 hw-exec=222245 output=460656 decode=106269 restore=15 total=1103679; prepare includes package/map/input/sync; hw-exec includes init/wait
+
+nsh> camera live-status
+camera-live-v208: active=0 stop=0 stage=complete error=0 cleanup=0 frames=13 inference=13 elapsed-ms=6760 fps=1.922 input-crc32=ef993155
+live-timing-total-us: capture=3122016 prepare=329418 npu=1313815 display=494646; model-RAM=8017024/f5f558c5 no-per-frame-SD-files=1; cooperative stop between bounded operations; NOT MP4/ISP/30fps
+live205: optimized=1 sensor-stream=0 setup-us=1342371 loop-us=5381863 warm-us=4786085 warm-fps-milli=2507 inference-fps-milli=2415 warm-npu-runs=13
+live205 CPU-us: tone=266520 input-crc=62891 tmp-input=4422 display-crc=62836 draw=4408 spi-flush=427375
+live205 overhead-us: prefetch-command=0 logging=102796 successful-frames-wall=5362771; sensor capture overlaps CPU only in live-stream
+live205 validation: requested=1 verified=1 run-ioctls=15; verify adds two first-frame runs, NOT displayed inference frames
+live208: rgb-pipeline=0 input-template=exact-full-region-dynamic-only ISA=runtime-qualified CRC=fallback-preserved no-DVFS-writes
+live205 NPU-us: import=22838 prepare=314356 package=190641 map=2697 input=47257 sync=19888 hw-exec=222245 output=460656 decode=106269 restore=15 total=1103679; prepare includes package/map/input/sync; hw-exec includes init/wait
+nsh> camera live-stream 30 1
+lliivvee2:0 a8c ccepput erdo lsee=icnofnedrs-=d3i0s pdleateyc tr-eeqvueesrtye=d1 =(60 =apcrtueavli=e1w ),m iRdArM= 0p0i0p0e0l00in0e4;1 2ufds0e5 0c aalefrfai nliityv-ee-rsrtaotru=s1 9/ c rlci=vpeo-srttoapb
+ e ntsihm>e -[hKz=24000000 cpu-hz=UNKNOWN-not-measured no-clock-writes
+display: live owner ready; exact model-input background; no MQ pointer transfer
+live frame=1 input=447bddbc boxes=0 inferred=1 capture=229126 prepare=25417 npu=94069 display=40179 us
+live npu seq=1 outputs=90e098d2/4af552af/7333b20a/d51a1cf2/5807c4b1/a8a4d1a9 fallback=0
+live205 npu seq=1 hit=0 retained=0 prep=33011 package=23198 map=213 input=3642 sync=1816 hw=17097 output=35459 decode=8131 restore=1 total=93709 us
+live frame=2 input=b6219ba1 boxes=0 inferred=1 capture=1169 prepare=25420 npu=84993 display=37515 us
+live npu seq=2 outputs=5788c9fb/8cba73eb/aa352bca/578cc4a8/7bcb24d0/1b655856 fallback=0
+live205 npu seq=2 hit=1 retained=4 prep=23831 package=14282 map=210 input=3651 sync=1536 hw=17096 output=35475 decode=8226 restore=1 total=84639 us
+live frame=10 input=35ee7ae2 boxes=2 inferred=1 capture=1175 prepare=25362 npu=84859 display=39445 us
+live npu seq=10 outputs=099d52ba/a36369af/ebf20b22/0a849213/e3616ed0/738c4668 fallback=0
+live205 npu seq=10 hit=1 retained=4 prep=23786 package=14273 map=206 input=3638 sync=1530 hw=17095 output=35316 decode=8292 restore=1 total=84501 us
+live det seq=10 class=0 score=496 box=1,207,331,496
+live det seq=10 class=0 score=323 box=1,144,626,495
+live frame=20 input=6e71d9aa boxes=0 inferred=1 capture=1176 prepare=25443 npu=84830 display=37559 us
+live npu seq=20 outputs=0f4004b4/8209534d/3c9f7dbb/c61a8096/1d81f87d/8d8ac3dc fallback=0
+live205 npu seq=20 hit=1 retained=4 prep=23822 package=14284 map=218 input=3649 sync=1531 hw=17095 output=35454 decode=8093 restore=1 total=84477 us
+live frame=30 input=e62bbda4 boxes=0 inferred=1 capture=1167 prepare=25359 npu=84846 display=37460 us
+live npu seq=30 outputs=06d659b8/abad71ad/b12de435/7d92f563/b8e8ba03/46579728 fallback=0
+live205 npu seq=30 hit=1 retained=4 prep=23754 package=14241 map=208 input=3646 sync=1529 hw=17096 output=35354 decode=8276 restore=1 total=84491 us
+live frame=40 input=b5603112 boxes=4 inferred=1 capture=1180 prepare=25416 npu=85219 display=39588 us
+live npu seq=40 outputs=5d6673da/8d8a53af/0734aaf6/0c9bcb60/6dafdbee/b3be1111 fallback=0
+live205 npu seq=40 hit=1 retained=4 prep=23876 package=14342 map=212 input=3643 sync=1536 hw=17095 output=35447 decode=8431 restore=1 total=84861 us
+live det seq=40 class=41 score=526 box=120,203,322,496
+live det seq=40 class=39 score=374 box=122,200,322,495
+live det seq=40 class=56 score=362 box=316,267,392,375
+live det seq=40 class=62 score=312 box=387,141,640,263
+live frame=50 input=254fe0db boxes=1 inferred=1 capture=1177 prepare=25365 npu=85028 display=38343 us
+live npu seq=50 outputs=b871f53a/8aa8cce2/797983f2/a841d5af/0765d714/714d1887 fallback=0
+live205 npu seq=50 hit=1 retained=4 prep=23889 package=14349 map=207 input=3650 sync=1534 hw=17096 output=35455 decode=8219 restore=1 total=84671 us
+live det seq=50 class=62 score=333 box=323,312,639,494
+live frame=60 input=cc77edf6 boxes=2 inferred=1 capture=1167 prepare=25451 npu=84792 display=38180 us
+live npu seq=60 outputs=07845016/f4db3c72/10551639/0454b649/132b37bd/59806aee fallback=0
+live205 npu seq=60 hit=1 retained=4 prep=23771 package=14260 map=204 input=3636 sync=1531 hw=17095 output=35371 decode=8179 restore=1 total=84428 us
+live det seq=60 class=0 score=418 box=566,146,640,494
+live det seq=60 class=39 score=316 box=268,408,309,501
+live frame=70 input=69d3f9c2 boxes=1 inferred=1 capture=1179 prepare=25399 npu=84991 display=38376 us
+live npu seq=70 outputs=1919ae3d/843e4c5e/042afc70/6227bd37/ce91548d/bef3c322 fallback=0
+live205 npu seq=70 hit=1 retained=4 prep=23870 package=14333 map=210 input=3645 sync=1535 hw=17095 output=35463 decode=8177 restore=1 total=84616 us
+live det seq=70 class=0 score=829 box=276,144,640,494
+live frame=80 input=3c6a5830 boxes=1 inferred=1 capture=1179 prepare=25404 npu=84969 display=37954 us
+live npu seq=80 outputs=8659a9f2/7b2d15c4/7eccc0db/8146693d/962d5f9c/57e9ef6a fallback=0
+live205 npu seq=80 hit=1 retained=4 prep=23828 package=14289 map=212 input=3652 sync=1531 hw=17095 output=35474 decode=8205 restore=1 total=84615 us
+live det seq=80 class=0 score=347 box=335,252,510,467
+live frame=90 input=8be46fa6 boxes=1 inferred=1 capture=1176 prepare=25412 npu=84979 display=38451 us
+live npu seq=90 outputs=002e4b2c/7212ac86/7b464525/58e5e788/464341f7/c1b87cb8 fallback=0
+live205 npu seq=90 hit=1 retained=4 prep=23860 package=14301 map=212 input=3657 sync=1534 hw=17095 output=35400 decode=8243 restore=1 total=84609 us
+live det seq=90 class=0 score=853 box=256,152,633,497
+live frame=100 input=b1e8245d boxes=1 inferred=1 capture=1175 prepare=25406 npu=85031 display=37959 us
+live npu seq=100 outputs=e928acbd/efbb7c85/97a954e5/731c3e52/7e66f43e/95e45063 fallback=0
+live205 npu seq=100 hit=1 retained=4 prep=23816 package=14292 map=211 input=3641 sync=1531 hw=17096 output=35471 decode=8262 restore=1 total=84658 us
+live det seq=100 class=0 score=785 box=272,146,639,495
+live frame=110 input=e3343370 boxes=1 inferred=1 capture=1178 prepare=25359 npu=85136 display=37939 us
+live npu seq=110 outputs=9e9ee607/cad6687b/856166bb/e3d22775/919876d7/efa37757 fallback=0
+live205 npu seq=110 hit=1 retained=4 prep=23894 package=14359 map=211 input=3649 sync=1534 hw=17096 output=35448 decode=8306 restore=1 total=84756 us
+live det seq=110 class=62 score=318 box=14,191,186,353
+live frame=120 input=21b26f5e boxes=0 inferred=1 capture=1175 prepare=25353 npu=84954 display=37534 us
+live npu seq=120 outputs=bce5e0a7/f624723b/71e512ef/3618b1dd/f4bec476/e322593d fallback=0
+live205 npu seq=120 hit=1 retained=4 prep=23841 package=14317 map=206 input=3640 sync=1531 hw=17095 output=35443 decode=8195 restore=2 total=84587 us
+live frame=130 input=3ed34a27 boxes=1 inferred=1 capture=1181 prepare=25391 npu=85035 display=37885 us
+live npu seq=130 outputs=5dbb83ed/4538c0ac/28d0c49b/5ed11c79/abe67c69/d6a9aef9 fallback=0
+live205 npu seq=130 hit=1 retained=4 prep=23866 package=14329 map=209 input=3648 sync=1535 hw=17096 output=35474 decode=8232 restore=1 total=84680 us
+live det seq=130 class=0 score=614 box=218,236,419,494
+live frame=140 input=63667031 boxes=1 inferred=1 capture=1170 prepare=25325 npu=84867 display=37874 us
+live npu seq=140 outputs=0caeaeed/a107b757/08cf3fe5/d6cbc2a1/54b22f2a/e5e5ee1f fallback=0
+live205 npu seq=140 hit=1 retained=4 prep=23826 package=14319 map=209 input=3633 sync=1532 hw=17095 output=35339 decode=8242 restore=1 total=84513 us
+live det seq=140 class=0 score=699 box=74,252,388,495
+live frame=150 input=2b2b9056 boxes=2 inferred=1 capture=1169 prepare=25415 npu=84876 display=38766 us
+live npu seq=150 outputs=7dbcf8a6/6304d3c8/2ef09407/2a18de62/fe243199/446cc361 fallback=0
+live205 npu seq=150 hit=1 retained=4 prep=23752 package=14263 map=206 input=3627 sync=1529 hw=17095 output=35348 decode=8222 restore=1 total=84429 us
+live det seq=150 class=17 score=384 box=85,174,639,495
+live det seq=150 class=0 score=283 box=64,171,639,494
+live frame=160 input=5a813c9c boxes=1 inferred=1 capture=1172 prepare=25416 npu=84847 display=38367 us
+live npu seq=160 outputs=3b9b0930/98cfa27e/e14c7bd2/8beb12bc/333ef0f7/a2dd3ad7 fallback=0
+live205 npu seq=160 hit=1 retained=4 prep=23813 package=14304 map=209 input=3635 sync=1533 hw=17095 output=35338 decode=8225 restore=1 total=84483 us
+live det seq=160 class=0 score=733 box=299,221,638,494
+live frame=170 input=316d6152 boxes=0 inferred=1 capture=1180 prepare=25453 npu=84638 display=37536 us
+live npu seq=170 outputs=3513ec04/e2d563b2/c73c0beb/9db5b9ad/a7fcacdf/9ad99a55 fallback=0
+live205 npu seq=170 hit=1 retained=4 prep=23775 package=14248 map=209 input=3648 sync=1530 hw=17097 output=35462 decode=7921 restore=1 total=84267 us
+live frame=180 input=fb9dc95a boxes=0 inferred=1 capture=1168 prepare=25389 npu=84945 display=37492 us
+live npu seq=180 outputs=535c8340/3324eb44/7b84cfbb/5fb4ffe8/64b68701/9dd68db4 fallback=0
+live205 npu seq=180 hit=1 retained=4 prep=23794 package=14287 map=205 input=3634 sync=1529 hw=17095 output=35352 decode=8263 restore=1 total=84516 us
+live frame=190 input=fd79f304 boxes=1 inferred=1 capture=1171 prepare=25388 npu=84854 display=38353 us
+live npu seq=190 outputs=eb022232/1dfad16d/4862cf15/d5d8c752/0795f1c4/857759a6 fallback=0
+live205 npu seq=190 hit=1 retained=4 prep=23834 package=14330 map=208 input=3638 sync=1532 hw=17094 output=35383 decode=8174 restore=1 total=84496 us
+live det seq=190 class=0 score=592 box=403,177,640,489
+camera-live-v208: active=0 stop=0 stage=complete error=0 cleanup=0 frames=193 inference=193 elapsed-ms=31526 fps=6.121 input-crc32=a2fc1773
+live-timing-total-us: capture=454505 prepare=4902126 npu=16397549 display=7359014; model-RAM=8017024/f5f558c5 no-per-frame-SD-files=1; cooperative stop between bounded operations; NOT MP4/ISP/30fps
+live205: optimized=1 sensor-stream=1 setup-us=1354993 loop-us=30129066 warm-us=29740261 warm-fps-milli=6455 inference-fps-milli=6405 warm-npu-runs=192
+live205 CPU-us: tone=3966298 input-crc=935717 tmp-input=66451 display-crc=932854 draw=72832 spi-flush=6352852
+live205 overhead-us: prefetch-command=2253 logging=719597 successful-frames-wall=29836158; sensor capture overlaps CPU only in live-stream
+live205 validation: requested=0 verified=0 run-ioctls=193; verify adds two first-frame runs, NOT displayed inference frames
+live208: rgb-pipeline=0 input-template=exact-full-region-dynamic-only ISA=runtime-qualified CRC=fallback-preserved no-DVFS-writes
+live205 NPU-us: import=22801 prepare=4607967 package=2769371 map=40055 input=703214 sync=295898 hw-exec=3299421 output=6832205 decode=1585224 restore=176 total=16327109; prepare includes package/map/input/sync; hw-exec includes init/wait
+
+nsh> camera live-pipe 30 1
+lilviev:e 20a8c ccepput erdo lsee=coinndfse=r-3d0i sdpeltaye crte-qeuveesrtye=d1= 6( 0a=cptrueavli=e1w ),m iRdArM= 0p0i0p0e0l00i0n4e1;2 fuds0e5 0c aaeefrfai nliitvye--esrtroart=u1s9  / clricv=ep-orsttaobpl
+  ntsihm>e rhz=24000000 cpu-hz=UNKNOWN-not-measured no-clock-writes
+display: live owner ready; exact model-input background; no MQ pointer transfer
+live208 cpu role=prepare requested=7 actual=1 midr=00000000412fd050 affinity-error=19 crc=portable timer-hz=24000000 cpu-hz=UNKNOWN-not-measured no-clock-writes
+live frame=1 input=9046788d boxes=2 inferred=1 capture=211163 prepare=25438 npu=94574 display=40878 us
+live npu seq=1 outputs=19a0b2bb/c614bbf9/38751247/e1ced25b/5da5bde8/f12bfe01 fallback=0
+live205 npu seq=1 hit=0 retained=0 prep=33110 package=23276 map=209 input=3658 sync=1817 hw=17096 output=35494 decode=8496 restore=1 total=94209 us
+live det seq=1 class=0 score=861 box=220,140,638,494
+live det seq=1 class=39 score=276 box=1,444,59,500
+live frame=2 input=5b914f26 boxes=1 inferred=1 capture=78565 prepare=25487 npu=86495 display=38441 us
+live npu seq=2 outputs=3d3c1097/d83a4f1c/ea853b38/21959e25/2114cb90/8b2a16b0 fallback=0
+live205 npu seq=2 hit=1 retained=4 prep=24683 package=15146 map=205 input=3640 sync=1542 hw=17097 output=35465 decode=8423 restore=1 total=85680 us
+live det seq=2 class=0 score=850 box=206,141,639,493
+live frame=10 input=72520bf9 boxes=1 inferred=1 capture=1234 prepare=25694 npu=86424 display=37935 us
+live npu seq=10 outputs=c73e5a94/901fed6f/535e948a/0f6c4ed3/048d9c44/cccc9b7d fallback=0
+live205 npu seq=10 hit=1 retained=4 prep=24748 package=15189 map=206 input=3672 sync=1535 hw=17095 output=35444 decode=8234 restore=1 total=85534 us
+live det seq=10 class=0 score=622 box=314,163,638,494
+live frame=20 input=5d6325eb boxes=1 inferred=1 capture=1239 prepare=25792 npu=86205 display=38381 us
+live npu seq=20 outputs=188ee588/c1d6bbc2/fad83546/241911b8/bf1d8523/8014a140 fallback=0
+live205 npu seq=20 hit=1 retained=4 prep=24639 package=15110 map=210 input=3648 sync=1535 hw=17095 output=35359 decode=8282 restore=1 total=85387 us
+live det seq=20 class=0 score=331 box=2,143,640,489
+live frame=30 input=edd02a5e boxes=1 inferred=1 capture=1280 prepare=25775 npu=86246 display=37984 us
+live npu seq=30 outputs=e92db764/f9f0172f/468b07d6/fa6b4eea/285642fc/92b8a479 fallback=0
+live205 npu seq=30 hit=1 retained=4 prep=24662 package=15089 map=213 input=3675 sync=1533 hw=17096 output=35431 decode=8153 restore=1 total=85354 us
+live det seq=30 class=0 score=251 box=401,145,640,492
+live frame=40 input=4eb51a1c boxes=3 inferred=1 capture=1243 prepare=25754 npu=86449 display=38671 us
+live npu seq=40 outputs=bb28dae7/86907d96/6be6dd81/30b5d056/1787f5f6/0edc4fd5 fallback=0
+live205 npu seq=40 hit=1 retained=4 prep=24636 package=15072 map=209 input=3682 sync=1532 hw=17096 output=35451 decode=8359 restore=1 total=85556 us
+live det seq=40 class=39 score=754 box=451,162,501,296
+live det seq=40 class=39 score=665 box=498,146,566,298
+live det seq=40 class=64 score=483 box=461,287,573,328
+live frame=50 input=76414f0f boxes=0 inferred=1 capture=1245 prepare=25723 npu=85453 display=37532 us
+live npu seq=50 outputs=2c1f27bc/ce8a7b1c/a66a87e8/78dac746/b96a32b9/ea0f34f9 fallback=0
+live205 npu seq=50 hit=1 retained=4 prep=24304 package=14754 map=205 input=3663 sync=1533 hw=17096 output=35445 decode=8076 restore=1 total=84933 us
+live frame=60 input=7628d8b2 boxes=0 inferred=1 capture=1459 prepare=25674 npu=86135 display=37515 us
+live npu seq=60 outputs=f2a8ff2d/3bcba0e6/2953b3d7/303602b4/bcec2359/fb254607 fallback=0
+live205 npu seq=60 hit=1 retained=4 prep=24742 package=15174 map=211 input=3678 sync=1536 hw=17095 output=35479 decode=7944 restore=0 total=85271 us
+live frame=70 input=c69485fe boxes=1 inferred=1 capture=1243 prepare=25716 npu=86334 display=37996 us
+live npu seq=70 outputs=6cacf38e/75d756e6/0bacaf16/d35c8f00/b609bb28/22d68b3f fallback=0
+live205 npu seq=70 hit=1 retained=4 prep=24635 package=15085 map=211 input=3666 sync=1533 hw=17095 output=35435 decode=8262 restore=2 total=85440 us
+live det seq=70 class=0 score=886 box=149,144,638,495
+live frame=80 input=b7a181af boxes=0 inferred=1 capture=1492 prepare=25564 npu=86237 display=37510 us
+live npu seq=80 outputs=64f140d0/673a98aa/2c3d8a81/149df613/a083a22d/ff6c9894 fallback=0
+live205 npu seq=80 hit=1 retained=4 prep=24714 package=15156 map=208 input=3666 sync=1534 hw=17095 output=35438 decode=8113 restore=1 total=85371 us
+live frame=90 input=2c37afb0 boxes=0 inferred=1 capture=1274 prepare=25775 npu=85704 display=37572 us
+live npu seq=90 outputs=09750a1f/e4c5bce1/030f7b6d/71d88b30/8b54d8e1/2999f543 fallback=0
+live205 npu seq=90 hit=1 retained=4 prep=24359 package=14775 map=209 input=3684 sync=1536 hw=17096 output=35470 decode=8250 restore=1 total=85187 us
+live frame=100 input=3adf0026 boxes=0 inferred=1 capture=1461 prepare=25618 npu=85803 display=37547 us
+live npu seq=100 outputs=73aaaff4/791c6342/9a40d39c/e62fac89/cb4f0b8e/775c2d56 fallback=0
+live205 npu seq=100 hit=1 retained=4 prep=24747 package=15172 map=207 input=3681 sync=1534 hw=17095 output=35460 decode=7606 restore=1 total=84919 us
+live frame=110 input=7d59f22c boxes=1 inferred=1 capture=1466 prepare=25611 npu=86353 display=37981 us
+live npu seq=110 outputs=7c6b11c7/e2074ddb/a563d66e/a8c71fcb/edb3462b/836e74b9 fallback=0
+live205 npu seq=110 hit=1 retained=4 prep=24483 package=14922 map=216 input=3668 sync=1533 hw=17095 output=35445 decode=8260 restore=1 total=85295 us
+live det seq=110 class=0 score=425 box=273,365,346,464
+live frame=120 input=86ec9352 boxes=0 inferred=1 capture=1478 prepare=25634 npu=86307 display=37578 us
+live npu seq=120 outputs=2fd228f8/56ff869a/24331563/2b45cfed/d312cc34/0ad94574 fallback=0
+live205 npu seq=120 hit=1 retained=4 prep=24697 package=15134 map=206 input=3682 sync=1533 hw=17094 output=35451 decode=8169 restore=1 total=85423 us
+live frame=130 input=54cfb208 boxes=0 inferred=1 capture=1232 prepare=25840 npu=86285 display=37458 us
+live npu seq=130 outputs=7fa670f8/521c9d2a/a0fbf0ea/fc74ff2e/6002ec3a/f7ad0efe fallback=0
+live205 npu seq=130 hit=1 retained=4 prep=24700 package=15184 map=207 input=3633 sync=1535 hw=17095 output=35342 decode=8315 restore=1 total=85465 us
+live frame=140 input=d518496c boxes=0 inferred=1 capture=1458 prepare=25595 npu=85693 display=37547 us
+live npu seq=140 outputs=f4a3d299/b48f5134/18f6fa67/d279dc06/fa301fe9/c77a5328 fallback=0
+live205 npu seq=140 hit=1 retained=4 prep=24355 package=14779 map=209 input=3697 sync=1533 hw=17095 output=35454 decode=8256 restore=1 total=85173 us
+live frame=150 input=8635537d boxes=0 inferred=1 capture=1461 prepare=25552 npu=86300 display=37510 us
+live npu seq=150 outputs=c4dc5cbd/cdd73252/6a4c8685/574d6fad/0562c7b6/cc5923d2 fallback=0
+live205 npu seq=150 hit=1 retained=4 prep=24740 package=15157 map=209 input=3678 sync=1534 hw=17095 output=35489 decode=8090 restore=1 total=85425 us
+live frame=160 input=a5c01578 boxes=0 inferred=1 capture=1243 prepare=25724 npu=85856 display=37565 us
+live npu seq=160 outputs=b31053c8/9a42f2cd/af27e823/ebded09f/13f0dd7b/fc777881 fallback=0
+live205 npu seq=160 hit=1 retained=4 prep=24471 package=14915 map=209 input=3679 sync=1531 hw=17097 output=35492 decode=8256 restore=1 total=85328 us
+live frame=170 input=b983912c boxes=0 inferred=1 capture=1238 prepare=25708 npu=86207 display=37516 us
+live npu seq=170 outputs=b5d51410/da5fa548/fe53beb0/8f7039ce/9e1c5cfe/4ddd1c42 fallback=0
+live205 npu seq=170 hit=1 retained=4 prep=24679 package=15089 map=206 input=3676 sync=1533 hw=17096 output=35420 decode=8109 restore=1 total=85317 us
+live frame=180 input=58305b99 boxes=0 inferred=1 capture=1232 prepare=25682 npu=85251 display=37538 us
+live npu seq=180 outputs=baf5103a/0295406e/74d13880/a80fef7a/59861044/36de5c64 fallback=0
+live205 npu seq=180 hit=1 retained=4 prep=24381 package=14817 map=210 input=3679 sync=1533 hw=17096 output=35433 decode=7780 restore=1 total=84703 us
+live frame=190 input=e16ffe18 boxes=1 inferred=1 capture=1459 prepare=25597 npu=86327 display=37847 us
+live npu seq=190 outputs=a72008f8/efcf00df/1d71bb78/a74b803c/7b890328/a416219e fallback=0
+live205 npu seq=190 hit=1 retained=4 prep=24673 package=15103 map=209 input=3677 sync=1534 hw=17095 output=35426 decode=8231 restore=1 total=85436 us
+live det seq=190 class=60 score=319 box=263,150,433,275
+live frame=200 input=527352db boxes=5 inferred=1 capture=1265 prepare=25745 npu=86080 display=39967 us
+live npu seq=200 outputs=c77d1190/165deaaf/75fe0802/6bff6549/cf5749d2/af50bacb fallback=0
+live205 npu seq=200 hit=1 retained=4 prep=24614 package=15002 map=206 input=3681 sync=1535 hw=17095 output=35456 decode=8364 restore=1 total=85541 us
+live det seq=200 class=39 score=666 box=14,246,90,387
+live det seq=200 class=39 score=407 box=66,234,146,371
+live det seq=200 class=0 score=378 box=246,141,640,414
+live det seq=200 class=64 score=284 box=49,368,160,422
+live det seq=200 class=73 score=265 box=237,410,500,497
+live frame=210 input=3a5be61f boxes=0 inferred=1 capture=1248 prepare=25808 npu=85543 display=37560 us
+live npu seq=210 outputs=a598f6ee/8533c19c/60e8ec07/3b9900b9/226d4b51/7c8b53cc fallback=0
+live205 npu seq=210 hit=1 retained=4 prep=24374 package=14774 map=208 input=3683 sync=1534 hw=17094 output=35453 decode=8081 restore=1 total=85014 us
+live frame=220 input=10252b61 boxes=0 inferred=1 capture=1468 prepare=25577 npu=85593 display=37597 us
+live npu seq=220 outputs=c714f007/f5a0b09e/e7674670/cdb80987/6fbc4044/50ab0080 fallback=0
+live205 npu seq=220 hit=1 retained=4 prep=24370 package=14806 map=206 input=3663 sync=1534 hw=17097 output=35441 decode=8150 restore=1 total=85071 us
+live frame=230 input=40d44ab1 boxes=6 inferred=1 capture=1237 prepare=25740 npu=85863 display=39882 us
+live npu seq=230 outputs=73fa0861/2b8cf1c8/a0a164c9/2869c915/2c65080a/7c167518 fallback=0
+live205 npu seq=230 hit=1 retained=4 prep=24351 package=14738 map=207 input=3706 sync=1537 hw=17095 output=35419 decode=8460 restore=0 total=85338 us
+live det seq=230 class=64 score=753 box=391,433,492,477
+live det seq=230 class=39 score=733 box=408,305,481,438
+live det seq=230 class=39 score=657 box=367,320,424,445
+live det seq=230 class=43 score=544 box=256,332,309,435
+live det seq=230 class=0 score=369 box=607,167,639,415
+live det seq=230 class=56 score=337 box=484,354,594,457
+live208 pipe: slots=2 produced=232 consumed=231 discarded-at-stop=1 high-water=2 producer-us=6565930 producer-wait-us=23445807 consumer-wait-us=252110 error=0 same-frame-binding=1
+camera-live-v208: active=0 stop=0 stage=complete error=0 cleanup=0 frames=231 inference=231 elapsed-ms=31539 fps=7.324 input-crc32=0067b44a
+live-timing-total-us: capture=597363 prepare=5938433 npu=19881229 display=8792220; model-RAM=8017024/f5f558c5 no-per-frame-SD-files=1; cooperative stop between bounded operations; NOT MP4/ISP/30fps
+live205: optimized=1 sensor-stream=1 setup-us=1354972 loop-us=30127677 warm-us=29740258 warm-fps-milli=7733 inference-fps-milli=7667 warm-npu-runs=230
+live205 CPU-us: tone=4818519 input-crc=1119534 tmp-input=161450 display-crc=1118107 draw=90452 spi-flush=7583107
+live205 overhead-us: prefetch-command=2659 logging=853987 successful-frames-wall=29780945; sensor capture overlaps CPU only in live-stream
+live205 validation: requested=0 verified=0 run-ioctls=231; verify adds two first-frame runs, NOT displayed inference frames
+live208: rgb-pipeline=1 input-template=exact-full-region-dynamic-only ISA=runtime-qualified CRC=fallback-preserved no-DVFS-writes
+live205 NPU-us: import=22749 prepare=5685644 package=3476325 map=48223 input=847982 sync=354789 hw-exec=3949050 output=8187092 decode=1889766 restore=215 total=19714388; prepare includes package/map/input/sync; hw-exec includes init/wait
+
+nsh> camera live-status
+camera-live-v208: active=0 stop=0 stage=complete error=0 cleanup=0 frames=231 inference=231 elapsed-ms=31539 fps=7.324 input-crc32=0067b44a
+live-timing-total-us: capture=597363 prepare=5938433 npu=19881229 display=8792220; model-RAM=8017024/f5f558c5 no-per-frame-SD-files=1; cooperative stop between bounded operations; NOT MP4/ISP/30fps
+live205: optimized=1 sensor-stream=1 setup-us=1354972 loop-us=30127677 warm-us=29740258 warm-fps-milli=7733 inference-fps-milli=7667 warm-npu-runs=230
+live205 CPU-us: tone=4818519 input-crc=1119534 tmp-input=161450 display-crc=1118107 draw=90452 spi-flush=7583107
+live205 overhead-us: prefetch-command=2659 logging=853987 successful-frames-wall=29780945; sensor capture overlaps CPU only in live-stream
+live205 validation: requested=0 verified=0 run-ioctls=231; verify adds two first-frame runs, NOT displayed inference frames
+live208: rgb-pipeline=1 input-template=exact-full-region-dynamic-only ISA=runtime-qualified CRC=fallback-preserved no-DVFS-writes
+live205 NPU-us: import=22749 prepare=5685644 package=3476325 map=48223 input=847982 sync=354789 hw-exec=3949050 output=8187092 decode=1889766 restore=215 total=19714388; prepare includes package/map/input/sync; hw-exec includes init/wait
+nsh> cat /dev/a733-camera-control
+camera-control-v203: V1.11/J5 guarded repeat RAW + read-only exposure diagnostics
+state=2 stage=packet-trial-controls-restored-NOT-RAW-capture error=0 cleanup=0 command-error=0 owned=0 consumed=1
+power: source=same-boot-U-Boot-image-handoff ready=434d5031 bytes=03/00/ff/17/c1/0d
+runtime-PMIC-access=NONE rails-retained=ASSUMED physical-voltage=NOT-MEASURED
+MCLK: configured=0 Hz measured=UNKNOWN; prepare holds reset/STBY LOW
+reads=52651 writes=1849 polls=1 elapsed-ms=30145 last-address=02002e8c
+id-experiment: attempted=1 reads=1 chip-id=0214 match=1 error=0 polls=50034 bus-quarantined=0
+mode-experiment: attempted=1 blob-error=0 writes=153 reads=17 verified=14/14 last-reg=0100 error=0
+packet-experiment: attempted=1 stage=receiver-ready-NOT-a-frame receiver-error=0 cleanup=0 owned=0 ready=0
+source: on-attempted=1 on-error=0 stop-error=0; bounded RAW DMA to private frame pool
+packets: raw-headers=0 fs-observations=233 fe-observations=233 status=0000004f errors=00000000 last-header=00880001
+receiver: reads=4350 writes=294 elapsed=0 last-address=02003844 phy-debug=00000000 phy-frequency=00000000 pll-ref=f8675f00 pll-peri=ff126310
+PK-before: cfg1=ffffffff cfg2=ffffffff drv1=11111111 drv2=11111111; target=PK10..19/mux2/10mA; unrelated PK fields preserved
+receiver-first: error=0 address=00000000 mask=00000000 expected=00000000 observed=00000000
+receiver-cleanup: error=0 address=00000000 mask=00000000 expected=00000000 observed=00000000
+frame: requested=1 attempted=1 stage=frame-DMA-completed-stopped-buffer-not-yet-validated error=0 cleanup=0 owned=0 completed=1 published=1 validation=0
+frame-data: address=45911040 bytes=4147200 stride=3840 format=RAW10-LE16 vendor-BGGR min=63 max=1023 fingerprint=2e9a4431 status=00000083 parser=00000000 xy=04380780 fifo=00000000
+frame-mapping: CPU-identity CSI-master1 version=00000016 enable=00000000 bypass=00000001 mbus=00040307; NO-IOMMU-TABLE/RESET/BYPASS-WRITES
+frame-first: error=0 address=00000000 mask=00000000 expected=00000000 observed=00000000
+frame-cleanup: error=0 address=00000000 mask=00000000 expected=00000000 observed=00000000
+frame-final: dma=00000083 parser=00000000 mapping-enable=00000000 bypass=00000001
+frame-sizing: active-top=00000001 length=07800780 flip=04380780 restored-top=70000000 length=02800500 flip=02d00500
+strict-qualification=NONE; RAW requires published=1; NO-ISP-IMAGE-TUNING
+repeat-v203: generation=440 readers=0 ready=1 max=32768 same-boot-cached-power; any failed cycle requires reboot
+sensor-readback: frame-lines=2128 exposure-lines=2118 analog-code=0000 (read-only, NO AE/gain writes)
+control: prepare | calibrate | normal-clock | id-experiment OR mode-experiment OR link-experiment OR frame-experiment | park
+normal boot has no handoff: prepare returns ENODATA with ZERO MMIO; see camera boot-help
+stream-v206: active=0 stop=1 pending=0 working=0 frames=233 delivered=439 error=0 cleanup=0 paused=1; sensor-on gated-SCAP, NOT cyclic-DMA; failed capture requires reboot
+nsh>

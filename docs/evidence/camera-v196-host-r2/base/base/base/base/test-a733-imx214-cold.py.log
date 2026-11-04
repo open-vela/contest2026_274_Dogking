@@ -1,0 +1,1 @@
+PASS: 82 synthetic cold-control cases; power gating, owned RMW/readback, reset held, bounded waits/wrap, rollback/quarantine; NO real hardware/ID/CSI/DMA

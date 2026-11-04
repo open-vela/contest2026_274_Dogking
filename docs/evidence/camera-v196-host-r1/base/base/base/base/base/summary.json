@@ -1,0 +1,86 @@
+{
+  "result": "CAMERA_V187_SOURCE_AND_SYNTHETIC_TESTS_PASSED",
+  "baseline_commit": "a92c716",
+  "mode_object_sha256": "e1acdf8fef0df62a262ca9f125fdb9f0328ec563b91d17b9d9ecae8f39e042b0",
+  "maximum_mode_stack_frame": 2240,
+  "frame_plan_object_sha256": "d0ca6101ffe46764eac28fa6a760b42f24c1ee84bab86c038235f2758860ea42",
+  "maximum_frame_plan_stack_frame": 0,
+  "source_sha256": {
+    "board/a733-cubie-a7z/openvela-overlay/vendor/allwinnertech/chips/a733/a733_imx214_mode.c": "91d4e47da2bb8e70b07f0d3e36a9d08ffbe5394fcb91bba6a3dc3ef5164dec15",
+    "board/a733-cubie-a7z/openvela-overlay/vendor/allwinnertech/chips/a733/a733_imx214_mode.h": "75baea91d4ea196c633854aba19f4076b58650228e7adceb5a77e6d09d19b28a",
+    "board/a733-cubie-a7z/openvela-overlay/vendor/allwinnertech/chips/a733/a733_imx214_twi3.c": "007e2971b4168f13745ebd41f7d743fa2d4f227277841606306b66ff08cd85f1",
+    "board/a733-cubie-a7z/openvela-overlay/vendor/allwinnertech/chips/a733/a733_imx214_twi3.h": "70191035b3cb654fbafe5023b1a07b375a922943d455478f565e281dd6a87dfd",
+    "tools/export-a733-imx214-mode.py": "9952b6033dd6630c1bbe181923a53145bf5e670fcdfebf08c8f3350948f789bf",
+    "tools/test-a733-imx214-mode.c": "beb030324bc987782fb9ae91e31646e63ab32e83f21401bb0c89cd4856a33f2a",
+    "tools/test-a733-imx214-mode.py": "83e70c246ba4da8f5e9cb7d768a183b0bd2098fa0117a3eccdfe31ef3c211e05",
+    "tools/check-a733-camera-v187.py": "37139bccac2087ca7f086a66933c2c8327f4366a2149868818afb31ca7150c75",
+    "board/a733-cubie-a7z/openvela-overlay/vendor/allwinnertech/chips/a733/a733_csi_frame_plan.c": "1f01a4b304cf4a35acaa0d6704767f80346be833d1e827233063c63377bc0073",
+    "board/a733-cubie-a7z/openvela-overlay/vendor/allwinnertech/chips/a733/a733_csi_frame_plan.h": "2c8b86ee628b47587adbecb504d735db78d3029dda6242a79e0e2dd189af0362",
+    "tools/test-a733-csi-frame-plan.c": "546c6699fb843b8b2c8f5f246b2dcfb293435890e959f07913b9996eed2cf5c7",
+    "tools/test-a733-csi-frame-plan.py": "f2e98be50eea5d096373f9e7045dd357f552556602108f70e90a5a858a90cddb"
+  },
+  "private_reference": {
+    "profile": "allwinner-vin-imx214-1080p-24m-4lane-raw10-v1",
+    "source": "/mnt/d/My-Program/AI-Agent-Program/GPTsprogram/Openvela/A733-A7Z-ALL-Files/bsp-product-aiot-stable/drivers/vin/modules/sensor/imx214.c",
+    "source_sha256": "e05a71fe4843c81d354ab9fa30bbd809796c21d557a87af54b550ba4e4a23832",
+    "source_spdx": "GPL-2.0-or-later",
+    "artifact_sha256": "a7b2102ba05c51de1a8a7602152505f4feedbeb3ec9facdda70710f9639bb2af",
+    "bytes": 660,
+    "operations": 153,
+    "payload_crc32": "62a4f936",
+    "omitted_stream_on": {
+      "register": "0x0100",
+      "value": 1,
+      "entries": 1
+    },
+    "added_clock_facts": {
+      "0x0136": 24,
+      "0x0137": 0
+    },
+    "width": 1920,
+    "height": 1080,
+    "line_length": 5008,
+    "frame_length": 2128,
+    "lanes": 4,
+    "wire_bits": 10,
+    "lane_mbps": 800,
+    "orientation": 3,
+    "vendor_reported_bayer": "SBGGR10",
+    "memory_layout": "UNQUALIFIED",
+    "artifact_bayer_hint": "UNKNOWN_until_real_frame_validation",
+    "sensor_execution": false,
+    "camera_capture": false,
+    "hardware_verified": false,
+    "firmware_distribution_cleared": false
+  },
+  "full_firmware_linked": false,
+  "sdk_modified": false,
+  "physical_provider_bound": false,
+  "sensor_executed": false,
+  "camera_capture": false,
+  "dma_executed": false,
+  "hardware_verified": false,
+  "base_tests": [
+    "test-a733-camera-board.py.log",
+    "test-a733-camera-cli.py.log",
+    "test-a733-camera-diag.py.log",
+    "test-a733-camera-image.py.log",
+    "test-a733-imx214-probe.py.log",
+    "test-a733-imx214-twi3.py.log",
+    "test-linux-imx214-script.py.log"
+  ],
+  "log_sha256": {
+    "arm.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "frame-plan-arm.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "frame-plan-host.log": "d160ce1fcdb304f550caeb83ff00b7a24344a41ec19709bc4d5e70bbbc6f3a03",
+    "mode-host.log": "cc29d46da2f1fa80e317a5be4fac89f8635de0279ffdbacbcfb139736470b2f0"
+  },
+  "vin_reference_sha256": {
+    "vin-video/vin_core.c": "a66d3731e4bb9506e0b8aed9ba0013550e31f81cf569f17ab256eaa5ccb667b4",
+    "vin-video/vin_video.c": "413c98a25f9ff75d0539a290cd249b2e1a4a13588aa7de4057db52b9ac31b832",
+    "vin-video/dma140/dma140_reg.c": "25841e1ede699400180dd37e4f4dd837730d4a21a276e7bc630c06a4bf9cd7c0",
+    "vin-video/dma140/dma140_reg_i.h": "0cc2e0ff1e1c3f1754f5f1461918beca539176ffd028bf098cdc4ff1e3121b1b",
+    "platform/platform_cfg.h": "7e5bdf0c7304b0a7a2ffc7568d9e8be8822248effeedb80a9e223d46d22710ce",
+    "platform/sun60iw2_vin_cfg.h": "fc775d576a4060f2bac857efc28bda436a6938d17fc4e97ecfec962b1671b550"
+  }
+}

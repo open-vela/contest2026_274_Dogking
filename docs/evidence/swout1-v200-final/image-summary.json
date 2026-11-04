@@ -1,0 +1,103 @@
+{
+  "result": "V200_GUARDED_SWOUT1_SD_IMAGE_PASSED_NOT_BOARD_TESTED",
+  "image": "/mnt/d/My-Program/AI-Agent-Program/GPTsprogram/Openvela/A733-A7Z-ALL-Files/openvela-a733-cubie-a7z-sd-v200-swout1-raw-candidate.img",
+  "bytes": 2147483648,
+  "sha256": "a729b7442ffc764063b191d8ac3ebb38c4a2812c18f21cc9dacf2cd02fbaaa33",
+  "base_sha256": "78d74c627ba002d5a94bcd8a877bef58b17ba848155858e3188f0d118bbad724",
+  "layout": {
+    "kernel_sha256": "19e2e0772816a44ee9ec671c3eac92f7978b2587a8a8c502c7abd60919cf96c0",
+    "extlinux_backup_sha256": "d9692319a64351e0e000259fba6261d70c2e7803bc3680c332bba29865f679b5",
+    "auto_script": "/boot/boot.scr",
+    "active_extlinux_absent": true,
+    "auto_script_matches_manual": true,
+    "original_extlinux_preserved": true
+  },
+  "unchanged_spans": [
+    {
+      "begin": 0,
+      "end": 348127232,
+      "sha256": "b71bd34787a2ed4af2ba178a15c289f2c73deeafe6b427516ae92b690fdf5ee3"
+    },
+    {
+      "begin": 469762048,
+      "end": 2147483648,
+      "sha256": "ef76c04de9a08ea640e188a432ec26ce81a418458e6a1f10cfea824a7ac36468"
+    }
+  ],
+  "kernel_unchanged": true,
+  "kernel_release": 199,
+  "firmware_source_commit": "6d1ece1c1a385db8f1f6163b172fbbf51a99a002",
+  "packaging_commit": "d8eefd500ac325ccaebdb2bc99ca56578c418cf8",
+  "model_fat_unchanged": true,
+  "physical_disks_written": false,
+  "ufs_contents_written": false,
+  "bootloader_binary_changed": false,
+  "saveenv": false,
+  "camera_capture_verified": false,
+  "automatic_script_execution_verified_on_board": false,
+  "hardware_verified": false,
+  "candidate_revalidated": false,
+  "power_gate": {
+    "result": "V200_SWOUT1_STARTUP_GENERATED_NOT_BOARD_TESTED",
+    "kernel_sha256": "19e2e0772816a44ee9ec671c3eac92f7978b2587a8a8c502c7abd60919cf96c0",
+    "kernel_crc32": "7ae9ab95",
+    "kernel_bytes": 7062048,
+    "image_start": "0x40200000",
+    "runtime_bytes": 96260096,
+    "handoff_link_address": "0x408b1f40",
+    "handoff_loaded_address": "0x40731f40",
+    "handoff_values_address": "0x40731f50",
+    "script_sha256": "41094803268aad1165ec0f97afa8d61d3afac74163b0843aa7ffc8963425b04c",
+    "environment_observed": {
+      "kernel_addr_r": "0x40080000",
+      "fdt_addr_r": "0x4fa00000",
+      "scriptaddr": "0x4fc00000"
+    },
+    "pmic_address": "0x36",
+    "pmic_registers": [
+      "0xe",
+      "0xf",
+      "0x10",
+      "0x12",
+      "0x20",
+      "0x2a"
+    ],
+    "pmic_writes": true,
+    "media_writes": false,
+    "saveenv": false,
+    "runtime_rail_measurement": false,
+    "camera_capture": false,
+    "hardware_verified": false,
+    "mode_handoff_link_address": "0x408b1c80",
+    "mode_handoff_loaded_address": "0x40731c80",
+    "external_mode_files": {
+      "imx214-1080p.a7cm": "a7b2102ba05c51de1a8a7602152505f4feedbeb3ec9facdda70710f9639bb2af",
+      "imx214-reference.c": "e05a71fe4843c81d354ab9fa30bbd809796c21d557a87af54b550ba4e4a23832",
+      "SOURCE-LICENSE.txt": "7d62392359f0b63df9a5d8cebddc5877a27f9db2ae1a4b329733b8c7fce1c695"
+    },
+    "mode_static_linked": false,
+    "mode_stream_on": false,
+    "packet_experiment_available": true,
+    "single_frame_experiment_available": true,
+    "release": 200,
+    "kernel_release": 199,
+    "firmware_source_commit": "6d1ece1c1a385db8f1f6163b172fbbf51a99a002",
+    "pmic_voltage_writes": false,
+    "allowed_control_write": {
+      "register": "0x11",
+      "before": "0x17",
+      "after": "0x1f",
+      "changed_mask": "0x08"
+    },
+    "already_enabled": "0x1f: readback only, NO write",
+    "required_dcdc1_enable": "0xff (observed qualified profile)",
+    "required_dcdc1_voltage_config": "0x17 (3.3V configuration, NOT physical measurement)",
+    "settle_seconds": 1,
+    "runtime_pmic_access": false,
+    "auto_rollback": false,
+    "scratch": "3 bytes of verified crc_scratch; reserved[42] remains zero",
+    "script_source_sha256": "276d1396b589a1af4835f4743828f075da7d6a66a22094f7bffce77f1d5f601c",
+    "kernel_unchanged": true,
+    "software_guard_board_tested": false
+  }
+}

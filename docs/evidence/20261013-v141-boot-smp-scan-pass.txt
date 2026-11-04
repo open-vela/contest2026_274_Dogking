@@ -1,0 +1,237 @@
+
+[22.847]no battery, disabled battery functons
+[22.854]update dts
+stop sunxi USB-DRD ok...
+stop sunxi USB1-Host ok...
+[22.879]Starting kernel ...
+
+[22.882]total: 22882 ms
+
+[22.884][mmc]: MMC Device 2 not found
+[22.888][mmc]: mmc 2 not find, so not exit
+NOTICE:  [SCP] :wait arisc ready....
+NOTICE:  [SCP] :arisc version: [d463b9da43dc50320f21ba51c6c51afe2db20d83]
+NOTICE:  [SCP] :arisc startup ready
+NOTICE:  [SCP] :arisc startup notify message feedback
+NOTICE:  [SCP] :sunxi-arisc driver is starting
+NOTICE:  BL3-1: Next image address = 0x40200000
+NOTICE:  BL3-1: Next image spsr = 0x3c5
+- Ready to Boot Primary CPU
+- Boot from EL1
+- Boot to C runtime for OS Initialize
+M0 v141-layout
+M1
+A7Z0
+A7Z1
+N0
+N1
+H0
+H1
+H2
+H3
+H4
+S0
+S1
+P1
+H5
+N2
+N3
+N4
+aR de--- -e   -5RRR
+yyed e eeayaaRBadde 0ddRtayy
+  t   oao dttBtyt ooo1o yB
+tBe o  BBotoBBBooo otoo Bo 2ootSott
+nc Scd  ooSBSStSct3eeo eecc
+no P   CUnCCnnnecAn doddcdC0
+A C1UU      CdPPdPP
+P      UUC-
+
+
+
+ UP
+- 2o--UBA
+   B-BB
+oo- o  B
+  or tfooo  oBoBf4Bttttoo
+ o     fooffrrmrNt r oo o6fommmrfEm
+1 1r   EmoENEE1LLmL7L
+-L 11EE
+L
+
+
+ X1
+   o0---B1
+  B
+   BoB
+      Btoooooooo ttttt o   t tttoCooo     CCrCC  u  rrrnruuutunnnnimtttteiiiimmmm feeee    orffffooo orrrOr    S OOOOSSSSI n   IIIiInnnntiiiiitatttiliiiaaiaallzlliiieizzzz
+eeee
+
+
+
+niBoot to - CB roount ttimo e C forrun OtiS mIe nifotir alOSiz Ie
+  tialize
+N8
+X1
+PR
+PR
+PR
+
+NuttShell (NSH)
+nsh> RI
+RX
+
+nsh> ps
+  PID GROUP CPU(AFFINITY)   PRI POLICY   TYPE    NPX STATE    EVENT     SIGMASK            STACK COMMAND
+    0     0 000(0x000000ff)   0 FIFO     Kthread   - Running            0000000000000000 0008112 CPU0 IDLE
+    1     0 001(0x000000ff)   0 FIFO     Kthread   - Assigned           0000000000000000 0008112 CPU1 IDLE
+    2     0 002(0x000000ff)   0 FIFO     Kthread   - Running            0000000000000000 0008112 CPU2 IDLE
+    3     0 003(0x000000ff)   0 FIFO     Kthread   - Running            0000000000000000 0008112 CPU3 IDLE
+    4     0 004(0x000000ff)   0 FIFO     Kthread   - Running            0000000000000000 0008112 CPU4 IDLE
+    5     0 005(0x000000ff)   0 FIFO     Kthread   - Running            0000000000000000 0008112 CPU5 IDLE
+    6     0 006(0x000000ff)   0 FIFO     Kthread   - Running            0000000000000000 0008112 CPU6 IDLE
+    7     0 007(0x000000ff)   0 FIFO     Kthread   - Running            0000000000000000 0008112 CPU7 IDLE
+    8     0 ---(0x000000ff) 224 RR       Kthread   - Waiting  Semaphore 0000000000000000 0008048 hpwork 0x4046f240 0x4046f2c8
+    9     9 001(0x000000ff) 100 RR       Task      - Running            0000000000000000 0008080 nsh_main
+   10     0 ---(0x000000ff) 100 RR       Kthread   - Waiting  Signal    0000000000000000 0008080 a733-wlan-rx
+   12     0 ---(0x000000ff) 120 RR       Kthread   - Waiting  Signal    0000000000000000 0003984 a7z-uart-rx
+nsh> aipetllm cpucheck
+cpucheck: configured=8 original-affinity=000000ff
+cpu[0]: actual=0 mpidr=0000000081000000 midr=00000000412fd050 part=d05 type=Cortex-A55 checksum=81e62f98 checkpoint=0
+cpu[1]: actual=1 mpidr=0000000081000100 midr=00000000412fd050 part=d05 type=Cortex-A55 checksum=81e62f98 checkpoint=0
+cpu[2]: actual=2 mpidr=0000000081000200 midr=00000000412fd050 part=d05 type=Cortex-A55 checksum=81e62f98 checkpoint=0
+cpu[3]: actual=3 mpidr=0000000081000300 midr=00000000412fd050 part=d05 type=Cortex-A55 checksum=81e62f98 checkpoint=0
+cpu[4]: actual=4 mpidr=0000000081000400 midr=00000000412fd050 part=d05 type=Cortex-A55 checksum=81e62f98 checkpoint=0
+cpu[5]: actual=5 mpidr=0000000081000500 midr=00000000412fd050 part=d05 type=Cortex-A55 checksum=81e62f98 checkpoint=0
+cpu[6]: actual=6 mpidr=0000000081000600 midr=00000000414fd0b1 part=d0b type=Cortex-A76 checksum=81e62f98 checkpoint=0
+cpu[7]: actual=7 mpidr=0000000081000700 midr=00000000414fd0b1 part=d0b type=Cortex-A76 checksum=81e62f98 checkpoint=0
+cpucheck: passed; original affinity restored; LLM parallelism pending
+nsh> time "sleep 5"
+
+5.0009 sec
+nsh> ifconfig
+wlan0   Link encap:Ethernet HWaddr f4:ab:5c:e1:dc:5e at UP mtu 1500
+        inet addr:0.0.0.0 DRaddr:0.0.0.0 Mask:0.0.0.0
+
+             IPv4   TCP   UDP  ICMP
+Received     0000  0000  0000  0000
+Dropped      0000  0000  0000  0000
+  IPv4        VHL: 0000   Frg: 0000
+  Checksum   0000  0000  0000  0000
+  TCP         ACK: 0000   SYN: 0000
+              RST: 0000  0000
+              HDR: 0000
+  Type       0000  ----  ----  0000
+Sent         0000  0000  0000  0000
+  Rexmit     ----  0000  ----  ----
+nsh> wifi scan
+Scanning 2.4/5 GHz...
+[0] 5G   5765 MHz  -89 dBm  MERCURY_5G_F403
+[1] 5G   5745 MHz  -77 dBm  ZBCK-E-5G
+[2] 5G   5180 MHz  -91 dBm  ZBCK-E-5G_Wi-Fi5
+[3] 5G   5180 MHz  -43 dBm  ZBCK-E-5G_Wi-Fi5
+[4] 5G   5180 MHz  -90 dBm  ZBCK-E-5G
+[5] 2.4G 2462 MHz  -83 dBm
+[6] 2.4G 2462 MHz  -44 dBm
+[7] 2.4G 2462 MHz  -44 dBm
+[8] 2.4G 2437 MHz  -51 dBm  ZBCK-E_Wi-Fi5
+[9] 2.4G 2437 MHz  -52 dBm  ZBCK-E
+nsh> dmesg
+[   23.116462] [CPU0] [ 9] nsh_main: A733: procfs mounted; 4 GiB split RAM enabled
+[   23.116506] [CPU0] [ 9] nsh_main: A733: user LED ready (0)
+[   23.116534] [CPU0] [ 9] nsh_main: A733: watchdog ready (0)
+[   23.166629] [CPU0] [ 9] nsh_main: A733: THS first sample pending code=0 ints=00000000 gpadc_clk=80000000 ths_bgr=00010001; registering sensor
+[   23.166693] [CPU0] [ 9] nsh_main: A733: temp0 registered; conversion pending
+[   23.166725] [CPU0] [ 9] nsh_main: A733: merged hardware diagnostics ready (0)
+[   23.167160] [CPU0] [ 9] nsh_main: A733 TRNG: CE v00300201 startup/continuous test passed; /dev/random and /dev/urandom ready
+[   23.167209] [CPU0] [ 9] nsh_main: A733: hardware TRNG ready (0)
+[   23.167741] [CPU0] [ 9] nsh_main: A733 NPU: VIP2 power/clock/identity checkpoint passed (0), id=00009000/00009202/20230518/1000003b
+[   23.176671] [CPU0] [ 9] nsh_main: A733 NPU runtime: /dev/npu0 ready (0), pool=404a1000/1048576 vip=02000000 pd=004049b1 lenet=40629000/404b1000 prepared=4067d000/25165824
+[   23.176740] [CPU0] [ 9] nsh_main: A733: VIP2 NPU hardware checkpoint ready (0)
+[   23.176798] [CPU0] [ 9] nsh_main: A733: UART4 TW-TTS port ready at /dev/ttyS4 (0)
+[   23.176825] [CPU0] [ 9] nsh_main: A733: I2S0 audio checkpoint ready at /dev/a733-audio (0)
+[   23.176889] [CPU0] [ 9] nsh_main: A733: header I2C/SPI and fan PWM ready (0)
+[   23.407006] [CPU0] [ 9] nsh_main: A733 SDMMC0: /dev/mmcsd0 requested (PIO, 400 kHz/12 MHz, 4-bit)
+[   23.407045] [CPU0] [ 9] nsh_main: A733: SDMMC0 ready (0)
+[   23.409900] [CPU0] [ 9] nsh_main: A733 GPT: entry=1 node=/dev/a7z-firmware first=32768 blocks=32768 name=primary
+[   23.409941] [CPU0] [ 9] nsh_main: A733 GPT: entry=2 node=/dev/a7z-efi first=65536 blocks=614400 name=primary
+[   23.409982] [CPU0] [ 9] nsh_main: A733 GPT: entry=3 node=/dev/a7z-openvela first=679936 blocks=237568 name=primary
+[   23.410024] [CPU0] [ 9] nsh_main: A733 GPT: entry=4 node=/dev/a7z-data first=917504 blocks=3276767 name=data
+[   23.410670] [CPU0] [ 9] nsh_main: A733 FAT: /dev/a7z-data mounted read/write at /data
+[   23.410704] [CPU0] [ 9] nsh_main: A733: GPT/FAT storage ready (0)
+[   23.581799] [CPU0] [ 9] nsh_main: A733 WIFI: FCU760K USB1 root port connected at high speed (0), version=0100 port=00001005
+[   23.595856] [CPU0] [ 9] nsh_main: A733 WIFI: USB device addr=1 VID:PID=a69c:8d80 class=00/00/00 bcdUSB=2.00 EP0=64
+[   23.597912] [CPU0] [ 9] nsh_main: A733 WIFI: interface=0 alt=0 class=ff/ff/ff endpoints=2
+[   23.597949] [CPU0] [ 9] nsh_main: A733 WIFI: endpoint=01 attr=02 maxpacket=512 interval=0 interface=0/0
+[   23.597991] [CPU0] [ 9] nsh_main: A733 WIFI: endpoint=82 attr=02 maxpacket=512 interval=0 interface=0/0
+[   23.609039] [CPU0] [ 9] nsh_main: A733 WIFI: USB enumeration passed config=1 interfaces=1 descriptors=1 endpoints=2 total=32
+[   23.613003] [CPU0] [ 9] nsh_main: A733 WIFI: AIC BootROM read32 [40500000]=fb078820 bulk=20/24 response=0401 (0)
+[   23.621004] [CPU0] [ 9] nsh_main: A733 WIFI: uploaded /data/aic/fw_adid_8800d80_u02.bin (1708 bytes) to 00201940
+[   23.749003] [CPU0] [ 9] nsh_main: A733 WIFI: uploaded /data/aic/fw_patch_8800d80_u02.bin (32700 bytes) to 001e0000
+[   23.813003] [CPU0] [ 9] nsh_main: A733 WIFI: uploaded /data/aic/fw_patch_8800d80_u02_ext0.bin (16136 bytes) to 0020b43c
+[   24.190003] [CPU0] [ 9] nsh_main: A733 BT: firmware mode=5 HCI-port=1 readback=1 (mailbox/USB)
+[   25.879004] [CPU0] [ 9] nsh_main: A733 WIFI: uploaded /data/aic/fmacfw_8800d80_u02.bin (358072 bytes) to 00120000
+[   25.983003] [CPU0] [ 9] nsh_main: A733 WIFI: D80 patch config version=06090101 cfg=00177158 struct=00177c00 pairs=0017d318
+[   25.985003] [CPU0] [ 9] nsh_main: A733 WIFI: D80 firmware started, waiting for runtime USB device
+[   26.370102] [CPU0] [ 9] nsh_main: A733 WIFI: USB device addr=1 VID:PID=a69c:8d81 class=ef/02/01 bcdUSB=2.00 EP0=64
+[   26.372158] [CPU0] [ 9] nsh_main: A733 WIFI: interface=0 alt=0 class=e0/01/01 endpoints=3
+[   26.372194] [CPU0] [ 9] nsh_main: A733 WIFI: endpoint=83 attr=03 maxpacket=64 interval=4 interface=0/0
+[   26.372236] [CPU0] [ 9] nsh_main: A733 WIFI: endpoint=84 attr=02 maxpacket=512 interval=0 interface=0/0
+[   26.372278] [CPU0] [ 9] nsh_main: A733 WIFI: endpoint=04 attr=02 maxpacket=512 interval=0 interface=0/0
+[   26.372319] [CPU0] [ 9] nsh_main: A733 WIFI: interface=1 alt=0 class=e0/01/01 endpoints=2
+[   26.372356] [CPU0] [ 9] nsh_main: A733 WIFI: endpoint=85 attr=01 maxpacket=0 interval=4 interface=1/0
+[   26.372397] [CPU0] [ 9] nsh_main: A733 WIFI: endpoint=05 attr=01 maxpacket=0 interval=4 interface=1/0
+[   26.372438] [CPU0] [ 9] nsh_main: A733 WIFI: interface=1 alt=1 class=e0/01/01 endpoints=2
+[   26.372474] [CPU0] [ 9] nsh_main: A733 WIFI: endpoint=85 attr=01 maxpacket=9 interval=4 interface=1/1
+[   26.372515] [CPU0] [ 9] nsh_main: A733 WIFI: endpoint=05 attr=01 maxpacket=9 interval=4 interface=1/1
+[   26.372556] [CPU0] [ 9] nsh_main: A733 WIFI: interface=1 alt=2 class=e0/01/01 endpoints=2
+[   26.372592] [CPU0] [ 9] nsh_main: A733 WIFI: endpoint=85 attr=01 maxpacket=17 interval=4 interface=1/2
+[   26.372634] [CPU0] [ 9] nsh_main: A733 WIFI: endpoint=05 attr=01 maxpacket=17 interval=4 interface=1/2
+[   26.372675] [CPU0] [ 9] nsh_main: A733 WIFI: interface=1 alt=3 class=e0/01/01 endpoints=2
+[   26.372711] [CPU0] [ 9] nsh_main: A733 WIFI: endpoint=85 attr=01 maxpacket=25 interval=4 interface=1/3
+[   26.372753] [CPU0] [ 9] nsh_main: A733 WIFI: endpoint=05 attr=01 maxpacket=25 interval=4 interface=1/3
+[   26.372794] [CPU0] [ 9] nsh_main: A733 WIFI: interface=1 alt=4 class=e0/01/01 endpoints=2
+[   26.372830] [CPU0] [ 9] nsh_main: A733 WIFI: endpoint=85 attr=01 maxpacket=33 interval=4 interface=1/4
+[   26.372872] [CPU0] [ 9] nsh_main: A733 WIFI: endpoint=05 attr=01 maxpacket=33 interval=4 interface=1/4
+[   26.372913] [CPU0] [ 9] nsh_main: A733 WIFI: interface=1 alt=5 class=e0/01/01 endpoints=2
+[   26.372949] [CPU0] [ 9] nsh_main: A733 WIFI: endpoint=85 attr=01 maxpacket=49 interval=4 interface=1/5
+[   26.372990] [CPU0] [ 9] nsh_main: A733 WIFI: endpoint=05 attr=01 maxpacket=49 interval=4 interface=1/5
+[   26.373033] [CPU0] [ 9] nsh_main: A733 WIFI: interface=2 alt=0 class=ff/ff/ff endpoints=4
+[   26.373070] [CPU0] [ 9] nsh_main: A733 WIFI: endpoint=01 attr=02 maxpacket=512 interval=0 interface=2/0
+[   26.373111] [CPU0] [ 9] nsh_main: A733 WIFI: endpoint=81 attr=02 maxpacket=512 interval=0 interface=2/0
+[   26.373153] [CPU0] [ 9] nsh_main: A733 WIFI: endpoint=02 attr=02 maxpacket=512 interval=0 interface=2/0
+[   26.373194] [CPU0] [ 9] nsh_main: A733 WIFI: endpoint=82 attr=02 maxpacket=512 interval=0 interface=2/0
+[   26.384241] [CPU0] [ 9] nsh_main: A733 WIFI: USB enumeration passed config=1 interfaces=3 descriptors=8 endpoints=19 total=222
+[   26.384293] [CPU0] [ 9] nsh_main: A733 WIFI: runtime map WLAN data=01/01 msg=02/02 BT event=03 ACL=04/04
+[   26.395003] [CPU0] [ 9] nsh_main: A733 WIFI: runtime MM_VERSION passed lmac=06090101 machw=0002fdfb/00014047 phy=5ee24111/01020000 features=01e877d7 sta=32 vif=4
+[   26.399003] [CPU0] [ 9] nsh_main: A733 WIFI: LMAC stack start passed 5g=1 vendor=00
+[   26.404004] [CPU0] [ 9] nsh_main: A733 WIFI: efuse MAC f4:ab:5c:e1:dc:5e
+[   26.404034] [CPU0] [ 9] nsh_main: A733 WIFI: LMAC stack checkpoint (0)
+[   27.805003] [CPU0] [ 9] nsh_main: A733 WIFI: RF calibration passed rx=00175a64/00175cf8 tx=0017683c/001769c4
+[   27.805047] [CPU0] [ 9] nsh_main: A733 WIFI: RF configuration checkpoint (0)
+[   27.815003] [CPU0] [ 9] nsh_main: A733 WIFI: runtime MM_VERSION passed lmac=06090101 machw=0002fdfb/00014047 phy=5ee24111/01020000 features=01e877d7 sta=32 vif=4
+[   27.820003] [CPU0] [ 9] nsh_main: A733 WIFI: ME configuration passed HT=1 VHT=0 HE=0 BW=40 PS=0 cfm=0
+[   27.820043] [CPU0] [ 9] nsh_main: A733 WIFI: ME configuration checkpoint (0)
+[   27.825003] [CPU0] [ 9] nsh_main: A733 WIFI: CN channel table passed 2g=14 5g=25 cfm=0
+[   27.825038] [CPU0] [ 9] nsh_main: A733 WIFI: regulatory channel checkpoint (0)
+[   27.829003] [CPU0] [ 9] nsh_main: A733 WIFI: station VIF passed index=0 MAC=f4:ab:5c:e1:dc:5e
+[   27.829042] [CPU0] [ 9] nsh_main: A733 WIFI: station VIF checkpoint (0)
+[   27.834003] [CPU0] [ 9] nsh_main: A733 WIFI: MAC/PHY start passed UAPSD=300 ms LPCLK=20 ppm cfm=0
+[   27.834041] [CPU0] [ 9] nsh_main: A733 WIFI: MAC/PHY start checkpoint (0)
+[   27.834070] [CPU0] [ 9] nsh_main: A733 WIFI: runtime transport checkpoint (0)
+[   27.834100] [CPU0] [ 9] nsh_main: A733 WIFI: D80 firmware bytes=408616 runtime=a69c:8d81 (0)
+[   27.834146] [CPU0] [ 9] nsh_main: A733 BT: official H4 transport registration (0)
+[   27.834188] [CPU0] [ 9] nsh_main: A733 WIFI: wlan0 registered; serialized USB RX worker pid=10
+[   27.834228] [CPU0] [ 9] nsh_main: A733: onboard FCU760K USB/firmware checkpoint ready (0)
+[   27.835305] [CPU0] [ 9] nsh_main: A733 USB host: before reset cap=30 ver=0120 hcs=02000140 id=33313130
+[   29.299546] [CPU0] [ 9] nsh_main: A733 USB combo v114: ctrl=00000111/01100001/00000000/00000011 status=00000001 maps=00000000/00000000 ready=1
+[   29.319609] [CPU0] [ 9] nsh_main: A733 USB PHY v114: reset-free host handoff passed id=33313130 gctl=30c11404 u2=02102400 u3=01001102 iscr=0100b000 physts=00000008
+[   29.319678] [CPU0] [ 9] nsh_main: A733 USB host: CCU-reset halted handoff passed; HCRST suppressed cmd=00000000 sts=00000001 id=33313130
+[   29.319739] [CPU0] [ 9] nsh_main: A733 xHCI v114: running slots=8 scratch=2 page=00000001 rtsoff=00001000 cmd=00000001 sts=00000000
+[   30.820604] [CPU0] [ 9] nsh_main: A733 UVC: USB2/xHCI2 probe=-19 ports=000002a0/000002a0 DWC3=33313130 maxports=2
+[   30.820650] [CPU0] [ 9] nsh_main: A733 USB diagnostic node registered; host probe=-19 (not audio-ready)
+[   30.820691] [CPU0] [ 9] nsh_main: A733: external USB0 UVC checkpoint ready (0)
+[   30.820735] [CPU0] [ 9] nsh_main: A733: optional service startup dispatcher (0)
+[   67.898005] [CPU1] [14] wifi: A733 WIFI: active scan passed channels=14 indications=5 results=5 firmware=5 ack=1
+[   68.082005] [CPU1] [14] wifi: A733 WIFI: active scan passed channels=4 indications=3 results=8 firmware=3 ack=1
+[   68.320005] [CPU1] [14] wifi: A733 WIFI: active scan passed channels=5 indications=2 results=10 firmware=2 ack=1
+nsh>

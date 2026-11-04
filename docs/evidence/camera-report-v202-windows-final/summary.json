@@ -1,0 +1,48 @@
+{
+  "result": "HOST_REPORT_CHECKS_PASSED_NOT_BOARD_TESTED",
+  "version": 202,
+  "source_head": "41da1866362d78a835a07c9f0560bbf52095a022",
+  "source_sha256": {
+    "tools/a733-camera-report-v202.py": "4ff50a9e256c63a58b2cb0413dafb1eafb2403782a8e0b26f3bb77a229e26205",
+    "tools/test-a733-camera-report-v202.py": "d1f4ada1c660bf90c4d3d33fd1d067d1a89458a79b18b65ca8899f648bf4d998",
+    "tools/check-a733-camera-report-v202.py": "5b843a1d8689c94c9ad0063929a5cdac86632955cd1880f0064e78e6471210e1",
+    "tools/a733-camera-vision-v201.py": "70641b5972461bd94d61a462b8f2d12e3d66d2e0171640324d164687f4c98465"
+  },
+  "tests": [
+    {
+      "command": [
+        "C:\\Users\\Lenovo\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+        "D:\\My-Program\\AI-Agent-Program\\GPTsprogram\\Openvela\\A733-A7Z-ALL-Files\\contest2026_274_Dogking-dev-ai-contest-2026\\tools\\check-a733-camera-vision-v201.py",
+        "--output",
+        "D:\\My-Program\\AI-Agent-Program\\GPTsprogram\\Openvela\\A733-A7Z-ALL-Files\\contest2026_274_Dogking-dev-ai-contest-2026\\docs\\evidence\\camera-report-v202-windows-final\\v201-base",
+        "--verify-image"
+      ],
+      "exit": 0,
+      "log": "check-0.log",
+      "sha256": "3748576be17b63c3156563374b3aacc908c3d5c5c706a2864087b380fee1d88a"
+    },
+    {
+      "command": [
+        "C:\\Users\\Lenovo\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+        "D:\\My-Program\\AI-Agent-Program\\GPTsprogram\\Openvela\\A733-A7Z-ALL-Files\\contest2026_274_Dogking-dev-ai-contest-2026\\tools\\test-a733-camera-report-v202.py"
+      ],
+      "exit": 0,
+      "log": "check-1.log",
+      "sha256": "779d4aa0a94a85d7f5b57c8b6c725c83045a109e260a0759b6d4cfd5a0b9b099"
+    }
+  ],
+  "demo_sha256": {
+    "model.png": "e95ed47c9fe6a170dfd9616177cd5c288c1f7ffee08c961973c37b0fc66912fc",
+    "model-boxes.png": "e95ed47c9fe6a170dfd9616177cd5c288c1f7ffee08c961973c37b0fc66912fc",
+    "preview-boxes.png": "ba25c29f733b24b52dc4a35e8cd02562432e8fd15dbc890072d865b6b1e79e79",
+    "lcd-schematic.png": "646c59981b718ec0e95995a17a5f8b802e15a48fbe1689f015d828f6fdb51ff4",
+    "report.html": "f0073802e4e9fddcf9f37f091ecbed28ed328164609e892a36053679b25c4760",
+    "DEMO.json": "0d2d4e865a011610ef838bba6ffa66eaa26c64f7851146c7855e5566da7acb13"
+  },
+  "v201_base_summary_sha256": "ea1e7f9899a52f5f99a054220214e50a4084b7aa3da66eceafaf7045512247a0",
+  "firmware_modified": false,
+  "new_image": false,
+  "board_connected": false,
+  "hardware_verified": false,
+  "cpu_oracle_all_bayer_run": false
+}

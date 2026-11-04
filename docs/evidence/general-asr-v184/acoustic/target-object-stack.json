@@ -1,0 +1,92 @@
+{
+  "apps/system/aipet/audio_app.cxx": {
+    "sha256": "ac51a7192aaa6d93a6dd7daadf9740ad048c3077e38356fac4c6864aa811430a",
+    "actual_nuttx_flags": true,
+    "max_static_frame": 2320,
+    "passed": true
+  },
+  "apps/system/aipet/audio_resample_stream.cxx": {
+    "sha256": "62d63e3508b87208151ea376bd6218c52a57d45a570b8a87b4027a10baaf1ea1",
+    "actual_nuttx_flags": true,
+    "max_static_frame": 128,
+    "passed": true
+  },
+  "apps/system/aipet/voice_asr_stream.cxx": {
+    "sha256": "90982af1d31876778d70e57f95cd0cce64c08ebdbe4fad79de3c9972ab9b9ce3",
+    "actual_nuttx_flags": true,
+    "max_static_frame": 352,
+    "passed": true
+  },
+  "apps/system/aipet/voice_general_asr.cxx": {
+    "sha256": "3a1cebcbd685281fdad02cb5c17ad4e986b3a6cf5220279abece5b01578610c8",
+    "actual_nuttx_flags": true,
+    "max_static_frame": 816,
+    "passed": true
+  },
+  "apps/system/aipet/voice_general_provider.cxx": {
+    "sha256": "cea1ae9b2f79fd9f0c184a7ef272ddbfdae5c7769f2fe1f9e0e5a298aa94cb0e",
+    "actual_nuttx_flags": true,
+    "max_static_frame": 256,
+    "passed": true
+  },
+  "apps/system/aipet/voice_acoustic.cxx": {
+    "sha256": "50da447b2b409f2caa630f9a5decda5e0642e24a8d6bc078fb967c279e69fef0",
+    "actual_nuttx_flags": true,
+    "max_static_frame": 432,
+    "passed": true
+  },
+  "apps/system/aipet/voice_play_stream.cxx": {
+    "sha256": "a0479d14e54198cccdb694385f00612be82d827a380f3e12013f080deaad0170",
+    "actual_nuttx_flags": true,
+    "max_static_frame": 160,
+    "passed": true
+  },
+  "apps/system/aipet/voice_phrase_pipe.cxx": {
+    "sha256": "3b6d0599d64e66abd7914d18fca2ee3667b6adbef5bad315880ee3741228a5be",
+    "actual_nuttx_flags": true,
+    "max_static_frame": 832,
+    "passed": true
+  },
+  "apps/system/aipet/voice_tts_frontend.cxx": {
+    "sha256": "cc65451db214d51931fb5fc7332da74927c0c4471ed0ac66448b61fdf5d700d8",
+    "actual_nuttx_flags": true,
+    "max_static_frame": 2384,
+    "passed": true
+  },
+  "apps/system/aipet/pet_routes.cxx": {
+    "sha256": "c33a0838601ef4450f4106b63e676515106093c807cf171c53abbb9228d22cb6",
+    "actual_nuttx_flags": true,
+    "max_static_frame": 624,
+    "passed": true
+  },
+  "apps/system/aipet/local_llm.cxx": {
+    "sha256": "4a350086dcdb8f93ba2b1256cf60e11e64bc1a1a50b4c5e20fd88df5a702c204",
+    "actual_nuttx_flags": true,
+    "max_static_frame": 2112,
+    "passed": true
+  },
+  "apps/system/aipet/aipet_main.cxx": {
+    "sha256": "d3e9fa58df29fb74554eae8a4fb1726afd470c55b8e0fe0032b4199bd2df30c9",
+    "actual_nuttx_flags": true,
+    "max_static_frame": 32,
+    "passed": true
+  },
+  "apps/system/aipetllm/aipetllm_modelcheck.c": {
+    "sha256": "de7420c54e9f2beae29476499ddafb90898a37e7cc4df57c6c57c4891ad7ca56",
+    "actual_nuttx_flags": true,
+    "max_static_frame": 1600,
+    "passed": true
+  },
+  "vendor/allwinnertech/chips/a733/a733_i2s0_audio.c": {
+    "sha256": "dfac5b88122382ed821d56ed4b8e6a1daf842c7b231ed8265039bbea06a52dad",
+    "actual_nuttx_flags": true,
+    "max_static_frame": 1488,
+    "passed": true
+  },
+  "vendor/allwinnertech/chips/a733/a733_audio_client.c": {
+    "sha256": "a733a1bee619d6d7bdf31ce2d061e4ae5340f67401855062f70af140a8395c90",
+    "actual_nuttx_flags": true,
+    "max_static_frame": 80,
+    "passed": true
+  }
+}

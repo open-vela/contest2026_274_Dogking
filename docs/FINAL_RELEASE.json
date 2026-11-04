@@ -1,0 +1,18 @@
+{
+  "version": "v229",
+  "designation": "author_selected_final_submission",
+  "date": "2026-11-04",
+  "firmware_commit": "ba0d722a965ed59a8aa8bef49dbf64fc1f8731e5",
+  "previous_release_commit": "d409c1a89d112f730f23c13aa0568840e707eae1",
+  "image": "openvela-a733-cubie-a7z-sd-v3.0pre-fix2-v229-candidate.img",
+  "image_bytes": 2147483648,
+  "image_sha256": "5d8ae2fe97176b05a411f0e38a5ff5db5e0a6c519a47f07207a35f2d53e400f1",
+  "kernel_sha256": "936f9b72edec6193477ca30b37446935e0fddfbc8b22ea2d7d3db2536c160439",
+  "software_gates": 44,
+  "stable_board_fallback": "v1.1/v219",
+  "v229_new_cloud_board_acceptance": false,
+  "dslocal_included": false,
+  "firmware_changed_during_final_tidy": false,
+  "pushed": false,
+  "PR_created": false
+}

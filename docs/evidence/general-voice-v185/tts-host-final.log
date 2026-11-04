@@ -1,0 +1,14 @@
+local-tts: result=0 acoustic=CPU vocoder=NPU packets=1 samples=17920 cpu-us=51286 npu-us=183 first-sink-us=52709; NOT end-of-speech/physical-audio latency
+local-tts: result=0 acoustic=CPU vocoder=NPU packets=1 samples=29440 cpu-us=56111 npu-us=186 first-sink-us=56822; NOT end-of-speech/physical-audio latency
+local-tts: result=0 acoustic=CPU vocoder=NPU packets=1 samples=22272 cpu-us=46057 npu-us=187 first-sink-us=46665; NOT end-of-speech/physical-audio latency
+local-tts: result=0 acoustic=CPU vocoder=NPU packets=1 samples=36608 cpu-us=66483 npu-us=190 first-sink-us=67201; NOT end-of-speech/physical-audio latency
+local-tts: result=0 acoustic=CPU vocoder=NPU packets=1 samples=36608 cpu-us=61227 npu-us=173 first-sink-us=61893; NOT end-of-speech/physical-audio latency
+local-tts: result=-61 acoustic=CPU vocoder=NPU packets=0 samples=0 cpu-us=0 npu-us=0 first-sink-us=-1; NOT end-of-speech/physical-audio latency
+local-tts: result=-125 acoustic=CPU vocoder=NPU packets=0 samples=0 cpu-us=0 npu-us=0 first-sink-us=-1; NOT end-of-speech/physical-audio latency
+local-tts: result=-84 acoustic=CPU vocoder=NPU packets=0 samples=0 cpu-us=41000 npu-us=163 first-sink-us=-1; NOT end-of-speech/physical-audio latency
+local-tts: result=-5 acoustic=CPU vocoder=NPU packets=0 samples=0 cpu-us=46512 npu-us=0 first-sink-us=-1; NOT end-of-speech/physical-audio latency
+local-tts: result=-125 acoustic=CPU vocoder=NPU packets=0 samples=0 cpu-us=46259 npu-us=266 first-sink-us=-1; NOT end-of-speech/physical-audio latency
+local-tts: result=0 acoustic=CPU vocoder=NPU packets=1 samples=17920 cpu-us=35835 npu-us=166 first-sink-us=36376; NOT end-of-speech/physical-audio latency
+local-tts: result=0 acoustic=CPU vocoder=NPU packets=1 samples=17920 cpu-us=35839 npu-us=117 first-sink-us=36203; NOT end-of-speech/physical-audio latency
+PASS: default noise=1 executes real CPU acoustic with finite mel; NOT a voice-quality/NPU test
+PASS: CPU mel -> exact padded native input; NPU STUB calls=10; fd lifecycle/cancel/NaN tail/sink failure/reuse; NO audio saved, NO NPU execution

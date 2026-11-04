@@ -1,0 +1,20 @@
+Extracting openvela partition...
+e2fsck 1.47.2 (1-Jan-2025)
+Pass 1: Checking inodes, blocks, and sizes
+Pass 2: Checking directory structure
+Pass 3: Checking directory connectivity
+Pass 4: Checking reference counts
+Pass 5: Checking group summary information
+openvela: 19/29696 files (10.5% non-contiguous), 3584/29696 blocks
+e2fsck 1.47.2 (1-Jan-2025)
+Pass 1: Checking inodes, blocks, and sizes
+Pass 2: Checking directory structure
+Pass 3: Checking directory connectivity
+Pass 4: Checking reference counts
+Pass 5: Checking group summary information
+openvela: 19/29696 files (10.5% non-contiguous), 3584/29696 blocks
+Copying the known-good source image...
+Kernel SHA256:
+70ac9b0db7a5f5065b10a2f5474f58480fff8dc6e8861875fdee46ffac57e1b1  /mnt/d/My-Program/AI-Agent-Program/GPTsprogram/Openvela/quickly-openvela/cmake_out/cubie-a7z_nsh_v147_ics43434_counter/nuttx.bin
+Final image SHA256:
+6cf150ee3ba8fb58014463ef9925496b80d7b47e92b333901f8ec96b50233b94  /mnt/d/My-Program/AI-Agent-Program/GPTsprogram/Openvela/A733-A7Z-ALL-Files/contest2026_274_Dogking-dev-ai-contest-2026/../openvela-a733-cubie-a7z-sd-i2s-v147-ics43434-counter-candidate.img

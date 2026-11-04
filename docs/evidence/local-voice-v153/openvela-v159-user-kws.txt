@@ -1,0 +1,178 @@
+N4
+ RRRdeeeR - 5 e-Ra R
+dyoy  y  eeaaeaayBddda0 adydtyy
+o        t tt BtootBoo1  o
+ot e o BBtootooBBoo2oo o otttBS
+ ecncccodSoSS SBc3teeSeoe
+P od  CUnCoooceAnnnn ondd0dcCd
+APdPPCP1 UUPU
+PC           U
+
+
+
+
+ B-U---A
+BB      -  o 2
+  BBo
+o  rfoff BoBooo o otf4ottBt t
+mmor     forftrrrmNoo o6 orfmEm
+11L11  m L1NEEE oEL7LmLLE
+1
+-
+ L
+
+
+X-1
+B   oB-0
+ Bo
+   BBtoooooooo ttttt    ott ttooCoo     CCCrC   u rrrrnuuutunnnnimttttiiiie mmmmeeeef o   frfffoo oorrOrr   S OOO OSSSIS    niIIIInnnntiiiiiattttiiiizzeeaalzlllieiiizz
+    ee
+
+
+
+orBoot to C runti- meB oofot r toOS C I rniunttiaimlie zef
+   OS Initialize
+N8
+X1
+PR
+PR
+PR
+
+NuttShell (NSH)
+nsh> RI
+RX
+
+nsh> npu selftest
+selftest: passed
+nsh> npu info
+A733 VIP2 ABI v4 CID=1000003b cores=1 page=4096 pool=2093056 free=1654784 buffers=16 timeout=5000 ms
+nsh> free
+      total       used       free    maxused    maxfree  nused  nfree name
+ 4239134720      63456 4239071264      73680 4143972320     98      5 Umem
+nsh> aipet audio npukws /data/npu/voice /data/npu/voice/kws/features0.f32 cpu6 quiet
+npukws: cpu-policy=cpu6 clean=bounded validation=all-native-CRCs
+npukws: resident=3 cold-prepare-us=1394476; file features only; no microphone/cloud/ASR
+npukws hit: word=0 name=你好小瑞 frame=17 probability=0.264511138 relative=4.929687500
+npukws profile[0]: validate/rebuild/map/clean/hw/check/commit/restore/total-us=448/912098/2120/9197/507078/66653/928/11/1498534 clean-bytes=96927744 tables=786432 rebuilt=96927744 app-check-us=73598
+npukws profile[1]: validate/rebuild/map/clean/hw/check/commit/restore/total-us=113/49287/713/595/9685/1101/4/3/61506 clean-bytes=5455872 tables=294912 rebuilt=5455872 app-check-us=148
+npukws profile[2]: validate/rebuild/map/clean/hw/check/commit/restore/total-us=1355/237982/10573/3822/108593/11223/68/75/373735 clean-bytes=28672000 tables=4587520 rebuilt=28672000 app-check-us=5089
+npukws timing: chunks=12 completed=12 sum-us=2031764 p50-us=164595 p95-us=228656 max-us=228656 over-160ms=7 search-us=6607 affinity-restored=1
+npukws: status=0 calls=161 hits=1 chain=c0a6f8f2 elapsed-us=3503556 run-us=1501022/61547/374281; resident released
+nsh> npu info
+A733 VIP2 ABI v4 CID=1000003b cores=1 page=4096 pool=2093056 free=1654784 buffers=16 timeout=5000 ms
+nsh> free
+      total       used       free    maxused    maxfree  nused  nfree name
+ 4239134720      63456 4239071264   10398240 4143972320     98      5 Umem
+nsh> aipet audio npukws /data/npu/voice /data/npu/voice/kws/features1.f32 cpu6 quiet
+npukws: cpu-policy=cpu6 clean=bounded validation=all-native-CRCs
+npukws: resident=3 cold-prepare-us=1395091; file features only; no microphone/cloud/ASR
+npukws hit: word=2 name=小瑞 frame=32 probability=0.252031147 relative=3.152343750
+npukws profile[0]: validate/rebuild/map/clean/hw/check/commit/restore/total-us=447/911946/2160/9195/506382/66664/929/5/1497736 clean-bytes=96927744 tables=786432 rebuilt=96927744 app-check-us=73604
+npukws profile[1]: validate/rebuild/map/clean/hw/check/commit/restore/total-us=135/60094/867/728/11837/1338/5/4/75015 clean-bytes=6668288 tables=360448 rebuilt=6668288 app-check-us=177
+npukws profile[2]: validate/rebuild/map/clean/hw/check/commit/restore/total-us=2344/432724/19248/6975/197788/20414/116/113/679814 clean-bytes=52224000 tables=8355840 rebuilt=52224000 app-check-us=9275
+npukws timing: chunks=12 completed=12 sum-us=2361075 p50-us=171765 p95-us=256447 max-us=256447 over-160ms=8 search-us=12508 affinity-restored=1
+npukws: status=0 calls=278 hits=1 chain=871a92c3 elapsed-us=3833746 run-us=1500274/75065/680779; resident released
+nsh> npu info
+A733 VIP2 ABI v4 CID=1000003b cores=1 page=4096 pool=2093056 free=1654784 buffers=16 timeout=5000 ms
+nsh> free
+      total       used       free    maxused    maxfree  nused  nfree name
+ 4239134720      63456 4239071264   10398240 4143972320     98      5 Umem
+nsh> aipet audio npukws /data/npu/voice /data/npu/voice/kws/features2.f32 cpu6 quiet
+npukws: cpu-policy=cpu6 clean=bounded validation=all-native-CRCs
+npukws: resident=3 cold-prepare-us=1395150; file features only; no microphone/cloud/ASR
+npukws hit: word=1 name=小瑞小瑞 frame=35 probability=0.153877288 relative=0.156250000
+npukws profile[0]: validate/rebuild/map/clean/hw/check/commit/restore/total-us=450/911863/2156/9192/507578/66663/929/10/1498843 clean-bytes=96927744 tables=786432 rebuilt=96927744 app-check-us=73586
+npukws profile[1]: validate/rebuild/map/clean/hw/check/commit/restore/total-us=124/60155/869/724/11836/1339/7/4/75061 clean-bytes=6668288 tables=360448 rebuilt=6668288 app-check-us=178
+npukws profile[2]: validate/rebuild/map/clean/hw/check/commit/restore/total-us=2528/466820/20752/7521/213294/22007/148/119/733289 clean-bytes=56320000 tables=9011200 rebuilt=56320000 app-check-us=10003
+npukws timing: chunks=12 completed=12 sum-us=2417745 p50-us=213987 p95-us=256939 max-us=256939 over-160ms=8 search-us=13151 affinity-restored=1
+npukws: status=0 calls=298 hits=1 chain=66236234 elapsed-us=3890644 run-us=1501393/75113/734326; resident released
+nsh> npu info
+A733 VIP2 ABI v4 CID=1000003b cores=1 page=4096 pool=2093056 free=1654784 buffers=16 timeout=5000 ms
+nsh> free
+      total       used       free    maxused    maxfree  nused  nfree name
+ 4239134720      55248 4239079472   10398240 4143972320     97      5 Umem
+nsh> aipet audio npukws /data/npu/voice /data/npu/voice/kws/features3.f32 cpu6 quiet
+npukws: cpu-policy=cpu6 clean=bounded validation=all-native-CRCs
+npukws: resident=3 cold-prepare-us=1395222; file features only; no microphone/cloud/ASR
+npukws profile[0]: validate/rebuild/map/clean/hw/check/commit/restore/total-us=450/911129/2151/9204/507379/66656/924/10/1497906 clean-bytes=96927744 tables=786432 rebuilt=96927744 app-check-us=73569
+npukws profile[1]: validate/rebuild/map/clean/hw/check/commit/restore/total-us=128/59873/866/727/11839/1343/7/5/74793 clean-bytes=6668288 tables=360448 rebuilt=6668288 app-check-us=179
+npukws profile[2]: validate/rebuild/map/clean/hw/check/commit/restore/total-us=3391/624321/27795/10066/285420/29427/185/170/980899 clean-bytes=75366400 tables=12058624 rebuilt=75366400 app-check-us=13419
+npukws timing: chunks=12 completed=12 sum-us=2665000 p50-us=233028 p95-us=271450 max-us=271450 over-160ms=10 search-us=17717 affinity-restored=1
+npukws: status=0 calls=391 hits=0 chain=a1596f25 elapsed-us=4138235 run-us=1500489/74840/982257; resident released
+nsh> npu info
+A733 VIP2 ABI v4 CID=1000003b cores=1 page=4096 pool=2093056 free=1654784 buffers=16 timeout=5000 ms
+nsh> free
+      total       used       free    maxused    maxfree  nused  nfree name
+ 4239134720      63456 4239071264   10398240 4143972320     98      4 Umem
+nsh> aipet audio npukws /data/npu/voice /data/npu/voice/kws/features4.f32 cpu6 quiet
+npukws: cpu-policy=cpu6 clean=bounded validation=all-native-CRCs
+npukws: resident=3 cold-prepare-us=1394598; file features only; no microphone/cloud/ASR
+npukws profile[0]: validate/rebuild/map/clean/hw/check/commit/restore/total-us=701/1449043/3249/14563/800337/105571/1466/11/2374949 clean-bytes=153468928 tables=1245184 rebuilt=153468928 app-check-us=116504
+npukws profile[1]: validate/rebuild/map/clean/hw/check/commit/restore/total-us=15/5571/81/65/1076/124/1/0/6934 clean-bytes=606208 tables=32768 rebuilt=606208 app-check-us=17
+npukws profile[2]: validate/rebuild/map/clean/hw/check/commit/restore/total-us=812/129940/5766/2058/58950/6135/33/37/203757 clean-bytes=15564800 tables=2490368 rebuilt=15564800 app-check-us=2784
+npukws timing: chunks=19 completed=19 sum-us=2715468 p50-us=142543 p95-us=149533 max-us=149533 over-160ms=0 search-us=4045 affinity-restored=1
+npukws: status=0 calls=96 hits=0 chain=1d4e2db1 elapsed-us=4186862 run-us=2379043/6942/204118; resident released
+nsh> npu info
+A733 VIP2 ABI v4 CID=1000003b cores=1 page=4096 pool=2093056 free=1654784 buffers=16 timeout=5000 ms
+nsh> free
+      total       used       free    maxused    maxfree  nused  nfree name
+ 4239134720      63456 4239071264   10437280 4143972320     98      4 Umem
+nsh> aipet audio npukws /data/npu/voice /data/npu/voice/kws/features5.f32 cpu6 quiet
+npukws: cpu-policy=cpu6 clean=bounded validation=all-native-CRCs
+npukws: resident=3 cold-prepare-us=1395453; file features only; no microphone/cloud/ASR
+npukws profile[0]: validate/rebuild/map/clean/hw/check/commit/restore/total-us=695/1448673/3263/14561/801842/105559/1466/15/2376080 clean-bytes=153468928 tables=1245184 rebuilt=153468928 app-check-us=116509
+npukws profile[1]: validate/rebuild/map/clean/hw/check/commit/restore/total-us=126/60250/870/728/11836/1345/5/4/75170 clean-bytes=6668288 tables=360448 rebuilt=6668288 app-check-us=178
+npukws profile[2]: validate/rebuild/map/clean/hw/check/commit/restore/total-us=4722/877360/39057/14153/401003/41368/249/253/1378341 clean-bytes=105881600 tables=16941056 rebuilt=105881600 app-check-us=18869
+npukws timing: chunks=19 completed=19 sum-us=4004209 p50-us=207808 p95-us=263851 max-us=263851 over-160ms=16 search-us=29210 affinity-restored=1
+npukws: status=0 calls=547 hits=0 chain=aa07f970 elapsed-us=5478628 run-us=2380171/75221/1380288; resident released
+nsh> npu info
+A733 VIP2 ABI v4 CID=1000003b cores=1 page=4096 pool=2093056 free=1654784 buffers=16 timeout=5000 ms
+nsh> free
+      total       used       free    maxused    maxfree  nused  nfree name
+ 4239134720      63456 4239071264   10437280 4143972320     98      4 Umem
+nsh> aipet audio npukws /data/npu/voice /data/npu/voice/kws/features0.f32 auto fullclean quiet
+npukws: cpu-policy=auto clean=full validation=all-native-CRCs
+npukws: resident=3 cold-prepare-us=1395312; file features only; no microphone/cloud/ASR
+npukws hit: word=0 name=你好小瑞 frame=17 probability=0.264511138 relative=4.929687500
+npukws profile[0]: validate/rebuild/map/clean/hw/check/commit/restore/total-us=443/910803/2166/28559/506677/66653/927/6/1516242 clean-bytes=301989888 tables=3145728 rebuilt=96927744 app-check-us=73586
+npukws profile[1]: validate/rebuild/map/clean/hw/check/commit/restore/total-us=109/49180/708/21416/9686/1099/6/6/82213 clean-bytes=226492416 tables=2359296 rebuilt=5455872 app-check-us=146
+npukws profile[2]: validate/rebuild/map/clean/hw/check/commit/restore/total-us=1372/238105/10579/332952/108599/11235/83/65/703032 clean-bytes=3523215360 tables=36700160 rebuilt=28672000 app-check-us=5100
+npukws timing: chunks=12 completed=12 sum-us=2399597 p50-us=194056 p95-us=296366 max-us=296366 over-160ms=8 search-us=6606 affinity-restored=1
+npukws: status=0 calls=161 hits=1 chain=c0a6f8f2 elapsed-us=3873011 run-us=1518799/82252/703618; resident released
+nsh> aipet audio npukws /data/npu/voice /data/npu/voice/kws/features0.f32 auto quiet
+npukws: cpu-policy=auto clean=bounded validation=all-native-CRCs
+npukws: resident=3 cold-prepare-us=1395397; file features only; no microphone/cloud/ASR
+npukws hit: word=0 name=你好小瑞 frame=17 probability=0.264511138 relative=4.929687500
+npukws profile[0]: validate/rebuild/map/clean/hw/check/commit/restore/total-us=463/911818/2178/9191/505977/66656/931/8/1497227 clean-bytes=96927744 tables=786432 rebuilt=96927744 app-check-us=73600
+npukws profile[1]: validate/rebuild/map/clean/hw/check/commit/restore/total-us=105/49250/710/594/9684/1104/4/2/61457 clean-bytes=5455872 tables=294912 rebuilt=5455872 app-check-us=145
+npukws profile[2]: validate/rebuild/map/clean/hw/check/commit/restore/total-us=1363/237918/10574/3830/108586/11222/63/67/373670 clean-bytes=28672000 tables=4587520 rebuilt=28672000 app-check-us=5079
+npukws timing: chunks=12 completed=12 sum-us=2030276 p50-us=164180 p95-us=228861 max-us=228861 over-160ms=7 search-us=6605 affinity-restored=1
+npukws: status=0 calls=161 hits=1 chain=c0a6f8f2 elapsed-us=3502902 run-us=1499597/61495/374220; resident released
+nsh> aipet audio npukws /data/npu/voice /data/npu/voice/kws/features0.f32 cpu6 fullclean quiet
+npukws: cpu-policy=cpu6 clean=full validation=all-native-CRCs
+npukws: resident=3 cold-prepare-us=1394940; file features only; no microphone/cloud/ASR
+npukws hit: word=0 name=你好小瑞 frame=17 probability=0.264511138 relative=4.929687500
+npukws profile[0]: validate/rebuild/map/clean/hw/check/commit/restore/total-us=451/911475/2139/28555/507684/66665/923/6/1517908 clean-bytes=301989888 tables=3145728 rebuilt=96927744 app-check-us=73591
+npukws profile[1]: validate/rebuild/map/clean/hw/check/commit/restore/total-us=102/49305/709/21413/9685/1096/6/7/82323 clean-bytes=226492416 tables=2359296 rebuilt=5455872 app-check-us=145
+npukws profile[2]: validate/rebuild/map/clean/hw/check/commit/restore/total-us=1405/238192/10566/332955/108586/11231/74/76/703125 clean-bytes=3523215360 tables=36700160 rebuilt=28672000 app-check-us=5115
+npukws timing: chunks=12 completed=12 sum-us=2401512 p50-us=194000 p95-us=296496 max-us=296496 over-160ms=8 search-us=6599 affinity-restored=1
+npukws: status=0 calls=161 hits=1 chain=c0a6f8f2 elapsed-us=3874544 run-us=1520508/82364/703688; resident released
+nsh> aipet audio npukws /data/npu/voice /data/npu/voice/kws/features0.f32 cpu6 quiet
+npukws: cpu-policy=cpu6 clean=bounded validation=all-native-CRCs
+npukws: resident=3 cold-prepare-us=1395387; file features only; no microphone/cloud/ASR
+npukws hit: word=0 name=你好小瑞 frame=17 probability=0.264511138 relative=4.929687500
+npukws profile[0]: validate/rebuild/map/clean/hw/check/commit/restore/total-us=455/911349/2179/9198/506978/66660/930/8/1497763 clean-bytes=96927744 tables=786432 rebuilt=96927744 app-check-us=73595
+npukws profile[1]: validate/rebuild/map/clean/hw/check/commit/restore/total-us=114/49354/713/597/9687/1098/4/5/61575 clean-bytes=5455872 tables=294912 rebuilt=5455872 app-check-us=145
+npukws profile[2]: validate/rebuild/map/clean/hw/check/commit/restore/total-us=1367/237708/10570/3823/108602/11226/70/68/373474 clean-bytes=28672000 tables=4587520 rebuilt=28672000 app-check-us=5083
+npukws timing: chunks=12 completed=12 sum-us=2030746 p50-us=164263 p95-us=228746 max-us=228746 over-160ms=7 search-us=6605 affinity-restored=1
+npukws: status=0 calls=161 hits=1 chain=c0a6f8f2 elapsed-us=3503361 run-us=1500170/61611/374032; resident released
+nsh> aipet audio npukws /data/npu/voice /data/npu/voice/kws/features0.f32 cpu7 quiet
+npukws: cpu-policy=cpu7 clean=bounded validation=all-native-CRCs
+npukws: resident=3 cold-prepare-us=1395119; file features only; no microphone/cloud/ASR
+npukws hit: word=0 name=你好小瑞 frame=17 probability=0.264511138 relative=4.929687500
+npukws profile[0]: validate/rebuild/map/clean/hw/check/commit/restore/total-us=448/911123/2141/9206/506775/66671/924/8/1497301 clean-bytes=96927744 tables=786432 rebuilt=96927744 app-check-us=73583
+npukws profile[1]: validate/rebuild/map/clean/hw/check/commit/restore/total-us=104/49042/707/592/9688/1095/5/4/61241 clean-bytes=5455872 tables=294912 rebuilt=5455872 app-check-us=146
+npukws profile[2]: validate/rebuild/map/clean/hw/check/commit/restore/total-us=1369/238104/10577/3811/108593/11231/70/76/373870 clean-bytes=28672000 tables=4587520 rebuilt=28672000 app-check-us=5078
+npukws timing: chunks=12 completed=12 sum-us=2030510 p50-us=164362 p95-us=229156 max-us=229156 over-160ms=7 search-us=6603 affinity-restored=1
+npukws: status=0 calls=161 hits=1 chain=c0a6f8f2 elapsed-us=3502859 run-us=1499902/61283/374422; resident released
+nsh>

@@ -1,0 +1,29 @@
+{
+  "result": "V221_FULL_SOFTWARE_IMAGE_VERIFIED_NOT_BOARD_TESTED",
+  "firmware_commit": "716ac8c5b070355abc53db2720976c837bcbfa3c",
+  "image": "openvela-a733-cubie-a7z-sd-v1.2fix-v221-preview.img",
+  "bytes": 2147483648,
+  "sha256": "c07d26842cc0ddaa4a1e16b957c2c06297c94980c1af9c92bd6a303f5d8bac2c",
+  "kernel_sha256": "0618fa61eb30683607ed77f25118e3a9c5711f7ba1af950445050e263be16727",
+  "sealed_directory": "out/v221-product-v12fix-release-r1",
+  "package_directory": "out/product-v12fix-v221-package-r1",
+  "build_report_directory": "out/product-v12fix-v221-build-r1",
+  "voice_gate_directory": "out/v221-product-gates-r1",
+  "full_gate_directory": "out/v221-full-link-r1",
+  "software_gates": 28,
+  "SDK_restored_paths": 316,
+  "old_images_preserved": {
+    "openvela-a733-cubie-a7z-sd-v1.1-v219-candidate.img": "fe7a28ce9996e3344a1866610c7cdb9137a1088965b0207161df6ffab4c3359f",
+    "openvela-a733-cubie-a7z-sd-v1.2-v220-preview.img": "89a6d7f7d508427da0b4f193566c49d958451cc52c8e628a680f32a1062200a1"
+  },
+  "default_local_history_pairs": 0,
+  "MCU_upstream": "efdb437948eda62cbc782692eb8fd291e5d914ae",
+  "LLM_oracle_inherited_exact_math_banner_only_verified": true,
+  "physical_disks_written": false,
+  "ufs_written": false,
+  "board_tested": false,
+  "latency_accepted": false,
+  "automatic_motion_arming": false,
+  "PR_created": false,
+  "git_pushed": false
+}

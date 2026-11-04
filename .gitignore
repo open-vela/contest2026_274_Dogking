@@ -2,6 +2,7 @@
 build/
 out/
 cmake_out/
+__pycache__/
 archives/
 build-temp-backups/
 *.o
@@ -16,6 +17,7 @@ build-temp-backups/
 *.img.gz
 *.nb
 *.a7pm
+*.a7tv
 *.bin
 *.tar
 *.tar.gz
@@ -37,10 +39,62 @@ build-temp-backups/
 .DS_Store
 Thumbs.db
 
-# Python bytecode from the build/image helper scripts
-__pycache__/
-*.pyc
-
 # AI logs are contest deliverables and must not be ignored.
 !logs/**/*.jsonl
 !logs/**/manifest.json
+
+# Only the three sealed v204 evidence records, NOT general build products.
+!docs/evidence/camera-v204-final/build/
+docs/evidence/camera-v204-final/build/*
+!docs/evidence/camera-v204-final/build/build.log
+!docs/evidence/camera-v204-final/build/sdk-restored.json
+!docs/evidence/camera-v204-final/build/wrapper-status.txt
+
+# Only sealed v205 build evidence, not arbitrary build products.
+!docs/evidence/camera-v205-final/build/
+docs/evidence/camera-v205-final/build/*
+!docs/evidence/camera-v205-final/build/build.log
+!docs/evidence/camera-v205-final/build/sdk-restored.json
+!docs/evidence/camera-v205-final/build/wrapper-status.txt
+
+# Only sealed v206 build evidence, not arbitrary build products.
+!docs/evidence/camera-v206-final/build/
+docs/evidence/camera-v206-final/build/*
+!docs/evidence/camera-v206-final/build/build.log
+!docs/evidence/camera-v206-final/build/sdk-restored.json
+!docs/evidence/camera-v206-final/build/wrapper-status.txt
+
+# Only sealed v207 build evidence, not arbitrary build products.
+!docs/evidence/camera-v207-final/build/
+docs/evidence/camera-v207-final/build/*
+!docs/evidence/camera-v207-final/build/build.log
+!docs/evidence/camera-v207-final/build/sdk-restored.json
+!docs/evidence/camera-v207-final/build/wrapper-status.txt
+
+# Only sealed v208 build evidence.
+!docs/evidence/camera-v208-final/build/
+docs/evidence/camera-v208-final/build/*
+!docs/evidence/camera-v208-final/build/build.log
+!docs/evidence/camera-v208-final/build/sdk-restored.json
+!docs/evidence/camera-v208-final/build/wrapper-status.txt
+
+# Only sealed v209 build evidence.
+!docs/evidence/camera-v209-final/build/
+docs/evidence/camera-v209-final/build/*
+!docs/evidence/camera-v209-final/build/build.log
+!docs/evidence/camera-v209-final/build/sdk-restored.json
+!docs/evidence/camera-v209-final/build/wrapper-status.txt
+
+# Only sealed v210 build evidence, not shared SDK/model artifacts.
+!docs/evidence/voice-v210-final/build/
+docs/evidence/voice-v210-final/build/*
+!docs/evidence/voice-v210-final/build/build.log
+!docs/evidence/voice-v210-final/build/sdk-restored.json
+!docs/evidence/voice-v210-final/build/wrapper-status.txt
+
+# Only sealed v211 build evidence; keep SDK/model binaries outside Git.
+!docs/evidence/voice-v211-final/build/
+docs/evidence/voice-v211-final/build/*
+!docs/evidence/voice-v211-final/build/build.log
+!docs/evidence/voice-v211-final/build/sdk-restored.json
+!docs/evidence/voice-v211-final/build/wrapper-status.txt

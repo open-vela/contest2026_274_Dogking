@@ -1,0 +1,251 @@
+patching file frameworks/connectivity/bluetooth/tools/bt_tools.c
+Hunk #1 succeeded at 1948 (offset 2 lines).
+Hunk #4 succeeded at 2023 (offset -1 lines).
+Hunk #13 succeeded at 2273 (offset -2 lines).
+patching file frameworks/connectivity/bluetooth/tools/scan.c
+Hunk #2 succeeded at 97 (offset -9 lines).
+Hunk #3 succeeded at 190 (offset -16 lines).
+patching file frameworks/connectivity/bluetooth/service/stacks/zephyr/sal_adapter_le_interface.c
+patching file frameworks/connectivity/bluetooth/service/src/adapter_state.c
+patching file frameworks/connectivity/bluetooth/tools/bt_tools.c
+Hunk #1 succeeded at 19 (offset -1 lines).
+patching file frameworks/connectivity/bluetooth/tools/scan.c
+Hunk #1 succeeded at 18 (offset -2 lines).
+Hunk #2 succeeded at 33 (offset 1 line).
+Hunk #3 succeeded at 82 (offset 3 lines).
+Hunk #4 succeeded at 94 (offset 1 line).
+Hunk #5 succeeded at 123 (offset -9 lines).
+Hunk #6 succeeded at 205 (offset -2 lines).
+Hunk #7 succeeded at 220 (offset -8 lines).
+Hunk #8 succeeded at 230 (offset -7 lines).
+Hunk #9 succeeded at 251 (offset -7 lines).
+patching file frameworks/connectivity/bluetooth/service/src/adapter_state.c
+Hunk #1 succeeded at 340 (offset 4 lines).
+patching file frameworks/connectivity/bluetooth/service/stacks/zephyr/sal_adapter_le_interface.c
+Hunk #1 succeeded at 1009 (offset 1 line).
+Hunk #2 succeeded at 1035 (offset 1 line).
+Scan blocked: adapter state=0; wait for BLE_ON(2)/ON(4)
+on_scan_start_status_cb, scanner:0x6e4cd5de0010, status:0
+Scan already active/stopping; wait for on_scan_stopped_cb
+Scan stop requested; wait for on_scan_stopped_cb
+Scan stop already pending
+Scan already active/stopping; wait for on_scan_stopped_cb
+on_scan_stopped_cb, scanner:0x6e4cd5de0010
+Scan already stopped
+on_scan_start_status_cb, scanner:0x6e4cd5de0030, status:1
+Scan start rejected by service
+Scan stop requested; wait for on_scan_stopped_cb
+on_scan_stopped_cb, scanner:0x6e4cd5de0050
+Scan stop requested; wait for on_scan_stopped_cb
+on_scan_stopped_cb, scanner:0x6e4cd5de0070
+Scan stop requested; wait for on_scan_stopped_cb
+on_scan_stopped_cb, scanner:0x6e4cd5de0090
+Scan stop requested; wait for on_scan_stopped_cb
+on_scan_stopped_cb, scanner:0x6e4cd5de00b0
+Scan stop requested; wait for on_scan_stopped_cb
+on_scan_stopped_cb, scanner:0x6e4cd5de00d0
+Scan stop requested; wait for on_scan_stopped_cb
+on_scan_stopped_cb, scanner:0x6e4cd5de00f0
+Scan stop requested; wait for on_scan_stopped_cb
+on_scan_stopped_cb, scanner:0x6e4cd5de0110
+Scan stop requested; wait for on_scan_stopped_cb
+on_scan_stopped_cb, scanner:0x6e4cd5de0130
+Scan stop requested; wait for on_scan_stopped_cb
+on_scan_stopped_cb, scanner:0x6e4cd5de0150
+Scan stop requested; wait for on_scan_stopped_cb
+on_scan_stopped_cb, scanner:0x6e4cd5de0170
+Scan stop requested; wait for on_scan_stopped_cb
+on_scan_stopped_cb, scanner:0x6e4cd5de0190
+Scan stop requested; wait for on_scan_stopped_cb
+on_scan_stopped_cb, scanner:0x6e4cd5de01b0
+Scan stop requested; wait for on_scan_stopped_cb
+on_scan_stopped_cb, scanner:0x6e4cd5de01d0
+Scan stop requested; wait for on_scan_stopped_cb
+on_scan_stopped_cb, scanner:0x6e4cd5de01f0
+Scan stop requested; wait for on_scan_stopped_cb
+on_scan_stopped_cb, scanner:0x6e4cd5de0210
+Scan stop requested; wait for on_scan_stopped_cb
+on_scan_stopped_cb, scanner:0x6e4cd5de0230
+Scan stop requested; wait for on_scan_stopped_cb
+on_scan_stopped_cb, scanner:0x6e4cd5de0250
+Scan stop requested; wait for on_scan_stopped_cb
+on_scan_stopped_cb, scanner:0x6e4cd5de0270
+Scan stop requested; wait for on_scan_stopped_cb
+on_scan_stopped_cb, scanner:0x6e4cd5de0290
+Scan stop requested; wait for on_scan_stopped_cb
+on_scan_stopped_cb, scanner:0x6e4cd5de02b0
+Scan stop requested; wait for on_scan_stopped_cb
+on_scan_stopped_cb, scanner:0x6e4cd5de02d0
+Scan stop requested; wait for on_scan_stopped_cb
+on_scan_stopped_cb, scanner:0x6e4cd5de02f0
+Scan stop requested; wait for on_scan_stopped_cb
+on_scan_stopped_cb, scanner:0x6e4cd5de0310
+Scan stop requested; wait for on_scan_stopped_cb
+on_scan_stopped_cb, scanner:0x6e4cd5de0330
+Scan stop requested; wait for on_scan_stopped_cb
+on_scan_stopped_cb, scanner:0x6e4cd5de0350
+Scan stop requested; wait for on_scan_stopped_cb
+on_scan_stopped_cb, scanner:0x6e4cd5de0370
+Scan stop requested; wait for on_scan_stopped_cb
+on_scan_stopped_cb, scanner:0x6e4cd5de0390
+Scan stop requested; wait for on_scan_stopped_cb
+on_scan_stopped_cb, scanner:0x6e4cd5de03b0
+Scan stop requested; wait for on_scan_stopped_cb
+on_scan_stopped_cb, scanner:0x6e4cd5de03d0
+Scan stop requested; wait for on_scan_stopped_cb
+on_scan_stopped_cb, scanner:0x6e4cd5de03f0
+Scan stop requested; wait for on_scan_stopped_cb
+on_scan_stopped_cb, scanner:0x6e4cd5de0410
+Scan stop requested; wait for on_scan_stopped_cb
+on_scan_stopped_cb, scanner:0x6e4cd5de0430
+Scan stop requested; wait for on_scan_stopped_cb
+on_scan_stopped_cb, scanner:0x6e4cd5de0450
+Scan stop requested; wait for on_scan_stopped_cb
+on_scan_stopped_cb, scanner:0x6e4cd5de0470
+Scan stop requested; wait for on_scan_stopped_cb
+on_scan_stopped_cb, scanner:0x6e4cd5de0490
+Scan stop requested; wait for on_scan_stopped_cb
+on_scan_stopped_cb, scanner:0x6e4cd5de04b0
+Scan stop requested; wait for on_scan_stopped_cb
+on_scan_stopped_cb, scanner:0x6e4cd5de04d0
+Scan stop requested; wait for on_scan_stopped_cb
+on_scan_stopped_cb, scanner:0x6e4cd5de04f0
+Scan stop requested; wait for on_scan_stopped_cb
+on_scan_stopped_cb, scanner:0x6e4cd5de0510
+Scan stop requested; wait for on_scan_stopped_cb
+on_scan_stopped_cb, scanner:0x6e4cd5de0530
+Scan stop requested; wait for on_scan_stopped_cb
+on_scan_stopped_cb, scanner:0x6e4cd5de0550
+Scan stop requested; wait for on_scan_stopped_cb
+on_scan_stopped_cb, scanner:0x6e4cd5de0570
+Scan stop requested; wait for on_scan_stopped_cb
+on_scan_stopped_cb, scanner:0x6e4cd5de0590
+Scan stop requested; wait for on_scan_stopped_cb
+on_scan_stopped_cb, scanner:0x6e4cd5de05b0
+Scan stop requested; wait for on_scan_stopped_cb
+on_scan_stopped_cb, scanner:0x6e4cd5de05d0
+Scan stop requested; wait for on_scan_stopped_cb
+on_scan_stopped_cb, scanner:0x6e4cd5de05f0
+Scan stop requested; wait for on_scan_stopped_cb
+on_scan_stopped_cb, scanner:0x6e4cd5de0610
+Scan stop requested; wait for on_scan_stopped_cb
+on_scan_stopped_cb, scanner:0x6e4cd5de0630
+Scan stop requested; wait for on_scan_stopped_cb
+on_scan_stopped_cb, scanner:0x6e4cd5de0650
+Scan stop requested; wait for on_scan_stopped_cb
+on_scan_stopped_cb, scanner:0x6e4cd5de0670
+Scan stop requested; wait for on_scan_stopped_cb
+on_scan_stopped_cb, scanner:0x6e4cd5de0690
+Scan stop requested; wait for on_scan_stopped_cb
+on_scan_stopped_cb, scanner:0x6e4cd5de06b0
+Scan stop requested; wait for on_scan_stopped_cb
+on_scan_stopped_cb, scanner:0x6e4cd5de06d0
+Scan stop requested; wait for on_scan_stopped_cb
+on_scan_stopped_cb, scanner:0x6e4cd5de06f0
+Scan stop requested; wait for on_scan_stopped_cb
+on_scan_stopped_cb, scanner:0x6e4cd5de0710
+Scan stop requested; wait for on_scan_stopped_cb
+on_scan_stopped_cb, scanner:0x6e4cd5de0730
+Scan stop requested; wait for on_scan_stopped_cb
+on_scan_stopped_cb, scanner:0x6e4cd5de0750
+Scan stop requested; wait for on_scan_stopped_cb
+on_scan_stopped_cb, scanner:0x6e4cd5de0770
+Scan stop requested; wait for on_scan_stopped_cb
+on_scan_stopped_cb, scanner:0x6e4cd5de0790
+Scan stop requested; wait for on_scan_stopped_cb
+on_scan_stopped_cb, scanner:0x6e4cd5de07b0
+Scan stop requested; wait for on_scan_stopped_cb
+on_scan_stopped_cb, scanner:0x6e4cd5de07d0
+Scan stop requested; wait for on_scan_stopped_cb
+on_scan_stopped_cb, scanner:0x6e4cd5de07f0
+Scan stop requested; wait for on_scan_stopped_cb
+on_scan_stopped_cb, scanner:0x6e4cd5de0810
+Scan stop requested; wait for on_scan_stopped_cb
+on_scan_stopped_cb, scanner:0x6e4cd5de0830
+Scan stop requested; wait for on_scan_stopped_cb
+on_scan_stopped_cb, scanner:0x6e4cd5de0850
+Scan stop requested; wait for on_scan_stopped_cb
+on_scan_stopped_cb, scanner:0x6e4cd5de0870
+Scan stop requested; wait for on_scan_stopped_cb
+on_scan_stopped_cb, scanner:0x6e4cd5de0890
+Scan stop requested; wait for on_scan_stopped_cb
+on_scan_stopped_cb, scanner:0x6e4cd5de08b0
+Scan stop requested; wait for on_scan_stopped_cb
+on_scan_stopped_cb, scanner:0x6e4cd5de08d0
+Scan stop requested; wait for on_scan_stopped_cb
+on_scan_stopped_cb, scanner:0x6e4cd5de08f0
+Scan stop requested; wait for on_scan_stopped_cb
+on_scan_stopped_cb, scanner:0x6e4cd5de0910
+Scan stop requested; wait for on_scan_stopped_cb
+on_scan_stopped_cb, scanner:0x6e4cd5de0930
+Scan stop requested; wait for on_scan_stopped_cb
+on_scan_stopped_cb, scanner:0x6e4cd5de0950
+Scan stop requested; wait for on_scan_stopped_cb
+on_scan_stopped_cb, scanner:0x6e4cd5de0970
+Scan stop requested; wait for on_scan_stopped_cb
+on_scan_stopped_cb, scanner:0x6e4cd5de0990
+Scan stop requested; wait for on_scan_stopped_cb
+on_scan_stopped_cb, scanner:0x6e4cd5de09b0
+Scan stop requested; wait for on_scan_stopped_cb
+on_scan_stopped_cb, scanner:0x6e4cd5de09d0
+Scan stop requested; wait for on_scan_stopped_cb
+on_scan_stopped_cb, scanner:0x6e4cd5de09f0
+Scan stop requested; wait for on_scan_stopped_cb
+on_scan_stopped_cb, scanner:0x6e4cd5de0a10
+Scan stop requested; wait for on_scan_stopped_cb
+on_scan_stopped_cb, scanner:0x6e4cd5de0a30
+Scan stop requested; wait for on_scan_stopped_cb
+on_scan_stopped_cb, scanner:0x6e4cd5de0a50
+Scan stop requested; wait for on_scan_stopped_cb
+on_scan_stopped_cb, scanner:0x6e4cd5de0a70
+Scan stop requested; wait for on_scan_stopped_cb
+on_scan_stopped_cb, scanner:0x6e4cd5de0a90
+Scan stop requested; wait for on_scan_stopped_cb
+on_scan_stopped_cb, scanner:0x6e4cd5de0ab0
+Scan stop requested; wait for on_scan_stopped_cb
+on_scan_stopped_cb, scanner:0x6e4cd5de0ad0
+Scan stop requested; wait for on_scan_stopped_cb
+on_scan_stopped_cb, scanner:0x6e4cd5de0af0
+Scan stop requested; wait for on_scan_stopped_cb
+on_scan_stopped_cb, scanner:0x6e4cd5de0b10
+Scan stop requested; wait for on_scan_stopped_cb
+on_scan_stopped_cb, scanner:0x6e4cd5de0b30
+Scan stop requested; wait for on_scan_stopped_cb
+on_scan_stopped_cb, scanner:0x6e4cd5de0b50
+Scan stop requested; wait for on_scan_stopped_cb
+on_scan_stopped_cb, scanner:0x6e4cd5de0b70
+Scan stop requested; wait for on_scan_stopped_cb
+on_scan_stopped_cb, scanner:0x6e4cd5de0b90
+Scan stop requested; wait for on_scan_stopped_cb
+on_scan_stopped_cb, scanner:0x6e4cd5de0bb0
+Scan stop requested; wait for on_scan_stopped_cb
+on_scan_stopped_cb, scanner:0x6e4cd5de0bd0
+Scan stop requested; wait for on_scan_stopped_cb
+on_scan_stopped_cb, scanner:0x6e4cd5de0bf0
+Scan stop requested; wait for on_scan_stopped_cb
+on_scan_stopped_cb, scanner:0x6e4cd5de0c10
+Scan stop requested; wait for on_scan_stopped_cb
+on_scan_stopped_cb, scanner:0x6e4cd5de0c30
+Scan stop requested; wait for on_scan_stopped_cb
+on_scan_stopped_cb, scanner:0x6e4cd5de0c50
+Scan stop requested; wait for on_scan_stopped_cb
+on_scan_stopped_cb, scanner:0x6e4cd5de0c70
+Scan stop requested; wait for on_scan_stopped_cb
+on_scan_stopped_cb, scanner:0x6e4cd5de0c90
+Scan stop requested; wait for on_scan_stopped_cb
+on_scan_stopped_cb, scanner:0x6e4cd5de0cb0
+Scan state=idle
+scanner ownership/start-failure/duplicate-stop/timeout/100-cycle tests: PASS
+Context:(nil), Adapter state changed: 2
+Adapter already enabled: state=2
+Enable blocked: transition pending, state=1
+enable API status=1; completion is the state callback
+enable API status=0; completion is the state callback
+Adapter already disabled
+disable API status=1; wait for OFF(0)
+disable API status=0; wait for OFF(0)
+Context:(nil), Adapter state changed: 6
+Context:(nil), Adapter state changed: 0
+Context:(nil), Adapter state changed: 2
+zblue disable failed (err -5); reboot before retry
+BLE-only init/exit/reentry/API errors/state machine/SAL completion tests: PASS

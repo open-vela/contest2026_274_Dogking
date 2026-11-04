@@ -1,0 +1,4 @@
+PTY setup: both providers, default/custom model, hidden key and encrypted JSON passed
+PTY voice setup: hidden long ASR token, encrypted token/TTS key, atomic save preserves LLM config
+PTY cloud providers: Xfyun/Tencent/Edge hidden AES-GCM credentials, independent persistent selection; Edge ASR rejected without modifying config
+Ctrl+C byte/signal and overlong-key rejection restore terminal state

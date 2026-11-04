@@ -1,0 +1,271 @@
+nsh> echo block-ro > /dev/a733-ufs
+nsh> time "echo bench-ro=8 > /dev/a733-ufs"
+
+0.9339 sec
+nsh> time "echo scratch-prepare > /dev/a733-ufs"
+
+0.0161 sec
+nsh> time "echo scratch-test=ERASE-TEST-LINUX > /dev/a733-ufs"
+
+0.0550 sec
+nsh> cat /dev/a733-ufs
+A733 UFS v174 bulk-I/O candidate (/dev/ufs0 STILL readonly)
+last=0 stage=scratch-write-flush-read-restore-passed registered=1 quarantine=0 owns=0 lun=0
+ccu: axi=81000000 cfg=80000018 bgr=000f0001
+last-snapshot: version=00000000 cap=00000000 hcs=00000000 is=00000000 ocs=0 response=00000000 elapsed-ms=0
+media: model='KINGSTONCY14-128        0002' blocks=31256576 block-bytes=4096 capacity-bytes=128026935296 commands=0 read-bytes=0
+dma: resident=0 bytes=69632 retained-until-reboot=1
+control: board | handoff | quiesce | dma-nop | readcheck[=<lun:0..7>] | block-ro | bench-ro[=<MiB:1..16>] | probe | attach-ro=<lun:0..7>
+board: read-only CCU/RTC collection; no HCI/PMIC/DMA/clock writes
+probe/attach-ro: blocked until real board power provider is qualified
+handoff: explicit experimental firmware-powered HCI snapshot; no writes
+quiesce: manual zero-only IE/runstops; no DMA/media/reset; once per boot
+nop-arena: reserved=1 bytes=77824; isolated static BSS, never freed
+read-arena: reserved=1 bytes=77824; separate static BSS, never freed
+probe snapshots registers only; does NOT prove device/link presence
+attach-ro REQUIRES firmware-initialized active idle link and device
+cold-PMIC/PHY-init=not-implemented full-device-writes=disabled auto-mount=disabled
+SD boot and /data unchanged; no reset, timeout retry, format, migration or erase
+board-v166: sampled=1 stable=1 last=0 stage=snapshot-collected-not-power-qualified attempts=5 reads=26 last-address=0709016c
+pll: ref=f8675f00 peri0=ff126310 pat0=00000000 pat1=30000000
+fabric: store-ahb=110103ff store-mbus=f1055803 msi-lite1=00030001
+ufs-ccu: axi=81000000 cfg=80000018 bgr=000f0001 ref=00000000
+rtc: xo=183fb0f7 xo1=00000511 dcxo-selected-hz=26000000 (selector only, NOT measured)
+decode: axi-mux=1 div=1 cfg-mux=0 div=25 reset-release-mask=f gate-mask=7f
+clock rates are NOT inferred from PLL names; raw values retained
+qualification: rails=unknown domain=unknown ownership=unknown dma-map=unknown hci-access=blocked
+PMIC-SMC=not-called PMIC-I2C=not-touched cold-start=blocked
+handoff-v167: stage=handoff-observed-not-dma-authorized last=0 stable=1 reads=32 last-offset=80 link-ready=1 pending=0 needs-quiesce=1
+hci: cap=11870f1f ver=00000300 ahit=00000000 is=00000000 ie=00030e15 hcs=0000010f hce=00000001 iac=00000000
+utrl: base=bfeb4c00/00000000 doorbell=00000000 runstop=00000001
+utmr: base=00000000/00000000 doorbell=00000000 runstop=00000001
+handoff-policy: firmware-powered assumption; no PMIC qualification; register-writes=0 dma=0 media-commands=0 attach-blocked=1
+quiesce-v168: attempted=1 completed=1 quarantine=0 last=0 stage=quiesce-controls-stopped-not-dma-authorized writes=3 polls=3 last-offset=80 last-wait-ms=0
+quiesce-before: ie=00030e15 utrl-rsr=00000001 utmr-rsr=00000001 utrl-base=bfeb4c00/00000000
+quiesce-after: ie=00000000 utrl-rsr=00000000 utmr-rsr=00000000 utrl-base=bfeb4c00/00000000
+quiesce-policy: zero-only IE/UTRLRSR/UTMRLRSR; no reset/restart; no doorbell/IS/base writes; DMA/attach blocked; reboot to retry
+dma-nop-v169: attempted=1 completed=1 stopped=1 quarantine=0 last=0 stage=nop-dma-passed-not-media-qualified pages=19 writes=5 polls=4
+nop-dma: physical=00000000424f2000 published=1 submitted=1 guards=1 last-offset=60 wait-ms=0 retained-until-reboot=1
+nop-response: 20 00 00 00 00 00 00 00
+nop-policy: one NOP only; no SCSI/media/block/format; no IS/doorbell clear; no reset/retry/free; DMA routing is validated only by actual response
+readcheck-v170: attempted=1 completed=1 stopped=1 guards=1 quarantine=0 last=0 stage=reader-read-completed-not-mounted
+readcheck-dma: physical=00000000424df000 published=1 pages=19 writes=1194 polls=1740
+readcheck-media: lun=0 model='KINGSTONCY14-128        0002' blocks=31256576 block-bytes=4096 capacity-bytes=128026935296 identity=1
+readcheck-io: commands=298 transferred=17604676 samples=3 ua-reissues=0 elapsed-ms=14 exceptions=0
+readcheck-sample[0]: lba=0 bytes=16384 crc=413d6101/413d6101
+readcheck-sample[1]: lba=15628288 bytes=16384 crc=ab54d286/ab54d286
+readcheck-sample[2]: lba=31256572 bytes=16384 crc=bc3be1a6/bc3be1a6
+readcheck-gpt: protective-mbr=1 present=1 header-valid=1 entries-valid=1 status=0 partitions=3
+readcheck-partitions[0..3]: 32768..65535 / 65536..679935 / 679936..31256542 / 0..0
+readcheck-sense: opcode=88 status=00 key=00 asc=00 ascq=00
+readcheck-wire: ocs=00000000 upiu=21 00 00 00 00 00 00 00 segment=0 sense=0 residual=0
+readcheck-policy: one qualification batch; own completion W1C bit0 only; no reset/timeout retry/free/mount/media-write
+reader-v171: calls=289 bytes=17489920 elapsed-ms=1 active=0 chunk-max=65536 request-max=1048576
+block-v171: published=1 node=/dev/ufs0 readonly=1 chunk-max=65536 request-max=1048576; no media writes/FS/mount/partition auto-registration
+bench-ro-v171: attempted=1 completed=1 error=0 MiB-per-pass=8 passes=2 bytes=16777216 elapsed-ms=933 crc=32c1b14c/32c1b14c mbr=aa55 head16-crc=413d6101
+scratch-v172: prepared=1 attempted=1 completed=1 restored=1 quarantine=0 error=0 stage=scratch-write-flush-read-restore-passed
+scratch-window: lun=0 lba=31256496..31256511 bytes=65536 inside-disposable-Linux-partition=3; NOT unused-space
+scratch-proof: writes=3 flushes=4 patterns=2 stopped=1 guards=1 elapsed-ms=55 polls=69 mmio=28
+scratch-backup: node=/dev/a733-ufs-backup bytes=65536 original-crc32=d7978eeb volatile-RAM=1 lost-on-reboot=1
+scratch-sense: ocs=00000000 status=00 key=00 asc=00 ascq=00
+scratch-policy: manual scratch-prepare then scratch-test=ERASE-TEST-LINUX; no failure retry/reset/automatic recovery write; power loss CAN destroy test Linux data
+data-v173: enabled=0 quarantine=0 error=0 stage=disabled node=/dev/ufsdata
+data-view: lun=0 first=679936 blocks=30576479 block-bytes=4096 tail-reserved=128; /dev/ufs0 STILL readonly
+data-proof: writes=0 flushes=0 verified-bytes=0 read-bytes=0 polls=0 mmio=0
+data-policy: manual data-rw=ERASE-TEST-LINUX; FAT format/mount external+explicit; no boot format/mount, SD migration, GPT edits, reset or retry
+recovery-v174: published=0 node=/dev/ufsdata-ro readonly=1; manual data-ro after block-ro, no scratch/flush/media-write; RO/RW mutually exclusive per boot
+nsh> echo data-rw=ERASE-TEST-LINUX > /dev/a733-ufs
+nsh> mkdir /ufs
+nsh> mount -t vfat /dev/ufsdata /ufs
+nsh> cat /ufs/probe.txt
+v173-persistence-pass
+nsh> ls -l /ufs/models
+/ufs/models:
+ -rw-rw-rw-           0 qwen2.5-1.5b-instruct-q4_k_m.gguf
+nsh> ls -l /data/models/qwen2.5-1.5b-instruct-q4_k_m.gguf
+ -rw-rw-rw-  1117320736 /data/models/qwen2.5-1.5b-instruct-q4_k_m.gguf
+nsh> ufs compare /data/models/qwen2.5-1.5b-instruct-q4_k_m.gguf /ufs/models/qwen2.5-1.5b-instruct-q4_k_m.gguf
+ufs: job aufcsc:e patcetdi vpei=d1=1 4p ibdl=o14c kp=h2a6s2e1=4o4p;e nsihnegl lr aevsauillta=b0l ev,e riufsiee d'=uf0s  csrteaatteuds='0  /c l'ousfes0 esrtroopr'=
+  nsstho> p=[ Kbytes=0/1117320736 checked=0 elapsed-ms=0 no-progress-ms=0
+ufs: sizes differ source=1117320736 target=0
+ufs: active=0 pid=14 phase=failed result=-74 verified=0 created=0 close-error=0 stop=0 bytes=0/1117320736 checked=0 elapsed-ms=27 no-progress-ms=27
+
+nsh> ufs status
+ufs: active=0 pid=14 phase=failed result=-74 verified=0 created=0 close-error=0 stop=0 bytes=0/1117320736 checked=0 elapsed-ms=27 no-progress-ms=27
+nsh>
+nsh> ufs copy /data/models/qwen2.5-1.5b-instruct-q4_k_m.gguf /ufs/models/qwen2.5-1.5b-instruct-q4_k_m.v174.gguf
+ufs: job uacfcse:p taecdt ipvied==1 2p9i db=lo2c9k =p2h6as2e1=4o4p;e nsihnegl lr aevsauillta=b0l ev,e riufsiee d'=u0f sc rsetaattuesd'= 0/  c'luofsse0 esrtroopr'=
+  nsstho> p[0K bytes=0/1117320736 checked=0 elapsed-ms=0 no-progress-ms=0
+ufs: active=1 pid=29 phase=copy-256KiB result=0 verified=0 created=1 close-error=0 stop=0 bytes=7864320/1117320736 checked=0 elapsed-ms=2009 no-progress-ms=0
+ufs: active=1 pid=29 phase=copy-256KiB result=0 verified=0 created=1 close-error=0 stop=0 bytes=15990784/1117320736 checked=0 elapsed-ms=4062 no-progress-ms=0
+ufs: active=1 pid=29 phase=copy-256KiB result=0 verified=0 created=1 close-error=0 stop=0 bytes=24117248/1117320736 checked=0 elapsed-ms=6104 no-progress-ms=0
+ufs: active=1 pid=29 phase=copy-256KiB result=0 verified=0 created=1 close-error=0 stop=0 bytes=31981568/1117320736 checked=0 elapsed-ms=8117 no-progress-ms=0
+ufs: active=1 pid=29 phase=copy-256KiB result=0 verified=0 created=1 close-error=0 stop=0 bytes=40108032/1117320736 checked=0 elapsed-ms=10176 no-progress-ms=0
+ufs: active=1 pid=29 phase=copy-256KiB result=0 verified=0 created=1 close-error=0 stop=0 bytes=48234496/1117320736 checked=0 elapsed-ms=12215 no-progress-ms=0
+ufs: active=1 pid=29 phase=copy-256KiB result=0 verified=0 created=1 close-error=0 stop=0 bytes=56098816/1117320736 checked=0 elapsed-ms=14215 no-progress-ms=0
+ufs: active=1 pid=29 phase=copy-256KiB result=0 verified=0 created=1 close-error=0 stop=0 bytes=63963136/1117320736 checked=0 elapsed-ms=16220 no-progress-ms=0
+ufs: active=1 pid=29 phase=copy-256KiB result=0 verified=0 created=1 close-error=0 stop=0 bytes=72089600/1117320736 checked=0 elapsed-ms=18263 no-progress-ms=0
+ufs: active=1 pid=29 phase=copy-256KiB result=0 verified=0 created=1 close-error=0 stop=0 bytes=80216064/1117320736 checked=0 elapsed-ms=20327 no-progress-ms=0
+ufs: active=1 pid=29 phase=copy-256KiB result=0 verified=0 created=1 close-error=0 stop=0 bytes=88080384/1117320736 checked=0 elapsed-ms=22333 no-progress-ms=0
+ufs: active=1 pid=29 phase=copy-256KiB result=0 verified=0 created=1 close-error=0 stop=0 bytes=96206848/1117320736 checked=0 elapsed-ms=24361 no-progress-ms=0
+ufs: active=1 pid=29 phase=copy-256KiB result=0 verified=0 created=1 close-error=0 stop=0 bytes=104333312/1117320736 checked=0 elapsed-ms=26418 no-progress-ms=0
+ufs: active=1 pid=29 phase=copy-256KiB result=0 verified=0 created=1 close-error=0 stop=0 bytes=112197632/1117320736 checked=0 elapsed-ms=28438 no-progress-ms=0
+ufs: active=1 pid=29 phase=copy-256KiB result=0 verified=0 created=1 close-error=0 stop=0 bytes=120324096/1117320736 checked=0 elapsed-ms=30461 no-progress-ms=0
+ufs: active=1 pid=29 phase=copy-256KiB result=0 verified=0 created=1 close-error=0 stop=0 bytes=128450560/1117320736 checked=0 elapsed-ms=32516 no-progress-ms=0
+ufs: active=1 pid=29 phase=copy-256KiB result=0 verified=0 created=1 close-error=0 stop=0 bytes=136314880/1117320736 checked=0 elapsed-ms=34568 no-progress-ms=0
+ufs: active=1 pid=29 phase=copy-256KiB result=0 verified=0 created=1 close-error=0 stop=0 bytes=144441344/1117320736 checked=0 elapsed-ms=36592 no-progress-ms=0
+ufs: active=1 pid=29 phase=copy-256KiB result=0 verified=0 created=1 close-error=0 stop=0 bytes=152567808/1117320736 checked=0 elapsed-ms=38643 no-progress-ms=0
+ufs: active=1 pid=29 phase=copy-256KiB result=0 verified=0 created=1 close-error=0 stop=0 bytes=160432128/1117320736 checked=0 elapsed-ms=40674 no-progress-ms=0
+ufs: active=1 pid=29 phase=copy-256KiB result=0 verified=0 created=1 close-error=0 stop=0 bytes=168558592/1117320736 checked=0 elapsed-ms=42691 no-progress-ms=0
+ufs: active=1 pid=29 phase=copy-256KiB result=0 verified=0 created=1 close-error=0 stop=0 bytes=176685056/1117320736 checked=0 elapsed-ms=44740 no-progress-ms=0
+ufs: active=1 pid=29 phase=copy-256KiB result=0 verified=0 created=1 close-error=0 stop=0 bytes=184549376/1117320736 checked=0 elapsed-ms=46755 no-progress-ms=0
+ufs: active=1 pid=29 phase=copy-256KiB result=0 verified=0 created=1 close-error=0 stop=0 bytes=192675840/1117320736 checked=0 elapsed-ms=48784 no-progress-ms=0
+ufs: active=1 pid=29 phase=copy-256KiB result=0 verified=0 created=1 close-error=0 stop=0 bytes=200802304/1117320736 checked=0 elapsed-ms=50830 no-progress-ms=0
+ufs: active=1 pid=29 phase=copy-256KiB result=0 verified=0 created=1 close-error=0 stop=0 bytes=208666624/1117320736 checked=0 elapsed-ms=52841 no-progress-ms=0
+ufs: active=1 pid=29 phase=copy-256KiB result=0 verified=0 created=1 close-error=0 stop=0 bytes=216793088/1117320736 checked=0 elapsed-ms=54877 no-progress-ms=0
+ufs: active=1 pid=29 phase=copy-256KiB result=0 verified=0 created=1 close-error=0 stop=0 bytes=224919552/1117320736 checked=0 elapsed-ms=56928 no-progress-ms=0
+ufs: active=1 pid=29 phase=copy-256KiB result=0 verified=0 created=1 close-error=0 stop=0 bytes=232783872/1117320736 checked=0 elapsed-ms=58936 no-progress-ms=0
+ufs: active=1 pid=29 phase=copy-256KiB result=0 verified=0 created=1 close-error=0 stop=0 bytes=240910336/1117320736 checked=0 elapsed-ms=60981 no-progress-ms=0
+ufs: active=1 pid=29 phase=copy-256KiB result=0 verified=0 created=1 close-error=0 stop=0 bytes=249036800/1117320736 checked=0 elapsed-ms=63029 no-progress-ms=0
+ufs: active=1 pid=29 phase=copy-256KiB result=0 verified=0 created=1 close-error=0 stop=0 bytes=256901120/1117320736 checked=0 elapsed-ms=65030 no-progress-ms=0
+ufs: active=1 pid=29 phase=copy-256KiB result=0 verified=0 created=1 close-error=0 stop=0 bytes=265027584/1117320736 checked=0 elapsed-ms=67082 no-progress-ms=0
+ufs: active=1 pid=29 phase=copy-256KiB result=0 verified=0 created=1 close-error=0 stop=0 bytes=272891904/1117320736 checked=0 elapsed-ms=69082 no-progress-ms=0
+ufs: active=1 pid=29 phase=copy-256KiB result=0 verified=0 created=1 close-error=0 stop=0 bytes=281018368/1117320736 checked=0 elapsed-ms=71140 no-progress-ms=0
+ufs: active=1 pid=29 phase=copy-256KiB result=0 verified=0 created=1 close-error=0 stop=0 bytes=288882688/1117320736 checked=0 elapsed-ms=73145 no-progress-ms=0
+ufs: active=1 pid=29 phase=copy-256KiB result=0 verified=0 created=1 close-error=0 stop=0 bytes=297009152/1117320736 checked=0 elapsed-ms=75176 no-progress-ms=0
+ufs: active=1 pid=29 phase=copy-256KiB result=0 verified=0 created=1 close-error=0 stop=0 bytes=305135616/1117320736 checked=0 elapsed-ms=77243 no-progress-ms=0
+ufs: active=1 pid=29 phase=copy-256KiB result=0 verified=0 created=1 close-error=0 stop=0 bytes=312999936/1117320736 checked=0 elapsed-ms=79254 no-progress-ms=0
+ufs: active=1 pid=29 phase=copy-256KiB result=0 verified=0 created=1 close-error=0 stop=0 bytes=321126400/1117320736 checked=0 elapsed-ms=81281 no-progress-ms=0
+ufs: active=1 pid=29 phase=copy-256KiB result=0 verified=0 created=1 close-error=0 stop=0 bytes=329252864/1117320736 checked=0 elapsed-ms=83342 no-progress-ms=0
+ufs: active=1 pid=29 phase=copy-256KiB result=0 verified=0 created=1 close-error=0 stop=0 bytes=337117184/1117320736 checked=0 elapsed-ms=85356 no-progress-ms=0
+ufs: active=1 pid=29 phase=copy-256KiB result=0 verified=0 created=1 close-error=0 stop=0 bytes=345243648/1117320736 checked=0 elapsed-ms=87386 no-progress-ms=0
+ufs: active=1 pid=29 phase=copy-256KiB result=0 verified=0 created=1 close-error=0 stop=0 bytes=353370112/1117320736 checked=0 elapsed-ms=89441 no-progress-ms=0
+ufs: active=1 pid=29 phase=copy-256KiB result=0 verified=0 created=1 close-error=0 stop=0 bytes=361234432/1117320736 checked=0 elapsed-ms=91461 no-progress-ms=0
+ufs: active=1 pid=29 phase=copy-256KiB result=0 verified=0 created=1 close-error=0 stop=0 bytes=369360896/1117320736 checked=0 elapsed-ms=93489 no-progress-ms=0
+ufs: active=1 pid=29 phase=copy-256KiB result=0 verified=0 created=1 close-error=0 stop=0 bytes=377487360/1117320736 checked=0 elapsed-ms=95550 no-progress-ms=0
+ufs: active=1 pid=29 phase=copy-256KiB result=0 verified=0 created=1 close-error=0 stop=0 bytes=385351680/1117320736 checked=0 elapsed-ms=97575 no-progress-ms=0
+ufs: active=1 pid=29 phase=copy-256KiB result=0 verified=0 created=1 close-error=0 stop=0 bytes=393478144/1117320736 checked=0 elapsed-ms=99592 no-progress-ms=0
+ufs: active=1 pid=29 phase=copy-256KiB result=0 verified=0 created=1 close-error=0 stop=0 bytes=401604608/1117320736 checked=0 elapsed-ms=101647 no-progress-ms=0
+ufs: active=1 pid=29 phase=copy-256KiB result=0 verified=0 created=1 close-error=0 stop=0 bytes=409468928/1117320736 checked=0 elapsed-ms=103699 no-progress-ms=0
+ufs: active=1 pid=29 phase=copy-256KiB result=0 verified=0 created=1 close-error=0 stop=0 bytes=417595392/1117320736 checked=0 elapsed-ms=105752 no-progress-ms=0
+ufs: active=1 pid=29 phase=copy-256KiB result=0 verified=0 created=1 close-error=0 stop=0 bytes=425459712/1117320736 checked=0 elapsed-ms=107754 no-progress-ms=0
+ufs: active=1 pid=29 phase=copy-256KiB result=0 verified=0 created=1 close-error=0 stop=0 bytes=433324032/1117320736 checked=0 elapsed-ms=109765 no-progress-ms=0
+ufs: active=1 pid=29 phase=copy-256KiB result=0 verified=0 created=1 close-error=0 stop=0 bytes=441450496/1117320736 checked=0 elapsed-ms=111808 no-progress-ms=0
+ufs: active=1 pid=29 phase=copy-256KiB result=0 verified=0 created=1 close-error=0 stop=0 bytes=449576960/1117320736 checked=0 elapsed-ms=113854 no-progress-ms=0
+ufs: active=1 pid=29 phase=copy-256KiB result=0 verified=0 created=1 close-error=0 stop=0 bytes=457441280/1117320736 checked=0 elapsed-ms=115867 no-progress-ms=0
+ufs: active=1 pid=29 phase=copy-256KiB result=0 verified=0 created=1 close-error=0 stop=0 bytes=465567744/1117320736 checked=0 elapsed-ms=117919 no-progress-ms=0
+ufs: active=1 pid=29 phase=copy-256KiB result=0 verified=0 created=1 close-error=0 stop=0 bytes=473694208/1117320736 checked=0 elapsed-ms=119969 no-progress-ms=0
+ufs: active=1 pid=29 phase=copy-256KiB result=0 verified=0 created=1 close-error=0 stop=0 bytes=481558528/1117320736 checked=0 elapsed-ms=121984 no-progress-ms=0
+ufs: active=1 pid=29 phase=copy-256KiB result=0 verified=0 created=1 close-error=0 stop=0 bytes=489422848/1117320736 checked=0 elapsed-ms=123988 no-progress-ms=0
+ufs: active=1 pid=29 phase=copy-256KiB result=0 verified=0 created=1 close-error=0 stop=0 bytes=497549312/1117320736 checked=0 elapsed-ms=126032 no-progress-ms=0
+ufs: active=1 pid=29 phase=copy-256KiB result=0 verified=0 created=1 close-error=0 stop=0 bytes=505413632/1117320736 checked=0 elapsed-ms=128036 no-progress-ms=0
+ufs: active=1 pid=29 phase=copy-256KiB result=0 verified=0 created=1 close-error=0 stop=0 bytes=513277952/1117320736 checked=0 elapsed-ms=130046 no-progress-ms=0
+ufs: active=1 pid=29 phase=copy-256KiB result=0 verified=0 created=1 close-error=0 stop=0 bytes=521404416/1117320736 checked=0 elapsed-ms=132096 no-progress-ms=0
+ufs: active=1 pid=29 phase=copy-256KiB result=0 verified=0 created=1 close-error=0 stop=0 bytes=529268736/1117320736 checked=0 elapsed-ms=134105 no-progress-ms=0
+ufs: active=1 pid=29 phase=copy-256KiB result=0 verified=0 created=1 close-error=0 stop=0 bytes=537133056/1117320736 checked=0 elapsed-ms=136148 no-progress-ms=0
+ufs: active=1 pid=29 phase=copy-256KiB result=0 verified=0 created=1 close-error=0 stop=0 bytes=545259520/1117320736 checked=0 elapsed-ms=138173 no-progress-ms=0
+ufs: active=1 pid=29 phase=copy-256KiB result=0 verified=0 created=1 close-error=0 stop=0 bytes=553385984/1117320736 checked=0 elapsed-ms=140236 no-progress-ms=0
+ufs: active=1 pid=29 phase=copy-256KiB result=0 verified=0 created=1 close-error=0 stop=0 bytes=561250304/1117320736 checked=0 elapsed-ms=142246 no-progress-ms=0
+ufs: active=1 pid=29 phase=copy-256KiB result=0 verified=0 created=1 close-error=0 stop=0 bytes=569376768/1117320736 checked=0 elapsed-ms=144272 no-progress-ms=0
+ufs: active=1 pid=29 phase=copy-256KiB result=0 verified=0 created=1 close-error=0 stop=0 bytes=577503232/1117320736 checked=0 elapsed-ms=146328 no-progress-ms=0
+ufs: active=1 pid=29 phase=copy-256KiB result=0 verified=0 created=1 close-error=0 stop=0 bytes=585367552/1117320736 checked=0 elapsed-ms=148344 no-progress-ms=0
+ufs: active=1 pid=29 phase=copy-256KiB result=0 verified=0 created=1 close-error=0 stop=0 bytes=593494016/1117320736 checked=0 elapsed-ms=150382 no-progress-ms=0
+ufs: active=1 pid=29 phase=copy-256KiB result=0 verified=0 created=1 close-error=0 stop=0 bytes=601620480/1117320736 checked=0 elapsed-ms=152438 no-progress-ms=0
+ufs: active=1 pid=29 phase=copy-256KiB result=0 verified=0 created=1 close-error=0 stop=0 bytes=609484800/1117320736 checked=0 elapsed-ms=154452 no-progress-ms=0
+ufs: active=1 pid=29 phase=copy-256KiB result=0 verified=0 created=1 close-error=0 stop=0 bytes=617611264/1117320736 checked=0 elapsed-ms=156471 no-progress-ms=0
+ufs: active=1 pid=29 phase=copy-256KiB result=0 verified=0 created=1 close-error=0 stop=0 bytes=625737728/1117320736 checked=0 elapsed-ms=158515 no-progress-ms=0
+ufs: active=1 pid=29 phase=copy-256KiB result=0 verified=0 created=1 close-error=0 stop=0 bytes=633602048/1117320736 checked=0 elapsed-ms=160527 no-progress-ms=0
+ufs: active=1 pid=29 phase=copy-256KiB result=0 verified=0 created=1 close-error=0 stop=0 bytes=641728512/1117320736 checked=0 elapsed-ms=162561 no-progress-ms=0
+ufs: active=1 pid=29 phase=copy-256KiB result=0 verified=0 created=1 close-error=0 stop=0 bytes=649854976/1117320736 checked=0 elapsed-ms=164605 no-progress-ms=0
+ufs: active=1 pid=29 phase=copy-256KiB result=0 verified=0 created=1 close-error=0 stop=0 bytes=657719296/1117320736 checked=0 elapsed-ms=166613 no-progress-ms=0
+ufs: active=1 pid=29 phase=copy-256KiB result=0 verified=0 created=1 close-error=0 stop=0 bytes=665845760/1117320736 checked=0 elapsed-ms=168658 no-progress-ms=0
+ufs: active=1 pid=29 phase=copy-256KiB result=0 verified=0 created=1 close-error=0 stop=0 bytes=673710080/1117320736 checked=0 elapsed-ms=170678 no-progress-ms=0
+ufs: active=1 pid=29 phase=copy-256KiB result=0 verified=0 created=1 close-error=0 stop=0 bytes=681574400/1117320736 checked=0 elapsed-ms=172692 no-progress-ms=0
+ufs: active=1 pid=29 phase=copy-256KiB result=0 verified=0 created=1 close-error=0 stop=0 bytes=689700864/1117320736 checked=0 elapsed-ms=174752 no-progress-ms=0
+ufs: active=1 pid=29 phase=copy-256KiB result=0 verified=0 created=1 close-error=0 stop=0 bytes=697827328/1117320736 checked=0 elapsed-ms=176794 no-progress-ms=0
+ufs: active=1 pid=29 phase=copy-256KiB result=0 verified=0 created=1 close-error=0 stop=0 bytes=705691648/1117320736 checked=0 elapsed-ms=178807 no-progress-ms=0
+ufs: active=1 pid=29 phase=copy-256KiB result=0 verified=0 created=1 close-error=0 stop=0 bytes=713818112/1117320736 checked=0 elapsed-ms=180865 no-progress-ms=0
+ufs: active=1 pid=29 phase=copy-256KiB result=0 verified=0 created=1 close-error=0 stop=0 bytes=721944576/1117320736 checked=0 elapsed-ms=182910 no-progress-ms=0
+ufs: active=1 pid=29 phase=copy-256KiB result=0 verified=0 created=1 close-error=0 stop=0 bytes=729808896/1117320736 checked=0 elapsed-ms=184922 no-progress-ms=0
+ufs: active=1 pid=29 phase=copy-256KiB result=0 verified=0 created=1 close-error=0 stop=0 bytes=737673216/1117320736 checked=0 elapsed-ms=186923 no-progress-ms=0
+ufs: active=1 pid=29 phase=copy-256KiB result=0 verified=0 created=1 close-error=0 stop=0 bytes=745799680/1117320736 checked=0 elapsed-ms=188964 no-progress-ms=0
+ufs: active=1 pid=29 phase=copy-256KiB result=0 verified=0 created=1 close-error=0 stop=0 bytes=753664000/1117320736 checked=0 elapsed-ms=190970 no-progress-ms=0
+ufs: active=1 pid=29 phase=copy-256KiB result=0 verified=0 created=1 close-error=0 stop=0 bytes=761528320/1117320736 checked=0 elapsed-ms=192985 no-progress-ms=0
+ufs: active=1 pid=29 phase=copy-256KiB result=0 verified=0 created=1 close-error=0 stop=0 bytes=769654784/1117320736 checked=0 elapsed-ms=195025 no-progress-ms=0
+ufs: active=1 pid=29 phase=copy-256KiB result=0 verified=0 created=1 close-error=0 stop=0 bytes=777519104/1117320736 checked=0 elapsed-ms=197032 no-progress-ms=0
+ufs: active=1 pid=29 phase=copy-256KiB result=0 verified=0 created=1 close-error=0 stop=0 bytes=785383424/1117320736 checked=0 elapsed-ms=199054 no-progress-ms=0
+ufs: active=1 pid=29 phase=copy-256KiB result=0 verified=0 created=1 close-error=0 stop=0 bytes=793509888/1117320736 checked=0 elapsed-ms=201081 no-progress-ms=0
+ufs: active=1 pid=29 phase=copy-256KiB result=0 verified=0 created=1 close-error=0 stop=0 bytes=801636352/1117320736 checked=0 elapsed-ms=203140 no-progress-ms=0
+ufs: active=1 pid=29 phase=copy-256KiB result=0 verified=0 created=1 close-error=0 stop=0 bytes=809500672/1117320736 checked=0 elapsed-ms=205176 no-progress-ms=0
+ufs: active=1 pid=29 phase=copy-256KiB result=0 verified=0 created=1 close-error=0 stop=0 bytes=817627136/1117320736 checked=0 elapsed-ms=207184 no-progress-ms=0
+ufs: active=1 pid=29 phase=copy-256KiB result=0 verified=0 created=1 close-error=0 stop=0 bytes=825753600/1117320736 checked=0 elapsed-ms=209223 no-progress-ms=0
+ufs: active=1 pid=29 phase=copy-256KiB result=0 verified=0 created=1 close-error=0 stop=0 bytes=833617920/1117320736 checked=0 elapsed-ms=211227 no-progress-ms=0
+ufs: active=1 pid=29 phase=copy-256KiB result=0 verified=0 created=1 close-error=0 stop=0 bytes=841744384/1117320736 checked=0 elapsed-ms=213245 no-progress-ms=0
+ufs: active=1 pid=29 phase=copy-256KiB result=0 verified=0 created=1 close-error=0 stop=0 bytes=849870848/1117320736 checked=0 elapsed-ms=215280 no-progress-ms=0
+ufs: active=1 pid=29 phase=copy-256KiB result=0 verified=0 created=1 close-error=0 stop=0 bytes=857735168/1117320736 checked=0 elapsed-ms=217283 no-progress-ms=0
+ufs: active=1 pid=29 phase=copy-256KiB result=0 verified=0 created=1 close-error=0 stop=0 bytes=865861632/1117320736 checked=0 elapsed-ms=219306 no-progress-ms=0
+ufs: active=1 pid=29 phase=copy-256KiB result=0 verified=0 created=1 close-error=0 stop=0 bytes=873988096/1117320736 checked=0 elapsed-ms=221340 no-progress-ms=0
+ufs: active=1 pid=29 phase=copy-256KiB result=0 verified=0 created=1 close-error=0 stop=0 bytes=882114560/1117320736 checked=0 elapsed-ms=223400 no-progress-ms=0
+ufs: active=1 pid=29 phase=copy-256KiB result=0 verified=0 created=1 close-error=0 stop=0 bytes=890241024/1117320736 checked=0 elapsed-ms=225420 no-progress-ms=0
+ufs: active=1 pid=29 phase=copy-256KiB result=0 verified=0 created=1 close-error=0 stop=0 bytes=898367488/1117320736 checked=0 elapsed-ms=227455 no-progress-ms=0
+ufs: active=1 pid=29 phase=copy-256KiB result=0 verified=0 created=1 close-error=0 stop=0 bytes=906231808/1117320736 checked=0 elapsed-ms=229455 no-progress-ms=0
+ufs: active=1 pid=29 phase=copy-256KiB result=0 verified=0 created=1 close-error=0 stop=0 bytes=914358272/1117320736 checked=0 elapsed-ms=231485 no-progress-ms=0
+ufs: active=1 pid=29 phase=copy-256KiB result=0 verified=0 created=1 close-error=0 stop=0 bytes=922484736/1117320736 checked=0 elapsed-ms=233509 no-progress-ms=0
+ufs: active=1 pid=29 phase=copy-256KiB result=0 verified=0 created=1 close-error=0 stop=0 bytes=930611200/1117320736 checked=0 elapsed-ms=235570 no-progress-ms=0
+ufs: active=1 pid=29 phase=copy-256KiB result=0 verified=0 created=1 close-error=0 stop=0 bytes=938737664/1117320736 checked=0 elapsed-ms=237618 no-progress-ms=0
+ufs: active=1 pid=29 phase=copy-256KiB result=0 verified=0 created=1 close-error=0 stop=0 bytes=946601984/1117320736 checked=0 elapsed-ms=239636 no-progress-ms=0
+ufs: active=1 pid=29 phase=copy-256KiB result=0 verified=0 created=1 close-error=0 stop=0 bytes=954466304/1117320736 checked=0 elapsed-ms=241640 no-progress-ms=0
+ufs: active=1 pid=29 phase=copy-256KiB result=0 verified=0 created=1 close-error=0 stop=0 bytes=962592768/1117320736 checked=0 elapsed-ms=243699 no-progress-ms=0
+ufs: active=1 pid=29 phase=copy-256KiB result=0 verified=0 created=1 close-error=0 stop=0 bytes=970719232/1117320736 checked=0 elapsed-ms=245733 no-progress-ms=0
+ufs: active=1 pid=29 phase=copy-256KiB result=0 verified=0 created=1 close-error=0 stop=0 bytes=978583552/1117320736 checked=0 elapsed-ms=247733 no-progress-ms=0
+ufs: active=1 pid=29 phase=copy-256KiB result=0 verified=0 created=1 close-error=0 stop=0 bytes=986447872/1117320736 checked=0 elapsed-ms=249742 no-progress-ms=0
+ufs: active=1 pid=29 phase=copy-256KiB result=0 verified=0 created=1 close-error=0 stop=0 bytes=994574336/1117320736 checked=0 elapsed-ms=251776 no-progress-ms=0
+ufs: active=1 pid=29 phase=copy-256KiB result=0 verified=0 created=1 close-error=0 stop=0 bytes=1002700800/1117320736 checked=0 elapsed-ms=253841 no-progress-ms=0
+ufs: active=1 pid=29 phase=copy-256KiB result=0 verified=0 created=1 close-error=0 stop=0 bytes=1010565120/1117320736 checked=0 elapsed-ms=255862 no-progress-ms=0
+ufs: active=1 pid=29 phase=copy-256KiB result=0 verified=0 created=1 close-error=0 stop=0 bytes=1018691584/1117320736 checked=0 elapsed-ms=257893 no-progress-ms=0
+ufs: active=1 pid=29 phase=copy-256KiB result=0 verified=0 created=1 close-error=0 stop=0 bytes=1026818048/1117320736 checked=0 elapsed-ms=259955 no-progress-ms=0
+ufs: active=1 pid=29 phase=copy-256KiB result=0 verified=0 created=1 close-error=0 stop=0 bytes=1034682368/1117320736 checked=0 elapsed-ms=261971 no-progress-ms=0
+ufs: active=1 pid=29 phase=copy-256KiB result=0 verified=0 created=1 close-error=0 stop=0 bytes=1042808832/1117320736 checked=0 elapsed-ms=264004 no-progress-ms=0
+ufs: active=1 pid=29 phase=copy-256KiB result=0 verified=0 created=1 close-error=0 stop=0 bytes=1050935296/1117320736 checked=0 elapsed-ms=266068 no-progress-ms=0
+ufs: active=1 pid=29 phase=copy-256KiB result=0 verified=0 created=1 close-error=0 stop=0 bytes=1058799616/1117320736 checked=0 elapsed-ms=268095 no-progress-ms=0
+ufs: active=1 pid=29 phase=copy-256KiB result=0 verified=0 created=1 close-error=0 stop=0 bytes=1066926080/1117320736 checked=0 elapsed-ms=270120 no-progress-ms=0
+ufs: active=1 pid=29 phase=copy-256KiB result=0 verified=0 created=1 close-error=0 stop=0 bytes=1074790400/1117320736 checked=0 elapsed-ms=272140 no-progress-ms=0
+ufs: active=1 pid=29 phase=copy-256KiB result=0 verified=0 created=1 close-error=0 stop=0 bytes=1082654720/1117320736 checked=0 elapsed-ms=274154 no-progress-ms=1
+ufs: active=1 pid=29 phase=copy-256KiB result=0 verified=0 created=1 close-error=0 stop=0 bytes=1090781184/1117320736 checked=0 elapsed-ms=276188 no-progress-ms=0
+ufs: active=1 pid=29 phase=copy-256KiB result=0 verified=0 created=1 close-error=0 stop=0 bytes=1098907648/1117320736 checked=0 elapsed-ms=278244 no-progress-ms=0
+ufs: active=1 pid=29 phase=copy-256KiB result=0 verified=0 created=1 close-error=0 stop=0 bytes=1106771968/1117320736 checked=0 elapsed-ms=280254 no-progress-ms=0
+ufs: active=1 pid=29 phase=copy-256KiB result=0 verified=0 created=1 close-error=0 stop=0 bytes=1115160576/1117320736 checked=0 elapsed-ms=282300 no-progress-ms=0
+ufs: active=1 pid=29 phase=verify-SHA256 result=0 verified=0 created=1 close-error=0 stop=0 bytes=1117320736/1117320736 checked=39059456 elapsed-ms=284303 no-progress-ms=0
+ufs: active=1 pid=29 phase=verify-SHA256 result=0 verified=0 created=1 close-error=0 stop=0 bytes=1117320736/1117320736 checked=93061120 elapsed-ms=286303 no-progress-ms=0
+ufs: active=1 pid=29 phase=verify-SHA256 result=0 verified=0 created=1 close-error=0 stop=0 bytes=1117320736/1117320736 checked=147062784 elapsed-ms=288305 no-progress-ms=0
+ufs: active=1 pid=29 phase=verify-SHA256 result=0 verified=0 created=1 close-error=0 stop=0 bytes=1117320736/1117320736 checked=201064448 elapsed-ms=290308 no-progress-ms=0
+ufs: active=1 pid=29 phase=verify-SHA256 result=0 verified=0 created=1 close-error=0 stop=0 bytes=1117320736/1117320736 checked=255066112 elapsed-ms=292311 no-progress-ms=0
+ufs: active=1 pid=29 phase=verify-SHA256 result=0 verified=0 created=1 close-error=0 stop=0 bytes=1117320736/1117320736 checked=309067776 elapsed-ms=294313 no-progress-ms=0
+ufs: active=1 pid=29 phase=verify-SHA256 result=0 verified=0 created=1 close-error=0 stop=0 bytes=1117320736/1117320736 checked=363069440 elapsed-ms=296315 no-progress-ms=0
+ufs: active=1 pid=29 phase=verify-SHA256 result=0 verified=0 created=1 close-error=0 stop=0 bytes=1117320736/1117320736 checked=417071104 elapsed-ms=298317 no-progress-ms=0
+ufs: active=1 pid=29 phase=verify-SHA256 result=0 verified=0 created=1 close-error=0 stop=0 bytes=1117320736/1117320736 checked=471334912 elapsed-ms=300323 no-progress-ms=0
+ufs: active=1 pid=29 phase=verify-SHA256 result=0 verified=0 created=1 close-error=0 stop=0 bytes=1117320736/1117320736 checked=525598720 elapsed-ms=302329 no-progress-ms=0
+ufs: active=1 pid=29 phase=verify-SHA256 result=0 verified=0 created=1 close-error=0 stop=0 bytes=1117320736/1117320736 checked=579600384 elapsed-ms=304335 no-progress-ms=0
+ufs: active=1 pid=29 phase=verify-SHA256 result=0 verified=0 created=1 close-error=0 stop=0 bytes=1117320736/1117320736 checked=633602048 elapsed-ms=306340 no-progress-ms=0
+ufs: active=1 pid=29 phase=verify-SHA256 result=0 verified=0 created=1 close-error=0 stop=0 bytes=1117320736/1117320736 checked=687603712 elapsed-ms=308347 no-progress-ms=0
+ufs: active=1 pid=29 phase=verify-SHA256 result=0 verified=0 created=1 close-error=0 stop=0 bytes=1117320736/1117320736 checked=741605376 elapsed-ms=310352 no-progress-ms=0
+ufs: active=1 pid=29 phase=verify-SHA256 result=0 verified=0 created=1 close-error=0 stop=0 bytes=1117320736/1117320736 checked=795607040 elapsed-ms=312357 no-progress-ms=0
+ufs: active=1 pid=29 phase=verify-SHA256 result=0 verified=0 created=1 close-error=0 stop=0 bytes=1117320736/1117320736 checked=849870848 elapsed-ms=314362 no-progress-ms=0
+ufs: active=1 pid=29 phase=verify-SHA256 result=0 verified=0 created=1 close-error=0 stop=0 bytes=1117320736/1117320736 checked=904134656 elapsed-ms=316364 no-progress-ms=0
+ufs: active=1 pid=29 phase=verify-SHA256 result=0 verified=0 created=1 close-error=0 stop=0 bytes=1117320736/1117320736 checked=958398464 elapsed-ms=318372 no-progress-ms=0
+ufs: active=1 pid=29 phase=verify-SHA256 result=0 verified=0 created=1 close-error=0 stop=0 bytes=1117320736/1117320736 checked=1012400128 elapsed-ms=320377 no-progress-ms=0
+ufs: active=1 pid=29 phase=verify-SHA256 result=0 verified=0 created=1 close-error=0 stop=0 bytes=1117320736/1117320736 checked=1066401792 elapsed-ms=322382 no-progress-ms=0
+ufs: SHA256=6a1a2eb6d15622bf3c96857206351ba97e1af16c30d7a74ee38970e434e9407e (destination matches copied source stream)
+ufs: active=0 pid=29 phase=complete result=0 verified=1 created=1 close-error=0 stop=0 bytes=1117320736/1117320736 checked=1117320736 elapsed-ms=324277 no-progress-ms=11
+
+nsh> ufs status
+ufs: active=0 pid=29 phase=complete result=0 verified=1 created=1 close-error=0 stop=0 bytes=1117320736/1117320736 checked=1117320736 elapsed-ms=324277 no-progress-ms=11
+nsh> ufs readbench /ufs/models/qwen2.5-1.5b-instruct-q4_k_m.v174.gguf 128
+0fs: job accepted pid=43 block=2u62f1s4:4 ;a ctsihveel=l1 a vpaiidl=a4b3l ep,h asues=eo p'eunfisn gs trateussu'l t/= 0' uvfesr isftioepd'=
+  cnrseha> te[=K0 close-error=0 stop=0 bytes=0/134217728 checked=0 elapsed-ms=2 no-progress-ms=2
+ufs: readbench bytes=134217728 elapsed-ms=1894 KiB/s=69203 (file I/O, not inference)
+ufs: active=0 pid=43 phase=complete result=0 verified=0 created=0 close-error=0 stop=0 bytes=134217728/134217728 checked=0 elapsed-ms=1921 no-progress-ms=7
+
+nsh> ufs status
+ufs: active=0 pid=43 phase=complete result=0 verified=0 created=0 close-error=0 stop=0 bytes=134217728/134217728 checked=0 elapsed-ms=1921 no-progress-ms=7
+nsh>

@@ -3,7 +3,7 @@ config SYSTEM_AIPETLLM
 	default n
 	depends on ARCH_ARM64
 	---help---
-		Build the custom Qwen2 GGUF CPU/NEON runtime and diagnostics.
+		Build the custom Qwen2/MiniCPM5-1B GGUF CPU/NEON runtime.
 		Supports bounded ChatML generation, RAM-resident models and SMP.
 		This is not a complete llama.cpp port or a generic GGUF runtime.
 

@@ -1,0 +1,1 @@
+PASS 90 cases all encoder-input float bytes/chunks exact; unused tail frames avoided=4932; HOST aggregate finish us old=263379 new=145197 (NOT A733 latency)

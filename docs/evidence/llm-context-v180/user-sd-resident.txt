@@ -1,0 +1,263 @@
+
+o    o-
+      BBBBotoooo ooottttt  o  tt ttooCoo     CCCrC   u rrrrntuuuuinnnnttttmiieiimm mmeefee  o  ffrffooo orrrOr    S OOOOSSSSI n   IIiIInntnniiiiittzzzeiliiaaiaalllzliiiiez
+    eee
+
+
+
+--  BBoooott  ttoo  CC  rruunnttiimmee  ffoorr  OOSS  IInniittiiaalliizzee
+
+N8
+X1
+PR
+PR
+PR
+
+NuttShell (NSH)
+nsh> RI
+RX
+
+nsh> ls -l /data/models/MiniCPM5-1B-Q4_K_M.gguf
+ -rw-rw-rw-   688065920 /data/models/MiniCPM5-1B-Q4_K_M.gguf
+nsh> ufs status
+ufs: active=0 pid=0 phase=idle result=0 verified=0 created=0 close-error=0 stop=0 bytes=0/0 checked=0 elapsed-ms=0 no-progress-ms=0
+ufs-mount: active=0 attempted=0 ready=0 error=0 stage=not-started mount=/ufs source=/dev/ufsdata fallback=/data/models
+nsh> ufs autostart on
+ufs autostart on; applies next boot (running tasks unchanged).
+nsh> ufs start
+nsh> ufs status
+ufs: active=0 pid=0 phase=idle result=0 verified=0 created=0 close-error=0 stop=0 bytes=0/0 checked=0 elapsed-ms=0 no-progress-ms=0
+ufs-mount: active=0 attempted=1 ready=0 error=-18 stage=quiesce mount=/ufs source=/dev/ufsdata fallback=/data/models
+nsh> ls -l /data/models/MiniCPM5-1B-Q4_K_M.gguf
+ -rw-rw-rw-   688065920 /data/models/MiniCPM5-1B-Q4_K_M.gguf
+nsh>
+nsh> aipet audio output off
+audio: saved; applies next operation and survives reboot.
+aipet audio: output result=0
+nsh> aipet local on
+local-llm: on
+nsh> aipet local unload
+llm-cache: unloaded
+nsh> aipet local model /data/models/MiniCPM5-1B-Q4_K_M.gguf
+local-llm: model saved; unload before switching a resident model
+nsh> aipet local cores fc
+nsh> aipet local tokens 24
+nsh> free
+      total       used       free    maxused    maxfree  nused  nfree name
+ 4238680064      55424 4238624640      90240 4143972320     99      5 Umem
+nsh> time "aipet local preload"
+local-llm: warming selected model; UFS preferred in auto mode, SD fallback retained
+aipet-local: storage=custom model='/data/models/MiniCPM5-1B-Q4_K_M.gguf'
+chatml tokens=38 start=130072 stop=130073 single-turn=1
+forwardfast: cores-mask=fc workers=6; A76:A55 row weight=3:1; system scheduling unchanged
+forwardfast: loading 688065920 bytes into RAM
+forwardfast: load=230.4211 sec; model reads now RAM-only
+forward1 token=0 layers=24 hidden=1536 heads=16/2
+prefill-cache: reused=0 fresh=38 (prompt KV only)
+forward2 position=0 token=0
+forward2 position=1 token=130072
+forward2 position=2 token=17261
+forward2 position=3 token=220
+forward2 position=4 token=31817
+forward2 position=5 token=14248
+forward2 position=6 token=27511
+forward2 position=7 token=1303
+forward2 position=8 token=8139
+forward2 position=9 token=49348
+forward2 position=10 token=5591
+forward2 position=11 token=7323
+forward2 position=12 token=44338
+forward2 position=13 token=15343
+forward2 position=14 token=2487
+forward2 position=15 token=7132
+forward2 position=16 token=3742
+forward2 position=17 token=21065
+forward2 position=18 token=7798
+forward2 position=19 token=396
+forward2 position=20 token=130073
+forward2 position=21 token=220
+forward2 position=22 token=130072
+forward2 position=23 token=8448
+forward2 position=24 token=220
+forward2 position=25 token=1742
+forward2 position=26 token=15343
+forward2 position=27 token=1039
+forward2 position=28 token=1309
+forward2 position=29 token=130073
+forward2 position=30 token=220
+forward2 position=31 token=130072
+forward2 position=32 token=130071
+forward2 position=33 token=220
+forward2 position=34 token=8
+forward2 position=35 token=130063
+forward2 position=36 token=9
+forward2 position=37 token=130063
+
+assistant>
+causal prefill/generation returned; prompt=38 generated=1; prompt-prefix KV retained on success
+forwardfast: compute=6.8687 sec; causal forward checkpoint; model resident; bounded generation finished
+forwardfast: cache retained; use aipetllm unload to free
+aipet-local: prompt=38 generated=1 first=6.706s rest=0.000s cores=fc
+local-llm: preload ready (0)
+
+246.8134 sec
+nsh> aipetllm cacheinfo
+llm-cache: state=resident bytes=688065920 path='/data/models/MiniCPM5-1B-Q4_K_M.gguf'
+llm-pool: pid=61 mask=fc workers=6 created=6 matrices=6385
+llm-prefix: cached=37 layers=24 width=256 bytes=1818624
+llm-directory: cached=1 tensors=219
+nsh> free
+      total       used       free    maxused    maxfree  nused  nfree name
+ 4238680064  714888704 3523791360  717323488 3455906384 272533     10 Umem
+nsh> aipet local ask "你好，请简单介绍自己"
+aipet-local: storage=custom model='/data/models/MiniCPM5-1B-Q4_K_M.gguf'
+chatml tokens=39 start=130072 stop=130073 single-turn=1
+forwardfast: cores-mask=fc workers=6; A76:A55 row weight=3:1; system scheduling unchanged
+forwardfast: cache-hit; load=0 sec; no model SD reads
+forwardfast: tensor-directory cache-hit; no GGUF metadata rescan
+forward1 token=0 layers=24 hidden=1536 heads=16/2
+prefill-cache: reused=25 fresh=14 (prompt KV only)
+forward2 position=25 token=75828
+forward2 position=26 token=20309
+forward2 position=27 token=11143
+forward2 position=28 token=13498
+forward2 position=29 token=1939
+forward2 position=30 token=130073
+forward2 position=31 token=220
+forward2 position=32 token=130072
+forward2 position=33 token=130071
+forward2 position=34 token=220
+forward2 position=35 token=8
+forward2 position=36 token=130063
+forward2 position=37 token=9
+forward2 position=38 token=130063
+
+assistant> [local-stream first-visible=2883 ms; provisional text, no actions]
+你好！我是桌宠小派，一个专注于提供简单、实用信息的小助手。
+causal prefill/generation returned; prompt=39 generated=17; prompt-prefix KV retained on success
+forwardfast: compute=7.5646 sec; causal forward checkpoint; model resident; bounded generation finished
+aipet-local: prompt=39 generated=17 first=2.821s rest=4.724s cores=fc
+
+[local-stream complete]
+[emotion=普通 actions=0]
+[route=local_llm fallback=0 elapsed=7641 ms]
+nsh> aipet local ask "一加一等于几？只回答结果"
+aipet-local: storage=custom model='/data/models/MiniCPM5-1B-Q4_K_M.gguf'
+chatml tokens=43 start=130072 stop=130073 single-turn=1
+forwardfast: cores-mask=fc workers=6; A76:A55 row weight=3:1; system scheduling unchanged
+forwardfast: cache-hit; load=0 sec; no model SD reads
+forwardfast: tensor-directory cache-hit; no GGUF metadata rescan
+forward1 token=0 layers=24 hidden=1536 heads=16/2
+prefill-cache: reused=25 fresh=18 (prompt KV only)
+forward2 position=25 token=507
+forward2 position=26 token=2002
+forward2 position=27 token=507
+forward2 position=28 token=33011
+forward2 position=29 token=2717
+forward2 position=30 token=1253
+forward2 position=31 token=1742
+forward2 position=32 token=15343
+forward2 position=33 token=7798
+forward2 position=34 token=130073
+forward2 position=35 token=220
+forward2 position=36 token=130072
+forward2 position=37 token=130071
+forward2 position=38 token=220
+forward2 position=39 token=8
+forward2 position=40 token=130063
+forward2 position=41 token=9
+forward2 position=42 token=130063
+
+assistant> [local-stream first-visible=3747 ms; provisional text, no actions]
+一加一等于2。
+causal prefill/generation returned; prompt=43 generated=6; prompt-prefix KV retained on success
+forwardfast: compute=5.3773 sec; causal forward checkpoint; model resident; bounded generation finished
+aipet-local: prompt=43 generated=6 first=3.686s rest=1.672s cores=fc
+
+[local-stream complete]
+[emotion=普通 actions=0]
+[route=local_llm fallback=0 elapsed=5453 ms]
+nsh> aipet local ask "给我讲一个很短的故事"
+aipet-local: storage=custom model='/data/models/MiniCPM5-1B-Q4_K_M.gguf'
+chatml tokens=40 start=130072 stop=130073 single-turn=1
+forwardfast: cores-mask=fc workers=6; A76:A55 row weight=3:1; system scheduling unchanged
+forwardfast: cache-hit; load=0 sec; no model SD reads
+forwardfast: tensor-directory cache-hit; no GGUF metadata rescan
+forward1 token=0 layers=24 hidden=1536 heads=16/2
+prefill-cache: reused=25 fresh=15 (prompt KV only)
+forward2 position=25 token=15320
+forward2 position=26 token=7249
+forward2 position=27 token=1603
+forward2 position=28 token=1898
+forward2 position=29 token=7323
+forward2 position=30 token=47885
+forward2 position=31 token=130073
+forward2 position=32 token=220
+forward2 position=33 token=130072
+forward2 position=34 token=130071
+forward2 position=35 token=220
+forward2 position=36 token=8
+forward2 position=37 token=130063
+forward2 position=38 token=9
+forward2 position=39 token=130063
+
+assistant> [local-stream first-visible=3112 ms; provisional text, no actions]
+好的，请告诉我你想要听的故事类型，比如童话、科幻、悬疑等，我会尽量简短地讲一个故事
+causal prefill/generation returned; prompt=40 generated=24; prompt-prefix KV retained on success
+forwardfast: compute=9.6602 sec; causal forward checkpoint; model resident; bounded generation finished
+aipet-local: prompt=40 generated=24 first=3.051s rest=6.589s cores=fc
+
+[local-stream complete]
+[emotion=普通 actions=0]
+[route=local_llm fallback=0 elapsed=9736 ms]
+nsh> aipetllm cacheinfo
+llm-cache: state=resident bytes=688065920 path='/data/models/MiniCPM5-1B-Q4_K_M.gguf'
+llm-pool: pid=61 mask=fc workers=6 created=6 matrices=22058
+llm-prefix: cached=39 layers=24 width=256 bytes=1916928
+llm-directory: cached=1 tensors=219
+nsh> aipet local ask "我想听童话"
+aipet-local: storage=custom model='/data/models/MiniCPM5-1B-Q4_K_M.gguf'
+chatml tokens=37 start=130072 stop=130073 single-turn=1
+forwardfast: cores-mask=fc workers=6; A76:A55 row weight=3:1; system scheduling unchanged
+forwardfast: cache-hit; load=0 sec; no model SD reads
+forwardfast: tensor-directory cache-hit; no GGUF metadata rescan
+forward1 token=0 layers=24 hidden=1536 heads=16/2
+prefill-cache: reused=25 fresh=12 (prompt KV only)
+forward2 position=25 token=38243
+forward2 position=26 token=3393
+forward2 position=27 token=103026
+forward2 position=28 token=130073
+forward2 position=29 token=220
+forward2 position=30 token=130072
+forward2 position=31 token=130071
+forward2 position=32 token=220
+forward2 position=33 token=8
+forward2 position=34 token=130063
+forward2 position=35 token=9
+forward2 position=36 token=130063
+
+assistant> [local-stream first-visible=2465 ms; provisional text, no actions]
+好的！如果你想听童话故事，我可以为你推荐一些经典童话，比如《白雪公主》、《灰姑娘》、《小红帽》等
+causal prefill/generation returned; prompt=37 generated=24; prompt-prefix KV retained on success
+forwardfast: compute=8.8912 sec; causal forward checkpoint; model resident; bounded generation finished
+aipet-local: prompt=37 generated=24 first=2.404s rest=6.467s cores=fc
+
+[local-stream complete]
+[emotion=普通 actions=0]
+[route=local_llm fallback=0 elapsed=8968 ms]
+nsh> aipet local status
+local-llm: on model='/data/models/MiniCPM5-1B-Q4_K_M.gguf' model-file=ready tokens=24 cores=fc storage=custom
+llm-cache: state=resident bytes=688065920 path='/data/models/MiniCPM5-1B-Q4_K_M.gguf'
+llm-pool: pid=61 mask=fc workers=6 created=6 matrices=27962
+llm-prefix: cached=36 layers=24 width=256 bytes=1769472
+llm-directory: cached=1 tensors=219
+nsh> free
+      total       used       free    maxused    maxfree  nused  nfree name
+ 4238680064  714790496 3523889568  720818000 3455906384 272534     13 Umem
+nsh> aipet local unload
+llm-cache: unloaded
+nsh> free
+      total       used       free    maxused    maxfree  nused  nfree name
+ 4238680064     198016 4238482048  720818000 4143972320    117     11 Umem
+nsh> poweroff
+

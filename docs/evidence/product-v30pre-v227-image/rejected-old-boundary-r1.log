@@ -1,0 +1,2 @@
+product: tools/test-product-v1.cxx:54: int main(): Assertion `mcu_intent(s,c)==1' failed.
+tools/test-product-v1.sh: line 12:  1094 Aborted                    "$tmp/product"

@@ -1,0 +1,33 @@
+{
+  "result": "ALL_NATIVE_OUTPUTS_COMPARED_WITH_CPU_ONNX",
+  "calls": 216,
+  "outputs": 601,
+  "roles": {
+    "encoder": {
+      "outputs": 396,
+      "max_abs": 0.048542194068431854,
+      "max_relative_l2": 0.011057155496102861,
+      "integer_exact": true,
+      "argmax_mismatches": 0
+    },
+    "decoder": {
+      "outputs": 13,
+      "max_abs": 0.007967233657836914,
+      "max_relative_l2": 0.0022286652282608316,
+      "integer_exact": true,
+      "argmax_mismatches": 0
+    },
+    "joiner": {
+      "outputs": 192,
+      "max_abs": 0.307373046875,
+      "max_relative_l2": 0.0010889519226518604,
+      "integer_exact": true,
+      "argmax_mismatches": 0
+    }
+  },
+  "onnxruntime": "1.23.2",
+  "native_text_tokens_positions_equal": true,
+  "float_tolerance_accepted": false,
+  "openvela_executed": false,
+  "full_voice_chain": false
+}

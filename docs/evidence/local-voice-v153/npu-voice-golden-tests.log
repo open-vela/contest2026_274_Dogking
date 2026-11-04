@@ -1,0 +1,734 @@
+REFERENCE ONLY VIPLite=00020003; not recognition or RTOS acceptance
+inputs=39 outputs=39
+input[0] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[1] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[2] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[3] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[4] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[5] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[6] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[7] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[8] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[9] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[10] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[11] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[12] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[13] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[14] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[15] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[16] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[17] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[18] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[19] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[20] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[21] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[22] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[23] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[24] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[25] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[26] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[27] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[28] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[29] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[30] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[31] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[32] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[33] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[34] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[35] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[36] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[37] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[38] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[0] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[1] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[2] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[3] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[4] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[5] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[6] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[7] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[8] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[9] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[10] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[11] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[12] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[13] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[14] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[15] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[16] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[17] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[18] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[19] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[20] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[21] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[22] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[23] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[24] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[25] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[26] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[27] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[28] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[29] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[30] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[31] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[32] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[33] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[34] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[35] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[36] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[37] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[38] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+reference-status=0; verify this exit status and every output hash
+REFERENCE ONLY VIPLite=00020003; not recognition or RTOS acceptance
+reference-status=1; verify this exit status and every output hash
+REFERENCE ONLY VIPLite=00020003; not recognition or RTOS acceptance
+inputs=39 outputs=39
+input[0] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[1] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[2] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[3] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[4] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[5] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[6] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[7] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[8] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[9] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[10] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[11] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[12] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[13] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[14] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[15] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[16] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[17] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[18] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[19] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[20] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[21] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[22] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[23] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[24] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[25] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[26] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[27] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[28] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[29] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[30] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[31] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[32] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[33] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[34] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[35] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[36] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+tensor query 0/37 prop=3 rc=-11
+reference-status=1; verify this exit status and every output hash
+REFERENCE ONLY VIPLite=00020003; not recognition or RTOS acceptance
+inputs=39 outputs=39
+input[0] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[1] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[2] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[3] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[4] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[5] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[6] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[7] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[8] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[9] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[10] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[11] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[12] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[13] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[14] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[15] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[16] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[17] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[18] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[19] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[20] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[21] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[22] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[23] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[24] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[25] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[26] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[27] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[28] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[29] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[30] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[31] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[32] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[33] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[34] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[35] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[36] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[37] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[38] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[0] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[1] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[2] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[3] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[4] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[5] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[6] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[7] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[8] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[9] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[10] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[11] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[12] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[13] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[14] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[15] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[16] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[17] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[18] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[19] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[20] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[21] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[22] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[23] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[24] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[25] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[26] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[27] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[28] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[29] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[30] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[31] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[32] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[33] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[34] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[35] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[36] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[37] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[38] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[0] bytes=32 raw-crc32=00000000
+input[1] bytes=32 raw-crc32=00000000
+input[2] bytes=32 raw-crc32=00000000
+input[3] bytes=32 raw-crc32=00000000
+input[4] bytes=32 raw-crc32=00000000
+input[5] bytes=32 raw-crc32=00000000
+input[6] bytes=32 raw-crc32=00000000
+input[7] bytes=32 raw-crc32=00000000
+input[8] bytes=32 raw-crc32=00000000
+input[9] bytes=32 raw-crc32=00000000
+input[10] bytes=32 raw-crc32=00000000
+input[11] bytes=32 raw-crc32=00000000
+input[12] bytes=32 raw-crc32=00000000
+input[13] bytes=32 raw-crc32=00000000
+input[14] bytes=32 raw-crc32=00000000
+input[15] bytes=32 raw-crc32=00000000
+input[16] bytes=32 raw-crc32=00000000
+input[17] bytes=32 raw-crc32=00000000
+input[18] bytes=32 raw-crc32=00000000
+input[19] bytes=32 raw-crc32=00000000
+input[20] bytes=32 raw-crc32=00000000
+input[21] bytes=32 raw-crc32=00000000
+input[22] bytes=32 raw-crc32=00000000
+input[23] bytes=32 raw-crc32=00000000
+input[24] bytes=32 raw-crc32=00000000
+input[25] bytes=32 raw-crc32=00000000
+input[26] bytes=32 raw-crc32=00000000
+input[27] bytes=32 raw-crc32=00000000
+input[28] bytes=32 raw-crc32=00000000
+input[29] bytes=32 raw-crc32=00000000
+input[30] bytes=32 raw-crc32=00000000
+input[31] bytes=32 raw-crc32=00000000
+input[32] bytes=32 raw-crc32=00000000
+input[33] bytes=32 raw-crc32=00000000
+input[34] bytes=32 raw-crc32=00000000
+input[35] bytes=32 raw-crc32=00000000
+input[36] bytes=32 raw-crc32=00000000
+input[37] bytes=32 raw-crc32=00000000
+input[38] bytes=32 raw-crc32=00000000
+run-status=0 wall-us=5
+output[0] bytes=32 raw-crc32=00000000 changed=32 status=0
+output[1] bytes=32 raw-crc32=7b3bca61 changed=32 status=0
+output[2] bytes=32 raw-crc32=f67794c2 changed=32 status=0
+output[3] bytes=32 raw-crc32=8d4c5ea3 changed=32 status=0
+output[4] bytes=32 raw-crc32=379e2fc5 changed=32 status=0
+output[5] bytes=32 raw-crc32=4ca5e5a4 changed=32 status=0
+output[6] bytes=32 raw-crc32=c1e9bb07 changed=32 status=0
+output[7] bytes=32 raw-crc32=bad27166 changed=32 status=0
+output[8] bytes=32 raw-crc32=6f3c5f8a changed=32 status=0
+output[9] bytes=32 raw-crc32=140795eb changed=32 status=0
+output[10] bytes=32 raw-crc32=994bcb48 changed=32 status=0
+output[11] bytes=32 raw-crc32=e2700129 changed=32 status=0
+output[12] bytes=32 raw-crc32=58a2704f changed=32 status=0
+output[13] bytes=32 raw-crc32=2399ba2e changed=32 status=0
+output[14] bytes=32 raw-crc32=aed5e48d changed=32 status=0
+output[15] bytes=32 raw-crc32=d5ee2eec changed=32 status=0
+output[16] bytes=32 raw-crc32=de78bf14 changed=32 status=0
+output[17] bytes=32 raw-crc32=a5437575 changed=32 status=0
+output[18] bytes=32 raw-crc32=280f2bd6 changed=32 status=0
+output[19] bytes=32 raw-crc32=5334e1b7 changed=32 status=0
+output[20] bytes=32 raw-crc32=e9e690d1 changed=32 status=0
+output[21] bytes=32 raw-crc32=92dd5ab0 changed=32 status=0
+output[22] bytes=32 raw-crc32=1f910413 changed=32 status=0
+output[23] bytes=32 raw-crc32=64aace72 changed=32 status=0
+output[24] bytes=32 raw-crc32=b144e09e changed=32 status=0
+output[25] bytes=32 raw-crc32=ca7f2aff changed=32 status=0
+output[26] bytes=32 raw-crc32=4733745c changed=32 status=0
+output[27] bytes=32 raw-crc32=3c08be3d changed=32 status=0
+output[28] bytes=32 raw-crc32=86dacf5b changed=32 status=0
+output[29] bytes=32 raw-crc32=fde1053a changed=32 status=0
+output[30] bytes=32 raw-crc32=70ad5b99 changed=32 status=0
+output[31] bytes=32 raw-crc32=0b9691f8 changed=32 status=0
+output[32] bytes=32 raw-crc32=67807869 changed=32 status=0
+output[33] bytes=32 raw-crc32=1cbbb208 changed=32 status=0
+output[34] bytes=32 raw-crc32=91f7ecab changed=32 status=0
+output[35] bytes=32 raw-crc32=eacc26ca changed=32 status=0
+output[36] bytes=32 raw-crc32=501e57ac changed=32 status=0
+output[37] bytes=32 raw-crc32=2b259dcd changed=32 status=0
+output[38] bytes=32 raw-crc32=a669c36e changed=32 status=0
+reference-status=0; verify this exit status and every output hash
+REFERENCE ONLY VIPLite=00020003; not recognition or RTOS acceptance
+inputs=39 outputs=39
+input[0] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[1] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[2] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[3] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[4] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[5] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[6] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[7] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[8] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[9] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[10] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[11] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[12] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[13] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[14] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[15] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[16] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[17] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[18] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[19] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[20] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[21] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[22] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[23] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[24] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[25] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[26] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[27] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[28] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[29] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[30] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[31] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[32] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[33] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[34] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[35] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[36] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[37] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[38] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[0] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[1] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[2] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[3] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[4] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[5] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[6] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[7] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[8] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[9] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[10] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[11] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[12] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[13] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[14] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[15] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[16] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[17] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[18] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[19] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[20] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[21] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[22] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[23] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[24] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[25] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[26] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[27] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[28] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[29] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[30] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[31] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[32] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[33] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[34] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[35] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[36] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[37] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[38] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[0] bytes=32 raw-crc32=00000000
+reference-status=1; verify this exit status and every output hash
+REFERENCE ONLY VIPLite=00020003; not recognition or RTOS acceptance
+inputs=39 outputs=39
+input[0] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[1] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[2] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[3] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[4] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[5] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[6] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[7] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[8] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[9] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[10] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[11] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[12] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[13] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[14] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[15] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[16] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[17] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[18] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[19] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[20] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[21] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[22] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[23] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[24] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[25] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[26] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[27] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[28] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[29] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[30] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[31] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[32] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[33] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[34] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[35] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[36] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[37] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[38] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[0] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[1] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[2] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[3] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[4] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[5] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[6] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[7] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[8] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[9] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[10] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[11] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[12] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[13] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[14] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[15] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[16] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[17] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[18] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[19] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[20] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[21] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[22] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[23] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[24] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[25] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[26] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[27] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[28] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[29] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[30] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[31] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[32] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[33] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[34] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[35] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[36] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[37] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[38] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[0] bytes=32 raw-crc32=00000000
+input[1] bytes=32 raw-crc32=00000000
+input[2] bytes=32 raw-crc32=00000000
+input[3] bytes=32 raw-crc32=00000000
+input[4] bytes=32 raw-crc32=00000000
+input[5] bytes=32 raw-crc32=00000000
+input[6] bytes=32 raw-crc32=00000000
+input[7] bytes=32 raw-crc32=00000000
+input[8] bytes=32 raw-crc32=00000000
+input[9] bytes=32 raw-crc32=00000000
+input[10] bytes=32 raw-crc32=00000000
+input[11] bytes=32 raw-crc32=00000000
+input[12] bytes=32 raw-crc32=00000000
+input[13] bytes=32 raw-crc32=00000000
+input[14] bytes=32 raw-crc32=00000000
+input[15] bytes=32 raw-crc32=00000000
+input[16] bytes=32 raw-crc32=00000000
+input[17] bytes=32 raw-crc32=00000000
+input[18] bytes=32 raw-crc32=00000000
+input[19] bytes=32 raw-crc32=00000000
+input[20] bytes=32 raw-crc32=00000000
+input[21] bytes=32 raw-crc32=00000000
+input[22] bytes=32 raw-crc32=00000000
+input[23] bytes=32 raw-crc32=00000000
+input[24] bytes=32 raw-crc32=00000000
+input[25] bytes=32 raw-crc32=00000000
+input[26] bytes=32 raw-crc32=00000000
+input[27] bytes=32 raw-crc32=00000000
+input[28] bytes=32 raw-crc32=00000000
+input[29] bytes=32 raw-crc32=00000000
+input[30] bytes=32 raw-crc32=00000000
+input[31] bytes=32 raw-crc32=00000000
+input[32] bytes=32 raw-crc32=00000000
+input[33] bytes=32 raw-crc32=00000000
+input[34] bytes=32 raw-crc32=00000000
+input[35] bytes=32 raw-crc32=00000000
+input[36] bytes=32 raw-crc32=00000000
+input[37] bytes=32 raw-crc32=00000000
+input[38] bytes=32 raw-crc32=00000000
+run-status=-1 wall-us=0
+reference-status=1; verify this exit status and every output hash
+REFERENCE ONLY VIPLite=00020003; not recognition or RTOS acceptance
+inputs=39 outputs=39
+input[0] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[1] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[2] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[3] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[4] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[5] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[6] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[7] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[8] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[9] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[10] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[11] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[12] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[13] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[14] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[15] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[16] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[17] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[18] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[19] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[20] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[21] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[22] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[23] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[24] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[25] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[26] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[27] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[28] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[29] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[30] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[31] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[32] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[33] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[34] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[35] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[36] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[37] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[38] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[0] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[1] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[2] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[3] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[4] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[5] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[6] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[7] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[8] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[9] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[10] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[11] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[12] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[13] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[14] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[15] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[16] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[17] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[18] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[19] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[20] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[21] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[22] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[23] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[24] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[25] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[26] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[27] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[28] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[29] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[30] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[31] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[32] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[33] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[34] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[35] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[36] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[37] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[38] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+/tmp/voice-golden-test.fKFmto/run3: File exists
+reference-status=1; verify this exit status and every output hash
+REFERENCE ONLY VIPLite=00020003; not recognition or RTOS acceptance
+inputs=39 outputs=39
+input[0] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[1] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[2] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[3] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[4] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[5] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[6] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[7] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[8] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[9] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[10] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[11] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[12] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[13] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[14] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[15] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[16] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[17] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[18] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[19] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[20] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[21] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[22] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[23] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[24] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[25] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[26] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[27] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[28] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[29] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[30] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[31] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[32] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[33] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[34] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[35] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[36] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[37] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[38] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[0] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[1] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[2] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[3] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[4] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[5] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[6] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[7] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[8] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[9] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[10] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[11] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[12] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[13] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[14] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[15] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[16] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[17] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[18] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[19] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[20] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[21] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[22] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[23] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[24] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[25] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[26] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[27] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[28] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[29] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[30] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[31] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[32] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[33] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[34] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[35] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[36] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[37] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[38] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+/missing-inputs/input0.bin: No such file or directory
+reference-status=1; verify this exit status and every output hash
+REFERENCE ONLY VIPLite=00020003; not recognition or RTOS acceptance
+inputs=39 outputs=39
+input[0] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[1] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[2] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[3] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[4] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[5] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[6] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[7] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[8] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[9] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[10] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[11] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[12] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[13] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[14] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[15] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[16] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[17] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[18] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[19] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[20] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[21] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[22] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[23] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[24] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[25] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[26] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[27] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[28] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[29] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[30] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[31] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[32] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[33] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[34] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[35] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[36] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[37] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input[38] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[0] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[1] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[2] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[3] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[4] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[5] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[6] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[7] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[8] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[9] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[10] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[11] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[12] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[13] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[14] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[15] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[16] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[17] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[18] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[19] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[20] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[21] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[22] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[23] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[24] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[25] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[26] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[27] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[28] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[29] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[30] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[31] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[32] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[33] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[34] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[35] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[36] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[37] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+output[38] name=fake-state padded-bytes=32 format=0 quant=0 dims=2x4
+input0 must be exactly 32 padded bytes
+reference-status=1; verify this exit status and every output hash
+39-input/output + negative lifecycle/cleanup tests: PASS (MOCK, not NPU)

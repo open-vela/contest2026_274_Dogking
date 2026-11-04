@@ -1,0 +1,34 @@
+PASS: scoped compute mask selection/restoration and get/set/restore failures (host mocks, no real affinity changes)
+general-voice: RAM-only candidate installed; ASR=NPU acoustic=CPU vocoder=NPU; no auto capture/cloud fallback; TARGET ACCEPTANCE REQUIRED
+voice-session-v190: prepared ASR once in 4 us; same-command RAM reuse, per-turn states cleared
+general-asr: MIC ON; live 48k->16k FIR->NPU; capture-side energy endpoint; no actions
+general-asr: MIC OFF; capture/consumer stopped before final decode or playback
+general-asr: result=0 samples16=0 chunks=1 queue-peak=0 ended=0; native NPU candidate, not E2E acceptance
+voice-stage: mic-stopped-mono-us=0 transcript-ready-mono-us=133824652; mic stop is NOT true end-of-speech (energy endpoint is diagnostic)
+general-asr: MIC ON; live 48k->16k FIR->NPU; capture-side energy endpoint; no actions
+general-asr: MIC OFF; capture/consumer stopped before final decode or playback
+general-asr: result=0 samples16=0 chunks=1 queue-peak=0 ended=0; native NPU candidate, not E2E acceptance
+voice-stage: mic-stopped-mono-us=0 transcript-ready-mono-us=133824660; mic stop is NOT true end-of-speech (energy endpoint is diagnostic)
+general-asr: MIC ON; live 48k->16k FIR->NPU; capture-side energy endpoint; no actions
+general-asr: MIC OFF; capture/consumer stopped before final decode or playback
+general-asr: result=0 samples16=0 chunks=1 queue-peak=0 ended=0; native NPU candidate, not E2E acceptance
+voice-stage: mic-stopped-mono-us=0 transcript-ready-mono-us=133824661; mic stop is NOT true end-of-speech (energy endpoint is diagnostic)
+voice-session-v190: prepared ASR once in 0 us; same-command RAM reuse, per-turn states cleared
+general-asr: MIC ON; live 48k->16k FIR->NPU; capture-side energy endpoint; no actions
+general-asr: MIC OFF; capture/consumer stopped before final decode or playback
+general-asr: result=-75 samples16=0 chunks=1 queue-peak=0 ended=0; native NPU candidate, not E2E acceptance
+voice-stage: mic-stopped-mono-us=0 transcript-ready-mono-us=0; mic stop is NOT true end-of-speech (energy endpoint is diagnostic)
+voice-session-v190: prepared ASR once in 0 us; same-command RAM reuse, per-turn states cleared
+general-asr: MIC ON; live 48k->16k FIR->NPU; capture-side energy endpoint; no actions
+general-asr: MIC OFF; capture/consumer stopped before final decode or playback
+general-asr: result=0 samples16=0 chunks=1 queue-peak=0 ended=0; native NPU candidate, not E2E acceptance
+voice-stage: mic-stopped-mono-us=0 transcript-ready-mono-us=133824686; mic stop is NOT true end-of-speech (energy endpoint is diagnostic)
+general-asr: MIC ON; live 48k->16k FIR->NPU; capture-side energy endpoint; no actions
+general-asr: MIC OFF; capture/consumer stopped before final decode or playback
+general-asr: result=0 samples16=0 chunks=1 queue-peak=0 ended=0; native NPU candidate, not E2E acceptance
+voice-stage: mic-stopped-mono-us=0 transcript-ready-mono-us=133824694; mic stop is NOT true end-of-speech (energy endpoint is diagnostic)
+general-asr: uninstalled; no capture/inference running
+PASS: same-command ASR/vocoder reuse, per-turn reset, replacement exclusion, open/prepare/capture failure cleanup and empty transcript (host mocks)
+general-voice: RAM-only candidate installed; ASR=NPU acoustic=CPU vocoder=NPU; no auto capture/cloud fallback; TARGET ACCEPTANCE REQUIRED
+voice-session-v190: prepared ASR once in 0 us; same-command RAM reuse, per-turn states cleared
+PASS: downstream retained worker pins ASR/TTS/config owner until reboot (intentional quarantine, not leak-free recovery)

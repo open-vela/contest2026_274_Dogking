@@ -1,0 +1,30 @@
+{
+  "result": "PRIVATE_IMAGE_PACKAGED_NOT_BOOTED",
+  "image": "/mnt/d/My-Program/AI-Agent-Program/GPTsprogram/Openvela/A733-A7Z-ALL-Files/openvela-a733-cubie-a7z-sd-v185-general-voice-candidate.img",
+  "bytes": 2147483648,
+  "source_commit": "02a047be5c6d4a24c171e6824d166175647e2e02",
+  "sha256": "fbcd67f55429c83550edd7c983b63f5862e7eccc8840de898b60aa6c62afdfd0",
+  "base_sha256": "0bb4bae686bb7132f256eee89aae7da12dd78a50c78112445a33099efb4e88c6",
+  "kernel_sha256": "1c6ce8f73bfb5def0dbe059ee9ad4b781f8df5b3613d171e4dba931b696b5d8e",
+  "asset_manifest_sha256": "0b14d81b748a0604caa4c84f6fbb51bcf97eef44bcccf919a32827c62928c893",
+  "files_roundtripped": 49,
+  "sdk_restore": {
+    "result": "SDK_RESTORED_BYTE_EXACT",
+    "paths": 256
+  },
+  "required_config": [
+    "CONFIG_A733_CPU_ACOUSTIC=y",
+    "CONFIG_A733_NPU_GENERAL_ASR=y",
+    "CONFIG_CXX_STANDARD=\"gnu++17\"",
+    "CONFIG_CXX_MINI_LOCALIZATION=y",
+    "CONFIG_CXX_WCHAR=y",
+    "CONFIG_LIBC_MAX_EXITFUNS=0",
+    "CONFIG_BUILD_FLAT=y"
+  ],
+  "hardware_executed": false,
+  "full_voice_chain": false,
+  "latency_3_to_4_seconds": false,
+  "physical_disks_written": false,
+  "old_images_modified": false,
+  "models_private": true
+}

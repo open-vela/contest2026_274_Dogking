@@ -1,0 +1,41 @@
+--- a/onnxruntime/core/platform/posix/env.cc
++++ b/onnxruntime/core/platform/posix/env.cc
+@@ -220,1 +220,1 @@
+-          LOGS_DEFAULT(VERBOSE) << "pthread_setaffinity_np succeed for thread: " << syscall(SYS_gettid)
++          LOGS_DEFAULT(VERBOSE) << "pthread_setaffinity_np succeed for thread: " << logging::GetThreadId()
+@@ -226,1 +226,1 @@
+-          LOGS_DEFAULT(ERROR) << "pthread_setaffinity_np failed for thread: " << syscall(SYS_gettid)
++          LOGS_DEFAULT(ERROR) << "pthread_setaffinity_np failed for thread: " << logging::GetThreadId()
+@@ -532,1 +532,6 @@
+   common::Status LoadDynamicLibrary(const PathString& library_filename, bool global_symbols, void** handle) const override {
++#if defined(__NuttX__)
++    (void)library_filename; (void)global_symbols;
++    *handle = nullptr;
++    return common::Status(common::ONNXRUNTIME, common::NOT_IMPLEMENTED, "NuttX static CPU profile: dynamic libraries disabled");
++#else
+@@ -540,2 +545,3 @@
+     return common::Status::OK();
++#endif
+   }
+@@ -543,1 +549,5 @@
+   common::Status UnloadDynamicLibrary(void* handle) const override {
++#if defined(__NuttX__)
++    (void)handle;
++    return common::Status(common::ONNXRUNTIME, common::NOT_IMPLEMENTED, "NuttX static CPU profile: dynamic libraries disabled");
++#else
+@@ -554,2 +564,3 @@
+     return common::Status::OK();
++#endif
+   }
+@@ -557,1 +568,6 @@
+   common::Status GetSymbolFromLibrary(void* handle, const std::string& symbol_name, void** symbol) const override {
++#if defined(__NuttX__)
++    (void)handle; (void)symbol_name;
++    *symbol = nullptr;
++    return common::Status(common::ONNXRUNTIME, common::NOT_IMPLEMENTED, "NuttX static CPU profile: dynamic symbols disabled");
++#else
+@@ -570,3 +586,4 @@
+     // it's possible to get a NULL symbol in our case when Schemas are not custom.
+     return common::Status::OK();
++#endif
+   }

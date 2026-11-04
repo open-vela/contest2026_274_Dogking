@@ -59,11 +59,11 @@ static const char prefix[] = "a7g1:";
 static const unsigned char aad[] = "aipet/api_key/v1";
 int aipet_secret_seal(const char *plain, char *out, size_t cap)
 {
-  unsigned char key[32], blob[12 + 127 + 16];
-  size_t n = strnlen(plain, 128);
+  unsigned char key[32], blob[12 + 255 + 16];
+  size_t n = strnlen(plain, 256);
   int r = -EINVAL;
   mbedtls_gcm_context ctx; mbedtls_gcm_init(&ctx);
-  if (!n || n > 127 || cap < 5 + 2 * (n + 28) + 1) goto done;
+  if (!n || n > 255 || cap < 5 + 2 * (n + 28) + 1) goto done;
   r = device_key(key, 1);
   if (r) goto done;
   r = random_bytes(blob, 12);
@@ -88,20 +88,20 @@ static int nibble(char c)
 { return c >= '0' && c <= '9' ? c-'0' : c >= 'a' && c <= 'f' ? c-'a'+10 : -1; }
 int aipet_secret_open(const char *sealed, char *out, size_t cap)
 {
-  unsigned char key[32], blob[155];
+  unsigned char key[32], blob[283];
   mbedtls_gcm_context ctx; mbedtls_gcm_init(&ctx);
   int r = -EINVAL;
   if (!cap) goto done;
   out[0]=0;
-  size_t len = strnlen(sealed, 316);
+  size_t len = strnlen(sealed, 572);
   /* Legacy JSON accepted for compatibility; setup always writes encryption. */
   if (strncmp(sealed, prefix, 5)) {
-    if (len && len < 128 && len < cap && strncmp(sealed,"REPLACE",7)) {
+    if (len && len < 256 && len < cap && strncmp(sealed,"REPLACE",7)) {
       memcpy(out,sealed,len+1); r=0;
     }
     goto done;
   }
-  if (len < 63 || len > 315 || (len-5)%2) goto done;
+  if (len < 63 || len > 571 || (len-5)%2) goto done;
   size_t bytes=(len-5)/2, n=bytes-28;
   if (n+1>cap) goto done;
   for (size_t i=0;i<bytes;i++) {

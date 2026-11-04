@@ -28,7 +28,7 @@
 
 #include "arm64_internal.h"
 
-#define A733_CCU_BASE          UINT64_C(0x02002000)
+#define A733_CCU_BASE          UINT64_C(0x02001000)
 #define A733_SMHC0_CLK         (A733_CCU_BASE + 0x0d00)
 #define A733_SMHC0_BGR         (A733_CCU_BASE + 0x0d0c)
 #define A733_SMHC0_BASE        UINT64_C(0x04020000)

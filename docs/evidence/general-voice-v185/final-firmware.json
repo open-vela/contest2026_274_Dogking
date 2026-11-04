@@ -1,0 +1,26 @@
+{
+  "result": "FINAL_FULL_VOICE_ELF_LINKED_NOT_EXECUTED",
+  "bytes": 7007952,
+  "sha256": "1c6ce8f73bfb5def0dbe059ee9ad4b781f8df5b3613d171e4dba931b696b5d8e",
+  "defined_symbols": [
+    "aipet::voice_general_asr_open(",
+    "aipet::voice_general_configure_full(",
+    "aipet::voice_tts_engine_synthesize(",
+    "aipet::voice_acoustic_run(",
+    "OrtGetApiBase"
+  ],
+  "required_config": [
+    "CONFIG_A733_CPU_ACOUSTIC=y",
+    "CONFIG_A733_NPU_GENERAL_ASR=y",
+    "CONFIG_LIBC_MAX_EXITFUNS=0",
+    "CONFIG_BUILD_FLAT=y",
+    "CONFIG_CXX_MINI_LOCALIZATION=y",
+    "CONFIG_CXX_WCHAR=y"
+  ],
+  "sdk_restore": {
+    "result": "SDK_RESTORED_BYTE_EXACT",
+    "paths": 256
+  },
+  "hardware_executed": false,
+  "full_voice_chain": false
+}

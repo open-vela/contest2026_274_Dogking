@@ -1,0 +1,188 @@
+{
+  "result": "V209_HOST_REGRESSION_PASSED",
+  "tests": [
+    {
+      "name": "pixels",
+      "arguments": [
+        "test-a733-perf-pixels-v205.py"
+      ],
+      "seconds": 0.5669738359999883,
+      "sha256": "763a80baec0b7a965d658be9a811d24f725d6f035e4217482791efb18f2110ba"
+    },
+    {
+      "name": "display",
+      "arguments": [
+        "test-a733-live-display-v204.py"
+      ],
+      "seconds": 0.46719576600003165,
+      "sha256": "27232582e0b13cbd79b037b14480fea49ad79e3244ba9bdd413058cb21c91a22"
+    },
+    {
+      "name": "legacy-app",
+      "arguments": [
+        "test-a733-live-v204.py"
+      ],
+      "seconds": 9.239831473999857,
+      "sha256": "275fcf2a9e28a994050cf8dab666fdc4aaf80c903394ce6055ba79e2591d97aa"
+    },
+    {
+      "name": "optimized-app",
+      "arguments": [
+        "test-a733-live-v204.py",
+        "--perf"
+      ],
+      "seconds": 15.805859484999928,
+      "sha256": "275fcf2a9e28a994050cf8dab666fdc4aaf80c903394ce6055ba79e2591d97aa"
+    },
+    {
+      "name": "stream",
+      "arguments": [
+        "test-a733-camera-stream-v205.py"
+      ],
+      "seconds": 4.928933843999857,
+      "sha256": "aadf05a3362dcf6242fc1c2e078375a5b9bde5ca27a5579ee7540c0586297f22"
+    },
+    {
+      "name": "resident",
+      "arguments": [
+        "test-a733-npu-resident-v205.py"
+      ],
+      "seconds": 0.7181297849999737,
+      "sha256": "df68fc2ed7b594d7470b1e14db4be633cb2e88e840acecd97d9bc5f6cd6cfdfa"
+    },
+    {
+      "name": "tone-compat",
+      "arguments": [
+        "test-a733-tone-compat-v204.py"
+      ],
+      "seconds": 0.7683831500000906,
+      "sha256": "f4cb12c1b50cbf94c058a8752acf3a61e2f1adb56178f372a49024ca2d11cf3d"
+    },
+    {
+      "name": "vfs",
+      "arguments": [
+        "test-a733-live-vfs-v204.py"
+      ],
+      "seconds": 0.4679750889999923,
+      "sha256": "bff348b8be8aa83849f7b0671e0115aaabcdeec42f71f16a239629c6f9279461"
+    },
+    {
+      "name": "camera-v203",
+      "arguments": [
+        "test-a733-camera-v203.py"
+      ],
+      "seconds": 5.429148801999872,
+      "sha256": "541fef3e465f204a1ce0ff7fea35af27556cdd62246c365754f3f30f3fd39386"
+    },
+    {
+      "name": "csi-old",
+      "arguments": [
+        "test-a733-csi-capture.py"
+      ],
+      "seconds": 0.8690271800001028,
+      "sha256": "a4f098c9d1bd698cd628dacf4d2772b1483e470f1d3607617fc116df449bb7b7"
+    },
+    {
+      "name": "registers",
+      "arguments": [
+        "test-a733-csi-registers-v199.py"
+      ],
+      "seconds": 1.470141227999875,
+      "sha256": "88734c195ec19a97ddb7772a31b53a6ac94de0a1ba6e33412559c694309ac423"
+    },
+    {
+      "name": "old-log",
+      "arguments": [
+        "test-a733-live-log-v204.py"
+      ],
+      "seconds": 0.06637739299981149,
+      "sha256": "0248a1884eb6ec9e8df2cf2e137155dc32bdbd3afc4d6a52c229dca4d864ac9b"
+    },
+    {
+      "name": "perf-log",
+      "arguments": [
+        "test-a733-perf-log-v205.py"
+      ],
+      "seconds": 0.06675448800001504,
+      "sha256": "dff98ca72c2b855131123190c7626e1a8d4a3f86e255143b3c5d023cd0401056"
+    },
+    {
+      "name": "stream-fix",
+      "arguments": [
+        "test-a733-stream-fix-v206.py"
+      ],
+      "seconds": 1.6703024210000876,
+      "sha256": "bba5e473c266d69d37dd34929c22c07eaf7e1775e83f90322bc4d4bd5baeb33a"
+    },
+    {
+      "name": "crc-fused",
+      "arguments": [
+        "test-a733-crc-v207.py"
+      ],
+      "seconds": 1.3703826569999364,
+      "sha256": "e84be7ab5bf031f1432bcd1e67dc1317f353ae123866eefd511926a94eeaa55e"
+    },
+    {
+      "name": "lease",
+      "arguments": [
+        "test-a733-lease-v207.py"
+      ],
+      "seconds": 0.3174955399999817,
+      "sha256": "dc32fc1fd2f0c75f019377a70d6e533dc70b05c947d0ed5c45029fc622f5f452"
+    },
+    {
+      "name": "swout1",
+      "arguments": [
+        "test-a733-swout1-v200.py"
+      ],
+      "seconds": 8.434268513000006,
+      "sha256": "59ececf72abcb760aeecd35500fcd72dc618942c72d7bb4132c79a32a6ea1805"
+    },
+    {
+      "name": "pipeline",
+      "arguments": [
+        "test-a733-live-v204.py",
+        "--perf",
+        "--pipe"
+      ],
+      "seconds": 21.123099453000123,
+      "sha256": "cd000c242ef48e8e389c8afe6db610ef8b94df46ade76a70138f48f88afc68e8"
+    },
+    {
+      "name": "crc-arm",
+      "arguments": [
+        "test-a733-crc-arm-v208.py"
+      ],
+      "seconds": 1.2694181940000817,
+      "sha256": "717ec7acc833fb7a388f4c62a313cea327d87ca3e3b65166d04aa76944746774"
+    },
+    {
+      "name": "decode-exact",
+      "arguments": [
+        "test-a733-yolo-decode-v208.py"
+      ],
+      "seconds": 0.6184584200000245,
+      "sha256": "500af1a0d62ed400fbeddf00f5d3acc249f7eefe3b176e6ae5447282514edf19"
+    },
+    {
+      "name": "affinity",
+      "arguments": [
+        "test-a733-affinity-v209.py"
+      ],
+      "seconds": 0.3167392079999445,
+      "sha256": "3a283dc1bcd011fec01e237ebd770001b0890e9127c34a155606b70474328674"
+    },
+    {
+      "name": "async",
+      "arguments": [
+        "test-a733-live-v204.py",
+        "--perf",
+        "--async"
+      ],
+      "seconds": 24.480396821000113,
+      "sha256": "bf2a2efc1c049a3fa0ad80dbd1706eeb11d178e9484ad4b6dbf46feccd55aac0"
+    }
+  ],
+  "hardware_verified": false,
+  "performance_scope": "host timing is NOT A733 performance"
+}

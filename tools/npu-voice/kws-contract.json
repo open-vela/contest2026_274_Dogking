@@ -1,0 +1,855 @@
+{
+  "joiner": {
+    "input": [
+      {
+        "bytes": 1280,
+        "format": 0,
+        "quant": 0,
+        "dims": [
+          320,
+          1
+        ]
+      },
+      {
+        "bytes": 1280,
+        "format": 0,
+        "quant": 0,
+        "dims": [
+          320,
+          1
+        ]
+      }
+    ],
+    "output": [
+      {
+        "bytes": 1052,
+        "format": 0,
+        "quant": 0,
+        "dims": [
+          263,
+          1
+        ]
+      }
+    ]
+  },
+  "decoder": {
+    "input": [
+      {
+        "bytes": 8,
+        "format": 0,
+        "quant": 0,
+        "dims": [
+          2,
+          1
+        ]
+      }
+    ],
+    "output": [
+      {
+        "bytes": 1280,
+        "format": 0,
+        "quant": 0,
+        "dims": [
+          320,
+          1
+        ]
+      }
+    ]
+  },
+  "encoder": {
+    "input": [
+      {
+        "bytes": 9280,
+        "format": 0,
+        "quant": 0,
+        "dims": [
+          80,
+          29,
+          1
+        ]
+      },
+      {
+        "bytes": 32768,
+        "format": 0,
+        "quant": 0,
+        "dims": [
+          128,
+          1,
+          64
+        ]
+      },
+      {
+        "bytes": 24576,
+        "format": 0,
+        "quant": 0,
+        "dims": [
+          96,
+          64,
+          1,
+          1
+        ]
+      },
+      {
+        "bytes": 12288,
+        "format": 0,
+        "quant": 0,
+        "dims": [
+          48,
+          1,
+          64
+        ]
+      },
+      {
+        "bytes": 12288,
+        "format": 0,
+        "quant": 0,
+        "dims": [
+          48,
+          1,
+          64
+        ]
+      },
+      {
+        "bytes": 3584,
+        "format": 0,
+        "quant": 0,
+        "dims": [
+          7,
+          128,
+          1
+        ]
+      },
+      {
+        "bytes": 3584,
+        "format": 0,
+        "quant": 0,
+        "dims": [
+          7,
+          128,
+          1
+        ]
+      },
+      {
+        "bytes": 16384,
+        "format": 0,
+        "quant": 0,
+        "dims": [
+          128,
+          1,
+          32
+        ]
+      },
+      {
+        "bytes": 12288,
+        "format": 0,
+        "quant": 0,
+        "dims": [
+          96,
+          32,
+          1,
+          1
+        ]
+      },
+      {
+        "bytes": 6144,
+        "format": 0,
+        "quant": 0,
+        "dims": [
+          48,
+          1,
+          32
+        ]
+      },
+      {
+        "bytes": 6144,
+        "format": 0,
+        "quant": 0,
+        "dims": [
+          48,
+          1,
+          32
+        ]
+      },
+      {
+        "bytes": 3584,
+        "format": 0,
+        "quant": 0,
+        "dims": [
+          7,
+          128,
+          1
+        ]
+      },
+      {
+        "bytes": 3584,
+        "format": 0,
+        "quant": 0,
+        "dims": [
+          7,
+          128,
+          1
+        ]
+      },
+      {
+        "bytes": 8192,
+        "format": 0,
+        "quant": 0,
+        "dims": [
+          128,
+          1,
+          16
+        ]
+      },
+      {
+        "bytes": 6144,
+        "format": 0,
+        "quant": 0,
+        "dims": [
+          96,
+          16,
+          1,
+          1
+        ]
+      },
+      {
+        "bytes": 3072,
+        "format": 0,
+        "quant": 0,
+        "dims": [
+          48,
+          1,
+          16
+        ]
+      },
+      {
+        "bytes": 3072,
+        "format": 0,
+        "quant": 0,
+        "dims": [
+          48,
+          1,
+          16
+        ]
+      },
+      {
+        "bytes": 3584,
+        "format": 0,
+        "quant": 0,
+        "dims": [
+          7,
+          128,
+          1
+        ]
+      },
+      {
+        "bytes": 3584,
+        "format": 0,
+        "quant": 0,
+        "dims": [
+          7,
+          128,
+          1
+        ]
+      },
+      {
+        "bytes": 8192,
+        "format": 0,
+        "quant": 0,
+        "dims": [
+          256,
+          1,
+          8
+        ]
+      },
+      {
+        "bytes": 3072,
+        "format": 0,
+        "quant": 0,
+        "dims": [
+          96,
+          8,
+          1,
+          1
+        ]
+      },
+      {
+        "bytes": 3072,
+        "format": 0,
+        "quant": 0,
+        "dims": [
+          96,
+          1,
+          8
+        ]
+      },
+      {
+        "bytes": 3072,
+        "format": 0,
+        "quant": 0,
+        "dims": [
+          96,
+          1,
+          8
+        ]
+      },
+      {
+        "bytes": 3584,
+        "format": 0,
+        "quant": 0,
+        "dims": [
+          7,
+          128,
+          1
+        ]
+      },
+      {
+        "bytes": 3584,
+        "format": 0,
+        "quant": 0,
+        "dims": [
+          7,
+          128,
+          1
+        ]
+      },
+      {
+        "bytes": 8192,
+        "format": 0,
+        "quant": 0,
+        "dims": [
+          128,
+          1,
+          16
+        ]
+      },
+      {
+        "bytes": 6144,
+        "format": 0,
+        "quant": 0,
+        "dims": [
+          96,
+          16,
+          1,
+          1
+        ]
+      },
+      {
+        "bytes": 3072,
+        "format": 0,
+        "quant": 0,
+        "dims": [
+          48,
+          1,
+          16
+        ]
+      },
+      {
+        "bytes": 3072,
+        "format": 0,
+        "quant": 0,
+        "dims": [
+          48,
+          1,
+          16
+        ]
+      },
+      {
+        "bytes": 3584,
+        "format": 0,
+        "quant": 0,
+        "dims": [
+          7,
+          128,
+          1
+        ]
+      },
+      {
+        "bytes": 3584,
+        "format": 0,
+        "quant": 0,
+        "dims": [
+          7,
+          128,
+          1
+        ]
+      },
+      {
+        "bytes": 16384,
+        "format": 0,
+        "quant": 0,
+        "dims": [
+          128,
+          1,
+          32
+        ]
+      },
+      {
+        "bytes": 12288,
+        "format": 0,
+        "quant": 0,
+        "dims": [
+          96,
+          32,
+          1,
+          1
+        ]
+      },
+      {
+        "bytes": 6144,
+        "format": 0,
+        "quant": 0,
+        "dims": [
+          48,
+          1,
+          32
+        ]
+      },
+      {
+        "bytes": 6144,
+        "format": 0,
+        "quant": 0,
+        "dims": [
+          48,
+          1,
+          32
+        ]
+      },
+      {
+        "bytes": 3584,
+        "format": 0,
+        "quant": 0,
+        "dims": [
+          7,
+          128,
+          1
+        ]
+      },
+      {
+        "bytes": 3584,
+        "format": 0,
+        "quant": 0,
+        "dims": [
+          7,
+          128,
+          1
+        ]
+      },
+      {
+        "bytes": 29184,
+        "format": 0,
+        "quant": 0,
+        "dims": [
+          19,
+          3,
+          128,
+          1
+        ]
+      },
+      {
+        "bytes": 4,
+        "format": 0,
+        "quant": 0,
+        "dims": [
+          1
+        ]
+      }
+    ],
+    "output": [
+      {
+        "bytes": 5120,
+        "format": 0,
+        "quant": 0,
+        "dims": [
+          320,
+          4,
+          1
+        ]
+      },
+      {
+        "bytes": 32768,
+        "format": 0,
+        "quant": 0,
+        "dims": [
+          128,
+          1,
+          64
+        ]
+      },
+      {
+        "bytes": 24576,
+        "format": 0,
+        "quant": 0,
+        "dims": [
+          96,
+          64,
+          1,
+          1
+        ]
+      },
+      {
+        "bytes": 12288,
+        "format": 0,
+        "quant": 0,
+        "dims": [
+          48,
+          1,
+          64
+        ]
+      },
+      {
+        "bytes": 12288,
+        "format": 0,
+        "quant": 0,
+        "dims": [
+          48,
+          1,
+          64
+        ]
+      },
+      {
+        "bytes": 3584,
+        "format": 0,
+        "quant": 0,
+        "dims": [
+          7,
+          128,
+          1
+        ]
+      },
+      {
+        "bytes": 3584,
+        "format": 0,
+        "quant": 0,
+        "dims": [
+          7,
+          128,
+          1
+        ]
+      },
+      {
+        "bytes": 16384,
+        "format": 0,
+        "quant": 0,
+        "dims": [
+          128,
+          1,
+          32
+        ]
+      },
+      {
+        "bytes": 12288,
+        "format": 0,
+        "quant": 0,
+        "dims": [
+          96,
+          32,
+          1,
+          1
+        ]
+      },
+      {
+        "bytes": 6144,
+        "format": 0,
+        "quant": 0,
+        "dims": [
+          48,
+          1,
+          32
+        ]
+      },
+      {
+        "bytes": 6144,
+        "format": 0,
+        "quant": 0,
+        "dims": [
+          48,
+          1,
+          32
+        ]
+      },
+      {
+        "bytes": 3584,
+        "format": 0,
+        "quant": 0,
+        "dims": [
+          7,
+          128,
+          1
+        ]
+      },
+      {
+        "bytes": 3584,
+        "format": 0,
+        "quant": 0,
+        "dims": [
+          7,
+          128,
+          1
+        ]
+      },
+      {
+        "bytes": 8192,
+        "format": 0,
+        "quant": 0,
+        "dims": [
+          128,
+          1,
+          16
+        ]
+      },
+      {
+        "bytes": 6144,
+        "format": 0,
+        "quant": 0,
+        "dims": [
+          96,
+          16,
+          1,
+          1
+        ]
+      },
+      {
+        "bytes": 3072,
+        "format": 0,
+        "quant": 0,
+        "dims": [
+          48,
+          1,
+          16
+        ]
+      },
+      {
+        "bytes": 3072,
+        "format": 0,
+        "quant": 0,
+        "dims": [
+          48,
+          1,
+          16
+        ]
+      },
+      {
+        "bytes": 3584,
+        "format": 0,
+        "quant": 0,
+        "dims": [
+          7,
+          128,
+          1
+        ]
+      },
+      {
+        "bytes": 3584,
+        "format": 0,
+        "quant": 0,
+        "dims": [
+          7,
+          128,
+          1
+        ]
+      },
+      {
+        "bytes": 8192,
+        "format": 0,
+        "quant": 0,
+        "dims": [
+          256,
+          1,
+          8
+        ]
+      },
+      {
+        "bytes": 3072,
+        "format": 0,
+        "quant": 0,
+        "dims": [
+          96,
+          8,
+          1,
+          1
+        ]
+      },
+      {
+        "bytes": 3072,
+        "format": 0,
+        "quant": 0,
+        "dims": [
+          96,
+          1,
+          8
+        ]
+      },
+      {
+        "bytes": 3072,
+        "format": 0,
+        "quant": 0,
+        "dims": [
+          96,
+          1,
+          8
+        ]
+      },
+      {
+        "bytes": 3584,
+        "format": 0,
+        "quant": 0,
+        "dims": [
+          7,
+          128,
+          1
+        ]
+      },
+      {
+        "bytes": 3584,
+        "format": 0,
+        "quant": 0,
+        "dims": [
+          7,
+          128,
+          1
+        ]
+      },
+      {
+        "bytes": 8192,
+        "format": 0,
+        "quant": 0,
+        "dims": [
+          128,
+          1,
+          16
+        ]
+      },
+      {
+        "bytes": 6144,
+        "format": 0,
+        "quant": 0,
+        "dims": [
+          96,
+          16,
+          1,
+          1
+        ]
+      },
+      {
+        "bytes": 3072,
+        "format": 0,
+        "quant": 0,
+        "dims": [
+          48,
+          1,
+          16
+        ]
+      },
+      {
+        "bytes": 3072,
+        "format": 0,
+        "quant": 0,
+        "dims": [
+          48,
+          1,
+          16
+        ]
+      },
+      {
+        "bytes": 3584,
+        "format": 0,
+        "quant": 0,
+        "dims": [
+          7,
+          128,
+          1
+        ]
+      },
+      {
+        "bytes": 3584,
+        "format": 0,
+        "quant": 0,
+        "dims": [
+          7,
+          128,
+          1
+        ]
+      },
+      {
+        "bytes": 16384,
+        "format": 0,
+        "quant": 0,
+        "dims": [
+          128,
+          1,
+          32
+        ]
+      },
+      {
+        "bytes": 12288,
+        "format": 0,
+        "quant": 0,
+        "dims": [
+          96,
+          32,
+          1,
+          1
+        ]
+      },
+      {
+        "bytes": 6144,
+        "format": 0,
+        "quant": 0,
+        "dims": [
+          48,
+          1,
+          32
+        ]
+      },
+      {
+        "bytes": 6144,
+        "format": 0,
+        "quant": 0,
+        "dims": [
+          48,
+          1,
+          32
+        ]
+      },
+      {
+        "bytes": 3584,
+        "format": 0,
+        "quant": 0,
+        "dims": [
+          7,
+          128,
+          1
+        ]
+      },
+      {
+        "bytes": 3584,
+        "format": 0,
+        "quant": 0,
+        "dims": [
+          7,
+          128,
+          1
+        ]
+      },
+      {
+        "bytes": 29184,
+        "format": 0,
+        "quant": 0,
+        "dims": [
+          19,
+          3,
+          128,
+          1
+        ]
+      },
+      {
+        "bytes": 4,
+        "format": 0,
+        "quant": 0,
+        "dims": [
+          1
+        ]
+      }
+    ]
+  }
+}

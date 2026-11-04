@@ -264,6 +264,9 @@ struct a733_wifi_state_s
   uint8_t bt_event_in;
   uint8_t bt_acl_out;
   uint8_t bt_acl_in;
+  uint32_t bt_patch_mode;
+  uint32_t bt_patch_port;
+  uint32_t bt_patch_port_readback;
   uint16_t runtime_maxpacket;
   bool wifi_data_out_toggle;
   bool wifi_data_in_toggle;
@@ -353,6 +356,7 @@ struct a733_wifi_state_s
   uint8_t wpa_pmk[A733_WIFI_WPA_PMK_LEN];
   uint8_t wpa_ptk[A733_WIFI_WPA_PTK_LEN];
   uint8_t wpa_snonce[32];
+  uint8_t wpa_anonce[32];
   uint8_t wpa_replay[8];
   uint16_t wpa_assoc_ie_length;
   uint8_t wpa_assoc_ie[A733_WIFI_ASSOC_IE_MAX];
@@ -1611,6 +1615,11 @@ static int a733_aic_apply_patch_table(void)
           pairs = 4;
         }
 
+      if (type == 3 && pairs < 9)
+        {
+          return -EPROTO;
+        }
+
       if (type != 6)
         {
           for (index = 0; index < pairs; index++)
@@ -1620,19 +1629,50 @@ static int a733_aic_apply_patch_table(void)
               uint32_t value =
                 a733_getle32(&g_wifi_patch_table[offset + index * 8 + 4]);
 
-              if (type == 3 && index == 0)
+              if (type == 3 && index < 9)
                 {
-                  value = 1; /* hwinfo < 0 */
-                }
-              else if (type == 3 && index == 1)
-                {
-                  value = UINT32_C(0xffffffff); /* hwinfo = -1 */
+                  /* aicbt_patch_table_load() substitutes every BTMODE
+                   * field. The disk table is NOT a ready-to-run USB
+                   * profile: its BTPORT=2 routes HCI to UART. Match the
+                   * official D80 defaults (mailbox/USB=1), not that disk
+                   * placeholder. Do not change radio mode to an invented
+                   * combo profile or reset the working WLAN controller. */
+
+                  static const uint32_t bt_values[9] =
+                    {
+                      1, UINT32_C(0xffffffff), 0, 5, 1,
+                      1500000, 1, 0, UINT32_C(0x00006f2f)
+                    };
+
+                  value = bt_values[index];
                 }
 
               ret = a733_aic_bootrom_write32(address, value);
               if (ret < 0)
                 {
                   return ret;
+                }
+
+              if (type == 3 && index == 3)
+                {
+                  g_wifi.bt_patch_mode = value;
+                }
+              else if (type == 3 && index == 4)
+                {
+                  g_wifi.bt_patch_port = value;
+                  ret = a733_aic_bootrom_read32(address,
+                                                &g_wifi.bt_patch_port_readback);
+                  if (ret < 0 || g_wifi.bt_patch_port_readback != value)
+                    {
+                      return ret < 0 ? ret : -EILSEQ;
+                    }
+
+                  syslog(LOG_INFO,
+                         "A733 BT: firmware mode=%lu HCI-port=%lu "
+                         "readback=%lu (mailbox/USB)\n",
+                         (unsigned long)g_wifi.bt_patch_mode,
+                         (unsigned long)g_wifi.bt_patch_port,
+                         (unsigned long)g_wifi.bt_patch_port_readback);
                 }
             }
         }
@@ -4179,7 +4219,9 @@ static int a733_wifi_wpa_send_key(uint16_t key_info,
   a733_putbe16(eapol + 2, eapol_length - 4);
   eapol[4] = 2;
   a733_putbe16(eapol + 5, key_info);
-  a733_putbe16(eapol + 7, 16);
+  /* RSN M2/M4 report Key Length=0, not the installed CCMP temporal-key
+   * length. This matches upstream wpa_supplicant's RSN response builder. */
+  a733_putbe16(eapol + 7, 0);
   memcpy(eapol + 9, replay, 8);
   if (nonce != NULL)
     {
@@ -4366,6 +4408,24 @@ static int a733_wifi_wpa_extract_gtk(const uint8_t *encrypted,
   return -ENOENT;
 }
 
+/* Retransmitted M1 must reuse this handshake's SNonce/PTK. Do not let an
+ * older M1 roll back the replay counter or reopen a completed transaction. */
+static int a733_wifi_wpa_m1_prepare(const uint8_t *eapol)
+{
+  int order = memcmp(eapol + 9, g_wifi.wpa_replay, 8);
+  if (g_wifi.wpa_state >= A733_WPA_WAIT_M3 &&
+      (order < 0 || (g_wifi.wpa_state == A733_WPA_COMPLETE && order == 0)))
+    { g_wifi.wpa_replays++; return -EALREADY; }
+  if (g_wifi.wpa_state != A733_WPA_WAIT_M3 ||
+      memcmp(g_wifi.wpa_anonce, eapol + 17, 32) != 0)
+    {
+      a733_wifi_wpa_derive_ptk(eapol + 17);
+      memcpy(g_wifi.wpa_anonce, eapol + 17, 32);
+    }
+  memcpy(g_wifi.wpa_replay, eapol + 9, 8);
+  return OK;
+}
+
 static int a733_wifi_wpa_eapol(const uint8_t *eapol, size_t available)
 {
   uint8_t gtk[32];
@@ -4453,8 +4513,8 @@ static int a733_wifi_wpa_eapol(const uint8_t *eapol, size_t available)
           return -ENOENT;
         }
 
-      memcpy(g_wifi.wpa_replay, eapol + 9, 8);
-      a733_wifi_wpa_derive_ptk(eapol + 17);
+      ret = a733_wifi_wpa_m1_prepare(eapol);
+      if (ret < 0) return ret;
       ret = a733_wifi_wpa_send_key(0x010au, g_wifi.wpa_replay,
                                    g_wifi.wpa_snonce, g_wifi.wpa_assoc_ie,
                                    g_wifi.wpa_assoc_ie_length);
@@ -4462,7 +4522,7 @@ static int a733_wifi_wpa_eapol(const uint8_t *eapol, size_t available)
         {
           g_wifi.wpa_m1++;
           g_wifi.wpa_state = A733_WPA_WAIT_M3;
-          syslog(LOG_INFO, "A733 WIFI: WPA2 message 1/2 passed\n");
+          syslog(LOG_INFO, "A733 WIFI: WPA2 M1 received, M2 submitted to USB; waiting for authenticated M3\n");
         }
 
       return ret;
@@ -6024,6 +6084,8 @@ static ssize_t a733_wifi_write(struct file *filep, const char *buffer,
   return -EINVAL;
 }
 
+#include "a733_bt_checkpoint.inc"
+
 static const struct file_operations g_a733_wifi_fops =
 {
   .read = a733_wifi_read,
@@ -6220,6 +6282,14 @@ int a733_wifi_usb_initialize(void)
 
   driver_ret = register_driver("/dev/a733-wifi", &g_a733_wifi_fops,
                                0666, NULL);
+  /* Register only: no HCI traffic, radio reset or pairing during boot. */
+
+  ret = register_driver("/dev/a733-bt", &g_a733_bt_fops, 0660, NULL);
+  if (ret < 0)
+    {
+      syslog(LOG_WARNING, "A733 BT: diagnostic registration (%d)\n", ret);
+    }
+  a733_bt_host_register();
 #ifdef CONFIG_NET
   if (driver_ret == OK && g_wifi.mac_start == OK)
     {

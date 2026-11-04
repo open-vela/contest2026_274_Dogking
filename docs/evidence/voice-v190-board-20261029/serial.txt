@@ -1,0 +1,556 @@
+Scanning mmc 0:2...
+Scanning mmc 0:3...
+Found /boot/extlinux/extlinux.conf
+Retrieving file: /boot/extlinux/extlinux.conf
+196 bytes read in 15 ms (12.7 KiB/s)
+1:      openvela A733 (minimal SD image)
+Retrieving file: /boot/openvela/a733/Image
+7012048 bytes read in 311 ms (21.5 MiB/s)
+Retrieving file: /boot/dtb/sun60i-a733-cubie-a7z.dtb
+193692 bytes read in 25 ms (7.4 MiB/s)
+[22.224]libfdt fdt_path_offset() returned FDT_ERR_BADMAGIC
+[22.233]The storage not support sample function
+[22.320]mac addr => 08:51:49:dc:77:ed
+[22.324]mac addr => 08:51:49:dc:77:ec
+[22.328]no battery, disabled battery functons
+[22.335]update dts
+stop sunxi USB-DRD ok...
+stop sunxi USB1-Host ok...
+[22.360]Starting kernel ...
+
+[22.363]total: 22363 ms
+
+[22.365][mmc]: MMC Device 2 not found
+[22.369][mmc]: mmc 2 not find, so not exit
+NOTICE:  [SCP] :wait arisc ready....
+NOTICE:  [SCP] :arisc version: [d463b9da43dc50320f21ba51c6c51afe2db20d83]
+NOTICE:  [SCP] :arisc startup ready
+NOTICE:  [SCP] :arisc startup notify message feedback
+NOTICE:  [SCP] :sunxi-arisc driver is starting
+NOTICE:  BL3-1: Next image address = 0x40200000
+NOTICE:  BL3-1: Next image spsr = 0x3c5
+- Ready to Boot Primary CPU
+- Boot from EL1
+- Boot to C runtime for OS Initialize
+M0 v188-boot-candidate
+M1
+A7Z0
+A7Z1
+N0
+N1
+H0
+H1
+H2
+H3
+H4
+S0
+S1
+P1
+H5
+N2
+N3
+N4
+[boot188] SMP flush begin=0x0000000000000008
+[boot188] SMP flush done=0x0000000000000000
+[boot188] SMP request cpu=0x0000000000000001
+[boot188] SMP return=0x0000000000000000
+[boot188] SMP request cpu=0x0000000000000002
+[boot188] SMP return=0x0000000000000000
+[boot188] SMP request cpu=0x0000000000000003
+[boot188] SMP return=0x0000000000000000
+[boot188] SMP request cpu=0x0000000000000004
+[boot188] SMP return=0x0000000000000000
+[boot188] SMP request cpu=0x0000000000000005
+[boot188] SMP return=0x0000000000000000
+[boot188] SMP request cpu=0x0000000000000006
+[boot188] SMP return=0x0000000000000000
+[boot188] SMP request cpu=0x0000000000000007
+[boot188] SMP return=0x0000000000000000
+N5
+B0
+B1
+B2
+B3
+B4
+N6
+NA70
+
+NA81
+
+[boot188] CTOR enter=0x00000000404a05c0
+[boot188] CTOR done index=0x0000000000000000
+[boot188] CTOR enter=0x00000000404c7d70
+[boot188] CTOR done index=0x0000000000000001
+[boot188] CTOR enter=0x00000000404c9770
+[boot188] CTOR done index=0x0000000000000002
+[boot188] CTOR enter=0x00000000402a1a74
+[boot188] CTOR done index=0x0000000000000003
+[boot188] CTOR enter=0x00000000402a2254
+[boot188] CTOR done index=0x0000000000000004
+[boot188] CTOR enter=0x00000000402bdf48
+[boot188] CTOR done index=0x0000000000000005
+[boot188] CTOR enter=0x0000000040414140
+[boot188] CTOR done index=0x0000000000000006
+[boot188] CTOR enter=0x0000000040416570
+[boot188] CTOR done index=0x0000000000000007
+[boot188] CTOR enter=0x000000004042f220
+[boot188] CTOR done index=0x0000000000000008
+[boot188] CTOR enter=0x000000004042f6a0
+[boot188] CTOR done index=0x0000000000000009
+[boot188] CTOR enter=0x000000004042f950
+[boot188] CTOR done index=0x000000000000000a
+[boot188] CTOR enter=0x00000000404326d0
+[boot188] CTOR done index=0x000000000000000b
+[boot188] CTOR enter=0x000000004046f5d0
+[boot188] CTOR done index=0x000000000000000c
+[boot188] CTOR enter=0x00000000404756d0
+[boot188] CTOR done index=0x000000000000000d
+[boot188] CTOR enter=0x00000000404c7890
+[boot188] CTOR done index=0x000000000000000e
+[boot188] CTOR enter=0x00000000404c98d0
+[boot188] CTOR done index=0x000000000000000f
+[boot188] CTOR enter=0x00000000404cd8b0
+[boot188] CTOR done index=0x0000000000000010
+[boot188] CTOR enter=0x00000000404cf0a0
+[boot188] CTOR done index=0x0000000000000011
+[boot188] CTOR enter=0x0000000040631de0
+[boot188] CTOR done index=0x0000000000000012
+[boot188] CTOR enter=0x0000000040637220
+[boot188] CTOR done index=0x0000000000000013
+[boot188] CTOR enter=0x0000000040637250
+[boot188] CTOR done index=0x0000000000000014
+[boot188] CTOR enter=0x00000000406372e0
+[boot188] CTOR done index=0x0000000000000015
+[boot188] CTOR enter=0x000000004065b1d0
+[boot188] CTOR done index=0x0000000000000016
+[boot188] CTOR enter=0x00000000407d5c80
+[boot188] CTOR done index=0x0000000000000017
+AX20
+
+X1
+PR
+PR
+PR
+
+NuttShell (NSH)
+nsh> RI
+RX
+
+nsh> aipet audio output i2s
+audio: saved; applies next operation and survives reboot.
+aipet audio: output result=0
+nsh> aipet audio volume 50
+audio: saved; applies next operation and survives reboot.
+aipet audio: volume result=0
+nsh> aipet audio general-voice /data/npu/general-asr /data/npu/general-tts
+general-voice: RAM-only candidate installed; ASR=NPU acoustic=CPU vocoder=NPU; no auto capture/cloud fallback; TARGET ACCEPTANCE REQUIRED
+general-voice: configure result=0
+nsh> aipet audio local-speak "你好，语音测试成功。"
+local-tts: result=0 acoustic=CPU vocoder=NPU packets=2 samples=67328 cpu-us=2063448 npu-us=173752 first-sink-us=2803183; NOT end-of-speech/physical-audio latency
+aipet audio: local-speak result=0
+nsh> aipet audio local-speak-stream "你好，语音测试成功。"
+local-tts: result=0 acoustic=CPU vocoder=NPU packets=2 samples=67328 cpu-us=2051224 npu-us=173671 first-sink-us=2803807; NOT end-of-speech/physical-audio latency
+local-tts-stream: status=0 first-pcm=2794284 us first-driver-pull=2796848 us frames=146565; audible latency NOT measured
+local-tts-buffer-v189: segments=1 rebuffers=0 rebuffer-wait-us=0; no padding/replay; actual device errors are fatal
+voice-stage: tts-start-mono-us=79933168 first-driver-pull-mono-us=82730016 status=0; driver pull is NOT physical audible onset
+aipet audio: local-speak-stream result=0
+nsh> cat /dev/a733-audio
+A733 I2S0 MAX98357A/INMP441/ICS43434 acceptance driver v162
+playback: status=0 plays=2 volume=50% rate=48000 channels=1 frames=146565 sent=146565 elapsed=3053 ms intsta=00000050
+state=ready initialized=1 pll-locked=1 last=0 last-op=stream-play probes=3 tones=0 captures=0 timeouts=0 samples=0
+stream-proof: tx-count=146566 rx-count=0 capture-nonzero=0 raw-nonzero=0 warmup=0 first-raw=00000000 last-raw=00000000 capture-min=0 capture-max=0
+capture-proof: mode=none slot=0(left) status=-11 committed=0 requested=0 ms elapsed=0 ms target-rx=0 consumed-rx=0 hw-rx=0 fifo-peak=0 intsta=00000000
+capture-config: bclk-polarity=0 lrck-polarity=0 PB8-pull=0(disabled) fmt0=00000000 rxmap3=00000000 pb-pull=00000000
+capture-stats: units=S16 zero=0 sign-transitions=0 sum-square=0 raw-low55=0 raw-lowaa=0
+capture-output:
+processing: voice=0 applied=0 gain=0 clipped=0 input-min=0 input-max=0; capture-stats/min/max describe output
+capture-profile: mic=INMP441-legacy rx-channels=0 file-channels=0 chcfg=00000000 rxchsel=00000000; transport status is NOT acoustic acceptance
+counter-policy=frame-candidate expected-hw=0 actual-hw=0 counter-status=0 points=0 FIFO-words/HW=0/0,0/0,0/0,0/0,0/0,0/0
+capture-plan: rate=48000 slots=2 sample=24 slot=32 module=24.576MHz bclk=3.072MHz mclk=off
+ccu: pll-audio1=f9147f00 module=82000018 bus-reset=00010001
+regs: ctl=00000000 fmt0=00001f37 fifoctl=00000005 fifosta=10800080 clkdiv=00000050 chcfg=00000001 rev=00021000
+channel-map: txsel=00110003 txmap=00000000/00000010 rxsel=00100000 rxmap=00000000/00000000/00000000/00000000
+pins: PB5/BCLK=pin12 PB6/LRCK=pin35 PB7/DOUT0=pin40 PB8/DIN0=pin38; PB5/6/8 mux=3 PB7=GPIO-low idle/RX, I2S TX; cfg0=133f7777 cfg1=00000223 pull=00160005 data=00000000
+max98357a: BCLK=PB5 LRC=PB6 DIN=PB7; SD_MODE must be high; OUTP/OUTN are differential
+inmp441: SCK=PB5 WS=PB6 SD=PB8 VDD=3.3V; default-slot=right(1)
+ics43434: SCK=PB5 WS=PB6 SD=PB8; dual-slot, no LR strap assumed; bare VDD=1.65..3.63V; combined-module VCC per vendor, NOT bare VDD
+ics: icscapture=<ms> (stereo) | icsleft=<ms> | icsright=<ms> | icsraw=<ms> (stereo S24 in S32); 100..10000 ms
+voice: icsvoice=<ms>[,<gain:1..16>] (left mono S16, default x5; /data/ics43434-voice.wav; no AGC)
+speaker: play=/data/file.wav | volume=0..100 (default 25%); PCM16 WAV, max10s
+control: probe | init | tone=<hz>,<ms> (official S16 path) | tone32=<hz>,<ms> (legacy compare) | capture=<ms> (default right) | captureleft=<ms> | captureright=<ms> | capture32=<ms> | off
+matrix: capturecfg=<slot:0/1>,<bclk:0/1>,<pull:0/2>,<ms:100..10000>; each config has its own WAV; repeating it replaces that config only
+capture-files: /data/inmp441.wav (48kHz mono signed-16 WAV), /data/inmp441-raw32.bin (sign-extended S24 FIFO words)
+nsh> aipet local status
+local-llm: on model='/data/models/qwen2.5-1.5b-instruct-q4_k_m.gguf' model-file=missing tokens=32 cores=fc storage=auto-SD
+llm-cache: state=empty bytes=0 path=''
+llm-pool: pid=0 mask=00 workers=0 created=0 matrices=0
+llm-prefill: width=4 (1=serial,4=bounded layer-major); decode remains serial
+llm-prefix: cached=0 layers=0 width=0 bytes=0
+llm-directory: cached=0 tensors=0
+local-context: stored=0 limit=3 RAM-only shared-device-session; clear with 'aipet local clear'
+nsh> ufs status
+ufs: active=0 pid=0 phase=idle result=0 verified=0 created=0 close-error=0 stop=0 bytes=0/0 checked=0 elapsed-ms=0 no-progress-ms=0
+ufs-mount: active=0 attempted=0 ready=0 error=0 stage=not-started mount=/ufs source=/dev/ufsdata fallback=/data/models
+nsh> ufs start
+nsh> ufs status
+ufs: active=0 pid=0 phase=idle result=0 verified=0 created=0 close-error=0 stop=0 bytes=0/0 checked=0 elapsed-ms=0 no-progress-ms=0
+ufs-mount: active=0 attempted=1 ready=1 error=0 stage=mounted-existing-FAT mount=/ufs source=/dev/ufsdata fallback=/data/models
+nsh> ls -l /ufs/models/MiniCPM5-1B-Q4_K_M.gguf
+ -rw-rw-rw-   688065920 /ufs/models/MiniCPM5-1B-Q4_K_M.gguf
+nsh> npu selftest
+selftest: passed
+nsh> aipet audio general-asr /data/npu/general-asr
+general-asr: candidate configured (RAM only); TTS unavailable; target acceptance required
+general-asr: configure result=0
+nsh> aipet audio general-wav /data/npu/general-asr/checks/cmd_open_light_16k.wav
+general-wav: result=-20 transcript=[NONE]; explicit FILE input, not microphone/closed-loop acceptance; no actions/cloud
+aipet audio: general-wav result=-20
+nsh> aipet audio general-wav /data/npu/general-asr/checks/cmd_time_16k.wav
+general-wav: result=-20 transcript=[NONE]; explicit FILE input, not microphone/closed-loop acceptance; no actions/cloud
+aipet audio: general-wav result=-20
+nsh> aipet audio general-wav /data/npu/general-asr/checks/neg_silence_3s_16k.wav
+general-wav: result=-20 transcript=[NONE]; explicit FILE input, not microphone/closed-loop acceptance; no actions/cloud
+aipet audio: general-wav result=-20
+nsh> poweroff
+......
+
+
+[244]HELLO! BOOT0 is starting!
+[247]BOOT0 commit : {4721ad08}
+[251]board gpio withstand voltage auto mode
+[265]dram_para_total:0xf
+[268]vaild para:6  select dram para10
+[mmc]: mmc driver ver 2025-10-16 17:10
+[mmc]: Wrong media type 0x0
+[mmc]: ***Try SD card 0***
+[mmc]: HSSDR52/SDR25 4 bit
+[mmc]: 50000000 Hz
+[mmc]: 30436 MB
+[mmc]: ***SD/MMC 0 init OK!!!***
+[316]DRAM BOOT DRIVE INFO: V0.601
+[320]DRAM_VCC set to 1100 mv
+[323]DRAM CLK =1800 MHZ
+[325]DRAM Type =8 (8:LPDDR4,9:LPDDR5)
+[430]Training result is = 7
+[433]DRAM Pstate 1 training, frequency is 1200 Mhz
+[546]Training result is = 7
+[549]DRAM Pstate 2 training, frequency is 800 Mhz
+[759]Training result is = 7
+[762]DRAM Pstate 3 training, frequency is 400 Mhz
+[3992]Training result is = 7
+[3995]DRAM Pstate 0 training, frequency is 1800 Mhz
+[4003]Actual DRAM SIZE =4096 M
+[4006]DRAM SIZE =4096 MBytes, para1 = 310a, para2 = 10001001, dram_tpr13 = 6067
+[4021]DRAM simple test OK.
+[4026]error:bad magic.
+[4090]error: dtb not found for scp
+[4094]mmc not para
+[4096]Jump to ATF: monitor_base = 0x48000000, uboot_base = 0x4a000000, optee_base = 0x0
+NOTICE:  BL31: OP-TEE 32bit detected
+NOTICE:  BL31: U-BOOT 32bit detected
+NOTICE:  BL31: dram size is 4294967296 bytes
+NOTICE:  BL31: v2.5(debug):48e54578a
+NOTICE:  BL31: Built : 14:13:06, Jul  2 2025
+NOTICE:  BL31: No DTB found.
+ERROR:   Error initializing runtime service opteed_fast
+
+
+U-Boot 2018.07-17-boot-aw2501-g4c7078cfdf7-dirty (Apr 29 2026 - 10:03:59 +0000) Allwinner Technology
+
+[04.152]CPU:   Allwinner Family
+[04.155]Model: Radxa Cubie A7A
+I2C:   ready
+[04.218]DRAM:  4 GiB
+[04.227]Relocation Offset is: 75d89000
+[04.281]secure enable bit: 0
+[04.284]PMU: AXP8191
+[04.286]PMU: AXP8191 VER_A
+FDT ERROR:fdt_get_regulator_name:get property handle twi-supply error:FDT_ERR_INTERNAL
+[04.298]bmu_axp515_probe pmic_bus_read fail
+[04.302][AXP8191] onoff status: 0x50 = 0x1, 0x51 = 0x0
+[04.307][AXP8191] charge status: 0x4 = 0x0
+[04.310]CPU=1014 MHz,PLL6=1200 Mhz,AHB=200 Mhz, APB1=24Mhz  MBus=600Mhz
+[04.317]gic: sec monitor mode
+SPI ALL:   ready
+[04.361]flash init start
+[04.363]workmode = 0,storage type = 1
+[04.366][mmc]: mmc driver ver uboot2018:2024-10-18 9:01:00 -- uboot2018:2025-03-28 10:03:00
+[04.375][mmc]: get sdc_type fail and use default host:tm1.
+[04.383][mmc]: can't find node "mmc0",will add new node
+[04.387][mmc]: fdt err returned <no error>
+[04.391][mmc]: Using default timing para
+[04.395][mmc]: SUNXI SDMMC Controller Version:0x50530
+[04.423][mmc]: card_caps:0x3000000a
+[04.426][mmc]: host_caps:0x3000003f
+[04.431]sunxi flash init ok
+get value error
+[04.443]Loading Environment from SUNXI_FLASH... OK
+No ethernet found.
+[04.481]NOT support bridge yet
+[04.483]Warn: no find panel or bridge
+[04.487]hdmi0@5520000 disconnected
+[04.490]drm hdmi get mode: 1920x1080@60Hz
+hdmi0@5520000: use force output detailed mode clock 148500 kHz, flags[5]
+    H: 1920 2008 2052 2200
+    V: 1080 1084 1089 1125
+bus_format: 0
+partno erro : can't find partition bootloader
+[04.520]bootloader is not found!
+partno erro : can't find partition boot-resource
+[04.528]boot-resource is not found!
+[04.532]Can not load logo.bmp file!
+[04.535]load logo fail
+[04.544]the secure storage item0 copy0 magic is bad
+[04.556]the secure storage item0 copy1 magic is bad
+[04.560]usb burn from boot
+delay time 0
+[04.567]usb prepare ok
+[04.870]overtime
+[04.874]do_burn_from_boot usb : no usb exist
+skip update boot_param
+cann't get the boot_base from the env
+[04.885]update part info
+[04.890]battery temp is -1
+[04.895]update bootcmd
+[04.903](not enough data: expected >= 8 cells, got 4 cells)
+Link up timeout
+Speed change timeout
+PCIe speed of Gen1
+Override default fdtfile to allwinner/sun60i-a733-cubie-a7z.dtb
+[07.345]libfdt fdt_check_header(): FDT_ERR_BADMAGIC
+[07.351]libfdt fdt_path_offset() returned FDT_ERR_BADMAGIC
+[07.356][mmc]: get sunxi-mmc0 string failed
+[07.361]The storage not support sample function
+[07.367]## error: update_fdt_dram_para_from_bootpara : FDT_ERR_NOTFOUND
+[07.374]chip id : 0x00005100 0x00004900 0x0000c418 0x00002354
+[07.379]mac addr => 08:51:49:dc:77:ed
+[07.382]chip id : 0x00005100 0x00004900 0x0000c418 0x00002354
+[07.388]mac addr => 08:51:49:dc:77:ec
+[07.392]/chosen/rng-seed node not exit
+[07.395]no battery, disabled battery functons
+[07.400]Could not find nodeoffset for bat_supply
+[07.404]update dts
+curr_device:0
+Device: SUNXI SD/MMC
+Manufacturer ID: 3
+OEM: 5344
+Name: SD32G
+Bus Speed: 50000000
+Mode : SD High Speed (50MHz)
+Rd Block Len: 512
+SD version 3.0
+High Capacity: Yes
+Capacity: 29.7 GiB
+Bus Width: 4-bit
+Erase Group Size: 512 Bytes
+[ufs]info:Driver version 0.0.24 2024.12.30 16:00
+[ufs]info:Cal words 0x60:val 0x98620000, 0x64:val 0x4d1d9753
+[ufs]info:[RX, TX]: gear=[4, 4], lane[2, 2], pwr[FAST MODE, FAST MODE], rate = 2
+[ufs]err:Warning wExceptionEventStatus 20 !!!!!!!
+[ufs]err:Warning wExceptionEventStatus 20 !!!!!!!
+[ufs]err:Warning wExceptionEventStatus 20 !!!!!!!
+[ufs]err:Warning wExceptionEventStatus 20 !!!!!!!
+[ufs]err:Warning wExceptionEventStatus 20 !!!!!!!
+[ufs]err:Warning wExceptionEventStatus 20 !!!!!!!
+[ufs]err:Warning wExceptionEventStatus 20 !!!!!!!
+[ufs]err:Warning wExceptionEventStatus 20 !!!!!!!
+[ufs]err:Warning wExceptionEventStatus 20 !!!!!!!
+[ufs]err:Warning wExceptionEventStatus 20 !!!!!!!
+[ufs]info:Eol info 1
+[ufs]info:life time a 1
+[ufs]info:life time b 1
+[ufs]info:qTotalRawDeviceCapacity 0xEE78000, max_num_alloc_units 0x773c
+[ufs]info:dNumAllocUnits:0x773c
+ [ufs]err:sc st 2
+[ufs]err:scsi status:Check conditon
+[ufs]err:dump:bfeb6f60: 70 00 06 00 00 00 00 0a 00 00 00 00 29 00 00 00    p...........)...
+[ufs]info:blk size 4096,capacity 31256576 block
+Hit any key to stop autoboot:  0
+starting USB...
+USB0:   start sunxi  USB-DRD...
+config usb clk ok
+sunxi USB-DRD init ok...
+USB EHCI 1.00
+scanning bus 0 for devices... 1 USB Device(s) found
+USB1:   start sunxi  USB1-Host...
+config usb clk ok
+sunxi USB1-Host init ok...
+USB EHCI 1.00
+scanning bus 1 for devices... 1 USB Device(s) found
+       scanning usb for storage devices... 0 Storage Device(s) found
+
+Device 0: device type unknown
+... is now current device
+** Bad device usb 0 **
+** Bad device usb 0 **
+mmc0 is current device
+Scanning mmc 0:2...
+Scanning mmc 0:3...
+Found /boot/extlinux/extlinux.conf
+Retrieving file: /boot/extlinux/extlinux.conf
+196 bytes read in 15 ms (12.7 KiB/s)
+1:      openvela A733 (minimal SD image)
+Retrieving file: /boot/openvela/a733/Image
+7012048 bytes read in 311 ms (21.5 MiB/s)
+Retrieving file: /boot/dtb/sun60i-a733-cubie-a7z.dtb
+193692 bytes read in 25 ms (7.4 MiB/s)
+[12.442]libfdt fdt_path_offset() returned FDT_ERR_BADMAGIC
+[12.451]The storage not support sample function
+[12.538]mac addr => 08:51:49:dc:77:ed
+[12.542]mac addr => 08:51:49:dc:77:ec
+[12.547]no battery, disabled battery functons
+[12.554]update dts
+stop sunxi USB-DRD ok...
+stop sunxi USB1-Host ok...
+[12.579]Starting kernel ...
+
+[12.582]total: 12582 ms
+
+[12.584][mmc]: MMC Device 2 not found
+[12.588][mmc]: mmc 2 not find, so not exit
+NOTICE:  [SCP] :wait arisc ready....
+NOTICE:  [SCP] :arisc version: [d463b9da43dc50320f21ba51c6c51afe2db20d83]
+NOTICE:  [SCP] :arisc startup ready
+NOTICE:  [SCP] :arisc startup notify message feedback
+NOTICE:  [SCP] :sunxi-arisc driver is starting
+NOTICE:  BL3-1: Next image address = 0x40200000
+NOTICE:  BL3-1: Next image spsr = 0x3c5
+- Ready to Boot Primary CPU
+- Boot from EL1
+- Boot to C runtime for OS Initialize
+M0 v188-boot-candidate
+M1
+A7Z0
+A7Z1
+N0
+N1
+H0
+H1
+H2
+H3
+H4
+S0
+S1
+P1
+H5
+N2
+N3
+N4
+[boot188] SMP flush begin=0x0000000000000008
+[boot188] SMP flush done=0x0000000000000000
+[boot188] SMP request cpu=0x0000000000000001
+[boot188] SMP return=0x0000000000000000
+[boot188] SMP request cpu=0x0000000000000002
+[boot188] SMP return=0x0000000000000000
+[boot188] SMP request cpu=0x0000000000000003
+[boot188] SMP return=0x0000000000000000
+[boot188] SMP request cpu=0x0000000000000004
+[boot188] SMP return=0x0000000000000000
+[boot188] SMP request cpu=0x0000000000000005
+[boot188] SMP return=0x0000000000000000
+[boot188] SMP request cpu=0x0000000000000006
+[boot188] SMP return=0x0000000000000000
+[boot188] SMP request cpu=0x0000000000000007
+[boot188] SMP return=0x0000000000000000
+N5
+B0
+B1
+B2
+B3
+B4
+N6
+NA70
+
+NA81
+
+[boot188] CTOR enter=0x00000000404a05c0
+[boot188] CTOR done index=0x0000000000000000
+[boot188] CTOR enter=0x00000000404c7d70
+[boot188] CTOR done index=0x0000000000000001
+[boot188] CTOR enter=0x00000000404c9770
+[boot188] CTOR done index=0x0000000000000002
+[boot188] CTOR enter=0x00000000402a1a74
+[boot188] CTOR done index=0x0000000000000003
+[boot188] CTOR enter=0x00000000402a2254
+[boot188] CTOR done index=0x0000000000000004
+[boot188] CTOR enter=0x00000000402bdf48
+[boot188] CTOR done index=0x0000000000000005
+[boot188] CTOR enter=0x0000000040414140
+[boot188] CTOR done index=0x0000000000000006
+[boot188] CTOR enter=0x0000000040416570
+[boot188] CTOR done index=0x0000000000000007
+[boot188] CTOR enter=0x000000004042f220
+[boot188] CTOR done index=0x0000000000000008
+[boot188] CTOR enter=0x000000004042f6a0
+[boot188] CTOR done index=0x0000000000000009
+[boot188] CTOR enter=0x000000004042f950
+[boot188] CTOR done index=0x000000000000000a
+[boot188] CTOR enter=0x00000000404326d0
+[boot188] CTOR done index=0x000000000000000b
+[boot188] CTOR enter=0x000000004046f5d0
+[boot188] CTOR done index=0x000000000000000c
+[boot188] CTOR enter=0x00000000404756d0
+[boot188] CTOR done index=0x000000000000000d
+[boot188] CTOR enter=0x00000000404c7890
+[boot188] CTOR done index=0x000000000000000e
+[boot188] CTOR enter=0x00000000404c98d0
+[boot188] CTOR done index=0x000000000000000f
+[boot188] CTOR enter=0x00000000404cd8b0
+[boot188] CTOR done index=0x0000000000000010
+[boot188] CTOR enter=0x00000000404cf0a0
+[boot188] CTOR done index=0x0000000000000011
+[boot188] CTOR enter=0x0000000040631de0
+[boot188] CTOR done index=0x0000000000000012
+[boot188] CTOR enter=0x0000000040637220
+[boot188] CTOR done index=0x0000000000000013
+[boot188] CTOR enter=0x0000000040637250
+[boot188] CTOR done index=0x0000000000000014
+[boot188] CTOR enter=0x00000000406372e0
+[boot188] CTOR done index=0x0000000000000015
+[boot188] CTOR enter=0x000000004065b1d0
+[boot188] CTOR done index=0x0000000000000016
+[boot188] CTOR enter=0x00000000407d5c80
+[boot188] CTOR done index=0x0000000000000017
+XA02
+
+X1
+PR
+PR
+PR
+
+NuttShell (NSH)
+nsh> RI
+RX
+
+nsh> aipet local status
+local-llm: on model='/data/models/qwen2.5-1.5b-instruct-q4_k_m.gguf' model-file=missing tokens=32 cores=fc storage=auto-SD
+llm-cache: state=empty bytes=0 path=''
+llm-pool: pid=0 mask=00 workers=0 created=0 matrices=0
+llm-prefill: width=4 (1=serial,4=bounded layer-major); decode remains serial
+llm-prefix: cached=0 layers=0 width=0 bytes=0
+llm-directory: cached=0 tensors=0
+local-context: stored=0 limit=3 RAM-only shared-device-session; clear with 'aipet local clear'
+nsh> ufs status
+ufs: active=0 pid=0 phase=idle result=0 verified=0 created=0 close-error=0 stop=0 bytes=0/0 checked=0 elapsed-ms=0 no-progress-ms=0
+ufs-mount: active=0 attempted=0 ready=0 error=0 stage=not-started mount=/ufs source=/dev/ufsdata fallback=/data/models
+nsh> ufs start
+nsh> ufs status
+ufs: active=0 pid=0 phase=idle result=0 verified=0 created=0 close-error=0 stop=0 bytes=0/0 checked=0 elapsed-ms=0 no-progress-ms=0
+ufs-mount: active=0 attempted=1 ready=1 error=0 stage=mounted-existing-FAT mount=/ufs source=/dev/ufsdata fallback=/data/models
+nsh> ls -l /ufs/models/MiniCPM5-1B-Q4_K_M.gguf
+ -rw-rw-rw-   688065920 /ufs/models/MiniCPM5-1B-Q4_K_M.gguf
+nsh> npu selftest
+selftest: passed
+nsh> aipet audio general-asr /data/npu/general-asr
+general-asr: candidate configured (RAM only); TTS unavailable; target acceptance required
+general-asr: configure result=0
+nsh> aipet audio general-wav /data/npu/general-asr/checks/cmd_open_light_16k.wav
+general-wav: result=-20 transcript=[NONE]; explicit FILE input, not microphone/closed-loop acceptance; no actions/cloud
+aipet audio: general-wav result=-20
+nsh> aipet audio general-wav /data/npu/general-asr/checks/cmd_time_16k.wav
+general-wav: result=-20 transcript=[NONE]; explicit FILE input, not microphone/closed-loop acceptance; no actions/cloud
+aipet audio: general-wav result=-20
+nsh> aipet audio general-wav /data/npu/general-asr/checks/neg_silence_3s_16k.wav
+general-wav: result=-20 transcript=[NONE]; explicit FILE input, not microphone/closed-loop acceptance; no actions/cloud
+aipet audio: general-wav result=-20
+nsh>

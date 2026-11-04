@@ -1,0 +1,41 @@
+User-provided serial evidence, 2026-10-19. Not an agent SSH capture.
+Boot reached NSH; only relevant command output transcribed below.
+
+nsh> npu info
+A733 VIP2 ABI v4 CID=1000003b cores=1 page=4096 pool=1044480 free=606208 buffers=16 timeout=5000 ms
+nsh> npu selftest
+selftest: passed
+nsh> free
+      total       used       free    maxused    maxfree  nused  nfree name
+ 4239151104      63456 4239087648      73680 4143972320     98      5 Umem
+nsh> ls -l /data/npu/voice
+/data/npu/voice:
+ drw-rw-rw-           0 dynamic/
+ drw-rw-rw-           0 input/
+ -rw-rw-rw-      588032 decoder.a7tv
+ -rw-rw-rw-     7917440 encoder.a7tv
+ -rw-rw-rw-       31858 expected-outputs.json
+ -rw-rw-rw-      182528 joiner.a7tv
+ -rw-rw-rw-     8069952 vocoder.a7tv
+nsh> ls -l /data/npu/voice/input/joiner
+/data/npu/voice/input/joiner:
+ -rw-rw-rw-        1280 input0.bin
+ -rw-rw-rw-        1280 input1.bin
+nsh> npu info
+A733 VIP2 ABI v4 CID=1000003b cores=1 page=4096 pool=1044480 free=606208 buffers=16 timeout=5000 ms
+nsh> aipet audio npuref joiner /data/npu/voice/joiner.a7tv /data/npu/voice/input/joiner
+npuref: model=joiner backend=VIP2 inputs=2 outputs=1 mode=captured-golden elapsed-us=35624
+npuref output[0] bytes=1052 raw-crc32=7529f5ca
+npuref: native tensors returned; not ASR/transcription or end-to-end speech acceptance
+nsh> aipet audio npuref decoder /data/npu/voice/decoder.a7tv /data/npu/voice/input/decoder
+npuref: model=decoder backend=VIP2 inputs=1 outputs=1 mode=captured-golden elapsed-us=98752
+npuref output[0] bytes=1280 raw-crc32=dd1e9df7
+npuref: native tensors returned; not ASR/transcription or end-to-end speech acceptance
+nsh> aipet audio npuref encoder /data/npu/voice/encoder.a7tv /data/npu/voice/input/encoder
+npuref: failed=-12; no output publication/fallback/reset/retry
+nsh> aipet audio npuref vocoder /data/npu/voice/vocoder.a7tv /data/npu/voice/input/vocoder
+npuref: model=vocoder backend=VIP2 inputs=1 outputs=1 mode=captured-golden elapsed-us=1343721
+npuref output[0] bytes=204800 raw-crc32=4883df06
+npuref: native tensors returned; not ASR/transcription or end-to-end speech acceptance
+nsh> aipet audio npuref encoder /data/npu/voice/encoder.a7tv /data/npu/voice/input/encoder
+npuref: failed=-12; no output publication/fallback/reset/retry

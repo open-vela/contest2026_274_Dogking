@@ -1,0 +1,2 @@
+PASS: injected capture join failure transfers callback lifetime; intentional quarantine retention, not leak-free recovery
+PASS: live 48->16 FIR byte-exact vs production batch; arbitrary chunk boundaries/max8s, real worker queue, energy endpoint, no-speech/cancel/FIFO/sink/short-driver failures, reuse (host mocks; NOT board ASR)

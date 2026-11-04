@@ -10,6 +10,15 @@ int main(void)
   assert(!strstr(enc,"test-only"));
   assert(!aipet_secret_open(enc,out,sizeof(out)));
   assert(!strcmp(out,"test-only-not-a-real-key"));
+  {
+    char token[256], sealed[572], reopened[256];
+    memset(token,'t',255); token[255]=0;
+    assert(!aipet_secret_seal(token,sealed,sizeof(sealed)));
+    assert(!aipet_secret_open(sealed,reopened,sizeof(reopened)));
+    assert(!strcmp(token,reopened));
+    assert(aipet_secret_open(sealed,out,sizeof(out)) && !out[0]);
+    assert(!aipet_secret_open(enc,out,sizeof(out))); /* old ciphertext still works */
+  }
   assert(!aipet_secret_seal(out,again,sizeof(again)));
   assert(strcmp(enc,again));
   enc[12]=enc[12]=='0'?'1':'0';

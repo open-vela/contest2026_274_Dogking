@@ -1,0 +1,6 @@
+voice-compute-v210: target=7 actual=7 part=d0b mask=00000080 confirmations=2 attempts=3 elapsed-us=2000 result=0 restore=0
+voice-compute-v210: target=6 actual=6 part=d0b mask=00000040 confirmations=2 attempts=3 elapsed-us=2000 result=0 restore=0
+voice-compute-v210: target=7 actual=0 part=d05 mask=00000080 confirmations=0 attempts=251 elapsed-us=250000 result=-110 restore=0
+voice-compute-v210: target=7 actual=0 part=000 mask=00000000 confirmations=0 attempts=0 elapsed-us=0 result=-1 restore=0
+voice-compute-v210: restore=-5 operation=0
+PASS: scoped compute mask selection/restoration and get/set/restore failures (host mocks, no real affinity changes)

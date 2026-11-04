@@ -1,0 +1,31 @@
+Pass 1: Checking inodes, blocks, and sizes
+Pass 2: Checking directory structure
+Pass 3: Checking directory connectivity
+Pass 4: Checking reference counts
+Pass 5: Checking group summary information
+openvela: 38/29696 files (5.3% non-contiguous), 8156/29696 blocks
+e2fsck 1.47.2 (1-Jan-2025)
+Pass 1: Checking inodes, blocks, and sizes
+Pass 2: Checking directory structure
+Pass 3: Checking directory connectivity
+Pass 4: Checking reference counts
+Pass 5: Checking group summary information
+openvela: 38/29696 files (5.3% non-contiguous), 8156/29696 blocks
+e2fsck 1.47.2 (1-Jan-2025)
+Pass 1: Checking inodes, blocks, and sizes
+Pass 2: Checking directory structure
+Pass 3: Checking directory connectivity
+Pass 4: Checking reference counts
+Pass 5: Checking group summary information
+openvela: 38/29696 files (5.3% non-contiguous), 8156/29696 blocks
+Embedded kernel bytes: 7094888
+Embedded kernel SHA256: cd6bf4cc8e9ec6d2fee01f92ee2c660f8abadca563c530aca47377f536c22cc9
+
+Caution: Partition 4 doesn't end on a 2048-sector boundary. This may
+result in problems with some disk encryption tools.
+
+No problems found. 32734 free sectors (16.0 MiB) available in 1
+segments, the largest of which is 32734 (16.0 MiB) in size.
+Image bytes: 2147483648
+f21a9d0bd8aab20264db3e44273ebf372c629f33ee7bba6c49659f0e2e82326d  /mnt/d/My-Program/AI-Agent-Program/GPTsprogram/Openvela/A733-A7Z-ALL-Files/openvela-a733-cubie-a7z-sd-v204-camera-yolo-live-candidate.img
+e2fsck 1.47.2 (1-Jan-2025)

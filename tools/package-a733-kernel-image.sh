@@ -11,6 +11,16 @@ set -euo pipefail
 base_image=${1:?base image required}
 output_image=${2:?output image required}
 kernel=${3:?kernel Image required}
+camera_assets=${4:-}
+camera_release=${5:-192}
+[[ $# -le 5 && ( "$camera_release" == 192 || "$camera_release" == 193 || "$camera_release" == 194 || "$camera_release" == 195 || "$camera_release" == 196 || "$camera_release" == 197 || "$camera_release" == 198 || "$camera_release" == 199 ) ]]
+camera_names=("camera-v$camera_release.cmd" "camera-v$camera_release.scr")
+if [[ "$camera_release" -ge 194 ]]; then
+  camera_names+=(imx214-1080p.a7cm imx214-reference.c SOURCE-LICENSE.txt)
+fi
+if [[ -n "$camera_assets" ]]; then
+  for name in "${camera_names[@]}"; do test -f "$camera_assets/$name"; done
+fi
 
 sector_size=512
 rootfs_first_lba=679936
@@ -21,7 +31,11 @@ embedded_kernel="$work_dir/embedded-Image"
 
 cleanup()
 {
-  rm -f -- "$rootfs_image" "$embedded_kernel"
+  rm -f -- "$rootfs_image" "$embedded_kernel" \
+    "$work_dir/embedded-camera-v$camera_release.cmd" "$work_dir/embedded-camera-v$camera_release.scr"
+  for name in imx214-1080p.a7cm imx214-reference.c SOURCE-LICENSE.txt; do
+    rm -f -- "$work_dir/embedded-$name"
+  done
   rmdir "$work_dir" 2>/dev/null || true
 }
 trap cleanup EXIT
@@ -65,6 +79,18 @@ debugfs -w -R "write $kernel /boot/openvela/a733/Image" \
 debugfs -R "dump /boot/openvela/a733/Image $embedded_kernel" \
   "$rootfs_image" >/dev/null 2>&1
 cmp -- "$kernel" "$embedded_kernel"
+
+# Optional v192 RAM-only script assets. No boot environment/extlinux change.
+# The caller additionally recomputes these against the exact final ELF/Image.
+if [[ -n "$camera_assets" ]]; then
+  for name in "${camera_names[@]}"; do
+    debugfs -w -R "write $camera_assets/$name /boot/openvela/a733/$name" \
+      "$rootfs_image" >/dev/null 2>&1
+    debugfs -R "dump /boot/openvela/a733/$name $work_dir/embedded-$name" \
+      "$rootfs_image" >/dev/null 2>&1
+    cmp -- "$camera_assets/$name" "$work_dir/embedded-$name"
+  done
+fi
 e2fsck -fn "$rootfs_image"
 
 echo "Copying the known-good source image..."

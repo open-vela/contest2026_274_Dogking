@@ -1,0 +1,13 @@
+--- a/onnxruntime/core/platform/posix/env_time.cc
++++ b/onnxruntime/core/platform/posix/env_time.cc
+@@ -39,1 +39,1 @@
+-#if defined(PLATFORM_POSIX) || defined(__ANDROID__) || defined(__wasm__)
++#if defined(PLATFORM_POSIX) || defined(__ANDROID__) || defined(__wasm__) || defined(__NuttX__)
+--- a/cmake/onnxruntime_providers_cpu.cmake
++++ b/cmake/onnxruntime_providers_cpu.cmake
+@@ -146,1 +146,5 @@
+ onnxruntime_add_static_library(onnxruntime_providers ${onnxruntime_providers_src})
++# The core FP16 Conv object references this real helper even with contrib OFF.
++if(onnxruntime_NUTTX AND onnxruntime_DISABLE_CONTRIB_OPS)
++  target_sources(onnxruntime_providers PRIVATE "${ONNXRUNTIME_ROOT}/contrib_ops/cpu/fused_activation.cc")
++endif()

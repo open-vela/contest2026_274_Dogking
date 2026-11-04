@@ -16,6 +16,8 @@ static int attached, pending, ready, result;
 static int cancelled;
 /* No automatic restart after teardown: official thread joins are not audited. */
 static int lifecycle, owner = -1, lifecycle_error;
+/* Optional product provider; standalone bridge tests intentionally omit it. */
+extern void aipet_mcu_tools_register(void) __attribute__((weak));
 
 int aipet_agent_claim(void)
 {
@@ -76,6 +78,7 @@ int aipet_agent_attach(void)
   int status;
   pthread_mutex_lock(&lock);
   if (attached) { pthread_mutex_unlock(&lock); return 0; }
+  if (aipet_mcu_tools_register) aipet_mcu_tools_register();
   status = mbus_tap_register("pet", receive, NULL);
   if (!status) attached = 1;
   pthread_mutex_unlock(&lock);

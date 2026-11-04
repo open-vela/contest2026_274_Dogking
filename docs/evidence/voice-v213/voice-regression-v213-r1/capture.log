@@ -1,0 +1,6 @@
+live-capture-v213: driver-status=-75 consumer-status=0 frames=0 written=10 read=10 queue-peak=1; failed turn is NOT published
+live-capture-v213: driver-status=-5 consumer-status=-5 frames=0 written=2 read=1 queue-peak=1; failed turn is NOT published
+live-capture-v213: driver-status=-22 consumer-status=-22 frames=0 written=0 read=0 queue-peak=0; failed turn is NOT published
+live-capture-v213: driver-status=-125 consumer-status=-125 frames=0 written=0 read=0 queue-peak=0; failed turn is NOT published
+PASS: injected capture join failure transfers callback lifetime; intentional quarantine retention, not leak-free recovery
+PASS: live 48->16 FIR byte-exact vs production batch; arbitrary chunk boundaries/max8s, real worker queue, energy endpoint, no-speech/cancel/FIFO/sink/short-driver failures, reuse (host mocks; NOT board ASR)

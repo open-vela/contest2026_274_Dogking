@@ -1,0 +1,2 @@
+# Optional HOST companion only; never installed or executed in NuttX.
+edge-tts==7.3.1

@@ -1,0 +1,3 @@
+REPRODUCED old DNS callback: 8 leaked UDP descriptors block later queries
+PASS actual patched callback: 100 successful +100 rejected TCP fallback cycles, no descriptor leak. DNS/socket I/O MOCK, NOT board root-cause proof.
+PASS: SDK source NOT modified by test; staged transform covers IPv4 + IPv6 branches.

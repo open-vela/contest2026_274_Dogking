@@ -1,0 +1,12 @@
+{
+  "result": "WINDOWS_GET_FILE_HASH_MATCHES_LINUX_PACKAGE",
+  "date": "2026-11-04",
+  "image": "openvela-a733-cubie-a7z-sd-v3.0pre-fix-v228-candidate.img",
+  "image_bytes": 2147483648,
+  "image_sha256": "fce43893a2cfe0b40160dbf83017fa17b77c0bd179dc4f0793c183399332e09c",
+  "kernel_alias": "out/v228-product-v30prefix-release-r1/Image",
+  "kernel_alias_source": "out/v228-product-v30prefix-release-r1/nuttx.bin",
+  "kernel_sha256": "c3aeb2a637fc79a258caba876e898fa0cd684c777c04ec85edfe45f541329172",
+  "physical_disks_written": false,
+  "board_tested": false
+}

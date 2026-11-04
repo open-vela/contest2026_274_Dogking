@@ -1,0 +1,2 @@
+PASS v227 actual whitelist/negative intent, independent LE16 x20 bytes, two-slot overlapping TTS, failed tail not replayed, cancellation joins. HOST, no hardware/API.
+PASS real cloud latency request policy: official flash only, both request builders, other providers untouched; no paid calls.

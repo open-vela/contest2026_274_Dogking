@@ -1,0 +1,257 @@
+{
+  "result": "V219_VOICE_HOST_ARM_PASSED_NOT_BOARD",
+  "tests": [
+    {
+      "name": "quality",
+      "command": [
+        "python3",
+        "tools/test-pet-quality-v216.py"
+      ],
+      "seconds": 5.389050687000008,
+      "sha256": "5b61a6c4b599746de1749506044b4abd22f5376e4ef637527f58830a5293e25d"
+    },
+    {
+      "name": "load-storage",
+      "command": [
+        "python3",
+        "tools/test-voice-load-storage-v215.py"
+      ],
+      "seconds": 1.170299904999979,
+      "sha256": "6aee80248c1d3f552f5a1f342b54151f23fc220249a1cd5bb80eda739a47f55d"
+    },
+    {
+      "name": "resident",
+      "command": [
+        "python3",
+        "tools/test-resident-v214.py"
+      ],
+      "seconds": 40.30906612000001,
+      "sha256": "4983b744b947ea81017bd622f97db9687dd28f6a9ca74a0b8b4416ff6228714a"
+    },
+    {
+      "name": "monitor-driver",
+      "command": [
+        "python3",
+        "tools/test-monitor-driver-v214.py"
+      ],
+      "seconds": 0.7683384910000086,
+      "sha256": "b4cbc845ccc4a94e4bbdd2645e587a8d72a733ceb323bb19466dba14209835a1"
+    },
+    {
+      "name": "repair",
+      "command": [
+        "python3",
+        "tools/test-repair-v212.py"
+      ],
+      "seconds": 1.2693645949999564,
+      "sha256": "b26c8bf1c11fd4e43256db254e74e0a4cf1ec15acee84e51d5e132bc4c60a472"
+    },
+    {
+      "name": "q8-workspace",
+      "command": [
+        "python3",
+        "tools/test-q8-workspace-v211.py"
+      ],
+      "seconds": 9.538935600000002,
+      "sha256": "ca5722be6a313bc6abd328f55be7cd05345b0e36b5b48066c6c333e5e4f3e69c"
+    },
+    {
+      "name": "asr-tail",
+      "command": [
+        "python3",
+        "tools/test-asr-tail-v211.py"
+      ],
+      "seconds": 35.30007581699999,
+      "sha256": "1003dbd3aed5312481bed5c4d8f4223b8cef1c0768b5098308442aae5f8e3c65"
+    },
+    {
+      "name": "session",
+      "command": [
+        "bash",
+        "tools/test-voice-session-v190.sh",
+        "out/product-v11-v219-voice-base-r1/session"
+      ],
+      "seconds": 4.175599752000039,
+      "sha256": "bfcfc60f8e5ea7dc5a6c565495ffec5e56a5fc0c7e1a31e11e9528ca6acad577"
+    },
+    {
+      "name": "asr",
+      "command": [
+        "python3",
+        "tools/npu-voice/test-general-asr-v184.py",
+        "out/product-v11-v219-voice-base-r1/asr"
+      ],
+      "seconds": 73.48814276999997,
+      "sha256": "c9a15bdfca700cf6fb4f2281cd03473f03eb7d7c39acd28f324358dd06fc33c4"
+    },
+    {
+      "name": "tts",
+      "command": [
+        "python3",
+        "tools/npu-voice/test-tts-engine-v185.py",
+        "out/product-v11-v219-voice-base-r1/tts"
+      ],
+      "seconds": 19.262055781000015,
+      "sha256": "388cd7dc7a2b211e3ae243f8e023a795158f886bffcbd9f2ad6e30447eecc2e7"
+    },
+    {
+      "name": "stream",
+      "command": [
+        "bash",
+        "tools/build-voice-stream-v181.sh",
+        "out/product-v11-v219-voice-base-r1/stream"
+      ],
+      "seconds": 80.26646363399999,
+      "sha256": "e5c4af66b624285d00eccea8591f104154b682ba71059bc30ad0dc5c864f126d"
+    },
+    {
+      "name": "audio",
+      "command": [
+        "bash",
+        "tools/test-aipet-audio.sh"
+      ],
+      "seconds": 30.54586270699997,
+      "sha256": "55189c27d7bc2669fc040234f7f8a9a33cb30c0fa97517aa150ba0b7bffe71aa"
+    },
+    {
+      "name": "llm-affinity",
+      "command": [
+        "python3",
+        "tools/test-llm-affinity-v210.py"
+      ],
+      "seconds": 0.3173138289999997,
+      "sha256": "8b4906d9c5ece2b903cf6026b4c8d635dea8881275dcf48ed08b537e50d5afa1"
+    },
+    {
+      "name": "llm-contract",
+      "command": [
+        "bash",
+        "tools/test-aipet-llm-v178.sh"
+      ],
+      "seconds": 11.846591679000085,
+      "sha256": "419280d8b90dcea7436e1f4c8805c07abafed0a6255b34322936276a18b97535"
+    },
+    {
+      "name": "frontend",
+      "command": [
+        "bash",
+        "tools/test-frontend-audit.sh",
+        "out/a733-kws-wav-v161-r2/voice/kws/wav",
+        "out/a733-openvela-kws-v158-r2/voice/kws"
+      ],
+      "seconds": 14.948680623999962,
+      "sha256": "515e25c17d13d332dae65eed60328d4b63ba381a92a4f780002e0558e6baacc4"
+    },
+    {
+      "name": "capture",
+      "command": [
+        "python3",
+        "tools/test-live-capture-v182.py"
+      ],
+      "seconds": 3.774481745999992,
+      "sha256": "930b57d64a42dfd8569841bb8f47148c4b3a75d8c11b8dc9be8e3ca6f903ef71"
+    },
+    {
+      "name": "tensor",
+      "command": [
+        "bash",
+        "tools/test-a733-tensor.sh"
+      ],
+      "seconds": 5.727553092999983,
+      "sha256": "92bd6726c70889c84baf3d4bb46612fa84f5cc9852ed253299751744ea4520bc"
+    },
+    {
+      "name": "tensor-arm",
+      "command": [
+        "python3",
+        "tools/test-tensor-crc-arm-v210.py"
+      ],
+      "seconds": 1.4678916409999374,
+      "sha256": "be865cdd02ee39cfce7080de3f827daef4b3e189a9a6be38e2d66edec4125a2f"
+    },
+    {
+      "name": "voice-arm",
+      "command": [
+        "python3",
+        "tools/check-a733-voice-arm-v216.py",
+        "out/product-v11-v219-voice-base-r1/voice-arm"
+      ],
+      "seconds": 141.46354310899994,
+      "sha256": "345baba41485a3adbfa70541f5275e17b6793200967ec6b0bed56fe4926f8d21"
+    },
+    {
+      "name": "resident-lease-v219",
+      "command": [
+        "python3",
+        "tools/test-resident-lease-v219.py"
+      ],
+      "seconds": 3.2262474999999995,
+      "sha256": "82dadcfe4a1e843ba6de1ece2126c1d64cf0650ada039e3e72a889019109b690"
+    },
+    {
+      "name": "runtime-lease-v219",
+      "command": [
+        "python3",
+        "tools/test-product-turn-lease-v219.py"
+      ],
+      "seconds": 9.641513830000008,
+      "sha256": "2bd95434b537834d38c2849c5980f680487751c866bb0462138c485d419fd080"
+    },
+    {
+      "name": "wifi-v219",
+      "command": [
+        "python3",
+        "tools/test-wifi-v219.py"
+      ],
+      "seconds": 0.8684274390000155,
+      "sha256": "3162a1fae971324735aa5b5d04d0aee9ce7def21d7b23dcdc9d39976988d15a9"
+    },
+    {
+      "name": "product-core",
+      "command": [
+        "bash",
+        "tools/test-product-v1.sh"
+      ],
+      "seconds": 10.095419881999987,
+      "sha256": "d5b1a9f8796cca9c7bfa348be3a1e84eb9022ec022e4c987c32fcf9d9038cc61"
+    },
+    {
+      "name": "product-service",
+      "command": [
+        "python3",
+        "tools/test-product-service-v1.py"
+      ],
+      "seconds": 27.43302737199997,
+      "sha256": "f9b179840bd6d6c3983de1515b345d05d1d2aee32108cd3130d369e4b4059c1a"
+    },
+    {
+      "name": "mcu",
+      "command": [
+        "bash",
+        "tools/test-aipet-mcu.sh"
+      ],
+      "seconds": 52.948966073000065,
+      "sha256": "bbbd2b22ed0fc981cb0e288621340ad3401236ef048f200bce3b1204cb50e0f6"
+    },
+    {
+      "name": "product-arm",
+      "command": [
+        "python3",
+        "tools/check-cloud-arm-v218.py",
+        "--build",
+        "../../quickly-openvela/cmake_out/cubie-a7z_nsh_v219_product_v11",
+        "--output",
+        "/mnt/d/My-Program/AI-Agent-Program/GPTsprogram/Openvela/A733-A7Z-ALL-Files/contest2026_274_Dogking-dev-ai-contest-2026/out/product-v11-v219-gates-r1/arm"
+      ],
+      "seconds": 124.76341682199995,
+      "sha256": "6b23f80af9d515f9e7422ed06940a7bfe1909868be247d2e495181d012b3b56e"
+    }
+  ],
+  "hardware_executed": false,
+  "physical_audio_onset_measured": false,
+  "latency_3_to_5_seconds": false,
+  "baseline_directory": "out/product-v11-v219-voice-base-r1",
+  "baseline_summary_sha256": "1cf848243f51fbe885c5bdfb94054ebb72d4ce15193caa0de16f1515dd09016f",
+  "product": "desktop-pet-v1.1-v219-candidate",
+  "cloud_api_executed": false
+}

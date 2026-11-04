@@ -1,0 +1,3 @@
+patching file packages/ai_agent/src/voice/volc_asr.c
+patching file packages/ai_agent/src/voice/volc_tts.c
+PASS: exact official voice patches, CA required, full-result gates, RX terminator allocation, complete TTS validation; not cloud runtime proof

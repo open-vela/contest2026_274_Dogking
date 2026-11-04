@@ -1,0 +1,273 @@
+[boot188] CTOR done index=0x0000000000000017
+XA02
+
+X1
+PR
+PR
+PR
+
+NuttShell (NSH)
+nsh> RI
+RX
+
+nsh> camera live 10 0
+ediivsep:l aacyc:e pitneidt isaelcioznidnsg= ST1707 3d5e tedcitr-eecvte r8y-=b0it  (p0a=tphr
+ view), RAM pipeline; use camera live-status / live-stop
+nsh> display: ST7735 direct path ready
+display: live owner ready; exact model-input background; no MQ pointer transfer
+live frame=1 input=5338186b boxes=0 inferred=0 capture=244371 prepare=210957 npu=0 display=79515 us
+live frame=10 input=f5124a3e boxes=0 inferred=0 capture=244217 prepare=210452 npu=0 display=78627 us
+camera-live-v204: active=0 stop=0 stage=complete error=0 cleanup=0 frames=19 inference=0 elapsed-ms=11207 fps=1.695 input-crc32=dc9daa25
+live-timing-total-us: capture=4640364 prepare=4003831 npu=0 display=1495625; model-RAM=0/00000000 no-per-frame-SD-files=1; cooperative stop between bounded operations; NOT MP4/ISP/30fps
+camera live-status
+camera-live-v204: active=0 stop=0 stage=complete error=0 cleanup=0 frames=19 inference=0 elapsed-ms=11207 fps=1.695 input-crc32=dc9daa25
+live-timing-total-us: capture=4640364 prepare=4003831 npu=0 display=1495625; model-RAM=0/00000000 no-per-frame-SD-files=1; cooperative stop between bounded operations; NOT MP4/ISP/30fps
+nsh> camera live 30 1
+live: accepted seconds=30 detect-every=1 (0=preview), RAM pipeline; use camera live-status / live-stop
+nsh> display: live owner ready; exact model-input background; no MQ pointer transfer
+live frame=1 input=f03353f2 boxes=1 inferred=1 capture=244250 prepare=210648 npu=230518 display=158357 us
+live npu seq=1 outputs=2232ad11/d137e96a/fa858548/9406449d/7b441c95/84009ca9 fallback=0
+live det seq=1 class=0 score=769 box=266,138,639,495
+live frame=2 input=a7cbdf7e boxes=1 inferred=1 capture=244224 prepare=211092 npu=230441 display=157631 us
+live npu seq=2 outputs=872027f5/d93eaea7/7c1eb9be/a949a53c/1a60f6bb/18ab08b3 fallback=0
+live det seq=2 class=0 score=824 box=225,144,639,494
+live frame=3 input=f0f92a1d boxes=1 inferred=1 capture=244225 prepare=210922 npu=230414 display=157931 us
+live npu seq=3 outputs=6555e85d/c6a04f32/b827039c/fe46eb36/1a1e0980/53c809ae fallback=0
+live det seq=3 class=0 score=914 box=168,144,640,496
+live frame=4 input=be181ae4 boxes=1 inferred=1 capture=244217 prepare=210645 npu=230461 display=157699 us
+live npu seq=4 outputs=2b7d1c2b/9ddbc8fc/5107e6c6/634bedff/246ebf40/887b2cb3 fallback=0
+live det seq=4 class=0 score=885 box=186,143,640,495
+live frame=5 input=64889044 boxes=1 inferred=1 capture=244221 prepare=210436 npu=230335 display=157759 us
+live npu seq=5 outputs=39401fd4/7141b3a3/f6dea103/9f6268fe/96b4182c/ad53e0b2 fallback=0
+live det seq=5 class=6 score=262 box=1,141,629,491
+live frame=6 input=c68e8e6d boxes=1 inferred=1 capture=244220 prepare=210591 npu=230346 display=157689 us
+live npu seq=6 outputs=cfa5d6f7/eedee52b/da44aa54/933ff456/f1ad5509/ed3ddbde fallback=0
+live det seq=6 class=4 score=496 box=2,142,631,472
+live frame=7 input=54b5827e boxes=2 inferred=1 capture=244218 prepare=210858 npu=230598 display=158102 us
+live npu seq=7 outputs=8319c433/8ee92b4f/d30beade/05ffb1d3/bb55c075/ff8dbc5b fallback=0
+live det seq=7 class=62 score=557 box=215,142,471,232
+live det seq=7 class=63 score=304 box=204,188,581,489
+live frame=8 input=ea9566ac boxes=1 inferred=1 capture=244218 prepare=210695 npu=230457 display=157645 us
+live npu seq=8 outputs=67d2a624/4d12faf7/67d0fa87/3e336e21/2a389968/296abfe8 fallback=0
+live det seq=8 class=63 score=767 box=294,142,639,492
+live frame=9 input=ae262e7e boxes=3 inferred=1 capture=244218 prepare=210465 npu=230526 display=158375 us
+live npu seq=9 outputs=17a2f5e5/75eb2c47/0d3315fb/ca9c1d77/e5ddba7e/a7606d4d fallback=0
+live det seq=9 class=63 score=692 box=255,146,638,487
+live det seq=9 class=39 score=391 box=210,217,248,328
+live det seq=9 class=62 score=289 box=260,141,552,223
+live frame=10 input=dcaa36ee boxes=1 inferred=1 capture=244214 prepare=210705 npu=230383 display=157788 us
+live npu seq=10 outputs=b6f5ee2a/454a6053/e67cf946/c038f1f4/baf649c3/8d15b00b fallback=0
+live det seq=10 class=62 score=475 box=191,140,550,273
+live frame=11 input=13190e3c boxes=0 inferred=1 capture=244221 prepare=210973 npu=230405 display=157385 us
+live npu seq=11 outputs=c47ce6a4/7b0d6fc8/52c3d543/6c6c9298/7eb28677/15417237 fallback=0
+live frame=12 input=636814db boxes=2 inferred=1 capture=244219 prepare=210720 npu=230438 display=157966 us
+live npu seq=12 outputs=31e32da9/e72316ba/f52cbd86/b5137e81/42365ca8/cd0212c5 fallback=0
+live det seq=12 class=66 score=376 box=2,319,371,496
+live det seq=12 class=66 score=275 box=117,382,375,496
+live frame=13 input=1ab5c14b boxes=0 inferred=1 capture=244221 prepare=210701 npu=230414 display=157445 us
+live npu seq=13 outputs=1d1799fd/7a5281b3/eb88f363/13871aa0/645cafac/c89dc996 fallback=0
+live frame=14 input=c5124350 boxes=0 inferred=1 capture=244217 prepare=210869 npu=230386 display=157463 us
+live npu seq=14 outputs=3df9fd68/af310940/edc59c12/544cc0f0/b9cdfa6b/86c6450b fallback=0
+live frame=15 input=413e707c boxes=1 inferred=1 capture=244220 prepare=210784 npu=230411 display=157592 us
+live npu seq=15 outputs=ce59cfd8/0d9eedcf/fec664a7/f77a63d6/08fbcc1e/5ee24ddc fallback=0
+live det seq=15 class=39 score=493 box=607,448,640,498
+live frame=16 input=ab61becb boxes=3 inferred=1 capture=244225 prepare=210758 npu=230596 display=158110 us
+live npu seq=16 outputs=9d778ab8/66932f55/be245b94/197791b8/a453024d/9ce29c46 fallback=0
+live det seq=16 class=0 score=715 box=436,453,481,500
+live det seq=16 class=0 score=465 box=470,463,497,500
+live det seq=16 class=39 score=369 box=486,443,553,500
+live frame=17 input=cf5c316d boxes=4 inferred=1 capture=244217 prepare=210765 npu=230701 display=158769 us
+live npu seq=17 outputs=736819c5/f4930e37/74395dcb/e689fd43/202261ba/68b70911 fallback=0
+live det seq=17 class=66 score=815 box=0,443,283,497
+live det seq=17 class=39 score=626 box=432,374,528,497
+live det seq=17 class=39 score=592 box=392,378,457,499
+live det seq=17 class=62 score=479 box=0,142,166,442
+live frame=18 input=11bb96bc boxes=4 inferred=1 capture=244223 prepare=210743 npu=230669 display=158779 us
+live npu seq=18 outputs=802f4ee1/910b91b7/5ee6cd56/2353730e/1bda2df9/ae912cf3 fallback=0
+live det seq=18 class=66 score=726 box=1,389,385,496
+live det seq=18 class=39 score=470 box=471,360,573,500
+live det seq=18 class=39 score=437 box=426,356,499,488
+live det seq=18 class=62 score=299 box=0,142,216,396
+live frame=19 input=376464b7 boxes=7 inferred=1 capture=244221 prepare=210717 npu=230771 display=160329 us
+live npu seq=19 outputs=94e2173f/6bc5e86e/e5eaf324/24602b05/99387caf/768eba70 fallback=0
+live det seq=19 class=64 score=735 box=381,401,494,461
+live det seq=19 class=39 score=719 box=448,267,530,443
+live det seq=19 class=39 score=654 box=401,279,458,410
+live det seq=19 class=0 score=471 box=605,258,640,498
+live det seq=19 class=66 score=427 box=0,405,220,496
+live det seq=19 class=56 score=375 box=550,357,610,474
+live det seq=19 class=66 score=303 box=1,372,356,496
+live frame=20 input=32af5841 boxes=6 inferred=1 capture=244220 prepare=210601 npu=230783 display=159896 us
+live npu seq=20 outputs=c0d92cfa/42c1206d/d089053c/2d92d89d/31c824e6/4f8198f6 fallback=0
+live det seq=20 class=0 score=876 box=418,141,640,495
+live det seq=20 class=39 score=812 box=237,284,280,412
+live det seq=20 class=64 score=805 box=226,412,328,454
+live det seq=20 class=56 score=741 box=374,343,425,447
+live det seq=20 class=39 score=736 box=281,266,336,434
+live det seq=20 class=60 score=253 box=170,412,426,497
+live frame=21 input=73be8ee6 boxes=3 inferred=1 capture=244226 prepare=210758 npu=230613 display=158567 us
+live npu seq=21 outputs=8761ce03/174c5623/b974ad0a/906826fd/6da8f853/36a7cb05 fallback=0
+live det seq=21 class=64 score=845 box=316,235,420,275
+live det seq=21 class=41 score=628 box=376,141,435,259
+live det seq=21 class=56 score=410 box=479,155,532,269
+live frame=22 input=f4b1fabc boxes=3 inferred=1 capture=244220 prepare=210730 npu=230678 display=158607 us
+live npu seq=22 outputs=9c46b7bc/e25ed97b/17707154/e8adaa0c/a5a9ca0f/7290efb8 fallback=0
+live det seq=22 class=0 score=916 box=317,142,639,494
+live det seq=22 class=39 score=825 box=173,231,235,404
+live det seq=22 class=39 score=801 box=126,251,172,386
+live frame=23 input=99e87a89 boxes=1 inferred=1 capture=244224 prepare=210487 npu=230466 display=157851 us
+live npu seq=23 outputs=2b71fb13/b1ad0387/6487cea6/4272b640/5251c59e/f8640ac6 fallback=0
+live det seq=23 class=75 score=711 box=251,146,538,494
+live frame=24 input=56ef7662 boxes=1 inferred=1 capture=244225 prepare=210661 npu=230417 display=157538 us
+live npu seq=24 outputs=31174549/338b0f7a/70f43b3b/5aae64c5/1244e29d/04c04d2a fallback=0
+live det seq=24 class=0 score=691 box=178,169,510,497
+live frame=25 input=c5e4b5ed boxes=1 inferred=1 capture=244224 prepare=210786 npu=230430 display=157798 us
+live npu seq=25 outputs=9ede1008/7c160357/27baa7b6/89e367d0/da9d290f/22ba2a03 fallback=0
+live det seq=25 class=0 score=920 box=146,146,639,495
+live frame=26 input=a5c2ba01 boxes=1 inferred=1 capture=244221 prepare=210553 npu=230405 display=157837 us
+live npu seq=26 outputs=3f5ce0e8/4a7ab139/c16e7fca/301ed112/3a2f6bfd/3666f24b fallback=0
+live det seq=26 class=0 score=942 box=150,143,639,494
+live frame=27 input=fbbc4553 boxes=1 inferred=1 capture=244222 prepare=210770 npu=230430 display=157763 us
+live npu seq=27 outputs=170fbff1/7dc58a78/11785a56/52e921f7/e36c3cb9/44eb5e70 fallback=0
+live det seq=27 class=0 score=814 box=127,158,590,497
+live frame=28 input=70d01cd2 boxes=1 inferred=1 capture=244221 prepare=210586 npu=230477 display=158092 us
+live npu seq=28 outputs=f00ada00/91f7b63a/0a97f8c0/9af0e26d/5fad89c3/36747186 fallback=0
+live det seq=28 class=0 score=798 box=22,142,492,496
+live frame=29 input=76af9378 boxes=1 inferred=1 capture=244225 prepare=210624 npu=230453 display=157946 us
+live npu seq=29 outputs=2a51245e/562152ab/186742eb/1c80cc85/d1900bc4/74d5860d fallback=0
+live det seq=29 class=0 score=765 box=287,147,639,496
+live frame=30 input=8a37f0a9 boxes=3 inferred=1 capture=244220 prepare=210481 npu=230499 display=158345 us
+live npu seq=30 outputs=aa7a9fcc/585a2b94/8f73da6b/79a1160a/905f31dd/f4cd2a63 fallback=0
+live det seq=30 class=0 score=916 box=357,145,640,495
+live det seq=30 class=39 score=413 box=156,429,228,500
+live det seq=30 class=39 score=305 box=109,431,160,498
+live frame=31 input=837208f9 boxes=2 inferred=1 capture=244223 prepare=210708 npu=230547 display=158367 us
+live npu seq=31 outputs=f82c948b/0966e691/5d8d4a60/b1b774b0/6bfc67c9/45184137 fallback=0
+live det seq=31 class=0 score=928 box=47,142,638,493
+live det seq=31 class=56 score=390 box=0,425,30,499
+live frame=32 input=36bcd68a boxes=1 inferred=1 capture=244227 prepare=210674 npu=230414 display=157679 us
+live npu seq=32 outputs=d655638d/a4111c9d/75419951/b066bf6b/4bcccaae/224440fc fallback=0
+live det seq=32 class=0 score=749 box=167,231,432,496
+live frame=33 input=27f11b70 boxes=1 inferred=1 capture=244224 prepare=210534 npu=230397 display=157796 us
+live npu seq=33 outputs=d7ca26e4/7cb1394d/aec84e04/fa3ccc1c/55f218da/7a56144f fallback=0
+live det seq=33 class=0 score=856 box=163,183,548,497
+live frame=34 input=a3023a52 boxes=0 inferred=1 capture=244224 prepare=210866 npu=230424 display=157226 us
+live npu seq=34 outputs=8d0a2ef3/8f96f8cd/890d2542/ec8cb0b8/014d7beb/570bc788 fallback=0
+live frame=35 input=0c46e754 boxes=0 inferred=1 capture=244215 prepare=210476 npu=230361 display=157371 us
+live npu seq=35 outputs=52aacde2/53a1c9ca/35c197db/f30cded7/e9674ebe/5cfd151f fallback=0
+camera-live-v204: active=0 stop=0 stage=complete error=0 cleanup=0 frames=35 inference=35 elapsed-ms=32045 fps=1.092 input-crc32=0c46e754
+live-timing-total-us: capture=8547770 prepare=7374382 npu=8067064 display=5531493; model-RAM=8017024/f5f558c5 no-per-frame-SD-files=1; cooperative stop between bounded operations; NOT MP4/ISP/30fps
+
+nsh> camera live 60 3
+live: accepted seconds=60 detect-every=3 (0=preview), RAM pipeline; use camera live-status / live-stop
+nsh> display: live owner ready; exact model-input background; no MQ pointer transfer
+live frame=1 input=b669ca78 boxes=1 inferred=1 capture=243630 prepare=210635 npu=230487 display=158399 us
+live npu seq=1 outputs=01ba0030/512b08f2/51073de1/89003b74/e4338d21/498c47fb fallback=0
+live det seq=1 class=0 score=559 box=250,199,500,495
+live frame=4 input=b67222b0 boxes=1 inferred=1 capture=244221 prepare=210524 npu=230384 display=158032 us
+live npu seq=4 outputs=205992fc/8dc56b5b/9e1e8ce3/43655b99/6274b70b/2f48c0e0 fallback=0
+live det seq=4 class=0 score=889 box=224,144,639,494
+live frame=7 input=e8e7e63b boxes=1 inferred=1 capture=244223 prepare=210758 npu=230314 display=157883 us
+live npu seq=7 outputs=d5d285a1/c4e0ab70/30b7b1e7/e778680d/7f30833e/3b2f5b19 fallback=0
+live det seq=7 class=0 score=652 box=456,142,639,493
+live frame=10 input=86cfb880 boxes=1 inferred=1 capture=244222 prepare=210662 npu=230263 display=157758 us
+live npu seq=10 outputs=de74b203/9e4a1959/cdce5077/78331c9b/4dd0b026/8e250ded fallback=0
+live det seq=10 class=6 score=289 box=8,143,639,495
+live frame=13 input=b25b0d57 boxes=1 inferred=1 capture=244226 prepare=211003 npu=230252 display=157496 us
+live npu seq=13 outputs=dcd38771/73bdbb1e/e382531f/bc657370/4803c660/6d07be13 fallback=0
+live det seq=13 class=2 score=254 box=210,397,463,497
+live frame=16 input=c0d753f0 boxes=1 inferred=1 capture=244228 prepare=210982 npu=230334 display=157711 us
+live npu seq=16 outputs=5ba549c2/68d06692/f450950b/eccd6210/49438201/614e2561 fallback=0
+live det seq=16 class=66 score=321 box=0,285,92,430
+live frame=19 input=579ab876 boxes=2 inferred=1 capture=244223 prepare=210862 npu=230444 display=158076 us
+live npu seq=19 outputs=beaf1ac0/30ae86af/e0c9f270/5fe90529/8a5fabec/11b4f576 fallback=0
+live det seq=19 class=73 score=521 box=144,143,629,490
+live det seq=19 class=66 score=298 box=479,218,639,494
+live frame=20 input=acb34b78 boxes=0 inferred=0 capture=244225 prepare=210940 npu=0 display=78802 us
+live frame=22 input=3ce79bfa boxes=3 inferred=1 capture=244221 prepare=210738 npu=230535 display=158787 us
+live npu seq=22 outputs=206c623c/220bed9a/fe597154/121a5862/6281685a/e5279904 fallback=0
+live det seq=22 class=39 score=645 box=198,179,376,497
+live det seq=22 class=62 score=582 box=461,142,639,311
+live det seq=22 class=39 score=259 box=405,285,445,386
+live frame=25 input=9d7e1d65 boxes=0 inferred=1 capture=244225 prepare=211074 npu=230234 display=157482 us
+live npu seq=25 outputs=49960718/1c4b0e21/6c4cdaf7/9e73e8fb/779c86b5/861f6d47 fallback=0
+live frame=28 input=3dfe7f4e boxes=1 inferred=1 capture=244228 prepare=210997 npu=230354 display=158203 us
+live npu seq=28 outputs=94b51fef/75d05e92/0ffb2b85/8ffff7a7/669c0c2d/44762c41 fallback=0
+live det seq=28 class=0 score=830 box=381,145,640,495
+live frame=30 input=b9201378 boxes=0 inferred=0 capture=244224 prepare=210657 npu=0 display=78404 us
+live frame=31 input=156acd5d boxes=0 inferred=1 capture=244221 prepare=210715 npu=230233 display=157345 us
+live npu seq=31 outputs=a1e4a0d7/d5a5c48e/6829ae57/b7cdd66f/cb62f02f/3bd98205 fallback=0
+live frame=34 input=f9e7a19f boxes=0 inferred=1 capture=244226 prepare=211042 npu=230310 display=157410 us
+live npu seq=34 outputs=c98c48d5/cfe934f1/6644c5e0/6c26580e/2d34fc5a/0961522b fallback=0
+live frame=37 input=fb340dff boxes=0 inferred=1 capture=244224 prepare=210776 npu=230330 display=157272 us
+live npu seq=37 outputs=4821e0e2/fb1342be/36b670d8/8463c0a4/27d97650/0997d4c7 fallback=0
+live frame=40 input=4c825eeb boxes=3 inferred=1 capture=244220 prepare=210889 npu=230391 display=158344 us
+live npu seq=40 outputs=fced86f2/661808d2/111ef758/8c5320de/25f0b38a/451d452e fallback=0
+live det seq=40 class=0 score=374 box=0,144,498,491
+live det seq=40 class=63 score=333 box=421,142,639,367
+live det seq=40 class=0 score=251 box=233,203,475,495
+live frame=43 input=39f84029 boxes=1 inferred=1 capture=244224 prepare=210921 npu=230403 display=157930 us
+live npu seq=43 outputs=bd9b14fa/d07bec9d/f16f4ca4/61b2bee5/0750efc3/cafb0779 fallback=0
+live det seq=43 class=0 score=898 box=98,146,565,495
+live frame=46 input=698077c3 boxes=3 inferred=1 capture=244218 prepare=210957 npu=230523 display=158596 us
+live npu seq=46 outputs=61f97e53/e24299fc/dc27efb9/5eed14c1/d30c0ea9/e235ba6f fallback=0
+live det seq=46 class=0 score=549 box=232,142,640,493
+live det seq=46 class=63 score=426 box=537,202,639,376
+live det seq=46 class=62 score=291 box=539,203,640,375
+live frame=49 input=deb39512 boxes=0 inferred=1 capture=244228 prepare=210886 npu=230296 display=157229 us
+live npu seq=49 outputs=c27dbcfc/abcb8d7e/2bd28e64/aa492b59/54ec3ace/075a5266 fallback=0
+live frame=50 input=c21f639b boxes=0 inferred=0 capture=244224 prepare=210720 npu=0 display=78627 us
+live frame=52 input=60b53e92 boxes=2 inferred=1 capture=244224 prepare=210759 npu=230352 display=158286 us
+live npu seq=52 outputs=c390198c/46949386/2bcce27a/27f348f6/a86e44f6/2c340607 fallback=0
+live det seq=52 class=63 score=543 box=390,146,639,495
+live det seq=52 class=66 score=343 box=87,322,405,495
+live frame=55 input=7dd49cce boxes=1 inferred=1 capture=244222 prepare=210674 npu=230430 display=157652 us
+live npu seq=55 outputs=fb54c545/23f01f31/4019413f/20b9d265/d077a65e/ca478d75 fallback=0
+live det seq=55 class=63 score=356 box=406,143,640,387
+live frame=58 input=2c7de0ec boxes=1 inferred=1 capture=244224 prepare=210679 npu=230343 display=157708 us
+live npu seq=58 outputs=7c15cd70/3211500d/2752e704/c06a1340/8359022d/2662ea0b fallback=0
+live det seq=58 class=1 score=563 box=2,141,610,493
+live frame=60 input=d2999d60 boxes=0 inferred=0 capture=244220 prepare=210520 npu=0 display=78626 us
+live frame=61 input=041dcfa0 boxes=0 inferred=1 capture=244218 prepare=210742 npu=230351 display=157313 us
+live npu seq=61 outputs=a588223e/cbee0d2d/7cccd9ba/06bab154/459cab15/97c76b7f fallback=0
+live frame=64 input=06620034 boxes=1 inferred=1 capture=244220 prepare=210633 npu=230440 display=157846 us
+live npu seq=64 outputs=0e144d02/123a6d78/fc754710/1459e8cf/c02765bc/d0b11e64 fallback=0
+live det seq=64 class=39 score=443 box=49,141,101,242
+live frame=67 input=ef689332 boxes=1 inferred=1 capture=244221 prepare=211018 npu=230286 display=157896 us
+live npu seq=67 outputs=a9921803/582a40c0/3c0ef569/9383b70f/824090b4/5a73ac3e fallback=0
+live det seq=67 class=62 score=278 box=131,151,481,319
+live frame=70 input=5f6f8195 boxes=4 inferred=1 capture=244220 prepare=210666 npu=230489 display=159116 us
+live npu seq=70 outputs=5507a7b4/f00f9899/abc0b31a/57f1838b/ada2b913/7d89fabf fallback=0
+live det seq=70 class=62 score=635 box=153,182,516,400
+live det seq=70 class=66 score=511 box=80,316,640,494
+live det seq=70 class=59 score=502 box=34,143,640,491
+live det seq=70 class=73 score=268 box=150,185,512,399
+live frame=73 input=6ecf4a24 boxes=2 inferred=1 capture=244222 prepare=210599 npu=230404 display=158119 us
+live npu seq=73 outputs=68d96d15/a751f0f3/ea76a839/5cb7ab1e/c1529665/785babe2 fallback=0
+live det seq=73 class=62 score=387 box=325,141,636,221
+live det seq=73 class=63 score=360 box=289,143,639,487
+live frame=76 input=872aa398 boxes=1 inferred=1 capture=244219 prepare=210662 npu=230365 display=157595 us
+live npu seq=76 outputs=7ce721c9/b7d90ddc/1cec4247/569b4a75/45b57d4b/27475162 fallback=0
+live det seq=76 class=62 score=358 box=251,141,566,329
+live frame=79 input=28127f5a boxes=2 inferred=1 capture=244218 prepare=210646 npu=230362 display=158018 us
+live npu seq=79 outputs=e355439c/3c9887f7/7081044e/67713156/f3a5f5bd/bbd3ff10 fallback=0
+live det seq=79 class=56 score=346 box=554,366,639,497
+live det seq=79 class=39 score=277 box=133,170,285,495
+live frame=80 input=97124cf8 boxes=0 inferred=0 capture=244225 prepare=210831 npu=0 display=78596 us
+live frame=82 input=90699f83 boxes=3 inferred=1 capture=244221 prepare=211029 npu=230436 display=158559 us
+live npu seq=82 outputs=2bafc0b1/1a790477/9dfd861e/159afe39/e3d5c48e/381ab1ad fallback=0
+live det seq=82 class=62 score=683 box=457,142,639,287
+live det seq=82 class=39 score=570 box=234,209,360,494
+live det seq=82 class=63 score=309 box=441,259,639,496
+live frame=85 input=824d6da7 boxes=0 inferred=1 capture=244269 prepare=210875 npu=230247 display=157421 us
+live npu seq=85 outputs=1a15a28b/eb158d42/cc0b9110/12f15da2/6d071c6c/af2109fb fallback=0
+live frame=88 input=b5e9c2f6 boxes=0 inferred=1 capture=244221 prepare=210565 npu=230256 display=157520 us
+live npu seq=88 outputs=7d8a21b4/a4228d62/77b28c48/557dbf74/cea28789/60468f5d fallback=0
+live frame=90 input=245e4387 boxes=0 inferred=0 capture=244226 prepare=210408 npu=0 display=78523 us
+live frame=91 input=513fd444 boxes=1 inferred=1 capture=244228 prepare=210590 npu=230371 display=157742 us
+live npu seq=91 outputs=3ddca492/9a87e69f/9f93d346/383140a3/34c36451/b454b269 fallback=0
+live det seq=91 class=0 score=864 box=323,264,627,497
+camera-live-v204: active=0 stop=0 stage=complete error=0 cleanup=0 frames=93 inference=31 elapsed-ms=61709 fps=1.507 input-crc32=0c1c175b
+live-timing-total-us: capture=22712131 prepare=19601390 npu=7141219 display=9771125; model-RAM=8017024/f5f558c5 no-per-frame-SD-files=1; cooperative stop between bounded operations; NOT MP4/ISP/30fps
+
+nsh>

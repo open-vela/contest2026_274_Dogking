@@ -55,6 +55,29 @@ void a733_boot_marker(const char *marker)
 #endif
 }
 
+#ifdef CONFIG_A733_BOOT_DIAGNOSTICS
+void a733_boot_value(const char *stage, uint64_t value)
+{
+  static const char digits[] = "0123456789abcdef";
+  int shift;
+
+  /* No printf, allocation, mutex, file descriptor, or interrupt dependency.
+   * Callers are the primary boot path or the one AppBringUp initializer.
+   */
+
+  a733_boot_marker("[boot188] ");
+  a733_boot_marker(stage);
+  a733_boot_marker("=0x");
+  for (shift = 60; shift >= 0; shift -= 4)
+    {
+      char hex[2] = {digits[(value >> shift) & 15], '\0'};
+      a733_boot_marker(hex);
+    }
+
+  a733_boot_marker("\r\n");
+}
+#endif
+
 static const struct arm_mmu_region g_mmu_regions[] =
 {
   MMU_REGION_FLAT_ENTRY("DEVICE",
@@ -88,7 +111,13 @@ void arm64_el_init(void)
 
 void arm64_chip_boot(void)
 {
+#ifdef CONFIG_A733_BOOT_DIAGNOSTICS
+  a733_boot_marker("M0 v188-boot-candidate\r\n");
+#else
+  a733_boot_marker("M0 v141-layout\r\n");
+#endif
   arm64_mmu_init(true);
+  a733_boot_marker("M1\r\n");
 
 #ifdef CONFIG_ARM64_PSCI
   /* The official boot chain enters through TF-A BL31, whose PSCI conduit is

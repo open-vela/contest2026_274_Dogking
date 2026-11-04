@@ -1,0 +1,16 @@
+--- a/cmake/CMakeLists.txt
++++ b/cmake/CMakeLists.txt
+@@ -462,7 +462,12 @@
+ find_package(Threads)
+ # On Windows we directly use Windows APIs to do the job
+ # Android NDK doesn't provide the iconv lib.
+-if(NOT WIN32 AND NOT CMAKE_SYSTEM_NAME STREQUAL "Android")
++# The NuttX port accepts the reduced, float-only Matcha ORT graph. It has
++# no iconv callers. Do not search for or pretend to link a host libiconv.
++if(onnxruntime_NUTTX AND (NOT onnxruntime_MINIMAL_BUILD OR NOT onnxruntime_DISABLE_CONTRIB_OPS))
++  message(FATAL_ERROR "NuttX port requires the reduced minimal CPU profile")
++endif()
++if(NOT WIN32 AND NOT CMAKE_SYSTEM_NAME STREQUAL "Android" AND NOT onnxruntime_NUTTX)
+   find_package(Iconv REQUIRED)
+   set(ICONV_LIB Iconv::Iconv)
+ endif()

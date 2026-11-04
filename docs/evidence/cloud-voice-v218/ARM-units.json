@@ -1,0 +1,57 @@
+{
+  "result": "PRODUCT_V1_NUTTX_ARM_COMPILE_NOT_BOARD",
+  "units": {
+    "apps/system/aipet/product_core.cxx": {
+      "sha256": "689ce6850d72c2b8fd35b8ce1b6358a407fcf6064b66665d1dbb5752e43ed48b",
+      "max_frame": 256
+    },
+    "apps/system/aipet/product_runtime.cxx": {
+      "sha256": "2af1eb6e44adc1d0bc2ead73c406a859c3a94f3e04aba679e9e8c0874087d5e4",
+      "max_frame": 400
+    },
+    "apps/system/aipet/audio_app.cxx": {
+      "sha256": "1a1554d4c02b7bd01e5d4ea0df14476de350b6ec5ecdc9c4c3cfedacc84e36b5",
+      "max_frame": 2352
+    },
+    "apps/system/aipet/aipet_main.cxx": {
+      "sha256": "53b4529932fef0e5f12db9f4d4c3e07c8e4d6a956dbd8d758127e685e7c46e4c",
+      "max_frame": 32
+    },
+    "apps/system/aipet/mcu_protocol.cxx": {
+      "sha256": "5355bd1c2eb5f49d89664c7951ec72dba03d6d9f16a0f0268355373c9b0f652d",
+      "max_frame": 368
+    },
+    "apps/system/aipet/mcu_link.cxx": {
+      "sha256": "aa47394ff3197760dd65622472199047ee0862f0abd0d3f19d266c80fd1f418f",
+      "max_frame": 704
+    },
+    "apps/system/aipet/cloud_voice.cxx": {
+      "sha256": "69597a4c6beb2deb6758c72fdce71ebdae6f7dec55415b72015e24b7aa9099ee",
+      "max_frame": 1168
+    },
+    "apps/system/aipet/cloud_voice_protocol.cxx": {
+      "sha256": "cd59c13b8525e4845ec6cda7360fbc6e8f0ca45ab755396ab684ccc257f1cf14",
+      "max_frame": 576
+    },
+    "apps/system/aipet/cloud_voice_socket.cxx": {
+      "sha256": "7025ed8ffd87c2255325eaaa4a64e3647cca99bb8d8e957832bcd04500898b6d",
+      "max_frame": 1136
+    },
+    "apps/system/a733camera/a733_camera_live.c": {
+      "sha256": "7eb7f536dd922d8b43891b9c1b3fd74e9aad6b1a90f79b4eddf5b86cc165e4d6",
+      "max_frame": 1296
+    },
+    "apps/system/aipet/agent_setup.c": {
+      "sha256": "97296b0fa755c5ecb39e3059447f5b2c85d85daf51d86164aa5de8c4adaa60f5",
+      "max_frame": 1680
+    },
+    "apps/system/aipet/product_cloud_config.c": {
+      "sha256": "3dbc4f0ac2c9655c63d7cc61c40102e89cf1ccc1dc6370fe37febb5320d3a285",
+      "max_frame": 1072
+    },
+    "apps/system/a733display/a733display_main.c": {
+      "sha256": "a0cf3822d9ccb4e2ff7c697cf157da6f809f4ed1701652385d2fe5961a204647",
+      "max_frame": 2096
+    }
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "capture": "I2S-1.sr",
+  "sha256": "0631e59bb273c9499e149de9c799c1c7888b57fb422771d834c756643dc7bca4",
+  "metadata_samplerate": "20 kHz",
+  "samplerate_hz": 20000.0,
+  "logic_samples": 302592,
+  "duration_seconds": 15.1296,
+  "expected_bus": {
+    "lrclk_hz": 48000,
+    "bclk_hz": 3072000,
+    "slots": 2,
+    "slot_bits": 32
+  },
+  "samples_per_expected_bclk_period": 0.006510416666666667,
+  "meets_bclk_nyquist_only": false,
+  "meets_recommended_24MHz": false,
+  "interpretation": "UNDERSAMPLED: do not decode PCM or infer actual clock frequency",
+  "user_confirmed_channel_map": {
+    "D0": "LRCLK",
+    "D1": "BCLK",
+    "D2": "SD"
+  },
+  "sampled_channel_statistics_not_bus_frequencies": [
+    {
+      "channel": 0,
+      "high_samples": 251452,
+      "transitions": 81594
+    },
+    {
+      "channel": 1,
+      "high_samples": 51176,
+      "transitions": 82312
+    },
+    {
+      "channel": 2,
+      "high_samples": 13849,
+      "transitions": 27698
+    },
+    {
+      "channel": 3,
+      "high_samples": 302592,
+      "transitions": 0
+    },
+    {
+      "channel": 4,
+      "high_samples": 302592,
+      "transitions": 0
+    },
+    {
+      "channel": 5,
+      "high_samples": 302592,
+      "transitions": 0
+    },
+    {
+      "channel": 6,
+      "high_samples": 302592,
+      "transitions": 0
+    },
+    {
+      "channel": 7,
+      "high_samples": 302592,
+      "transitions": 0
+    }
+  ]
+}

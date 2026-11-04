@@ -1,0 +1,16 @@
+--- a/cmake/onnxruntime_providers_cpu.cmake
++++ b/cmake/onnxruntime_providers_cpu.cmake
+@@ -9,1 +9,13 @@
++if(onnxruntime_NUTTX)
++  file(SHA256 "${onnxruntime_REDUCED_OPS_BUILD_CONFIG}" matcha_ops_sha256)
++  if(NOT matcha_ops_sha256 STREQUAL "87c624766c93ec0f91596a0aaf986d3bd05c831ee902d99d9877490893cb9db7")
++    message(FATAL_ERROR "NuttX CPU source pruning requires the qualified Matcha operator profile")
++  endif()
++  # These kernels are NOT required/registered by the locked Matcha graph.
++  list(REMOVE_ITEM onnxruntime_providers_srcs
++    "${ONNXRUNTIME_ROOT}/core/providers/cpu/controlflow/loop.cc"
++    "${ONNXRUNTIME_ROOT}/core/providers/cpu/tensor/unique.cc"
++    "${ONNXRUNTIME_ROOT}/core/providers/cpu/text/string_normalizer.cc")
++endif()
++
+ if(onnxruntime_DISABLE_ML_OPS)

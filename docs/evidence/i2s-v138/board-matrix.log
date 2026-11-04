@@ -1,0 +1,227 @@
+
+[22.775]total: 22775 ms
+
+[22.777][mmc]: MMC Device 2 not found
+[22.781][mmc]: mmc 2 not find, so not exit
+NOTICE:  [SCP] :wait arisc ready....
+NOTICE:  [SCP] :arisc version: [d463b9da43dc50320f21ba51c6c51afe2db20d83]
+NOTICE:  [SCP] :arisc startup ready
+NOTICE:  [SCP] :arisc startup notify message feedback
+NOTICE:  [SCP] :sunxi-arisc driver is starting
+NOTICE:  BL3-1: Next image address = 0x40200000
+NOTICE:  BL3-1: Next image spsr = 0x3c5
+- Ready to Boot Primary CPU
+- Boot from EL1
+- Boot to C runtime for OS Initialize
+A7Z0
+A7Z1
+N0
+N1
+H0
+H1
+H2
+H3
+H4
+S0
+S1
+P1
+H5
+N2
+N3
+N4
+R RR aeRee5-    R
+tdyyyy  yodReaeayeBaa ddda0d
+    o       a tttB tdt1oBoyooo
+ to   BB BBtoBooBtoooo  oo2ooSottBtt
+cccencoooocBSS toee3eeS
+ PCnCC   dSconn onAendCdcddn0 o  d
+PPAP   UCPdC
+-C  UP1UUU U
+
+
+ P
+
+  A---BU
+Bo      - 2o-
+ BB Bo-otBo
+  o        o  BoooootBot4ftt rt
+fm   r LmofNrrmtrr6o oo romEmom
+mLLE7LL1L 111 EEE
+1           1
+-E X
+
+    L
+
+
+  oBBB-  o
+      B
+       oootoooo ottttto     ttttooooC     CrCCCu    rrrrntuuuuinnnnttttmieiii mmmmeeeef o   frfffoo oorrOrr  S  OO OOSSISS   n IIIiInnnntiiiiiattttiiiilaiaaalzzzeieiiiz
+    eee
+
+
+
+- Boot to C runti-m Beo ofotr t Oo S C Irniuntitialmei zefo
+r OS Initialize
+N8
+X1
+PR
+PR
+PR
+
+NuttShell (NSH)
+nsh> RI
+RX
+
+nsh> echo capturecfg=0,0,2,3000 > /dev/a733-audio
+nsh> cat /dev/a733-audio
+A733 I2S0 MAX98357A/INMP441 acceptance driver
+state=ready initialized=1 pll-locked=1 last=0 last-op=capturecfg probes=3 tones=0 captures=1 timeouts=0 samples=144000
+stream-proof: tx-count=0 rx-count=148801 capture-nonzero=144000 raw-nonzero=144000 warmup=4800 first-raw=0066a9aa last-raw=ff96599a capture-min=-27803 capture-max=29517
+capture-proof: mode=pcm16 slot=0(left) status=0 committed=1 requested=3000 ms elapsed=3100 ms target-rx=148800 consumed-rx=148800 hw-rx=148801 fifo-peak=1 intsta=00000010
+capture-config: bclk-polarity=0 lrck-polarity=0 PB8-pull=2(down) fmt0=00001f57 rxmap3=00000000 pb-pull=00160005
+capture-stats: units=S16 zero=0 sign-transitions=63127 sum-square=64428577952492 raw-low55=11083 raw-lowaa=10828
+capture-output: /data/inmp441-left-normal-pd.wav
+capture-plan: rate=48000 slots=2 sample=24 slot=32 module=24.576MHz bclk=3.072MHz mclk=off
+ccu: pll-audio1=f9147f00 module=82000018 bus-reset=00010001
+regs: ctl=00000000 fmt0=00001f57 fifoctl=00000005 fifosta=10800080 clkdiv=00000050 chcfg=00000001 rev=00021000
+channel-map: txsel=00110003 txmap=00000000/00000010 rxsel=00100000 rxmap=00000000/00000000/00000000/00000000
+pins: PB5/BCLK=pin12 PB6/LRCK=pin35 PB7/DOUT0=pin40 PB8/DIN0=pin38 mux=3 cfg0=333f7777 cfg1=00000223 pull=00160005
+max98357a: BCLK=PB5 LRC=PB6 DIN=PB7; SD_MODE must be high; OUTP/OUTN are differential
+inmp441: SCK=PB5 WS=PB6 SD=PB8 VDD=3.3V; default-slot=right(1)
+control: probe | init | tone=<hz>,<ms> (official S16 path) | tone32=<hz>,<ms> (legacy compare) | capture=<ms> (default right) | captureleft=<ms> | captureright=<ms> | capture32=<ms> | off
+matrix: capturecfg=<slot:0/1>,<bclk:0/1>,<pull:0/2>,<ms:100..10000>; each config has its own WAV; repeating it replaces that config only
+capture-files: /data/inmp441.wav (48kHz mono signed-16 WAV), /data/inmp441-raw32.bin (sign-extended S24 FIFO words)
+nsh> echo capturecfg=0,1,2,3000 > /dev/a733-audio
+nsh> cat /dev/a733-audio
+A733 I2S0 MAX98357A/INMP441 acceptance driver
+state=ready initialized=1 pll-locked=1 last=0 last-op=capturecfg probes=7 tones=0 captures=2 timeouts=0 samples=144000
+stream-proof: tx-count=0 rx-count=148801 capture-nonzero=143996 raw-nonzero=144000 warmup=4800 first-raw=00555596 last-raw=ff9a9b2a capture-min=-32768 capture-max=30165
+capture-proof: mode=pcm16 slot=0(left) status=0 committed=1 requested=3000 ms elapsed=3100 ms target-rx=148800 consumed-rx=148800 hw-rx=148801 fifo-peak=1 intsta=00000010
+capture-config: bclk-polarity=1 lrck-polarity=0 PB8-pull=2(down) fmt0=00001fd7 rxmap3=00000000 pb-pull=00160005
+capture-stats: units=S16 zero=4 sign-transitions=63177 sum-square=64452826542436 raw-low55=11004 raw-lowaa=10884
+capture-output: /data/inmp441-left-invert-pd.wav
+capture-plan: rate=48000 slots=2 sample=24 slot=32 module=24.576MHz bclk=3.072MHz mclk=off
+ccu: pll-audio1=f9147f00 module=82000018 bus-reset=00010001
+regs: ctl=00000000 fmt0=00001fd7 fifoctl=00000005 fifosta=10800080 clkdiv=00000050 chcfg=00000001 rev=00021000
+channel-map: txsel=00110003 txmap=00000000/00000010 rxsel=00100000 rxmap=00000000/00000000/00000000/00000000
+pins: PB5/BCLK=pin12 PB6/LRCK=pin35 PB7/DOUT0=pin40 PB8/DIN0=pin38 mux=3 cfg0=333f7777 cfg1=00000223 pull=00160005
+max98357a: BCLK=PB5 LRC=PB6 DIN=PB7; SD_MODE must be high; OUTP/OUTN are differential
+inmp441: SCK=PB5 WS=PB6 SD=PB8 VDD=3.3V; default-slot=right(1)
+control: probe | init | tone=<hz>,<ms> (official S16 path) | tone32=<hz>,<ms> (legacy compare) | capture=<ms> (default right) | captureleft=<ms> | captureright=<ms> | capture32=<ms> | off
+matrix: capturecfg=<slot:0/1>,<bclk:0/1>,<pull:0/2>,<ms:100..10000>; each config has its own WAV; repeating it replaces that config only
+capture-files: /data/inmp441.wav (48kHz mono signed-16 WAV), /data/inmp441-raw32.bin (sign-extended S24 FIFO words)
+nsh> echo capturecfg=0,0,0,3000 > /dev/a733-audio
+nsh> cat /dev/a733-audio
+A733 I2S0 MAX98357A/INMP441 acceptance driver
+state=ready initialized=1 pll-locked=1 last=0 last-op=capturecfg probes=11 tones=0 captures=3 timeouts=0 samples=144000
+stream-proof: tx-count=0 rx-count=148801 capture-nonzero=144000 raw-nonzero=144000 warmup=4800 first-raw=ffd35955 last-raw=ffaacccc capture-min=-31598 capture-max=32183
+capture-proof: mode=pcm16 slot=0(left) status=0 committed=1 requested=3000 ms elapsed=3100 ms target-rx=148800 consumed-rx=148800 hw-rx=148801 fifo-peak=1 intsta=00000010
+capture-config: bclk-polarity=0 lrck-polarity=0 PB8-pull=0(disabled) fmt0=00001f57 rxmap3=00000000 pb-pull=00140005
+capture-stats: units=S16 zero=0 sign-transitions=63944 sum-square=64430062118266 raw-low55=10888 raw-lowaa=10647
+capture-output: /data/inmp441-left-normal-none.wav
+capture-plan: rate=48000 slots=2 sample=24 slot=32 module=24.576MHz bclk=3.072MHz mclk=off
+ccu: pll-audio1=f9147f00 module=82000018 bus-reset=00010001
+regs: ctl=00000000 fmt0=00001f57 fifoctl=00000005 fifosta=10800080 clkdiv=00000050 chcfg=00000001 rev=00021000
+channel-map: txsel=00110003 txmap=00000000/00000010 rxsel=00100000 rxmap=00000000/00000000/00000000/00000000
+pins: PB5/BCLK=pin12 PB6/LRCK=pin35 PB7/DOUT0=pin40 PB8/DIN0=pin38 mux=3 cfg0=333f7777 cfg1=00000223 pull=00140005
+max98357a: BCLK=PB5 LRC=PB6 DIN=PB7; SD_MODE must be high; OUTP/OUTN are differential
+inmp441: SCK=PB5 WS=PB6 SD=PB8 VDD=3.3V; default-slot=right(1)
+control: probe | init | tone=<hz>,<ms> (official S16 path) | tone32=<hz>,<ms> (legacy compare) | capture=<ms> (default right) | captureleft=<ms> | captureright=<ms> | capture32=<ms> | off
+matrix: capturecfg=<slot:0/1>,<bclk:0/1>,<pull:0/2>,<ms:100..10000>; each config has its own WAV; repeating it replaces that config only
+capture-files: /data/inmp441.wav (48kHz mono signed-16 WAV), /data/inmp441-raw32.bin (sign-extended S24 FIFO words)
+nsh> echo capturecfg=0,1,0,3000 > /dev/a733-audio
+nsh> cat /dev/a733-audio
+A733 I2S0 MAX98357A/INMP441 acceptance driver
+state=ready initialized=1 pll-locked=1 last=0 last-op=capturecfg probes=15 tones=0 captures=4 timeouts=0 samples=144000
+stream-proof: tx-count=0 rx-count=148801 capture-nonzero=144000 raw-nonzero=144000 warmup=4800 first-raw=ff9aaaca last-raw=0054d959 capture-min=-30427 capture-max=31597
+capture-proof: mode=pcm16 slot=0(left) status=0 committed=1 requested=3000 ms elapsed=3100 ms target-rx=148800 consumed-rx=148800 hw-rx=148801 fifo-peak=1 intsta=00000010
+capture-config: bclk-polarity=1 lrck-polarity=0 PB8-pull=0(disabled) fmt0=00001fd7 rxmap3=00000000 pb-pull=00140005
+capture-stats: units=S16 zero=0 sign-transitions=61505 sum-square=64471992334555 raw-low55=10781 raw-lowaa=10816
+capture-output: /data/inmp441-left-invert-none.wav
+capture-plan: rate=48000 slots=2 sample=24 slot=32 module=24.576MHz bclk=3.072MHz mclk=off
+ccu: pll-audio1=f9147f00 module=82000018 bus-reset=00010001
+regs: ctl=00000000 fmt0=00001fd7 fifoctl=00000005 fifosta=10800080 clkdiv=00000050 chcfg=00000001 rev=00021000
+channel-map: txsel=00110003 txmap=00000000/00000010 rxsel=00100000 rxmap=00000000/00000000/00000000/00000000
+pins: PB5/BCLK=pin12 PB6/LRCK=pin35 PB7/DOUT0=pin40 PB8/DIN0=pin38 mux=3 cfg0=333f7777 cfg1=00000223 pull=00140005
+max98357a: BCLK=PB5 LRC=PB6 DIN=PB7; SD_MODE must be high; OUTP/OUTN are differential
+inmp441: SCK=PB5 WS=PB6 SD=PB8 VDD=3.3V; default-slot=right(1)
+control: probe | init | tone=<hz>,<ms> (official S16 path) | tone32=<hz>,<ms> (legacy compare) | capture=<ms> (default right) | captureleft=<ms> | captureright=<ms> | capture32=<ms> | off
+matrix: capturecfg=<slot:0/1>,<bclk:0/1>,<pull:0/2>,<ms:100..10000>; each config has its own WAV; repeating it replaces that config only
+capture-files: /data/inmp441.wav (48kHz mono signed-16 WAV), /data/inmp441-raw32.bin (sign-extended S24 FIFO words)
+nsh> echo capturecfg=1,0,2,3000 > /dev/a733-audio
+nsh> cat /dev/a733-audio
+A733 I2S0 MAX98357A/INMP441 acceptance driver
+state=ready initialized=1 pll-locked=1 last=0 last-op=capturecfg probes=19 tones=0 captures=5 timeouts=0 samples=144000
+stream-proof: tx-count=0 rx-count=148801 capture-nonzero=144000 raw-nonzero=144000 warmup=4800 first-raw=ffd35365 last-raw=ffd35365 capture-min=-11437 capture-max=-11437
+capture-proof: mode=pcm16 slot=1(right) status=0 committed=1 requested=3000 ms elapsed=3100 ms target-rx=148800 consumed-rx=148800 hw-rx=148801 fifo-peak=1 intsta=00000010
+capture-config: bclk-polarity=0 lrck-polarity=0 PB8-pull=2(down) fmt0=00001f57 rxmap3=00000001 pb-pull=00160005
+capture-stats: units=S16 zero=0 sign-transitions=0 sum-square=18835915536000 raw-low55=0 raw-lowaa=0
+capture-output: /data/inmp441-right-normal-pd.wav
+capture-plan: rate=48000 slots=2 sample=24 slot=32 module=24.576MHz bclk=3.072MHz mclk=off
+ccu: pll-audio1=f9147f00 module=82000018 bus-reset=00010001
+regs: ctl=00000000 fmt0=00001f57 fifoctl=00000005 fifosta=10800080 clkdiv=00000050 chcfg=00000001 rev=00021000
+channel-map: txsel=00110003 txmap=00000000/00000010 rxsel=00100000 rxmap=00000000/00000000/00000000/00000001
+pins: PB5/BCLK=pin12 PB6/LRCK=pin35 PB7/DOUT0=pin40 PB8/DIN0=pin38 mux=3 cfg0=333f7777 cfg1=00000223 pull=00160005
+max98357a: BCLK=PB5 LRC=PB6 DIN=PB7; SD_MODE must be high; OUTP/OUTN are differential
+inmp441: SCK=PB5 WS=PB6 SD=PB8 VDD=3.3V; default-slot=right(1)
+control: probe | init | tone=<hz>,<ms> (official S16 path) | tone32=<hz>,<ms> (legacy compare) | capture=<ms> (default right) | captureleft=<ms> | captureright=<ms> | capture32=<ms> | off
+matrix: capturecfg=<slot:0/1>,<bclk:0/1>,<pull:0/2>,<ms:100..10000>; each config has its own WAV; repeating it replaces that config only
+capture-files: /data/inmp441.wav (48kHz mono signed-16 WAV), /data/inmp441-raw32.bin (sign-extended S24 FIFO words)
+nsh> echo capturecfg=1,1,2,3000 > /dev/a733-audio
+nsh> cat /dev/a733-audio
+A733 I2S0 MAX98357A/INMP441 acceptance driver
+state=ready initialized=1 pll-locked=1 last=0 last-op=capturecfg probes=23 tones=0 captures=6 timeouts=0 samples=144000
+stream-proof: tx-count=0 rx-count=148801 capture-nonzero=144000 raw-nonzero=144000 warmup=4800 first-raw=ffd35365 last-raw=ffd35365 capture-min=-11437 capture-max=-11437
+capture-proof: mode=pcm16 slot=1(right) status=0 committed=1 requested=3000 ms elapsed=3100 ms target-rx=148800 consumed-rx=148800 hw-rx=148801 fifo-peak=1 intsta=00000010
+capture-config: bclk-polarity=1 lrck-polarity=0 PB8-pull=2(down) fmt0=00001fd7 rxmap3=00000001 pb-pull=00160005
+capture-stats: units=S16 zero=0 sign-transitions=0 sum-square=18835915536000 raw-low55=0 raw-lowaa=0
+capture-output: /data/inmp441-right-invert-pd.wav
+capture-plan: rate=48000 slots=2 sample=24 slot=32 module=24.576MHz bclk=3.072MHz mclk=off
+ccu: pll-audio1=f9147f00 module=82000018 bus-reset=00010001
+regs: ctl=00000000 fmt0=00001fd7 fifoctl=00000005 fifosta=10800080 clkdiv=00000050 chcfg=00000001 rev=00021000
+channel-map: txsel=00110003 txmap=00000000/00000010 rxsel=00100000 rxmap=00000000/00000000/00000000/00000001
+pins: PB5/BCLK=pin12 PB6/LRCK=pin35 PB7/DOUT0=pin40 PB8/DIN0=pin38 mux=3 cfg0=333f7777 cfg1=00000223 pull=00160005
+max98357a: BCLK=PB5 LRC=PB6 DIN=PB7; SD_MODE must be high; OUTP/OUTN are differential
+inmp441: SCK=PB5 WS=PB6 SD=PB8 VDD=3.3V; default-slot=right(1)
+control: probe | init | tone=<hz>,<ms> (official S16 path) | tone32=<hz>,<ms> (legacy compare) | capture=<ms> (default right) | captureleft=<ms> | captureright=<ms> | capture32=<ms> | off
+matrix: capturecfg=<slot:0/1>,<bclk:0/1>,<pull:0/2>,<ms:100..10000>; each config has its own WAV; repeating it replaces that config only
+capture-files: /data/inmp441.wav (48kHz mono signed-16 WAV), /data/inmp441-raw32.bin (sign-extended S24 FIFO words)
+nsh> echo capturecfg=1,0,0,3000 > /dev/a733-audio
+nsh> cat /dev/a733-audio
+A733 I2S0 MAX98357A/INMP441 acceptance driver
+state=ready initialized=1 pll-locked=1 last=0 last-op=capturecfg probes=27 tones=0 captures=7 timeouts=0 samples=144000
+stream-proof: tx-count=0 rx-count=148801 capture-nonzero=144000 raw-nonzero=144000 warmup=4800 first-raw=ffd35365 last-raw=ffd35365 capture-min=-11437 capture-max=-11437
+capture-proof: mode=pcm16 slot=1(right) status=0 committed=1 requested=3000 ms elapsed=3100 ms target-rx=148800 consumed-rx=148800 hw-rx=148801 fifo-peak=1 intsta=00000010
+capture-config: bclk-polarity=0 lrck-polarity=0 PB8-pull=0(disabled) fmt0=00001f57 rxmap3=00000001 pb-pull=00140005
+capture-stats: units=S16 zero=0 sign-transitions=0 sum-square=18835915536000 raw-low55=0 raw-lowaa=0
+capture-output: /data/inmp441-right-normal-none.wav
+capture-plan: rate=48000 slots=2 sample=24 slot=32 module=24.576MHz bclk=3.072MHz mclk=off
+ccu: pll-audio1=f9147f00 module=82000018 bus-reset=00010001
+regs: ctl=00000000 fmt0=00001f57 fifoctl=00000005 fifosta=10800080 clkdiv=00000050 chcfg=00000001 rev=00021000
+channel-map: txsel=00110003 txmap=00000000/00000010 rxsel=00100000 rxmap=00000000/00000000/00000000/00000001
+pins: PB5/BCLK=pin12 PB6/LRCK=pin35 PB7/DOUT0=pin40 PB8/DIN0=pin38 mux=3 cfg0=333f7777 cfg1=00000223 pull=00140005
+max98357a: BCLK=PB5 LRC=PB6 DIN=PB7; SD_MODE must be high; OUTP/OUTN are differential
+inmp441: SCK=PB5 WS=PB6 SD=PB8 VDD=3.3V; default-slot=right(1)
+control: probe | init | tone=<hz>,<ms> (official S16 path) | tone32=<hz>,<ms> (legacy compare) | capture=<ms> (default right) | captureleft=<ms> | captureright=<ms> | capture32=<ms> | off
+matrix: capturecfg=<slot:0/1>,<bclk:0/1>,<pull:0/2>,<ms:100..10000>; each config has its own WAV; repeating it replaces that config only
+capture-files: /data/inmp441.wav (48kHz mono signed-16 WAV), /data/inmp441-raw32.bin (sign-extended S24 FIFO words)
+nsh> echo capturecfg=1,1,0,3000 > /dev/a733-audio
+nsh> cat /dev/a733-audio
+A733 I2S0 MAX98357A/INMP441 acceptance driver
+state=ready initialized=1 pll-locked=1 last=0 last-op=capturecfg probes=31 tones=0 captures=8 timeouts=0 samples=144000
+stream-proof: tx-count=0 rx-count=148801 capture-nonzero=144000 raw-nonzero=144000 warmup=4800 first-raw=ffd35365 last-raw=ffd35365 capture-min=-11437 capture-max=-11437
+capture-proof: mode=pcm16 slot=1(right) status=0 committed=1 requested=3000 ms elapsed=3100 ms target-rx=148800 consumed-rx=148800 hw-rx=148801 fifo-peak=1 intsta=00000010
+capture-config: bclk-polarity=1 lrck-polarity=0 PB8-pull=0(disabled) fmt0=00001fd7 rxmap3=00000001 pb-pull=00140005
+capture-stats: units=S16 zero=0 sign-transitions=0 sum-square=18835915536000 raw-low55=0 raw-lowaa=0
+capture-output: /data/inmp441-right-invert-none.wav
+capture-plan: rate=48000 slots=2 sample=24 slot=32 module=24.576MHz bclk=3.072MHz mclk=off
+ccu: pll-audio1=f9147f00 module=82000018 bus-reset=00010001
+regs: ctl=00000000 fmt0=00001fd7 fifoctl=00000005 fifosta=10800080 clkdiv=00000050 chcfg=00000001 rev=00021000
+channel-map: txsel=00110003 txmap=00000000/00000010 rxsel=00100000 rxmap=00000000/00000000/00000000/00000001
+pins: PB5/BCLK=pin12 PB6/LRCK=pin35 PB7/DOUT0=pin40 PB8/DIN0=pin38 mux=3 cfg0=333f7777 cfg1=00000223 pull=00140005
+max98357a: BCLK=PB5 LRC=PB6 DIN=PB7; SD_MODE must be high; OUTP/OUTN are differential
+inmp441: SCK=PB5 WS=PB6 SD=PB8 VDD=3.3V; default-slot=right(1)
+control: probe | init | tone=<hz>,<ms> (official S16 path) | tone32=<hz>,<ms> (legacy compare) | capture=<ms> (default right) | captureleft=<ms> | captureright=<ms> | capture32=<ms> | off
+matrix: capturecfg=<slot:0/1>,<bclk:0/1>,<pull:0/2>,<ms:100..10000>; each config has its own WAV; repeating it replaces that config only
+capture-files: /data/inmp441.wav (48kHz mono signed-16 WAV), /data/inmp441-raw32.bin (sign-extended S24 FIFO words)
+nsh>

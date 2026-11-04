@@ -1,0 +1,9 @@
+{
+  "result": "WINDOWS_INDEPENDENT_SHA256_MATCH",
+  "image": "openvela-a733-cubie-a7z-sd-v3.0pre-v227-candidate.img",
+  "bytes": 2147483648,
+  "sha256": "e4348914e72bcf282f42755ee3ca5e0d48985cfb62eceeab165d98827673ce64",
+  "comparison": "PowerShell Get-FileHash independently equals Linux package summary",
+  "physical_disks_written": false,
+  "board_tested": false
+}

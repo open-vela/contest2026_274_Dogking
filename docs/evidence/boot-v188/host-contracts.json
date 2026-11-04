@@ -1,0 +1,11 @@
+{
+  "result": "HOST_CONTRACTS_PASSED_NOT_BOOT_PROOF",
+  "cases": [
+    "psci_smp_error_propagation",
+    "constructor_order_and_null_entry"
+  ],
+  "patch_fuzz": 0,
+  "sanitizers": true,
+  "sdk_modified": false,
+  "hardware_executed": false
+}

@@ -1,0 +1,230 @@
+
+nsh> ls -l /dev/ttyHCI0
+ crw-rw-rw-           0 /dev/ttyHCI0
+nsh> echo probe > /dev/a733-bt
+nsh> cat /dev/a733-bt
+A733 FCU760K USB HCI / official openvela host transport
+last=0 stage=hci-query-passed probes=1 events=3 hci-status=00 unsafe=0
+runtime=a69c:8d81 event=03 ACL=04/04
+firmware: mode=5 HCI-port=1 readback=1 expected-port=1(USB)
+transport: phase=command-complete command=0/3 event=0/14 polls=3
+periodic: cmd=00080b11 sts=00004001 qtd=80328d00 frame=1697->16a7
+version=0d revision=000b manufacturer=0b3b
+address=f4:ab:5c:e1:c8:62
+le-features=000000b6ff1f79ff
+control: echo probe > /dev/a733-bt (read-only HCI queries; no reset)
+target: openvela BLE GATT central -> ESP32-S3 peripheral
+host: registered=0 open=0 worker=-1 error=0 needs-reboot=0 failures=0 tx-command=0 tx-acl=0 rx-event=0 rx-acl=0
+host-control: bluetoothd & then bttool; no probe while host open
+nsh> kvdbd &
+kvdbd [15:100]
+nsh> sleep 1
+nsh> bluetoothd &
+bluetoothd [27:100]
+nsh> sleep 1
+nsh> bttool
+bttool> bttool> Usage:
+        pair [options] <command> [command parameters]
+Options:
+        --help  Display help
+Commands:
+        auto            enable pair auto reply, params: <enable>(0:disable, 1:enable)
+        reply           reply the pair request, params: <addr><accept?>(0 :reject, 1: accept)
+        pin             input pin code, params: <addr><accept?>(0 :reject, 1: accept)<pincode>
+        passkey         input ssp passkey, params: <addr> <transport>(0:BLE, 1:BREDR)<reply>(0 :reject, 1: accept)<passkey>
+        confirm         set ssp confirmation, params: <addr> <transport> (0:BLE, 1:BREDR)<conform>(0 :reject, 1: accept)
+        set_tk          set oob temporary key for le legacy pairing: <addr><tk_val>
+        set_oob         set remote oob data for le sc pairing: <addr><c_val><r_val>
+        get_oob         get local oob data for le sc pairing: <addr>
+        help            show pair help info
+
+For more information on the usage of each command use:
+        pair help
+[bttool] cmd execute error: [Invalid Parameter]
+bttool> bttool> bttool> bttool> [bttool] Auto accept pair:Disable
+bttool> [bttool] Context:0x4255bc00, Adapter state changed: 1
+bttool> [bttool] Adapter State: 1
+bttool> bttool> bttool> bttool> Usage:
+Commands:
+        start   start scan
+          -t or --type, le scan type (0: passive, 1: active)
+          -p or --phy, le scan phy (1M/2M/Coded)
+          -m or --mode, scan mode (0:low power mode, 1:balance mode, 2:low latency mode)
+          -l or --legacy, is legacy scan (1: true, 0: false)
+          -f or --filter, filter advertiser :<uuid>
+          -y or --policy, scan filter policy (0: Accept All, 1: White List Only,
+            2: Accept All + RPA, 3: White List + RPA)
+
+        stop    stop scan
+        dump    dump scan state
+[bttool] cmd execute error: [API Return Error]
+bttool> bttool> Usage:
+Commands:
+        start   start scan
+          -t or --type, le scan type (0: passive, 1: active)
+          -p or --phy, le scan phy (1M/2M/Coded)
+          -m or --mode, scan mode (0:low power mode, 1:balance mode, 2:low latency mode)
+          -l or --legacy, is legacy scan (1: true, 0: false)
+          -f or --filter, filter advertiser :<uuid>
+          -y or --policy, scan filter policy (0: Accept All, 1: White List Only,
+            2: Accept All + RPA, 3: White List + RPA)
+
+        stop    stop scan
+        dump    dump scan state
+[bttool] cmd execute error: [API Return Error]
+bttool> nsh> cat /dev/a733-bt
+A733 FCU760K USB HCI / official openvela host transport
+last=0 stage=hci-query-passed probes=1 events=3 hci-status=00 unsafe=0
+runtime=a69c:8d81 event=03 ACL=04/04
+firmware: mode=5 HCI-port=1 readback=1 expected-port=1(USB)
+transport: phase=command-complete command=0/3 event=-110/0 polls=7801
+periodic: cmd=00080b11 sts=00004000 qtd=00408d80 frame=2af7->2b17
+version=0d revision=000b manufacturer=0b3b
+address=f4:ab:5c:e1:c8:62
+le-features=000000b6ff1f79ff
+control: echo probe > /dev/a733-bt (read-only HCI queries; no reset)
+target: openvela BLE GATT central -> ESP32-S3 peripheral
+host: registered=0 open=1 worker=46 error=0 needs-reboot=0 failures=0 tx-command=10 tx-acl=0 rx-event=10 rx-acl=0
+host-control: bluetoothd & then bttool; no probe while host open
+nsh> dmesg
+[   23.116462] [CPU0] [ 9] nsh_main: A733: procfs mounted; 4 GiB split RAM enabled
+[   23.116506] [CPU0] [ 9] nsh_main: A733: user LED ready (0)
+[   23.116534] [CPU0] [ 9] nsh_main: A733: watchdog ready (0)
+[   23.166629] [CPU0] [ 9] nsh_main: A733: THS first sample pending code=0 ints=00000000 gpadc_clk=80000000 ths_bgr=00010001; registering sensor
+[   23.166693] [CPU0] [ 9] nsh_main: A733: temp0 registered; conversion pending
+[   23.166725] [CPU0] [ 9] nsh_main: A733: merged hardware diagnostics ready (0)
+[   23.167160] [CPU0] [ 9] nsh_main: A733 TRNG: CE v00300201 startup/continuous test passed; /dev/random and /dev/urandom ready
+[   23.167209] [CPU0] [ 9] nsh_main: A733: hardware TRNG ready (0)
+[   23.167741] [CPU0] [ 9] nsh_main: A733 NPU: VIP2 power/clock/identity checkpoint passed (0), id=00009000/00009202/20230518/1000003b
+[   23.176671] [CPU0] [ 9] nsh_main: A733 NPU runtime: /dev/npu0 ready (0), pool=404a1000/1048576 vip=02000000 pd=004049b1 lenet=40629000/404b1000 prepared=4067d000/25165824
+[   23.176740] [CPU0] [ 9] nsh_main: A733: VIP2 NPU hardware checkpoint ready (0)
+[   23.176798] [CPU0] [ 9] nsh_main: A733: UART4 TW-TTS port ready at /dev/ttyS4 (0)
+[   23.176825] [CPU0] [ 9] nsh_main: A733: I2S0 audio checkpoint ready at /dev/a733-audio (0)
+[   23.176889] [CPU0] [ 9] nsh_main: A733: header I2C/SPI and fan PWM ready (0)
+[   23.407006] [CPU0] [ 9] nsh_main: A733 SDMMC0: /dev/mmcsd0 requested (PIO, 400 kHz/12 MHz, 4-bit)
+[   23.407045] [CPU0] [ 9] nsh_main: A733: SDMMC0 ready (0)
+[   23.409900] [CPU0] [ 9] nsh_main: A733 GPT: entry=1 node=/dev/a7z-firmware first=32768 blocks=32768 name=primary
+[   23.409941] [CPU0] [ 9] nsh_main: A733 GPT: entry=2 node=/dev/a7z-efi first=65536 blocks=614400 name=primary
+[   23.409982] [CPU0] [ 9] nsh_main: A733 GPT: entry=3 node=/dev/a7z-openvela first=679936 blocks=237568 name=primary
+[   23.410024] [CPU0] [ 9] nsh_main: A733 GPT: entry=4 node=/dev/a7z-data first=917504 blocks=3276767 name=data
+[   23.410670] [CPU0] [ 9] nsh_main: A733 FAT: /dev/a7z-data mounted read/write at /data
+[   23.410704] [CPU0] [ 9] nsh_main: A733: GPT/FAT storage ready (0)
+[   23.581799] [CPU0] [ 9] nsh_main: A733 WIFI: FCU760K USB1 root port connected at high speed (0), version=0100 port=00001005
+[   23.595856] [CPU0] [ 9] nsh_main: A733 WIFI: USB device addr=1 VID:PID=a69c:8d80 class=00/00/00 bcdUSB=2.00 EP0=64
+[   23.597912] [CPU0] [ 9] nsh_main: A733 WIFI: interface=0 alt=0 class=ff/ff/ff endpoints=2
+[   23.597949] [CPU0] [ 9] nsh_main: A733 WIFI: endpoint=01 attr=02 maxpacket=512 interval=0 interface=0/0
+[   23.597991] [CPU0] [ 9] nsh_main: A733 WIFI: endpoint=82 attr=02 maxpacket=512 interval=0 interface=0/0
+[   23.609039] [CPU0] [ 9] nsh_main: A733 WIFI: USB enumeration passed config=1 interfaces=1 descriptors=1 endpoints=2 total=32
+[   23.613003] [CPU0] [ 9] nsh_main: A733 WIFI: AIC BootROM read32 [40500000]=fb078820 bulk=20/24 response=0401 (0)
+[   23.621004] [CPU0] [ 9] nsh_main: A733 WIFI: uploaded /data/aic/fw_adid_8800d80_u02.bin (1708 bytes) to 00201940
+[   23.749003] [CPU0] [ 9] nsh_main: A733 WIFI: uploaded /data/aic/fw_patch_8800d80_u02.bin (32700 bytes) to 001e0000
+[   23.813003] [CPU0] [ 9] nsh_main: A733 WIFI: uploaded /data/aic/fw_patch_8800d80_u02_ext0.bin (16136 bytes) to 0020b43c
+[   24.190003] [CPU0] [ 9] nsh_main: A733 BT: firmware mode=5 HCI-port=1 readback=1 (mailbox/USB)
+[   25.879004] [CPU0] [ 9] nsh_main: A733 WIFI: uploaded /data/aic/fmacfw_8800d80_u02.bin (358072 bytes) to 00120000
+[   25.983003] [CPU0] [ 9] nsh_main: A733 WIFI: D80 patch config version=06090101 cfg=00177158 struct=00177c00 pairs=0017d318
+[   25.985003] [CPU0] [ 9] nsh_main: A733 WIFI: D80 firmware started, waiting for runtime USB device
+[   26.370102] [CPU0] [ 9] nsh_main: A733 WIFI: USB device addr=1 VID:PID=a69c:8d81 class=ef/02/01 bcdUSB=2.00 EP0=64
+[   26.372158] [CPU0] [ 9] nsh_main: A733 WIFI: interface=0 alt=0 class=e0/01/01 endpoints=3
+[   26.372194] [CPU0] [ 9] nsh_main: A733 WIFI: endpoint=83 attr=03 maxpacket=64 interval=4 interface=0/0
+[   26.372236] [CPU0] [ 9] nsh_main: A733 WIFI: endpoint=84 attr=02 maxpacket=512 interval=0 interface=0/0
+[   26.372278] [CPU0] [ 9] nsh_main: A733 WIFI: endpoint=04 attr=02 maxpacket=512 interval=0 interface=0/0
+[   26.372319] [CPU0] [ 9] nsh_main: A733 WIFI: interface=1 alt=0 class=e0/01/01 endpoints=2
+[   26.372356] [CPU0] [ 9] nsh_main: A733 WIFI: endpoint=85 attr=01 maxpacket=0 interval=4 interface=1/0
+[   26.372397] [CPU0] [ 9] nsh_main: A733 WIFI: endpoint=05 attr=01 maxpacket=0 interval=4 interface=1/0
+[   26.372438] [CPU0] [ 9] nsh_main: A733 WIFI: interface=1 alt=1 class=e0/01/01 endpoints=2
+[   26.372474] [CPU0] [ 9] nsh_main: A733 WIFI: endpoint=85 attr=01 maxpacket=9 interval=4 interface=1/1
+[   26.372515] [CPU0] [ 9] nsh_main: A733 WIFI: endpoint=05 attr=01 maxpacket=9 interval=4 interface=1/1
+[   26.372556] [CPU0] [ 9] nsh_main: A733 WIFI: interface=1 alt=2 class=e0/01/01 endpoints=2
+[   26.372592] [CPU0] [ 9] nsh_main: A733 WIFI: endpoint=85 attr=01 maxpacket=17 interval=4 interface=1/2
+[   26.372634] [CPU0] [ 9] nsh_main: A733 WIFI: endpoint=05 attr=01 maxpacket=17 interval=4 interface=1/2
+[   26.372675] [CPU0] [ 9] nsh_main: A733 WIFI: interface=1 alt=3 class=e0/01/01 endpoints=2
+[   26.372711] [CPU0] [ 9] nsh_main: A733 WIFI: endpoint=85 attr=01 maxpacket=25 interval=4 interface=1/3
+[   26.372753] [CPU0] [ 9] nsh_main: A733 WIFI: endpoint=05 attr=01 maxpacket=25 interval=4 interface=1/3
+[   26.372794] [CPU0] [ 9] nsh_main: A733 WIFI: interface=1 alt=4 class=e0/01/01 endpoints=2
+[   26.372830] [CPU0] [ 9] nsh_main: A733 WIFI: endpoint=85 attr=01 maxpacket=33 interval=4 interface=1/4
+[   26.372872] [CPU0] [ 9] nsh_main: A733 WIFI: endpoint=05 attr=01 maxpacket=33 interval=4 interface=1/4
+[   26.372913] [CPU0] [ 9] nsh_main: A733 WIFI: interface=1 alt=5 class=e0/01/01 endpoints=2
+[   26.372949] [CPU0] [ 9] nsh_main: A733 WIFI: endpoint=85 attr=01 maxpacket=49 interval=4 interface=1/5
+[   26.372990] [CPU0] [ 9] nsh_main: A733 WIFI: endpoint=05 attr=01 maxpacket=49 interval=4 interface=1/5
+[   26.373033] [CPU0] [ 9] nsh_main: A733 WIFI: interface=2 alt=0 class=ff/ff/ff endpoints=4
+[   26.373070] [CPU0] [ 9] nsh_main: A733 WIFI: endpoint=01 attr=02 maxpacket=512 interval=0 interface=2/0
+[   26.373111] [CPU0] [ 9] nsh_main: A733 WIFI: endpoint=81 attr=02 maxpacket=512 interval=0 interface=2/0
+[   26.373153] [CPU0] [ 9] nsh_main: A733 WIFI: endpoint=02 attr=02 maxpacket=512 interval=0 interface=2/0
+[   26.373194] [CPU0] [ 9] nsh_main: A733 WIFI: endpoint=82 attr=02 maxpacket=512 interval=0 interface=2/0
+[   26.384241] [CPU0] [ 9] nsh_main: A733 WIFI: USB enumeration passed config=1 interfaces=3 descriptors=8 endpoints=19 total=222
+[   26.384293] [CPU0] [ 9] nsh_main: A733 WIFI: runtime map WLAN data=01/01 msg=02/02 BT event=03 ACL=04/04
+[   26.395003] [CPU0] [ 9] nsh_main: A733 WIFI: runtime MM_VERSION passed lmac=06090101 machw=0002fdfb/00014047 phy=5ee24111/01020000 features=01e877d7 sta=32 vif=4
+[   26.399003] [CPU0] [ 9] nsh_main: A733 WIFI: LMAC stack start passed 5g=1 vendor=00
+[   26.404004] [CPU0] [ 9] nsh_main: A733 WIFI: efuse MAC f4:ab:5c:e1:dc:5e
+[   26.404034] [CPU0] [ 9] nsh_main: A733 WIFI: LMAC stack checkpoint (0)
+[   27.805003] [CPU0] [ 9] nsh_main: A733 WIFI: RF calibration passed rx=00175a64/00175cf8 tx=0017683c/001769c4
+[   27.805047] [CPU0] [ 9] nsh_main: A733 WIFI: RF configuration checkpoint (0)
+[   27.815003] [CPU0] [ 9] nsh_main: A733 WIFI: runtime MM_VERSION passed lmac=06090101 machw=0002fdfb/00014047 phy=5ee24111/01020000 features=01e877d7 sta=32 vif=4
+[   27.820003] [CPU0] [ 9] nsh_main: A733 WIFI: ME configuration passed HT=1 VHT=0 HE=0 BW=40 PS=0 cfm=0
+[   27.820043] [CPU0] [ 9] nsh_main: A733 WIFI: ME configuration checkpoint (0)
+[   27.825003] [CPU0] [ 9] nsh_main: A733 WIFI: CN channel table passed 2g=14 5g=25 cfm=0
+[   27.825038] [CPU0] [ 9] nsh_main: A733 WIFI: regulatory channel checkpoint (0)
+[   27.829003] [CPU0] [ 9] nsh_main: A733 WIFI: station VIF passed index=0 MAC=f4:ab:5c:e1:dc:5e
+[   27.829042] [CPU0] [ 9] nsh_main: A733 WIFI: station VIF checkpoint (0)
+[   27.834003] [CPU0] [ 9] nsh_main: A733 WIFI: MAC/PHY start passed UAPSD=300 ms LPCLK=20 ppm cfm=0
+[   27.834041] [CPU0] [ 9] nsh_main: A733 WIFI: MAC/PHY start checkpoint (0)
+[   27.834070] [CPU0] [ 9] nsh_main: A733 WIFI: runtime transport checkpoint (0)
+[   27.834100] [CPU0] [ 9] nsh_main: A733 WIFI: D80 firmware bytes=408616 runtime=a69c:8d81 (0)
+[   27.834146] [CPU0] [ 9] nsh_main: A733 BT: official H4 transport registration (0)
+[   27.834188] [CPU0] [ 9] nsh_main: A733 WIFI: wlan0 registered; serialized USB RX worker pid=10
+[   27.834228] [CPU0] [ 9] nsh_main: A733: onboard FCU760K USB/firmware checkpoint ready (0)
+[   27.835305] [CPU0] [ 9] nsh_main: A733 USB host: before reset cap=30 ver=0120 hcs=02000140 id=33313130
+[   29.299546] [CPU0] [ 9] nsh_main: A733 USB combo v114: ctrl=00000111/01100001/00000000/00000011 status=00000001 maps=00000000/00000000 ready=1
+[   29.319609] [CPU0] [ 9] nsh_main: A733 USB PHY v114: reset-free host handoff passed id=33313130 gctl=30c11404 u2=02102400 u3=01001102 iscr=0100b000 physts=00000008
+[   29.319678] [CPU0] [ 9] nsh_main: A733 USB host: CCU-reset halted handoff passed; HCRST suppressed cmd=00000000 sts=00000001 id=33313130
+[   29.319739] [CPU0] [ 9] nsh_main: A733 xHCI v114: running slots=8 scratch=2 page=00000001 rtsoff=00001000 cmd=00000001 sts=00000000
+[   30.820604] [CPU0] [ 9] nsh_main: A733 UVC: USB2/xHCI2 probe=-19 ports=000002a0/000002a0 DWC3=33313130 maxports=2
+[   30.820650] [CPU0] [ 9] nsh_main: A733 USB diagnostic node registered; host probe=-19 (not audio-ready)
+[   30.820691] [CPU0] [ 9] nsh_main: A733: external USB0 UVC checkpoint ready (0)
+[   30.820735] [CPU0] [ 9] nsh_main: A733: optional service startup dispatcher (0)
+[   67.898005] [CPU1] [14] wifi: A733 WIFI: active scan passed channels=14 indications=5 results=5 firmware=5 ack=1
+[   68.082005] [CPU1] [14] wifi: A733 WIFI: active scan passed channels=4 indications=3 results=8 firmware=3 ack=1
+[   68.320005] [CPU1] [14] wifi: A733 WIFI: active scan passed channels=5 indications=2 results=10 firmware=2 ack=1
+[  305.541003] [CPU0] [ 9] nsh_main: A733 BT: stage=hci-query-passed result=0 events=3
+[  335.968040] [CPU0] [27] bluetoothd: bluetoothd main 34
+[  336.020073] [CPU1] [27] bluetoothd: /data/misc/bt folder create: 0
+[  336.023404] [CPU1] [15] kvdbd: IO error while opening the target database file: /data/persist.db
+[  336.025924] [CPU0] [15] kvdbd: IO error while opening the target database file: /data/persist.db
+[  336.026939] [CPU0] [15] kvdbd: IO error while opening the target database file: /data/persist.db
+[  336.027948] [CPU0] [15] kvdbd: IO error while opening the target database file: /data/persist.db
+[  336.028960] [CPU0] [15] kvdbd: IO error while opening the target database file: /data/persist.db
+[  336.029971] [CPU0] [15] kvdbd: IO error while opening the target database file: /data/persist.db
+[  336.030096] [CPU0] [27] bluetoothd: Framework log level: 7, Stack:0, mask:00000000, Snoop: 0
+[  336.031728] [CPU0] [27] bluetoothd: [206][storage]: bt_storage_init successed
+[  336.031754] [CPU0] [27] bluetoothd: [129][service_manager]: GATTC service register success
+[  336.031792] [CPU0] [27] bluetoothd: [213][adapter-stm]: Enter, PrevState=(null) ---> NewState=Off
+[  336.032783] [CPU1] [15] kvdbd: IO error while opening the target database file: /data/persist.db
+[  336.033800] [CPU1] [15] kvdbd: IO error while opening the target database file: /data/persist.db
+[  336.034812] [CPU1] [15] kvdbd: IO error while opening the target database file: /data/persist.db
+[  336.034879] [CPU0] [27] bluetoothd: [32][stack_manager]: Stack Info: Zblue Ver:5.4 Sal:2
+[  336.034930] [CPU0] [27] bluetoothd: [424][h4]: Bluetooth H4 driver
+[  336.034958] [CPU0] [27] bluetoothd: [45][stack_manager]: stack_manager_init done
+[  336.034983] [CPU0] [27] bluetoothd: [263][bt_service]: bt_service_init done
+[  336.035012] [CPU0] [27] bluetoothd: [263][service_loop]: service loop running now !!!
+[  336.035046] [CPU0] [27] bluetoothd: [136][service_loop]: service_schedule_loop:0x4254cc20, async:0x4254e898
+[  336.035109] [CPU0] [27] bluetoothd: [83][service_loop]: set_ready
+[  344.616172] [CPU2] [45] bt_client_31: thread_schedule_loop:0x4255ab00, async:0x4255af10
+[  344.[61 6 232434]. [6C1P6U222]6 ][ 4[5C]P Ubt_client_310:]  s[et4_3r]e adbttool-cmd-execy:
+ bt_client_31 loop running now !!!
+[  344.616327] [CPU0] [43] bttool-cmd-exec: [async_queue:91]uv_async_queue_init
+[  415.690050] [CPU1] [27] bluetoothd: [252][adapter-stm]: Process, State=Off, Event=SYS_TURN_ON
+[  415.690087] [CPU1] [27] bluetoothd: [229][adapter-stm]: Exit, State=Off
+[  415.690114] [CPU1] [27] bluetoothd: [275][adapter-stm]: Enter, PrevState=Off ---> NewState=BleTurningOn
+[  415.690166] [CPU1] [27] bluetoothd: A733 BT: official /dev/ttyHCI0 opened, worker=46
+[  415.690202] [CPU1] [27] bluetoothd: [356][h4]: H4: /dev/ttyHCI0 opened as fd:13
+[ [ 4 1 54.156.906294012]4 2[]C P[UC1P]U 2[]2 9[]2 7sysworkq]:  bluetoothdd:e v[:104:3 5S]e[naddianpgt eHrC-Is_vRcE]S:E Tadapter_notify_state_change
+, prev:0--->current:1
+[  415.799016] [CPU1] [29] sysworkq: [796][BT]: zblue init failed (err -5)
+
+[  415.799058] [CPU0] [27] bluetoothd: [294][adapter-stm]: Process, State=BleTurningOn, Event=BREDR_DISABLED
+[  499.002051] [CPU0] [27] bluetoothd: [294][adapter-stm]: Process, State=BleTurningOn, Event=SYS_TURN_OFF_SAFE
+[  503.314084] [CPU1] [27] bluetoothd: [329][bt_socket_server]:[   5bt_socket_server_handle_event0,3 .r3e1v4e1n2t5 ]=  [5C
+PU2] [45] bt_client_31: set_stopped
+[  503.314169] [CPU2] [45] bt_client_31: bt_client_31 thread_schedule_loop quit
+[  503.314192] [CPU0] [43] bttool-cmd-exec: [async_queue:138]uv_async_queue_close
+nsh>

@@ -1,0 +1,1 @@
+PASS: actual RX loop: live x5 mono, early endpoint at complete stereo frame, no files/TX, callback/FIFO/counter errors with no qualified publication (synthetic FIFO)

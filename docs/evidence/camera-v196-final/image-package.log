@@ -1,0 +1,37 @@
+Extracting openvela partition...
+e2fsck 1.47.2 (1-Jan-2025)
+Pass 1: Checking inodes, blocks, and sizes
+Pass 2: Checking directory structure
+Pass 3: Checking directory connectivity
+Pass 4: Checking reference counts
+Pass 5: Checking group summary information
+openvela: 19/29696 files (10.5% non-contiguous), 4666/29696 blocks
+e2fsck 1.47.2 (1-Jan-2025)
+Pass 1: Checking inodes, blocks, and sizes
+Pass 2: Checking directory structure
+Pass 3: Checking directory connectivity
+Pass 4: Checking reference counts
+Pass 5: Checking group summary information
+openvela: 24/29696 files (8.3% non-contiguous), 4681/29696 blocks
+Copying the known-good source image...
+Kernel SHA256:
+2d61ddf2b9af22d98ec8c30cd832bffec6d9a9d0691d299739f0a82375d5ac7a  /mnt/d/My-Program/AI-Agent-Program/GPTsprogram/Openvela/quickly-openvela/cmake_out/cubie-a7z_nsh_v192_camera/nuttx.bin
+Final image SHA256:
+b29c27c98b5494a079b84892e3d8bc34b1e7e99298b011e355fe004d526f8ba1  /mnt/d/My-Program/AI-Agent-Program/GPTsprogram/Openvela/A733-A7Z-ALL-Files/openvela-a733-cubie-a7z-sd-v196-camera-register-repair-candidate.img
+e2fsck 1.47.2 (1-Jan-2025)
+Pass 1: Checking inodes, blocks, and sizes
+Pass 2: Checking directory structure
+Pass 3: Checking directory connectivity
+Pass 4: Checking reference counts
+Pass 5: Checking group summary information
+openvela: 24/29696 files (8.3% non-contiguous), 4681/29696 blocks
+Embedded kernel bytes: 7045664
+Embedded kernel SHA256: 2d61ddf2b9af22d98ec8c30cd832bffec6d9a9d0691d299739f0a82375d5ac7a
+
+Caution: Partition 4 doesn't end on a 2048-sector boundary. This may
+result in problems with some disk encryption tools.
+
+No problems found. 32734 free sectors (16.0 MiB) available in 1
+segments, the largest of which is 32734 (16.0 MiB) in size.
+Image bytes: 2147483648
+b29c27c98b5494a079b84892e3d8bc34b1e7e99298b011e355fe004d526f8ba1  /mnt/d/My-Program/AI-Agent-Program/GPTsprogram/Openvela/A733-A7Z-ALL-Files/openvela-a733-cubie-a7z-sd-v196-camera-register-repair-candidate.img

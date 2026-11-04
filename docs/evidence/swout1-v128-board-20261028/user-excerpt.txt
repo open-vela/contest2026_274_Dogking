@@ -1,0 +1,42 @@
+Evidence type: selected verbatim lines supplied by the user in this chat.
+Not a byte-exact copy of a separately attached full serial file.
+User was testing the previously supplied v128 display image.
+Image byte count matches v128; this transcript has NO kernel CRC/SHA.
+
+=> sunxi_axp pmu read 0e
+pmu_value:0x3
+=> sunxi_axp pmu read 11
+pmu_value:0x17
+=> sunxi_axp pmu read 12
+pmu_value:0x17
+=> sunxi_axp pmu write 11 1f
+pmu_value:0x1f
+=> sunxi_axp pmu read 11
+pmu_value:0x1f
+=> sunxi_axp pmu read 12
+pmu_value:0x17
+
+=> ext4load mmc 0:3 0x40080000 /boot/openvela/a733/Image && ext4load mmc 0:3 0x4fa00000 /boot/dtb/sun60i-a733-cubie-a7z.dtb && booti 0x40080000 - 0x4fa00000
+2195392 bytes read in 111 ms (18.9 MiB/s)
+193692 bytes read in 25 ms (7.4 MiB/s)
+
+nsh> display raw8
+display: initializing ST7735 direct 8-bit path
+display: ST7735 direct path ready
+display: raw8 path passed (128x160 RGB565, MSB first)
+
+这次SPI屏幕恢复了，出席了三色块
+
+两条测试一切正常：
+nsh> display test 10
+ST7735/LVGL test active; press Ctrl+C to stop.
+nsh> display demo 14
+AIPET LVGL emotion demo active; press Ctrl+C to stop.
+display: demo emotion=开心
+display: demo emotion=难过
+display: demo emotion=惊讶
+display: demo emotion=生气
+display: demo emotion=思考
+display: demo emotion=安慰
+display: demo emotion=普通
+nsh>

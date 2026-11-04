@@ -1,0 +1,136 @@
+▒BR▒1 USB Device(s) found
+       scanning usb for storage devices... 0 Storage Device(s) found
+
+Device 0: device type unknown
+... is now current device
+** Bad device usb 0 **
+** Bad device usb 0 **
+mmc0 is current device
+Scanning mmc 0:2...
+Scanning mmc 0:3...
+Found /boot/extlinux/extlinux.conf
+Retrieving file: /boot/extlinux/extlinux.conf
+1373 bytes read in 19 ms (70.3 KiB/s)
+U-Boot menu
+1:      Debian GNU/Linux 11 (bullseye) 5.15.147-21-a733
+2:      Debian GNU/Linux 11 (bullseye) 5.15.147-21-a733 (rescue target)
+Enter choice: 1:        Debian GNU/Linux 11 (bullseye) 5.15.147-21-a733
+Retrieving file: /boot/initrd.img-5.15.147-21-a733
+8530712 bytes read in 370 ms (22 MiB/s)
+Retrieving file: /boot/vmlinuz-5.15.147-21-a733
+23296512 bytes read in 983 ms (22.6 MiB/s)
+append: root=UUID=60bcb41a-e316-457c-8f64-8899ab38fd38 console=ttyAS0,115200n8 earlyprintk=sunxi-uart,0x2500000 rootwait clk_ignore_unused mac_addr=08:51:49:dc:77:ed mac1_addr=08:51:49:dc:77:ec quiet splash loglevel=4 rw earlycon consoleblank=0 console=tty1 coherent_pool=2M irqchip.gicv3_pseudo_nmi=0 cgroup_enable=cpuset cgroup_memory=1 cgroup_enable=memory swapaccount=1 kasan=off
+Retrieving file: /usr/lib/linux-image-5.15.147-21-a733/allwinner/sun60i-a733-cubie-a7z.dtb
+193692 bytes read in 148 ms (1.2 MiB/s)
+[13.567]libfdt fdt_path_offset() returned FDT_ERR_BADMAGIC
+[13.576]The storage not support sample function
+[13.662]mac addr => 08:51:49:dc:77:ed
+[13.666]mac addr => 08:51:49:dc:77:ec
+[13.671]no battery, disabled battery functons
+[13.678]update dts
+stop sunxi USB-DRD ok...
+stop sunxi USB1-Host ok...
+[13.705]Starting kernel ...
+
+[13.707]total: 13707 ms
+
+[13.710][mmc]: MMC Device 2 not found
+[13.713][mmc]: mmc 2 not find, so not exit
+NOTICE:  [SCP] :wait arisc ready....
+NOTICE:  [SCP] :arisc version: [d463b9da43dc50320f21ba51c6c51afe2db20d83]
+NOTICE:  [SCP] :arisc startup ready
+NOTICE:  [SCP] :arisc startup notify message feedback
+NOTICE:  [SCP] :sunxi-arisc driver is starting
+NOTICE:  BL3-1: Next image address = 0x40200000
+NOTICE:  BL3-1: Next image spsr = 0x3c5
+[    0.000000][    T0] Booting Linux on physical CPU 0x0000000000 [0x412fd050]
+[    0.000000][    T0] Linux version 5.15.147-21-a733 (vscode@719ff648175a) (aarch64-linux-gnu-gcc (Debian 10.2.1-6) 10.2.1 20210110, GNU ld (GNU Binutils for Debian) 2.35.2) #21 SMP PREEMPT Thu Apr 30 12:14:04 UTC 2026
+[    0.000000][    T0] random: crng init done
+[    0.000000][    T0] Machine model: sun60iw2
+[    0.000000][    T0] printk: bootconsole [earlycon0] enabled
+[    0.000000][    T0] AW BSP version: 18dcb68d3d, 2026-04-30 12:13:15, RadxaOS SDK
+[    0.000000][    T0] AW BSP version: 18dcb68d3d, 2026-04-30 12:13:15, RadxaOS SDK
+[    0.078078][    T1] iommu_master csi_iommu: attach fail:-517
+[    0.078139][    T1] sunxi-iommu-v2 3900000.iommu: master probe failed with -517
+[    0.217108][    T1] sunxi:ccu_ddr:[ERR]: dram_clk:1800
+[    0.217122][    T1] sunxi:ccu_ddr:[ERR]: dram_div:0x11080503
+[    0.217392][    T1] sunxi:pin-2000000.pinctrl:[ERR]: unknown pin
+[    0.217396][    T1] sunxi:pin-2000000.pinctrl:[ERR]: unknown pin
+[    0.217448][    T1] sunxi:pin-2000000.pinctrl:[ERR]: unknown pin
+[    0.217450][    T1] sunxi:pin-2000000.pinctrl:[ERR]: unknown pin
+[    0.220749][  T104] Initramfs unpacking failed: broken padding
+[    0.290036][    T1] sunxi:sunxi_mmc_host-4022000.sdmmc:[ERR]: manual set ocr
+[    0.328896][    C0] sunxi:sunxi_mmc_host-4022000.sdmmc:[ERR]: smc 1 p2 err, cmd 1, RTO !!
+[    0.339069][    C0] sunxi:sunxi_mmc_host-4022000.sdmmc:[ERR]: smc 1 p2 err, cmd 1, RTO !!
+[    0.349315][    C0] sunxi:sunxi_mmc_host-4022000.sdmmc:[ERR]: smc 1 p2 err, cmd 1, RTO !!
+[    0.359545][    C0] sunxi:sunxi_mmc_host-4022000.sdmmc:[ERR]: smc 1 p2 err, cmd 1, RTO !!
+[    0.369733][    C0] sunxi:sunxi_mmc_host-4022000.sdmmc:[ERR]: smc 1 p2 err, cmd 1, RTO !!
+[    0.379241][    T1] sunxi:sunxi_mmc_host-4021000.sdmmc:[ERR]: manual set ocr
+[    0.380003][    C0] sunxi:sunxi_mmc_host-4022000.sdmmc:[ERR]: smc 1 p2 err, cmd 1, RTO !!
+[    0.397230][    C0] sunxi:sunxi_mmc_host-4022000.sdmmc:[ERR]: smc 1 p2 err, cmd 1, RTO !!
+[    0.407395][    C0] sunxi:sunxi_mmc_host-4022000.sdmmc:[ERR]: smc 1 p2 err, cmd 1, RTO !!
+[    0.417636][    C0] sunxi:sunxi_mmc_host-4022000.sdmmc:[ERR]: smc 1 p2 err, cmd 1, RTO !!
+[    0.427897][    C0] sunxi:sunxi_mmc_host-4022000.sdmmc:[ERR]: smc 1 p2 err, cmd 1, RTO !!
+[    0.438138][    C0] sunxi:sunxi_mmc_host-4022000.sdmmc:[ERR]: smc 1 p2 err, cmd 1, RTO !!
+[    0.448328][    C0] sunxi:sunxi_mmc_host-4021000.sdmmc:[ERR]: smc 2 p1 err, cmd 52, RTO !!
+[    0.457656][    C0] sunxi:sunxi_mmc_host-4022000.sdmmc:[ERR]: smc 1 p2 err, cmd 1, RTO !!
+[    0.467658][    C0] sunxi:sunxi_mmc_host-4021000.sdmmc:[ERR]: smc 2 p1 err, cmd 52, RTO !!
+[    0.477032][    C0] sunxi:sunxi_mmc_host-4022000.sdmmc:[ERR]: smc 1 p2 err, cmd 1, RTO !!
+[    0.487187][    C0] sunxi:sunxi_mmc_host-4022000.sdmmc:[ERR]: smc 1 p2 err, cmd 1, RTO !!
+[    0.497294][    C0] sunxi:sunxi_mmc_host-4022000.sdmmc:[ERR]: smc 1 p2 err, cmd 1, RTO !!
+[    0.507421][    C0] sunxi:sunxi_mmc_host-4022000.sdmmc:[ERR]: smc 1 p2 err, cmd 1, RTO !!
+[    0.507920][    T1] sunxi:sunxi_sidefuse init success!
+[    0.516655][    C0] sunxi:sunxi_mmc_host-4021000.sdmmc:[ERR]: smc 2 p1 err, cmd 8, RTO !!
+[    0.522430][    T1] sunxi:sunxi_smcdrm config service not available: FFFFFFFF
+[    0.539714][    C0] sunxi:sunxi_mmc_host-4021000.sdmmc:[ERR]: smc 2 p1 err, cmd 5, RTO !!
+[    0.548948][    C0] sunxi:sunxi_mmc_host-4021000.sdmmc:[ERR]: smc 2 p1 err, cmd 5, RTO !!
+[    0.558178][    C0] sunxi:sunxi_mmc_host-4021000.sdmmc:[ERR]: smc 2 p1 err, cmd 5, RTO !!
+[    0.567409][    C0] sunxi:sunxi_mmc_host-4021000.sdmmc:[ERR]: smc 2 p1 err, cmd 5, RTO !!
+[    0.576641][    C0] sunxi:sunxi_mmc_host-4021000.sdmmc:[ERR]: smc 2 p1 err, cmd 55, RTO !!
+[    0.586172][    T1] sunxi:dwc3_sunxi_plat-12.usbc2:[ERR]: couldn't get drvvbus supply
+[    0.586823][    C0] sunxi:sunxi_mmc_host-4021000.sdmmc:[ERR]: smc 2 p1 err, cmd 55, RTO !!
+[    0.604277][    C0] sunxi:sunxi_mmc_host-4022000.sdmmc:[ERR]: smc 1 p2 err, cmd 1, RTO !!
+[    0.613495][    C0] sunxi:sunxi_mmc_host-4021000.sdmmc:[ERR]: smc 2 p1 err, cmd 55, RTO !!
+[    0.623677][    C0] sunxi:sunxi_mmc_host-4021000.sdmmc:[ERR]: smc 2 p1 err, cmd 55, RTO !!
+[    0.633001][    C0] sunxi:sunxi_mmc_host-4022000.sdmmc:[ERR]: smc 1 p2 err, cmd 1, RTO !!
+[    0.643072][    C0] sunxi:sunxi_mmc_host-4022000.sdmmc:[ERR]: smc 1 p2 err, cmd 1, RTO !!
+[    0.652296][    C0] sunxi:sunxi_mmc_host-4021000.sdmmc:[ERR]: smc 2 p1 err, cmd 1, RTO !!
+[    0.662426][    C0] sunxi:sunxi_mmc_host-4022000.sdmmc:[ERR]: smc 1 p2 err, cmd 1, RTO !!
+[    0.672544][    C0] sunxi:sunxi_mmc_host-4022000.sdmmc:[ERR]: smc 1 p2 err, cmd 1, RTO !!
+[    0.682646][    C0] sunxi:sunxi_mmc_host-4022000.sdmmc:[ERR]: smc 1 p2 err, cmd 1, RTO !!
+[    0.692556][    T1] et7304 14-004e: fail to register tcpci port, -517
+[    0.692756][    C0] sunxi:sunxi_mmc_host-4022000.sdmmc:[ERR]: smc 1 p2 err, cmd 1, RTO !!
+[    0.709890][    C0] sunxi:sunxi_mmc_host-4022000.sdmmc:[ERR]: smc 1 p2 err, cmd 1, RTO !!
+[    0.720013][    C0] sunxi:sunxi_mmc_host-4022000.sdmmc:[ERR]: smc 1 p2 err, cmd 1, RTO !!
+[    0.730112][    C0] sunxi:sunxi_mmc_host-4022000.sdmmc:[ERR]: smc 1 p2 err, cmd 1, RTO !!
+[    0.730958][    T1] sunxi:axp8191_temp_ctrl:[ERR]: axp8191-temp-ctrl device is not configed
+[    0.749597][    C0] sunxi:sunxi_mmc_host-4022000.sdmmc:[ERR]: smc 1 p2 err, cmd 1, RTO !!
+[    0.759708][    C0] sunxi:sunxi_mmc_host-4022000.sdmmc:[ERR]: smc 1 p2 err, cmd 1, RTO !!
+[    0.769809][    C0] sunxi:sunxi_mmc_host-4022000.sdmmc:[ERR]: smc 1 p2 err, cmd 1, RTO !!
+[    0.779920][    C0] sunxi:sunxi_mmc_host-4022000.sdmmc:[ERR]: smc 1 p2 err, cmd 1, RTO !!
+[    0.790019][    C0] sunxi:sunxi_mmc_host-4022000.sdmmc:[ERR]: smc 1 p2 err, cmd 1, RTO !!
+[    0.800157][    C0] sunxi:sunxi_mmc_host-4022000.sdmmc:[ERR]: smc 1 p2 err, cmd 1, RTO !!
+[    0.810249][    C0] sunxi:sunxi_mmc_host-4022000.sdmmc:[ERR]: smc 1 p2 err, cmd 1, RTO !!
+[    0.819518][  T111] sunxi:sunxi_mmc_host-4022000.sdmmc:[ERR]: retry:set phase failed or over retry times
+[    0.830235][  T111] sunxi:sunxi_mmc_host-4022000.sdmmc:[ERR]: retry:give up
+[    0.871715][   T64] sunxi:sunxi_mmc_host-4020000.sdmmc:[ERR]: sdc0 :the host don't support tuning in kernel
+[    3.037305][    T9] sunxi:pcie-rc-6000000.pcie:[ERR]: Speed change timeout
+[    3.090063][    T9] et7304 14-004e: et7304_probe successful
+[    3.195093][    T1] Failed to execute /init (error -2)
+[    3.201424][    T1] Kernel panic - not syncing: No working init found.  Try passing init= option to kernel. See Linux Documentation/admin-guide/init.rst for guidance.
+[    3.218058][    T1] CPU: 6 PID: 1 Comm: swapper/0 Tainted: G        W         5.15.147-21-a733 #21
+[    3.228099][    T1] Hardware name: sun60iw2 (DT)
+[    3.233269][    T1] Call trace:
+[    3.236780][    T1]  dump_backtrace+0x0/0x1a0
+[    3.241664][    T1]  show_stack+0x20/0x2c
+[    3.246153][    T1]  dump_stack_lvl+0x7c/0xa0
+[    3.251030][    T1]  dump_stack+0x18/0x34
+[    3.255517][    T1]  panic+0x178/0x33c
+[    3.259714][    T1]  kernel_init+0x130/0x140
+[    3.264494][    T1]  ret_from_fork+0x10/0x20
+[    3.269273][    T1] SMP: stopping secondary CPUs
+[    3.274552][    T1] Kernel Offset: disabled
+[    3.279233][    T1] CPU features: 0x6,000001c1,23100e42
+[    3.285084][    T1] Memory Limit: none
+[    3.289289][    T1] ---[ end Kernel panic - not syncing: No working init found.  Try passing init= option to kernel. See Linux Documentation/admin-guide/init.rst for guidance. ]---
+

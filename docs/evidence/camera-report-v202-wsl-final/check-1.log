@@ -1,0 +1,17 @@
+test_00_production_source_identity (__main__.ReportTests.test_00_production_source_identity) ... ok
+test_01_uniform_raw_reference_and_statistics (__main__.ReportTests.test_01_uniform_raw_reference_and_statistics) ... ok
+test_02_mapping_padding_clipping_and_precision (__main__.ReportTests.test_02_mapping_padding_clipping_and_precision) ... ok
+test_03_png_chunks_and_pixels (__main__.ReportTests.test_03_png_chunks_and_pixels) ... ok
+test_04_protocol_binding_zero_and_32 (__main__.ReportTests.test_04_protocol_binding_zero_and_32) ... ok
+test_05_log_rejection (__main__.ReportTests.test_05_log_rejection) ... ok
+test_06_full_report_no_fabricated_boxes_and_input_immutable (__main__.ReportTests.test_06_full_report_no_fabricated_boxes_and_input_immutable) ... ok
+test_071_crc_consistent_but_stale_preview_is_rejected (__main__.ReportTests.test_071_crc_consistent_but_stale_preview_is_rejected) ... ok
+test_072_full_audit_with_bound_inference (__main__.ReportTests.test_072_full_audit_with_bound_inference) ... ok
+test_07_crc_consistent_but_stale_model_is_rejected (__main__.ReportTests.test_07_crc_consistent_but_stale_model_is_rejected) ... ok
+test_08_failed_output_does_not_publish_complete (__main__.ReportTests.test_08_failed_output_does_not_publish_complete) ... ok
+test_09_actual_c_export_all_bayer_orders (__main__.ReportTests.test_09_actual_c_export_all_bayer_orders) ... ok
+
+----------------------------------------------------------------------
+Ran 12 tests in 6.841s
+
+OK

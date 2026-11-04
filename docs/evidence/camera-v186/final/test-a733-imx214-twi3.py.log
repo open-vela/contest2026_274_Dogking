@@ -1,0 +1,1 @@
+PASS: actual TWI3 transaction core, BE16/repeated START/ACK/NACK/STOP, zero-write gates, timeout/quarantine/arbitration; SYNTHETIC only

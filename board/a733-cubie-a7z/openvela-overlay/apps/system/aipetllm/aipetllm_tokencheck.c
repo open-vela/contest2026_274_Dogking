@@ -448,7 +448,8 @@ int aipetllm_tokenizer_checkpoint(const char *path)
          info.bos, info.eos, info.eot, info.pad,
          info.add_bos, info.add_eos);
 
-  if (strcmp(info.model, "gpt2") != 0 || strcmp(info.pre, "qwen2") != 0 ||
+  if (strcmp(info.model, "gpt2") != 0 ||
+      (strcmp(info.pre, "qwen2") != 0 && strcmp(info.pre, "llama-bpe") != 0) ||
       info.tokens == 0 || info.merges == 0 || info.eos == UINT64_MAX ||
       (info.token_types != 0 && info.token_types != info.tokens) ||
       (info.scores != 0 && info.scores != info.tokens) ||

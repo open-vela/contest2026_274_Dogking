@@ -1,0 +1,86 @@
+{
+  "result": "PRIVATE_CANDIDATE_PACKAGED_NOT_BOARD_TESTED",
+  "purpose": "camera-id",
+  "image": "/mnt/d/My-Program/AI-Agent-Program/GPTsprogram/Openvela/A733-A7Z-ALL-Files/openvela-a733-cubie-a7z-sd-v193-camera-id-candidate.img",
+  "bytes": 2147483648,
+  "sha256": "c590fe77b30f12e47ac90b900aa8c055349a88577d3c68e8f75a5d9a9f21aac3",
+  "base_sha256": "0de22bb8f79f34fc5438b2dec1830701156f855195ffca36125d63083e38b265",
+  "kernel_sha256": "707b84dbd46943e5c0bc0a0692f5ee2e4293ebb71b2f104d9d2b8b76af31ef4f",
+  "packaging_commit": "166951501ffeb756622ea3bb141111d05f7e764c",
+  "required_config": [
+    "CONFIG_A733_BOOT_DIAGNOSTICS=y",
+    "CONFIG_SMP_NCPUS=8",
+    "CONFIG_BOARD_LATE_INITIALIZE=y",
+    "CONFIG_NSH_ARCHINIT=y",
+    "CONFIG_BOARD_INITTHREAD_STACKSIZE=262144",
+    "CONFIG_BOARD_INITTHREAD_PRIORITY=100",
+    "CONFIG_LIBC_MAX_EXITFUNS=0",
+    "CONFIG_A733_CPU_ACOUSTIC=y",
+    "CONFIG_A733_NPU_GENERAL_ASR=y",
+    "CONFIG_A733_IMX214_CHECKPOINT=y",
+    "CONFIG_SYSTEM_A733CAMERA=y",
+    "CONFIG_A733_CAMERA_CONTROL_TEST=y"
+  ],
+  "sdk_restore": {
+    "result": "SDK_RESTORED_BYTE_EXACT",
+    "paths": 285
+  },
+  "unchanged_image_spans": [
+    {
+      "begin": 0,
+      "end": 348127232,
+      "sha256": "b71bd34787a2ed4af2ba178a15c289f2c73deeafe6b427516ae92b690fdf5ee3"
+    },
+    {
+      "begin": 469762048,
+      "end": 2147483648,
+      "sha256": "ef76c04de9a08ea640e188a432ec26ce81a418458e6a1f10cfea824a7ac36468"
+    }
+  ],
+  "model_fat_unchanged": true,
+  "compiled_boot_call_graph_checked": true,
+  "elf_sha256": "d7236bd643eaaa560db918a06ed7fca59cf9a480063af18f107a838309fdadf6",
+  "config_sha256": "9f7d205b3512946ed2965b2627f17132e6aaac7012a65ee726dbf393803ed315",
+  "hardware_executed": false,
+  "root_cause_confirmed": false,
+  "camera_qualification_candidate": true,
+  "camera_reset_held_control_candidate": false,
+  "camera_id_experiment_candidate": true,
+  "camera_handoff": {
+    "result": "RAM_HANDOFF_SCRIPT_BUILT_NOT_BOARD_TESTED",
+    "kernel_sha256": "707b84dbd46943e5c0bc0a0692f5ee2e4293ebb71b2f104d9d2b8b76af31ef4f",
+    "kernel_crc32": "6ddb4047",
+    "kernel_bytes": 7036768,
+    "image_start": "0x40200000",
+    "runtime_bytes": 92033024,
+    "handoff_link_address": "0x408abc80",
+    "handoff_loaded_address": "0x4072bc80",
+    "handoff_values_address": "0x4072bc90",
+    "script_sha256": "73ca52d5934b5d0824a9fdd4a3e5ff4eaf0e6fdd1eff8418dfeb764476e76923",
+    "environment_observed": {
+      "kernel_addr_r": "0x40080000",
+      "fdt_addr_r": "0x4fa00000",
+      "scriptaddr": "0x4fc00000"
+    },
+    "pmic_address": "0x36",
+    "pmic_registers": [
+      "0xe",
+      "0xf",
+      "0x10",
+      "0x12",
+      "0x20",
+      "0x2a"
+    ],
+    "pmic_writes": false,
+    "media_writes": false,
+    "saveenv": false,
+    "runtime_rail_measurement": false,
+    "camera_capture": false,
+    "hardware_verified": false
+  },
+  "physical_camera_provider_bound": false,
+  "camera_capture": false,
+  "physical_disks_written": false,
+  "old_images_modified": false,
+  "models_private": true
+}

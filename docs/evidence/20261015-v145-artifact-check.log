@@ -1,0 +1,9 @@
+0000000040372bdc T bt_gattc_discover_service
+0000000040372d0c T bt_gattc_read
+0000000040372e9c T bt_gattc_subscribe
+0000000040372d54 T bt_gattc_write
+000000004027f178 T home_main
+{ "home", 100, 16384, home_main },
+810cfef41a558b97bf80bfdf4b910ad8e654273d5b04812075f4ca2d21d7d0dc  ../../quickly-openvela/cmake_out/cubie-a7z_nsh_v145_gatt_client/nuttx
+27e04cccfdcb340b991fbef723464a3b9e49747f2a796ae3e9e410654d24593f  ../../quickly-openvela/cmake_out/cubie-a7z_nsh_v145_gatt_client/nuttx.bin
+d6cf9a1177029504822433fc790f6e0704ee9ce339dd8373e72ad91e33190189  ../../quickly-openvela/cmake_out/cubie-a7z_nsh_v145_gatt_client/.config

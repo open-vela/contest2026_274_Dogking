@@ -1,0 +1,183 @@
+[22.862]Starting kernel ...
+
+[22.865]total: 22865 ms
+
+[22.867][mmc]: MMC Device 2 not found
+[22.871][mmc]: mmc 2 not find, so not exit
+NOTICE:  [SCP] :wait arisc ready....
+NOTICE:  [SCP] :arisc version: [d463b9da43dc50320f21ba51c6c51afe2db20d83]
+NOTICE:  [SCP] :arisc startup ready
+NOTICE:  [SCP] :arisc startup notify message feedback
+NOTICE:  [SCP] :sunxi-arisc driver is starting
+NOTICE:  BL3-1: Next image address = 0x40200000
+NOTICE:  BL3-1: Next image spsr = 0x3c5
+- Ready to Boot Primary CPU
+- Boot from EL1
+- Boot to C runtime for OS Initialize
+M0 v141-layout
+M1
+A7Z0
+A7Z1
+N0
+N1
+H0
+H1
+H2
+H3
+H4
+S0
+S1
+P1
+H5
+N2
+N3
+N4
+Ra ReRed- e-   5R R
+yye     eReyaaBeaad dda0dyydt
+    oo   a t tBdtttooo1yoB
+tt et  BtoB BoooBooBt2 oooo otBtSo
+cc ccdo oSS SScBoSee3oteeen
+d  o P oocSonnno neA0Cdncddd
+dPPAPC  CUnCCCP
+-C    UPUUU1 U
+
+
+ P
+
+  -B---U
+2BBo    A   - o
+BBo-o
+t    o fto oBoo o4totfttBr
+mmommfE ffooftrNrmrrfoo oor 6
+11 11    mrL  E 1EoNEELELLmL7
+E-
+1L
+
+
+X
+
+  B--1-0
+   BBB
+      ooooot oooottttt    ot tttoCooo     CrCCC u   rnrrrutuuuinnnntttmtiiiie mmmmeeeef o   frfffoo oorOrrr S   O OOOSISSS  n  IIiIInnnntiiiiiattttiiiilaiaaalzzzzeeeei
+
+
+
+
+- Boot to C runt-im Be oofot r toO SC I rniunttiailmeiz feo
+r OS Initialize
+N8
+X1
+PR
+PR
+PR
+
+NuttShell (NSH)
+nsh> RI
+RX
+
+nsh> echo init > /dev/a733-audio
+nsh> echo volume=25 > /dev/a733-audio
+nsh> time "echo play=/data/models/speaker-test-v150-16k.wav > /dev/a733-audio"
+
+0.0004 sec
+nsh> time "echo play=/data/models/speaker-test-v150-16k.wav > /dev/a733-audio"
+
+0.0006 sec
+nsh> cat /dev/a733-audio
+A733 I2S0 MAX98357A/INMP441/ICS43434 acceptance driver v150
+playback: status=-2 plays=0 volume=25% rate=0 channels=0 frames=0 sent=0 elapsed=0 ms intsta=00000000
+state=ready initialized=1 pll-locked=1 last=-2 last-op=play probes=4 tones=0 captures=0 timeouts=0 samples=0
+stream-proof: tx-count=0 rx-count=0 capture-nonzero=0 raw-nonzero=0 warmup=0 first-raw=00000000 last-raw=00000000 capture-min=0 capture-max=0
+capture-proof: mode=none slot=0(left) status=-11 committed=0 requested=0 ms elapsed=0 ms target-rx=0 consumed-rx=0 hw-rx=0 fifo-peak=0 intsta=00000000
+capture-config: bclk-polarity=0 lrck-polarity=0 PB8-pull=0(disabled) fmt0=00000000 rxmap3=00000000 pb-pull=00000000
+capture-stats: units=S16 zero=0 sign-transitions=0 sum-square=0 raw-low55=0 raw-lowaa=0
+capture-output:
+processing: voice=0 applied=0 gain=0 clipped=0 input-min=0 input-max=0; capture-stats/min/max describe output
+capture-profile: mic=INMP441-legacy rx-channels=0 file-channels=0 chcfg=00000000 rxchsel=00000000; transport status is NOT acoustic acceptance
+counter-policy=frame-candidate expected-hw=0 actual-hw=0 counter-status=0 points=0 FIFO-words/HW=0/0,0/0,0/0,0/0,0/0,0/0
+capture-plan: rate=48000 slots=2 sample=24 slot=32 module=24.576MHz bclk=3.072MHz mclk=off
+ccu: pll-audio1=f9147f00 module=82000018 bus-reset=00010001
+regs: ctl=00000000 fmt0=00001f77 fifoctl=00000005 fifosta=10800080 clkdiv=00000050 chcfg=00000001 rev=00021000
+channel-map: txsel=00110003 txmap=00000000/00000010 rxsel=00100000 rxmap=00000000/00000000/00000000/00000000
+pins: PB5/BCLK=pin12 PB6/LRCK=pin35 PB7/DOUT0=pin40 PB8/DIN0=pin38 mux=3 cfg0=333f7777 cfg1=00000223 pull=00160005
+max98357a: BCLK=PB5 LRC=PB6 DIN=PB7; SD_MODE must be high; OUTP/OUTN are differential
+inmp441: SCK=PB5 WS=PB6 SD=PB8 VDD=3.3V; default-slot=right(1)
+ics43434: SCK=PB5 WS=PB6 SD=PB8; dual-slot, no LR strap assumed; bare VDD=1.65..3.63V; combined-module VCC per vendor, NOT bare VDD
+ics: icscapture=<ms> (stereo) | icsleft=<ms> | icsright=<ms> | icsraw=<ms> (stereo S24 in S32); 100..10000 ms
+voice: icsvoice=<ms>[,<gain:1..16>] (left mono S16, default x5; /data/ics43434-voice.wav; no AGC)
+speaker: play=/data/file.wav | volume=0..100 (default 25%); PCM16 WAV, max10s
+control: probe | init | tone=<hz>,<ms> (official S16 path) | tone32=<hz>,<ms> (legacy compare) | capture=<ms> (default right) | captureleft=<ms> | captureright=<ms> | capture32=<ms> | off
+matrix: capturecfg=<slot:0/1>,<bclk:0/1>,<pull:0/2>,<ms:100..10000>; each config has its own WAV; repeating it replaces that config only
+capture-files: /data/inmp441.wav (48kHz mono signed-16 WAV), /data/inmp441-raw32.bin (sign-extended S24 FIFO words)
+nsh> echo icsvoice=5000 > /dev/a733-audio
+nsh> echo volume=50 > /dev/a733-audio
+nsh> time "echo play=/data/ics43434-voice.wav > /dev/a733-audio"
+
+5.0750 sec
+nsh> time "echo play=/data/ics43434-voice.wav > /dev/a733-audio"
+
+5.0748 sec
+nsh> time "echo play=/data/ics43434-voice.wav > /dev/a733-audio"
+
+5.0749 sec
+nsh> cat /dev/a733-audio
+A733 I2S0 MAX98357A/INMP441/ICS43434 acceptance driver v150
+playback: status=0 plays=3 volume=50% rate=48000 channels=1 frames=240000 sent=240000 elapsed=5000 ms intsta=00000050
+state=ready initialized=1 pll-locked=1 last=0 last-op=play probes=12 tones=0 captures=1 timeouts=0 samples=240000
+stream-proof: tx-count=240001 rx-count=244801 capture-nonzero=239333 raw-nonzero=239961 warmup=9600 first-raw=00005d70 last-raw=00000e80 capture-min=-32768 capture-max=32767
+capture-proof: mode=pcm16 slot=0(left) status=0 committed=1 requested=5000 ms elapsed=5100 ms target-rx=489600 consumed-rx=489600 hw-rx=244801 fifo-peak=2 intsta=00000011
+capture-config: bclk-polarity=0 lrck-polarity=0 PB8-pull=2(down) fmt0=00001f57 rxmap3=00000100 pb-pull=00160005
+capture-stats: units=S16 zero=667 sign-transitions=4966 sum-square=97742221624 raw-low55=0 raw-lowaa=0
+capture-output: /data/ics43434-voice.wav
+processing: voice=1 applied=1 gain=5 clipped=16 input-min=-10043 input-max=9870; capture-stats/min/max describe output
+capture-profile: mic=ICS43434 rx-channels=2 file-channels=1 chcfg=00000011 rxchsel=00110000; transport status is NOT acoustic acceptance
+counter-policy=frame-candidate expected-hw=244800 actual-hw=244801 counter-status=0 points=6 FIFO-words/HW=9600/4801,105600/52801,201600/100801,297600/148801,393600/196801,489600/244801
+capture-plan: rate=48000 slots=2 sample=24 slot=32 module=24.576MHz bclk=3.072MHz mclk=off
+ccu: pll-audio1=f9147f00 module=82000018 bus-reset=00010001
+regs: ctl=00000000 fmt0=00001f37 fifoctl=00000005 fifosta=10800080 clkdiv=00000050 chcfg=00000011 rev=00021000
+channel-map: txsel=00110003 txmap=00000000/00000010 rxsel=00110000 rxmap=00000000/00000000/00000000/00000100
+pins: PB5/BCLK=pin12 PB6/LRCK=pin35 PB7/DOUT0=pin40 PB8/DIN0=pin38 mux=3 cfg0=333f7777 cfg1=00000223 pull=00160005
+max98357a: BCLK=PB5 LRC=PB6 DIN=PB7; SD_MODE must be high; OUTP/OUTN are differential
+inmp441: SCK=PB5 WS=PB6 SD=PB8 VDD=3.3V; default-slot=right(1)
+ics43434: SCK=PB5 WS=PB6 SD=PB8; dual-slot, no LR strap assumed; bare VDD=1.65..3.63V; combined-module VCC per vendor, NOT bare VDD
+ics: icscapture=<ms> (stereo) | icsleft=<ms> | icsright=<ms> | icsraw=<ms> (stereo S24 in S32); 100..10000 ms
+voice: icsvoice=<ms>[,<gain:1..16>] (left mono S16, default x5; /data/ics43434-voice.wav; no AGC)
+speaker: play=/data/file.wav | volume=0..100 (default 25%); PCM16 WAV, max10s
+control: probe | init | tone=<hz>,<ms> (official S16 path) | tone32=<hz>,<ms> (legacy compare) | capture=<ms> (default right) | captureleft=<ms> | captureright=<ms> | capture32=<ms> | off
+matrix: capturecfg=<slot:0/1>,<bclk:0/1>,<pull:0/2>,<ms:100..10000>; each config has its own WAV; repeating it replaces that config only
+capture-files: /data/inmp441.wav (48kHz mono signed-16 WAV), /data/inmp441-raw32.bin (sign-extended S24 FIFO words)
+nsh> echo icsvoice=5000 > /dev/a733-audio
+nsh> echo volume=50 > /dev/a733-audio
+nsh> time "echo play=/data/ics43434-voice.wav > /dev/a733-audio"
+
+5.0719 sec
+nsh> time "echo play=/data/ics43434-voice.wav > /dev/a733-audio"
+
+5.0718 sec
+nsh> cat /dev/a733-audio
+A733 I2S0 MAX98357A/INMP441/ICS43434 acceptance driver v150
+playback: status=0 plays=5 volume=50% rate=48000 channels=1 frames=240000 sent=240000 elapsed=5000 ms intsta=00000050
+state=ready initialized=1 pll-locked=1 last=0 last-op=play probes=19 tones=0 captures=2 timeouts=0 samples=240000
+stream-proof: tx-count=240001 rx-count=244801 capture-nonzero=239331 raw-nonzero=239961 warmup=9600 first-raw=00005c30 last-raw=ffff9c70 capture-min=-4055 capture-max=4165
+capture-proof: mode=pcm16 slot=0(left) status=0 committed=1 requested=5000 ms elapsed=5100 ms target-rx=489600 consumed-rx=489600 hw-rx=244801 fifo-peak=2 intsta=00000051
+capture-config: bclk-polarity=0 lrck-polarity=0 PB8-pull=2(down) fmt0=00001f57 rxmap3=00000100 pb-pull=00160005
+capture-stats: units=S16 zero=669 sign-transitions=7785 sum-square=93331260700 raw-low55=0 raw-lowaa=0
+capture-output: /data/ics43434-voice.wav
+processing: voice=1 applied=1 gain=5 clipped=0 input-min=-811 input-max=833; capture-stats/min/max describe output
+capture-profile: mic=ICS43434 rx-channels=2 file-channels=1 chcfg=00000011 rxchsel=00110000; transport status is NOT acoustic acceptance
+counter-policy=frame-candidate expected-hw=244800 actual-hw=244801 counter-status=0 points=6 FIFO-words/HW=9600/4801,105600/52801,201600/100801,297600/148801,393600/196801,489600/244801
+capture-plan: rate=48000 slots=2 sample=24 slot=32 module=24.576MHz bclk=3.072MHz mclk=off
+ccu: pll-audio1=f9147f00 module=82000018 bus-reset=00010001
+regs: ctl=00000000 fmt0=00001f37 fifoctl=00000005 fifosta=10800080 clkdiv=00000050 chcfg=00000011 rev=00021000
+channel-map: txsel=00110003 txmap=00000000/00000010 rxsel=00110000 rxmap=00000000/00000000/00000000/00000100
+pins: PB5/BCLK=pin12 PB6/LRCK=pin35 PB7/DOUT0=pin40 PB8/DIN0=pin38 mux=3 cfg0=333f7777 cfg1=00000223 pull=00160005
+max98357a: BCLK=PB5 LRC=PB6 DIN=PB7; SD_MODE must be high; OUTP/OUTN are differential
+inmp441: SCK=PB5 WS=PB6 SD=PB8 VDD=3.3V; default-slot=right(1)
+ics43434: SCK=PB5 WS=PB6 SD=PB8; dual-slot, no LR strap assumed; bare VDD=1.65..3.63V; combined-module VCC per vendor, NOT bare VDD
+ics: icscapture=<ms> (stereo) | icsleft=<ms> | icsright=<ms> | icsraw=<ms> (stereo S24 in S32); 100..10000 ms
+voice: icsvoice=<ms>[,<gain:1..16>] (left mono S16, default x5; /data/ics43434-voice.wav; no AGC)
+speaker: play=/data/file.wav | volume=0..100 (default 25%); PCM16 WAV, max10s
+control: probe | init | tone=<hz>,<ms> (official S16 path) | tone32=<hz>,<ms> (legacy compare) | capture=<ms> (default right) | captureleft=<ms> | captureright=<ms> | capture32=<ms> | off
+matrix: capturecfg=<slot:0/1>,<bclk:0/1>,<pull:0/2>,<ms:100..10000>; each config has its own WAV; repeating it replaces that config only
+capture-files: /data/inmp441.wav (48kHz mono signed-16 WAV), /data/inmp441-raw32.bin (sign-extended S24 FIFO words)
+nsh>

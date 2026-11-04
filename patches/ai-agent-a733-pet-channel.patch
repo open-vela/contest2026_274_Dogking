@@ -1,0 +1,138 @@
+--- a/packages/ai_agent/src/agent_main.c
++++ b/packages/ai_agent/src/agent_main.c
+@@ -30,1 +30,2 @@
+ #include "core/message_bus.h"
++#include "agent_bridge.h"
+@@ -152,3 +153,7 @@
+-    network_wifi_reconnect();
++    /* Existing board Wi-Fi service owns association; never reset a live link. */
++    while (!agent_shutdown_requested() && !network_is_connected())
++        usleep(500000);
++    if (agent_shutdown_requested())
++        return NULL;
+ 
+-    if (network_wait_connected(30000) == OK) {
++    if (network_is_connected()) {
+@@ -173,4 +179,5 @@
+         if (agent_loop_start() != OK)
+             syslog(LOG_WARNING, "[%s] agent_loop_start failed\n", TAG);
+-        if (ws_server_start() != OK)
+-            syslog(LOG_WARNING, "[%s] ws_server_start failed\n", TAG);
++        else if (aipet_agent_attach() != 0)
++            syslog(LOG_ERR, "[%s] pet channel attach failed\n", TAG);
++        /* No unauthenticated WebSocket listener in the pet image. */
+@@ -384,2 +390,3 @@
+-        syslog(LOG_INFO, "[%s] [boot +%ldms] heap: arena=%d free=%d used=%d\n",
+-            TAG, boot_ms(&t0), mi.arena, mi.fordblks, mi.uordblks);
++        syslog(LOG_INFO, "[%s] [boot +%ldms] heap: arena=%zu free=%zu used=%zu\n",
++            TAG, boot_ms(&t0), (size_t)mi.arena,
++            (size_t)mi.fordblks, (size_t)mi.uordblks);
+@@ -515,4 +516,4 @@
+-        int rc = nsh_commands_start();
++        int rc = OK; /* pet channel attaches after agent_loop starts */
+         BOOT_LOG_RC(&t0, "P6", "nsh_commands_start", rc);
+     }
+ 
+@@ -578,1 +579,2 @@
++    aipet_agent_detach();
+     message_bus_destroy();
+--- a/packages/ai_agent/CMakeLists.txt
++++ b/packages/ai_agent/CMakeLists.txt
+@@ -17,2 +17,3 @@
+   set(AGENT_SRCS
++    ${NUTTX_APPS_DIR}/system/aipet/agent_bridge.c
+     src/agent_main.c
+@@ -179,2 +180,3 @@
+   set(AGENT_INCDIRS
++    ${NUTTX_APPS_DIR}/system/aipet
+     include
+--- a/packages/ai_agent/src/infra/vela_tls.c
++++ b/packages/ai_agent/src/infra/vela_tls.c
+@@ -48,1 +48,2 @@
+ #include "mbedtls/ssl.h"
++#include "mbedtls/x509_crt.h"
+@@ -117,1 +118,2 @@
+     mbedtls_ssl_context ssl;
++    mbedtls_x509_crt ca;
+@@ -131,1 +133,2 @@
+     mbedtls_ssl_config_free(&ctx->cfg);
++    mbedtls_x509_crt_free(&ctx->ca);
+@@ -235,1 +238,2 @@
+     mbedtls_ssl_init(&ctx->ssl);
++    mbedtls_x509_crt_init(&ctx->ca);
+@@ -351,2 +355,8 @@
+-    /* Skip full chain verification — keeps portability without CA bundle */
+-    mbedtls_ssl_conf_authmode(&ctx->cfg, MBEDTLS_SSL_VERIFY_OPTIONAL);
++    /* Board-local trust bundle; fail closed if absent/invalid. */
++    if (mbedtls_x509_crt_parse_file(&ctx->ca, "/data/ai_agent/ca.pem") != 0) {
++        syslog(LOG_ERR, "[%s] Missing/invalid trusted CA bundle\n", TAG);
++        return VELA_TLS_ERR_HANDSHAKE;
++    }
++    mbedtls_ssl_conf_ca_chain(&ctx->cfg, &ctx->ca, NULL);
++    mbedtls_ssl_conf_authmode(&ctx->cfg, MBEDTLS_SSL_VERIFY_REQUIRED);
++
+--- a/packages/ai_agent/src/tools/tool_registry.c
++++ b/packages/ai_agent/src/tools/tool_registry.c
+@@ -89,3 +89,7 @@
+ static void register_tool(const agent_tool_t* tool)
+ {
++    /* Pet integration initially exposes only read-only time/weather tools. */
++    if (strcmp(tool->name, "get_current_time") &&
++        strcmp(tool->name, "get_weather"))
++        return;
+     if (s_tool_count >= MAX_TOOLS) {
+--- a/packages/ai_agent/src/core/agent_loop.c
++++ b/packages/ai_agent/src/core/agent_loop.c
+@@ -661,5 +661,5 @@
+-    char* reply = calloc(1, 512);
++    char* reply = calloc(1, 1024);
+     if (reply) {
+-        tool_registry_execute("cron_add", input, reply, 512);
+-        snprintf(reply, 512, "好的，%d 秒后提醒你：%s",
++        tool_registry_execute("cron_add", input, reply, 1024);
++        snprintf(reply, 1024, "好的，%d 秒后提醒你：%s",
+             secs, remind_msg);
+@@ -866,1 +866,3 @@
+-        out.content = strdup("Sorry, I encountered an error.");
++        out.content = strdup(strcmp(msg->channel, "pet") == 0
++            ? "[AIPET_ERROR]backend"
++            : "Sorry, I encountered an error.");
+@@ -891,3 +893,3 @@
+ static void send_working_status(const agent_msg_t* msg, int iteration)
+ {
+-    if (iteration != 0) {
++    if (iteration != 0 || strcmp(msg->channel, "pet") == 0) {
+@@ -1500,1 +1502,2 @@
+-        char* reply = handle_slash_command(&msg);
++        char* reply = strcmp(msg.channel, "pet") == 0
++            ? NULL : handle_slash_command(&msg);
+@@ -1512,4 +1515,4 @@
+         /* NL fast path — after injection check, before LLM */
+-        if (!reply) {
++        if (!reply && strcmp(msg.channel, "pet") != 0) {
+             reply = handle_nl_fast_path(msg.content);
+         }
+--- a/packages/ai_agent/src/core/session_mgr.c
++++ b/packages/ai_agent/src/core/session_mgr.c
+@@ -267,1 +267,1 @@
+-            char path[256];
++            char path[512];
+--- a/packages/ai_agent/src/tools/skill_loader.c
++++ b/packages/ai_agent/src/tools/skill_loader.c
+@@ -350,1 +350,1 @@
+-        char full_path[256];
++        char full_path[512];
+@@ -374,3 +374,9 @@
+-        off += snprintf(buf + off, size - off,
++        int written = snprintf(buf + off, size - off,
+             "- **%s**: %s (read with: read_file %s)\n",
+             title, desc, full_path);
++        if (written < 0) break;
++        if ((size_t)written >= size - off) {
++            off = size - 1;
++            break;
++        }
++        off += (size_t)written;
+@@ -416,1 +421,1 @@
+-        char path[256];
++        char path[512];

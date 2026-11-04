@@ -1,0 +1,64 @@
+--- a/frameworks/connectivity/bluetooth/service/stacks/zephyr/sal_adapter_interface.c
++++ b/frameworks/connectivity/bluetooth/service/stacks/zephyr/sal_adapter_interface.c
+@@ -1610,6 +1610,7 @@
+     return BT_STATUS_SUCCESS;
+ }
+ 
++#ifdef CONFIG_BLUETOOTH_BREDR_SUPPORT
+ static void STACK_CALL(set_bond)(void* args)
+ {
+     sal_adapter_req_t* req = args;
+@@ -1623,6 +1624,7 @@
+     bt_settings_load(req->id, 0, "link_key", &le_addr);
+ #endif
+ }
++#endif
+ 
+ bt_status_t bt_sal_set_bonded_devices(bt_controller_id_t id, remote_device_properties_t* props, int cnt)
+ {
+--- a/frameworks/connectivity/bluetooth/service/stacks/zephyr/sal_connection_manager.c
++++ b/frameworks/connectivity/bluetooth/service/stacks/zephyr/sal_connection_manager.c
+@@ -439,7 +439,11 @@
+     if (bt_sal_disconnecting_list == NULL)
+         return BT_STATUS_FAIL;
+ 
++#ifdef CONFIG_BT_CLASSIC
+     conn = bt_conn_lookup_addr_br((bt_addr_t*)addr);
++#else
++    conn = NULL;
++#endif
+     if (!conn) {
+         return BT_STATUS_FAIL;
+     }
+@@ -504,1 +508,5 @@
++#ifdef CONFIG_BT_CLASSIC
+     conn = bt_conn_lookup_addr_br((bt_addr_t*)addr);
++#else
++    conn = NULL;
++#endif
+--- a/frameworks/connectivity/bluetooth/service/src/connection_manager.c
++++ b/frameworks/connectivity/bluetooth/service/src/connection_manager.c
+@@ -567,1 +567,5 @@
++#ifdef CONFIG_BLUETOOTH_BREDR_SUPPORT
+     return bt_pm_set_app_profile_sniff(addr, &sniff_params);
++#else
++    return BT_STATUS_NOT_SUPPORTED;
++#endif
+@@ -602,1 +606,5 @@
++#ifdef CONFIG_BLUETOOTH_BREDR_SUPPORT
+         return bt_pm_set_app_profile_sniff(addr, NULL);
++#else
++        return BT_STATUS_NOT_SUPPORTED;
++#endif
+--- a/frameworks/connectivity/bluetooth/service/utils/btsnoop_writer.c
++++ b/frameworks/connectivity/bluetooth/service/utils/btsnoop_writer.c
+@@ -125,1 +125,8 @@
+-        snprintf(full_path, SNOOP_FILE_FULL_NAME_MAX_LEN, "%s/%s", g_snoop_file_path, entry->d_name);
++        size_t path_len = strlen(g_snoop_file_path);
++        size_t name_len = strlen(entry->d_name);
++        if (path_len + name_len + 2 > SNOOP_FILE_FULL_NAME_MAX_LEN) {
++            continue;
++        }
++        memcpy(full_path, g_snoop_file_path, path_len);
++        full_path[path_len] = '/';
++        memcpy(full_path + path_len + 1, entry->d_name, name_len + 1);

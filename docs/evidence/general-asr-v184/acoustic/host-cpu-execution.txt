@@ -1,0 +1,8 @@
+case=0 frames=70 ids=5 text=你好 CPU_ONLY
+case=1 frames=115 ids=9 text=测试成功 CPU_ONLY
+case=2 frames=87 ids=7 text=打开灯 CPU_ONLY
+case=3 frames=143 ids=11 text=现在几点了 CPU_ONLY
+case=4 frames=143 ids=13 text=一加一等于二 CPU_ONLY
+acoustic: ORT error=1 Exiting due to terminate flag being set to true.
+PASS: deadline, pre-cancel, mid-run termination and same-session recovery (host CPU)
+PASS: C API CPU mel generation; NOT NPU vocoder, RTOS or speaker acceptance

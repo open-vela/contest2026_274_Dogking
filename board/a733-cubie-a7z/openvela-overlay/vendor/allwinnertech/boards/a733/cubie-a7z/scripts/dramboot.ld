@@ -63,6 +63,9 @@ SECTIONS
     _srodata = .;
     *(.rodata .rodata.*)
     *(.data.rel.ro .data.rel.ro.*)
+    /* Immutable Zblue device-init entries belong to mapped rodata. */
+    KEEP(*(SORT_BY_NAME(.z_init_*)))
+    . = ALIGN(4096);
     _erodata = .;
   } :text
   _szrodata = _erodata - _srodata;
@@ -74,8 +77,15 @@ SECTIONS
     _sdata = .;
     *(.data.page_aligned)
     *(.data .data.*)
+    /* Include mutable Zblue state in RW data and file-backed Image size. */
+    *(.z_devstate .z_devstate.*)
     . = ALIGN(8);
     *(.data.rel .data.rel.*)
+    /* GCC may emit GOT slots for newly linked application symbols. Keep
+     * them inside the writable, file-backed span, not as orphan sections
+     * after _image_file_end (which would invalidate the Image contract).
+     */
+    *(.got .got.*)
     CONSTRUCTORS
     _edata = .;
   } :text
@@ -115,6 +125,12 @@ SECTIONS
          "A733 per-CPU idle stacks must start on a page boundary")
   ASSERT((g_idle_topstack & 4095) == 0,
          "A733 idle stack and heap must not share a cache line")
+  ASSERT((_sztext & 4095) == 0,
+         "A733 MMU text region must be whole pages")
+  ASSERT((_srodata & 4095) == 0 && (_szrodata & 4095) == 0,
+         "A733 MMU rodata region must be page aligned")
+  ASSERT((_sdata & 4095) == 0 && (_szdata & 4095) == 0,
+         "A733 MMU data region must be page aligned")
 
   /DISCARD/ :
   {

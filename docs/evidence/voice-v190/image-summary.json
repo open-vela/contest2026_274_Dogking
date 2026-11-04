@@ -1,0 +1,46 @@
+{
+  "result": "PRIVATE_CANDIDATE_PACKAGED_NOT_BOARD_TESTED",
+  "purpose": "voice-pipeline",
+  "image": "/mnt/d/My-Program/AI-Agent-Program/GPTsprogram/Openvela/A733-A7Z-ALL-Files/openvela-a733-cubie-a7z-sd-v190-offline-voice-candidate.img",
+  "bytes": 2147483648,
+  "sha256": "6082caf2fd059d06d1057abad1cf2bb726dbb4ab776f85c8a4f320c0b00f1ccb",
+  "base_sha256": "c56e2b4c42bd921a9edd8a69a91e05f39000de5c2d8aea50465b5ef66ee0c463",
+  "kernel_sha256": "cbc2c3c10ef2ba928cd2da1ac1311528be5107eca44195ce4556d1465b414666",
+  "packaging_commit": "59808e18c3749fd0fc2e5a28e86e7d02a3acb61d",
+  "required_config": [
+    "CONFIG_A733_BOOT_DIAGNOSTICS=y",
+    "CONFIG_SMP_NCPUS=8",
+    "CONFIG_BOARD_LATE_INITIALIZE=y",
+    "CONFIG_NSH_ARCHINIT=y",
+    "CONFIG_BOARD_INITTHREAD_STACKSIZE=262144",
+    "CONFIG_BOARD_INITTHREAD_PRIORITY=100",
+    "CONFIG_LIBC_MAX_EXITFUNS=0",
+    "CONFIG_A733_CPU_ACOUSTIC=y",
+    "CONFIG_A733_NPU_GENERAL_ASR=y"
+  ],
+  "sdk_restore": {
+    "result": "SDK_RESTORED_BYTE_EXACT",
+    "paths": 281
+  },
+  "unchanged_image_spans": [
+    {
+      "begin": 0,
+      "end": 348127232,
+      "sha256": "b71bd34787a2ed4af2ba178a15c289f2c73deeafe6b427516ae92b690fdf5ee3"
+    },
+    {
+      "begin": 469762048,
+      "end": 2147483648,
+      "sha256": "ef76c04de9a08ea640e188a432ec26ce81a418458e6a1f10cfea824a7ac36468"
+    }
+  ],
+  "model_fat_unchanged": true,
+  "compiled_boot_call_graph_checked": true,
+  "elf_sha256": "21649b1843b3bdb721ccbf72875af894bf2258098b85ea2312d8e4c8163a580c",
+  "config_sha256": "3551de1e7b192dc8a1b7efada97e481d615deaafe7f47379034c390eeea7f07a",
+  "hardware_executed": false,
+  "root_cause_confirmed": false,
+  "physical_disks_written": false,
+  "old_images_modified": false,
+  "models_private": true
+}

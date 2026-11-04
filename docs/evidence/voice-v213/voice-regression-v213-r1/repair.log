@@ -1,0 +1,4 @@
+PASS v212 actual reply deadline: monotonic, EINTR retry, timeout/error quarantine, no false success
+PASS v212 actual matrix dispatcher: success copies all output; timeout publishes nothing; output/input stay worker-owned; future jobs blocked
+PASS v212 actual TX setup/pinmux/start: full profile restoration, unrelated pins/RX preserved, nonzero/peak proof, bad readback stops clocks; MOCK ONLY
+PASS v212 repair gates; NOT board scheduling/acoustic proof

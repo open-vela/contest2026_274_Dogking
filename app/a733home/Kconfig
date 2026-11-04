@@ -1,0 +1,7 @@
+config SYSTEM_A733HOME
+	bool "A733 smart-home official GATT client acceptance"
+	depends on BLUETOOTH_GATT_CLIENT && BLUETOOTH_FRAMEWORK_SOCKET_IPC && LIBUV
+	default n
+	help
+		Read-only-device acceptance client: discovery, Read/Notify, PING and
+		GET_STATE with application ACK. No physical output or automatic pairing.

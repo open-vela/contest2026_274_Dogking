@@ -1,0 +1,22 @@
+{
+  "result": "V221_STM32_SOFTWARE_PASSED_NOT_BOARD",
+  "upstream": "efdb437948eda62cbc782692eb8fd291e5d914ae",
+  "archive_sha256": "a17b36b143c8906e13ddd769189c6a99ede841fc7ceb13a18385a78374fd737c",
+  "source_sha256": {
+    "board/a733-cubie-a7z/openvela-overlay/apps/system/aipet/mcu_link.cxx": "f104d36676efe743da6995c2b6934131a36e1c3dc797b029f8058b7ccd200801",
+    "board/a733-cubie-a7z/openvela-overlay/apps/system/aipet/mcu_protocol.cxx": "0626ae08f2fae74fec54f06c49f5712ca678d1a5142c85bf21f9a34464a43f2c",
+    "board/a733-cubie-a7z/openvela-overlay/apps/system/aipet/mcu_agent_tool.cxx": "1dc274d019f4b6dc1dfdb4cc05c2a2f54a508552f68805c206e9930908fbd535",
+    "tools/test-mcu-v221.cxx": "8100eb82396a2cc782a583eb9b699f693f0779e63c1428f9ab577512df2574a4",
+    "tools/test-aipet-mcu.cxx": "71502029ad9aab85e09654e7d65bfcffab812aa3e0f16ee0e9071c552679dfc3",
+    "tools/test-mcu-v221.py": "f8bfd2ca2b852f0731e8eb18e9516809c68f5a5b98367287484f8852836979d1"
+  },
+  "logs": {
+    "pipeline.log": "f59b15f0ffbe3396f9ca9f8a0e809e0dc538bd87bc69dbd92dfe5e443ba5aff0",
+    "state.log": "2f2bf568f37397dbd0a9deef235fff10069cbb6210ab7abae639afa45f92d07b"
+  },
+  "no_motion_retry": true,
+  "autonomous_motion": false,
+  "desktop_exact_human_command_consent_tested": true,
+  "raw_console_requires_arm": true,
+  "hardware_executed": false
+}

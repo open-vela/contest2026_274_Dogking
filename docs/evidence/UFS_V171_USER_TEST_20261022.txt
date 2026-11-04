@@ -1,0 +1,612 @@
+N3
+N4
+R RR RaRee-5   -
+         eeRdeeaaeyaaBd da0dadydyyytd
+ o   y t ttBt oooBto1  o
+ot B BoBBtBoooBotooo o2 ooSttBt
+o   oe t BcSo SSSeS3eteeoce cccn
+   dP SonA nnnenCdddc0do
+PCAPdPUUUP U1P
+ P
+
+
+
+
+B-U---A
+ 2 o  -
+BB BBBoo
+  f foofo-toooB  ooot4fottBtr  to
+Emfr  L mrtfmrrrN oro6oo ommm
+mL1       o1EEE NELLLE7
+-1 1L1
+ 1E
+L
+ X
+
+ B10-
+BB   ---
+  BoB
+     ootooooo ottttto    ttt toooCo     rCCCCu    rrrrnuutuunnnintttmtiiiie mmmmeeeefo    ffffro ooorOrrr  S  OO OOSSSIS   n IIIiInnnntiiiiittttaliiiiaaaialllzliiieizzzz
+eeee
+
+
+
+tiBoot to C runtime for-  OBoS otI nitoti Ca liruzen
+  me for OS Initialize
+N8
+X1
+PR
+PR
+PR
+
+NuttShell (NSH)
+nsh> RI
+RX
+
+nsh> cat /dev/a733-ufs
+A733 UFS v171 guarded readonly block candidate (NOT writable/model storage)
+last=0 stage=idle registered=0 quarantine=0 owns=0 lun=0
+ccu: axi=81000000 cfg=80000018 bgr=000f0001
+last-snapshot: version=00000000 cap=00000000 hcs=00000000 is=00000000 ocs=0 response=00000000 elapsed-ms=0
+media: model='' blocks=0 block-bytes=0 capacity-bytes=0 commands=0 read-bytes=0
+dma: resident=0 bytes=69632 retained-until-reboot=1
+control: board | handoff | quiesce | dma-nop | readcheck[=<lun:0..7>] | block-ro | bench-ro[=<MiB:1..16>] | probe | attach-ro=<lun:0..7>
+board: read-only CCU/RTC collection; no HCI/PMIC/DMA/clock writes
+probe/attach-ro: blocked until real board power provider is qualified
+handoff: explicit experimental firmware-powered HCI snapshot; no writes
+quiesce: manual zero-only IE/runstops; no DMA/media/reset; once per boot
+nop-arena: reserved=1 bytes=77824; isolated static BSS, never freed
+read-arena: reserved=1 bytes=77824; separate static BSS, never freed
+probe snapshots registers only; does NOT prove device/link presence
+attach-ro REQUIRES firmware-initialized active idle link and device
+cold-PMIC/PHY-init=not-implemented media-writes=disabled auto-mount=disabled
+SD boot and /data unchanged; no reset, timeout retry, format, migration or erase
+board-v166: sampled=0 stable=0 last=0 stage=not-sampled attempts=0 reads=0 last-address=00000000
+pll: ref=00000000 peri0=00000000 pat0=00000000 pat1=00000000
+fabric: store-ahb=00000000 store-mbus=00000000 msi-lite1=00000000
+ufs-ccu: axi=00000000 cfg=00000000 bgr=00000000 ref=00000000
+rtc: xo=00000000 xo1=00000000 dcxo-selected-hz=0 (selector only, NOT measured)
+decode: axi-mux=0 div=0 cfg-mux=0 div=0 reset-release-mask=0 gate-mask=00
+clock rates are NOT inferred from PLL names; raw values retained
+qualification: rails=unknown domain=unknown ownership=unknown dma-map=unknown hci-access=blocked
+PMIC-SMC=not-called PMIC-I2C=not-touched cold-start=blocked
+handoff-v167: stage=not-sampled last=0 stable=0 reads=0 last-offset=00 link-ready=0 pending=0 needs-quiesce=0
+hci: cap=00000000 ver=00000000 ahit=00000000 is=00000000 ie=00000000 hcs=00000000 hce=00000000 iac=00000000
+utrl: base=00000000/00000000 doorbell=00000000 runstop=00000000
+utmr: base=00000000/00000000 doorbell=00000000 runstop=00000000
+handoff-policy: firmware-powered assumption; no PMIC qualification; register-writes=0 dma=0 media-commands=0 attach-blocked=1
+quiesce-v168: attempted=0 completed=0 quarantine=0 last=0 stage=not-attempted writes=0 polls=0 last-offset=00 last-wait-ms=0
+quiesce-before: ie=00000000 utrl-rsr=00000000 utmr-rsr=00000000 utrl-base=00000000/00000000
+quiesce-after: ie=00000000 utrl-rsr=00000000 utmr-rsr=00000000 utrl-base=00000000/00000000
+quiesce-policy: zero-only IE/UTRLRSR/UTMRLRSR; no reset/restart; no doorbell/IS/base writes; DMA/attach blocked; reboot to retry
+dma-nop-v169: attempted=0 completed=0 stopped=0 quarantine=0 last=0 stage=not-attempted pages=0 writes=0 polls=0
+nop-dma: physical=0000000000000000 published=0 submitted=0 guards=0 last-offset=00 wait-ms=0 retained-until-reboot=1
+nop-response: 00 00 00 00 00 00 00 00
+nop-policy: one NOP only; no SCSI/media/block/format; no IS/doorbell clear; no reset/retry/free; DMA routing is validated only by actual response
+readcheck-v170: attempted=0 completed=0 stopped=0 guards=0 quarantine=0 last=0 stage=not-attempted
+readcheck-dma: physical=0000000000000000 published=0 pages=0 writes=0 polls=0
+readcheck-media: lun=0 model='' blocks=0 block-bytes=0 capacity-bytes=0 identity=0
+readcheck-io: commands=0 transferred=0 samples=0 ua-reissues=0 elapsed-ms=0 exceptions=0
+readcheck-sample[0]: lba=0 bytes=16384 crc=00000000/00000000
+readcheck-sample[1]: lba=0 bytes=16384 crc=00000000/00000000
+readcheck-sample[2]: lba=0 bytes=16384 crc=00000000/00000000
+readcheck-gpt: protective-mbr=0 present=0 header-valid=0 entries-valid=0 status=0 partitions=0
+readcheck-partitions[0..3]: 0..0 / 0..0 / 0..0 / 0..0
+readcheck-sense: opcode=00 status=00 key=00 asc=00 ascq=00
+readcheck-wire: ocs=00000000 upiu=00 00 00 00 00 00 00 00 segment=0 sense=0 residual=0
+readcheck-policy: one qualification batch; own completion W1C bit0 only; no reset/timeout retry/free/mount/media-write
+reader-v171: calls=0 bytes=0 elapsed-ms=0 active=0 chunk-max=65536 request-max=1048576
+block-v171: published=0 node=/dev/ufs0 readonly=1 chunk-max=65536 request-max=1048576; no media writes/FS/mount/partition auto-registration
+bench-ro-v171: attempted=0 completed=0 error=0 MiB-per-pass=0 passes=0 bytes=0 elapsed-ms=0 crc=00000000/00000000 mbr=0000 head16-crc=00000000
+nsh> echo board > /dev/a733-ufs
+nsh> echo handoff > /dev/a733-ufs
+nsh> time "echo quiesce > /dev/a733-ufs"
+
+0.0001 sec
+nsh> cat /dev/a733-ufs
+A733 UFS v171 guarded readonly block candidate (NOT writable/model storage)
+last=0 stage=quiesce-controls-stopped-not-dma-authorized registered=0 quarantine=0 owns=0 lun=0
+ccu: axi=81000000 cfg=80000018 bgr=000f0001
+last-snapshot: version=00000000 cap=00000000 hcs=00000000 is=00000000 ocs=0 response=00000000 elapsed-ms=0
+media: model='' blocks=0 block-bytes=0 capacity-bytes=0 commands=0 read-bytes=0
+dma: resident=0 bytes=69632 retained-until-reboot=1
+control: board | handoff | quiesce | dma-nop | readcheck[=<lun:0..7>] | block-ro | bench-ro[=<MiB:1..16>] | probe | attach-ro=<lun:0..7>
+board: read-only CCU/RTC collection; no HCI/PMIC/DMA/clock writes
+probe/attach-ro: blocked until real board power provider is qualified
+handoff: explicit experimental firmware-powered HCI snapshot; no writes
+quiesce: manual zero-only IE/runstops; no DMA/media/reset; once per boot
+nop-arena: reserved=1 bytes=77824; isolated static BSS, never freed
+read-arena: reserved=1 bytes=77824; separate static BSS, never freed
+probe snapshots registers only; does NOT prove device/link presence
+attach-ro REQUIRES firmware-initialized active idle link and device
+cold-PMIC/PHY-init=not-implemented media-writes=disabled auto-mount=disabled
+SD boot and /data unchanged; no reset, timeout retry, format, migration or erase
+board-v166: sampled=1 stable=1 last=0 stage=snapshot-collected-not-power-qualified attempts=3 reads=26 last-address=0709016c
+pll: ref=f8675f00 peri0=ff126310 pat0=00000000 pat1=30000000
+fabric: store-ahb=110103ff store-mbus=f1055803 msi-lite1=00030001
+ufs-ccu: axi=81000000 cfg=80000018 bgr=000f0001 ref=00000000
+rtc: xo=183fb0f7 xo1=00000511 dcxo-selected-hz=26000000 (selector only, NOT measured)
+decode: axi-mux=1 div=1 cfg-mux=0 div=25 reset-release-mask=f gate-mask=7f
+clock rates are NOT inferred from PLL names; raw values retained
+qualification: rails=unknown domain=unknown ownership=unknown dma-map=unknown hci-access=blocked
+PMIC-SMC=not-called PMIC-I2C=not-touched cold-start=blocked
+handoff-v167: stage=handoff-observed-not-dma-authorized last=0 stable=1 reads=32 last-offset=80 link-ready=1 pending=0 needs-quiesce=1
+hci: cap=11870f1f ver=00000300 ahit=00000000 is=00000000 ie=00030e15 hcs=0000010f hce=00000001 iac=00000000
+utrl: base=bfeb4c00/00000000 doorbell=00000000 runstop=00000001
+utmr: base=00000000/00000000 doorbell=00000000 runstop=00000001
+handoff-policy: firmware-powered assumption; no PMIC qualification; register-writes=0 dma=0 media-commands=0 attach-blocked=1
+quiesce-v168: attempted=1 completed=1 quarantine=0 last=0 stage=quiesce-controls-stopped-not-dma-authorized writes=3 polls=3 last-offset=80 last-wait-ms=0
+quiesce-before: ie=00030e15 utrl-rsr=00000001 utmr-rsr=00000001 utrl-base=bfeb4c00/00000000
+quiesce-after: ie=00000000 utrl-rsr=00000000 utmr-rsr=00000000 utrl-base=bfeb4c00/00000000
+quiesce-policy: zero-only IE/UTRLRSR/UTMRLRSR; no reset/restart; no doorbell/IS/base writes; DMA/attach blocked; reboot to retry
+dma-nop-v169: attempted=0 completed=0 stopped=0 quarantine=0 last=0 stage=not-attempted pages=0 writes=0 polls=0
+nop-dma: physical=0000000000000000 published=0 submitted=0 guards=0 last-offset=00 wait-ms=0 retained-until-reboot=1
+nop-response: 00 00 00 00 00 00 00 00
+nop-policy: one NOP only; no SCSI/media/block/format; no IS/doorbell clear; no reset/retry/free; DMA routing is validated only by actual response
+readcheck-v170: attempted=0 completed=0 stopped=0 guards=0 quarantine=0 last=0 stage=not-attempted
+readcheck-dma: physical=0000000000000000 published=0 pages=0 writes=0 polls=0
+readcheck-media: lun=0 model='' blocks=0 block-bytes=0 capacity-bytes=0 identity=0
+readcheck-io: commands=0 transferred=0 samples=0 ua-reissues=0 elapsed-ms=0 exceptions=0
+readcheck-sample[0]: lba=0 bytes=16384 crc=00000000/00000000
+readcheck-sample[1]: lba=0 bytes=16384 crc=00000000/00000000
+readcheck-sample[2]: lba=0 bytes=16384 crc=00000000/00000000
+readcheck-gpt: protective-mbr=0 present=0 header-valid=0 entries-valid=0 status=0 partitions=0
+readcheck-partitions[0..3]: 0..0 / 0..0 / 0..0 / 0..0
+readcheck-sense: opcode=00 status=00 key=00 asc=00 ascq=00
+readcheck-wire: ocs=00000000 upiu=00 00 00 00 00 00 00 00 segment=0 sense=0 residual=0
+readcheck-policy: one qualification batch; own completion W1C bit0 only; no reset/timeout retry/free/mount/media-write
+reader-v171: calls=0 bytes=0 elapsed-ms=0 active=0 chunk-max=65536 request-max=1048576
+block-v171: published=0 node=/dev/ufs0 readonly=1 chunk-max=65536 request-max=1048576; no media writes/FS/mount/partition auto-registration
+bench-ro-v171: attempted=0 completed=0 error=0 MiB-per-pass=0 passes=0 bytes=0 elapsed-ms=0 crc=00000000/00000000 mbr=0000 head16-crc=00000000
+nsh> time "echo dma-nop > /dev/a733-ufs"
+
+0.0010 sec
+nsh> cat /dev/a733-ufs
+A733 UFS v171 guarded readonly block candidate (NOT writable/model storage)
+last=0 stage=nop-dma-passed-not-media-qualified registered=0 quarantine=0 owns=0 lun=0
+ccu: axi=81000000 cfg=80000018 bgr=000f0001
+last-snapshot: version=00000000 cap=00000000 hcs=00000000 is=00000000 ocs=0 response=00000000 elapsed-ms=0
+media: model='' blocks=0 block-bytes=0 capacity-bytes=0 commands=0 read-bytes=0
+dma: resident=0 bytes=69632 retained-until-reboot=1
+control: board | handoff | quiesce | dma-nop | readcheck[=<lun:0..7>] | block-ro | bench-ro[=<MiB:1..16>] | probe | attach-ro=<lun:0..7>
+board: read-only CCU/RTC collection; no HCI/PMIC/DMA/clock writes
+probe/attach-ro: blocked until real board power provider is qualified
+handoff: explicit experimental firmware-powered HCI snapshot; no writes
+quiesce: manual zero-only IE/runstops; no DMA/media/reset; once per boot
+nop-arena: reserved=1 bytes=77824; isolated static BSS, never freed
+read-arena: reserved=1 bytes=77824; separate static BSS, never freed
+probe snapshots registers only; does NOT prove device/link presence
+attach-ro REQUIRES firmware-initialized active idle link and device
+cold-PMIC/PHY-init=not-implemented media-writes=disabled auto-mount=disabled
+SD boot and /data unchanged; no reset, timeout retry, format, migration or erase
+board-v166: sampled=1 stable=1 last=0 stage=snapshot-collected-not-power-qualified attempts=4 reads=26 last-address=0709016c
+pll: ref=f8675f00 peri0=ff126310 pat0=00000000 pat1=30000000
+fabric: store-ahb=110103ff store-mbus=f1055803 msi-lite1=00030001
+ufs-ccu: axi=81000000 cfg=80000018 bgr=000f0001 ref=00000000
+rtc: xo=183fb0f7 xo1=00000511 dcxo-selected-hz=26000000 (selector only, NOT measured)
+decode: axi-mux=1 div=1 cfg-mux=0 div=25 reset-release-mask=f gate-mask=7f
+clock rates are NOT inferred from PLL names; raw values retained
+qualification: rails=unknown domain=unknown ownership=unknown dma-map=unknown hci-access=blocked
+PMIC-SMC=not-called PMIC-I2C=not-touched cold-start=blocked
+handoff-v167: stage=handoff-observed-not-dma-authorized last=0 stable=1 reads=32 last-offset=80 link-ready=1 pending=0 needs-quiesce=1
+hci: cap=11870f1f ver=00000300 ahit=00000000 is=00000000 ie=00030e15 hcs=0000010f hce=00000001 iac=00000000
+utrl: base=bfeb4c00/00000000 doorbell=00000000 runstop=00000001
+utmr: base=00000000/00000000 doorbell=00000000 runstop=00000001
+handoff-policy: firmware-powered assumption; no PMIC qualification; register-writes=0 dma=0 media-commands=0 attach-blocked=1
+quiesce-v168: attempted=1 completed=1 quarantine=0 last=0 stage=quiesce-controls-stopped-not-dma-authorized writes=3 polls=3 last-offset=80 last-wait-ms=0
+quiesce-before: ie=00030e15 utrl-rsr=00000001 utmr-rsr=00000001 utrl-base=bfeb4c00/00000000
+quiesce-after: ie=00000000 utrl-rsr=00000000 utmr-rsr=00000000 utrl-base=bfeb4c00/00000000
+quiesce-policy: zero-only IE/UTRLRSR/UTMRLRSR; no reset/restart; no doorbell/IS/base writes; DMA/attach blocked; reboot to retry
+dma-nop-v169: attempted=1 completed=1 stopped=1 quarantine=0 last=0 stage=nop-dma-passed-not-media-qualified pages=19 writes=5 polls=4
+nop-dma: physical=00000000424ed000 published=1 submitted=1 guards=1 last-offset=60 wait-ms=0 retained-until-reboot=1
+nop-response: 20 00 00 00 00 00 00 00
+nop-policy: one NOP only; no SCSI/media/block/format; no IS/doorbell clear; no reset/retry/free; DMA routing is validated only by actual response
+readcheck-v170: attempted=0 completed=0 stopped=0 guards=0 quarantine=0 last=0 stage=not-attempted
+readcheck-dma: physical=0000000000000000 published=0 pages=0 writes=0 polls=0
+readcheck-media: lun=0 model='' blocks=0 block-bytes=0 capacity-bytes=0 identity=0
+readcheck-io: commands=0 transferred=0 samples=0 ua-reissues=0 elapsed-ms=0 exceptions=0
+readcheck-sample[0]: lba=0 bytes=16384 crc=00000000/00000000
+readcheck-sample[1]: lba=0 bytes=16384 crc=00000000/00000000
+readcheck-sample[2]: lba=0 bytes=16384 crc=00000000/00000000
+readcheck-gpt: protective-mbr=0 present=0 header-valid=0 entries-valid=0 status=0 partitions=0
+readcheck-partitions[0..3]: 0..0 / 0..0 / 0..0 / 0..0
+readcheck-sense: opcode=00 status=00 key=00 asc=00 ascq=00
+readcheck-wire: ocs=00000000 upiu=00 00 00 00 00 00 00 00 segment=0 sense=0 residual=0
+readcheck-policy: one qualification batch; own completion W1C bit0 only; no reset/timeout retry/free/mount/media-write
+reader-v171: calls=0 bytes=0 elapsed-ms=0 active=0 chunk-max=65536 request-max=1048576
+block-v171: published=0 node=/dev/ufs0 readonly=1 chunk-max=65536 request-max=1048576; no media writes/FS/mount/partition auto-registration
+bench-ro-v171: attempted=0 completed=0 error=0 MiB-per-pass=0 passes=0 bytes=0 elapsed-ms=0 crc=00000000/00000000 mbr=0000 head16-crc=00000000
+nsh> ```text
+nsh: `: no matching `
+nsh> time "echo readcheck > /dev/a733-ufs"
+
+0.0147 sec
+nsh> cat /dev/a733-ufs
+A733 UFS v171 guarded readonly block candidate (NOT writable/model storage)
+last=0 stage=readcheck-passed-not-mounted registered=0 quarantine=0 owns=0 lun=0
+ccu: axi=81000000 cfg=80000018 bgr=000f0001
+last-snapshot: version=00000000 cap=00000000 hcs=00000000 is=00000000 ocs=0 response=00000000 elapsed-ms=0
+media: model='' blocks=0 block-bytes=0 capacity-bytes=0 commands=0 read-bytes=0
+dma: resident=0 bytes=69632 retained-until-reboot=1
+control: board | handoff | quiesce | dma-nop | readcheck[=<lun:0..7>] | block-ro | bench-ro[=<MiB:1..16>] | probe | attach-ro=<lun:0..7>
+board: read-only CCU/RTC collection; no HCI/PMIC/DMA/clock writes
+probe/attach-ro: blocked until real board power provider is qualified
+handoff: explicit experimental firmware-powered HCI snapshot; no writes
+quiesce: manual zero-only IE/runstops; no DMA/media/reset; once per boot
+nop-arena: reserved=1 bytes=77824; isolated static BSS, never freed
+read-arena: reserved=1 bytes=77824; separate static BSS, never freed
+probe snapshots registers only; does NOT prove device/link presence
+attach-ro REQUIRES firmware-initialized active idle link and device
+cold-PMIC/PHY-init=not-implemented media-writes=disabled auto-mount=disabled
+SD boot and /data unchanged; no reset, timeout retry, format, migration or erase
+board-v166: sampled=1 stable=1 last=0 stage=snapshot-collected-not-power-qualified attempts=5 reads=26 last-address=0709016c
+pll: ref=f8675f00 peri0=ff126310 pat0=00000000 pat1=30000000
+fabric: store-ahb=110103ff store-mbus=f1055803 msi-lite1=00030001
+ufs-ccu: axi=81000000 cfg=80000018 bgr=000f0001 ref=00000000
+rtc: xo=183fb0f7 xo1=00000511 dcxo-selected-hz=26000000 (selector only, NOT measured)
+decode: axi-mux=1 div=1 cfg-mux=0 div=25 reset-release-mask=f gate-mask=7f
+clock rates are NOT inferred from PLL names; raw values retained
+qualification: rails=unknown domain=unknown ownership=unknown dma-map=unknown hci-access=blocked
+PMIC-SMC=not-called PMIC-I2C=not-touched cold-start=blocked
+handoff-v167: stage=handoff-observed-not-dma-authorized last=0 stable=1 reads=32 last-offset=80 link-ready=1 pending=0 needs-quiesce=1
+hci: cap=11870f1f ver=00000300 ahit=00000000 is=00000000 ie=00030e15 hcs=0000010f hce=00000001 iac=00000000
+utrl: base=bfeb4c00/00000000 doorbell=00000000 runstop=00000001
+utmr: base=00000000/00000000 doorbell=00000000 runstop=00000001
+handoff-policy: firmware-powered assumption; no PMIC qualification; register-writes=0 dma=0 media-commands=0 attach-blocked=1
+quiesce-v168: attempted=1 completed=1 quarantine=0 last=0 stage=quiesce-controls-stopped-not-dma-authorized writes=3 polls=3 last-offset=80 last-wait-ms=0
+quiesce-before: ie=00030e15 utrl-rsr=00000001 utmr-rsr=00000001 utrl-base=bfeb4c00/00000000
+quiesce-after: ie=00000000 utrl-rsr=00000000 utmr-rsr=00000000 utrl-base=bfeb4c00/00000000
+quiesce-policy: zero-only IE/UTRLRSR/UTMRLRSR; no reset/restart; no doorbell/IS/base writes; DMA/attach blocked; reboot to retry
+dma-nop-v169: attempted=1 completed=1 stopped=1 quarantine=0 last=0 stage=nop-dma-passed-not-media-qualified pages=19 writes=5 polls=4
+nop-dma: physical=00000000424ed000 published=1 submitted=1 guards=1 last-offset=60 wait-ms=0 retained-until-reboot=1
+nop-response: 20 00 00 00 00 00 00 00
+nop-policy: one NOP only; no SCSI/media/block/format; no IS/doorbell clear; no reset/retry/free; DMA routing is validated only by actual response
+readcheck-v170: attempted=1 completed=1 stopped=1 guards=1 quarantine=0 last=0 stage=readcheck-passed-not-mounted
+readcheck-dma: physical=00000000424da000 published=1 pages=19 writes=38 polls=46
+readcheck-media: lun=0 model='KINGSTONCY14-128        0002' blocks=31256576 block-bytes=4096 capacity-bytes=128026935296 identity=1
+readcheck-io: commands=9 transferred=114756 samples=3 ua-reissues=0 elapsed-ms=14 exceptions=0
+readcheck-sample[0]: lba=0 bytes=16384 crc=413d6101/413d6101
+readcheck-sample[1]: lba=15628288 bytes=16384 crc=ab54d286/ab54d286
+readcheck-sample[2]: lba=31256572 bytes=16384 crc=bc3be1a6/bc3be1a6
+readcheck-gpt: protective-mbr=1 present=1 header-valid=1 entries-valid=1 status=0 partitions=3
+readcheck-partitions[0..3]: 32768..65535 / 65536..679935 / 679936..31256542 / 0..0
+readcheck-sense: opcode=88 status=00 key=00 asc=00 ascq=00
+readcheck-wire: ocs=00000000 upiu=21 00 00 00 00 00 00 00 segment=0 sense=0 residual=0
+readcheck-policy: one qualification batch; own completion W1C bit0 only; no reset/timeout retry/free/mount/media-write
+reader-v171: calls=0 bytes=0 elapsed-ms=0 active=0 chunk-max=65536 request-max=1048576
+block-v171: published=0 node=/dev/ufs0 readonly=1 chunk-max=65536 request-max=1048576; no media writes/FS/mount/partition auto-registration
+bench-ro-v171: attempted=0 completed=0 error=0 MiB-per-pass=0 passes=0 bytes=0 elapsed-ms=0 crc=00000000/00000000 mbr=0000 head16-crc=00000000
+nsh> echo block-ro > /dev/a733-ufs
+nsh> cat /dev/a733-ufs
+A733 UFS v171 guarded readonly block candidate (NOT writable/model storage)
+last=0 stage=block-ro-registered-not-mounted registered=1 quarantine=0 owns=0 lun=0
+ccu: axi=81000000 cfg=80000018 bgr=000f0001
+last-snapshot: version=00000000 cap=00000000 hcs=00000000 is=00000000 ocs=0 response=00000000 elapsed-ms=0
+media: model='KINGSTONCY14-128        0002' blocks=31256576 block-bytes=4096 capacity-bytes=128026935296 commands=0 read-bytes=0
+dma: resident=0 bytes=69632 retained-until-reboot=1
+control: board | handoff | quiesce | dma-nop | readcheck[=<lun:0..7>] | block-ro | bench-ro[=<MiB:1..16>] | probe | attach-ro=<lun:0..7>
+board: read-only CCU/RTC collection; no HCI/PMIC/DMA/clock writes
+probe/attach-ro: blocked until real board power provider is qualified
+handoff: explicit experimental firmware-powered HCI snapshot; no writes
+quiesce: manual zero-only IE/runstops; no DMA/media/reset; once per boot
+nop-arena: reserved=1 bytes=77824; isolated static BSS, never freed
+read-arena: reserved=1 bytes=77824; separate static BSS, never freed
+probe snapshots registers only; does NOT prove device/link presence
+attach-ro REQUIRES firmware-initialized active idle link and device
+cold-PMIC/PHY-init=not-implemented media-writes=disabled auto-mount=disabled
+SD boot and /data unchanged; no reset, timeout retry, format, migration or erase
+board-v166: sampled=1 stable=1 last=0 stage=snapshot-collected-not-power-qualified attempts=5 reads=26 last-address=0709016c
+pll: ref=f8675f00 peri0=ff126310 pat0=00000000 pat1=30000000
+fabric: store-ahb=110103ff store-mbus=f1055803 msi-lite1=00030001
+ufs-ccu: axi=81000000 cfg=80000018 bgr=000f0001 ref=00000000
+rtc: xo=183fb0f7 xo1=00000511 dcxo-selected-hz=26000000 (selector only, NOT measured)
+decode: axi-mux=1 div=1 cfg-mux=0 div=25 reset-release-mask=f gate-mask=7f
+clock rates are NOT inferred from PLL names; raw values retained
+qualification: rails=unknown domain=unknown ownership=unknown dma-map=unknown hci-access=blocked
+PMIC-SMC=not-called PMIC-I2C=not-touched cold-start=blocked
+handoff-v167: stage=handoff-observed-not-dma-authorized last=0 stable=1 reads=32 last-offset=80 link-ready=1 pending=0 needs-quiesce=1
+hci: cap=11870f1f ver=00000300 ahit=00000000 is=00000000 ie=00030e15 hcs=0000010f hce=00000001 iac=00000000
+utrl: base=bfeb4c00/00000000 doorbell=00000000 runstop=00000001
+utmr: base=00000000/00000000 doorbell=00000000 runstop=00000001
+handoff-policy: firmware-powered assumption; no PMIC qualification; register-writes=0 dma=0 media-commands=0 attach-blocked=1
+quiesce-v168: attempted=1 completed=1 quarantine=0 last=0 stage=quiesce-controls-stopped-not-dma-authorized writes=3 polls=3 last-offset=80 last-wait-ms=0
+quiesce-before: ie=00030e15 utrl-rsr=00000001 utmr-rsr=00000001 utrl-base=bfeb4c00/00000000
+quiesce-after: ie=00000000 utrl-rsr=00000000 utmr-rsr=00000000 utrl-base=bfeb4c00/00000000
+quiesce-policy: zero-only IE/UTRLRSR/UTMRLRSR; no reset/restart; no doorbell/IS/base writes; DMA/attach blocked; reboot to retry
+dma-nop-v169: attempted=1 completed=1 stopped=1 quarantine=0 last=0 stage=nop-dma-passed-not-media-qualified pages=19 writes=5 polls=4
+nop-dma: physical=00000000424ed000 published=1 submitted=1 guards=1 last-offset=60 wait-ms=0 retained-until-reboot=1
+nop-response: 20 00 00 00 00 00 00 00
+nop-policy: one NOP only; no SCSI/media/block/format; no IS/doorbell clear; no reset/retry/free; DMA routing is validated only by actual response
+readcheck-v170: attempted=1 completed=1 stopped=1 guards=1 quarantine=0 last=0 stage=readcheck-passed-not-mounted
+readcheck-dma: physical=00000000424da000 published=1 pages=19 writes=38 polls=46
+readcheck-media: lun=0 model='KINGSTONCY14-128        0002' blocks=31256576 block-bytes=4096 capacity-bytes=128026935296 identity=1
+readcheck-io: commands=9 transferred=114756 samples=3 ua-reissues=0 elapsed-ms=14 exceptions=0
+readcheck-sample[0]: lba=0 bytes=16384 crc=413d6101/413d6101
+readcheck-sample[1]: lba=15628288 bytes=16384 crc=ab54d286/ab54d286
+readcheck-sample[2]: lba=31256572 bytes=16384 crc=bc3be1a6/bc3be1a6
+readcheck-gpt: protective-mbr=1 present=1 header-valid=1 entries-valid=1 status=0 partitions=3
+readcheck-partitions[0..3]: 32768..65535 / 65536..679935 / 679936..31256542 / 0..0
+readcheck-sense: opcode=88 status=00 key=00 asc=00 ascq=00
+readcheck-wire: ocs=00000000 upiu=21 00 00 00 00 00 00 00 segment=0 sense=0 residual=0
+readcheck-policy: one qualification batch; own completion W1C bit0 only; no reset/timeout retry/free/mount/media-write
+reader-v171: calls=0 bytes=0 elapsed-ms=0 active=0 chunk-max=65536 request-max=1048576
+block-v171: published=1 node=/dev/ufs0 readonly=1 chunk-max=65536 request-max=1048576; no media writes/FS/mount/partition auto-registration
+bench-ro-v171: attempted=0 completed=0 error=0 MiB-per-pass=0 passes=0 bytes=0 elapsed-ms=0 crc=00000000/00000000 mbr=0000 head16-crc=00000000
+nsh> ls -l /dev/ufs0
+ brw-rw-rw-128026935296 /dev/ufs0
+nsh> time "dd if=/dev/ufs0 of=/dev/null bs=65536 count=128"
+
+0.1188 sec
+nsh> cat /dev/a733-ufs
+A733 UFS v171 guarded readonly block candidate (NOT writable/model storage)
+last=0 stage=reader-read-completed-not-mounted registered=1 quarantine=0 owns=0 lun=0
+ccu: axi=81000000 cfg=80000018 bgr=000f0001
+last-snapshot: version=00000000 cap=00000000 hcs=00000000 is=00000000 ocs=0 response=00000000 elapsed-ms=0
+media: model='KINGSTONCY14-128        0002' blocks=31256576 block-bytes=4096 capacity-bytes=128026935296 commands=0 read-bytes=0
+dma: resident=0 bytes=69632 retained-until-reboot=1
+control: board | handoff | quiesce | dma-nop | readcheck[=<lun:0..7>] | block-ro | bench-ro[=<MiB:1..16>] | probe | attach-ro=<lun:0..7>
+board: read-only CCU/RTC collection; no HCI/PMIC/DMA/clock writes
+probe/attach-ro: blocked until real board power provider is qualified
+handoff: explicit experimental firmware-powered HCI snapshot; no writes
+quiesce: manual zero-only IE/runstops; no DMA/media/reset; once per boot
+nop-arena: reserved=1 bytes=77824; isolated static BSS, never freed
+read-arena: reserved=1 bytes=77824; separate static BSS, never freed
+probe snapshots registers only; does NOT prove device/link presence
+attach-ro REQUIRES firmware-initialized active idle link and device
+cold-PMIC/PHY-init=not-implemented media-writes=disabled auto-mount=disabled
+SD boot and /data unchanged; no reset, timeout retry, format, migration or erase
+board-v166: sampled=1 stable=1 last=0 stage=snapshot-collected-not-power-qualified attempts=5 reads=26 last-address=0709016c
+pll: ref=f8675f00 peri0=ff126310 pat0=00000000 pat1=30000000
+fabric: store-ahb=110103ff store-mbus=f1055803 msi-lite1=00030001
+ufs-ccu: axi=81000000 cfg=80000018 bgr=000f0001 ref=00000000
+rtc: xo=183fb0f7 xo1=00000511 dcxo-selected-hz=26000000 (selector only, NOT measured)
+decode: axi-mux=1 div=1 cfg-mux=0 div=25 reset-release-mask=f gate-mask=7f
+clock rates are NOT inferred from PLL names; raw values retained
+qualification: rails=unknown domain=unknown ownership=unknown dma-map=unknown hci-access=blocked
+PMIC-SMC=not-called PMIC-I2C=not-touched cold-start=blocked
+handoff-v167: stage=handoff-observed-not-dma-authorized last=0 stable=1 reads=32 last-offset=80 link-ready=1 pending=0 needs-quiesce=1
+hci: cap=11870f1f ver=00000300 ahit=00000000 is=00000000 ie=00030e15 hcs=0000010f hce=00000001 iac=00000000
+utrl: base=bfeb4c00/00000000 doorbell=00000000 runstop=00000001
+utmr: base=00000000/00000000 doorbell=00000000 runstop=00000001
+handoff-policy: firmware-powered assumption; no PMIC qualification; register-writes=0 dma=0 media-commands=0 attach-blocked=1
+quiesce-v168: attempted=1 completed=1 quarantine=0 last=0 stage=quiesce-controls-stopped-not-dma-authorized writes=3 polls=3 last-offset=80 last-wait-ms=0
+quiesce-before: ie=00030e15 utrl-rsr=00000001 utmr-rsr=00000001 utrl-base=bfeb4c00/00000000
+quiesce-after: ie=00000000 utrl-rsr=00000000 utmr-rsr=00000000 utrl-base=bfeb4c00/00000000
+quiesce-policy: zero-only IE/UTRLRSR/UTMRLRSR; no reset/restart; no doorbell/IS/base writes; DMA/attach blocked; reboot to retry
+dma-nop-v169: attempted=1 completed=1 stopped=1 quarantine=0 last=0 stage=nop-dma-passed-not-media-qualified pages=19 writes=5 polls=4
+nop-dma: physical=00000000424ed000 published=1 submitted=1 guards=1 last-offset=60 wait-ms=0 retained-until-reboot=1
+nop-response: 20 00 00 00 00 00 00 00
+nop-policy: one NOP only; no SCSI/media/block/format; no IS/doorbell clear; no reset/retry/free; DMA routing is validated only by actual response
+readcheck-v170: attempted=1 completed=1 stopped=1 guards=1 quarantine=0 last=0 stage=reader-read-completed-not-mounted
+readcheck-dma: physical=00000000424da000 published=1 pages=19 writes=550 polls=564
+readcheck-media: lun=0 model='KINGSTONCY14-128        0002' blocks=31256576 block-bytes=4096 capacity-bytes=128026935296 identity=1
+readcheck-io: commands=137 transferred=8503364 samples=3 ua-reissues=0 elapsed-ms=14 exceptions=0
+readcheck-sample[0]: lba=0 bytes=16384 crc=413d6101/413d6101
+readcheck-sample[1]: lba=15628288 bytes=16384 crc=ab54d286/ab54d286
+readcheck-sample[2]: lba=31256572 bytes=16384 crc=bc3be1a6/bc3be1a6
+readcheck-gpt: protective-mbr=1 present=1 header-valid=1 entries-valid=1 status=0 partitions=3
+readcheck-partitions[0..3]: 32768..65535 / 65536..679935 / 679936..31256542 / 0..0
+readcheck-sense: opcode=88 status=00 key=00 asc=00 ascq=00
+readcheck-wire: ocs=00000000 upiu=21 00 00 00 00 00 00 00 segment=0 sense=0 residual=0
+readcheck-policy: one qualification batch; own completion W1C bit0 only; no reset/timeout retry/free/mount/media-write
+reader-v171: calls=128 bytes=8388608 elapsed-ms=1 active=0 chunk-max=65536 request-max=1048576
+block-v171: published=1 node=/dev/ufs0 readonly=1 chunk-max=65536 request-max=1048576; no media writes/FS/mount/partition auto-registration
+bench-ro-v171: attempted=0 completed=0 error=0 MiB-per-pass=0 passes=0 bytes=0 elapsed-ms=0 crc=00000000/00000000 mbr=0000 head16-crc=00000000
+nsh> time "echo bench-ro=8 > /dev/a733-ufs"
+
+0.9336 sec
+nsh> cat /dev/a733-ufs
+A733 UFS v171 guarded readonly block candidate (NOT writable/model storage)
+last=0 stage=bench-ro-repeat-passed-not-mounted registered=1 quarantine=0 owns=0 lun=0
+ccu: axi=81000000 cfg=80000018 bgr=000f0001
+last-snapshot: version=00000000 cap=00000000 hcs=00000000 is=00000000 ocs=0 response=00000000 elapsed-ms=0
+media: model='KINGSTONCY14-128        0002' blocks=31256576 block-bytes=4096 capacity-bytes=128026935296 commands=0 read-bytes=0
+dma: resident=0 bytes=69632 retained-until-reboot=1
+control: board | handoff | quiesce | dma-nop | readcheck[=<lun:0..7>] | block-ro | bench-ro[=<MiB:1..16>] | probe | attach-ro=<lun:0..7>
+board: read-only CCU/RTC collection; no HCI/PMIC/DMA/clock writes
+probe/attach-ro: blocked until real board power provider is qualified
+handoff: explicit experimental firmware-powered HCI snapshot; no writes
+quiesce: manual zero-only IE/runstops; no DMA/media/reset; once per boot
+nop-arena: reserved=1 bytes=77824; isolated static BSS, never freed
+read-arena: reserved=1 bytes=77824; separate static BSS, never freed
+probe snapshots registers only; does NOT prove device/link presence
+attach-ro REQUIRES firmware-initialized active idle link and device
+cold-PMIC/PHY-init=not-implemented media-writes=disabled auto-mount=disabled
+SD boot and /data unchanged; no reset, timeout retry, format, migration or erase
+board-v166: sampled=1 stable=1 last=0 stage=snapshot-collected-not-power-qualified attempts=5 reads=26 last-address=0709016c
+pll: ref=f8675f00 peri0=ff126310 pat0=00000000 pat1=30000000
+fabric: store-ahb=110103ff store-mbus=f1055803 msi-lite1=00030001
+ufs-ccu: axi=81000000 cfg=80000018 bgr=000f0001 ref=00000000
+rtc: xo=183fb0f7 xo1=00000511 dcxo-selected-hz=26000000 (selector only, NOT measured)
+decode: axi-mux=1 div=1 cfg-mux=0 div=25 reset-release-mask=f gate-mask=7f
+clock rates are NOT inferred from PLL names; raw values retained
+qualification: rails=unknown domain=unknown ownership=unknown dma-map=unknown hci-access=blocked
+PMIC-SMC=not-called PMIC-I2C=not-touched cold-start=blocked
+handoff-v167: stage=handoff-observed-not-dma-authorized last=0 stable=1 reads=32 last-offset=80 link-ready=1 pending=0 needs-quiesce=1
+hci: cap=11870f1f ver=00000300 ahit=00000000 is=00000000 ie=00030e15 hcs=0000010f hce=00000001 iac=00000000
+utrl: base=bfeb4c00/00000000 doorbell=00000000 runstop=00000001
+utmr: base=00000000/00000000 doorbell=00000000 runstop=00000001
+handoff-policy: firmware-powered assumption; no PMIC qualification; register-writes=0 dma=0 media-commands=0 attach-blocked=1
+quiesce-v168: attempted=1 completed=1 quarantine=0 last=0 stage=quiesce-controls-stopped-not-dma-authorized writes=3 polls=3 last-offset=80 last-wait-ms=0
+quiesce-before: ie=00030e15 utrl-rsr=00000001 utmr-rsr=00000001 utrl-base=bfeb4c00/00000000
+quiesce-after: ie=00000000 utrl-rsr=00000000 utmr-rsr=00000000 utrl-base=bfeb4c00/00000000
+quiesce-policy: zero-only IE/UTRLRSR/UTMRLRSR; no reset/restart; no doorbell/IS/base writes; DMA/attach blocked; reboot to retry
+dma-nop-v169: attempted=1 completed=1 stopped=1 quarantine=0 last=0 stage=nop-dma-passed-not-media-qualified pages=19 writes=5 polls=4
+nop-dma: physical=00000000424ed000 published=1 submitted=1 guards=1 last-offset=60 wait-ms=0 retained-until-reboot=1
+nop-response: 20 00 00 00 00 00 00 00
+nop-policy: one NOP only; no SCSI/media/block/format; no IS/doorbell clear; no reset/retry/free; DMA routing is validated only by actual response
+readcheck-v170: attempted=1 completed=1 stopped=1 guards=1 quarantine=0 last=0 stage=reader-read-completed-not-mounted
+readcheck-dma: physical=00000000424da000 published=1 pages=19 writes=1574 polls=2101
+readcheck-media: lun=0 model='KINGSTONCY14-128        0002' blocks=31256576 block-bytes=4096 capacity-bytes=128026935296 identity=1
+readcheck-io: commands=393 transferred=25280580 samples=3 ua-reissues=0 elapsed-ms=14 exceptions=0
+readcheck-sample[0]: lba=0 bytes=16384 crc=413d6101/413d6101
+readcheck-sample[1]: lba=15628288 bytes=16384 crc=ab54d286/ab54d286
+readcheck-sample[2]: lba=31256572 bytes=16384 crc=bc3be1a6/bc3be1a6
+readcheck-gpt: protective-mbr=1 present=1 header-valid=1 entries-valid=1 status=0 partitions=3
+readcheck-partitions[0..3]: 32768..65535 / 65536..679935 / 679936..31256542 / 0..0
+readcheck-sense: opcode=88 status=00 key=00 asc=00 ascq=00
+readcheck-wire: ocs=00000000 upiu=21 00 00 00 00 00 00 00 segment=0 sense=0 residual=0
+readcheck-policy: one qualification batch; own completion W1C bit0 only; no reset/timeout retry/free/mount/media-write
+reader-v171: calls=384 bytes=25165824 elapsed-ms=1 active=0 chunk-max=65536 request-max=1048576
+block-v171: published=1 node=/dev/ufs0 readonly=1 chunk-max=65536 request-max=1048576; no media writes/FS/mount/partition auto-registration
+bench-ro-v171: attempted=1 completed=1 error=0 MiB-per-pass=8 passes=2 bytes=16777216 elapsed-ms=933 crc=32c1b14c/32c1b14c mbr=aa55 head16-crc=413d6101
+nsh> time "dd if=/dev/ufs0 of=/dev/null bs=4096 skip=1048576 count=16"
+
+0.0177 sec
+nsh> echo handoff > /dev/a733-ufs
+nsh> cat /dev/a733-ufs
+A733 UFS v171 guarded readonly block candidate (NOT writable/model storage)
+last=0 stage=handoff-observed-not-dma-authorized registered=1 quarantine=0 owns=0 lun=0
+ccu: axi=81000000 cfg=80000018 bgr=000f0001
+last-snapshot: version=00000000 cap=00000000 hcs=00000000 is=00000000 ocs=0 response=00000000 elapsed-ms=0
+media: model='KINGSTONCY14-128        0002' blocks=31256576 block-bytes=4096 capacity-bytes=128026935296 commands=0 read-bytes=0
+dma: resident=0 bytes=69632 retained-until-reboot=1
+control: board | handoff | quiesce | dma-nop | readcheck[=<lun:0..7>] | block-ro | bench-ro[=<MiB:1..16>] | probe | attach-ro=<lun:0..7>
+board: read-only CCU/RTC collection; no HCI/PMIC/DMA/clock writes
+probe/attach-ro: blocked until real board power provider is qualified
+handoff: explicit experimental firmware-powered HCI snapshot; no writes
+quiesce: manual zero-only IE/runstops; no DMA/media/reset; once per boot
+nop-arena: reserved=1 bytes=77824; isolated static BSS, never freed
+read-arena: reserved=1 bytes=77824; separate static BSS, never freed
+probe snapshots registers only; does NOT prove device/link presence
+attach-ro REQUIRES firmware-initialized active idle link and device
+cold-PMIC/PHY-init=not-implemented media-writes=disabled auto-mount=disabled
+SD boot and /data unchanged; no reset, timeout retry, format, migration or erase
+board-v166: sampled=1 stable=1 last=0 stage=snapshot-collected-not-power-qualified attempts=6 reads=26 last-address=0709016c
+pll: ref=f8675f00 peri0=ff126310 pat0=00000000 pat1=30000000
+fabric: store-ahb=110103ff store-mbus=f1055803 msi-lite1=00030001
+ufs-ccu: axi=81000000 cfg=80000018 bgr=000f0001 ref=00000000
+rtc: xo=183fb0f7 xo1=00000511 dcxo-selected-hz=26000000 (selector only, NOT measured)
+decode: axi-mux=1 div=1 cfg-mux=0 div=25 reset-release-mask=f gate-mask=7f
+clock rates are NOT inferred from PLL names; raw values retained
+qualification: rails=unknown domain=unknown ownership=unknown dma-map=unknown hci-access=blocked
+PMIC-SMC=not-called PMIC-I2C=not-touched cold-start=blocked
+handoff-v167: stage=handoff-observed-not-dma-authorized last=0 stable=1 reads=32 last-offset=80 link-ready=1 pending=0 needs-quiesce=0
+hci: cap=11870f1f ver=00000300 ahit=00000000 is=00000001 ie=00000000 hcs=0000010f hce=00000001 iac=00000000
+utrl: base=424da000/00000000 doorbell=00000000 runstop=00000000
+utmr: base=00000000/00000000 doorbell=00000000 runstop=00000000
+handoff-policy: firmware-powered assumption; no PMIC qualification; register-writes=0 dma=0 media-commands=0 attach-blocked=1
+quiesce-v168: attempted=1 completed=1 quarantine=0 last=0 stage=quiesce-controls-stopped-not-dma-authorized writes=3 polls=3 last-offset=80 last-wait-ms=0
+quiesce-before: ie=00030e15 utrl-rsr=00000001 utmr-rsr=00000001 utrl-base=bfeb4c00/00000000
+quiesce-after: ie=00000000 utrl-rsr=00000000 utmr-rsr=00000000 utrl-base=bfeb4c00/00000000
+quiesce-policy: zero-only IE/UTRLRSR/UTMRLRSR; no reset/restart; no doorbell/IS/base writes; DMA/attach blocked; reboot to retry
+dma-nop-v169: attempted=1 completed=1 stopped=1 quarantine=0 last=0 stage=nop-dma-passed-not-media-qualified pages=19 writes=5 polls=4
+nop-dma: physical=00000000424ed000 published=1 submitted=1 guards=1 last-offset=60 wait-ms=0 retained-until-reboot=1
+nop-response: 20 00 00 00 00 00 00 00
+nop-policy: one NOP only; no SCSI/media/block/format; no IS/doorbell clear; no reset/retry/free; DMA routing is validated only by actual response
+readcheck-v170: attempted=1 completed=1 stopped=1 guards=1 quarantine=0 last=0 stage=reader-read-completed-not-mounted
+readcheck-dma: physical=00000000424da000 published=1 pages=19 writes=1638 polls=2168
+readcheck-media: lun=0 model='KINGSTONCY14-128        0002' blocks=31256576 block-bytes=4096 capacity-bytes=128026935296 identity=1
+readcheck-io: commands=409 transferred=25346116 samples=3 ua-reissues=0 elapsed-ms=14 exceptions=0
+readcheck-sample[0]: lba=0 bytes=16384 crc=413d6101/413d6101
+readcheck-sample[1]: lba=15628288 bytes=16384 crc=ab54d286/ab54d286
+readcheck-sample[2]: lba=31256572 bytes=16384 crc=bc3be1a6/bc3be1a6
+readcheck-gpt: protective-mbr=1 present=1 header-valid=1 entries-valid=1 status=0 partitions=3
+readcheck-partitions[0..3]: 32768..65535 / 65536..679935 / 679936..31256542 / 0..0
+readcheck-sense: opcode=88 status=00 key=00 asc=00 ascq=00
+readcheck-wire: ocs=00000000 upiu=21 00 00 00 00 00 00 00 segment=0 sense=0 residual=0
+readcheck-policy: one qualification batch; own completion W1C bit0 only; no reset/timeout retry/free/mount/media-write
+reader-v171: calls=400 bytes=25231360 elapsed-ms=1 active=0 chunk-max=65536 request-max=1048576
+block-v171: published=1 node=/dev/ufs0 readonly=1 chunk-max=65536 request-max=1048576; no media writes/FS/mount/partition auto-registration
+bench-ro-v171: attempted=1 completed=1 error=0 MiB-per-pass=8 passes=2 bytes=16777216 elapsed-ms=933 crc=32c1b14c/32c1b14c mbr=aa55 head16-crc=413d6101
+nsh> free
+      total       used       free    maxused    maxfree  nused  nfree name
+ 4238827520      55408 4238772112     120448 4143972320     99      6 Umem
+nsh> dmesg
+[   22.253727] [CPU0] [ 9] nsh_main: A733: procfs mounted; 4 GiB split RAM enabled
+[   22.253771] [CPU0] [ 9] nsh_main: A733: user LED ready (0)
+[   22.253798] [CPU0] [ 9] nsh_main: A733: watchdog ready (0)
+[   22.303893] [CPU0] [ 9] nsh_main: A733: THS first sample pending code=0 ints=00000000 gpadc_clk=80000000 ths_bgr=00010001; registering sensor
+[   22.303958] [CPU0] [ 9] nsh_main: A733: temp0 registered; conversion pending
+[   22.303991] [CPU0] [ 9] nsh_main: A733: merged hardware diagnostics ready (0)
+[   22.304427] [CPU0] [ 9] nsh_main: A733 TRNG: CE v00300201 startup/continuous test passed; /dev/random and /dev/urandom ready
+[   22.304476] [CPU0] [ 9] nsh_main: A733: hardware TRNG ready (0)
+[   22.304501] [CPU0] [ 9] nsh_main: A733: UFS manual read-only interface registration (0)
+[   22.305045] [CPU0] [ 9] nsh_main: A733 NPU: VIP2 power/clock/identity checkpoint passed (0), id=00009000/00009202/20230518/1000003b
+[   22.314201] [CPU0] [ 9] nsh_main: A733 NPU runtime: /dev/npu0 ready (0), pool=404c5000/2097152 vip=02000000 pd=00404be1 lenet=4074d000/404d5000 prepared=407a1000/25165824
+[   22.314273] [CPU0] [ 9] nsh_main: A733: VIP2 NPU hardware checkpoint ready (0)
+[   22.314333] [CPU0] [ 9] nsh_main: A733: UART4 TW-TTS port ready at /dev/ttyS4 (0)
+[   22.314360] [CPU0] [ 9] nsh_main: A733: I2S0 audio checkpoint ready at /dev/a733-audio (0)
+[   22.314424] [CPU0] [ 9] nsh_main: A733: header I2C/SPI and fan PWM ready (0)
+[   22.546006] [CPU0] [ 9] nsh_main: A733 SDMMC0: /dev/mmcsd0 requested (PIO, 400 kHz/12 MHz, 4-bit)
+[   22.546045] [CPU0] [ 9] nsh_main: A733: SDMMC0 ready (0)
+[   22.548732] [CPU0] [ 9] nsh_main: A733 GPT: entry=1 node=/dev/a7z-firmware first=32768 blocks=32768 name=primary
+[   22.548773] [CPU0] [ 9] nsh_main: A733 GPT: entry=2 node=/dev/a7z-efi first=65536 blocks=614400 name=primary
+[   22.548815] [CPU0] [ 9] nsh_main: A733 GPT: entry=3 node=/dev/a7z-openvela first=679936 blocks=237568 name=primary
+[   22.548856] [CPU0] [ 9] nsh_main: A733 GPT: entry=4 node=/dev/a7z-data first=917504 blocks=3276767 name=data
+[   22.549503] [CPU0] [ 9] nsh_main: A733 FAT: /dev/a7z-data mounted read/write at /data
+[   22.549537] [CPU0] [ 9] nsh_main: A733: GPT/FAT storage ready (0)
+[   22.720632] [CPU0] [ 9] nsh_main: A733 WIFI: FCU760K USB1 root port connected at high speed (0), version=0100 port=00001005
+[   22.734688] [CPU0] [ 9] nsh_main: A733 WIFI: USB device addr=1 VID:PID=a69c:8d80 class=00/00/00 bcdUSB=2.00 EP0=64
+[   22.736746] [CPU0] [ 9] nsh_main: A733 WIFI: interface=0 alt=0 class=ff/ff/ff endpoints=2
+[   22.736783] [CPU0] [ 9] nsh_main: A733 WIFI: endpoint=01 attr=02 maxpacket=512 interval=0 interface=0/0
+[   22.736825] [CPU0] [ 9] nsh_main: A733 WIFI: endpoint=82 attr=02 maxpacket=512 interval=0 interface=0/0
+[   22.748873] [CPU0] [ 9] nsh_main: A733 WIFI: USB enumeration passed config=1 interfaces=1 descriptors=1 endpoints=2 total=32
+[   22.752003] [CPU0] [ 9] nsh_main: A733 WIFI: AIC BootROM read32 [40500000]=fb078820 bulk=20/24 response=0401 (0)
+[   22.760004] [CPU0] [ 9] nsh_main: A733 WIFI: uploaded /data/aic/fw_adid_8800d80_u02.bin (1708 bytes) to 00201940
+[   22.888003] [CPU0] [ 9] nsh_main: A733 WIFI: uploaded /data/aic/fw_patch_8800d80_u02.bin (32700 bytes) to 001e0000
+[   22.952003] [CPU0] [ 9] nsh_main: A733 WIFI: uploaded /data/aic/fw_patch_8800d80_u02_ext0.bin (16136 bytes) to 0020b43c
+[   23.329003] [CPU0] [ 9] nsh_main: A733 BT: firmware mode=5 HCI-port=1 readback=1 (mailbox/USB)
+[   25.018003] [CPU0] [ 9] nsh_main: A733 WIFI: uploaded /data/aic/fmacfw_8800d80_u02.bin (358072 bytes) to 00120000
+[   25.122003] [CPU0] [ 9] nsh_main: A733 WIFI: D80 patch config version=06090101 cfg=00177158 struct=00177c00 pairs=0017d318
+[   25.124002] [CPU0] [ 9] nsh_main: A733 WIFI: D80 firmware started, waiting for runtime USB device
+[   25.509102] [CPU0] [ 9] nsh_main: A733 WIFI: USB device addr=1 VID:PID=a69c:8d81 class=ef/02/01 bcdUSB=2.00 EP0=64
+[   25.511158] [CPU0] [ 9] nsh_main: A733 WIFI: interface=0 alt=0 class=e0/01/01 endpoints=3
+[   25.511195] [CPU0] [ 9] nsh_main: A733 WIFI: endpoint=83 attr=03 maxpacket=64 interval=4 interface=0/0
+[   25.511237] [CPU0] [ 9] nsh_main: A733 WIFI: endpoint=84 attr=02 maxpacket=512 interval=0 interface=0/0
+[   25.511279] [CPU0] [ 9] nsh_main: A733 WIFI: endpoint=04 attr=02 maxpacket=512 interval=0 interface=0/0
+[   25.511321] [CPU0] [ 9] nsh_main: A733 WIFI: interface=1 alt=0 class=e0/01/01 endpoints=2
+[   25.511358] [CPU0] [ 9] nsh_main: A733 WIFI: endpoint=85 attr=01 maxpacket=0 interval=4 interface=1/0
+[   25.511399] [CPU0] [ 9] nsh_main: A733 WIFI: endpoint=05 attr=01 maxpacket=0 interval=4 interface=1/0
+[   25.511440] [CPU0] [ 9] nsh_main: A733 WIFI: interface=1 alt=1 class=e0/01/01 endpoints=2
+[   25.511477] [CPU0] [ 9] nsh_main: A733 WIFI: endpoint=85 attr=01 maxpacket=9 interval=4 interface=1/1
+[   25.511518] [CPU0] [ 9] nsh_main: A733 WIFI: endpoint=05 attr=01 maxpacket=9 interval=4 interface=1/1
+[   25.511559] [CPU0] [ 9] nsh_main: A733 WIFI: interface=1 alt=2 class=e0/01/01 endpoints=2
+[   25.511596] [CPU0] [ 9] nsh_main: A733 WIFI: endpoint=85 attr=01 maxpacket=17 interval=4 interface=1/2
+[   25.511637] [CPU0] [ 9] nsh_main: A733 WIFI: endpoint=05 attr=01 maxpacket=17 interval=4 interface=1/2
+[   25.511679] [CPU0] [ 9] nsh_main: A733 WIFI: interface=1 alt=3 class=e0/01/01 endpoints=2
+[   25.511716] [CPU0] [ 9] nsh_main: A733 WIFI: endpoint=85 attr=01 maxpacket=25 interval=4 interface=1/3
+[   25.511757] [CPU0] [ 9] nsh_main: A733 WIFI: endpoint=05 attr=01 maxpacket=25 interval=4 interface=1/3
+[   25.511799] [CPU0] [ 9] nsh_main: A733 WIFI: interface=1 alt=4 class=e0/01/01 endpoints=2
+[   25.511835] [CPU0] [ 9] nsh_main: A733 WIFI: endpoint=85 attr=01 maxpacket=33 interval=4 interface=1/4
+[   25.511877] [CPU0] [ 9] nsh_main: A733 WIFI: endpoint=05 attr=01 maxpacket=33 interval=4 interface=1/4
+[   25.511919] [CPU0] [ 9] nsh_main: A733 WIFI: interface=1 alt=5 class=e0/01/01 endpoints=2
+[   25.511955] [CPU0] [ 9] nsh_main: A733 WIFI: endpoint=85 attr=01 maxpacket=49 interval=4 interface=1/5
+[   25.511997] [CPU0] [ 9] nsh_main: A733 WIFI: endpoint=05 attr=01 maxpacket=49 interval=4 interface=1/5
+[   25.512040] [CPU0] [ 9] nsh_main: A733 WIFI: interface=2 alt=0 class=ff/ff/ff endpoints=4
+[   25.512076] [CPU0] [ 9] nsh_main: A733 WIFI: endpoint=01 attr=02 maxpacket=512 interval=0 interface=2/0
+[   25.512118] [CPU0] [ 9] nsh_main: A733 WIFI: endpoint=81 attr=02 maxpacket=512 interval=0 interface=2/0
+[   25.512160] [CPU0] [ 9] nsh_main: A733 WIFI: endpoint=02 attr=02 maxpacket=512 interval=0 interface=2/0
+[   25.512202] [CPU0] [ 9] nsh_main: A733 WIFI: endpoint=82 attr=02 maxpacket=512 interval=0 interface=2/0
+[   25.523249] [CPU0] [ 9] nsh_main: A733 WIFI: USB enumeration passed config=1 interfaces=3 descriptors=8 endpoints=19 total=222
+[   25.523301] [CPU0] [ 9] nsh_main: A733 WIFI: runtime map WLAN data=01/01 msg=02/02 BT event=03 ACL=04/04
+[   25.534004] [CPU0] [ 9] nsh_main: A733 WIFI: runtime MM_VERSION passed lmac=06090101 machw=0002fdfb/00014047 phy=5ee24111/01020000 features=01e877d7 sta=32 vif=4
+[   25.538003] [CPU0] [ 9] nsh_main: A733 WIFI: LMAC stack start passed 5g=1 vendor=00
+[   25.543003] [CPU0] [ 9] nsh_main: A733 WIFI: efuse MAC 9c:04:b6:84:44:8d
+[   25.543034] [CPU0] [ 9] nsh_main: A733 WIFI: LMAC stack checkpoint (0)
+[   26.644003] [CPU0] [ 9] nsh_main: A733 WIFI: RF calibration passed rx=00175a64/00175cf8 tx=0017683c/001769c4
+[   26.644047] [CPU0] [ 9] nsh_main: A733 WIFI: RF configuration checkpoint (0)
+[   26.655003] [CPU0] [ 9] nsh_main: A733 WIFI: runtime MM_VERSION passed lmac=06090101 machw=0002fdfb/00014047 phy=5ee24111/01020000 features=01e877d7 sta=32 vif=4
+[   26.659003] [CPU0] [ 9] nsh_main: A733 WIFI: ME configuration passed HT=1 VHT=0 HE=0 BW=40 PS=0 cfm=0
+[   26.659043] [CPU0] [ 9] nsh_main: A733 WIFI: ME configuration checkpoint (0)
+[   26.664003] [CPU0] [ 9] nsh_main: A733 WIFI: CN channel table passed 2g=14 5g=25 cfm=0
+[   26.664038] [CPU0] [ 9] nsh_main: A733 WIFI: regulatory channel checkpoint (0)
+[   26.669003] [CPU0] [ 9] nsh_main: A733 WIFI: station VIF passed index=0 MAC=9c:04:b6:84:44:8d
+[   26.669042] [CPU0] [ 9] nsh_main: A733 WIFI: station VIF checkpoint (0)
+[   26.674003] [CPU0] [ 9] nsh_main: A733 WIFI: MAC/PHY start passed UAPSD=300 ms LPCLK=20 ppm cfm=0
+[   26.674042] [CPU0] [ 9] nsh_main: A733 WIFI: MAC/PHY start checkpoint (0)
+[   26.674071] [CPU0] [ 9] nsh_main: A733 WIFI: runtime transport checkpoint (0)
+[   26.674101] [CPU0] [ 9] nsh_main: A733 WIFI: D80 firmware bytes=408616 runtime=a69c:8d81 (0)
+[   26.674148] [CPU0] [ 9] nsh_main: A733 BT: official H4 transport registration (0)
+[   26.674189] [CPU0] [ 9] nsh_main: A733 WIFI: wlan0 registered; serialized USB RX worker pid=10
+[   26.674230] [CPU0] [ 9] nsh_main: A733: onboard FCU760K USB/firmware checkpoint ready (0)
+[   26.675308] [CPU0] [ 9] nsh_main: A733 USB host: before reset cap=30 ver=0120 hcs=02000140 id=33313130
+[   28.139371] [CPU0] [ 9] nsh_main: A733 USB combo v114: ctrl=00000111/01100001/00000000/00000011 status=00000001 maps=00000000/00000000 ready=1
+[   28.159435] [CPU0] [ 9] nsh_main: A733 USB PHY v114: reset-free host handoff passed id=33313130 gctl=30c11404 u2=02102400 u3=01001102 iscr=0100b000 physts=00000008
+[   28.159504] [CPU0] [ 9] nsh_main: A733 USB host: CCU-reset halted handoff passed; HCRST suppressed cmd=00000000 sts=00000001 id=33313130
+[   28.159565] [CPU0] [ 9] nsh_main: A733 xHCI v114: running slots=8 scratch=2 page=00000001 rtsoff=00001000 cmd=00000001 sts=00000000
+[   29.660427] [CPU0] [ 9] nsh_main: A733 UVC: USB2/xHCI2 probe=-19 ports=000002a0/000002a0 DWC3=33313130 maxports=2
+[   29.660473] [CPU0] [ 9] nsh_main: A733 USB diagnostic node registered; host probe=-19 (not audio-ready)
+[   29.660513] [CPU0] [ 9] nsh_main: A733: external USB0 UVC checkpoint ready (0)
+[   29.660556] [CPU0] [ 9] nsh_main: A733: optional service startup dispatcher (0)
+nsh>

@@ -1,0 +1,177 @@
+--- a/packages/ai_agent/src/agent_main.c
++++ b/packages/ai_agent/src/agent_main.c
+@@ -374,5 +374,5 @@
+-    mkdir("/data/agent", 0755);
+-    mkdir("/data/agent/config", 0755);
+-    mkdir("/data/agent/memory", 0755);
+-    mkdir("/data/agent/sessions", 0755);
+-    mkdir("/data/agent/skills", 0755);
++    mkdir(AGENT_DATA_DIR, 0755);
++    mkdir(AGENT_DATA_DIR "/config", 0755);
++    mkdir(AGENT_DATA_DIR "/memory", 0755);
++    mkdir(AGENT_DATA_DIR "/sessions", 0755);
++    mkdir(AGENT_DATA_DIR "/skills", 0755);
+--- a/packages/ai_agent/src/infra/vela_tls.c
++++ b/packages/ai_agent/src/infra/vela_tls.c
+@@ -46,6 +46,7 @@
+ #include <pthread.h>
+ #include <time.h>
+ 
++#include "pet_http_framing.h"
+ #include "mbedtls/x509_crt.h"
+ static int simple_entropy_func(void* data, unsigned char* output, size_t len)
+ {
+@@ -534,9 +535,35 @@
+     }
+ }
+ 
++static uint64_t pet_http_ms(void)
++{
++    struct timespec now;
++    clock_gettime(CLOCK_MONOTONIC, &now);
++    return (uint64_t)now.tv_sec * 1000 + now.tv_nsec / 1000000;
++}
++
++/* Absolute response budget, not a fresh timeout per fragment. */
++static int pet_tls_read(tls_ctx_t *ctx, unsigned char *buf, size_t cap,
++    uint64_t deadline)
++{
++    uint64_t now = pet_http_ms();
++    if (now >= deadline) return MBEDTLS_ERR_SSL_TIMEOUT;
++    uint64_t left = deadline - now;
++    struct timeval tv = { .tv_sec = (time_t)(left / 1000),
++        .tv_usec = (suseconds_t)((left % 1000) * 1000) };
++    if (setsockopt(ctx->net.fd, SOL_SOCKET, SO_RCVTIMEO, &tv, sizeof(tv)) < 0)
++        return MBEDTLS_ERR_SSL_TIMEOUT;
++    int ret = mbedtls_ssl_read(&ctx->ssl, buf, cap);
++    if (pet_http_ms() >= deadline) return MBEDTLS_ERR_SSL_TIMEOUT;
++    return ret;
++}
++
+ static int tls_read_response(tls_ctx_t* ctx, char* resp_buf, size_t resp_cap,
+     size_t* out_body_len, bool* out_keep_alive)
+ {
++    if (resp_cap < 2) return VELA_TLS_ERR_READ;
++    uint64_t started = pet_http_ms(), deadline = started + 45000;
++    if (out_keep_alive) *out_keep_alive = false;
+     /* Use static buffers to avoid heap fragmentation */
+     char* raw = tls_raw_acquire();
+     size_t raw_len = 0;
+@@ -545,9 +572,12 @@
+ 
+     /* Read until we have the full header (double CRLF) or buffer full */
+     while (!eof && raw_len < TLS_RAW_BUF_SIZE - 1) {
+-        ret = mbedtls_ssl_read(&ctx->ssl,
++        ret = pet_tls_read(ctx,
+             (unsigned char*)(raw + raw_len),
+-            TLS_RAW_BUF_SIZE - 1 - raw_len);
++            TLS_RAW_BUF_SIZE - 1 - raw_len, deadline);
++        if (ret > 0 && raw_len == 0)
++            syslog(LOG_INFO, "[%s] HTTP first-byte=%llu ms\n", TAG,
++                (unsigned long long)(pet_http_ms() - started));
+         if (ret > 0) {
+             raw_len += (size_t)ret;
+             if (memmem(raw, raw_len, "\r\n\r\n", 4))
+@@ -576,7 +606,7 @@
+     if (!body_start) {
+         resp_buf[0] = '\0';
+         tls_raw_release(raw);
+-        return http_status;
++        return VELA_TLS_ERR_READ;
+     }
+ 
+     /* Determine keep-alive from Connection header (default true for HTTP/1.1) */
+@@ -609,6 +639,14 @@
+         }
+     }
+ 
++    if (chunked) content_length = -1; /* Transfer-Encoding takes precedence. */
++    if (http_status == 204 || http_status == 304) content_length = 0;
++    if (content_length >= (long)resp_cap) {
++        tls_raw_release(raw);
++        return VELA_TLS_ERR_READ;
++    }
++    syslog(LOG_INFO, "[%s] HTTP status=%d framing=%s\n", TAG, http_status,
++        chunked ? "chunked" : content_length >= 0 ? "length" : "close");
+     /* Initial fragment already in raw buffer */
+     size_t initial = (size_t)(raw + raw_len - body_start);
+     size_t resp_pos = 0;
+@@ -620,22 +658,38 @@
+ 
+     /* Keep reading body */
+     if (!eof) {
+-        while (resp_pos < resp_cap - 1) {
+-            if (content_length >= 0 && (long)resp_pos >= content_length)
++        for (;;) {
++            size_t end = 0;
++            int complete = chunked ? pet_chunked_complete(resp_buf, resp_pos, &end) : 0;
++            if (complete < 0) goto pet_read_failed;
++            if (complete == 1) {
++                if (end != resp_pos && out_keep_alive) *out_keep_alive = false;
++                resp_pos = end;
+                 break;
+-            ret = mbedtls_ssl_read(&ctx->ssl,
++            }
++            if (content_length >= 0 && resp_pos >= (size_t)content_length) {
++                if (resp_pos != (size_t)content_length && out_keep_alive) *out_keep_alive = false;
++                resp_pos = (size_t)content_length;
++                break;
++            }
++            if (resp_pos >= resp_cap - 1) goto pet_read_failed;
++            ret = pet_tls_read(ctx,
+                 (unsigned char*)(resp_buf + resp_pos),
+-                resp_cap - 1 - resp_pos);
++                resp_cap - 1 - resp_pos, deadline);
+             if (ret > 0) {
+                 resp_pos += (size_t)ret;
+             } else if (ret == 0 || ret == MBEDTLS_ERR_SSL_PEER_CLOSE_NOTIFY) {
++                if (chunked || content_length >= 0) goto pet_read_failed;
++                if (out_keep_alive) *out_keep_alive = false;
+                 break;
+             } else if (ret != MBEDTLS_ERR_SSL_WANT_READ) {
+-                break;
++                goto pet_read_failed;
+             }
+         }
+     }
+ 
++    syslog(LOG_INFO, "[%s] HTTP complete=%llu ms encoded-bytes=%zu\n", TAG,
++        (unsigned long long)(pet_http_ms() - started), resp_pos);
+     resp_buf[resp_pos] = '\0';
+     tls_raw_release(raw);
+ 
+@@ -649,6 +703,14 @@
+         *out_body_len = resp_pos;
+ 
+     return http_status;
++pet_read_failed:
++    syslog(LOG_ERR, "[%s] HTTP incomplete/malformed/timeout after %llu ms\n",
++        TAG, (unsigned long long)(pet_http_ms() - started));
++    resp_buf[0] = '\0';
++    if (out_body_len) *out_body_len = 0;
++    if (out_keep_alive) *out_keep_alive = false;
++    tls_raw_release(raw);
++    return VELA_TLS_ERR_READ;
+ }
+ 
+ /* ── Public API ──────────────────────────────────────────────── */
+@@ -699,6 +761,10 @@
+         /* Reuse existing connection — skip TLS handshake */
+         syslog(LOG_DEBUG, "[%s] Reusing pooled connection to %s:%s\n", TAG, host, port);
+         ret = tls_write_request(&slot->ctx, method, host, path, headers, body, body_len);
++        if (ret != 0) {
++            pool_release(slot, host, port, false);
++            return ret; /* Partial POST writes must not be replayed. */
++        }
+         if (ret == 0) {
+             bool keep = false;
+             ret = tls_read_response(&slot->ctx, resp_buf, resp_cap, out_body_len, &keep);
+@@ -706,6 +772,8 @@
+                 pool_release(slot, host, port, keep);
+                 return ret;
+             }
++            pool_release(slot, host, port, false);
++            return ret; /* No silent paid-request retry after receiving failed. */
+         }
+         /* Connection went stale — fall through to reconnect */
+     pool_reconnect:

@@ -1,0 +1,137 @@
+--- a/packages/ai_agent/src/voice/volc_tts.c
++++ b/packages/ai_agent/src/voice/volc_tts.c
+@@ -25,6 +25,7 @@
+ #include "mbedtls/base64.h"
+ #include <stdlib.h>
+ #include <string.h>
++#include "aipet_tts_validate.h"
+ 
+ static const char* TAG = "volc_tts";
+ 
+@@ -120,7 +121,9 @@
+         { NULL, NULL }
+     };
+ 
+-    char* resp = calloc(1, AGENT_VOICE_RESP_BUF_SIZE);
++    if (pcm_cap > 320000) { free(body); return -EMSGSIZE; }
++    size_t response_cap = pcm_cap * 2 + 65536;
++    char* resp = calloc(1, response_cap);
+ 
+     if (!resp) {
+         free(body);
+@@ -135,7 +138,7 @@
+         AGENT_DOUBAO_TTS_HOST, AGENT_DOUBAO_TTS_PORT,
+         "POST", AGENT_DOUBAO_TTS_V3_PATH, hdrs,
+         body, strlen(body),
+-        resp, AGENT_VOICE_RESP_BUF_SIZE, &body_len);
++        resp, response_cap, &body_len);
+ 
+     free(body);
+     body = NULL;
+@@ -153,100 +156,16 @@
+         return -EPROTO;
+     }
+ 
++    /* Decode only after the entire bounded HTTP response is available.
++     * No prefix playback on overflow, malformed JSON or missing terminal.
++     */
+     size_t total_pcm = 0;
+-    int chunks = 0;
+-    char* line = resp;
+-
+-    while (line && *line) {
+-        while (*line == '\n' || *line == '\r' || *line == ' ') {
+-            line++;
+-        }
+-
+-        if (*line == '\0') {
+-            break;
+-        }
+-
+-        char* eol = strchr(line, '\n');
+-
+-        if (eol) {
+-            *eol = '\0';
+-        }
+-
+-        cJSON* obj = cJSON_Parse(line);
+-
+-        if (!obj) {
+-            /* Truncated JSON at buffer boundary — skip silently
+-             * if we already decoded some audio data. */
+-            if (total_pcm > 0) {
+-                syslog(LOG_WARNING,
+-                    "[%s] TTS: truncated chunk %d (buffer full), "
+-                    "using %zu bytes decoded so far\n",
+-                    TAG, chunks, total_pcm);
+-                break;
+-            }
+-            syslog(LOG_ERR, "[%s] TTS: bad JSON chunk %d: %.80s\n",
+-                TAG, chunks, line);
+-            break;
+-        }
+-
+-        cJSON* code_j = cJSON_GetObjectItem(obj, "code");
+-        int code_val = code_j ? (int)code_j->valuedouble : -1;
+-
+-        if (!code_j || !cJSON_IsNumber(code_j)
+-            || (code_val != 0 && code_val != 20000000)) {
+-            cJSON* msg_j = cJSON_GetObjectItem(obj, "message");
+-
+-            syslog(LOG_ERR, "[%s] TTS error %d: %.80s\n",
+-                TAG, code_val,
+-                (msg_j && msg_j->valuestring)
+-                    ? msg_j->valuestring
+-                    : line);
+-            cJSON_Delete(obj);
+-            free(resp);
+-            return -EIO;
+-        }
+-
+-        cJSON* data_j = cJSON_GetObjectItem(obj, "data");
+-
+-        if (data_j && cJSON_IsString(data_j)
+-            && data_j->valuestring[0]) {
+-            const char* b64 = data_j->valuestring;
+-            size_t b64_len = strlen(b64);
+-            size_t decoded_len;
+-
+-            if (total_pcm + (b64_len * 3 / 4) > pcm_cap) {
+-                syslog(LOG_ERR,
+-                    "[%s] TTS: PCM buffer full at chunk %d\n",
+-                    TAG, chunks);
+-                cJSON_Delete(obj);
+-                break;
+-            }
+-
+-            mbedtls_base64_decode(
+-                pcm_out + total_pcm, pcm_cap - total_pcm,
+-                &decoded_len,
+-                (const unsigned char*)b64, b64_len);
+-            total_pcm += decoded_len;
+-            chunks++;
+-        }
+-
+-        cJSON_Delete(obj);
+-        line = eol ? eol + 1 : NULL;
+-    }
+-
++    int validation = memchr(resp, 0, body_len) ? -EPROTO :
++        aipet_tts_validate(resp, pcm_out, pcm_cap, &total_pcm);
+     free(resp);
+-    resp = NULL;
+-
+-    if (total_pcm == 0) {
+-        syslog(LOG_ERR, "[%s] TTS: no PCM data decoded\n", TAG);
+-        return -EPROTO;
+-    }
+-
++    if (validation) return validation;
+     *pcm_len = total_pcm;
+-
+-    syslog(LOG_INFO,
+-        "[%s] TTS: synthesized %zu PCM bytes (%d chunks)\n",
+-        TAG, *pcm_len, chunks);
++    syslog(LOG_INFO, "[%s] TTS: complete %zu PCM bytes\n", TAG, total_pcm);
+     return 0;
+ }

@@ -1,0 +1,20 @@
+Extracting openvela partition...
+e2fsck 1.47.2 (1-Jan-2025)
+Pass 1: Checking inodes, blocks, and sizes
+Pass 2: Checking directory structure
+Pass 3: Checking directory connectivity
+Pass 4: Checking reference counts
+Pass 5: Checking group summary information
+openvela: 19/29696 files (10.5% non-contiguous), 3581/29696 blocks
+e2fsck 1.47.2 (1-Jan-2025)
+Pass 1: Checking inodes, blocks, and sizes
+Pass 2: Checking directory structure
+Pass 3: Checking directory connectivity
+Pass 4: Checking reference counts
+Pass 5: Checking group summary information
+openvela: 19/29696 files (10.5% non-contiguous), 3581/29696 blocks
+Copying the known-good source image...
+Kernel SHA256:
+193dfb44cfd5b52ea23e1e15666ed96a918e3db8940f901167c0d54ecb721eee  ../../quickly-openvela/cmake_out/cubie-a7z_nsh_v142_ble_host_fix/nuttx.bin
+Final image SHA256:
+6ba47e14951119d25a29c745aa135110b6daf7e9a7c2fe17f69bcd034528a5bb  ../openvela-a733-cubie-a7z-sd-ble-v142-cli-hostfix-candidate.img

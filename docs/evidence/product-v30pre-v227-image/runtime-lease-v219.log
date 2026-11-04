@@ -1,0 +1,89 @@
+voice-load-v215: BEGIN stage=general-provider-configure path=/data/npu/tts mono-us=47474763
+voice-load-v215: requested-ASR=/data/npu/asr requested-TTS=/data/npu/tts
+general-voice: RAM-only candidate installed; ASR=NPU acoustic=CPU vocoder=NPU; no auto capture/cloud fallback; TARGET ACCEPTANCE REQUIRED
+voice-load-v215: END stage=general-provider-configure status=0 elapsed-ms=1
+voice-prepare-v213: asr-us=3 vocoder-us=0 status=0; MIC still OFF
+voice-session-v190: prepared ASR once in 5 us; same-command RAM reuse, per-turn states cleared
+general-asr: MIC ON; live 48k->16k FIR->NPU; capture-side energy endpoint; no actions
+general-asr: MIC OFF; capture/consumer stopped before final decode or playback
+general-asr: result=0 samples16=0 chunks=1 queue-peak=0 ended=0; native NPU candidate, not E2E acceptance
+voice-stage: mic-stopped-mono-us=0 transcript-ready-mono-us=47476652; mic stop is NOT true end-of-speech (energy endpoint is diagnostic)
+product-route-v1: intent=direct-rule
+product-reply-v1: backend=local text=你好呀！今天想聊什么？
+product-tts-v219: BEGIN backend=local; microphone OFF
+product-tts-v219: END status=0 elapsed-ms=2; actual sound requires listening
+general-asr: MIC ON; live 48k->16k FIR->NPU; capture-side energy endpoint; no actions
+general-asr: MIC OFF; capture/consumer stopped before final decode or playback
+general-asr: result=0 samples16=0 chunks=1 queue-peak=0 ended=0; native NPU candidate, not E2E acceptance
+voice-stage: mic-stopped-mono-us=0 transcript-ready-mono-us=47478690; mic stop is NOT true end-of-speech (energy endpoint is diagnostic)
+general-asr: MIC ON; live 48k->16k FIR->NPU; capture-side energy endpoint; no actions
+general-asr: MIC OFF; capture/consumer stopped before final decode or playback
+general-asr: result=0 samples16=0 chunks=1 queue-peak=0 ended=0; native NPU candidate, not E2E acceptance
+voice-stage: mic-stopped-mono-us=0 transcript-ready-mono-us=47478782; mic stop is NOT true end-of-speech (energy endpoint is diagnostic)
+product-route-v1: intent=direct-rule
+product-reply-v1: backend=local text=你好呀！今天想聊什么？
+product-tts-v219: BEGIN backend=local; microphone OFF
+product-tts-v219: END status=0 elapsed-ms=1; actual sound requires listening
+product-route-v1: intent=direct-rule
+product-reply-v1: backend=local text=你好呀！今天想聊什么？
+product-tts-v219: BEGIN backend=local; microphone OFF
+product-tts-v219: END status=-16 elapsed-ms=1; actual sound requires listening
+voice-prepare-v213: asr-us=0 vocoder-us=0 status=0; MIC still OFF
+voice-session-v190: prepared ASR once in 1 us; same-command RAM reuse, per-turn states cleared
+general-asr: MIC ON; live 48k->16k FIR->NPU; capture-side energy endpoint; no actions
+general-asr: MIC OFF; capture/consumer stopped before final decode or playback
+general-asr: result=0 samples16=0 chunks=1 queue-peak=0 ended=0; native NPU candidate, not E2E acceptance
+voice-stage: mic-stopped-mono-us=0 transcript-ready-mono-us=47480735; mic stop is NOT true end-of-speech (energy endpoint is diagnostic)
+product-route-v1: intent=direct-rule
+product-reply-v1: backend=local text=你好呀！今天想聊什么？
+product-tts-v219: BEGIN backend=local; microphone OFF
+product-tts-v219: END status=0 elapsed-ms=1; actual sound requires listening
+general-asr: MIC ON; live 48k->16k FIR->NPU; capture-side energy endpoint; no actions
+general-asr: MIC OFF; capture/consumer stopped before final decode or playback
+general-asr: result=0 samples16=0 chunks=1 queue-peak=0 ended=0; native NPU candidate, not E2E acceptance
+voice-stage: mic-stopped-mono-us=0 transcript-ready-mono-us=47481362; mic stop is NOT true end-of-speech (energy endpoint is diagnostic)
+general-asr: MIC ON; live 48k->16k FIR->NPU; capture-side energy endpoint; no actions
+general-asr: MIC OFF; capture/consumer stopped before final decode or playback
+general-asr: result=0 samples16=0 chunks=1 queue-peak=0 ended=0; native NPU candidate, not E2E acceptance
+voice-stage: mic-stopped-mono-us=0 transcript-ready-mono-us=47481418; mic stop is NOT true end-of-speech (energy endpoint is diagnostic)
+product-route-v1: intent=direct-rule
+product-reply-v1: backend=local text=你好呀！今天想聊什么？
+product-tts-v219: BEGIN backend=local; microphone OFF
+product-tts-v219: END status=0 elapsed-ms=0; actual sound requires listening
+product-route-v1: intent=direct-rule
+product-reply-v1: backend=local text=你好呀！今天想聊什么？
+product-tts-v219: BEGIN backend=local; microphone OFF
+product-tts-v219: END status=-16 elapsed-ms=0; actual sound requires listening
+general-asr: uninstalled; no capture/inference running
+product-cloud-v227: stage=LLM-submit; complete-response ACTION proposal only
+product-cloud-v227: stage=LLM-complete elapsed-ms=0
+product-model-action-v227: proposals=1 authorized=1 status=-110; single consumption, ACK != completion
+product-reply-v1: backend=cloud text=我来陪你玩。 模拟下位机没有确认，动作结果未知。
+product-tts-v219: BEGIN backend=cloud; microphone OFF
+product-tts-v219: END status=0 elapsed-ms=0; actual sound requires listening
+product-cloud-v227: stage=LLM-submit; complete-response ACTION proposal only
+product-cloud-v227: stage=LLM-complete elapsed-ms=0
+product-model-action-v227: proposals=1 authorized=1 status=-110; single consumption, ACK != completion
+product-reply-v1: backend=cloud text=我来陪你玩。 模拟下位机没有确认，动作结果未知。
+product-tts-v219: BEGIN backend=cloud; microphone OFF
+product-tts-v219: END status=-5 elapsed-ms=0; actual sound requires listening
+product-cloud-v227: stage=LLM-submit; complete-response ACTION proposal only
+product-cloud-v227: stage=LLM-complete elapsed-ms=0
+product-model-action-v227: proposals=1 authorized=0 status=-13; single consumption, ACK != completion
+product-reply-v1: backend=cloud text=我来陪你玩。 模型动作未获授权，没有发送。
+product-tts-v219: BEGIN backend=cloud; microphone OFF
+product-tts-v219: END status=0 elapsed-ms=0; actual sound requires listening
+product-cloud-v227: stage=LLM-submit; complete-response ACTION proposal only
+product-cloud-v227: stage=LLM-complete elapsed-ms=1
+product-model-action-v227: proposals=1 authorized=0 status=-13; single consumption, ACK != completion
+product-reply-v1: backend=cloud text=我来陪你玩。 模型动作未获授权，没有发送。
+product-tts-v219: BEGIN backend=cloud; microphone OFF
+product-tts-v219: END status=0 elapsed-ms=0; actual sound requires listening
+product-cloud-v227: stage=LLM-submit; complete-response ACTION proposal only
+product-cloud-v227: stage=LLM-complete elapsed-ms=0
+product-model-action-v227: proposals=2 authorized=1 status=-13; single consumption, ACK != completion
+product-reply-v1: backend=cloud text=你好。 模型动作未获授权，没有发送。
+product-tts-v219: BEGIN backend=cloud; microphone OFF
+product-tts-v219: END status=0 elapsed-ms=1; actual sound requires listening
+PASS v227 actual RuntimePorts cloud chat: persona, persistent opt-in/off, negative invite, one proposal, unknown ACK once, failed TTS cannot replay action, cancellation; mocked Agent/UART/PCM, NOT cloud/hardware acceptance.
+PASS actual RuntimePorts: rule reply + local chat -> production prepare -> leased provider -> mocked PCM, 6 turns, 2 sessions; foreign/cancel cannot speak. MOCK inference/PCM, NOT board.

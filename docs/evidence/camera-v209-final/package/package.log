@@ -1,0 +1,31 @@
+Pass 1: Checking inodes, blocks, and sizes
+Pass 2: Checking directory structure
+Pass 3: Checking directory connectivity
+Pass 4: Checking reference counts
+Pass 5: Checking group summary information
+openvela: 48/29696 files (4.2% non-contiguous), 11650/29696 blocks
+e2fsck 1.47.2 (1-Jan-2025)
+Pass 1: Checking inodes, blocks, and sizes
+Pass 2: Checking directory structure
+Pass 3: Checking directory connectivity
+Pass 4: Checking reference counts
+Pass 5: Checking group summary information
+openvela: 48/29696 files (4.2% non-contiguous), 11650/29696 blocks
+e2fsck 1.47.2 (1-Jan-2025)
+Pass 1: Checking inodes, blocks, and sizes
+Pass 2: Checking directory structure
+Pass 3: Checking directory connectivity
+Pass 4: Checking reference counts
+Pass 5: Checking group summary information
+openvela: 48/29696 files (4.2% non-contiguous), 11650/29696 blocks
+Embedded kernel bytes: 7156328
+Embedded kernel SHA256: 8a49d22720a97ad6ce0db38a36230e1c7715edec4d56bd10b8c507b37da8500d
+
+Caution: Partition 4 doesn't end on a 2048-sector boundary. This may
+result in problems with some disk encryption tools.
+
+No problems found. 32734 free sectors (16.0 MiB) available in 1
+segments, the largest of which is 32734 (16.0 MiB) in size.
+Image bytes: 2147483648
+758208e54be76ff4fa985d94530dc50389790f88c9885200707b8332597057b4  /mnt/d/My-Program/AI-Agent-Program/GPTsprogram/Openvela/A733-A7Z-ALL-Files/openvela-a733-cubie-a7z-sd-v209-camera-affinity-async-candidate.img
+e2fsck 1.47.2 (1-Jan-2025)
